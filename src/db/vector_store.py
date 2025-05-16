@@ -1,110 +1,107 @@
 import os
-import numpy as np
-import faiss
+import json
 from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
-from dotenv import load_dotenv
+import numpy as np
+import faiss
 
-# Load environment variables
-load_dotenv()
+from ..db.models import Recommendation, RecommendationStore
 
 class VectorStore:
-    """Vector store for semantic search of recommendations"""
-    
-    def __init__(self):
-        self.model = None
+    def __init__(self, data_dir: str, model_name: str = "all-MiniLM-L6-v2"):
+        self.data_dir = data_dir
+        self.embeddings_dir = os.path.join(data_dir, "embeddings")
+        os.makedirs(self.embeddings_dir, exist_ok=True)
+        
+        # Initialize the embedding model
+        self.model = SentenceTransformer(model_name)
+        
+        # Initialize FAISS index
         self.index = None
         self.recommendation_ids = []
-        self.initialized = False
-    
-    def initialize(self):
-        """Initialize the vector store with the sentence transformer model"""
-        if self.initialized:
-            return
-            
-        print("Initializing vector store...")
-        # Load the sentence transformer model
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
         
-        # Create a new FAISS index
-        embedding_size = 384  # Default size for all-MiniLM-L6-v2
-        self.index = faiss.IndexFlatL2(embedding_size)
-        
-        self.initialized = True
-        print("Vector store initialized")
+        # Load or create index
+        self._load_or_create_index()
     
-    def add_recommendation(self, rec_id: str, title: str, text: str, rationale: str = ""):
+    def _load_or_create_index(self):
+        index_path = os.path.join(self.embeddings_dir, "faiss_index.bin")
+        ids_path = os.path.join(self.embeddings_dir, "recommendation_ids.json")
+        
+        if os.path.exists(index_path) and os.path.exists(ids_path):
+            # Load existing index
+            self.index = faiss.read_index(index_path)
+            with open(ids_path, 'r') as f:
+                self.recommendation_ids = json.load(f)
+        else:
+            # Create new index
+            embedding_dim = self.model.get_sentence_embedding_dimension()
+            self.index = faiss.IndexFlatL2(embedding_dim)
+            self.recommendation_ids = []
+    
+    def _save_index(self):
+        index_path = os.path.join(self.embeddings_dir, "faiss_index.bin")
+        ids_path = os.path.join(self.embeddings_dir, "recommendation_ids.json")
+        
+        faiss.write_index(self.index, index_path)
+        with open(ids_path, 'w') as f:
+            json.dump(self.recommendation_ids, f)
+    
+    def _get_recommendation_text(self, recommendation: Recommendation) -> str:
+        """Create a text representation of a recommendation for embedding"""
+        text_parts = [
+            recommendation.title,
+            recommendation.domain.name,
+            " ".join([role.name for role in recommendation.roles]),
+            recommendation.recommendation,
+            recommendation.rationale,
+            recommendation.expected_outcome
+        ]
+        return " ".join(text_parts)
+    
+    def add_recommendation(self, recommendation: Recommendation):
         """Add a recommendation to the vector store"""
-        if not self.initialized:
-            self.initialize()
-        
-        # Combine fields for better semantic representation
-        content = f"{title} {text} {rationale}"
+        # Create text representation
+        text = self._get_recommendation_text(recommendation)
         
         # Generate embedding
-        embedding = self.model.encode([content])[0]
+        embedding = self.model.encode([text])[0]
+        embedding = np.array([embedding]).astype('float32')
         
         # Add to index
-        self.index.add(np.array([embedding], dtype=np.float32))
-        self.recommendation_ids.append(rec_id)
-    
-    def add_recommendations_batch(self, recommendations: List[Dict[str, Any]]):
-        """Add multiple recommendations to the vector store in a batch"""
-        if not self.initialized:
-            self.initialize()
+        self.index.add(embedding)
+        self.recommendation_ids.append(recommendation.id)
         
-        embeddings = []
-        for rec in recommendations:
-            content = f"{rec['title']} {rec['recommendation']} {rec.get('rationale', '')}"
-            embedding = self.model.encode([content])[0]
-            embeddings.append(embedding)
-            self.recommendation_ids.append(rec['id'])
-        
-        if embeddings:
-            self.index.add(np.array(embeddings, dtype=np.float32))
+        # Save index
+        self._save_index()
     
-    def search(self, query: str, top_k: int = 10) -> List[Dict[str, Any]]:
+    def search(self, query: str, top_k: int = 5) -> List[str]:
         """Search for recommendations similar to the query"""
-        if not self.initialized:
-            self.initialize()
-            
-        if len(self.recommendation_ids) == 0:
+        if self.index.ntotal == 0:
             return []
         
         # Generate query embedding
         query_embedding = self.model.encode([query])[0]
+        query_embedding = np.array([query_embedding]).astype('float32')
         
-        # Search the index
-        distances, indices = self.index.search(
-            np.array([query_embedding], dtype=np.float32), 
-            min(top_k, len(self.recommendation_ids))
-        )
+        # Search index
+        distances, indices = self.index.search(query_embedding, min(top_k, self.index.ntotal))
         
-        # Format results
-        results = []
-        for i, idx in enumerate(indices[0]):
-            if idx < len(self.recommendation_ids):
-                results.append({
-                    'id': self.recommendation_ids[idx],
-                    'score': float(1.0 - distances[0][i] / 100.0)  # Convert distance to similarity score
-                })
-        
+        # Return recommendation IDs
+        results = [self.recommendation_ids[idx] for idx in indices[0]]
         return results
     
-    def rebuild_index(self, recommendations: List[Dict[str, Any]]):
-        """Rebuild the entire index with the provided recommendations"""
-        if not self.initialized:
-            self.initialize()
-        
-        # Reset the index
-        embedding_size = 384  # Default size for all-MiniLM-L6-v2
-        self.index = faiss.IndexFlatL2(embedding_size)
+    def rebuild_index(self, recommendation_store: RecommendationStore):
+        """Rebuild the entire index from the recommendation store"""
+        # Create new index
+        embedding_dim = self.model.get_sentence_embedding_dimension()
+        self.index = faiss.IndexFlatL2(embedding_dim)
         self.recommendation_ids = []
         
         # Add all recommendations
-        self.add_recommendations_batch(recommendations)
+        for recommendation_id in recommendation_store.list_recommendations():
+            recommendation = recommendation_store.get_recommendation(recommendation_id)
+            if recommendation:
+                self.add_recommendation(recommendation)
         
-        print(f"Index rebuilt with {len(self.recommendation_ids)} recommendations")
-
-# Create a singleton instance
-vector_store = VectorStore()
+        # Save index
+        self._save_index()
