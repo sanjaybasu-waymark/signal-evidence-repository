@@ -1,0 +1,42 @@
+{
+  "id": "substance_use_chw_1",
+  "title": "Community Health Worker Support for Substance Use Disorder Recovery",
+  "domain": {
+    "id": "substance_use",
+    "name": "Substance Use Disorders"
+  },
+  "roles": [
+    {
+      "id": "chw",
+      "name": "Community Health Worker"
+    }
+  ],
+  "priority_level": "high",
+  "recommendation": "Implement a CHW-led recovery support program for patients with substance use disorders that includes: (1) regular outreach and engagement (weekly initially, then biweekly), (2) assistance with practical barriers to treatment (transportation, childcare, housing), (3) connection to community recovery resources, (4) support for medication adherence for medication-assisted treatment, (5) coordination with clinical providers, and (6) motivational support for maintaining recovery goals.",
+  "rationale": "CHWs can effectively bridge gaps between clinical treatment and community settings for individuals with substance use disorders. Their lived experience and community knowledge help address social determinants that impact recovery and reduce barriers to treatment engagement.",
+  "expected_outcome": "Improved treatment retention (20-30% increase), reduced substance use frequency, increased medication adherence for medication-assisted treatment, improved appointment attendance, and reduced emergency department visits. Number needed to treat (NNT) to prevent one treatment dropout: 4-7 patients.",
+  "evidence": {
+    "level": "B",
+    "citations": [
+      {
+        "authors": "Jack HE, Oller D, Kelly J, Magidson JF, Wakeman SE",
+        "title": "Addressing substance use disorder in primary care: The role, integration, and impact of recovery coaches",
+        "journal": "Substance Abuse",
+        "year": 2018,
+        "doi": "10.1080/08897077.2017.1389802",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/08897077.2017.1389802"
+      },
+      {
+        "authors": "Eddie D, Hoffman L, Vilsaint C, et al.",
+        "title": "Lived Experience in New Models of Care for Substance Use Disorder: A Systematic Review of Peer Recovery Support Services and Recovery Coaching",
+        "journal": "Frontiers in Psychology",
+        "year": 2019,
+        "doi": "10.3389/fpsyg.2019.01052",
+        "url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2019.01052/full"
+      }
+    ]
+  },
+  "implementation_notes": "Prioritize hiring CHWs with lived experience of recovery when possible. Provide training in motivational interviewing, basic understanding of addiction, and boundary setting. Establish clear protocols for when to escalate concerns to clinical team members. Develop a comprehensive resource guide of local recovery support services.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}

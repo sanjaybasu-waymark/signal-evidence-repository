@@ -1,0 +1,46 @@
+{
+  "id": "post_mi_care_coordinator_1",
+  "title": "Post-MI Care Coordination Program",
+  "domain": {
+    "id": "post_mi",
+    "name": "Post MI"
+  },
+  "roles": [
+    {
+      "id": "care_coordinator",
+      "name": "Care Coordinator"
+    },
+    {
+      "id": "nurse",
+      "name": "Nurse Care Manager"
+    }
+  ],
+  "priority_level": "high",
+  "recommendation": "Implement a structured post-MI care coordination program that includes: (1) early follow-up within 7 days of discharge, (2) medication reconciliation and adherence support for secondary prevention medications, (3) cardiac rehabilitation referral and enrollment assistance, (4) symptom monitoring and management education, (5) lifestyle modification support (smoking cessation, diet, exercise), and (6) regular follow-up at 2 weeks, 1 month, and 3 months post-discharge.",
+  "rationale": "The post-MI period represents a high-risk time for recurrent events and readmissions. Comprehensive care coordination can improve adherence to secondary prevention strategies and reduce adverse outcomes, particularly in the first 90 days after discharge.",
+  "expected_outcome": "Reduced 30-day readmission rates (25-35% reduction), improved medication adherence for secondary prevention medications, increased cardiac rehabilitation participation (40-50% increase), and reduced recurrent cardiovascular events at 1 year (15-20% reduction).",
+  "evidence": {
+    "level": "A",
+    "citations": [
+      {
+        "authors": "Aragam KG, Dai D, Neely ML, et al.",
+        "title": "Gaps in Referral to Cardiac Rehabilitation of Patients Undergoing Percutaneous Coronary Intervention in the United States",
+        "journal": "Journal of the American College of Cardiology",
+        "year": 2015,
+        "doi": "10.1016/j.jacc.2015.06.1089",
+        "url": "https://www.jacc.org/doi/10.1016/j.jacc.2015.06.1089"
+      },
+      {
+        "authors": "Anderson L, Oldridge N, Thompson DR, et al.",
+        "title": "Exercise-Based Cardiac Rehabilitation for Coronary Heart Disease: Cochrane Systematic Review and Meta-Analysis",
+        "journal": "Journal of the American College of Cardiology",
+        "year": 2016,
+        "doi": "10.1016/j.jacc.2015.10.044",
+        "url": "https://www.jacc.org/doi/10.1016/j.jacc.2015.10.044"
+      }
+    ]
+  },
+  "implementation_notes": "Develop a standardized discharge checklist to ensure all post-MI patients receive appropriate referrals and education. Create a cardiac rehabilitation enrollment assistance protocol to address common barriers. Consider implementing a home-based cardiac rehabilitation option for patients with transportation barriers.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}

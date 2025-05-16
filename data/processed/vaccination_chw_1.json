@@ -1,0 +1,46 @@
+{
+  "id": "vaccination_chw_1",
+  "title": "Community-Based Vaccination Outreach Program",
+  "domain": {
+    "id": "vaccination",
+    "name": "Vaccination"
+  },
+  "roles": [
+    {
+      "id": "chw",
+      "name": "Community Health Worker"
+    },
+    {
+      "id": "care_coordinator",
+      "name": "Care Coordinator"
+    }
+  ],
+  "priority_level": "medium",
+  "recommendation": "Implement a community-based vaccination outreach program that includes: (1) identification of under-vaccinated individuals through EHR data, (2) culturally tailored education addressing vaccine hesitancy, (3) mobile vaccination clinics in community settings, (4) assistance with transportation to vaccination sites, (5) reminder systems for multi-dose vaccines, and (6) documentation and reporting to state immunization registries.",
+  "rationale": "Vaccination rates remain suboptimal in many communities, particularly among racial/ethnic minorities and socioeconomically disadvantaged populations. Community-based approaches using trusted messengers can effectively address access barriers and vaccine hesitancy.",
+  "expected_outcome": "Increased vaccination rates for influenza (15-25% increase), pneumococcal (20-30% increase), and other recommended vaccines. Reduced disparities in vaccination rates, decreased vaccine-preventable illnesses, and reduced hospitalizations related to vaccine-preventable diseases.",
+  "evidence": {
+    "level": "B",
+    "citations": [
+      {
+        "authors": "Community Preventive Services Task Force",
+        "title": "Increasing Appropriate Vaccination: Community-Based Interventions Implemented in Combination",
+        "journal": "The Community Guide",
+        "year": 2014,
+        "doi": "",
+        "url": "https://www.thecommunityguide.org/findings/vaccination-programs-community-based-interventions-implemented-combination"
+      },
+      {
+        "authors": "Lau D, Hu J, Majumdar SR, Storie DA, Rees SE, Johnson JA",
+        "title": "Interventions to improve influenza and pneumococcal vaccination rates among community-dwelling adults: a systematic review and meta-analysis",
+        "journal": "Annals of Family Medicine",
+        "year": 2012,
+        "doi": "10.1370/afm.1405",
+        "url": "https://www.annfammed.org/content/10/6/538.long"
+      }
+    ]
+  },
+  "implementation_notes": "Develop culturally and linguistically appropriate educational materials addressing common concerns about vaccines. Partner with trusted community organizations for outreach and mobile clinic locations. Consider implementing incentives for vaccination completion. Train CHWs on addressing common vaccine misconceptions and motivational interviewing techniques.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}

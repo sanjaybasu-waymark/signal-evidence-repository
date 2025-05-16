@@ -1,0 +1,42 @@
+{
+  "id": "diabetes_social_worker_1",
+  "title": "Social Worker-Led Intervention for Diabetes and Food Insecurity",
+  "domain": {
+    "id": "diabetes",
+    "name": "Diabetes"
+  },
+  "roles": [
+    {
+      "id": "social_worker_nonclinical",
+      "name": "Social Worker (Non-Clinical)"
+    }
+  ],
+  "priority_level": "high",
+  "recommendation": "Implement a standardized screening and intervention protocol for food insecurity among diabetes patients. The protocol should include: (1) universal screening using the validated 2-item Hunger Vital Sign tool, (2) assessment of specific food access barriers, (3) immediate connection to emergency food resources when needed, (4) assistance with SNAP/WIC enrollment, (5) referral to diabetes-appropriate food pantries or medically-tailored meal programs, and (6) follow-up within 2 weeks to assess resolution and ongoing needs.",
+  "rationale": "Food insecurity affects 1 in 5 patients with diabetes and is associated with poor glycemic control, medication underuse, increased hypoglycemia, and higher healthcare utilization. Addressing food insecurity is essential for effective diabetes management, particularly among Medicaid populations.",
+  "expected_outcome": "Reduced food insecurity status (50-60% of patients), improved medication adherence, decreased hypoglycemic episodes, improved glycemic control (HbA1c reduction of 0.3-0.5% on average), and reduced diabetes-related emergency department visits.",
+  "evidence": {
+    "level": "B",
+    "citations": [
+      {
+        "authors": "Seligman HK, Lyles C, Marshall MB, et al.",
+        "title": "A Pilot Food Bank Intervention Featuring Diabetes-Appropriate Food Improved Glycemic Control Among Clients In Three States",
+        "journal": "Health Affairs",
+        "year": 2015,
+        "doi": "10.1377/hlthaff.2015.0641",
+        "url": "https://www.healthaffairs.org/doi/10.1377/hlthaff.2015.0641"
+      },
+      {
+        "authors": "Berkowitz SA, Terranova J, Hill C, et al.",
+        "title": "Meal Delivery Programs Reduce The Use Of Costly Health Care In Dually Eligible Medicare And Medicaid Beneficiaries",
+        "journal": "Health Affairs",
+        "year": 2018,
+        "doi": "10.1377/hlthaff.2017.0999",
+        "url": "https://www.healthaffairs.org/doi/10.1377/hlthaff.2017.0999"
+      }
+    ]
+  },
+  "implementation_notes": "Develop partnerships with local food banks, SNAP outreach programs, and medically-tailored meal services before implementation. Create a resource guide specific to diabetes-appropriate food resources. Consider co-locating SNAP enrollment assistance within clinical settings to reduce barriers to enrollment.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}

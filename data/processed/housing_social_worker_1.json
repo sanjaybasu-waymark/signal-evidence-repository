@@ -1,0 +1,46 @@
+{
+  "id": "housing_social_worker_1",
+  "title": "Housing Stability Assessment and Intervention Protocol",
+  "domain": {
+    "id": "housing",
+    "name": "Housing"
+  },
+  "roles": [
+    {
+      "id": "social_worker_nonclinical",
+      "name": "Social Worker (Non-Clinical)"
+    },
+    {
+      "id": "chw",
+      "name": "Community Health Worker"
+    }
+  ],
+  "priority_level": "high",
+  "recommendation": "Implement a standardized housing stability assessment and intervention protocol that includes: (1) universal screening using validated tools (e.g., AHC-HRSN), (2) tiered intervention approach based on risk level, (3) direct assistance with housing applications and documentation, (4) landlord mediation for eviction prevention, (5) connection to legal aid services for housing issues, and (6) follow-up monitoring at 30, 60, and 90 days.",
+  "rationale": "Housing instability is strongly associated with poor health outcomes, increased healthcare utilization, and medication non-adherence. Early identification and intervention can prevent homelessness and associated health deterioration, particularly among Medicaid populations.",
+  "expected_outcome": "Reduced rates of homelessness (15-20% reduction), decreased housing instability, reduced ED visits related to exposure and housing conditions (25-30% reduction), improved medication adherence, and better chronic disease management outcomes.",
+  "evidence": {
+    "level": "B",
+    "citations": [
+      {
+        "authors": "Kushel MB, Gupta R, Gee L, Haas JS",
+        "title": "Housing instability and food insecurity as barriers to health care among low-income Americans",
+        "journal": "Journal of General Internal Medicine",
+        "year": 2006,
+        "doi": "10.1111/j.1525-1497.2006.00278.x",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1484604/"
+      },
+      {
+        "authors": "Sadowski LS, Kee RA, VanderWeele TJ, Buchanan D",
+        "title": "Effect of a housing and case management program on emergency department visits and hospitalizations among chronically ill homeless adults: a randomized trial",
+        "journal": "JAMA",
+        "year": 2009,
+        "doi": "10.1001/jama.2009.561",
+        "url": "https://jamanetwork.com/journals/jama/fullarticle/183842"
+      }
+    ]
+  },
+  "implementation_notes": "Develop partnerships with local housing agencies, legal aid services, and emergency housing providers before implementation. Create a comprehensive database of housing resources with eligibility requirements, application procedures, and waiting list information. Train staff on trauma-informed approaches to housing assessment and intervention.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}

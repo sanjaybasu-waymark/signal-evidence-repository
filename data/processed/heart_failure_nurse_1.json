@@ -1,0 +1,46 @@
+{
+  "id": "heart_failure_nurse_1",
+  "title": "Nurse-Led Heart Failure Management Program",
+  "domain": {
+    "id": "heart_failure",
+    "name": "Heart Failure"
+  },
+  "roles": [
+    {
+      "id": "nurse",
+      "name": "Nurse Care Manager"
+    },
+    {
+      "id": "care_coordinator",
+      "name": "Care Coordinator"
+    }
+  ],
+  "priority_level": "high",
+  "recommendation": "Implement a structured nurse-led heart failure management program that includes: (1) systematic assessment using validated tools, (2) daily weight monitoring protocol with action thresholds, (3) medication reconciliation and adherence support, (4) dietary sodium and fluid restriction education, (5) symptom recognition and response training, and (6) structured telephone follow-up (weekly for 1 month post-discharge, then biweekly).",
+  "rationale": "Heart failure is the leading cause of hospitalization in adults over 65, with high 30-day readmission rates. Nurse-led management programs have consistently demonstrated effectiveness in reducing readmissions and improving quality of life.",
+  "expected_outcome": "Reduced heart failure-related hospitalizations (25-35% reduction), decreased 30-day readmissions, improved medication adherence, better quality of life scores, and reduced mortality. Number needed to treat (NNT) to prevent one hospitalization: 8-12 patients.",
+  "evidence": {
+    "level": "A",
+    "citations": [
+      {
+        "authors": "Feltner C, Jones CD, Cen\u00e9 CW, et al.",
+        "title": "Transitional care interventions to prevent readmissions for persons with heart failure: a systematic review and meta-analysis",
+        "journal": "Annals of Internal Medicine",
+        "year": 2014,
+        "doi": "10.7326/M14-0083",
+        "url": "https://www.acpjournals.org/doi/10.7326/M14-0083"
+      },
+      {
+        "authors": "Van Spall HGC, Rahman T, Mytton O, et al.",
+        "title": "Comparative effectiveness of transitional care services in patients discharged from the hospital with heart failure: a systematic review and network meta-analysis",
+        "journal": "European Journal of Heart Failure",
+        "year": 2017,
+        "doi": "10.1002/ejhf.765",
+        "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/ejhf.765"
+      }
+    ]
+  },
+  "implementation_notes": "Develop a standardized assessment protocol including fluid status, medication adherence, dietary compliance, and symptom burden. Create a weight monitoring log with clear action thresholds. Consider using telemonitoring for high-risk patients. Establish clear protocols for when to escalate to physician review.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}

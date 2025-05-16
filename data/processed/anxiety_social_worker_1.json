@@ -1,0 +1,42 @@
+{
+  "id": "anxiety_social_worker_1",
+  "title": "Cognitive Behavioral Therapy for Anxiety in Primary Care",
+  "domain": {
+    "id": "anxiety",
+    "name": "Anxiety"
+  },
+  "roles": [
+    {
+      "id": "social_worker_clinical",
+      "name": "Social Worker (Clinical/Therapy)"
+    }
+  ],
+  "priority_level": "medium",
+  "recommendation": "Implement a brief cognitive-behavioral therapy (CBT) intervention for anxiety disorders in primary care settings, delivered by clinical social workers. The protocol should include: (1) 6-8 sessions of structured CBT focusing on cognitive restructuring and exposure techniques, (2) use of validated anxiety measures (GAD-7) at each session, (3) patient workbooks and between-session assignments, (4) regular supervision for social workers, and (5) coordination with primary care providers regarding medication management.",
+  "rationale": "Brief CBT interventions have demonstrated effectiveness for anxiety disorders in primary care settings, with outcomes comparable to longer treatments. Clinical social workers can effectively deliver these interventions, increasing access to evidence-based psychological treatment.",
+  "expected_outcome": "Reduced anxiety symptoms (3-5 point reduction in GAD-7 scores), improved functional status, decreased use of anxiolytic medications, reduced emergency department visits for anxiety symptoms, and increased patient self-efficacy in managing anxiety.",
+  "evidence": {
+    "level": "A",
+    "citations": [
+      {
+        "authors": "Roy-Byrne P, Craske MG, Sullivan G, et al.",
+        "title": "Delivery of evidence-based treatment for multiple anxiety disorders in primary care: a randomized controlled trial",
+        "journal": "JAMA",
+        "year": 2010,
+        "doi": "10.1001/jama.2010.651",
+        "url": "https://jamanetwork.com/journals/jama/fullarticle/185843"
+      },
+      {
+        "authors": "Carpenter JK, Andrews LA, Witcraft SM, Powers MB, Smits JAJ, Hofmann SG",
+        "title": "Cognitive behavioral therapy for anxiety and related disorders: A meta-analysis of randomized placebo-controlled trials",
+        "journal": "Depression and Anxiety",
+        "year": 2018,
+        "doi": "10.1002/da.22728",
+        "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/da.22728"
+      }
+    ]
+  },
+  "implementation_notes": "Provide clinical social workers with specialized training in CBT for anxiety disorders. Develop a structured treatment manual to ensure consistent delivery. Consider offering both individual and group formats to maximize efficiency. Establish clear referral criteria for patients who require more intensive treatment.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}
