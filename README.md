@@ -7,7 +7,7 @@ A comprehensive collection of evidence-based recommendations for healthcare prof
 The Signal Evidence Library is available for review at:
 [https://5000-i1tvn0nlgjotz82h6jbgr-3aa1f08a.manus.computer](https://5000-i1tvn0nlgjotz82h6jbgr-3aa1f08a.manus.computer)
 
-![Signal Evidence Library Screenshot](/screenshots/signal-evidence-library-screenshot.webp)
+![Signal Evidence Library Screenshot](signal-evidence-library-screenshot.webp)
 
 ## Overview
 
