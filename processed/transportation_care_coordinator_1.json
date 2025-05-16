@@ -1,0 +1,46 @@
+{
+  "id": "transportation_care_coordinator_1",
+  "title": "Transportation Barrier Reduction Program",
+  "domain": {
+    "id": "transportation",
+    "name": "Transportation"
+  },
+  "roles": [
+    {
+      "id": "care_coordinator",
+      "name": "Care Coordinator"
+    },
+    {
+      "id": "chw",
+      "name": "Community Health Worker"
+    }
+  ],
+  "priority_level": "medium",
+  "recommendation": "Implement a transportation barrier reduction program that includes: (1) systematic screening for transportation barriers during intake and follow-up, (2) education about Medicaid non-emergency medical transportation (NEMT) benefits, (3) direct assistance with NEMT scheduling, (4) coordination of appointments to minimize transportation needs, (5) telehealth options when appropriate, and (6) partnerships with community transportation services for gaps not covered by NEMT.",
+  "rationale": "Transportation barriers affect 10-25% of patients and are associated with missed appointments, delayed care, and medication non-adherence. These barriers disproportionately affect rural populations, older adults, and those with disabilities or chronic conditions.",
+  "expected_outcome": "Reduced appointment no-show rates (30-40% reduction), increased preventive care completion, improved medication adherence, reduced ED visits for non-emergency conditions, and better chronic disease management outcomes.",
+  "evidence": {
+    "level": "B",
+    "citations": [
+      {
+        "authors": "Syed ST, Gerber BS, Sharp LK",
+        "title": "Traveling Towards Disease: Transportation Barriers to Health Care Access",
+        "journal": "Journal of Community Health",
+        "year": 2013,
+        "doi": "10.1007/s10900-013-9681-1",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4265215/"
+      },
+      {
+        "authors": "Chaiyachati KH, Hubbard RA, Yeager A, et al.",
+        "title": "Association of Rideshare-Based Transportation Services and Missed Primary Care Appointments: A Clinical Trial",
+        "journal": "JAMA Internal Medicine",
+        "year": 2018,
+        "doi": "10.1001/jamainternmed.2017.8336",
+        "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2671405"
+      }
+    ]
+  },
+  "implementation_notes": "Develop a comprehensive guide to local transportation resources, including NEMT services, public transportation, volunteer driver programs, and rideshare options. Train staff on NEMT eligibility requirements and scheduling procedures. Consider implementing appointment clustering to minimize transportation needs.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}

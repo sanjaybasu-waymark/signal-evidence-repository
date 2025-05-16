@@ -1,0 +1,46 @@
+{
+  "id": "medication_adherence_pharmacist_1",
+  "title": "Pharmacy-Based Medication Adherence Program",
+  "domain": {
+    "id": "medication_adherence",
+    "name": "Medication Adherence"
+  },
+  "roles": [
+    {
+      "id": "pharmacist",
+      "name": "Clinical Pharmacist"
+    },
+    {
+      "id": "pharmacy_tech",
+      "name": "Pharmacy Technician"
+    }
+  ],
+  "priority_level": "high",
+  "recommendation": "Implement a comprehensive pharmacy-based medication adherence program that includes: (1) medication synchronization to align refill dates, (2) blister packs or pill organizers for complex regimens, (3) automated refill reminders via preferred communication channel, (4) targeted medication reviews for patients with adherence <80%, (5) identification and resolution of barriers (cost, side effects, complexity), and (6) regular follow-up based on risk stratification.",
+  "rationale": "Medication non-adherence affects 50-60% of patients with chronic conditions and contributes to poor outcomes, increased hospitalizations, and higher healthcare costs. Pharmacy-based interventions can effectively address multiple adherence barriers through systematic approaches.",
+  "expected_outcome": "Improved medication adherence rates (20-30% increase in proportion of days covered), reduced medication gaps, decreased hospital admissions related to medication non-adherence (15-25% reduction), and improved clinical outcomes for chronic conditions.",
+  "evidence": {
+    "level": "A",
+    "citations": [
+      {
+        "authors": "Conn VS, Ruppar TM",
+        "title": "Medication adherence outcomes of 771 intervention trials: Systematic review and meta-analysis",
+        "journal": "Preventive Medicine",
+        "year": 2017,
+        "doi": "10.1016/j.ypmed.2017.05.014",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0091743517302104"
+      },
+      {
+        "authors": "Akinbosoye OE, Taitel MS, Grana J, Hill J, Wade RL",
+        "title": "Improving Medication Adherence and Health Care Outcomes in a Commercial Population Through a Community Pharmacy",
+        "journal": "Population Health Management",
+        "year": 2016,
+        "doi": "10.1089/pop.2015.0176",
+        "url": "https://www.liebertpub.com/doi/10.1089/pop.2015.0176"
+      }
+    ]
+  },
+  "implementation_notes": "Develop a risk stratification tool to identify patients at highest risk for non-adherence. Implement a medication synchronization software system to align refill dates. Create standardized workflows for pharmacy technicians to conduct outreach and pharmacists to perform targeted medication reviews. Consider implementing motivational interviewing training for pharmacy staff.",
+  "last_updated": "2025-05-16",
+  "version": "1.0"
+}

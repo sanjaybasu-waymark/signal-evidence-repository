@@ -1,0 +1,29 @@
+{
+  "total": 24,
+  "recommendations": [
+    "diabetes_medication_adherence_1",
+    "diabetes_chw_support_1",
+    "diabetes_social_worker_1",
+    "hypertension_home_bp_1",
+    "hypertension_chw_1",
+    "hypertension_pharmacist_1",
+    "depression_care_coordination_1",
+    "anxiety_social_worker_1",
+    "substance_use_chw_1",
+    "housing_social_worker_1",
+    "food_security_chw_1",
+    "transportation_care_coordinator_1",
+    "asthma_nurse_1",
+    "copd_chw_1",
+    "heart_failure_nurse_1",
+    "preventive_screenings_care_coordinator_1",
+    "medication_adherence_pharmacist_1",
+    "care_transitions_nurse_1",
+    "ckd_nurse_1",
+    "post_mi_care_coordinator_1",
+    "post_stroke_social_worker_1",
+    "hiv_care_coordinator_1",
+    "vaccination_chw_1",
+    "epsdt_care_coordinator_1"
+  ]
+}

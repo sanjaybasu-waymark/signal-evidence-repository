@@ -1,0 +1,84 @@
+{
+  "nurse": {
+    "id": "nurse",
+    "name": "Nurse Care Manager",
+    "recommendations": [
+      "diabetes_medication_adherence_1",
+      "hypertension_home_bp_1",
+      "depression_care_coordination_1",
+      "asthma_nurse_1",
+      "heart_failure_nurse_1",
+      "care_transitions_nurse_1",
+      "ckd_nurse_1",
+      "post_mi_care_coordinator_1"
+    ]
+  },
+  "pharmacist": {
+    "id": "pharmacist",
+    "name": "Clinical Pharmacist",
+    "recommendations": [
+      "diabetes_medication_adherence_1",
+      "hypertension_pharmacist_1",
+      "medication_adherence_pharmacist_1",
+      "ckd_nurse_1"
+    ]
+  },
+  "chw": {
+    "id": "chw",
+    "name": "Community Health Worker",
+    "recommendations": [
+      "diabetes_chw_support_1",
+      "hypertension_chw_1",
+      "substance_use_chw_1",
+      "housing_social_worker_1",
+      "food_security_chw_1",
+      "transportation_care_coordinator_1",
+      "copd_chw_1",
+      "preventive_screenings_care_coordinator_1",
+      "hiv_care_coordinator_1",
+      "vaccination_chw_1",
+      "epsdt_care_coordinator_1"
+    ]
+  },
+  "social_worker_nonclinical": {
+    "id": "social_worker_nonclinical",
+    "name": "Social Worker (Non-Clinical)",
+    "recommendations": [
+      "diabetes_social_worker_1",
+      "housing_social_worker_1",
+      "post_stroke_social_worker_1"
+    ]
+  },
+  "care_coordinator": {
+    "id": "care_coordinator",
+    "name": "Care Coordinator",
+    "recommendations": [
+      "hypertension_home_bp_1",
+      "depression_care_coordination_1",
+      "food_security_chw_1",
+      "transportation_care_coordinator_1",
+      "heart_failure_nurse_1",
+      "preventive_screenings_care_coordinator_1",
+      "care_transitions_nurse_1",
+      "post_mi_care_coordinator_1",
+      "post_stroke_social_worker_1",
+      "hiv_care_coordinator_1",
+      "vaccination_chw_1",
+      "epsdt_care_coordinator_1"
+    ]
+  },
+  "social_worker_clinical": {
+    "id": "social_worker_clinical",
+    "name": "Social Worker (Clinical/Therapy)",
+    "recommendations": [
+      "anxiety_social_worker_1"
+    ]
+  },
+  "pharmacy_tech": {
+    "id": "pharmacy_tech",
+    "name": "Pharmacy Technician",
+    "recommendations": [
+      "medication_adherence_pharmacist_1"
+    ]
+  }
+}
