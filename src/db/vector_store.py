@@ -4,7 +4,6 @@ from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import faiss
-
 from ..db.models import Recommendation, RecommendationStore
 
 class VectorStore:
@@ -74,7 +73,7 @@ class VectorStore:
         # Save index
         self._save_index()
     
-    def search(self, query: str, top_k: int = 5) -> List[str]:
+    def search(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
         """Search for recommendations similar to the query"""
         if self.index.ntotal == 0:
             return []
@@ -86,8 +85,14 @@ class VectorStore:
         # Search index
         distances, indices = self.index.search(query_embedding, min(top_k, self.index.ntotal))
         
-        # Return recommendation IDs
-        results = [self.recommendation_ids[idx] for idx in indices[0]]
+        # Return recommendation IDs with scores
+        results = []
+        for i, idx in enumerate(indices[0]):
+            if idx < len(self.recommendation_ids):
+                results.append({
+                    "id": self.recommendation_ids[idx],
+                    "score": float(distances[0][i])
+                })
         return results
     
     def rebuild_index(self, recommendation_store: RecommendationStore):
@@ -105,3 +110,7 @@ class VectorStore:
         
         # Save index
         self._save_index()
+
+# Create an instance of VectorStore to be imported elsewhere
+data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data")
+vector_store = VectorStore(data_dir)

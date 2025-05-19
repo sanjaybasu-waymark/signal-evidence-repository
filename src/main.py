@@ -1,14 +1,14 @@
 import os
-import sys
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from dotenv import load_dotenv
 from pathlib import Path
 
 # Add the project root to the Python path
+import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 # Import database modules
-from src.db.models import db
+from src.db.database import db
 from src.db.crud import db_manager
 from src.db.vector_store import vector_store
 
@@ -22,77 +22,90 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///signal_evidence_library.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Initialize SQLAlchemy with the app
+# Initialize database
 db.init_app(app)
 
-# Initialize vector store
+# Create database tables if they don't exist
 with app.app_context():
-    # Load all recommendations for vector search
-    recommendations = []
-    for rec in db_manager.get_all_recommendations(per_page=1000)['recommendations']:
-        recommendations.append({
-            'id': rec['id'],
-            'title': rec['title'],
-            'recommendation': rec['recommendation'],
-            'rationale': rec.get('rationale', '')
-        })
-    
-    # Build the vector index
-    vector_store.rebuild_index(recommendations)
+    db.create_all()
 
 # Routes
 @app.route('/')
 def index():
-    # Get library statistics
-    stats = db_manager.get_statistics()
-    
     # Get all domains and roles for navigation
     domains = db_manager.get_all_domains()
     roles = db_manager.get_all_roles()
     
+    # Get statistics
+    stats = db_manager.get_statistics()
+    
     return render_template('index.html', 
-                          domains=domains, 
+                          domains=domains,
                           roles=roles,
                           stats=stats)
 
-@app.route('/browse')
-def browse():
-    # Get filter parameters
-    domain_id = request.args.get('domain_id', '')
-    role_id = request.args.get('role_id', '')
-    page = int(request.args.get('page', 1))
-    
+@app.route('/domain/<domain_id>')
+def domain(domain_id):
     # Get all domains and roles for navigation
     domains = db_manager.get_all_domains()
     roles = db_manager.get_all_roles()
     
-    # Get recommendations based on filters with pagination
-    result = db_manager.get_all_recommendations(
-        domain_id=domain_id if domain_id else None,
-        role_id=role_id if role_id else None,
-        page=page,
-        per_page=10
-    )
+    # Get domain details
+    domain = db_manager.get_domain_by_id(domain_id)
     
-    return render_template('browse.html', 
-                          recommendations=result['recommendations'],
-                          pagination=result['pagination'],
+    if not domain:
+        return redirect(url_for('index'))
+    
+    # Get recommendations for this domain
+    page = int(request.args.get('page', 1))
+    result = db_manager.get_all_recommendations(domain_id=domain_id, page=page)
+    recommendations = result['recommendations']
+    pagination = result['pagination']
+    
+    return render_template('domain.html', 
+                          domain=domain,
+                          recommendations=recommendations,
+                          pagination=pagination,
                           domains=domains,
-                          roles=roles,
-                          selected_domain=domain_id,
-                          selected_role=role_id)
+                          roles=roles)
+
+@app.route('/role/<role_id>')
+def role(role_id):
+    # Get all domains and roles for navigation
+    domains = db_manager.get_all_domains()
+    roles = db_manager.get_all_roles()
+    
+    # Get role details
+    role = db_manager.get_role_by_id(role_id)
+    
+    if not role:
+        return redirect(url_for('index'))
+    
+    # Get recommendations for this role
+    page = int(request.args.get('page', 1))
+    result = db_manager.get_all_recommendations(role_id=role_id, page=page)
+    recommendations = result['recommendations']
+    pagination = result['pagination']
+    
+    return render_template('role.html', 
+                          role=role,
+                          recommendations=recommendations,
+                          pagination=pagination,
+                          domains=domains,
+                          roles=roles)
 
 @app.route('/search')
 def search():
+    # Get all domains and roles for navigation
+    domains = db_manager.get_all_domains()
+    roles = db_manager.get_all_roles()
+    
     # Get search parameters
     query = request.args.get('query', '')
     search_type = request.args.get('type', 'text')  # 'text' or 'semantic'
     page = int(request.args.get('page', 1))
     
-    # Get all domains and roles for navigation
-    domains = db_manager.get_all_domains()
-    roles = db_manager.get_all_roles()
-    
+    # Initialize empty results
     recommendations = []
     pagination = {'page': page, 'per_page': 10, 'total': 0, 'pages': 0}
     
