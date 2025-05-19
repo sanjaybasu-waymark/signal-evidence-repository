@@ -54,29 +54,6 @@ python src/main.py
 
 5. Access the application in your browser at `http://127.0.0.1:5000`
 
-## Deployment Options
-
-### GitHub Pages Deployment
-
-To deploy this application as a GitHub Pages website:
-
-1. Create a new GitHub repository or use an existing one
-2. Push the code to the repository
-3. Go to the repository settings and navigate to the "Pages" section
-4. Configure the source branch (usually `main` or `master`)
-5. Select the folder containing the static files (usually `/docs` or `/`)
-6. Save the settings and wait for GitHub to build and deploy your site
-
-Note: Since GitHub Pages only supports static websites, you'll need to generate static HTML files from your Flask application before deployment. You can use tools like Frozen-Flask to accomplish this.
-
-### Alternative Deployment Options
-
-The application can also be deployed to various platforms:
-
-- Heroku: Supports Python applications natively
-- Vercel: Good for static site hosting
-- Netlify: Excellent for static sites with serverless functions
-- AWS, Google Cloud, or Azure: For more complex deployment needs
 
 ## Database Structure
 
@@ -98,10 +75,6 @@ Contributions to the Signal Evidence Repository are welcome! Please follow these
 4. Push to the branch (`git push origin feature/your-feature-name`)
 5. Open a Pull Request
 
-## License
-
-This project is maintained by Sanjay Basu, sanjay.basu(at)waymarkcare.com
-
 ## Contact
 
-For questions or support, please contact the repository maintainers.
+This project is maintained by Sanjay Basu, sanjay.basu(at)waymarkcare.com
