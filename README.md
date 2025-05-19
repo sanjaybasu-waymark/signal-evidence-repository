@@ -100,7 +100,7 @@ Contributions to the Signal Evidence Repository are welcome! Please follow these
 
 ## License
 
-This project is maintained by Sanjay Basu MD PhD, Waymark and University of California San Francisco.
+This project is maintained by Sanjay Basu, sanjay.basu(at)waymarkcare.com
 
 ## Contact
 
