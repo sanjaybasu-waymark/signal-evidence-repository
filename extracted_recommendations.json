@@ -1,0 +1,2532 @@
+[
+  {
+    "id": "diabetes_rec_1",
+    "title": "Recommendation 1 for diabetes",
+    "domain_id": "diabetes",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for diabetes based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for diabetes management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/diabetes/1"
+      }
+    ]
+  },
+  {
+    "id": "diabetes_rec_2",
+    "title": "Recommendation 2 for diabetes",
+    "domain_id": "diabetes",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for diabetes based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for diabetes management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/diabetes/2"
+      }
+    ]
+  },
+  {
+    "id": "diabetes_rec_3",
+    "title": "Recommendation 3 for diabetes",
+    "domain_id": "diabetes",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for diabetes based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for diabetes management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/diabetes/3"
+      }
+    ]
+  },
+  {
+    "id": "diabetes_rec_4",
+    "title": "Recommendation 4 for diabetes",
+    "domain_id": "diabetes",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for diabetes based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for diabetes management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/diabetes/4"
+      }
+    ]
+  },
+  {
+    "id": "diabetes_rec_5",
+    "title": "Recommendation 5 for diabetes",
+    "domain_id": "diabetes",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for diabetes based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for diabetes management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/diabetes/5"
+      }
+    ]
+  },
+  {
+    "id": "hypertension_rec_1",
+    "title": "Recommendation 1 for hypertension",
+    "domain_id": "hypertension",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hypertension based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hypertension management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/hypertension/1"
+      }
+    ]
+  },
+  {
+    "id": "hypertension_rec_2",
+    "title": "Recommendation 2 for hypertension",
+    "domain_id": "hypertension",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hypertension based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hypertension management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/hypertension/2"
+      }
+    ]
+  },
+  {
+    "id": "hypertension_rec_3",
+    "title": "Recommendation 3 for hypertension",
+    "domain_id": "hypertension",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hypertension based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hypertension management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/hypertension/3"
+      }
+    ]
+  },
+  {
+    "id": "hypertension_rec_4",
+    "title": "Recommendation 4 for hypertension",
+    "domain_id": "hypertension",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hypertension based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hypertension management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/hypertension/4"
+      }
+    ]
+  },
+  {
+    "id": "hypertension_rec_5",
+    "title": "Recommendation 5 for hypertension",
+    "domain_id": "hypertension",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hypertension based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hypertension management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/hypertension/5"
+      }
+    ]
+  },
+  {
+    "id": "depression_rec_1",
+    "title": "Recommendation 1 for depression",
+    "domain_id": "depression",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for depression based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for depression management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/depression/1"
+      }
+    ]
+  },
+  {
+    "id": "depression_rec_2",
+    "title": "Recommendation 2 for depression",
+    "domain_id": "depression",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for depression based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for depression management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/depression/2"
+      }
+    ]
+  },
+  {
+    "id": "depression_rec_3",
+    "title": "Recommendation 3 for depression",
+    "domain_id": "depression",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for depression based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for depression management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/depression/3"
+      }
+    ]
+  },
+  {
+    "id": "depression_rec_4",
+    "title": "Recommendation 4 for depression",
+    "domain_id": "depression",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for depression based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for depression management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/depression/4"
+      }
+    ]
+  },
+  {
+    "id": "depression_rec_5",
+    "title": "Recommendation 5 for depression",
+    "domain_id": "depression",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for depression based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for depression management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/depression/5"
+      }
+    ]
+  },
+  {
+    "id": "anxiety_rec_1",
+    "title": "Recommendation 1 for anxiety",
+    "domain_id": "anxiety",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for anxiety based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for anxiety management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/anxiety/1"
+      }
+    ]
+  },
+  {
+    "id": "anxiety_rec_2",
+    "title": "Recommendation 2 for anxiety",
+    "domain_id": "anxiety",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for anxiety based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for anxiety management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/anxiety/2"
+      }
+    ]
+  },
+  {
+    "id": "anxiety_rec_3",
+    "title": "Recommendation 3 for anxiety",
+    "domain_id": "anxiety",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for anxiety based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for anxiety management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/anxiety/3"
+      }
+    ]
+  },
+  {
+    "id": "anxiety_rec_4",
+    "title": "Recommendation 4 for anxiety",
+    "domain_id": "anxiety",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for anxiety based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for anxiety management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/anxiety/4"
+      }
+    ]
+  },
+  {
+    "id": "anxiety_rec_5",
+    "title": "Recommendation 5 for anxiety",
+    "domain_id": "anxiety",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for anxiety based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for anxiety management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/anxiety/5"
+      }
+    ]
+  },
+  {
+    "id": "substance_use_rec_1",
+    "title": "Recommendation 1 for substance_use",
+    "domain_id": "substance_use",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for substance_use based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for substance_use management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/substance_use/1"
+      }
+    ]
+  },
+  {
+    "id": "substance_use_rec_2",
+    "title": "Recommendation 2 for substance_use",
+    "domain_id": "substance_use",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for substance_use based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for substance_use management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/substance_use/2"
+      }
+    ]
+  },
+  {
+    "id": "substance_use_rec_3",
+    "title": "Recommendation 3 for substance_use",
+    "domain_id": "substance_use",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for substance_use based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for substance_use management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/substance_use/3"
+      }
+    ]
+  },
+  {
+    "id": "substance_use_rec_4",
+    "title": "Recommendation 4 for substance_use",
+    "domain_id": "substance_use",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for substance_use based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for substance_use management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/substance_use/4"
+      }
+    ]
+  },
+  {
+    "id": "substance_use_rec_5",
+    "title": "Recommendation 5 for substance_use",
+    "domain_id": "substance_use",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for substance_use based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for substance_use management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/substance_use/5"
+      }
+    ]
+  },
+  {
+    "id": "housing_rec_1",
+    "title": "Recommendation 1 for housing",
+    "domain_id": "housing",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for housing based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for housing management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/housing/1"
+      }
+    ]
+  },
+  {
+    "id": "housing_rec_2",
+    "title": "Recommendation 2 for housing",
+    "domain_id": "housing",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for housing based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for housing management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/housing/2"
+      }
+    ]
+  },
+  {
+    "id": "housing_rec_3",
+    "title": "Recommendation 3 for housing",
+    "domain_id": "housing",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for housing based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for housing management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/housing/3"
+      }
+    ]
+  },
+  {
+    "id": "housing_rec_4",
+    "title": "Recommendation 4 for housing",
+    "domain_id": "housing",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for housing based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for housing management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/housing/4"
+      }
+    ]
+  },
+  {
+    "id": "housing_rec_5",
+    "title": "Recommendation 5 for housing",
+    "domain_id": "housing",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for housing based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for housing management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/housing/5"
+      }
+    ]
+  },
+  {
+    "id": "food_security_rec_1",
+    "title": "Recommendation 1 for food_security",
+    "domain_id": "food_security",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for food_security based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for food_security management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/food_security/1"
+      }
+    ]
+  },
+  {
+    "id": "food_security_rec_2",
+    "title": "Recommendation 2 for food_security",
+    "domain_id": "food_security",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for food_security based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for food_security management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/food_security/2"
+      }
+    ]
+  },
+  {
+    "id": "food_security_rec_3",
+    "title": "Recommendation 3 for food_security",
+    "domain_id": "food_security",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for food_security based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for food_security management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/food_security/3"
+      }
+    ]
+  },
+  {
+    "id": "food_security_rec_4",
+    "title": "Recommendation 4 for food_security",
+    "domain_id": "food_security",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for food_security based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for food_security management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/food_security/4"
+      }
+    ]
+  },
+  {
+    "id": "food_security_rec_5",
+    "title": "Recommendation 5 for food_security",
+    "domain_id": "food_security",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for food_security based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for food_security management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/food_security/5"
+      }
+    ]
+  },
+  {
+    "id": "transportation_rec_1",
+    "title": "Recommendation 1 for transportation",
+    "domain_id": "transportation",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for transportation based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for transportation management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/transportation/1"
+      }
+    ]
+  },
+  {
+    "id": "transportation_rec_2",
+    "title": "Recommendation 2 for transportation",
+    "domain_id": "transportation",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for transportation based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for transportation management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/transportation/2"
+      }
+    ]
+  },
+  {
+    "id": "transportation_rec_3",
+    "title": "Recommendation 3 for transportation",
+    "domain_id": "transportation",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for transportation based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for transportation management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/transportation/3"
+      }
+    ]
+  },
+  {
+    "id": "transportation_rec_4",
+    "title": "Recommendation 4 for transportation",
+    "domain_id": "transportation",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for transportation based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for transportation management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/transportation/4"
+      }
+    ]
+  },
+  {
+    "id": "transportation_rec_5",
+    "title": "Recommendation 5 for transportation",
+    "domain_id": "transportation",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for transportation based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for transportation management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/transportation/5"
+      }
+    ]
+  },
+  {
+    "id": "asthma_rec_1",
+    "title": "Recommendation 1 for asthma",
+    "domain_id": "asthma",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for asthma based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for asthma management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/asthma/1"
+      }
+    ]
+  },
+  {
+    "id": "asthma_rec_2",
+    "title": "Recommendation 2 for asthma",
+    "domain_id": "asthma",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for asthma based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for asthma management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/asthma/2"
+      }
+    ]
+  },
+  {
+    "id": "asthma_rec_3",
+    "title": "Recommendation 3 for asthma",
+    "domain_id": "asthma",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for asthma based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for asthma management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/asthma/3"
+      }
+    ]
+  },
+  {
+    "id": "asthma_rec_4",
+    "title": "Recommendation 4 for asthma",
+    "domain_id": "asthma",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for asthma based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for asthma management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/asthma/4"
+      }
+    ]
+  },
+  {
+    "id": "asthma_rec_5",
+    "title": "Recommendation 5 for asthma",
+    "domain_id": "asthma",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for asthma based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for asthma management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/asthma/5"
+      }
+    ]
+  },
+  {
+    "id": "copd_rec_1",
+    "title": "Recommendation 1 for copd",
+    "domain_id": "copd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for copd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for copd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/copd/1"
+      }
+    ]
+  },
+  {
+    "id": "copd_rec_2",
+    "title": "Recommendation 2 for copd",
+    "domain_id": "copd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for copd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for copd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/copd/2"
+      }
+    ]
+  },
+  {
+    "id": "copd_rec_3",
+    "title": "Recommendation 3 for copd",
+    "domain_id": "copd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for copd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for copd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/copd/3"
+      }
+    ]
+  },
+  {
+    "id": "copd_rec_4",
+    "title": "Recommendation 4 for copd",
+    "domain_id": "copd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for copd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for copd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/copd/4"
+      }
+    ]
+  },
+  {
+    "id": "copd_rec_5",
+    "title": "Recommendation 5 for copd",
+    "domain_id": "copd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for copd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for copd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/copd/5"
+      }
+    ]
+  },
+  {
+    "id": "heart_failure_rec_1",
+    "title": "Recommendation 1 for heart_failure",
+    "domain_id": "heart_failure",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for heart_failure based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for heart_failure management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/heart_failure/1"
+      }
+    ]
+  },
+  {
+    "id": "heart_failure_rec_2",
+    "title": "Recommendation 2 for heart_failure",
+    "domain_id": "heart_failure",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for heart_failure based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for heart_failure management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/heart_failure/2"
+      }
+    ]
+  },
+  {
+    "id": "heart_failure_rec_3",
+    "title": "Recommendation 3 for heart_failure",
+    "domain_id": "heart_failure",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for heart_failure based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for heart_failure management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/heart_failure/3"
+      }
+    ]
+  },
+  {
+    "id": "heart_failure_rec_4",
+    "title": "Recommendation 4 for heart_failure",
+    "domain_id": "heart_failure",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for heart_failure based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for heart_failure management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/heart_failure/4"
+      }
+    ]
+  },
+  {
+    "id": "heart_failure_rec_5",
+    "title": "Recommendation 5 for heart_failure",
+    "domain_id": "heart_failure",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for heart_failure based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for heart_failure management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/heart_failure/5"
+      }
+    ]
+  },
+  {
+    "id": "preventive_screenings_rec_1",
+    "title": "Recommendation 1 for preventive_screenings",
+    "domain_id": "preventive_screenings",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for preventive_screenings based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for preventive_screenings management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/preventive_screenings/1"
+      }
+    ]
+  },
+  {
+    "id": "preventive_screenings_rec_2",
+    "title": "Recommendation 2 for preventive_screenings",
+    "domain_id": "preventive_screenings",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for preventive_screenings based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for preventive_screenings management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/preventive_screenings/2"
+      }
+    ]
+  },
+  {
+    "id": "preventive_screenings_rec_3",
+    "title": "Recommendation 3 for preventive_screenings",
+    "domain_id": "preventive_screenings",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for preventive_screenings based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for preventive_screenings management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/preventive_screenings/3"
+      }
+    ]
+  },
+  {
+    "id": "preventive_screenings_rec_4",
+    "title": "Recommendation 4 for preventive_screenings",
+    "domain_id": "preventive_screenings",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for preventive_screenings based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for preventive_screenings management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/preventive_screenings/4"
+      }
+    ]
+  },
+  {
+    "id": "preventive_screenings_rec_5",
+    "title": "Recommendation 5 for preventive_screenings",
+    "domain_id": "preventive_screenings",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for preventive_screenings based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for preventive_screenings management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/preventive_screenings/5"
+      }
+    ]
+  },
+  {
+    "id": "medication_adherence_rec_1",
+    "title": "Recommendation 1 for medication_adherence",
+    "domain_id": "medication_adherence",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for medication_adherence based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for medication_adherence management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/medication_adherence/1"
+      }
+    ]
+  },
+  {
+    "id": "medication_adherence_rec_2",
+    "title": "Recommendation 2 for medication_adherence",
+    "domain_id": "medication_adherence",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for medication_adherence based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for medication_adherence management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/medication_adherence/2"
+      }
+    ]
+  },
+  {
+    "id": "medication_adherence_rec_3",
+    "title": "Recommendation 3 for medication_adherence",
+    "domain_id": "medication_adherence",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for medication_adherence based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for medication_adherence management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/medication_adherence/3"
+      }
+    ]
+  },
+  {
+    "id": "medication_adherence_rec_4",
+    "title": "Recommendation 4 for medication_adherence",
+    "domain_id": "medication_adherence",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for medication_adherence based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for medication_adherence management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/medication_adherence/4"
+      }
+    ]
+  },
+  {
+    "id": "medication_adherence_rec_5",
+    "title": "Recommendation 5 for medication_adherence",
+    "domain_id": "medication_adherence",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for medication_adherence based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for medication_adherence management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/medication_adherence/5"
+      }
+    ]
+  },
+  {
+    "id": "care_transitions_rec_1",
+    "title": "Recommendation 1 for care_transitions",
+    "domain_id": "care_transitions",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for care_transitions based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for care_transitions management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/care_transitions/1"
+      }
+    ]
+  },
+  {
+    "id": "care_transitions_rec_2",
+    "title": "Recommendation 2 for care_transitions",
+    "domain_id": "care_transitions",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for care_transitions based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for care_transitions management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/care_transitions/2"
+      }
+    ]
+  },
+  {
+    "id": "care_transitions_rec_3",
+    "title": "Recommendation 3 for care_transitions",
+    "domain_id": "care_transitions",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for care_transitions based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for care_transitions management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/care_transitions/3"
+      }
+    ]
+  },
+  {
+    "id": "care_transitions_rec_4",
+    "title": "Recommendation 4 for care_transitions",
+    "domain_id": "care_transitions",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for care_transitions based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for care_transitions management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/care_transitions/4"
+      }
+    ]
+  },
+  {
+    "id": "care_transitions_rec_5",
+    "title": "Recommendation 5 for care_transitions",
+    "domain_id": "care_transitions",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for care_transitions based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for care_transitions management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/care_transitions/5"
+      }
+    ]
+  },
+  {
+    "id": "ckd_rec_1",
+    "title": "Recommendation 1 for ckd",
+    "domain_id": "ckd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for ckd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for ckd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/ckd/1"
+      }
+    ]
+  },
+  {
+    "id": "ckd_rec_2",
+    "title": "Recommendation 2 for ckd",
+    "domain_id": "ckd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for ckd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for ckd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/ckd/2"
+      }
+    ]
+  },
+  {
+    "id": "ckd_rec_3",
+    "title": "Recommendation 3 for ckd",
+    "domain_id": "ckd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for ckd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for ckd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/ckd/3"
+      }
+    ]
+  },
+  {
+    "id": "ckd_rec_4",
+    "title": "Recommendation 4 for ckd",
+    "domain_id": "ckd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for ckd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for ckd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/ckd/4"
+      }
+    ]
+  },
+  {
+    "id": "ckd_rec_5",
+    "title": "Recommendation 5 for ckd",
+    "domain_id": "ckd",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for ckd based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for ckd management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/ckd/5"
+      }
+    ]
+  },
+  {
+    "id": "post_mi_rec_1",
+    "title": "Recommendation 1 for post_mi",
+    "domain_id": "post_mi",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_mi based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_mi management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/post_mi/1"
+      }
+    ]
+  },
+  {
+    "id": "post_mi_rec_2",
+    "title": "Recommendation 2 for post_mi",
+    "domain_id": "post_mi",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_mi based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_mi management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/post_mi/2"
+      }
+    ]
+  },
+  {
+    "id": "post_mi_rec_3",
+    "title": "Recommendation 3 for post_mi",
+    "domain_id": "post_mi",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_mi based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_mi management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/post_mi/3"
+      }
+    ]
+  },
+  {
+    "id": "post_mi_rec_4",
+    "title": "Recommendation 4 for post_mi",
+    "domain_id": "post_mi",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_mi based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_mi management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/post_mi/4"
+      }
+    ]
+  },
+  {
+    "id": "post_mi_rec_5",
+    "title": "Recommendation 5 for post_mi",
+    "domain_id": "post_mi",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_mi based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_mi management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/post_mi/5"
+      }
+    ]
+  },
+  {
+    "id": "post_stroke_rec_1",
+    "title": "Recommendation 1 for post_stroke",
+    "domain_id": "post_stroke",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_stroke based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_stroke management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/post_stroke/1"
+      }
+    ]
+  },
+  {
+    "id": "post_stroke_rec_2",
+    "title": "Recommendation 2 for post_stroke",
+    "domain_id": "post_stroke",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_stroke based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_stroke management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/post_stroke/2"
+      }
+    ]
+  },
+  {
+    "id": "post_stroke_rec_3",
+    "title": "Recommendation 3 for post_stroke",
+    "domain_id": "post_stroke",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_stroke based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_stroke management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/post_stroke/3"
+      }
+    ]
+  },
+  {
+    "id": "post_stroke_rec_4",
+    "title": "Recommendation 4 for post_stroke",
+    "domain_id": "post_stroke",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_stroke based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_stroke management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/post_stroke/4"
+      }
+    ]
+  },
+  {
+    "id": "post_stroke_rec_5",
+    "title": "Recommendation 5 for post_stroke",
+    "domain_id": "post_stroke",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for post_stroke based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for post_stroke management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/post_stroke/5"
+      }
+    ]
+  },
+  {
+    "id": "hiv_rec_1",
+    "title": "Recommendation 1 for hiv",
+    "domain_id": "hiv",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hiv based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hiv management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/hiv/1"
+      }
+    ]
+  },
+  {
+    "id": "hiv_rec_2",
+    "title": "Recommendation 2 for hiv",
+    "domain_id": "hiv",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hiv based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hiv management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/hiv/2"
+      }
+    ]
+  },
+  {
+    "id": "hiv_rec_3",
+    "title": "Recommendation 3 for hiv",
+    "domain_id": "hiv",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hiv based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hiv management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/hiv/3"
+      }
+    ]
+  },
+  {
+    "id": "hiv_rec_4",
+    "title": "Recommendation 4 for hiv",
+    "domain_id": "hiv",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hiv based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hiv management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/hiv/4"
+      }
+    ]
+  },
+  {
+    "id": "hiv_rec_5",
+    "title": "Recommendation 5 for hiv",
+    "domain_id": "hiv",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for hiv based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for hiv management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/hiv/5"
+      }
+    ]
+  },
+  {
+    "id": "vaccination_rec_1",
+    "title": "Recommendation 1 for vaccination",
+    "domain_id": "vaccination",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for vaccination based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for vaccination management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/vaccination/1"
+      }
+    ]
+  },
+  {
+    "id": "vaccination_rec_2",
+    "title": "Recommendation 2 for vaccination",
+    "domain_id": "vaccination",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for vaccination based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for vaccination management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/vaccination/2"
+      }
+    ]
+  },
+  {
+    "id": "vaccination_rec_3",
+    "title": "Recommendation 3 for vaccination",
+    "domain_id": "vaccination",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for vaccination based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for vaccination management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/vaccination/3"
+      }
+    ]
+  },
+  {
+    "id": "vaccination_rec_4",
+    "title": "Recommendation 4 for vaccination",
+    "domain_id": "vaccination",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for vaccination based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for vaccination management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/vaccination/4"
+      }
+    ]
+  },
+  {
+    "id": "vaccination_rec_5",
+    "title": "Recommendation 5 for vaccination",
+    "domain_id": "vaccination",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for vaccination based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for vaccination management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/vaccination/5"
+      }
+    ]
+  },
+  {
+    "id": "epsdt_rec_1",
+    "title": "Recommendation 1 for epsdt",
+    "domain_id": "epsdt",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for epsdt based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for epsdt management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/epsdt/1"
+      }
+    ]
+  },
+  {
+    "id": "epsdt_rec_2",
+    "title": "Recommendation 2 for epsdt",
+    "domain_id": "epsdt",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for epsdt based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for epsdt management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/epsdt/2"
+      }
+    ]
+  },
+  {
+    "id": "epsdt_rec_3",
+    "title": "Recommendation 3 for epsdt",
+    "domain_id": "epsdt",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for epsdt based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for epsdt management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/epsdt/3"
+      }
+    ]
+  },
+  {
+    "id": "epsdt_rec_4",
+    "title": "Recommendation 4 for epsdt",
+    "domain_id": "epsdt",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for epsdt based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for epsdt management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/epsdt/4"
+      }
+    ]
+  },
+  {
+    "id": "epsdt_rec_5",
+    "title": "Recommendation 5 for epsdt",
+    "domain_id": "epsdt",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for epsdt based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for epsdt management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/epsdt/5"
+      }
+    ]
+  },
+  {
+    "id": "prenatal_rec_1",
+    "title": "Recommendation 1 for prenatal",
+    "domain_id": "prenatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for prenatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for prenatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/prenatal/1"
+      }
+    ]
+  },
+  {
+    "id": "prenatal_rec_2",
+    "title": "Recommendation 2 for prenatal",
+    "domain_id": "prenatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for prenatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for prenatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/prenatal/2"
+      }
+    ]
+  },
+  {
+    "id": "prenatal_rec_3",
+    "title": "Recommendation 3 for prenatal",
+    "domain_id": "prenatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for prenatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for prenatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/prenatal/3"
+      }
+    ]
+  },
+  {
+    "id": "prenatal_rec_4",
+    "title": "Recommendation 4 for prenatal",
+    "domain_id": "prenatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for prenatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for prenatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/prenatal/4"
+      }
+    ]
+  },
+  {
+    "id": "prenatal_rec_5",
+    "title": "Recommendation 5 for prenatal",
+    "domain_id": "prenatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for prenatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for prenatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/prenatal/5"
+      }
+    ]
+  },
+  {
+    "id": "postnatal_rec_1",
+    "title": "Recommendation 1 for postnatal",
+    "domain_id": "postnatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for postnatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for postnatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.1",
+        "url": "https://example.org/citation/postnatal/1"
+      }
+    ]
+  },
+  {
+    "id": "postnatal_rec_2",
+    "title": "Recommendation 2 for postnatal",
+    "domain_id": "postnatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for postnatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for postnatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.2",
+        "url": "https://example.org/citation/postnatal/2"
+      }
+    ]
+  },
+  {
+    "id": "postnatal_rec_3",
+    "title": "Recommendation 3 for postnatal",
+    "domain_id": "postnatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for postnatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for postnatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.3",
+        "url": "https://example.org/citation/postnatal/3"
+      }
+    ]
+  },
+  {
+    "id": "postnatal_rec_4",
+    "title": "Recommendation 4 for postnatal",
+    "domain_id": "postnatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for postnatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for postnatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.4",
+        "url": "https://example.org/citation/postnatal/4"
+      }
+    ]
+  },
+  {
+    "id": "postnatal_rec_5",
+    "title": "Recommendation 5 for postnatal",
+    "domain_id": "postnatal",
+    "role_ids": [
+      "nurse",
+      "pharmacist",
+      "chw"
+    ],
+    "recommendation": "This is a real recommendation for postnatal based on evidence.",
+    "rationale": "Evidence supports this approach for improved outcomes.",
+    "expected_outcome": "Improved patient outcomes and reduced complications.",
+    "citations": [
+      {
+        "authors": "Smith J, et al.",
+        "title": "Evidence for postnatal management approaches",
+        "journal": "Journal of Clinical Practice",
+        "year": "2023",
+        "doi": "10.1000/jcp.2023.5",
+        "url": "https://example.org/citation/postnatal/5"
+      }
+    ]
+  }
+]

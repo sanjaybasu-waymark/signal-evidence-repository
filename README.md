@@ -1,177 +1,80 @@
-# Signal Evidence Library
+# Signal Evidence Repository
 
-A comprehensive, peer-reviewed knowledge base to serve as the foundation for population health management recommendations. This library leverages automations and multidisciplinary internal peer review to maintain, update, and deliver evidence-based guidance customized by clinical domain and professional role.
+A comprehensive repository of evidence-based recommendations for population health care management teams, covering the most common diseases and social needs by care team member role type.
 
 ## Overview
 
-The Signal Evidence Library is designed to provide:
-
-- **Role-specific guidance** for each member of the care team (nurses, CHWs, social workers, pharmacists, care coordinators)
-- **Domain-organized content** structured by clinical condition and social need
-- **Evidence-based recommendations** built exclusively from peer-reviewed literature and established guidelines
-- **Transparent citations** with clear provenance tracking
+The Signal Evidence Repository is a web application that provides healthcare professionals with evidence-based recommendations for managing various health conditions and social needs. The repository is organized by clinical domains (e.g., diabetes, hypertension) and care team roles (e.g., nurse care manager, clinical pharmacist), making it easy for users to find relevant recommendations for their specific needs.
 
 ## Features
 
-- Content organized by professional role, clinical/social domain, and intervention complexity
-- Vector-based semantic search for finding relevant recommendations
-- API access for integration with other systems
-- Web interface for browsing and searching content
-- Docker-based deployment for easy setup
+- Browse recommendations by clinical domain or care team role
+- Search for recommendations using text or semantic search
+- View detailed information about each recommendation, including rationale, implementation notes, and citations
+- Access a comprehensive library of evidence-based practices for population health management
 
-## Project Structure
+## Technical Details
 
-```
-signal-evidence-library/
-├── config/                  # Configuration files
-├── data/                    # Data storage
-│   ├── raw/                 # Original guideline documents
-│   ├── processed/           # Processed content
-│   └── embeddings/          # Vector embeddings
-├── src/                     # Source code
-│   ├── pipeline/            # Content processing pipeline
-│   ├── api/                 # API implementation
-│   ├── db/                  # Database interactions
-│   ├── web/                 # Web interface
-│   └── utils/               # Utility functions
-├── scripts/                 # Automation scripts
-├── tests/                   # Test cases
-└── docs/                    # Documentation
-```
+The application is built using:
+- Python 3.11 with Flask web framework
+- SQLite database with SQLAlchemy ORM
+- Bootstrap 5 for responsive design
+- Jinja2 templating engine
 
-## Getting Started
+## Installation and Setup
 
 ### Prerequisites
 
-- Python 3.8-3.11 (3.12 and above fail to compile faiss)
-- Docker and Docker Compose (for containerized deployment)
+- Python 3.11 (3.12 and above fail to compile faiss)
+- pip (Python package installer)
 
-### Installation
+### Local Development Setup
 
-1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Configure environment variables in the direnv file (via `.envrc.local`)
-4. Run application script
-
-### Running the Application
-
-#### Development Mode
-
+1. Clone the repository:
 ```bash
-python src/api/main.py
+git clone https://github.com/sanjaybasu-waymark/signal-evidence-repository.git
+cd signal-evidence-repository
 ```
 
-#### Production Mode (Docker)
-
+2. Create and activate a virtual environment:
 ```bash
-docker-compose up -d
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-## API Documentation
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-The API provides the following endpoints:
+4. Run the application:
+```bash
+python src/main.py
+```
 
-- `/query`: Natural language query endpoint
-- `/browse`: Structured content browsing
-- `/document/{id}`: Retrieve specific document
-- `/search`: Combined vector and metadata search
+5. Access the application in your browser at `http://127.0.0.1:5000`
 
-## Web Interface
 
-The web interface is available at `http://localhost:8000` and provides:
+## Database Structure
 
-- Content browsing by domain and role
-- Natural language search
-- Document visualization
-- Export capabilities
+The application uses a SQLite database with the following main tables:
+
+- `domains`: Clinical domains (e.g., diabetes, hypertension)
+- `roles`: Care team roles (e.g., nurse care manager, clinical pharmacist)
+- `recommendations`: Evidence-based recommendations
+- `citations`: Citations supporting the recommendations
+- `recommendation_role`: Junction table for many-to-many relationship between recommendations and roles
 
 ## Contributing
 
-Guidelines for contributing to the Signal Evidence Library, including content submission and review processes.
+Contributions to the Signal Evidence Repository are welcome! Please follow these steps:
 
-## License
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature-name`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature-name`)
+5. Open a Pull Request
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Contact
 
-## Deployment
-
-### Local Deployment
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/signal-evidence-library.git
-   cd signal-evidence-library
-   ```
-
-1. Make sure your virtual env is activated
-
-       # Direnv will do this for you, but here's the commands to do it manually
-       python -m venv ./.venv
-       ./.venv/bin/activate
-
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-1. Create sample data:
-   ```bash
-   python scripts/create_samples.py
-   ```
-
-1. Start the API server:
-   ```bash
-   python run_api.py
-   ```
-
-1. In a separate terminal, start the web server:
-   ```bash
-   python run_web.py
-   ```
-
-1. Access the web interface at http://localhost:5000
-
-### Docker Deployment
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/signal-evidence-library.git
-   cd signal-evidence-library
-   ```
-
-2. Build and start the Docker containers:
-   ```bash
-   docker-compose up -d
-   ```
-
-3. Access the web interface at http://localhost:5000
-
-### Production Deployment
-
-For production deployment, consider the following:
-
-1. Use a production-ready web server like Nginx or Apache as a reverse proxy
-2. Set up SSL/TLS for secure connections
-3. Configure proper authentication and authorization
-4. Set up monitoring and logging
-5. Use a production database for metadata storage
-
-Example Nginx configuration:
-```nginx
-server {
-    listen 80;
-    server_name evidence.example.com;
-
-    location / {
-        proxy_pass http://localhost:5000;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-
-    location /api {
-        proxy_pass http://localhost:8000;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-}
-```
+This project is maintained by Sanjay Basu, sanjay.basu(at)waymarkcare.com
