@@ -26,6 +26,7 @@ var/
 venv/
 ENV/
 env/
+.venv/
 
 # IDE
 .idea/

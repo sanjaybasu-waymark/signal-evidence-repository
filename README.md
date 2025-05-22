@@ -43,15 +43,15 @@ signal-evidence-library/
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.8-3.11 (3.12 and above fail to compile faiss)
 - Docker and Docker Compose (for containerized deployment)
 
 ### Installation
 
 1. Clone the repository
 2. Install dependencies: `pip install -r requirements.txt`
-3. Configure environment variables in `.env`
-4. Run setup script: `python scripts/setup.py`
+3. Configure environment variables in the direnv file (via `.envrc.local`)
+4. Run application script
 
 ### Running the Application
 
@@ -103,32 +103,33 @@ This project is licensed under the MIT License - see the LICENSE file for detail
    cd signal-evidence-library
    ```
 
-2. Install dependencies:
+1. Make sure your virtual env is activated
+
+       # Direnv will do this for you, but here's the commands to do it manually
+       python -m venv ./.venv
+       ./.venv/bin/activate
+
+1. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the setup script:
-   ```bash
-   python scripts/setup.py
-   ```
-
-4. Create sample data:
+1. Create sample data:
    ```bash
    python scripts/create_samples.py
    ```
 
-5. Start the API server:
+1. Start the API server:
    ```bash
    python run_api.py
    ```
 
-6. In a separate terminal, start the web server:
+1. In a separate terminal, start the web server:
    ```bash
    python run_web.py
    ```
 
-7. Access the web interface at http://localhost:5000
+1. Access the web interface at http://localhost:5000
 
 ### Docker Deployment
 
