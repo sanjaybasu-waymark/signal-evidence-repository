@@ -1,79 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signal Evidence Library</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Evidence Library - Evidence-Based Healthcare Recommendations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Signal Evidence Library</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/recommendations">Recommendations</a></li>
-                    <li><a href="/search">Search</a></li>
-                    <li><a href="/about">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">Signal <span>Evidence</span> Library</a>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#recommendations">Recommendations</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
+  <main class="main-content">
     <section class="hero">
-        <div class="container">
-            <h2>Evidence-Based Healthcare Recommendations</h2>
-            <p>A comprehensive library of clinical recommendations for population health care management teams</p>
-            <div class="search-box">
-                <form action="/search" method="GET">
-                    <input type="text" name="q" placeholder="Search recommendations...">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-        </div>
+      <div class="container">
+        <h1>Evidence-Based Healthcare Recommendations</h1>
+        <p>A comprehensive library of 170+ actionable, evidence-based recommendations for healthcare providers across multiple clinical domains and roles.</p>
+      </div>
     </section>
 
-    <section class="domains">
-        <div class="container">
-            <h2>Clinical Domains</h2>
-            <div class="domain-grid" id="domain-grid">
-                <!-- Domains will be loaded here via JavaScript -->
-                <div class="loading">Loading domains...</div>
-            </div>
-        </div>
+    <section id="about" class="container">
+      <h2>About the Signal Evidence Library</h2>
+      <p>The Signal Evidence Library provides healthcare professionals with specific, actionable recommendations supported by peer-reviewed evidence. Each recommendation includes implementation guidance, expected outcomes, and cost-effectiveness information to support population health care management teams.</p>
+      <p>Our recommendations are designed for patient-facing providers and focus on individual techniques rather than broad approaches, making them immediately applicable in clinical practice.</p>
     </section>
 
-    <section class="roles">
-        <div class="container">
-            <h2>Healthcare Roles</h2>
-            <div class="role-grid" id="role-grid">
-                <!-- Roles will be loaded here via JavaScript -->
-                <div class="loading">Loading roles...</div>
-            </div>
+    <section id="recommendations" class="container">
+      <h2>Recommendations</h2>
+      
+      <div class="filters">
+        <div class="filter-row">
+          <div class="filter-group">
+            <label for="domain-filter">Filter by Domain</label>
+            <select id="domain-filter">
+              <option value="all">All Domains</option>
+              <!-- Populated by JavaScript -->
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="role-filter">Filter by Role</label>
+            <select id="role-filter">
+              <option value="all">All Roles</option>
+              <!-- Populated by JavaScript -->
+            </select>
+          </div>
+          
+          <div class="search-group">
+            <label for="search-input">Search Recommendations</label>
+            <input type="text" id="search-input" placeholder="Search by keyword...">
+          </div>
         </div>
+      </div>
+      
+      <div id="recommendations-container" class="recommendations">
+        <!-- Populated by JavaScript -->
+      </div>
     </section>
+  </main>
 
-    <section class="featured">
-        <div class="container">
-            <h2>Featured Recommendations</h2>
-            <div class="recommendation-grid" id="featured-recommendations">
-                <!-- Featured recommendations will be loaded here via JavaScript -->
-                <div class="loading">Loading recommendations...</div>
-            </div>
+  <!-- Recommendation Detail Modal -->
+  <div id="recommendation-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-header">
+        <h2 id="modal-title"></h2>
+      </div>
+      <div class="modal-body">
+        <div id="modal-tags" class="modal-tags">
+          <!-- Tags populated by JavaScript -->
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Waymark. All rights reserved.</p>
-            <p>A comprehensive evidence repository for population health care management team interventions.</p>
+        
+        <div class="modal-section">
+          <h3>Recommendation</h3>
+          <p id="recommendation-text"></p>
         </div>
-    </footer>
+        
+        <div class="modal-section">
+          <h3>Implementation Guidance</h3>
+          <p id="implementation-guidance"></p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Expected Outcomes</h3>
+          <p id="expected-outcomes"></p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Target Population</h3>
+          <p id="target-population"></p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Cost-Effectiveness</h3>
+          <p id="cost-effectiveness"></p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Evidence Citation</h3>
+          <div id="citation" class="modal-citation">
+            <!-- Citation details populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src="/static/js/main.js"></script>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Signal <span>Evidence</span> Library</div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#recommendations">Recommendations</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/recommendations.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
