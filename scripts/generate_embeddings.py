@@ -1,67 +1,88 @@
-import os
-import json
-import sys
-import numpy as np
-from pathlib import Path
-from sentence_transformers import SentenceTransformer
-import faiss
+"""
+Script to generate vector embeddings for recommendations.
+"""
 
-# Add the project root to the Python path
-sys.path.append(str(Path(__file__).parent.parent))
+import os
+import sys
+import json
+import numpy as np
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from src.db.models import Base, Recommendation
+
+# In a production environment, this would use a proper embedding model
+# For this prototype, we'll use a simple TF-IDF approach
+def generate_simple_embedding(text, dim=384):
+    """
+    Generate a simple deterministic embedding for text.
+    This is a placeholder for a real embedding model.
+    
+    Args:
+        text (str): Text to embed
+        dim (int): Embedding dimension
+        
+    Returns:
+        str: JSON string of embedding vector
+    """
+    # Create a deterministic hash-based embedding (NOT for production use)
+    import hashlib
+    
+    # Initialize a vector of zeros
+    vector = np.zeros(dim)
+    
+    # Use words to influence different dimensions
+    words = text.lower().split()
+    for i, word in enumerate(words):
+        # Hash the word to get a deterministic value
+        hash_val = int(hashlib.md5(word.encode()).hexdigest(), 16)
+        
+        # Use the hash to set values in the embedding
+        for j in range(min(10, len(word))):
+            idx = (hash_val + j) % dim
+            vector[idx] = (hash_val % 10000) / 10000.0
+    
+    # Normalize the vector
+    norm = np.linalg.norm(vector)
+    if norm > 0:
+        vector = vector / norm
+    
+    return json.dumps(vector.tolist())
 
 def generate_embeddings():
-    """
-    Generate embeddings for all processed recommendations and update the vector store
-    """
-    # Create output directory if it doesn't exist
-    os.makedirs("data/embeddings", exist_ok=True)
+    """Generate embeddings for all recommendations in the database."""
+    # Create engine and session
+    engine = create_engine('sqlite:///data/signal_evidence.db')
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
     
-    # Load the master index
-    with open("data/processed/master_index.json", "r") as f:
-        master_index = json.load(f)
+    # Get all recommendations
+    recommendations = session.query(Recommendation).all()
     
-    # Load all recommendations
-    recommendations = []
-    for rec_id in master_index["recommendations"]:
-        with open(f"data/processed/{rec_id}.json", "r") as f:
-            recommendations.append(json.load(f))
-    
-    print(f"Loaded {len(recommendations)} recommendations")
-    
-    # Initialize the sentence transformer model
-    model = SentenceTransformer('all-MiniLM-L6-v2')
-    print("Initialized embedding model")
-    
-    # Prepare texts for embedding
-    texts = []
+    count = 0
     for rec in recommendations:
-        # Combine relevant fields for embedding
-        text = f"{rec['title']} {rec['domain']['name']} {rec['recommendation']} {rec['rationale']} {rec['expected_outcome']}"
-        texts.append(text)
+        # Combine title and text for embedding
+        text = f"{rec.title} {rec.recommendation_text}"
+        
+        # Generate embedding
+        embedding = generate_simple_embedding(text)
+        
+        # Update recommendation
+        rec.embedding = embedding
+        count += 1
+        
+        # Commit every 100 records
+        if count % 100 == 0:
+            session.commit()
+            print(f"Processed {count} recommendations")
     
-    # Generate embeddings
-    print("Generating embeddings...")
-    embeddings = model.encode(texts)
-    print(f"Generated embeddings with shape: {embeddings.shape}")
+    # Final commit
+    session.commit()
+    print(f"Generated embeddings for {count} recommendations")
     
-    # Create a FAISS index
-    dimension = embeddings.shape[1]
-    index = faiss.IndexFlatL2(dimension)
-    index.add(np.array(embeddings).astype('float32'))
-    
-    # Save the FAISS index
-    faiss.write_index(index, "data/embeddings/recommendations.index")
-    
-    # Save the mapping from index to recommendation ID
-    index_mapping = {i: recommendations[i]["id"] for i in range(len(recommendations))}
-    with open("data/embeddings/index_mapping.json", "w") as f:
-        json.dump(index_mapping, f, indent=2)
-    
-    # Save the embedding model name for future reference
-    with open("data/embeddings/model_info.json", "w") as f:
-        json.dump({"model_name": "all-MiniLM-L6-v2"}, f, indent=2)
-    
-    print("Embeddings generated and vector store updated")
+    return count
 
 if __name__ == "__main__":
-    generate_embeddings()
+    print("Generating embeddings...")
+    count = generate_embeddings()
+    print(f"Generated embeddings for {count} recommendations")

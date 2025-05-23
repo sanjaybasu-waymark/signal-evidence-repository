@@ -4,119 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signal Evidence Library</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <header>
         <div class="container">
-            <a class="navbar-brand" href="/">Signal Evidence Library</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/browse">Browse</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/search">Search</a>
-                    </li>
+            <div class="logo">
+                <h1>Signal Evidence Library</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/recommendations">Recommendations</a></li>
+                    <li><a href="/search">Search</a></li>
+                    <li><a href="/about">About</a></li>
                 </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Evidence-Based Healthcare Recommendations</h2>
+            <p>A comprehensive library of clinical recommendations for population health care management teams</p>
+            <div class="search-box">
+                <form action="/search" method="GET">
+                    <input type="text" name="q" placeholder="Search recommendations...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <div class="container mt-4">
-        <div class="jumbotron">
-            <h1 class="display-4">Welcome to the Signal Evidence Library</h1>
-            <p class="lead">A comprehensive, peer-reviewed knowledge base for population health management recommendations.</p>
-            <hr class="my-4">
-            <p>This library provides evidence-based guidance customized by clinical domain and professional role.</p>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Search the Library</h5>
-                            <p class="card-text">Use natural language to find relevant recommendations.</p>
-                            <form action="/search" method="get">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="query" placeholder="e.g., medication adherence for diabetes patients">
-                                    <button class="btn btn-primary" type="submit">Search</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Browse by Category</h5>
-                            <p class="card-text">Explore recommendations by domain and role.</p>
-                            <a href="/browse" class="btn btn-primary">Browse Library</a>
-                        </div>
-                    </div>
-                </div>
+    <section class="domains">
+        <div class="container">
+            <h2>Clinical Domains</h2>
+            <div class="domain-grid" id="domain-grid">
+                <!-- Domains will be loaded here via JavaScript -->
+                <div class="loading">Loading domains...</div>
             </div>
         </div>
+    </section>
 
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Role-Specific Guidance</h5>
-                        <p class="card-text">Tailored recommendations for each member of the care team.</p>
-                        <ul>
-                            <li>Nurse Care Managers</li>
-                            <li>Social Workers</li>
-                            <li>Clinical Pharmacists</li>
-                            <li>Community Health Workers</li>
-                            <li>Care Coordinators</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Domain-Organized Content</h5>
-                        <p class="card-text">Structured by clinical condition and social need.</p>
-                        <ul>
-                            <li>Diabetes</li>
-                            <li>Hypertension</li>
-                            <li>Asthma</li>
-                            <li>Depression</li>
-                            <li>Housing & Food Security</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Evidence-Based Recommendations</h5>
-                        <p class="card-text">Built from peer-reviewed literature and established guidelines.</p>
-                        <ul>
-                            <li>Clear citations</li>
-                            <li>Evidence levels</li>
-                            <li>Regular updates</li>
-                            <li>Transparent methodology</li>
-                        </ul>
-                    </div>
-                </div>
+    <section class="roles">
+        <div class="container">
+            <h2>Healthcare Roles</h2>
+            <div class="role-grid" id="role-grid">
+                <!-- Roles will be loaded here via JavaScript -->
+                <div class="loading">Loading roles...</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer class="bg-light py-3 mt-5">
-        <div class="container text-center">
-            <p>Signal Evidence Library &copy; 2025 Waymark</p>
+    <section class="featured">
+        <div class="container">
+            <h2>Featured Recommendations</h2>
+            <div class="recommendation-grid" id="featured-recommendations">
+                <!-- Featured recommendations will be loaded here via JavaScript -->
+                <div class="loading">Loading recommendations...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Signal Evidence Library. All rights reserved.</p>
+            <p>A comprehensive evidence repository for population health care management team interventions.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/main.js"></script>
 </body>
 </html>

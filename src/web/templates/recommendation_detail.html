@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search - Signal Evidence Library</title>
+    <title>Recommendation Details - Signal Evidence Library</title>
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -17,31 +17,21 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/recommendations">Recommendations</a></li>
-                    <li><a href="/search" class="active">Search</a></li>
+                    <li><a href="/search">Search</a></li>
                     <li><a href="/about">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="search-section">
+    <section class="recommendation-detail">
         <div class="container">
-            <h2>Search Recommendations</h2>
-            <div class="search-box large">
-                <form id="search-form">
-                    <input type="text" id="search-input" placeholder="Search by keyword, domain, role, or evidence level...">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
+            <div class="recommendation-card full-detail" id="recommendation-container">
+                <div class="loading">Loading recommendation details...</div>
             </div>
-        </div>
-    </section>
-
-    <section class="search-results">
-        <div class="container">
-            <h3 id="results-heading">Search Results</h3>
-            <div class="recommendation-grid" id="search-results-container">
-                <!-- Search results will be loaded here via JavaScript -->
-                <div class="no-results">Enter a search term to find recommendations</div>
+            
+            <div class="back-link">
+                <a href="/recommendations"><i class="fas fa-arrow-left"></i> Back to Recommendations</a>
             </div>
         </div>
     </section>
@@ -53,6 +43,6 @@
         </div>
     </footer>
 
-    <script src="/static/js/search.js"></script>
+    <script src="/static/js/recommendation-detail.js"></script>
 </body>
 </html>
