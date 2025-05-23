@@ -1,80 +1,118 @@
-# Signal Evidence Repository
+# Signal Evidence Library
 
-A comprehensive repository of evidence-based recommendations for population health care management teams, covering the most common diseases and social needs by care team member role type.
+A comprehensive, evidence-based library of healthcare recommendations for population health care management teams.
 
 ## Overview
 
-The Signal Evidence Repository is a web application that provides healthcare professionals with evidence-based recommendations for managing various health conditions and social needs. The repository is organized by clinical domains (e.g., diabetes, hypertension) and care team roles (e.g., nurse care manager, clinical pharmacist), making it easy for users to find relevant recommendations for their specific needs.
+The Signal Evidence Library provides over 170 evidence-based recommendations for healthcare providers across multiple clinical domains and healthcare roles. Each recommendation is:
+
+- Specific and actionable
+- Focused on individual patient-facing actions
+- Supported by peer-reviewed evidence
+- Includes implementation guidance and expected outcomes
+
+## Repository Structure
+
+```
+signal-evidence-library/
+├── config/                 # Configuration files
+│   ├── domains.py          # Domain definitions
+│   └── roles.py            # Role definitions
+├── data/                   # Data storage
+│   ├── raw/                # Raw recommendation files
+│   ├── processed/          # Processed JSON data
+│   └── embeddings/         # Vector embeddings
+├── src/                    # Source code
+│   ├── api/                # API endpoints
+│   ├── db/                 # Database models and operations
+│   ├── pipeline/           # Data processing pipeline
+│   └── web/                # Web interface
+├── scripts/                # Utility scripts
+└── docs/                   # Documentation
+```
+
+## Clinical Domains
+
+The library covers recommendations across multiple clinical domains:
+
+1. Chronic Disease Management
+2. Cardiovascular Health
+3. Behavioral Health
+4. Substance Use
+5. Care Coordination
+6. Maternal Health
+7. Transitional Care
+8. Social Determinants of Health
+
+## Healthcare Roles
+
+Recommendations are tailored for various healthcare roles:
+
+1. Community Health Worker (CHW)
+2. Nurse
+3. Primary Care Provider (PCP)
+4. Behavioral Health Provider
+5. Social Worker
+6. Care Coordinator
+7. Doula
+8. Pharmacist
+9. Peer Support Specialist
 
 ## Features
 
-- Browse recommendations by clinical domain or care team role
-- Search for recommendations using text or semantic search
-- View detailed information about each recommendation, including rationale, implementation notes, and citations
-- Access a comprehensive library of evidence-based practices for population health management
+- **Evidence-Based**: All recommendations are supported by peer-reviewed literature
+- **Actionable**: Specific, concrete actions providers can take
+- **Implementation Guidance**: Practical advice for putting recommendations into practice
+- **Expected Outcomes**: Documented impact with metrics and confidence intervals
+- **Cost-Effectiveness**: Information on resource requirements and return on investment
 
-## Technical Details
+## Recommendation Types
 
-The application is built using:
-- Python 3.11 with Flask web framework
-- SQLite database with SQLAlchemy ORM
-- Bootstrap 5 for responsive design
-- Jinja2 templating engine
+The library includes various types of recommendations:
 
-## Installation and Setup
+- **Specific Assessment Techniques**: Detailed instructions for conducting assessments (e.g., "Perform the 10-gram monofilament test at 4 specific sites on each foot")
+- **Specific Questions for Patient Engagement**: Exact wording for effective patient communication (e.g., "Ask patients with heart failure these specific questions about diuretics")
+- **Structured Approaches**: Step-by-step frameworks for addressing common clinical challenges (e.g., "Implement the 'Show-Tell-Show' technique for medication education")
+- **Targeted Interventions**: Focused actions for specific populations (e.g., "Provide 3-5 postpartum home visits within the first 6 weeks after birth")
 
-### Prerequisites
+## Getting Started
 
-- Python 3.11 or higher
-- pip (Python package installer)
+1. Clone this repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the application: `python src/main.py`
+4. Access the web interface at `http://localhost:5000`
 
-### Local Development Setup
+## Scripts
 
-1. Clone the repository:
-```bash
-git clone https://github.com/sanjaybasu-waymark/signal-evidence-repository.git
-cd signal-evidence-repository
-```
+- `scripts/rebuild_search_index.py`: Rebuild the search index
+- `scripts/analyze_slow_queries.py`: Optimize database queries
+- `scripts/update_embeddings.py`: Update vector embeddings
+- `scripts/validate_all_content.py`: Run quality validation
+- `scripts/fix_content_formatting.py`: Fix common formatting issues
+- `scripts/update_evidence_levels.py`: Update evidence levels
+- `scripts/migrate_to_db.py`: Migrate data to database
+- `scripts/generate_embeddings.py`: Generate vector embeddings
+- `scripts/pubmed_scholar_import.py`: Import content from PubMed/Google Scholar
 
-2. Create and activate a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+## Sources
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+Recommendations are sourced from authoritative references including:
 
-4. Run the application:
-```bash
-python src/main.py
-```
-
-5. Access the application in your browser at `http://127.0.0.1:5000`
-
-
-## Database Structure
-
-The application uses a SQLite database with the following main tables:
-
-- `domains`: Clinical domains (e.g., diabetes, hypertension)
-- `roles`: Care team roles (e.g., nurse care manager, clinical pharmacist)
-- `recommendations`: Evidence-based recommendations
-- `citations`: Citations supporting the recommendations
-- `recommendation_role`: Junction table for many-to-many relationship between recommendations and roles
+- Clinical practice guidelines (USPSTF, ADA, AHA, etc.)
+- Systematic reviews and meta-analyses
+- Randomized controlled trials
+- The Better Care Playbook
+- Evidence-based nursing and social work textbooks
+- Community health worker intervention studies
 
 ## Contributing
 
-Contributions to the Signal Evidence Repository are welcome! Please follow these steps:
+Contributions to the Signal Evidence Library are welcome! Please see our contributing guidelines for more information.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature-name`)
-3. Commit your changes (`git commit -m 'Add some feature'`)
-4. Push to the branch (`git push origin feature/your-feature-name`)
-5. Open a Pull Request
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
 
-This project is maintained by Sanjay Basu, sanjay.basu(at)waymarkcare.com
+For questions or support, please open an issue on GitHub or contact the project maintainers.
