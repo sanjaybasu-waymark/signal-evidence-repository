@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Evidence Library</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Signal Evidence Library</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/recommendations">Recommendations</a></li>
+                    <li><a href="/search">Search</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Evidence-Based Healthcare Recommendations</h2>
+            <p>A comprehensive library of clinical recommendations for population health care management teams</p>
+            <div class="search-box">
+                <form action="/search" method="GET">
+                    <input type="text" name="q" placeholder="Search recommendations...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="domains">
+        <div class="container">
+            <h2>Clinical Domains</h2>
+            <div class="domain-grid" id="domain-grid">
+                <!-- Domains will be loaded here via JavaScript -->
+                <div class="loading">Loading domains...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roles">
+        <div class="container">
+            <h2>Healthcare Roles</h2>
+            <div class="role-grid" id="role-grid">
+                <!-- Roles will be loaded here via JavaScript -->
+                <div class="loading">Loading roles...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h2>Featured Recommendations</h2>
+            <div class="recommendation-grid" id="featured-recommendations">
+                <!-- Featured recommendations will be loaded here via JavaScript -->
+                <div class="loading">Loading recommendations...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Waymark. All rights reserved.</p>
+            <p>A comprehensive evidence repository for population health care management team interventions.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
