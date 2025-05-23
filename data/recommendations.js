@@ -10,9 +10,9 @@ const recommendations = [
     "evidence_level": "A",
     "citation_authors": "Community Preventive Services Task Force",
     "citation_title": "Diabetes Management: Interventions Engaging Community Health Workers",
-    "citation_journal": "The Community Guide",
-    "citation_year": 2023,
-    "citation_doi": "10.15585/mmwr.rr7001a1",
+    "citation_journal": "MMWR Recommendations and Reports",
+    "citation_year": 2017,
+    "citation_doi": "10.15585/mmwr.rr6601a1",
     "target_population": "Medicaid, underserved communities",
     "cost_effectiveness": "Cost-effective at $585/person/year"
   },
@@ -25,11 +25,11 @@ const recommendations = [
     "implementation_guidance": "Schedule initial visit by 28 weeks gestation. Conduct 2-3 additional prenatal visits (60-90 minutes each). Develop personalized birth plan with patient preferences. Coordinate with prenatal care providers. Provide 24/7 on-call availability starting at 37 weeks.",
     "expected_outcomes": "53% reduction in cesarean delivery rates (95% CI: 42-64%), 57% reduction in postpartum depression/anxiety diagnosis, increased breastfeeding initiation rates, higher maternal satisfaction scores. NNT: 6 patients to prevent one cesarean delivery.",
     "evidence_level": "A",
-    "citation_authors": "Falconi AM, Bromfield N, Felder JN, Elder J, Giurgescu C",
-    "citation_title": "The effect of doula care on birth outcomes in Medicaid populations: A systematic review",
-    "citation_journal": "eClinicalMedicine",
-    "citation_year": 2022,
-    "citation_doi": "10.1016/j.eclinm.2022.101636",
+    "citation_authors": "Kozhimannil KB, Hardeman RR, Attanasio LB, Blauer-Peterson C, O'Brien M",
+    "citation_title": "Doula care, birth outcomes, and costs among Medicaid beneficiaries",
+    "citation_journal": "American Journal of Public Health",
+    "citation_year": 2013,
+    "citation_doi": "10.2105/AJPH.2012.301201",
     "target_population": "Medicaid-enrolled pregnant individuals",
     "cost_effectiveness": "Cost savings of $986 per birth"
   },
@@ -44,9 +44,9 @@ const recommendations = [
     "evidence_level": "A",
     "citation_authors": "Community Preventive Services Task Force",
     "citation_title": "Cardiovascular Disease: Team-Based Care to Improve Blood Pressure Control",
-    "citation_journal": "The Community Guide",
-    "citation_year": 2024,
-    "citation_doi": "10.15585/mmwr.rr7302a1",
+    "citation_journal": "MMWR Recommendations and Reports",
+    "citation_year": 2017,
+    "citation_doi": "10.15585/mmwr.rr6623a1",
     "target_population": "Adults with uncontrolled hypertension",
     "cost_effectiveness": "Cost savings of $2,500-$4,000 per patient annually"
   },
@@ -79,8 +79,8 @@ const recommendations = [
     "citation_authors": "Margolis KL, Asche SE, Dehmer SP, Bergdall AR, Green BB, Sperl-Hillen JM, et al.",
     "citation_title": "Long-term outcomes of the effects of home blood pressure telemonitoring and pharmacist management on blood pressure among adults with uncontrolled hypertension: Follow-up of a cluster randomized clinical trial",
     "citation_journal": "JAMA Network Open",
-    "citation_year": 2023,
-    "citation_doi": "10.1001/jamanetworkopen.2023.2483",
+    "citation_year": 2018,
+    "citation_doi": "10.1001/jamanetworkopen.2018.1617",
     "target_population": "Adults with uncontrolled hypertension",
     "cost_effectiveness": "$1,850 per quality-adjusted life year gained"
   },
@@ -94,10 +94,10 @@ const recommendations = [
     "expected_outcomes": "Increased depression identification by 27% (95% CI: 19-35%), 62% of patients with moderate-to-severe depression showing clinically significant improvement at 6 months. NNT: 5 patients screened to identify one case of previously undiagnosed depression.",
     "evidence_level": "A",
     "citation_authors": "US Preventive Services Task Force",
-    "citation_title": "Screening for Depression and Suicide Risk in Adults: US Preventive Services Task Force Recommendation Statement",
+    "citation_title": "Screening for Depression in Adults: US Preventive Services Task Force Recommendation Statement",
     "citation_journal": "JAMA",
-    "citation_year": 2023,
-    "citation_doi": "10.1001/jama.2023.0863",
+    "citation_year": 2016,
+    "citation_doi": "10.1001/jama.2015.18392",
     "target_population": "All adults, especially those with risk factors",
     "cost_effectiveness": "$3,200 per quality-adjusted life year gained"
   },
@@ -113,8 +113,8 @@ const recommendations = [
     "citation_authors": "Eddie D, Hoffman L, Vilsaint C, Abry A, Bergman B, Hoeppner B, et al.",
     "citation_title": "Lived Experience in New Models of Care for Substance Use Disorder: A Systematic Review of Peer Recovery Support Services and Recovery Coaching",
     "citation_journal": "Frontiers in Psychology",
-    "citation_year": 2022,
-    "citation_doi": "10.3389/fpsyg.2021.713140",
+    "citation_year": 2019,
+    "citation_doi": "10.3389/fpsyg.2019.01052",
     "target_population": "Individuals with substance use disorders",
     "cost_effectiveness": "Cost savings of $2,400 per patient annually in healthcare utilization"
   },
@@ -130,7 +130,7 @@ const recommendations = [
     "citation_authors": "Joo JY, Liu MF",
     "citation_title": "Effectiveness of Nurse-Led Case Management in Cancer Care: Systematic Review",
     "citation_journal": "Clinical Nursing Research",
-    "citation_year": 2021,
+    "citation_year": 2019,
     "citation_doi": "10.1177/1054773819858884",
     "target_population": "Adults with multiple chronic conditions",
     "cost_effectiveness": "Return on investment of $1.80 per $1 spent"
@@ -164,8 +164,8 @@ const recommendations = [
     "citation_authors": "Haw JS, Galaviz KI, Straus AN, Kowalski AJ, Magee MJ, Weber MB, et al.",
     "citation_title": "Long-term Sustainability of Diabetes Prevention Approaches: A Systematic Review and Meta-analysis of Randomized Clinical Trials",
     "citation_journal": "JAMA Internal Medicine",
-    "citation_year": 2021,
-    "citation_doi": "10.1001/jamainternmed.2021.4783",
+    "citation_year": 2017,
+    "citation_doi": "10.1001/jamainternmed.2017.6040",
     "target_population": "Adults with prediabetes (A1C 5.7-6.4%)",
     "cost_effectiveness": "$7,300 per quality-adjusted life year gained"
   },
@@ -181,8 +181,8 @@ const recommendations = [
     "citation_authors": "Kozhimannil KB, Hardeman RR, Attanasio LB, Blauer-Peterson C, O'Brien M",
     "citation_title": "Doula care, birth outcomes, and costs among Medicaid beneficiaries",
     "citation_journal": "American Journal of Public Health",
-    "citation_year": 2023,
-    "citation_doi": "10.2105/AJPH.2022.307123",
+    "citation_year": 2013,
+    "citation_doi": "10.2105/AJPH.2012.301201",
     "target_population": "Postpartum individuals, especially those with limited social support",
     "cost_effectiveness": "Cost savings of $1,200 per birth in reduced complications and readmissions"
   },
@@ -247,10 +247,10 @@ const recommendations = [
     "expected_outcomes": "30% mean reduction in pain intensity scores, 35% improvement in function, 45% reduction in emergency department visits for pain. NNT: 4 patients to achieve clinically significant pain reduction.",
     "evidence_level": "A",
     "citation_authors": "Dowell D, Haegerich TM, Chou R",
-    "citation_title": "CDC Guideline for Prescribing Opioids for Chronic Pain — United States, 2022",
+    "citation_title": "CDC Guideline for Prescribing Opioids for Chronic Pain — United States, 2016",
     "citation_journal": "MMWR Recommendations and Reports",
-    "citation_year": 2022,
-    "citation_doi": "10.15585/mmwr.rr7103a1",
+    "citation_year": 2016,
+    "citation_doi": "10.15585/mmwr.rr6501e1",
     "target_population": "Adults with chronic non-cancer pain",
     "cost_effectiveness": "Cost savings of $2,100 per patient annually in reduced healthcare utilization"
   },
@@ -268,7 +268,7 @@ const recommendations = [
     "citation_authors": "Fiore MC, Jaén CR, Baker TB, et al.",
     "citation_title": "Treating Tobacco Use and Dependence: 2008 Update",
     "citation_journal": "Clinical Practice Guideline",
-    "citation_year": "2008",
+    "citation_year": 2008,
     "citation_doi": "10.1037/e481882008-001"
   },
   {
@@ -285,7 +285,7 @@ const recommendations = [
     "citation_authors": "Conn VS, Ruppar TM, Chase JA, et al.",
     "citation_title": "Interventions to Improve Medication Adherence in Hypertensive Patients: Systematic Review and Meta-analysis",
     "citation_journal": "Current Hypertension Reports",
-    "citation_year": "2015",
+    "citation_year": 2015,
     "citation_doi": "10.1007/s11906-015-0606-5"
   },
   {
@@ -302,7 +302,7 @@ const recommendations = [
     "citation_authors": "Boulton AJ, Armstrong DG, Albert SF, et al.",
     "citation_title": "Comprehensive foot examination and risk assessment: a report of the task force of the foot care interest group of the American Diabetes Association",
     "citation_journal": "Diabetes Care",
-    "citation_year": "2008",
+    "citation_year": 2008,
     "citation_doi": "10.2337/dc08-9021"
   },
   {
@@ -319,7 +319,7 @@ const recommendations = [
     "citation_authors": "Riegel B, Moser DK, Anker SD, et al.",
     "citation_title": "State of the science: promoting self-care in persons with heart failure: a scientific statement from the American Heart Association",
     "citation_journal": "Circulation",
-    "citation_year": "2009",
+    "citation_year": 2009,
     "citation_doi": "10.1161/CIRCULATIONAHA.109.192628"
   },
   {
@@ -336,8 +336,8 @@ const recommendations = [
     "citation_authors": "Atreja A, Bellam N, Levy SR",
     "citation_title": "Strategies to enhance patient adherence: making it simple",
     "citation_journal": "MedGenMed",
-    "citation_year": "2005",
-    "citation_doi": "N/A"
+    "citation_year": 2005,
+    "citation_doi": ""
   }
 ];
 

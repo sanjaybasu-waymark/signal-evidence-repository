@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize the recommendations display
-  displayRecommendations(recommendations);
+  displayRecommendationsByClusters();
   
   // Populate filter dropdowns
   populateFilters();
@@ -77,11 +77,11 @@ function filterRecommendations() {
     return domainMatch && roleMatch && searchMatch;
   });
   
-  displayRecommendations(filteredRecommendations);
+  displayRecommendationsByClusters(filteredRecommendations);
 }
 
-function displayRecommendations(recs) {
-  const container = document.getElementById('recommendations-container');
+function displayRecommendationsByClusters(recs = recommendations) {
+  const container = document.getElementById('domain-sections');
   
   if (recs.length === 0) {
     container.innerHTML = `
@@ -95,42 +95,111 @@ function displayRecommendations(recs) {
   
   container.innerHTML = '';
   
+  // Group recommendations by domain
+  const domainGroups = {};
+  
   recs.forEach(rec => {
-    // Find domain and role names
-    const domain = domains.find(d => d.id === rec.domain_id) || { name: 'Unknown Domain' };
-    const role = roles.find(r => r.id === rec.role_id) || { name: 'Unknown Role' };
+    const domainId = rec.domain_id;
+    if (!domainGroups[domainId]) {
+      domainGroups[domainId] = [];
+    }
+    domainGroups[domainId].push(rec);
+  });
+  
+  // Sort domains by ID
+  const sortedDomainIds = Object.keys(domainGroups).sort((a, b) => parseInt(a) - parseInt(b));
+  
+  // Create sections for each domain
+  sortedDomainIds.forEach(domainId => {
+    const domainRecs = domainGroups[domainId];
+    const domain = domains.find(d => d.id === parseInt(domainId)) || { name: 'Unknown Domain' };
     
-    const card = document.createElement('div');
-    card.className = 'recommendation-card';
-    card.innerHTML = `
-      <div class="card-header">
-        <h3>${rec.title}</h3>
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="domain-tag">${domain.name}</span>
-          <span class="role-tag">${role.name}</span>
-          <span class="evidence-tag ${rec.evidence_level?.toLowerCase()}">${rec.evidence_level || 'N/A'}</span>
-        </div>
-        <div class="card-text">
-          <p>${truncateText(rec.recommendation_text, 150)}</p>
-        </div>
-      </div>
-    `;
+    // Create domain section
+    const domainSection = document.createElement('div');
+    domainSection.className = 'domain-section';
     
-    // Add click event to show modal with details
-    card.addEventListener('click', function() {
-      showRecommendationDetails(rec);
+    // Create domain header
+    const domainHeader = document.createElement('div');
+    domainHeader.className = 'domain-header';
+    domainHeader.innerHTML = `<h2>${domain.name}</h2>`;
+    domainSection.appendChild(domainHeader);
+    
+    // Group recommendations by role within this domain
+    const roleGroups = {};
+    
+    domainRecs.forEach(rec => {
+      const roleId = rec.role_id;
+      if (!roleGroups[roleId]) {
+        roleGroups[roleId] = [];
+      }
+      roleGroups[roleId].push(rec);
     });
     
-    container.appendChild(card);
+    // Sort roles by ID
+    const sortedRoleIds = Object.keys(roleGroups).sort((a, b) => parseInt(a) - parseInt(b));
+    
+    // Create sections for each role within this domain
+    sortedRoleIds.forEach(roleId => {
+      const roleRecs = roleGroups[roleId];
+      const role = roles.find(r => r.id === parseInt(roleId)) || { name: 'Unknown Role' };
+      
+      // Create role section
+      const roleSection = document.createElement('div');
+      roleSection.className = 'role-section';
+      
+      // Create role header
+      const roleHeader = document.createElement('div');
+      roleHeader.className = 'role-header';
+      roleHeader.innerHTML = `<h3>${role.name}</h3>`;
+      roleSection.appendChild(roleHeader);
+      
+      // Create recommendations container for this role
+      const recommendationsContainer = document.createElement('div');
+      recommendationsContainer.className = 'recommendations';
+      
+      // Add recommendation cards
+      roleRecs.forEach(rec => {
+        const card = createRecommendationCard(rec, domain, role);
+        recommendationsContainer.appendChild(card);
+      });
+      
+      roleSection.appendChild(recommendationsContainer);
+      domainSection.appendChild(roleSection);
+    });
+    
+    container.appendChild(domainSection);
   });
 }
 
-function showRecommendationDetails(rec) {
+function createRecommendationCard(rec, domain, role) {
+  const card = document.createElement('div');
+  card.className = 'recommendation-card';
+  card.innerHTML = `
+    <div class="card-header">
+      <h3>${rec.title}</h3>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="domain-tag">${domain.name}</span>
+        <span class="role-tag">${role.name}</span>
+        <span class="evidence-tag ${rec.evidence_level?.toLowerCase()}">${rec.evidence_level || 'N/A'}</span>
+      </div>
+      <div class="card-text">
+        <p>${truncateText(rec.recommendation_text, 150)}</p>
+      </div>
+    </div>
+  `;
+  
+  // Add click event to show modal with details
+  card.addEventListener('click', function() {
+    showRecommendationDetails(rec, domain, role);
+  });
+  
+  return card;
+}
+
+function showRecommendationDetails(rec, domain, role) {
   const modal = document.getElementById('recommendation-modal');
-  const domain = domains.find(d => d.id === rec.domain_id) || { name: 'Unknown Domain' };
-  const role = roles.find(r => r.id === rec.role_id) || { name: 'Unknown Role' };
   
   // Populate modal content
   document.getElementById('modal-title').textContent = rec.title;
@@ -160,6 +229,7 @@ function showRecommendationDetails(rec) {
 }
 
 function truncateText(text, maxLength) {
+  if (!text) return '';
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength) + '...';
 }
