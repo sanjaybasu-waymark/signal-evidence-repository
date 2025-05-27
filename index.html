@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Waymark's Evidence Repository for Population Health Teams</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -43,23 +43,11 @@
       <div class="filters">
         <div class="filter-row">
           <div class="filter-group">
-            <label for="domain-filter">Filter by Domain</label>
-            <select id="domain-filter">
-              <option value="all">All Domains</option>
-              <!-- Populated by JavaScript -->
-            </select>
-          </div>
-          
-          <div class="filter-group">
-            <label for="role-filter">Filter by Role</label>
-            <select id="role-filter">
-              <option value="all">All Roles</option>
-              <!-- Populated by JavaScript -->
-            </select>
+            <input type="radio" id="all-domains" name="domain-filter" value="all" checked>
+            <label for="all-domains">All Domains</label>
           </div>
           
           <div class="search-group">
-            <label for="search-input">Search Recommendations</label>
             <input type="text" id="search-input" placeholder="Search by keyword...">
           </div>
         </div>
