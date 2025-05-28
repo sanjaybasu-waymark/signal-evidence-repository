@@ -1,130 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waymark's Evidence Repository for Population Health Teams</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waymark's Evidence Repository for Population Health Teams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <a href="#" class="logo">Waymark's <span>Evidence Repository</span></a>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#recommendations">Recommendations</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+    <header>
+        <div class="header-container">
+            <h1>Waymark's Evidence Repository for Population Health Teams</h1>
+            <p class="subtitle">Evidence-based recommendations for improving population health outcomes</p>
+        </div>
+    </header>
 
-  <main class="main-content">
-    <section class="hero">
-      <div class="container">
-        <h1>Waymark's Evidence Repository for Population Health Teams</h1>
-        <p>A comprehensive library of evidence-based recommendations for healthcare providers across multiple clinical domains and roles.</p>
-      </div>
-    </section>
+    <main>
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search recommendations...">
+                    <div class="filters">
+                        <select id="domain-filter">
+                            <option value="">All Domains</option>
+                        </select>
+                        <select id="role-filter">
+                            <option value="">All Roles</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="about" class="container">
-      <h2>About the Evidence Repository</h2>
-      <p>The Waymark Evidence Repository provides healthcare professionals with specific, actionable recommendations supported by peer-reviewed evidence. Each recommendation includes implementation guidance, expected outcomes, and cost-effectiveness information to support population health care management teams.</p>
-      <p>Our recommendations are designed for patient-facing providers and focus on individual techniques rather than broad approaches, making them immediately applicable in clinical practice.</p>
-    </section>
+        <section class="recommendations-section">
+            <div class="container">
+                <div id="recommendations-container" class="recommendations-container">
+                    <!-- Recommendations will be loaded here -->
+                    <div class="loading">Loading recommendations...</div>
+                </div>
+            </div>
+        </section>
 
-    <section id="recommendations" class="container">
-      <h2>Recommendations</h2>
-      
-      <div class="filters">
-        <div class="filter-row">
-          <div class="filter-group">
-            <input type="radio" id="all-domains" name="domain-filter" value="all" checked>
-            <label for="all-domains">All Domains</label>
-          </div>
-          
-          <div class="search-group">
-            <input type="text" id="search-input" placeholder="Search by keyword...">
-          </div>
+        <!-- Modal for recommendation details -->
+        <div id="recommendation-modal" class="modal">
+            <div class="modal-container">
+                <span id="close-modal" class="close">&times;</span>
+                <div id="modal-content" class="modal-content">
+                    <!-- Recommendation details will be loaded here -->
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <div id="domain-sections" class="domain-sections">
-        <!-- Domain sections populated by JavaScript -->
-      </div>
-    </section>
-  </main>
+    </main>
 
-  <!-- Recommendation Detail Modal -->
-  <div id="recommendation-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="modal-header">
-        <h2 id="modal-title"></h2>
-      </div>
-      <div class="modal-body">
-        <div id="modal-tags" class="modal-tags">
-          <!-- Tags populated by JavaScript -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 <a href="https://www.waymarkcare.com" target="_blank">www.waymarkcare.com</a>. All rights reserved.</p>
         </div>
-        
-        <div class="modal-section">
-          <h3>Recommendation</h3>
-          <p id="recommendation-text"></p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Implementation Guidance</h3>
-          <p id="implementation-guidance"></p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Expected Outcomes</h3>
-          <p id="expected-outcomes"></p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Target Population</h3>
-          <p id="target-population"></p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Cost-Effectiveness</h3>
-          <p id="cost-effectiveness"></p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Evidence Citation</h3>
-          <div id="citation" class="modal-citation">
-            <!-- Citation details populated by JavaScript -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    </footer>
 
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">Waymark's <span>Evidence Repository</span></div>
-        <div class="footer-copyright">
-          &copy; 2025 <a href="https://www.waymarkcare.com" target="_blank">www.waymarkcare.com</a>
-        </div>
-        <div class="footer-links">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#recommendations">Recommendations</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="data/recommendations.js"></script>
-  <script src="js/main.js"></script>
+    <!-- Load the recommendation data files -->
+    <script src="data/recommendations_part1.js"></script>
+    <script src="data/recommendations_part2.js"></script>
+    <script src="data/recommendations_part3.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

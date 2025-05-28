@@ -1,235 +1,232 @@
+// Combine all recommendation parts into a single file
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize the recommendations display
-  displayRecommendationsByClusters();
+  // Load all recommendation parts
+  const script1 = document.createElement('script');
+  script1.src = 'data/recommendations_part1.js';
+  document.head.appendChild(script1);
   
-  // Populate filter dropdowns
-  populateFilters();
+  const script2 = document.createElement('script');
+  script2.src = 'data/recommendations_part2.js';
+  document.head.appendChild(script2);
   
-  // Set up event listeners
-  setupEventListeners();
-});
-
-function populateFilters() {
-  const domainSelect = document.getElementById('domain-filter');
-  const roleSelect = document.getElementById('role-filter');
+  const script3 = document.createElement('script');
+  script3.src = 'data/recommendations_part3.js';
+  document.head.appendChild(script3);
   
-  // Add default "All" options
-  domainSelect.innerHTML = '<option value="all">All Domains</option>';
-  roleSelect.innerHTML = '<option value="all">All Roles</option>';
+  // Wait for all scripts to load before initializing
+  let loadedScripts = 0;
+  const totalScripts = 3;
   
-  // Populate domains
-  domains.forEach(domain => {
-    const option = document.createElement('option');
-    option.value = domain.id;
-    option.textContent = domain.name;
-    domainSelect.appendChild(option);
-  });
-  
-  // Populate roles
-  roles.forEach(role => {
-    const option = document.createElement('option');
-    option.value = role.id;
-    option.textContent = role.name;
-    roleSelect.appendChild(option);
-  });
-}
-
-function setupEventListeners() {
-  // Filter change events
-  document.getElementById('domain-filter').addEventListener('change', filterRecommendations);
-  document.getElementById('role-filter').addEventListener('change', filterRecommendations);
-  
-  // Search input event
-  document.getElementById('search-input').addEventListener('input', filterRecommendations);
-  
-  // Close modal when clicking the X
-  document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById('recommendation-modal').style.display = 'none';
-  });
-  
-  // Close modal when clicking outside of it
-  window.addEventListener('click', function(event) {
-    const modal = document.getElementById('recommendation-modal');
-    if (event.target === modal) {
-      modal.style.display = 'none';
+  function checkAllLoaded() {
+    loadedScripts++;
+    if (loadedScripts === totalScripts) {
+      initializeApp();
     }
-  });
-}
-
-function filterRecommendations() {
-  const domainFilter = document.getElementById('domain-filter').value;
-  const roleFilter = document.getElementById('role-filter').value;
-  const searchQuery = document.getElementById('search-input').value.toLowerCase();
-  
-  const filteredRecommendations = recommendations.filter(rec => {
-    // Apply domain filter
-    const domainMatch = domainFilter === 'all' || rec.domain_id.toString() === domainFilter;
-    
-    // Apply role filter
-    const roleMatch = roleFilter === 'all' || rec.role_id.toString() === roleFilter;
-    
-    // Apply search filter
-    const searchMatch = 
-      rec.title.toLowerCase().includes(searchQuery) || 
-      rec.recommendation_text.toLowerCase().includes(searchQuery) ||
-      rec.implementation_guidance.toLowerCase().includes(searchQuery);
-    
-    return domainMatch && roleMatch && searchMatch;
-  });
-  
-  displayRecommendationsByClusters(filteredRecommendations);
-}
-
-function displayRecommendationsByClusters(recs = recommendations) {
-  const container = document.getElementById('domain-sections');
-  
-  if (recs.length === 0) {
-    container.innerHTML = `
-      <div class="no-results">
-        <h3>No recommendations found</h3>
-        <p>Try adjusting your filters or search criteria.</p>
-      </div>
-    `;
-    return;
   }
   
-  container.innerHTML = '';
+  script1.onload = checkAllLoaded;
+  script2.onload = checkAllLoaded;
+  script3.onload = checkAllLoaded;
   
-  // Group recommendations by domain
-  const domainGroups = {};
+  function initializeApp() {
+    // Combine all recommendations from the different parts
+    const allRecommendations = [
+      ...window.recommendations_part1 || [],
+      ...window.recommendations_part2 || [],
+      ...window.recommendations_part3 || []
+    ];
+    
+    // Now initialize the app with the combined recommendations
+    initializeWithRecommendations(allRecommendations);
+  }
   
-  recs.forEach(rec => {
-    const domainId = rec.domain_id;
-    if (!domainGroups[domainId]) {
-      domainGroups[domainId] = [];
-    }
-    domainGroups[domainId].push(rec);
-  });
-  
-  // Sort domains by ID
-  const sortedDomainIds = Object.keys(domainGroups).sort((a, b) => parseInt(a) - parseInt(b));
-  
-  // Create sections for each domain
-  sortedDomainIds.forEach(domainId => {
-    const domainRecs = domainGroups[domainId];
-    const domain = domains.find(d => d.id === parseInt(domainId)) || { name: 'Unknown Domain' };
+  function initializeWithRecommendations(recommendations) {
+    // Get DOM elements
+    const recommendationsContainer = document.getElementById('recommendations-container');
+    const searchInput = document.getElementById('search-input');
+    const domainFilter = document.getElementById('domain-filter');
+    const roleFilter = document.getElementById('role-filter');
+    const modal = document.getElementById('recommendation-modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeModal = document.getElementById('close-modal');
     
-    // Create domain section
-    const domainSection = document.createElement('div');
-    domainSection.className = 'domain-section';
+    // Extract unique domains and roles for filters
+    const domains = [...new Set(recommendations.map(rec => rec.domain))].sort();
+    const roles = [...new Set(recommendations.map(rec => rec.role))].sort();
     
-    // Create domain header
-    const domainHeader = document.createElement('div');
-    domainHeader.className = 'domain-header';
-    domainHeader.innerHTML = `<h2>${domain.name}</h2>`;
-    domainSection.appendChild(domainHeader);
-    
-    // Group recommendations by role within this domain
-    const roleGroups = {};
-    
-    domainRecs.forEach(rec => {
-      const roleId = rec.role_id;
-      if (!roleGroups[roleId]) {
-        roleGroups[roleId] = [];
-      }
-      roleGroups[roleId].push(rec);
+    // Populate filter dropdowns
+    domainFilter.innerHTML = '<option value="">All Domains</option>';
+    domains.forEach(domain => {
+      domainFilter.innerHTML += `<option value="${domain}">${domain}</option>`;
     });
     
-    // Sort roles by ID
-    const sortedRoleIds = Object.keys(roleGroups).sort((a, b) => parseInt(a) - parseInt(b));
+    roleFilter.innerHTML = '<option value="">All Roles</option>';
+    roles.forEach(role => {
+      roleFilter.innerHTML += `<option value="${role}">${role}</option>`;
+    });
     
-    // Create sections for each role within this domain
-    sortedRoleIds.forEach(roleId => {
-      const roleRecs = roleGroups[roleId];
-      const role = roles.find(r => r.id === parseInt(roleId)) || { name: 'Unknown Role' };
-      
-      // Create role section
-      const roleSection = document.createElement('div');
-      roleSection.className = 'role-section';
-      
-      // Create role header
-      const roleHeader = document.createElement('div');
-      roleHeader.className = 'role-header';
-      roleHeader.innerHTML = `<h3>${role.name}</h3>`;
-      roleSection.appendChild(roleHeader);
-      
-      // Create recommendations container for this role
-      const recommendationsContainer = document.createElement('div');
-      recommendationsContainer.className = 'recommendations';
-      
-      // Add recommendation cards
-      roleRecs.forEach(rec => {
-        const card = createRecommendationCard(rec, domain, role);
-        recommendationsContainer.appendChild(card);
+    // Function to display recommendations
+    function displayRecommendations(recs) {
+      // Group recommendations by domain
+      const recsByDomain = {};
+      recs.forEach(rec => {
+        if (!recsByDomain[rec.domain]) {
+          recsByDomain[rec.domain] = [];
+        }
+        recsByDomain[rec.domain].push(rec);
       });
       
-      roleSection.appendChild(recommendationsContainer);
-      domainSection.appendChild(roleSection);
+      // Clear container
+      recommendationsContainer.innerHTML = '';
+      
+      // Display recommendations grouped by domain
+      Object.keys(recsByDomain).sort().forEach(domain => {
+        // Create domain section
+        const domainSection = document.createElement('div');
+        domainSection.className = 'domain-section';
+        domainSection.innerHTML = `<h2 class="domain-title">${domain}</h2>`;
+        
+        // Group by role within domain
+        const recsByRole = {};
+        recsByDomain[domain].forEach(rec => {
+          if (!recsByRole[rec.role]) {
+            recsByRole[rec.role] = [];
+          }
+          recsByRole[rec.role].push(rec);
+        });
+        
+        // Display recommendations grouped by role within domain
+        Object.keys(recsByRole).sort().forEach(role => {
+          const roleSection = document.createElement('div');
+          roleSection.className = 'role-section';
+          roleSection.innerHTML = `<h3 class="role-title">${role}</h3>`;
+          
+          const roleCards = document.createElement('div');
+          roleCards.className = 'recommendation-cards';
+          
+          recsByRole[role].forEach(rec => {
+            const card = document.createElement('div');
+            card.className = 'recommendation-card';
+            card.innerHTML = `
+              <div class="card-header">
+                <h3>${rec.title}</h3>
+                <span class="evidence-level">Evidence Level: ${rec.evidence_level}</span>
+              </div>
+              <div class="card-body">
+                <p>${rec.recommendation.substring(0, 150)}${rec.recommendation.length > 150 ? '...' : ''}</p>
+              </div>
+              <div class="card-footer">
+                <span class="role-tag">${rec.role}</span>
+                <button class="view-details-btn" data-id="${rec.id}">View Details</button>
+              </div>
+            `;
+            roleCards.appendChild(card);
+          });
+          
+          roleSection.appendChild(roleCards);
+          domainSection.appendChild(roleSection);
+        });
+        
+        recommendationsContainer.appendChild(domainSection);
+      });
+      
+      // No results message
+      if (recs.length === 0) {
+        recommendationsContainer.innerHTML = '<div class="no-results">No recommendations found matching your criteria.</div>';
+      }
+      
+      // Add event listeners to view details buttons
+      document.querySelectorAll('.view-details-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const recId = parseInt(this.getAttribute('data-id'));
+          const rec = recommendations.find(r => r.id === recId);
+          if (rec) {
+            showRecommendationDetails(rec);
+          }
+        });
+      });
+    }
+    
+    // Function to show recommendation details in modal
+    function showRecommendationDetails(rec) {
+      modalContent.innerHTML = `
+        <h2>${rec.title}</h2>
+        <div class="modal-meta">
+          <span class="modal-domain">Domain: ${rec.domain}</span>
+          <span class="modal-role">Role: ${rec.role}</span>
+          <span class="modal-evidence">Evidence Level: ${rec.evidence_level}</span>
+        </div>
+        <div class="modal-section">
+          <h3>Recommendation</h3>
+          <p>${rec.recommendation}</p>
+        </div>
+        <div class="modal-section">
+          <h3>Implementation</h3>
+          <p>${rec.implementation}</p>
+        </div>
+        <div class="modal-section">
+          <h3>Expected Outcomes</h3>
+          <p>${rec.expected_outcomes}</p>
+        </div>
+        <div class="modal-section">
+          <h3>Target Population</h3>
+          <p>${rec.target_population}</p>
+        </div>
+        <div class="modal-section">
+          <h3>Cost Effectiveness</h3>
+          <p>${rec.cost_effectiveness}</p>
+        </div>
+        <div class="modal-section">
+          <h3>Citation</h3>
+          <p>
+            ${rec.citation.authors} (${rec.citation.year}). 
+            ${rec.citation.title}. 
+            <em>${rec.citation.journal}</em>, 
+            ${rec.citation.volume}${rec.citation.issue ? '(' + rec.citation.issue + ')' : ''}, 
+            ${rec.citation.pages}.
+            ${rec.citation.doi ? 'DOI: ' + rec.citation.doi : ''}
+            ${rec.citation.url ? `<br><a href="${rec.citation.url}" target="_blank">View Source</a>` : ''}
+          </p>
+        </div>
+      `;
+      modal.style.display = 'block';
+    }
+    
+    // Event listeners for filters and search
+    function filterRecommendations() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedDomain = domainFilter.value;
+      const selectedRole = roleFilter.value;
+      
+      const filtered = recommendations.filter(rec => {
+        const matchesDomain = !selectedDomain || rec.domain === selectedDomain;
+        const matchesRole = !selectedRole || rec.role === selectedRole;
+        const matchesSearch = !searchTerm || 
+          rec.title.toLowerCase().includes(searchTerm) || 
+          rec.recommendation.toLowerCase().includes(searchTerm);
+        
+        return matchesDomain && matchesRole && matchesSearch;
+      });
+      
+      displayRecommendations(filtered);
+    }
+    
+    searchInput.addEventListener('input', filterRecommendations);
+    domainFilter.addEventListener('change', filterRecommendations);
+    roleFilter.addEventListener('change', filterRecommendations);
+    
+    // Close modal
+    closeModal.addEventListener('click', function() {
+      modal.style.display = 'none';
     });
     
-    container.appendChild(domainSection);
-  });
-}
-
-function createRecommendationCard(rec, domain, role) {
-  const card = document.createElement('div');
-  card.className = 'recommendation-card';
-  card.innerHTML = `
-    <div class="card-header">
-      <h3>${rec.title}</h3>
-    </div>
-    <div class="card-body">
-      <div class="card-meta">
-        <span class="domain-tag">${domain.name}</span>
-        <span class="role-tag">${role.name}</span>
-        <span class="evidence-tag ${rec.evidence_level?.toLowerCase()}">${rec.evidence_level || 'N/A'}</span>
-      </div>
-      <div class="card-text">
-        <p>${truncateText(rec.recommendation_text, 150)}</p>
-      </div>
-    </div>
-  `;
-  
-  // Add click event to show modal with details
-  card.addEventListener('click', function() {
-    showRecommendationDetails(rec, domain, role);
-  });
-  
-  return card;
-}
-
-function showRecommendationDetails(rec, domain, role) {
-  const modal = document.getElementById('recommendation-modal');
-  
-  // Populate modal content
-  document.getElementById('modal-title').textContent = rec.title;
-  
-  document.getElementById('modal-tags').innerHTML = `
-    <span class="domain-tag">${domain.name}</span>
-    <span class="role-tag">${role.name}</span>
-    <span class="evidence-tag ${rec.evidence_level?.toLowerCase()}">${rec.evidence_level || 'N/A'}</span>
-  `;
-  
-  document.getElementById('recommendation-text').textContent = rec.recommendation_text;
-  document.getElementById('implementation-guidance').textContent = rec.implementation_guidance;
-  document.getElementById('expected-outcomes').textContent = rec.expected_outcomes;
-  document.getElementById('target-population').textContent = rec.target_population || 'Not specified';
-  document.getElementById('cost-effectiveness').textContent = rec.cost_effectiveness || 'Not specified';
-  
-  document.getElementById('citation').innerHTML = `
-    <p><strong>Authors:</strong> ${rec.citation_authors || 'Not specified'}</p>
-    <p><strong>Title:</strong> ${rec.citation_title || 'Not specified'}</p>
-    <p><strong>Journal:</strong> ${rec.citation_journal || 'Not specified'}</p>
-    <p><strong>Year:</strong> ${rec.citation_year || 'Not specified'}</p>
-    <p><strong>DOI:</strong> ${rec.citation_doi ? `<a href="https://doi.org/${rec.citation_doi}" target="_blank">${rec.citation_doi}</a>` : 'Not specified'}</p>
-  `;
-  
-  // Display the modal
-  modal.style.display = 'block';
-}
-
-function truncateText(text, maxLength) {
-  if (!text) return '';
-  if (text.length <= maxLength) return text;
-  return text.substring(0, maxLength) + '...';
-}
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+    
+    // Initial display
+    displayRecommendations(recommendations);
+  }
+});
