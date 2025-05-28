@@ -7,7 +7,334 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+          --primary-color: #5f2eea; /* Purple from Waymark */
+          --secondary-color: #4ca6ff; /* Light blue from Waymark */
+          --accent-color: #00c48c; /* Green from Waymark */
+          --highlight-color: #ff7a00; /* Orange from Waymark */
+          --text-color: #1a1a1a;
+          --light-text: #4f4f4f;
+          --light-bg: #f8f9fa;
+          --card-bg: #e6f0f9; /* Light blue background for cards */
+          --border-color: #dee2e6;
+          --white: #ffffff;
+        }
+        
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        
+        body {
+          font-family: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          line-height: 1.6;
+          color: var(--text-color);
+          background-color: var(--white);
+        }
+        
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+        
+        header {
+          background-color: var(--primary-color);
+          color: var(--white);
+          padding: 40px 0;
+          margin-bottom: 30px;
+        }
+        
+        .header-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          text-align: center;
+        }
+        
+        header h1 {
+          font-size: 36px;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+        
+        header .subtitle {
+          font-size: 18px;
+          font-weight: 400;
+        }
+        
+        .search-section {
+          margin-bottom: 30px;
+        }
+        
+        .search-container {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+        
+        #search-input {
+          padding: 12px 15px;
+          border: 1px solid var(--border-color);
+          border-radius: 5px;
+          font-size: 16px;
+          width: 100%;
+          font-family: 'Heebo', sans-serif;
+        }
+        
+        .filters {
+          display: flex;
+          gap: 15px;
+        }
+        
+        select {
+          padding: 10px 15px;
+          border: 1px solid var(--border-color);
+          border-radius: 5px;
+          font-size: 16px;
+          flex: 1;
+          font-family: 'Heebo', sans-serif;
+        }
+        
+        .recommendations-section {
+          margin-bottom: 50px;
+        }
+        
+        .domain-section {
+          margin-bottom: 40px;
+        }
+        
+        .domain-title {
+          font-size: 28px;
+          font-weight: 700;
+          color: var(--primary-color);
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .role-section {
+          margin-bottom: 30px;
+        }
+        
+        .role-title {
+          font-size: 22px;
+          font-weight: 600;
+          color: var(--secondary-color);
+          margin-bottom: 15px;
+        }
+        
+        .recommendation-cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 20px;
+        }
+        
+        .recommendation-card {
+          background-color: var(--card-bg);
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .recommendation-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+          padding: 15px 20px;
+          background-color: var(--secondary-color);
+          color: var(--white);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .card-header h3 {
+          font-size: 18px;
+          font-weight: 600;
+          margin: 0;
+          flex: 1;
+        }
+        
+        .evidence-level {
+          background-color: var(--white);
+          color: var(--secondary-color);
+          padding: 3px 8px;
+          border-radius: 4px;
+          font-size: 14px;
+          font-weight: 600;
+        }
+        
+        .card-body {
+          padding: 15px 20px;
+        }
+        
+        .card-body p {
+          margin-bottom: 15px;
+          color: var(--text-color);
+        }
+        
+        .card-footer {
+          padding: 15px 20px;
+          background-color: var(--light-bg);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .role-tag {
+          background-color: var(--accent-color);
+          color: var(--white);
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        
+        .view-details-btn {
+          background-color: var(--primary-color);
+          color: var(--white);
+          border: none;
+          padding: 8px 15px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 500;
+          transition: background-color 0.3s;
+        }
+        
+        .view-details-btn:hover {
+          background-color: #4a1fd6;
+        }
+        
+        .modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          overflow-y: auto;
+        }
+        
+        .modal-container {
+          background-color: var(--white);
+          margin: 50px auto;
+          max-width: 800px;
+          border-radius: 8px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          position: relative;
+        }
+        
+        .close {
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          font-size: 28px;
+          font-weight: bold;
+          color: var(--text-color);
+          cursor: pointer;
+        }
+        
+        .modal-content {
+          padding: 30px;
+        }
+        
+        .modal-content h2 {
+          font-size: 24px;
+          font-weight: 700;
+          color: var(--primary-color);
+          margin-bottom: 20px;
+        }
+        
+        .modal-meta {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          margin-bottom: 25px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid var(--border-color);
+        }
+        
+        .modal-meta span {
+          font-size: 16px;
+          color: var(--light-text);
+        }
+        
+        .modal-section {
+          margin-bottom: 25px;
+        }
+        
+        .modal-section h3 {
+          font-size: 18px;
+          font-weight: 600;
+          color: var(--secondary-color);
+          margin-bottom: 10px;
+        }
+        
+        .modal-section p {
+          font-size: 16px;
+          line-height: 1.6;
+          color: var(--text-color);
+        }
+        
+        .no-results {
+          text-align: center;
+          padding: 50px 0;
+          font-size: 18px;
+          color: var(--light-text);
+        }
+        
+        footer {
+          background-color: var(--light-bg);
+          padding: 20px 0;
+          text-align: center;
+          margin-top: 50px;
+        }
+        
+        footer p {
+          color: var(--light-text);
+          font-size: 14px;
+        }
+        
+        footer a {
+          color: var(--primary-color);
+          text-decoration: none;
+        }
+        
+        footer a:hover {
+          text-decoration: underline;
+        }
+        
+        .loading {
+          text-align: center;
+          padding: 30px 0;
+          font-size: 18px;
+          color: var(--light-text);
+        }
+        
+        @media (max-width: 768px) {
+          .filters {
+            flex-direction: column;
+          }
+          
+          .recommendation-cards {
+            grid-template-columns: 1fr;
+          }
+          
+          .modal-container {
+            margin: 20px;
+            width: auto;
+          }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -60,10 +387,430 @@
         </div>
     </footer>
 
-    <!-- Load the recommendation data files -->
-    <script src="data/recommendations_part1.js"></script>
-    <script src="data/recommendations_part2.js"></script>
-    <script src="data/recommendations_part3.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        // All recommendation data embedded directly in the file
+        const recommendations = [
+          {
+            "id": 1,
+            "title": "Use teach-back method for medication instructions",
+            "domain": "Medication Management",
+            "role": "Nurse",
+            "recommendation": "Use the teach-back method when providing medication instructions by asking patients to repeat back specific information: 'To make sure I explained your new medication clearly, can you tell me how and when you'll take this medicine?' If patients cannot accurately repeat back, reteach using different words.",
+            "implementation": "Incorporate teach-back into medication education workflows. Use simple language and avoid medical jargon. Document areas where patients needed clarification for follow-up.",
+            "expected_outcomes": "Improved medication adherence by 30-50%. Reduced medication errors and adverse events. Increased patient confidence in self-management.",
+            "target_population": "All patients receiving new medications or with complex medication regimens.",
+            "cost_effectiveness": "Low-cost intervention that prevents costly adverse drug events. Each adverse drug event prevented saves approximately $2,000-$7,000 in healthcare costs.",
+            "evidence_level": "A",
+            "citation": {
+              "authors": "Yen PH, Leasure AR",
+              "title": "Use and Effectiveness of the Teach-Back Method in Patient Education and Health Outcomes",
+              "journal": "Federal Practitioner",
+              "year": 2019,
+              "volume": 36,
+              "issue": 6,
+              "pages": "284-289",
+              "doi": "",
+              "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6590951/"
+            }
+          },
+          {
+            "id": 2,
+            "title": "Implement specific questions for medication reconciliation",
+            "domain": "Medication Management",
+            "role": "Pharmacist",
+            "recommendation": "During medication reconciliation, ask these specific questions: 'What medications do you take at home, including prescriptions, over-the-counter medicines, vitamins, and herbs?', 'How exactly do you take each medication?', 'Do you ever miss doses or take them differently than prescribed?', and 'Have you stopped taking any medications recently?'",
+            "implementation": "Create a standardized medication reconciliation form with these questions. Document responses in the EHR. Flag discrepancies for provider review.",
+            "expected_outcomes": "Identification of medication discrepancies in 40-60% of patients. Resolution of potential adverse drug events. Improved medication adherence through addressing barriers.",
+            "target_population": "All patients during care transitions (hospital admission/discharge, new provider visits) and those on multiple medications.",
+            "cost_effectiveness": "Moderate time investment that prevents costly medication errors. Each prevented adverse drug event saves approximately $2,000-$7,000 in healthcare costs.",
+            "evidence_level": "B",
+            "citation": {
+              "authors": "Mueller SK, Sponsler KC, Kripalani S, Schnipper JL",
+              "title": "Hospital-based medication reconciliation practices: a systematic review",
+              "journal": "Archives of Internal Medicine",
+              "year": 2012,
+              "volume": 172,
+              "issue": 14,
+              "pages": "1057-1069",
+              "doi": "10.1001/archinternmed.2012.2246",
+              "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1203516"
+            }
+          },
+          {
+            "id": 3,
+            "title": "Implement the PHQ-2 depression screening with specific follow-up",
+            "domain": "Behavioral Health",
+            "role": "Primary Care Provider",
+            "recommendation": "Screen for depression using the PHQ-2 by asking: 'Over the past 2 weeks, how often have you been bothered by: 1) Little interest or pleasure in doing things? 2) Feeling down, depressed, or hopeless?' Score each question 0-3 and if total score is ≥3, administer the full PHQ-9 and implement a follow-up plan.",
+            "implementation": "Incorporate PHQ-2 into routine vital signs workflow. Have PHQ-9 forms readily available for positive screens. Document scores and follow-up plans in the EHR.",
+            "expected_outcomes": "Identification of depression with 80-90% sensitivity. Earlier intervention for depression. Reduced suicide risk through systematic identification of suicidal ideation.",
+            "target_population": "All adult patients, with annual screening recommended. Higher-risk populations include those with chronic medical conditions, pain, or recent major life changes.",
+            "cost_effectiveness": "Low-cost screening with high return on investment. Each case of depression treated in primary care saves approximately $2,000-$5,000 compared to untreated depression costs.",
+            "evidence_level": "B",
+            "citation": {
+              "authors": "Kroenke K, Spitzer RL, Williams JB",
+              "title": "The Patient Health Questionnaire-2: validity of a two-item depression screener",
+              "journal": "Medical Care",
+              "year": 2003,
+              "volume": 41,
+              "issue": 11,
+              "pages": "1284-1292",
+              "doi": "10.1097/01.MLR.0000093487.78664.3C",
+              "url": "https://journals.lww.com/lww-medicalcare/Abstract/2003/11000/The_Patient_Health_Questionnaire_2__Validity_of_a.8.aspx"
+            }
+          },
+          {
+            "id": 4,
+            "title": "Implement the 5 A's framework for smoking cessation",
+            "domain": "Preventive Care",
+            "role": "Primary Care Provider",
+            "recommendation": "Implement the 5 A's framework for smoking cessation: Ask about tobacco use at every visit, Advise all tobacco users to quit with clear, personalized messages, Assess willingness to quit, Assist with developing a quit plan, and Arrange follow-up within 1 week of the quit date.",
+            "implementation": "Incorporate tobacco screening questions in intake forms. Create EHR templates for the 5 A's framework. Stock patient education materials on cessation strategies.",
+            "expected_outcomes": "Increased quit attempts by 30-40%. Improved long-term cessation rates of 15-30% when combined with pharmacotherapy. Reduced cardiovascular and cancer risk.",
+            "target_population": "All patients who use tobacco products, with priority for those with tobacco-related diseases or risk factors.",
+            "cost_effectiveness": "Highly cost-effective intervention with return on investment of $2-$3 for every $1 spent. Each successful quitter saves approximately $22,000 in lifetime healthcare costs.",
+            "evidence_level": "A",
+            "citation": {
+              "authors": "Fiore MC, Jaén CR, Baker TB, et al.",
+              "title": "Treating Tobacco Use and Dependence: 2008 Update",
+              "journal": "Clinical Practice Guideline",
+              "year": 2008,
+              "volume": "",
+              "issue": "",
+              "pages": "",
+              "doi": "",
+              "url": "https://www.ncbi.nlm.nih.gov/books/NBK63952/"
+            }
+          },
+          {
+            "id": 5,
+            "title": "Implement the STEADI algorithm for fall prevention",
+            "domain": "Geriatric Care",
+            "role": "Primary Care Provider",
+            "recommendation": "Implement the STEADI (Stopping Elderly Accidents, Deaths & Injuries) algorithm: 1) Ask all patients 65+ years three key questions: Have you fallen in the past year? Do you feel unsteady when standing or walking? Do you worry about falling? 2) For any 'yes' response, perform the Timed Up and Go test. 3) If time exceeds 12 seconds, implement multifactorial interventions.",
+            "implementation": "Incorporate STEADI screening questions into Medicare Annual Wellness Visits. Train staff on proper Timed Up and Go test administration. Create EHR templates with decision support based on results.",
+            "expected_outcomes": "Identification of fall risk with 85% sensitivity. Reduction in falls by 25-40% with multifactorial interventions. Decreased fall-related injuries and hospitalizations.",
+            "target_population": "Adults aged 65+ years, particularly those with history of falls, mobility impairments, multiple medications, or chronic conditions affecting balance.",
+            "cost_effectiveness": "Low-cost screening with high return on investment. Each fall prevented saves approximately $14,000 in direct medical costs. Implementation costs are offset by Medicare reimbursement for fall risk assessment.",
+            "evidence_level": "A",
+            "citation": {
+              "authors": "Stevens JA, Phelan EA",
+              "title": "Development of STEADI: A Fall Prevention Resource for Health Care Providers",
+              "journal": "Health Promotion Practice",
+              "year": 2013,
+              "volume": 14,
+              "issue": 5,
+              "pages": "706-714",
+              "doi": "10.1177/1524839912463576",
+              "url": "https://journals.sagepub.com/doi/10.1177/1524839912463576"
+            }
+          },
+          {
+            "id": 201,
+            "title": "Ask patients with prediabetes to rate confidence in lifestyle changes on a 1-10 scale",
+            "domain": "Diabetes Prevention",
+            "role": "Primary Care Provider",
+            "recommendation": "Ask patients with prediabetes to rate their confidence in making lifestyle changes on a scale of 1-10, then follow up with 'What would help move that number higher?' to identify specific barriers. Document responses in the EHR and create an action plan addressing the top barrier identified.",
+            "implementation": "Integrate this question into routine prediabetes follow-up visits. Use a standardized template in the EHR to document confidence ratings and barriers. Schedule brief follow-up calls or messages to check on progress with the identified action plan.",
+            "expected_outcomes": "Improved patient engagement in diabetes prevention activities, with studies showing 15-20% higher adherence to lifestyle modification plans when confidence-based approaches are used. Patients are more likely to achieve the recommended 7% weight loss target.",
+            "target_population": "Adults with prediabetes (A1C 5.7-6.4%, FPG 100-125 mg/dL, or 2-hour PG 140-199 mg/dL).",
+            "cost_effectiveness": "Low-cost intervention requiring minimal additional time during routine visits. Cost-effective when considering prevention of progression to type 2 diabetes, which costs approximately $9,600 per patient annually.",
+            "evidence_level": "B",
+            "citation": {
+              "authors": "American Diabetes Association",
+              "title": "Standards of Care in Diabetes—2023",
+              "journal": "Diabetes Care",
+              "year": 2023,
+              "volume": 46,
+              "issue": "Supplement 1",
+              "pages": "S41-S48",
+              "doi": "10.2337/dc23-S003",
+              "url": "https://diabetesjournals.org/care/article/46/Supplement_1/S41/148029/3-Prevention-or-Delay-of-Type-2-Diabetes-and"
+            }
+          },
+          {
+            "id": 202,
+            "title": "Prescribe specific 150 minutes/week moderate activity plan for prediabetes",
+            "domain": "Diabetes Prevention",
+            "role": "Primary Care Provider",
+            "recommendation": "Prescribe a specific physical activity plan for patients with prediabetes that includes exactly 150 minutes per week of moderate-intensity activity (like brisk walking), divided into 30-minute sessions 5 days per week. Provide a written prescription with specific activities the patient enjoys and days/times for completion.",
+            "implementation": "Use a physical activity prescription pad or EHR template to write specific prescriptions. Ask patients to identify preferred activities and realistic times for exercise. Schedule a follow-up at 2 weeks to review adherence and modify the plan if needed.",
+            "expected_outcomes": "Achievement of recommended physical activity levels shown to reduce diabetes risk by 58% when combined with dietary changes and modest weight loss. Improved cardiovascular fitness and insulin sensitivity.",
+            "target_population": "Adults with prediabetes, particularly those with BMI ≥25 kg/m² (≥23 kg/m² in Asian Americans).",
+            "cost_effectiveness": "Low-cost intervention with high return on investment. Each case of diabetes prevented saves approximately $9,600 in annual healthcare costs.",
+            "evidence_level": "A",
+            "citation": {
+              "authors": "American Diabetes Association",
+              "title": "3. Prevention or Delay of Type 2 Diabetes and Associated Comorbidities: Standards of Care in Diabetes—2023",
+              "journal": "Diabetes Care",
+              "year": 2023,
+              "volume": 46,
+              "issue": "Supplement 1",
+              "pages": "S41-S48",
+              "doi": "10.2337/dc23-S003",
+              "url": "https://diabetesjournals.org/care/article/46/Supplement_1/S41/148029/3-Prevention-or-Delay-of-Type-2-Diabetes-and"
+            }
+          },
+          {
+            "id": 203,
+            "title": "Teach patients with diabetes the plate method using visual aids",
+            "domain": "Diabetes Management",
+            "role": "Nutritionist",
+            "recommendation": "Teach patients with diabetes the plate method using visual aids: fill half the plate with non-starchy vegetables, one quarter with lean protein, and one quarter with carbohydrates. Provide a laminated placemat with these proportions to use at home, and ask patients to take photos of their plates for the first week to review together at follow-up.",
+            "implementation": "Distribute visual plate method guides during nutrition counseling sessions. Demonstrate with actual plates or food models. Create a secure portal for patients to upload meal photos for review. Schedule a follow-up within 2 weeks to review photos and provide specific feedback.",
+            "expected_outcomes": "Improved glycemic control with average A1C reductions of 0.5-1% within 3 months. Better portion control and increased vegetable consumption. Simplified meal planning leading to better adherence.",
+            "target_population": "Adults with type 2 diabetes, especially those newly diagnosed or struggling with meal planning and portion control.",
+            "cost_effectiveness": "Low-cost intervention with minimal materials required. Potential to reduce medication needs and prevent complications, saving $3,700-$7,900 per patient annually in medication and healthcare costs.",
+            "evidence_level": "B",
+            "citation": {
+              "authors": "Evert AB, Dennison M, Gardner CD, et al.",
+              "title": "Nutrition Therapy for Adults With Diabetes or Prediabetes: A Consensus Report",
+              "journal": "Diabetes Care",
+              "year": 2019,
+              "volume": 42,
+              "issue": 5,
+              "pages": "731-754",
+              "doi": "10.2337/dci19-0014",
+              "url": "https://diabetesjournals.org/care/article/42/5/731/40480/Nutrition-Therapy-for-Adults-With-Diabetes-or"
+            }
+          },
+          {
+            "id": 211,
+            "title": "Implement the DASH diet with specific food recommendations",
+            "domain": "Cardiovascular Health",
+            "role": "Nutritionist",
+            "recommendation": "Implement the DASH diet by providing patients with hypertension a specific daily food plan: 4-5 servings of vegetables, 4-5 servings of fruits, 2-3 servings of low-fat dairy, <6 servings of lean meat/poultry/fish, 4-5 servings of nuts/seeds/legumes per week, and limited sweets and added sugars. Give patients a refrigerator magnet with these exact serving counts.",
+            "implementation": "Provide printed DASH diet plans with specific food lists and serving sizes. Create a 7-day meal plan with grocery lists. Schedule follow-up at 2 weeks to review food diary and address barriers. Provide refrigerator magnets with serving guidelines.",
+            "expected_outcomes": "Blood pressure reductions of 8-14 mmHg systolic and 4-7 mmHg diastolic within 2-4 weeks. Improved lipid profiles. Reduced need for antihypertensive medications.",
+            "target_population": "Adults with hypertension or prehypertension, particularly those with BP >130/80 mmHg or with cardiovascular risk factors.",
+            "cost_effectiveness": "Low-cost dietary intervention with significant health benefits. Each 10 mmHg reduction in systolic BP is associated with 20% reduction in major cardiovascular events, saving approximately $1,000-$2,000 per patient annually.",
+            "evidence_level": "A",
+            "citation": {
+              "authors": "Chiavaroli L, Viguiliouk E, Nishi SK, et al.",
+              "title": "DASH Dietary Pattern and Cardiometabolic Outcomes: An Umbrella Review of Systematic Reviews and Meta-Analyses",
+              "journal": "Nutrients",
+              "year": 2019,
+              "volume": 11,
+              "issue": 2,
+              "pages": "338",
+              "doi": "10.3390/nu11020338",
+              "url": "https://www.mdpi.com/2072-6643/11/2/338"
+            }
+          },
+          {
+            "id": 212,
+            "title": "Implement home BP monitoring protocol with specific recording instructions",
+            "domain": "Cardiovascular Health",
+            "role": "Nurse",
+            "recommendation": "Implement a structured home BP monitoring protocol: instruct patients to measure BP twice in the morning and twice in the evening for 7 consecutive days. Measurements should be taken 1 minute apart, after 5 minutes of rest, with the same arm and position each time. Provide patients with a recording sheet to document all readings and calculate the average excluding the first day.",
+            "implementation": "Demonstrate proper technique during office visits. Validate patient devices against calibrated office equipment. Provide printed recording sheets with calculation instructions. Schedule follow-up to review results and adjust treatment if needed.",
+            "expected_outcomes": "More accurate assessment of true BP with 50-60% reduction in white coat hypertension misdiagnosis. Better treatment decisions based on out-of-office readings. Improved patient engagement in BP management.",
+            "target_population": "Adults with newly diagnosed or uncontrolled hypertension, suspected white coat or masked hypertension, or those starting or changing antihypertensive medications.",
+            "cost_effectiveness": "Moderate initial cost for home BP devices offset by reduced office visits and more targeted therapy. Each case of white coat hypertension correctly identified saves approximately $1,000-$3,000 in unnecessary medications and follow-up visits.",
+            "evidence_level": "A",
+            "citation": {
+              "authors": "Shimbo D, Artinian NT, Basile JN, et al.",
+              "title": "Self-Measured Blood Pressure Monitoring at Home: A Joint Policy Statement From the American Heart Association and American Medical Association",
+              "journal": "Circulation",
+              "year": 2020,
+              "volume": 142,
+              "issue": 4,
+              "pages": "e42-e63",
+              "doi": "10.1161/CIR.0000000000000803",
+              "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000803"
+            }
+          }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get DOM elements
+            const recommendationsContainer = document.getElementById('recommendations-container');
+            const searchInput = document.getElementById('search-input');
+            const domainFilter = document.getElementById('domain-filter');
+            const roleFilter = document.getElementById('role-filter');
+            const modal = document.getElementById('recommendation-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeModal = document.getElementById('close-modal');
+            
+            // Extract unique domains and roles for filters
+            const domains = [...new Set(recommendations.map(rec => rec.domain))].sort();
+            const roles = [...new Set(recommendations.map(rec => rec.role))].sort();
+            
+            // Populate filter dropdowns
+            domainFilter.innerHTML = '<option value="">All Domains</option>';
+            domains.forEach(domain => {
+                domainFilter.innerHTML += `<option value="${domain}">${domain}</option>`;
+            });
+            
+            roleFilter.innerHTML = '<option value="">All Roles</option>';
+            roles.forEach(role => {
+                roleFilter.innerHTML += `<option value="${role}">${role}</option>`;
+            });
+            
+            // Function to display recommendations
+            function displayRecommendations(recs) {
+                // Group recommendations by domain
+                const recsByDomain = {};
+                recs.forEach(rec => {
+                    if (!recsByDomain[rec.domain]) {
+                        recsByDomain[rec.domain] = [];
+                    }
+                    recsByDomain[rec.domain].push(rec);
+                });
+                
+                // Clear container
+                recommendationsContainer.innerHTML = '';
+                
+                // Display recommendations grouped by domain
+                Object.keys(recsByDomain).sort().forEach(domain => {
+                    // Create domain section
+                    const domainSection = document.createElement('div');
+                    domainSection.className = 'domain-section';
+                    domainSection.innerHTML = `<h2 class="domain-title">${domain}</h2>`;
+                    
+                    // Group by role within domain
+                    const recsByRole = {};
+                    recsByDomain[domain].forEach(rec => {
+                        if (!recsByRole[rec.role]) {
+                            recsByRole[rec.role] = [];
+                        }
+                        recsByRole[rec.role].push(rec);
+                    });
+                    
+                    // Display recommendations grouped by role within domain
+                    Object.keys(recsByRole).sort().forEach(role => {
+                        const roleSection = document.createElement('div');
+                        roleSection.className = 'role-section';
+                        roleSection.innerHTML = `<h3 class="role-title">${role}</h3>`;
+                        
+                        const roleCards = document.createElement('div');
+                        roleCards.className = 'recommendation-cards';
+                        
+                        recsByRole[role].forEach(rec => {
+                            const card = document.createElement('div');
+                            card.className = 'recommendation-card';
+                            card.innerHTML = `
+                                <div class="card-header">
+                                    <h3>${rec.title}</h3>
+                                    <span class="evidence-level">Evidence Level: ${rec.evidence_level}</span>
+                                </div>
+                                <div class="card-body">
+                                    <p>${rec.recommendation.substring(0, 150)}${rec.recommendation.length > 150 ? '...' : ''}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="role-tag">${rec.role}</span>
+                                    <button class="view-details-btn" data-id="${rec.id}">View Details</button>
+                                </div>
+                            `;
+                            roleCards.appendChild(card);
+                        });
+                        
+                        roleSection.appendChild(roleCards);
+                        domainSection.appendChild(roleSection);
+                    });
+                    
+                    recommendationsContainer.appendChild(domainSection);
+                });
+                
+                // No results message
+                if (recs.length === 0) {
+                    recommendationsContainer.innerHTML = '<div class="no-results">No recommendations found matching your criteria.</div>';
+                }
+                
+                // Add event listeners to view details buttons
+                document.querySelectorAll('.view-details-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const recId = parseInt(this.getAttribute('data-id'));
+                        const rec = recommendations.find(r => r.id === recId);
+                        if (rec) {
+                            showRecommendationDetails(rec);
+                        }
+                    });
+                });
+            }
+            
+            // Function to show recommendation details in modal
+            function showRecommendationDetails(rec) {
+                modalContent.innerHTML = `
+                    <h2>${rec.title}</h2>
+                    <div class="modal-meta">
+                        <span class="modal-domain">Domain: ${rec.domain}</span>
+                        <span class="modal-role">Role: ${rec.role}</span>
+                        <span class="modal-evidence">Evidence Level: ${rec.evidence_level}</span>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Recommendation</h3>
+                        <p>${rec.recommendation}</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Implementation</h3>
+                        <p>${rec.implementation}</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Expected Outcomes</h3>
+                        <p>${rec.expected_outcomes}</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Target Population</h3>
+                        <p>${rec.target_population}</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Cost Effectiveness</h3>
+                        <p>${rec.cost_effectiveness}</p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Citation</h3>
+                        <p>
+                            ${rec.citation.authors} (${rec.citation.year}). 
+                            ${rec.citation.title}. 
+                            <em>${rec.citation.journal}</em>, 
+                            ${rec.citation.volume}${rec.citation.issue ? '(' + rec.citation.issue + ')' : ''}, 
+                            ${rec.citation.pages}.
+                            ${rec.citation.doi ? 'DOI: ' + rec.citation.doi : ''}
+                            ${rec.citation.url ? `<br><a href="${rec.citation.url}" target="_blank">View Source</a>` : ''}
+                        </p>
+                    </div>
+                `;
+                modal.style.display = 'block';
+            }
+            
+            // Event listeners for filters and search
+            function filterRecommendations() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedDomain = domainFilter.value;
+                const selectedRole = roleFilter.value;
+                
+                const filtered = recommendations.filter(rec => {
+                    const matchesDomain = !selectedDomain || rec.domain === selectedDomain;
+                    const matchesRole = !selectedRole || rec.role === selectedRole;
+                    const matchesSearch = !searchTerm || 
+                        rec.title.toLowerCase().includes(searchTerm) || 
+                        rec.recommendation.toLowerCase().includes(searchTerm);
+                    
+                    return matchesDomain && matchesRole && matchesSearch;
+                });
+                
+                displayRecommendations(filtered);
+            }
+            
+            searchInput.addEventListener('input', filterRecommendations);
+            domainFilter.addEventListener('change', filterRecommendations);
+            roleFilter.addEventListener('change', filterRecommendations);
+            
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Initial display
+            displayRecommendations(recommendations);
+        });
+    </script>
 </body>
 </html>
