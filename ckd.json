@@ -1,0 +1,239 @@
+{
+  "domain": "CKD",
+  "count": 13,
+  "recommendations": [
+    {
+      "id": "ckd_management_1",
+      "title": "Comprehensive CKD Management Protocol for Primary Care",
+      "domain": "CKD",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a systematic approach to CKD management in primary care; screen high-risk patients (diabetes, hypertension, family history of kidney disease) with both eGFR and urinary albumin-creatinine ratio (UACR); consider cystatin C testing for further risk stratification in patients with eGFR 45-59 ml/min/1.73m\u00b2 without albuminuria; document CKD diagnosis in problem list when confirmed with two abnormal eGFR values at least 90 days apart; optimize blood pressure control with target <130/80 mmHg for those with albuminuria; prescribe ACE inhibitors or ARBs for patients with albuminuria; initiate SGLT2 inhibitors for patients with type 2 diabetes and albuminuria; prescribe statins for cardiovascular risk reduction in patients over 50; monitor potassium levels in patients on RAAS inhibitors; educate patients about their CKD diagnosis, importance of medication adherence, and self-management strategies; refer to nephrology for eGFR <30 ml/min/1.73m\u00b2, rapid decline in kidney function, or persistent albuminuria despite optimal therapy.",
+      "expected_outcomes": "Improved CKD awareness among providers and patients, earlier detection of CKD, slowed progression of kidney disease, reduced cardiovascular events, decreased progression to kidney failure, improved medication adherence, enhanced patient self-management, reduced hospitalizations.",
+      "target_population": "Medicaid-enrolled patients with CKD or at high risk for CKD, particularly those with diabetes, hypertension, or family history of kidney disease.",
+      "citation": "Foti K, Chang AR. Chronic Kidney Disease Management in Primary Care: Supporting Systems Change. Am J Kidney Dis. 2020;76(5):613-615. doi:10.1053/j.ajkd.2020.07.008",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "CKD management",
+        "albuminuria screening",
+        "primary care"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_primary_care_provider_1",
+      "title": "Evidence-Based CKD Management for Primary Care Providers",
+      "domain": "CKD",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "ckd",
+        "primary-care-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_primary_care_provider_2",
+      "title": "Evidence-Based CKD Management for Primary Care Providers",
+      "domain": "CKD",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "ckd",
+        "primary-care-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_nurse_care_manager_1",
+      "title": "Evidence-Based CKD Management for Nurse Care Managers",
+      "domain": "CKD",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "ckd",
+        "nurse-care-manager",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_nurse_care_manager_2",
+      "title": "Evidence-Based CKD Management for Nurse Care Managers",
+      "domain": "CKD",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "ckd",
+        "nurse-care-manager",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_community_health_worker_1",
+      "title": "Evidence-Based CKD Management for Community Health Workers",
+      "domain": "CKD",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "ckd",
+        "community-health-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_community_health_worker_2",
+      "title": "Evidence-Based CKD Management for Community Health Workers",
+      "domain": "CKD",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "ckd",
+        "community-health-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_social_worker_1",
+      "title": "Evidence-Based CKD Management for Social Workers",
+      "domain": "CKD",
+      "role": "Social Worker",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "ckd",
+        "social-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_pharmacist_1",
+      "title": "Evidence-Based CKD Management for Pharmacists",
+      "domain": "CKD",
+      "role": "Pharmacist",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "ckd",
+        "pharmacist",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_behavioral_health_provider_1",
+      "title": "Evidence-Based CKD Management for Behavioral Health Providers",
+      "domain": "CKD",
+      "role": "Behavioral Health Provider",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "ckd",
+        "behavioral-health-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_behavioral_health_provider_2",
+      "title": "Evidence-Based CKD Management for Behavioral Health Providers",
+      "domain": "CKD",
+      "role": "Behavioral Health Provider",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "ckd",
+        "behavioral-health-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_care_coordinator_1",
+      "title": "Evidence-Based CKD Management for Care Coordinators",
+      "domain": "CKD",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "ckd",
+        "care-coordinator",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "ckd_doula_1",
+      "title": "Evidence-Based CKD Management for Doulas",
+      "domain": "CKD",
+      "role": "Doula",
+      "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "ckd",
+        "doula",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

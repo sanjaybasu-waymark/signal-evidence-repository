@@ -1,0 +1,275 @@
+{
+  "domain": "Transportation",
+  "count": 15,
+  "recommendations": [
+    {
+      "id": "transportation_voucher_1",
+      "title": "Transportation Voucher Program for Chronic Disease Management",
+      "domain": "Transportation",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Implement a transportation voucher program for patients with chronic diseases; assess transportation needs during intake and follow-up appointments; document transportation barriers in structured EHR fields; provide bus passes, taxi vouchers, or rideshare credits based on patient needs and preferences; establish partnerships with local transportation providers; create clear eligibility criteria focusing on patients with multiple chronic conditions or frequent missed appointments; develop a simple request process requiring minimal paperwork; track utilization patterns and appointment adherence; follow up with patients who continue to miss appointments despite transportation assistance; coordinate with social workers for patients with complex needs; consider implementing a volunteer driver program for rural areas; evaluate program effectiveness by monitoring appointment attendance rates.",
+      "expected_outcomes": "Reduced missed appointments, improved chronic disease management, decreased emergency department utilization, enhanced medication adherence, better continuity of care, increased patient satisfaction, reduced healthcare costs, improved health outcomes.",
+      "target_population": "Medicaid-enrolled individuals with chronic diseases who face transportation barriers to healthcare access, particularly those in rural areas, without access to vehicles, with mobility limitations, or with multiple chronic conditions requiring frequent appointments.",
+      "citation": "Starbird LE, DiMaina C, Sun CA, Han HR. A systematic review of interventions to minimize transportation barriers among people with chronic diseases. J Community Health. 2019;44(2):400-411. doi:10.1007/s10900-018-0572-3",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "transportation barriers",
+        "chronic disease management",
+        "healthcare access"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_primary_care_provider_1",
+      "title": "Evidence-Based Transportation Management for Primary Care Providers",
+      "domain": "Transportation",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "transportation",
+        "primary-care-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_primary_care_provider_2",
+      "title": "Evidence-Based Transportation Management for Primary Care Providers",
+      "domain": "Transportation",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "primary-care-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_nurse_care_manager_1",
+      "title": "Evidence-Based Transportation Management for Nurse Care Managers",
+      "domain": "Transportation",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "transportation",
+        "nurse-care-manager",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_nurse_care_manager_2",
+      "title": "Evidence-Based Transportation Management for Nurse Care Managers",
+      "domain": "Transportation",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "nurse-care-manager",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_community_health_worker_1",
+      "title": "Evidence-Based Transportation Management for Community Health Workers",
+      "domain": "Transportation",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "community-health-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_social_worker_1",
+      "title": "Evidence-Based Transportation Management for Social Workers",
+      "domain": "Transportation",
+      "role": "Social Worker",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "social-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_social_worker_2",
+      "title": "Evidence-Based Transportation Management for Social Workers",
+      "domain": "Transportation",
+      "role": "Social Worker",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "social-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_pharmacist_1",
+      "title": "Evidence-Based Transportation Management for Pharmacists",
+      "domain": "Transportation",
+      "role": "Pharmacist",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "pharmacist",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_pharmacist_2",
+      "title": "Evidence-Based Transportation Management for Pharmacists",
+      "domain": "Transportation",
+      "role": "Pharmacist",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "pharmacist",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_behavioral_health_provider_1",
+      "title": "Evidence-Based Transportation Management for Behavioral Health Providers",
+      "domain": "Transportation",
+      "role": "Behavioral Health Provider",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "transportation",
+        "behavioral-health-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_doula_1",
+      "title": "Evidence-Based Transportation Management for Doulas",
+      "domain": "Transportation",
+      "role": "Doula",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "doula",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_care_coordinator_1",
+      "title": "Evidence-Based Transportation Management for Care Coordinators",
+      "domain": "Transportation",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "transportation",
+        "care-coordinator",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_care_coordinator_2",
+      "title": "Evidence-Based Transportation Management for Care Coordinators",
+      "domain": "Transportation",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "transportation",
+        "care-coordinator",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "transportation_doula_2",
+      "title": "Evidence-Based Transportation Management for Doulas",
+      "domain": "Transportation",
+      "role": "Doula",
+      "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "transportation",
+        "doula",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

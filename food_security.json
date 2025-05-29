@@ -1,0 +1,185 @@
+{
+  "domain": "Food Security",
+  "count": 10,
+  "recommendations": [
+    {
+      "id": "food_security_screening_1",
+      "title": "Standardized Food Insecurity Screening and Referral Protocol",
+      "domain": "Food Security",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a standardized two-question food insecurity screening tool (Hunger Vital Sign) during all routine primary care visits; integrate screening questions into electronic health record templates; document food insecurity status in structured fields; establish clear workflow for positive screens including same-day referrals to food assistance programs; develop partnerships with local food banks and SNAP outreach programs; create resource guide of local food assistance options; provide patients with direct referrals rather than passive information; follow up on referrals within two weeks; track referral outcomes; consider implementing food pharmacy or medically-tailored meal programs for patients with diet-related chronic conditions; rescreen at 6-month intervals or with significant life changes.",
+      "expected_outcomes": "Increased identification of food insecurity, improved connection to food assistance resources, better management of diet-related chronic conditions, reduced emergency department utilization, improved medication adherence, enhanced patient trust and engagement, reduced healthcare costs.",
+      "target_population": "All Medicaid-enrolled patients, with particular focus on households with children, older adults, those with chronic health conditions, and individuals living in low-income neighborhoods.",
+      "citation": "Odoms-Young A, Brown AGM, Agurs-Collins T, Glanz K. Food insecurity, neighborhood food environment, and health disparities: state of the science, research gaps and opportunities. Am J Clin Nutr. 2023;119(3):850-861. doi:10.1016/j.ajcnut.2023.12.019",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "food insecurity",
+        "screening",
+        "social determinants"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_primary_care_provider_1",
+      "title": "Evidence-Based Food Security Management for Primary Care Providers",
+      "domain": "Food Security",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "food security",
+        "primary-care-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_nurse_care_manager_1",
+      "title": "Evidence-Based Food Security Management for Nurse Care Managers",
+      "domain": "Food Security",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "food security",
+        "nurse-care-manager",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_community_health_worker_1",
+      "title": "Evidence-Based Food Security Management for Community Health Workers",
+      "domain": "Food Security",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "food security",
+        "community-health-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_social_worker_1",
+      "title": "Evidence-Based Food Security Management for Social Workers",
+      "domain": "Food Security",
+      "role": "Social Worker",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "food security",
+        "social-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_pharmacist_1",
+      "title": "Evidence-Based Food Security Management for Pharmacists",
+      "domain": "Food Security",
+      "role": "Pharmacist",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "food security",
+        "pharmacist",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_pharmacist_2",
+      "title": "Evidence-Based Food Security Management for Pharmacists",
+      "domain": "Food Security",
+      "role": "Pharmacist",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "food security",
+        "pharmacist",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_behavioral_health_provider_1",
+      "title": "Evidence-Based Food Security Management for Behavioral Health Providers",
+      "domain": "Food Security",
+      "role": "Behavioral Health Provider",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "food security",
+        "behavioral-health-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_care_coordinator_1",
+      "title": "Evidence-Based Food Security Management for Care Coordinators",
+      "domain": "Food Security",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "food security",
+        "care-coordinator",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "food_security_doula_1",
+      "title": "Evidence-Based Food Security Management for Doulas",
+      "domain": "Food Security",
+      "role": "Doula",
+      "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "food security",
+        "doula",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

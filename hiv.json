@@ -1,0 +1,23 @@
+{
+  "domain": "HIV",
+  "count": 1,
+  "recommendations": [
+    {
+      "id": "hiv_primary_care_1",
+      "title": "Comprehensive HIV Primary Care for Medicaid-Enrolled Patients",
+      "domain": "HIV",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a comprehensive HIV primary care approach that includes: 1) Create a stigma-free, culturally appropriate care environment to maximize engagement; 2) Screen for and address barriers to care at societal, health system, clinic, and individual levels; 3) Ensure continuous access to antiretroviral therapy (ART) with regular adherence assessment and support; 4) Monitor HIV viral load every 3-4 months once suppressed, and CD4 count at least annually; 5) Screen for and manage common comorbidities including cardiovascular disease, diabetes, renal disease, bone health issues, and mental health conditions; 6) Provide age-appropriate cancer screenings with particular attention to HPV-related cancers; 7) Conduct regular STI screening (at least annually, more frequently based on risk) including syphilis, gonorrhea, chlamydia, and hepatitis; 8) Ensure complete vaccination series including pneumococcal (PCV13 and PPV23), hepatitis A and B, influenza, and COVID-19; 9) Implement substance use screening and harm reduction strategies; 10) Address reproductive health needs including contraception and preconception counseling; 11) Provide tailored care for special populations including adolescents and transgender individuals; 12) Utilize multidisciplinary teams and telehealth when appropriate to improve access; 13) Implement systems to identify and re-engage patients who miss appointments.",
+      "expected_outcomes": "Sustained HIV viral suppression, reduced HIV-related morbidity and mortality, prevention of HIV transmission, improved management of comorbidities, increased vaccination rates, reduced STI rates, improved quality of life, decreased healthcare disparities, reduced emergency department utilization, and improved long-term retention in care.",
+      "target_population": "Medicaid-enrolled individuals living with HIV, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to consistent healthcare access.",
+      "citation": "Horberg M, Thompson M, Agwu A, et al. Primary Care Guidance for Providers Who Care for Persons With Human Immunodeficiency Virus: 2024 Update by HIVMA/IDSA. Clin Infect Dis. 2024;ciae479. doi:10.1093/cid/ciae479",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "HIV care",
+        "primary care",
+        "health equity"
+      ],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}
