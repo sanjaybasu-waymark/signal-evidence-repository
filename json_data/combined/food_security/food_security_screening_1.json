@@ -1,0 +1,17 @@
+{
+  "id": "food_security_screening_1",
+  "title": "Standardized Food Insecurity Screening and Referral Protocol",
+  "domain": "Food Security",
+  "role": "Primary Care Provider",
+  "implementation_guidance": "Implement a standardized two-question food insecurity screening tool (Hunger Vital Sign) during all routine primary care visits; integrate screening questions into electronic health record templates; document food insecurity status in structured fields; establish clear workflow for positive screens including same-day referrals to food assistance programs; develop partnerships with local food banks and SNAP outreach programs; create resource guide of local food assistance options; provide patients with direct referrals rather than passive information; follow up on referrals within two weeks; track referral outcomes; consider implementing food pharmacy or medically-tailored meal programs for patients with diet-related chronic conditions; rescreen at 6-month intervals or with significant life changes.",
+  "expected_outcomes": "Increased identification of food insecurity, improved connection to food assistance resources, better management of diet-related chronic conditions, reduced emergency department utilization, improved medication adherence, enhanced patient trust and engagement, reduced healthcare costs.",
+  "target_population": "All Medicaid-enrolled patients, with particular focus on households with children, older adults, those with chronic health conditions, and individuals living in low-income neighborhoods.",
+  "citation": "Odoms-Young A, Brown AGM, Agurs-Collins T, Glanz K. Food insecurity, neighborhood food environment, and health disparities: state of the science, research gaps and opportunities. Am J Clin Nutr. 2023;119(3):850-861. doi:10.1016/j.ajcnut.2023.12.019",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "food insecurity",
+    "screening",
+    "social determinants"
+  ],
+  "last_updated": "2025-05-29"
+}

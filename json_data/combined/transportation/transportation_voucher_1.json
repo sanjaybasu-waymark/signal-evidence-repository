@@ -1,0 +1,17 @@
+{
+  "id": "transportation_voucher_1",
+  "title": "Transportation Voucher Program for Chronic Disease Management",
+  "domain": "Transportation",
+  "role": "Care Coordinator",
+  "implementation_guidance": "Implement a transportation voucher program for patients with chronic diseases; assess transportation needs during intake and follow-up appointments; document transportation barriers in structured EHR fields; provide bus passes, taxi vouchers, or rideshare credits based on patient needs and preferences; establish partnerships with local transportation providers; create clear eligibility criteria focusing on patients with multiple chronic conditions or frequent missed appointments; develop a simple request process requiring minimal paperwork; track utilization patterns and appointment adherence; follow up with patients who continue to miss appointments despite transportation assistance; coordinate with social workers for patients with complex needs; consider implementing a volunteer driver program for rural areas; evaluate program effectiveness by monitoring appointment attendance rates.",
+  "expected_outcomes": "Reduced missed appointments, improved chronic disease management, decreased emergency department utilization, enhanced medication adherence, better continuity of care, increased patient satisfaction, reduced healthcare costs, improved health outcomes.",
+  "target_population": "Medicaid-enrolled individuals with chronic diseases who face transportation barriers to healthcare access, particularly those in rural areas, without access to vehicles, with mobility limitations, or with multiple chronic conditions requiring frequent appointments.",
+  "citation": "Starbird LE, DiMaina C, Sun CA, Han HR. A systematic review of interventions to minimize transportation barriers among people with chronic diseases. J Community Health. 2019;44(2):400-411. doi:10.1007/s10900-018-0572-3",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "transportation barriers",
+    "chronic disease management",
+    "healthcare access"
+  ],
+  "last_updated": "2025-05-29"
+}

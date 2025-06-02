@@ -1,0 +1,17 @@
+{
+  "id": "medication_adherence_1",
+  "title": "Structured Medication Adherence Intervention for Chronic Disease Management",
+  "domain": "Medication Adherence",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Implement a comprehensive medication adherence program for patients with chronic diseases; conduct standardized medication adherence assessments using validated tools (e.g., Morisky Medication Adherence Scale) at each visit; document adherence status in structured EHR fields; identify specific barriers to adherence through targeted questioning; provide tailored patient education on medication purpose, dosage, timing, and potential side effects; use teach-back method to confirm understanding; simplify medication regimens when possible through collaboration with prescribers; implement pill organizers or blister packs for patients with complex regimens; establish medication reminder systems (e.g., phone apps, text messages); engage family members or caregivers in medication management; schedule regular follow-up calls between visits to address adherence challenges; coordinate with pharmacists for medication reviews; document and address adverse effects promptly; create personalized medication schedules aligned with patient's daily routines.",
+  "expected_outcomes": "Improved medication adherence rates, better chronic disease control, reduced hospital admissions, decreased emergency department visits, enhanced quality of life, improved clinical outcomes, reduced healthcare costs, increased patient knowledge and self-efficacy.",
+  "target_population": "Medicaid-enrolled patients with chronic diseases requiring long-term medication therapy, particularly those with multiple medications, complex regimens, or history of poor adherence.",
+  "citation": "Oliveira CJ, Jos\u00e9 HMG, Costa EIMT. Medication Adherence in Adults with Chronic Diseases in Primary Healthcare: A Quality Improvement Project. Nurs Rep. 2024;14(3):1735-1749. doi:10.3390/nursrep14030129",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "medication adherence",
+    "chronic disease management",
+    "patient education"
+  ],
+  "last_updated": "2025-05-29"
+}

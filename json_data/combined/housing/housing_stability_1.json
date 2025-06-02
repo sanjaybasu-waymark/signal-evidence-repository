@@ -1,0 +1,17 @@
+{
+  "id": "housing_stability_1",
+  "title": "Housing Stability Intervention for Health Improvement",
+  "domain": "Housing",
+  "role": "Community Health Worker",
+  "implementation_guidance": "Implement a housing stability assessment and intervention protocol; screen all Medicaid patients for housing instability using validated questions about housing security, eviction risk, and homelessness; document housing status in structured fields; create referral pathways to local housing assistance programs; develop relationships with legal aid services for eviction prevention; coordinate with rental assistance programs; maintain updated resource list of emergency housing options; assist patients with housing applications and documentation requirements; follow up within 30 days to assess housing status changes; provide transportation assistance to housing appointments when needed; advocate with landlords when appropriate; document all housing interventions and outcomes.",
+  "expected_outcomes": "Reduced housing instability, decreased emergency department utilization, improved chronic disease management, better medication adherence, reduced missed appointments, improved mental health outcomes, decreased hospitalization rates, cost savings to Medicaid system.",
+  "target_population": "Medicaid-enrolled individuals experiencing or at risk of housing instability, particularly those with chronic health conditions, behavioral health diagnoses, or high healthcare utilization patterns.",
+  "citation": "Taylor LA. Housing and health: an overview of the literature. Health Affairs Health Policy Brief. 2018. doi:10.1377/hpb20180313.396577",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "housing stability",
+    "social determinants",
+    "care coordination"
+  ],
+  "last_updated": "2025-05-29"
+}

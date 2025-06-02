@@ -1,0 +1,17 @@
+{
+  "id": "ckd_management_1",
+  "title": "Comprehensive CKD Management Protocol for Primary Care",
+  "domain": "CKD",
+  "role": "Primary Care Provider",
+  "implementation_guidance": "Implement a systematic approach to CKD management in primary care; screen high-risk patients (diabetes, hypertension, family history of kidney disease) with both eGFR and urinary albumin-creatinine ratio (UACR); consider cystatin C testing for further risk stratification in patients with eGFR 45-59 ml/min/1.73m\u00b2 without albuminuria; document CKD diagnosis in problem list when confirmed with two abnormal eGFR values at least 90 days apart; optimize blood pressure control with target <130/80 mmHg for those with albuminuria; prescribe ACE inhibitors or ARBs for patients with albuminuria; initiate SGLT2 inhibitors for patients with type 2 diabetes and albuminuria; prescribe statins for cardiovascular risk reduction in patients over 50; monitor potassium levels in patients on RAAS inhibitors; educate patients about their CKD diagnosis, importance of medication adherence, and self-management strategies; refer to nephrology for eGFR <30 ml/min/1.73m\u00b2, rapid decline in kidney function, or persistent albuminuria despite optimal therapy.",
+  "expected_outcomes": "Improved CKD awareness among providers and patients, earlier detection of CKD, slowed progression of kidney disease, reduced cardiovascular events, decreased progression to kidney failure, improved medication adherence, enhanced patient self-management, reduced hospitalizations.",
+  "target_population": "Medicaid-enrolled patients with CKD or at high risk for CKD, particularly those with diabetes, hypertension, or family history of kidney disease.",
+  "citation": "Foti K, Chang AR. Chronic Kidney Disease Management in Primary Care: Supporting Systems Change. Am J Kidney Dis. 2020;76(5):613-615. doi:10.1053/j.ajkd.2020.07.008",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "CKD management",
+    "albuminuria screening",
+    "primary care"
+  ],
+  "last_updated": "2025-05-29"
+}

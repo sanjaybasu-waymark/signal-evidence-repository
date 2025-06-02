@@ -1,0 +1,17 @@
+{
+  "id": "depression_screening_1",
+  "title": "Universal Depression Screening Protocol with Measurement-Based Care",
+  "domain": "Depression",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Implement universal depression screening using PHQ-2 for all adult patients; follow positive screens (score \u22653) with PHQ-9 assessment; document scores in structured fields; establish workflow for same-day provider review of positive screens; develop protocol for measurement-based care including standardized follow-up intervals (4-6 weeks initially); use PHQ-9 at each follow-up to track symptom improvement; create registry to monitor patients with positive screens; establish clear referral pathways for severe cases or suicidal ideation; train all staff on screening workflow and documentation.",
+  "expected_outcomes": "Improved identification of depression, enhanced treatment monitoring, better clinical outcomes, reduced symptom severity, increased remission rates, systematic follow-up of diagnosed patients, improved documentation of depression care, reduced missed opportunities for intervention.",
+  "target_population": "All Medicaid-enrolled adults in primary care settings, with particular attention to those with chronic medical conditions, recent life stressors, or previous history of depression.",
+  "citation": "Siniscalchi KA, Broome ME, Fish J, et al. Depression screening and measurement-based care in primary care. J Prim Care Community Health. 2020;11:2150132720931261. doi:10.1177/2150132720931261",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "depression screening",
+    "measurement-based care",
+    "PHQ-9"
+  ],
+  "last_updated": "2025-05-29"
+}

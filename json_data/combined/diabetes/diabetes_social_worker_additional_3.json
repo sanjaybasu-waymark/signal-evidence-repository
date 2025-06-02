@@ -1,0 +1,18 @@
+{
+  "id": "diabetes_social_worker_additional_3",
+  "title": "Additional Diabetes Management Strategy for Social Workers",
+  "domain": "Diabetes",
+  "role": "Social Worker",
+  "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+  "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+  "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+  "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+  "evidence_level": "C - Limited",
+  "tags": [
+    "diabetes",
+    "social-worker",
+    "medicaid",
+    "evidence-based"
+  ],
+  "last_updated": "2025-05-29"
+}
