@@ -1,118 +1,107 @@
-# Signal Evidence Library
-
-A comprehensive, evidence-based library of healthcare recommendations for population health care management teams.
+# Signal Evidence Repository
 
 ## Overview
+The Signal Evidence Repository is a comprehensive collection of evidence-based recommendations for population health care management teams. This repository contains over 250 tactical, medically-valid recommendations across 22 domains and 8 professional roles, designed to be implemented at the individual provider level.
 
-The Signal Evidence Library provides over 170 evidence-based recommendations for healthcare providers across multiple clinical domains and healthcare roles. Each recommendation is:
+![Signal Evidence Repository](https://github.com/sanjaybasu-waymark/signal-evidence-repository/raw/main/website/screenshot.png)
 
-- Specific and actionable
-- Focused on individual patient-facing actions
-- Supported by peer-reviewed evidence
-- Includes implementation guidance and expected outcomes
-
-## Repository Structure
-
-```
-signal-evidence-library/
-├── config/                 # Configuration files
-│   ├── domains.py          # Domain definitions
-│   └── roles.py            # Role definitions
-├── data/                   # Data storage
-│   ├── raw/                # Raw recommendation files
-│   ├── processed/          # Processed JSON data
-│   └── embeddings/         # Vector embeddings
-├── src/                    # Source code
-│   ├── api/                # API endpoints
-│   ├── db/                 # Database models and operations
-│   ├── pipeline/           # Data processing pipeline
-│   └── web/                # Web interface
-├── scripts/                # Utility scripts
-└── docs/                   # Documentation
-```
-
-## Clinical Domains
-
-The library covers recommendations across multiple clinical domains:
-
-1. Chronic Disease Management
-2. Cardiovascular Health
-3. Behavioral Health
-4. Substance Use
-5. Care Coordination
-6. Maternal Health
-7. Transitional Care
-8. Social Determinants of Health
-
-## Healthcare Roles
-
-Recommendations are tailored for various healthcare roles:
-
-1. Community Health Worker (CHW)
-2. Nurse
-3. Primary Care Provider (PCP)
-4. Behavioral Health Provider
-5. Social Worker
-6. Care Coordinator
-7. Doula
-8. Pharmacist
-9. Peer Support Specialist
+## Purpose
+This repository serves as a centralized hub for healthcare professionals to access bite-sized, actionable recommendations backed by peer-reviewed evidence. Rather than focusing on system-level interventions, these recommendations provide specific guidance that individual providers can implement in their practice.
 
 ## Features
+- **Evidence-Based**: All recommendations are sourced from peer-reviewed literature and authoritative clinical guidelines
+- **Role-Specific**: Tailored recommendations for 8 different healthcare roles
+- **Domain-Focused**: Covers 22 clinical conditions and social determinants of health
+- **Actionable**: Concrete, specific guidance rather than general principles
+- **Searchable**: Web interface allows filtering by domain, role, or keyword
+- **Validated**: All recommendations follow a consistent schema and validation process
 
-- **Evidence-Based**: All recommendations are supported by peer-reviewed literature
-- **Actionable**: Specific, concrete actions providers can take
-- **Implementation Guidance**: Practical advice for putting recommendations into practice
-- **Expected Outcomes**: Documented impact with metrics and confidence intervals
-- **Cost-Effectiveness**: Information on resource requirements and return on investment
+## Domains Covered
+- Clinical Conditions: Diabetes, Hypertension, Depression, Anxiety, Substance Use Disorders, Asthma, COPD, Heart Failure, CKD, Post MI, Post Stroke, HIV
+- Preventive Care: Preventive Screenings, Vaccination, EPSDT
+- Care Management: Medication Adherence, Care Transitions
+- Social Determinants: Housing, Food Security, Transportation
+- Maternal Health: Prenatal, Postnatal
 
-## Recommendation Types
+## Professional Roles
+- Nurse Care Manager
+- Clinical Pharmacist
+- Community Health Worker
+- Social Worker (Non-Clinical)
+- Care Coordinator
+- Social Worker (Clinical/Therapy)
+- Pharmacy Technician
+- Doula
 
-The library includes various types of recommendations:
+## Repository Structure
+```
+signal-evidence-repository/
+├── website/
+│   └── index.html           # Main web interface
+├── json_data/
+│   ├── [domain_name].json   # Domain-specific recommendation files
+│   └── additional_recommendations/
+│       └── [specific_recommendations].json
+├── json_structure/
+│   └── recommendation_schema.json  # JSON schema definition
+├── validate_json.py         # Validation script
+└── README.md                # This file
+```
 
-- **Specific Assessment Techniques**: Detailed instructions for conducting assessments (e.g., "Perform the 10-gram monofilament test at 4 specific sites on each foot")
-- **Specific Questions for Patient Engagement**: Exact wording for effective patient communication (e.g., "Ask patients with heart failure these specific questions about diuretics")
-- **Structured Approaches**: Step-by-step frameworks for addressing common clinical challenges (e.g., "Implement the 'Show-Tell-Show' technique for medication education")
-- **Targeted Interventions**: Focused actions for specific populations (e.g., "Provide 3-5 postpartum home visits within the first 6 weeks after birth")
+## Using the Repository
 
-## Getting Started
+### Browsing Recommendations
+The easiest way to explore the repository is through the web interface:
+1. Visit the GitHub Pages site: https://sanjaybasu-waymark.github.io/signal-evidence-repository/
+2. Browse recommendations by domain or role
+3. Use the search function to find specific topics
 
-1. Clone this repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the application: `python src/main.py`
-4. Access the web interface at `http://localhost:5000`
+### Accessing the Raw Data
+All recommendations are stored as JSON files in the `json_data` directory. Each recommendation follows this structure:
+```json
+{
+  "id": "unique_identifier",
+  "title": "Recommendation Title",
+  "domain": "Clinical Domain",
+  "role": "Professional Role",
+  "implementation_guidance": "Detailed guidance on implementation",
+  "expected_outcomes": "Expected outcomes when implemented",
+  "target_population": "Specific population for whom this is intended",
+  "citation": "Citation in JAMA/AMA style",
+  "evidence_level": "Evidence classification (A-D)",
+  "tags": ["relevant", "tags"],
+  "last_updated": "YYYY-MM-DD"
+}
+```
 
-## Scripts
+## Deployment
+To deploy your own instance of the Signal Evidence Repository:
 
-- `scripts/rebuild_search_index.py`: Rebuild the search index
-- `scripts/analyze_slow_queries.py`: Optimize database queries
-- `scripts/update_embeddings.py`: Update vector embeddings
-- `scripts/validate_all_content.py`: Run quality validation
-- `scripts/fix_content_formatting.py`: Fix common formatting issues
-- `scripts/update_evidence_levels.py`: Update evidence levels
-- `scripts/migrate_to_db.py`: Migrate data to database
-- `scripts/generate_embeddings.py`: Generate vector embeddings
-- `scripts/pubmed_scholar_import.py`: Import content from PubMed/Google Scholar
-
-## Sources
-
-Recommendations are sourced from authoritative references including:
-
-- Clinical practice guidelines (USPSTF, ADA, AHA, etc.)
-- Systematic reviews and meta-analyses
-- Randomized controlled trials
-- The Better Care Playbook
-- Evidence-based nursing and social work textbooks
-- Community health worker intervention studies
+1. Fork this repository
+2. Enable GitHub Pages:
+   - Go to repository Settings > Pages
+   - Under "Source", select "Deploy from a branch"
+   - Select "main" branch and "/website" folder
+   - Click "Save"
+3. Your site will be available at `https://[your-username].github.io/signal-evidence-repository/`
 
 ## Contributing
+Contributions to the Signal Evidence Repository are welcome! To contribute:
 
-Contributions to the Signal Evidence Library are welcome! Please see our contributing guidelines for more information.
+1. Fork the repository
+2. Add new recommendations following the schema in `json_structure/recommendation_schema.json`
+3. Validate your additions using `python validate_json.py`
+4. Submit a pull request with your changes
 
 ## License
+This repository is available under the MIT License. See the LICENSE file for more details.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Acknowledgments
+- Created by Waymark Care
+- Evidence sourced from peer-reviewed literature and clinical guidelines
+- Special thanks to all contributors who have helped build this resource
 
 ## Contact
-
-For questions or support, please open an issue on GitHub or contact the project maintainers.
+For questions or feedback about the Signal Evidence Repository, please contact:
+- GitHub: [@sanjaybasu-waymark](https://github.com/sanjaybasu-waymark)
+- Website: [waymarkcare.com](https://waymarkcare.com)
