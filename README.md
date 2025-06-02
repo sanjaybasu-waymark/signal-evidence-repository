@@ -36,7 +36,7 @@ This repository serves as a centralized hub for healthcare professionals to acce
 ## Repository Structure
 ```
 signal-evidence-repository/
-├── website/
+├── docs/
 │   └── index.html           # Main web interface
 ├── json_data/
 │   ├── [domain_name].json   # Domain-specific recommendation files
