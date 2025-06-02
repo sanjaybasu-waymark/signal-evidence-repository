@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waymark's Evidence Library</title>
+    <title>Waymark Population Health Evidence Library</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -358,7 +358,7 @@
 <body>
     <header>
         <div class="container nav-container">
-            <a href="#" class="site-title" id="home-link">Signal Evidence Library</a>
+            <a href="#" class="site-title" id="home-link">Waymark Population Health Evidence Library</a>
             <div class="nav-links">
                 <a href="#" class="nav-link" id="home-nav">Home</a>
                 <a href="#" class="nav-link" id="browse-nav">Browse</a>
@@ -369,9 +369,8 @@
     
     <section class="welcome-section">
         <div class="container">
-            <h1>Welcome to Waymark's Population Health Management Evidence Library</h1>
-            <p>A comprehensive collection of evidence-based recommendations for healthcare professionals working with underserved patients.</p>
-            <p>This library contains peer-reviewed, evidence-based recommendations for different healthcare roles across various clinical and social domains.</p>
+            <h1>Welcome to the Waymark Population Health Evidence Library</h1>
+            <p>A comprehensive collection of evidence-based recommendations for healthcare professionals working with underserved patients in proactive population health management teams.</p>
         </div>
     </section>
     
@@ -449,13 +448,18 @@
     
     <footer>
         <div class="container">
-            <p>© 2025 Waymark, www.waymarkcare.com | <a href="#" class="footer-link">About</a> | <a href="#" class="footer-link">Contact</a></p>
+            <p>© 2025, Waymark, <a href="https://www.waymarkcare.com" class="footer-link" target="_blank">www.waymarkcare.com</a></p>
         </div>
     </footer>
     
     <script>
-        // Base path for JSON files
-        const basePath = './json_data/';
+        // GitHub repository information
+        const repoOwner = 'sanjaybasu-waymark';
+        const repoName = 'signal-evidence-repository';
+        const repoBranch = 'main';
+        
+        // Base URL for raw GitHub content
+        const rawGitHubBaseUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${repoBranch}/`;
         
         // DOM Elements
         const mainContent = document.getElementById('main-content');
@@ -467,6 +471,32 @@
         const homeNav = document.getElementById('home-nav');
         const searchInput = document.getElementById('search-input');
         const searchButton = document.getElementById('search-button');
+        
+        // Domain to filename mapping
+        const domainToFilename = {
+            'Diabetes': 'diabetes_recommendations.json',
+            'Hypertension': 'hypertension_recommendations.json',
+            'Depression': 'depression_recommendations.json',
+            'Anxiety': 'anxiety_recommendations.json',
+            'Substance Use Disorders': 'substance_use_recommendations.json',
+            'Housing': 'housing_recommendations.json',
+            'Food Security': 'food_security_recommendations.json',
+            'Transportation': 'transportation_recommendations.json',
+            'Asthma': 'asthma_recommendations.json',
+            'COPD': 'copd_recommendations.json',
+            'Heart Failure': 'heart_failure_recommendations.json',
+            'Preventive Screenings': 'preventive_screenings_recommendations.json',
+            'Medication Adherence': 'medication_adherence_recommendations.json',
+            'Care Transitions': 'care_transitions_recommendations.json',
+            'CKD': 'ckd_recommendations.json',
+            'Post MI': 'post_mi_recommendations.json',
+            'Post Stroke': 'post_stroke_recommendations.json',
+            'HIV': 'hiv_recommendations.json',
+            'Vaccination': 'vaccination_recommendations.json',
+            'EPSDT': 'epsdt_recommendations.json',
+            'Prenatal': 'prenatal_recommendations.json',
+            'Postnatal': 'postnatal_recommendations.json'
+        };
         
         // Add event listeners
         document.querySelectorAll('.domain-link').forEach(link => {
@@ -524,144 +554,208 @@
             recommendationsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
             
             // Fetch recommendations
-            fetchRecommendations(type, value);
+            fetchAllRecommendations(type, value);
         }
         
-        // Function to fetch recommendations
-        async function fetchRecommendations(type, value) {
+        // Function to check if two recommendations are duplicates
+        function isDuplicate(rec1, rec2) {
+            // If both have IDs, compare them
+            if (rec1.id && rec2.id) {
+                return rec1.id === rec2.id;
+            }
+            
+            // Otherwise compare title and implementation guidance
+            return rec1.title === rec2.title && 
+                   rec1.implementation_guidance === rec2.implementation_guidance;
+        }
+        
+        // Function to fetch recommendations from all possible locations
+        async function fetchAllRecommendations(type, value) {
             try {
-                // First try to fetch from combined directory
-                let response;
-                let jsonData;
+                let allRecommendations = [];
+                let loadedFiles = [];
                 
+                // 1. Try to fetch from json_data directory
                 if (type === 'domain') {
-                    // Convert domain name to lowercase and replace spaces with underscores
-                    const domainFile = value.toLowerCase().replace(/ /g, '_');
-                    response = await fetch(`${basePath}${domainFile}_recommendations.json`);
-                    
-                    if (response.ok) {
-                        jsonData = await response.json();
-                    } else {
-                        // Try additional recommendations
-                        const additionalResponse = await fetch(`${basePath}additional_recommendations/${domainFile}_recommendations.json`);
-                        if (additionalResponse.ok) {
-                            jsonData = await additionalResponse.json();
+                    const jsonDataFilename = domainToFilename[value];
+                    if (jsonDataFilename) {
+                        try {
+                            const jsonDataUrl = `${rawGitHubBaseUrl}json_data/${jsonDataFilename}`;
+                            const jsonDataResponse = await fetch(jsonDataUrl);
+                            
+                            if (jsonDataResponse.ok) {
+                                const jsonText = await jsonDataResponse.text();
+                                // Debug: Log the raw JSON text
+                                console.log(`Raw JSON from ${jsonDataUrl}:`, jsonText);
+                                
+                                try {
+                                    const data = JSON.parse(jsonText);
+                                    console.log(`Parsed data from ${jsonDataUrl}:`, data);
+                                    
+                                    // Handle both array and single object formats
+                                    if (Array.isArray(data)) {
+                                        // Debug: Log array length
+                                        console.log(`Array length: ${data.length}`);
+                                        
+                                        // Filter out any undefined or malformed entries
+                                        const validData = data.filter(item => item && item.title);
+                                        console.log(`Valid items: ${validData.length}`);
+                                        
+                                        // Add all valid items to recommendations
+                                        allRecommendations.push(...validData);
+                                    } else if (data && data.title) {
+                                        allRecommendations.push(data);
+                                    }
+                                    
+                                    loadedFiles.push(jsonDataUrl);
+                                    console.log(`Loaded recommendations from ${jsonDataUrl}`);
+                                } catch (parseError) {
+                                    console.error(`Error parsing JSON from ${jsonDataUrl}:`, parseError);
+                                }
+                            }
+                        } catch (error) {
+                            console.log(`Error fetching from json_data: ${error}`);
                         }
                     }
                 } else if (type === 'role') {
-                    // For roles, we need to search across all domain files
-                    // This is a simplified approach - in a real app, you'd have a proper API
-                    const allRecommendations = [];
-                    
-                    // Try to fetch from all domain files
-                    const domains = [
-                        'diabetes', 'hypertension', 'depression', 'anxiety', 
-                        'substance_use', 'housing', 'food_security', 'transportation',
-                        'asthma', 'copd', 'heart_failure', 'preventive_screenings',
-                        'medication_adherence', 'care_transitions', 'ckd', 'post_mi',
-                        'post_stroke', 'hiv', 'vaccination', 'epsdt', 'prenatal', 'postnatal'
-                    ];
-                    
-                    for (const domain of domains) {
+                    // For roles, search across all domain files in json_data
+                    for (const [domain, filename] of Object.entries(domainToFilename)) {
                         try {
-                            const domainResponse = await fetch(`${basePath}${domain}_recommendations.json`);
-                            if (domainResponse.ok) {
-                                const domainData = await domainResponse.json();
-                                // Filter by role
-                                const roleRecommendations = domainData.filter(rec => rec.role === value);
-                                allRecommendations.push(...roleRecommendations);
+                            const url = `${rawGitHubBaseUrl}json_data/${filename}`;
+                            const response = await fetch(url);
+                            
+                            if (response.ok) {
+                                const jsonText = await response.text();
+                                
+                                try {
+                                    const data = JSON.parse(jsonText);
+                                    
+                                    // Handle both array and single object formats
+                                    let domainRecs = [];
+                                    if (Array.isArray(data)) {
+                                        domainRecs = data.filter(item => item && item.title);
+                                    } else if (data && data.title) {
+                                        domainRecs = [data];
+                                    }
+                                    
+                                    // Filter by role
+                                    const roleRecommendations = domainRecs.filter(rec => 
+                                        rec && rec.role === value);
+                                    
+                                    // Add non-duplicate recommendations
+                                    for (const rec of roleRecommendations) {
+                                        if (!allRecommendations.some(existingRec => isDuplicate(existingRec, rec))) {
+                                            allRecommendations.push(rec);
+                                        }
+                                    }
+                                    
+                                    if (roleRecommendations.length > 0) {
+                                        loadedFiles.push(url);
+                                        console.log(`Loaded ${roleRecommendations.length} ${value} recommendations from ${url}`);
+                                    }
+                                } catch (parseError) {
+                                    console.error(`Error parsing JSON from ${url}:`, parseError);
+                                }
                             }
                         } catch (error) {
-                            console.log(`Error fetching ${domain} recommendations:`, error);
+                            // Silently continue if a specific file isn't found
                         }
                     }
+                }
+                
+                // 2. Try to fetch from json_data/additional_recommendations directory
+                // List of patterns to try for additional recommendations
+                const additionalPatterns = [];
+                
+                if (type === 'domain') {
+                    // Convert domain name to lowercase and replace spaces with underscores for additional files
+                    const domainKey = value.toLowerCase().replace(/ /g, '_');
                     
-                    // Also check additional recommendations
+                    additionalPatterns.push(
+                        `${domainKey}_management_1.json`,
+                        `${domainKey}_screening_1.json`,
+                        `${domainKey}_home_1.json`,
+                        `${domainKey}_care_1.json`,
+                        `${domainKey}_support_1.json`,
+                        `${domainKey}_doula_1.json`,
+                        `${domainKey}_cgm_1.json`,
+                        `${domainKey}_measurement_1.json`,
+                        `${domainKey}_stability_1.json`,
+                        `${domainKey}_screening_1.json`,
+                        `${domainKey}_voucher_1.json`,
+                        `${domainKey}_primary_care_1.json`
+                    );
+                } else if (type === 'role') {
+                    const roleKey = value.toLowerCase().replace(/ /g, '_').replace(/\(|\)/g, '');
+                    
+                    // List of specific files to try for this role
+                    additionalPatterns.push(
+                        'nurse_care_manager_diabetes_collaboration_1.json',
+                        'nurse_care_manager_diabetes_followup_1.json',
+                        'nurse_care_manager_diabetes_motivational_1.json',
+                        'nurse_care_manager_diabetes_paid_1.json',
+                        'nurse_care_manager_diabetes_registry_1.json',
+                        'nurse_care_manager_diabetes_standing_orders_1.json',
+                        'clinical_pharmacist_diabetes_1.json',
+                        'clinical_pharmacist_cvd_1.json',
+                        'pharmacy_tech_med_sync_1.json',
+                        'chw_health_coaching_1.json',
+                        'chw_home_visit_protocol_1.json',
+                        'social_work_cbt_anxiety_1.json',
+                        'social_work_dbt_emotion_1.json',
+                        'doula_labor_support_1.json',
+                        'doula_postpartum_support_1.json',
+                        'care_coordination_transitions_1.json',
+                        'street_medicine_outreach_1.json',
+                        'street_medicine_wound_care_1.json'
+                    );
+                }
+                
+                // Try all additional patterns
+                for (const pattern of additionalPatterns) {
                     try {
-                        const additionalFiles = await fetch(`${basePath}additional_recommendations/`);
-                        if (additionalFiles.ok) {
-                            const additionalFilesData = await additionalFiles.text();
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(additionalFilesData, 'text/html');
-                            const links = doc.querySelectorAll('a');
+                        const additionalUrl = `${rawGitHubBaseUrl}json_data/additional_recommendations/${pattern}`;
+                        const additionalResponse = await fetch(additionalUrl);
+                        
+                        if (additionalResponse.ok) {
+                            const jsonText = await additionalResponse.text();
                             
-                            for (const link of links) {
-                                const href = link.getAttribute('href');
-                                if (href && href.endsWith('.json')) {
-                                    try {
-                                        const fileResponse = await fetch(`${basePath}additional_recommendations/${href}`);
-                                        if (fileResponse.ok) {
-                                            const fileData = await fileResponse.json();
-                                            if (fileData.role === value) {
-                                                allRecommendations.push(fileData);
-                                            }
-                                        }
-                                    } catch (error) {
-                                        console.log(`Error fetching ${href}:`, error);
+                            try {
+                                const additionalData = JSON.parse(jsonText);
+                                
+                                // For domain type, check if domain matches
+                                // For role type, check if role matches
+                                if ((type === 'domain' && additionalData.domain === value) || 
+                                    (type === 'role' && additionalData.role === value)) {
+                                    
+                                    // Check if this is a duplicate before adding
+                                    if (!allRecommendations.some(existingRec => isDuplicate(existingRec, additionalData))) {
+                                        allRecommendations.push(additionalData);
+                                        loadedFiles.push(additionalUrl);
+                                        console.log(`Loaded 1 recommendation from ${additionalUrl}`);
                                     }
                                 }
+                            } catch (parseError) {
+                                console.error(`Error parsing JSON from ${additionalUrl}:`, parseError);
                             }
                         }
                     } catch (error) {
-                        console.log('Error fetching additional recommendations:', error);
+                        // Silently continue if a specific file isn't found
                     }
-                    
-                    jsonData = allRecommendations;
                 }
                 
                 // If we have data, display it
-                if (jsonData && jsonData.length > 0) {
-                    displayRecommendations(jsonData);
+                if (allRecommendations.length > 0) {
+                    console.log(`Total unique recommendations found: ${allRecommendations.length}`);
+                    console.log(`Files loaded: ${loadedFiles.join(', ')}`);
+                    displayRecommendations(allRecommendations);
                 } else {
-                    // Try to fetch individual files from additional_recommendations
-                    const additionalRecommendations = [];
-                    
-                    try {
-                        const additionalFiles = await fetch(`${basePath}additional_recommendations/`);
-                        if (additionalFiles.ok) {
-                            const additionalFilesData = await additionalFiles.text();
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(additionalFilesData, 'text/html');
-                            const links = doc.querySelectorAll('a');
-                            
-                            for (const link of links) {
-                                const href = link.getAttribute('href');
-                                if (href && href.endsWith('.json')) {
-                                    try {
-                                        const fileResponse = await fetch(`${basePath}additional_recommendations/${href}`);
-                                        if (fileResponse.ok) {
-                                            const fileData = await fileResponse.json();
-                                            if ((type === 'domain' && fileData.domain === value) || 
-                                                (type === 'role' && fileData.role === value)) {
-                                                additionalRecommendations.push(fileData);
-                                            }
-                                        }
-                                    } catch (error) {
-                                        console.log(`Error fetching ${href}:`, error);
-                                    }
-                                }
-                            }
-                        }
-                    } catch (error) {
-                        console.log('Error fetching additional recommendations:', error);
-                    }
-                    
-                    if (additionalRecommendations.length > 0) {
-                        displayRecommendations(additionalRecommendations);
-                    } else {
-                        // If still no data, show message
-                        recommendationsList.innerHTML = `<p>No recommendations found for ${type === 'domain' ? value : 'role ' + value}.</p>`;
-                        
-                        // Fallback to display sample recommendations
-                        displaySampleRecommendations(type, value);
-                    }
+                    // If no data, show message
+                    recommendationsList.innerHTML = `<p>No recommendations found for ${type === 'domain' ? value : 'role ' + value}.</p>`;
                 }
             } catch (error) {
                 console.error('Error fetching recommendations:', error);
                 recommendationsList.innerHTML = `<p>Error loading recommendations. Please try again later.</p>`;
-                
-                // Fallback to display sample recommendations
-                displaySampleRecommendations(type, value);
             }
         }
         
@@ -674,7 +768,16 @@
                 return;
             }
             
-            recommendations.forEach(rec => {
+            // Debug: Log all recommendations before display
+            console.log(`Displaying ${recommendations.length} recommendations:`, recommendations);
+            
+            recommendations.forEach((rec, index) => {
+                // Skip if any required field is missing
+                if (!rec || !rec.title) {
+                    console.log(`Skipping recommendation at index ${index} due to missing title`);
+                    return;
+                }
+                
                 const evidenceClass = rec.evidence_level ? 
                     `evidence-${rec.evidence_level.charAt(0).toLowerCase()}` : 'evidence-d';
                 
@@ -682,93 +785,26 @@
                 card.className = 'recommendation-card';
                 
                 card.innerHTML = `
-                    <h3 class="recommendation-title">${rec.title}</h3>
+                    <h3 class="recommendation-title">${rec.title || 'Untitled Recommendation'}</h3>
                     <div class="recommendation-meta">
-                        <span>Domain: ${rec.domain}</span>
-                        <span>Role: ${rec.role}</span>
+                        <span>Domain: ${rec.domain || 'Unknown'}</span>
+                        <span>Role: ${rec.role || 'Unknown'}</span>
                         ${rec.evidence_level ? 
                             `<span>Evidence Level: <span class="evidence-level ${evidenceClass}">${rec.evidence_level}</span></span>` : 
                             ''}
                     </div>
                     <div class="recommendation-content">
-                        <p><strong>Implementation Guidance:</strong> ${rec.implementation_guidance}</p>
-                        <p><strong>Expected Outcomes:</strong> ${rec.expected_outcomes}</p>
-                        <p><strong>Target Population:</strong> ${rec.target_population}</p>
+                        <p><strong>Implementation Guidance:</strong> ${rec.implementation_guidance || 'No guidance provided'}</p>
+                        <p><strong>Expected Outcomes:</strong> ${rec.expected_outcomes || 'No outcomes specified'}</p>
+                        <p><strong>Target Population:</strong> ${rec.target_population || 'General population'}</p>
                     </div>
                     <div class="recommendation-citation">
-                        <p><strong>Citation:</strong> ${rec.citation}</p>
+                        <p><strong>Citation:</strong> ${rec.citation || 'No citation provided'}</p>
                     </div>
                 `;
                 
                 recommendationsList.appendChild(card);
             });
-        }
-        
-        // Function to display sample recommendations when JSON files can't be loaded
-        function displaySampleRecommendations(type, value) {
-            // Create sample recommendations based on type and value
-            const sampleRecommendations = [];
-            
-            if (type === 'domain') {
-                // Sample recommendations for domain
-                sampleRecommendations.push({
-                    title: `Sample ${value} Recommendation 1`,
-                    domain: value,
-                    role: "Nurse Care Manager",
-                    implementation_guidance: "This is a sample implementation guidance for demonstration purposes. In a real implementation, this would contain detailed, evidence-based guidance on how to implement this recommendation.",
-                    expected_outcomes: "Improved patient outcomes, reduced hospitalizations, and enhanced quality of life.",
-                    target_population: `Patients with ${value.toLowerCase()}, particularly those with complex care needs.`,
-                    citation: "Sample Citation. Journal of Evidence-Based Practice. 2023;10(2):45-52.",
-                    evidence_level: "B - Moderate"
-                });
-                
-                sampleRecommendations.push({
-                    title: `Sample ${value} Recommendation 2`,
-                    domain: value,
-                    role: "Clinical Pharmacist",
-                    implementation_guidance: "Another sample implementation guidance for demonstration purposes. This would normally contain specific, actionable steps for implementation.",
-                    expected_outcomes: "Enhanced medication adherence, reduced adverse events, and improved clinical outcomes.",
-                    target_population: `Adult patients with ${value.toLowerCase()} requiring medication management.`,
-                    citation: "Sample Citation. International Journal of Clinical Practice. 2024;15(3):112-120.",
-                    evidence_level: "A - Strong"
-                });
-            } else {
-                // Sample recommendations for role
-                sampleRecommendations.push({
-                    title: `Sample Recommendation for ${value} 1`,
-                    domain: "Diabetes",
-                    role: value,
-                    implementation_guidance: "This is a sample implementation guidance for demonstration purposes. In a real implementation, this would contain detailed, evidence-based guidance on how to implement this recommendation.",
-                    expected_outcomes: "Improved patient outcomes, enhanced care coordination, and better patient satisfaction.",
-                    target_population: "Patients with diabetes requiring care management.",
-                    citation: "Sample Citation. Journal of Professional Practice. 2023;8(4):78-85.",
-                    evidence_level: "B - Moderate"
-                });
-                
-                sampleRecommendations.push({
-                    title: `Sample Recommendation for ${value} 2`,
-                    domain: "Hypertension",
-                    role: value,
-                    implementation_guidance: "Another sample implementation guidance for demonstration purposes. This would normally contain specific, actionable steps for implementation.",
-                    expected_outcomes: "Better blood pressure control, reduced cardiovascular events, and improved quality of life.",
-                    target_population: "Patients with hypertension, particularly those with uncontrolled blood pressure.",
-                    citation: "Sample Citation. Best Practices in Healthcare. 2024;12(1):34-42.",
-                    evidence_level: "A - Strong"
-                });
-            }
-            
-            // Display the sample recommendations
-            displayRecommendations(sampleRecommendations);
-            
-            // Add note about sample data
-            const noteElement = document.createElement('div');
-            noteElement.className = 'card';
-            noteElement.innerHTML = `
-                <p><strong>Note:</strong> These are sample recommendations shown for demonstration purposes. 
-                The actual JSON data files could not be loaded. Please ensure that the JSON files are properly 
-                uploaded to your GitHub repository in the correct structure.</p>
-            `;
-            recommendationsList.insertBefore(noteElement, recommendationsList.firstChild);
         }
         
         // Function to search recommendations
