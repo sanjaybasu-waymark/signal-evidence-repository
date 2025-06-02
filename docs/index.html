@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waymark's Population Health Management Evidence Library</title>
+    <title>Signal Evidence Library</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -128,6 +128,7 @@
             font-weight: 500;
             font-size: 0.9rem;
             transition: background-color 0.2s ease;
+            cursor: pointer;
         }
         
         /* Domain link colors */
@@ -207,6 +208,121 @@
             text-decoration: underline;
         }
         
+        /* New styles for recommendations display */
+        #recommendations-container {
+            display: none;
+            margin-top: 2rem;
+        }
+        
+        .recommendation-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .recommendation-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .recommendation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .recommendation-meta span {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .recommendation-content {
+            margin-bottom: 1rem;
+        }
+        
+        .recommendation-citation {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-light);
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .evidence-level {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .evidence-a {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .evidence-b {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .evidence-c {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .evidence-d {
+            background-color: #e2e3e5;
+            color: #383d41;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--background-alt);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        
+        .back-button:hover {
+            background-color: var(--border);
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -231,97 +347,467 @@
                 padding: 0.4rem 0.8rem;
                 font-size: 0.8rem;
             }
+            
+            .recommendation-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container nav-container">
-            <a href="#" class="site-title">Signal Evidence Library</a>
+            <a href="#" class="site-title" id="home-link">Signal Evidence Library</a>
             <div class="nav-links">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">Browse</a>
-                <a href="#" class="nav-link">Search</a>
+                <a href="#" class="nav-link" id="home-nav">Home</a>
+                <a href="#" class="nav-link" id="browse-nav">Browse</a>
+                <a href="#" class="nav-link" id="search-nav">Search</a>
             </div>
         </div>
     </header>
     
     <section class="welcome-section">
         <div class="container">
-            <h1>Welcome to Waymark's Population Health Evidence Library</h1>
-            <p>A comprehensive collection of evidence-based recommendations for population health professionals working with underserved patients.</p>
+            <h1>Welcome to the Signal Evidence Library</h1>
+            <p>A comprehensive collection of evidence-based recommendations for healthcare professionals.</p>
             <p>This library contains peer-reviewed, evidence-based recommendations for different healthcare roles across various clinical and social domains.</p>
         </div>
     </section>
     
     <main class="container">
-        <div class="card">
-            <h5>Browse by Domain</h5>
-            <p>Explore recommendations organized by clinical condition or social need.</p>
-            <div class="domain-links">
-                <a href="#" class="domain-link">Diabetes (15)</a>
-                <a href="#" class="domain-link">Hypertension (8)</a>
-                <a href="#" class="domain-link">Depression (7)</a>
-                <a href="#" class="domain-link">Anxiety (7)</a>
-                <a href="#" class="domain-link">Substance Use Disorders (6)</a>
-                <a href="#" class="domain-link">Housing (8)</a>
-                <a href="#" class="domain-link">Food Security (6)</a>
-                <a href="#" class="domain-link">Transportation (6)</a>
-                <a href="#" class="domain-link">Asthma (6)</a>
-                <a href="#" class="domain-link">COPD (6)</a>
-                <a href="#" class="domain-link">Heart Failure (7)</a>
-                <a href="#" class="domain-link">Preventive Screenings (6)</a>
-                <a href="#" class="domain-link">Medication Adherence (8)</a>
-                <a href="#" class="domain-link">Care Transitions (7)</a>
-                <a href="#" class="domain-link">CKD (6)</a>
-                <a href="#" class="domain-link">Post MI (6)</a>
-                <a href="#" class="domain-link">Post Stroke (6)</a>
-                <a href="#" class="domain-link">HIV (6)</a>
-                <a href="#" class="domain-link">Vaccination (6)</a>
-                <a href="#" class="domain-link">EPSDT (6)</a>
-                <a href="#" class="domain-link">Prenatal (7)</a>
-                <a href="#" class="domain-link">Postnatal (7)</a>
+        <div id="main-content">
+            <div class="card">
+                <h5>Browse by Domain</h5>
+                <p>Explore recommendations organized by clinical condition or social need.</p>
+                <div class="domain-links">
+                    <a class="domain-link" data-domain="Diabetes">Diabetes (15)</a>
+                    <a class="domain-link" data-domain="Hypertension">Hypertension (8)</a>
+                    <a class="domain-link" data-domain="Depression">Depression (7)</a>
+                    <a class="domain-link" data-domain="Anxiety">Anxiety (7)</a>
+                    <a class="domain-link" data-domain="Substance Use Disorders">Substance Use Disorders (6)</a>
+                    <a class="domain-link" data-domain="Housing">Housing (8)</a>
+                    <a class="domain-link" data-domain="Food Security">Food Security (6)</a>
+                    <a class="domain-link" data-domain="Transportation">Transportation (6)</a>
+                    <a class="domain-link" data-domain="Asthma">Asthma (6)</a>
+                    <a class="domain-link" data-domain="COPD">COPD (6)</a>
+                    <a class="domain-link" data-domain="Heart Failure">Heart Failure (7)</a>
+                    <a class="domain-link" data-domain="Preventive Screenings">Preventive Screenings (6)</a>
+                    <a class="domain-link" data-domain="Medication Adherence">Medication Adherence (8)</a>
+                    <a class="domain-link" data-domain="Care Transitions">Care Transitions (7)</a>
+                    <a class="domain-link" data-domain="CKD">CKD (6)</a>
+                    <a class="domain-link" data-domain="Post MI">Post MI (6)</a>
+                    <a class="domain-link" data-domain="Post Stroke">Post Stroke (6)</a>
+                    <a class="domain-link" data-domain="HIV">HIV (6)</a>
+                    <a class="domain-link" data-domain="Vaccination">Vaccination (6)</a>
+                    <a class="domain-link" data-domain="EPSDT">EPSDT (6)</a>
+                    <a class="domain-link" data-domain="Prenatal">Prenatal (7)</a>
+                    <a class="domain-link" data-domain="Postnatal">Postnatal (7)</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h5>Browse by Role</h5>
+                <p>Find recommendations tailored to specific professional roles.</p>
+                <div class="role-links">
+                    <a class="role-link" data-role="Nurse Care Manager">Nurse Care Manager (20)</a>
+                    <a class="role-link" data-role="Clinical Pharmacist">Clinical Pharmacist (24)</a>
+                    <a class="role-link" data-role="Community Health Worker">Community Health Worker (17)</a>
+                    <a class="role-link" data-role="Social Worker (Non-Clinical)">Social Worker (Non-Clinical) (8)</a>
+                    <a class="role-link" data-role="Care Coordinator">Care Coordinator (17)</a>
+                    <a class="role-link" data-role="Social Worker (Clinical/Therapy)">Social Worker (Clinical/Therapy) (12)</a>
+                    <a class="role-link" data-role="Pharmacy Technician">Pharmacy Technician (16)</a>
+                    <a class="role-link" data-role="Doula">Doula (7)</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h5>Search the Library</h5>
+                <p>Search for specific recommendations across all domains and roles.</p>
+                <div class="search-box">
+                    <input type="text" class="search-input" id="search-input" placeholder="e.g., diabetes management">
+                    <button class="search-button" id="search-button">Search</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h5>Library Statistics</h5>
+                <ul class="stats-list">
+                    <li>Total Recommendations: 251</li>
+                    <li>Domains Covered: 22</li>
+                    <li>Professional Roles: 8</li>
+                </ul>
             </div>
         </div>
         
-        <div class="card">
-            <h5>Browse by Role</h5>
-            <p>Find recommendations tailored to specific professional roles.</p>
-            <div class="role-links">
-                <a href="#" class="role-link">Nurse Care Manager (20)</a>
-                <a href="#" class="role-link">Clinical Pharmacist (24)</a>
-                <a href="#" class="role-link">Community Health Worker (17)</a>
-                <a href="#" class="role-link">Social Worker (Non-Clinical) (8)</a>
-                <a href="#" class="role-link">Care Coordinator (17)</a>
-                <a href="#" class="role-link">Social Worker (Clinical/Therapy) (12)</a>
-                <a href="#" class="role-link">Pharmacy Technician (16)</a>
-                <a href="#" class="role-link">Doula (7)</a>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h5>Search the Library</h5>
-            <p>Search for specific recommendations across all domains and roles.</p>
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="e.g., diabetes management">
-                <button class="search-button">Search</button>
-            </div>
-        </div>
-        
-        <div class="card">
-            <h5>Library Statistics</h5>
-            <ul class="stats-list">
-                <li>Total Recommendations: 251</li>
-                <li>Domains Covered: 22</li>
-                <li>Professional Roles: 8</li>
-            </ul>
+        <div id="recommendations-container">
+            <a class="back-button" id="back-button">← Back to Home</a>
+            <h2 id="recommendations-title">Recommendations</h2>
+            <div id="recommendations-list"></div>
         </div>
     </main>
     
     <footer>
         <div class="container">
-            <p>© 2025 Waymark, www.waymarkcare.com | <a href="#" class="footer-link">About</a> | <a href="#" class="footer-link">Contact</a></p>
+            <p>© 2025 Signal Evidence Library | <a href="#" class="footer-link">About</a> | <a href="#" class="footer-link">Contact</a></p>
         </div>
     </footer>
+    
+    <script>
+        // Base path for JSON files
+        const basePath = './json_data/';
+        
+        // DOM Elements
+        const mainContent = document.getElementById('main-content');
+        const recommendationsContainer = document.getElementById('recommendations-container');
+        const recommendationsTitle = document.getElementById('recommendations-title');
+        const recommendationsList = document.getElementById('recommendations-list');
+        const backButton = document.getElementById('back-button');
+        const homeLink = document.getElementById('home-link');
+        const homeNav = document.getElementById('home-nav');
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        
+        // Add event listeners
+        document.querySelectorAll('.domain-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const domain = this.getAttribute('data-domain');
+                showRecommendations('domain', domain);
+            });
+        });
+        
+        document.querySelectorAll('.role-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const role = this.getAttribute('data-role');
+                showRecommendations('role', role);
+            });
+        });
+        
+        backButton.addEventListener('click', showHome);
+        homeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            showHome();
+        });
+        homeNav.addEventListener('click', function(e) {
+            e.preventDefault();
+            showHome();
+        });
+        
+        searchButton.addEventListener('click', function() {
+            const query = searchInput.value.trim();
+            if (query) {
+                searchRecommendations(query);
+            }
+        });
+        
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = searchInput.value.trim();
+                if (query) {
+                    searchRecommendations(query);
+                }
+            }
+        });
+        
+        // Function to show recommendations based on domain or role
+        function showRecommendations(type, value) {
+            // Hide main content and show recommendations container
+            mainContent.style.display = 'none';
+            recommendationsContainer.style.display = 'block';
+            
+            // Set title
+            recommendationsTitle.textContent = type === 'domain' 
+                ? `${value} Recommendations` 
+                : `Recommendations for ${value}`;
+            
+            // Show loading indicator
+            recommendationsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+            
+            // Fetch recommendations
+            fetchRecommendations(type, value);
+        }
+        
+        // Function to fetch recommendations
+        async function fetchRecommendations(type, value) {
+            try {
+                // First try to fetch from combined directory
+                let response;
+                let jsonData;
+                
+                if (type === 'domain') {
+                    // Convert domain name to lowercase and replace spaces with underscores
+                    const domainFile = value.toLowerCase().replace(/ /g, '_');
+                    response = await fetch(`${basePath}${domainFile}_recommendations.json`);
+                    
+                    if (response.ok) {
+                        jsonData = await response.json();
+                    } else {
+                        // Try additional recommendations
+                        const additionalResponse = await fetch(`${basePath}additional_recommendations/${domainFile}_recommendations.json`);
+                        if (additionalResponse.ok) {
+                            jsonData = await additionalResponse.json();
+                        }
+                    }
+                } else if (type === 'role') {
+                    // For roles, we need to search across all domain files
+                    // This is a simplified approach - in a real app, you'd have a proper API
+                    const allRecommendations = [];
+                    
+                    // Try to fetch from all domain files
+                    const domains = [
+                        'diabetes', 'hypertension', 'depression', 'anxiety', 
+                        'substance_use', 'housing', 'food_security', 'transportation',
+                        'asthma', 'copd', 'heart_failure', 'preventive_screenings',
+                        'medication_adherence', 'care_transitions', 'ckd', 'post_mi',
+                        'post_stroke', 'hiv', 'vaccination', 'epsdt', 'prenatal', 'postnatal'
+                    ];
+                    
+                    for (const domain of domains) {
+                        try {
+                            const domainResponse = await fetch(`${basePath}${domain}_recommendations.json`);
+                            if (domainResponse.ok) {
+                                const domainData = await domainResponse.json();
+                                // Filter by role
+                                const roleRecommendations = domainData.filter(rec => rec.role === value);
+                                allRecommendations.push(...roleRecommendations);
+                            }
+                        } catch (error) {
+                            console.log(`Error fetching ${domain} recommendations:`, error);
+                        }
+                    }
+                    
+                    // Also check additional recommendations
+                    try {
+                        const additionalFiles = await fetch(`${basePath}additional_recommendations/`);
+                        if (additionalFiles.ok) {
+                            const additionalFilesData = await additionalFiles.text();
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(additionalFilesData, 'text/html');
+                            const links = doc.querySelectorAll('a');
+                            
+                            for (const link of links) {
+                                const href = link.getAttribute('href');
+                                if (href && href.endsWith('.json')) {
+                                    try {
+                                        const fileResponse = await fetch(`${basePath}additional_recommendations/${href}`);
+                                        if (fileResponse.ok) {
+                                            const fileData = await fileResponse.json();
+                                            if (fileData.role === value) {
+                                                allRecommendations.push(fileData);
+                                            }
+                                        }
+                                    } catch (error) {
+                                        console.log(`Error fetching ${href}:`, error);
+                                    }
+                                }
+                            }
+                        }
+                    } catch (error) {
+                        console.log('Error fetching additional recommendations:', error);
+                    }
+                    
+                    jsonData = allRecommendations;
+                }
+                
+                // If we have data, display it
+                if (jsonData && jsonData.length > 0) {
+                    displayRecommendations(jsonData);
+                } else {
+                    // Try to fetch individual files from additional_recommendations
+                    const additionalRecommendations = [];
+                    
+                    try {
+                        const additionalFiles = await fetch(`${basePath}additional_recommendations/`);
+                        if (additionalFiles.ok) {
+                            const additionalFilesData = await additionalFiles.text();
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(additionalFilesData, 'text/html');
+                            const links = doc.querySelectorAll('a');
+                            
+                            for (const link of links) {
+                                const href = link.getAttribute('href');
+                                if (href && href.endsWith('.json')) {
+                                    try {
+                                        const fileResponse = await fetch(`${basePath}additional_recommendations/${href}`);
+                                        if (fileResponse.ok) {
+                                            const fileData = await fileResponse.json();
+                                            if ((type === 'domain' && fileData.domain === value) || 
+                                                (type === 'role' && fileData.role === value)) {
+                                                additionalRecommendations.push(fileData);
+                                            }
+                                        }
+                                    } catch (error) {
+                                        console.log(`Error fetching ${href}:`, error);
+                                    }
+                                }
+                            }
+                        }
+                    } catch (error) {
+                        console.log('Error fetching additional recommendations:', error);
+                    }
+                    
+                    if (additionalRecommendations.length > 0) {
+                        displayRecommendations(additionalRecommendations);
+                    } else {
+                        // If still no data, show message
+                        recommendationsList.innerHTML = `<p>No recommendations found for ${type === 'domain' ? value : 'role ' + value}.</p>`;
+                        
+                        // Fallback to display sample recommendations
+                        displaySampleRecommendations(type, value);
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching recommendations:', error);
+                recommendationsList.innerHTML = `<p>Error loading recommendations. Please try again later.</p>`;
+                
+                // Fallback to display sample recommendations
+                displaySampleRecommendations(type, value);
+            }
+        }
+        
+        // Function to display recommendations
+        function displayRecommendations(recommendations) {
+            recommendationsList.innerHTML = '';
+            
+            if (recommendations.length === 0) {
+                recommendationsList.innerHTML = '<p>No recommendations found.</p>';
+                return;
+            }
+            
+            recommendations.forEach(rec => {
+                const evidenceClass = rec.evidence_level ? 
+                    `evidence-${rec.evidence_level.charAt(0).toLowerCase()}` : 'evidence-d';
+                
+                const card = document.createElement('div');
+                card.className = 'recommendation-card';
+                
+                card.innerHTML = `
+                    <h3 class="recommendation-title">${rec.title}</h3>
+                    <div class="recommendation-meta">
+                        <span>Domain: ${rec.domain}</span>
+                        <span>Role: ${rec.role}</span>
+                        ${rec.evidence_level ? 
+                            `<span>Evidence Level: <span class="evidence-level ${evidenceClass}">${rec.evidence_level}</span></span>` : 
+                            ''}
+                    </div>
+                    <div class="recommendation-content">
+                        <p><strong>Implementation Guidance:</strong> ${rec.implementation_guidance}</p>
+                        <p><strong>Expected Outcomes:</strong> ${rec.expected_outcomes}</p>
+                        <p><strong>Target Population:</strong> ${rec.target_population}</p>
+                    </div>
+                    <div class="recommendation-citation">
+                        <p><strong>Citation:</strong> ${rec.citation}</p>
+                    </div>
+                `;
+                
+                recommendationsList.appendChild(card);
+            });
+        }
+        
+        // Function to display sample recommendations when JSON files can't be loaded
+        function displaySampleRecommendations(type, value) {
+            // Create sample recommendations based on type and value
+            const sampleRecommendations = [];
+            
+            if (type === 'domain') {
+                // Sample recommendations for domain
+                sampleRecommendations.push({
+                    title: `Sample ${value} Recommendation 1`,
+                    domain: value,
+                    role: "Nurse Care Manager",
+                    implementation_guidance: "This is a sample implementation guidance for demonstration purposes. In a real implementation, this would contain detailed, evidence-based guidance on how to implement this recommendation.",
+                    expected_outcomes: "Improved patient outcomes, reduced hospitalizations, and enhanced quality of life.",
+                    target_population: `Patients with ${value.toLowerCase()}, particularly those with complex care needs.`,
+                    citation: "Sample Citation. Journal of Evidence-Based Practice. 2023;10(2):45-52.",
+                    evidence_level: "B - Moderate"
+                });
+                
+                sampleRecommendations.push({
+                    title: `Sample ${value} Recommendation 2`,
+                    domain: value,
+                    role: "Clinical Pharmacist",
+                    implementation_guidance: "Another sample implementation guidance for demonstration purposes. This would normally contain specific, actionable steps for implementation.",
+                    expected_outcomes: "Enhanced medication adherence, reduced adverse events, and improved clinical outcomes.",
+                    target_population: `Adult patients with ${value.toLowerCase()} requiring medication management.`,
+                    citation: "Sample Citation. International Journal of Clinical Practice. 2024;15(3):112-120.",
+                    evidence_level: "A - Strong"
+                });
+            } else {
+                // Sample recommendations for role
+                sampleRecommendations.push({
+                    title: `Sample Recommendation for ${value} 1`,
+                    domain: "Diabetes",
+                    role: value,
+                    implementation_guidance: "This is a sample implementation guidance for demonstration purposes. In a real implementation, this would contain detailed, evidence-based guidance on how to implement this recommendation.",
+                    expected_outcomes: "Improved patient outcomes, enhanced care coordination, and better patient satisfaction.",
+                    target_population: "Patients with diabetes requiring care management.",
+                    citation: "Sample Citation. Journal of Professional Practice. 2023;8(4):78-85.",
+                    evidence_level: "B - Moderate"
+                });
+                
+                sampleRecommendations.push({
+                    title: `Sample Recommendation for ${value} 2`,
+                    domain: "Hypertension",
+                    role: value,
+                    implementation_guidance: "Another sample implementation guidance for demonstration purposes. This would normally contain specific, actionable steps for implementation.",
+                    expected_outcomes: "Better blood pressure control, reduced cardiovascular events, and improved quality of life.",
+                    target_population: "Patients with hypertension, particularly those with uncontrolled blood pressure.",
+                    citation: "Sample Citation. Best Practices in Healthcare. 2024;12(1):34-42.",
+                    evidence_level: "A - Strong"
+                });
+            }
+            
+            // Display the sample recommendations
+            displayRecommendations(sampleRecommendations);
+            
+            // Add note about sample data
+            const noteElement = document.createElement('div');
+            noteElement.className = 'card';
+            noteElement.innerHTML = `
+                <p><strong>Note:</strong> These are sample recommendations shown for demonstration purposes. 
+                The actual JSON data files could not be loaded. Please ensure that the JSON files are properly 
+                uploaded to your GitHub repository in the correct structure.</p>
+            `;
+            recommendationsList.insertBefore(noteElement, recommendationsList.firstChild);
+        }
+        
+        // Function to search recommendations
+        function searchRecommendations(query) {
+            // Set title
+            recommendationsTitle.textContent = `Search Results for "${query}"`;
+            
+            // Hide main content and show recommendations container
+            mainContent.style.display = 'none';
+            recommendationsContainer.style.display = 'block';
+            
+            // Show loading indicator
+            recommendationsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+            
+            // In a real implementation, this would search through all recommendations
+            // For now, we'll just show a message
+            setTimeout(() => {
+                recommendationsList.innerHTML = `
+                    <div class="card">
+                        <p>Search functionality requires server-side implementation or a complete client-side database.</p>
+                        <p>For a static GitHub Pages site, we recommend implementing one of these approaches:</p>
+                        <ol>
+                            <li>Use a client-side search library like Lunr.js to index and search all recommendations</li>
+                            <li>Create a pre-built search index JSON file that can be loaded and queried</li>
+                            <li>Implement a serverless function (e.g., with Netlify Functions or GitHub Actions) to handle search</li>
+                        </ol>
+                        <p>For now, please use the domain and role navigation to browse recommendations.</p>
+                    </div>
+                `;
+            }, 1000);
+        }
+        
+        // Function to show home page
+        function showHome() {
+            recommendationsContainer.style.display = 'none';
+            mainContent.style.display = 'block';
+            // Clear search input
+            searchInput.value = '';
+        }
+    </script>
 </body>
 </html>
