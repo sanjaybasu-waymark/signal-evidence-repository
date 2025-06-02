@@ -1,0 +1,13 @@
+{
+  "id": "social_work_dbt_emotion_1",
+  "title": "Structured DBT Emotion Regulation Protocol",
+  "domain": "Depression",
+  "role": "Social Worker (Clinical/Therapy)",
+  "implementation_guidance": "Implement a structured dialectical behavior therapy emotion regulation protocol that includes: 1) Teaching clients to identify and label emotions using the DBT emotion wheel and daily emotion tracking logs; 2) Implementing the PLEASE skills (treating PhysicaL illness, balanced Eating, avoiding mood-Altering substances, balanced Sleep, and getting Exercise) with specific behavioral goals for each component; 3) Conducting opposite action exercises where clients systematically practice behaviors opposite to their emotion urges; 4) Teaching mindfulness of current emotions using the 'observe and describe' technique without judgment; 5) Implementing distress tolerance skills including TIPP (Temperature change, Intense exercise, Paced breathing, Progressive muscle relaxation) for emotional crises; and 6) Creating emotion regulation plans for specific triggering situations. The protocol should include weekly individual sessions combined with skills group participation and between-session practice assignments.",
+  "expected_outcomes": "Improved emotion identification and labeling, reduced emotional reactivity, decreased impulsive behaviors, enhanced distress tolerance, improved interpersonal effectiveness, and reduced symptoms of depression and anxiety.",
+  "target_population": "Adults with emotion dysregulation, particularly those with borderline personality disorder, treatment-resistant depression, or history of self-harm behaviors",
+  "citation": "Neacsiu AD, Eberle JW, Kramer R, Wiesmann T, Linehan MM. Dialectical behavior therapy skills for transdiagnostic emotion dysregulation: A pilot randomized controlled trial. Behav Res Ther. 2014;59:40-51. doi:10.1016/j.brat.2014.05.005",
+  "evidence_level": "A - Strong",
+  "tags": ["DBT", "emotion regulation", "distress tolerance", "mindfulness"],
+  "last_updated": "2025-05-29"
+}

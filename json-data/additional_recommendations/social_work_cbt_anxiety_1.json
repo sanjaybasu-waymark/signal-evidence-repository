@@ -1,0 +1,13 @@
+{
+  "id": "social_work_cbt_anxiety_1",
+  "title": "Structured CBT Protocol for Anxiety",
+  "domain": "Anxiety",
+  "role": "Social Worker (Clinical/Therapy)",
+  "implementation_guidance": "Implement a structured cognitive-behavioral therapy protocol for anxiety that includes: 1) Conducting a comprehensive assessment using the GAD-7 and specific phobia scales as appropriate; 2) Providing psychoeducation on the cognitive-behavioral model of anxiety using personalized examples from the client's experience; 3) Teaching specific diaphragmatic breathing and progressive muscle relaxation techniques with in-session practice and daily homework assignments; 4) Implementing cognitive restructuring using thought records that identify and challenge specific anxiety-provoking thoughts; 5) Creating a graduated exposure hierarchy with subjective units of distress (SUDS) ratings for each feared situation; and 6) Conducting in-vivo or imaginal exposure exercises with specific pre/post SUDS measurements. The protocol should follow a 12-session structure with clearly defined goals for each session and homework assignments that build progressively.",
+  "expected_outcomes": "Reduced anxiety symptoms as measured by standardized scales, decreased avoidance behaviors, improved daily functioning in previously avoided situations, enhanced self-efficacy in managing anxiety, and development of sustainable coping skills.",
+  "target_population": "Adults with generalized anxiety disorder, social anxiety, specific phobias, or panic disorder",
+  "citation": "Carpenter JK, Andrews LA, Witcraft SM, Powers MB, Smits JAJ, Hofmann SG. Cognitive behavioral therapy for anxiety and related disorders: A meta-analysis of randomized placebo-controlled trials. Depress Anxiety. 2018;35(6):502-514. doi:10.1002/da.22728",
+  "evidence_level": "A - Strong",
+  "tags": ["anxiety", "CBT", "cognitive restructuring", "exposure therapy"],
+  "last_updated": "2025-05-29"
+}

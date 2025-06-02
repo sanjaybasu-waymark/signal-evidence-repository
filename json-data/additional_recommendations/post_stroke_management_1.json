@@ -1,0 +1,13 @@
+{
+  "id": "post_stroke_management_1",
+  "title": "Comprehensive Post-Stroke Management Protocol for Primary Care",
+  "domain": "Post-Stroke",
+  "role": "Primary Care Provider",
+  "implementation_guidance": "Implement a structured approach to post-stroke care; schedule first follow-up visit within 1-3 weeks of hospital discharge; establish a foundation for care by understanding the patient's experience and concerns; review stroke etiology and ensure diagnostic workup is complete (including carotid imaging and prolonged cardiac monitoring when indicated); review discharge medications and ensure patient is on appropriate secondary prevention therapy including antithrombotic therapy, antihypertensives, and statins; screen for post-stroke complications including depression (using PHQ-9), cognitive impairment (using Montreal Cognitive Assessment), and fall risk; assess for unmet rehabilitation needs in mobility, activities of daily living, and communication; manage vascular risk factors with target blood pressure <130/80 mmHg for most patients; ensure appropriate anticoagulation for patients with atrial fibrillation; optimize diabetes management with target HbA1c <7%; refer to appropriate rehabilitation services for ongoing functional impairments; provide education on lifestyle modifications including Mediterranean or DASH diet, regular physical activity, smoking cessation, and limited alcohol consumption; engage caregivers and family members in the care plan; establish a clear follow-up schedule with regular reassessment of needs.",
+  "expected_outcomes": "Reduced risk of recurrent stroke, improved functional status, decreased post-stroke complications, enhanced quality of life, reduced hospital readmissions, improved medication adherence, better risk factor control, increased patient and caregiver engagement, reduced caregiver burden.",
+  "target_population": "Medicaid-enrolled patients following stroke discharge, particularly those with ongoing functional impairments or multiple vascular risk factors.",
+  "citation": "Kernan WN, Viera AJ, Billinger SA, et al. Primary Care of Adult Patients After Stroke: A Scientific Statement From the American Heart Association/American Stroke Association. Stroke. 2021;52(9):e558-e571. doi:10.1161/STR.0000000000000382",
+  "evidence_level": "A - Strong",
+  "tags": ["post-stroke care", "secondary prevention", "rehabilitation"],
+  "last_updated": "2025-05-29"
+}

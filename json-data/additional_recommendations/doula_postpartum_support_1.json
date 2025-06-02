@@ -1,0 +1,13 @@
+{
+  "id": "doula_postpartum_support_1",
+  "title": "Structured Postpartum Support Protocol",
+  "domain": "Postnatal",
+  "role": "Doula",
+  "implementation_guidance": "Implement a structured postpartum support protocol that includes: 1) Scheduling at least three home visits within the first six weeks after birth; 2) Conducting systematic assessment of physical recovery, infant feeding, sleep patterns, and emotional wellbeing using validated screening tools; 3) Providing hands-on demonstration of infant care techniques including bathing, soothing methods, and safe sleep practices; 4) Offering evidence-based breastfeeding support with specific positioning guidance and troubleshooting for common challenges; 5) Screening for postpartum mood disorders using the Edinburgh Postnatal Depression Scale at each visit; and 6) Creating a personalized resource list for ongoing community support. The protocol should emphasize building parental confidence through positive reinforcement and practical skill development rather than taking over infant care tasks.",
+  "expected_outcomes": "Increased breastfeeding duration and exclusivity, improved maternal confidence in infant care, earlier identification of postpartum mood disorders, reduced emergency department utilization for non-urgent infant concerns, and enhanced maternal-infant bonding.",
+  "target_population": "All postpartum individuals, with particular emphasis on first-time parents, those with limited social support, and those at higher risk for postpartum mood disorders",
+  "citation": "McLeish J, Redshaw M. A qualitative study of volunteer doulas working alongside midwives at births in England: Mothers' and doulas' experiences. Midwifery. 2018;56:53-60. doi:10.1016/j.midw.2017.10.002",
+  "evidence_level": "B - Moderate",
+  "tags": ["doula", "postpartum support", "breastfeeding", "maternal mental health"],
+  "last_updated": "2025-05-29"
+}
