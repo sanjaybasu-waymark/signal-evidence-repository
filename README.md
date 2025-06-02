@@ -1,106 +1,131 @@
-# Signal Evidence Repository
+# Waymark Population Health Evidence Library
+
+A comprehensive collection of evidence-based recommendations for healthcare professionals working with underserved patients in proactive population health management teams.
 
 ## Overview
-The Signal Evidence Repository is a comprehensive collection of evidence-based recommendations for population health care management teams. This repository contains over 250 tactical, medically-valid recommendations across 22 domains and 8 professional roles, designed to be implemented at the individual provider level.
 
+The Waymark Population Health Evidence Library is a repository of evidence-based recommendations for healthcare professionals across various clinical domains and professional roles. This repository contains:
 
-## Purpose
-This repository serves as a centralized hub for healthcare professionals to access bite-sized, actionable recommendations backed by peer-reviewed evidence. Rather than focusing on system-level interventions, these recommendations provide specific guidance that individual providers can implement in their practice.
-
-## Features
-- **Evidence-Based**: All recommendations are sourced from peer-reviewed literature and authoritative clinical guidelines
-- **Role-Specific**: Tailored recommendations for 8 different healthcare roles
-- **Domain-Focused**: Covers 22 clinical conditions and social determinants of health
-- **Actionable**: Concrete, specific guidance rather than general principles
-- **Searchable**: Web interface allows filtering by domain, role, or keyword
-- **Validated**: All recommendations follow a consistent schema and validation process
-
-## Domains Covered
-- Clinical Conditions: Diabetes, Hypertension, Depression, Anxiety, Substance Use Disorders, Asthma, COPD, Heart Failure, CKD, Post MI, Post Stroke, HIV
-- Preventive Care: Preventive Screenings, Vaccination, EPSDT
-- Care Management: Medication Adherence, Care Transitions
-- Social Determinants: Housing, Food Security, Transportation
-- Maternal Health: Prenatal, Postnatal
-
-## Professional Roles
-- Nurse Care Manager
-- Clinical Pharmacist
-- Community Health Worker
-- Social Worker (Non-Clinical)
-- Care Coordinator
-- Social Worker (Clinical/Therapy)
-- Pharmacy Technician
-- Doula
+- JSON files with structured recommendations
+- A web interface for browsing and searching recommendations
+- Tools for validating and maintaining the recommendation database
 
 ## Repository Structure
+
 ```
 signal-evidence-repository/
-├── docs/
-│   └── index.html           # Main web interface
-├── json_data/
-│   ├── [domain_name].json   # Domain-specific recommendation files
-│   └── additional_recommendations/
-│       └── [specific_recommendations].json
-├── json_structure/
-│   └── recommendation_schema.json  # JSON schema definition
-├── validate_json.py         # Validation script
-└── README.md                # This file
+├── index.html                  # Main website file
+├── recommendations-data.js     # Embedded recommendations data
+├── json_data/                  # JSON recommendation files by domain
+│   ├── diabetes_recommendations.json
+│   ├── hypertension_recommendations.json
+│   └── ...
+│   └── additional_recommendations/  # Individual recommendation files
+│       ├── diabetes_cgm_1.json
+│       └── ...
+├── json_structure/             # JSON schema definitions
+└── embed_recommendations.py    # Script to generate embedded data
 ```
 
-## Using the Repository
+## Implementation Instructions
 
-### Browsing Recommendations
-The easiest way to explore the repository is through the web interface:
-1. Visit the GitHub Pages site: https://sanjaybasu-waymark.github.io/signal-evidence-repository/
-2. Browse recommendations by domain or role
-3. Use the search function to find specific topics
+### Setting Up GitHub Pages
 
-### Accessing the Raw Data
-All recommendations are stored as JSON files in the `json_data` directory. Each recommendation follows this structure:
+1. Upload all files to your GitHub repository:
+   ```
+   git clone https://github.com/sanjaybasu-waymark/signal-evidence-repository.git
+   cd signal-evidence-repository
+   # Copy your updated files here
+   git add .
+   git commit -m "Update evidence repository"
+   git push
+   ```
+
+2. Enable GitHub Pages:
+   - Go to your repository on GitHub
+   - Click on "Settings" > "Pages"
+   - Under "Source", select "Deploy from a branch"
+   - Select "main" branch and "/" (root) folder
+   - Click "Save"
+   - Your site will be available at `https://[username].github.io/signal-evidence-repository/`
+
+### Required Files for Website
+
+The following files must be in the root of your repository for the website to function:
+
+1. `index.html` - The main website file
+2. `recommendations-data.js` - Contains all recommendation data
+
+## Updating Recommendations
+
+### Adding New Recommendations
+
+1. Create new JSON files in the appropriate directories:
+   - For domain-specific recommendations: `json_data/[domain]_recommendations.json`
+   - For individual recommendations: `json_data/additional_recommendations/[specific]_1.json`
+
+2. Follow the JSON schema defined in `json_structure/recommendation_schema.json`
+
+3. Regenerate the embedded data file:
+   ```bash
+   python3 embed_recommendations.py
+   ```
+
+4. Upload the updated `recommendations-data.js` file to your repository
+
+### Modifying Existing Recommendations
+
+1. Edit the appropriate JSON files
+2. Regenerate the embedded data file using the script
+3. Upload the updated `recommendations-data.js` file
+
+## JSON Schema
+
+Each recommendation should follow this structure:
+
 ```json
 {
   "id": "unique_identifier",
   "title": "Recommendation Title",
   "domain": "Clinical Domain",
   "role": "Professional Role",
-  "implementation_guidance": "Detailed guidance on implementation",
-  "expected_outcomes": "Expected outcomes when implemented",
-  "target_population": "Specific population for whom this is intended",
-  "citation": "Citation in JAMA/AMA style",
-  "evidence_level": "Evidence classification (A-D)",
-  "tags": ["relevant", "tags"],
-  "last_updated": "YYYY-MM-DD"
+  "implementation_guidance": "Detailed implementation steps...",
+  "expected_outcomes": "Expected results...",
+  "target_population": "Target patient population...",
+  "evidence_level": "A/B/C/D",
+  "citation": "Source citation..."
 }
 ```
 
-## Deployment
-To deploy your own instance of the Signal Evidence Repository:
+## Validation
 
-1. Fork this repository
-2. Enable GitHub Pages:
-   - Go to repository Settings > Pages
-   - Under "Source", select "Deploy from a branch"
-   - Select "main" branch and "/website" folder
-   - Click "Save"
-3. Your site will be available at `https://[your-username].github.io/signal-evidence-repository/`
+To validate all JSON files against the schema:
 
-## Contributing
-Contributions to the Signal Evidence Repository are welcome! To contribute:
+```bash
+python3 validate_json.py
+```
 
-1. Fork the repository
-2. Add new recommendations following the schema in `json_structure/recommendation_schema.json`
-3. Validate your additions using `python validate_json.py`
-4. Submit a pull request with your changes
+## Website Features
 
-## License
-This repository is available under the MIT License. See the LICENSE file for more details.
+The website provides the following features:
 
-## Acknowledgments
-- Created by Waymark Care
-- Evidence sourced from peer-reviewed literature and clinical guidelines
-- Special thanks to all contributors who have helped build this resource
+- Browse recommendations by domain (clinical condition or social need)
+- Browse recommendations by professional role
+- Search across all recommendations
+- View detailed recommendation cards with implementation guidance
+- Mobile-responsive design
 
-## Contact
-For questions or feedback about the Signal Evidence Repository, please contact:
-- GitHub: [@sanjaybasu-waymark](https://github.com/sanjaybasu-waymark)
-- Website: [waymarkcare.com](https://waymarkcare.com)
+## Troubleshooting
+
+If recommendations are not displaying correctly:
+
+1. Check that `recommendations-data.js` is in the same directory as `index.html`
+2. Verify that the JSON format in your recommendation files is valid
+3. Run the validation script to check for schema errors
+4. Regenerate the embedded data file using the script
+
+## License and Attribution
+
+© 2025, Waymark, [www.waymarkcare.com](https://www.waymarkcare.com)
+
+Created by Sanjay Basu MD PhD, Waymark and University of California San Francisco
