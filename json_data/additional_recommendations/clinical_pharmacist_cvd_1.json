@@ -1,0 +1,13 @@
+{
+  "id": "clinical_pharmacist_cvd_1",
+  "title": "Cardiovascular Risk Reduction in Diabetes",
+  "domain": "Heart Failure",
+  "role": "Clinical Pharmacist",
+  "implementation_guidance": "Implement a comprehensive cardiovascular risk reduction protocol for patients with diabetes that includes: 1) Systematic assessment of ASCVD risk using validated risk calculators; 2) Evidence-based statin selection and dosing based on risk category; 3) Blood pressure management targeting individualized goals based on comorbidities; 4) Appropriate use of antiplatelet therapy based on risk-benefit assessment; 5) Lifestyle modification counseling including smoking cessation, physical activity, and dietary approaches; and 6) Regular monitoring of lipid panels, blood pressure, and medication adherence. Document all interventions and clinical outcomes including changes in lipid parameters, blood pressure, and achievement of individualized goals.",
+  "expected_outcomes": "Reduced cardiovascular events, improved lipid profiles, better blood pressure control, increased use of evidence-based cardioprotective medications, and enhanced patient understanding of cardiovascular risk factors.",
+  "target_population": "All patients with diabetes, with emphasis on those with established ASCVD or multiple risk factors",
+  "citation": "American Diabetes Association. Standards of Care in Diabetes—2024. Diabetes Care. 2024;47(Supplement 1):S158-S174. doi:10.2337/dc24-S010",
+  "evidence_level": "A - Strong",
+  "tags": ["cardiovascular risk", "diabetes", "statin therapy", "blood pressure management"],
+  "last_updated": "2025-05-29"
+}

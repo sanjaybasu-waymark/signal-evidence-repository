@@ -1,0 +1,13 @@
+{
+  "id": "clinical_pharmacist_diabetes_1",
+  "title": "Structured Medication Therapy Management for Diabetes",
+  "domain": "Diabetes",
+  "role": "Clinical Pharmacist",
+  "implementation_guidance": "Implement a comprehensive medication therapy management protocol for patients with diabetes that includes: 1) Systematic review of all medications including prescription, over-the-counter, and supplements; 2) Assessment of medication appropriateness using current guidelines; 3) Evaluation of medication adherence using standardized tools; 4) Identification of drug therapy problems including inappropriate dosing, drug interactions, and adverse effects; 5) Development of a personalized care plan with specific medication-related goals; and 6) Regular follow-up at 2-4 week intervals until glycemic targets are achieved, then every 3 months. Document all interventions and clinical outcomes including changes in HbA1c, blood pressure, lipids, and achievement of individualized goals.",
+  "expected_outcomes": "Improved glycemic control with reduction in HbA1c, optimization of medication regimens, decreased medication-related adverse events, enhanced medication adherence, and improved patient understanding of diabetes medications.",
+  "target_population": "All patients with diabetes, particularly those with suboptimal glycemic control (HbA1c > 7%) or complex medication regimens",
+  "citation": "Orabone AW, Do V, Cohen E. Pharmacist-Managed Diabetes Programs: Improving Treatment Adherence and Patient Outcomes. Diabetes Metab Syndr Obes. 2022;15:1911-1923. doi:10.2147/DMSO.S342936",
+  "evidence_level": "A - Strong",
+  "tags": ["diabetes", "medication management", "glycemic control", "drug therapy problems"],
+  "last_updated": "2025-05-29"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "nurse_care_manager_diabetes_paid_1",
+  "title": "Problem Areas in Diabetes (PAID) Assessment for Emotional Distress",
+  "domain": "Diabetes",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Administer the Problem Areas in Diabetes (PAID) scale to assess diabetes-related emotional distress. This 20-item questionnaire helps identify specific areas of diabetes management causing emotional burden. Use results to: identify patients with high distress scores (>40), target specific areas of diabetes management causing the most distress, track changes in emotional distress over time, and guide conversations about emotional aspects of diabetes management.",
+  "expected_outcomes": "Improved identification of diabetes-related emotional distress, better targeting of psychological support, reduced depression symptoms, enhanced patient-provider communication about emotional aspects of diabetes, improved quality of life, and better glycemic control through addressing emotional barriers.",
+  "target_population": "Medicaid-enrolled individuals with type 2 diabetes, particularly those showing signs of diabetes distress or depression.",
+  "citation": "Stuckey HL, Dellasega C, Graber NJ, Mauger DT, Lendel I, Gabbay RA. Diabetes Nurse Case Management and Motivational Interviewing for Change (DYNAMIC): Study Design and Baseline Characteristics in the Chronic Care Model for Type 2 Diabetes. Contemp Clin Trials. 2009;30(4):366-374. doi:10.1016/j.cct.2009.03.002.",
+  "evidence_level": "A - Strong",
+  "tags": ["diabetes", "nurse-care-manager", "emotional-distress", "assessment", "medicaid"],
+  "last_updated": "2025-05-29"
+}

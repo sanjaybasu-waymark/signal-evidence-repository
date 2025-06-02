@@ -1,0 +1,13 @@
+{
+  "id": "nurse_care_manager_diabetes_motivational_1",
+  "title": "Specific Motivational Interviewing Questions for Diabetes Self-Management",
+  "domain": "Diabetes",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Use these specific motivational interviewing questions during patient encounters: 1) \"What concerns you most about your diabetes?\" 2) \"On a scale of 1-10, how important is it for you to change [specific behavior]?\" 3) \"Why did you choose that number and not a lower one?\" 4) \"What would it take to move you from a [current number] to a [higher number]?\" 5) \"What are the good things about changing this behavior?\" 6) \"What are the not-so-good things about changing this behavior?\" 7) \"What has worked for you in the past when you've tried to make a change?\" 8) \"What specific steps do you feel ready to take in the next week?\"",
+  "expected_outcomes": "Increased patient engagement in self-management, improved intrinsic motivation for behavior change, better adherence to treatment plans, enhanced patient-provider communication, reduced resistance to change, and improved glycemic control through patient-centered goal setting.",
+  "target_population": "Medicaid-enrolled individuals with type 2 diabetes, particularly those struggling with behavior change or medication adherence.",
+  "citation": "Stuckey HL, Dellasega C, Graber NJ, Mauger DT, Lendel I, Gabbay RA. Diabetes Nurse Case Management and Motivational Interviewing for Change (DYNAMIC): Study Design and Baseline Characteristics in the Chronic Care Model for Type 2 Diabetes. Contemp Clin Trials. 2009;30(4):366-374. doi:10.1016/j.cct.2009.03.002.",
+  "evidence_level": "B - Moderate",
+  "tags": ["diabetes", "nurse-care-manager", "motivational-interviewing", "behavior-change", "medicaid"],
+  "last_updated": "2025-05-29"
+}

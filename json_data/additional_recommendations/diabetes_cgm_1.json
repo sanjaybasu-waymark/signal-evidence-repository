@@ -1,0 +1,13 @@
+{
+  "id": "diabetes_cgm_1",
+  "title": "Professional Continuous Glucose Monitoring for Type 2 Diabetes Management",
+  "domain": "Diabetes",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Implement professional continuous glucose monitoring (P-CGM) for selected patients with uncontrolled type 2 diabetes; identify candidates with A1C above target despite standard therapy; coordinate device placement and removal; educate patients on wearing sensor without disrupting daily activities; download and analyze glucose pattern data; review results with patients highlighting glucose trends, hypoglycemic events, and postprandial patterns; use data to guide medication adjustments and lifestyle modifications; document findings and interventions.",
+  "expected_outcomes": "Improved glycemic control, reduced hypoglycemic events, enhanced understanding of glucose patterns, better-informed medication adjustments, increased patient engagement, improved dietary choices based on glucose response data, more effective diabetes self-management.",
+  "target_population": "Medicaid-enrolled adults with type 2 diabetes who have A1C above target despite standard therapy, those with suspected hypoglycemia, or patients with limited SMBG data.",
+  "citation": "Shrivastav M, Gibson W Jr, Shrivastav R, et al. Type 2 diabetes management in primary care: the role of retrospective, professional continuous glucose monitoring. Diabetes Spectr. 2018;31(3):279-287. doi:10.2337/ds17-0024",
+  "evidence_level": "B - Moderate",
+  "tags": ["glucose monitoring", "technology", "pattern management"],
+  "last_updated": "2025-05-29"
+}

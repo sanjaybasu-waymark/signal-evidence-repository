@@ -1,0 +1,13 @@
+{
+  "id": "doula_labor_support_1",
+  "title": "Continuous Labor Support Protocol",
+  "domain": "Prenatal",
+  "role": "Doula",
+  "implementation_guidance": "Implement a continuous labor support protocol that includes: 1) Establishing a pre-labor relationship through at least two prenatal visits to understand the client's birth preferences, fears, and cultural considerations; 2) Providing uninterrupted physical presence throughout active labor using evidence-based comfort measures including position changes, massage, hydrotherapy, and breathing techniques; 3) Offering specific verbal encouragement focused on normalizing labor sensations and affirming the client's strength; 4) Facilitating communication between the birthing person and clinical staff to ensure informed consent and preference consideration; 5) Supporting the partner or other family members to participate at their comfort level; and 6) Documenting labor progress, interventions used, and client responses. The protocol emphasizes maintaining continuous presence even during shift changes or breaks by ensuring proper handoff to a backup doula when necessary.",
+  "expected_outcomes": "Reduced rates of cesarean birth, decreased use of pain medication, shorter labors, higher client satisfaction with birth experience, and improved maternal-infant bonding.",
+  "target_population": "All pregnant individuals, with particular emphasis on those at higher risk for interventions or with limited social support",
+  "citation": "Bohren MA, Hofmeyr GJ, Sakala C, Fukuzawa RK, Cuthbert A. Continuous support for women during childbirth. Cochrane Database Syst Rev. 2017;7(7):CD003766. doi:10.1002/14651858.CD003766.pub6",
+  "evidence_level": "A - Strong",
+  "tags": ["doula", "labor support", "birth outcomes", "maternal care"],
+  "last_updated": "2025-05-29"
+}

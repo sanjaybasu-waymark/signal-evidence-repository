@@ -1,0 +1,13 @@
+{
+  "id": "street_medicine_outreach_1",
+  "title": "Structured Street Outreach Protocol",
+  "domain": "Housing",
+  "role": "Community Health Worker",
+  "implementation_guidance": "Implement a structured street outreach protocol that includes: 1) Regular outreach schedules at consistent times and locations to build trust; 2) Carrying essential supplies including hygiene kits, socks, water, and basic first aid materials; 3) Using trauma-informed engagement approaches that respect autonomy and privacy; 4) Conducting brief health assessments focused on immediate needs and risks; 5) Providing warm handoffs to medical providers through accompaniment when possible; and 6) Maintaining detailed outreach logs documenting encounters, needs identified, and follow-up plans. The protocol should emphasize meeting people where they are physically and emotionally, with no expectation of immediate behavior change.",
+  "expected_outcomes": "Increased engagement with healthcare services, improved identification of acute medical needs, enhanced trust between unsheltered individuals and healthcare providers, and more effective linkage to housing and social services.",
+  "target_population": "Individuals experiencing unsheltered homelessness, particularly those with untreated medical conditions or limited healthcare access",
+  "citation": "Kertesz SG, et al. Street medicine: practical recommendations for medical and psychiatric care in the context of unsheltered homelessness. J Gen Intern Med. 2022;37(7):1785-1793. doi:10.1007/s11606-022-07444-1",
+  "evidence_level": "B - Moderate",
+  "tags": ["street medicine", "homelessness", "outreach", "engagement"],
+  "last_updated": "2025-05-29"
+}

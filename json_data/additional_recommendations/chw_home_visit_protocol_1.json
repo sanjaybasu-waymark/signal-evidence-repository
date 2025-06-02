@@ -1,0 +1,13 @@
+{
+  "id": "chw_home_visit_protocol_1",
+  "title": "Structured Home Visit Protocol for CHWs",
+  "domain": "Care Transitions",
+  "role": "Community Health Worker",
+  "implementation_guidance": "Implement a structured home visit protocol for post-discharge patients that includes: 1) Conducting an initial visit within 72 hours of hospital discharge; 2) Performing a standardized home environment assessment focusing on medication storage, fall risks, and accessibility barriers; 3) Reconciling discharge medications with all medications in the home, including over-the-counter products; 4) Using teach-back method to verify understanding of discharge instructions and warning signs; 5) Establishing a communication bridge between the patient and primary care provider with specific documentation templates; and 6) Scheduling follow-up visits at 7, 14, and 30 days post-discharge with decreasing intensity based on patient stability. The protocol should include clear escalation pathways for clinical concerns and standardized assessment tools for common post-discharge issues.",
+  "expected_outcomes": "Reduced 30-day hospital readmission rates, improved medication adherence, increased attendance at follow-up appointments, earlier identification of post-discharge complications, and enhanced patient satisfaction with care transitions.",
+  "target_population": "Adults recently discharged from hospital, particularly those with complex medication regimens, limited health literacy, or history of readmissions",
+  "citation": "Kangovi S, Mitra N, Grande D, et al. Patient-centered community health worker intervention to improve posthospital outcomes: a randomized clinical trial. JAMA Intern Med. 2014;174(4):535-543. doi:10.1001/jamainternmed.2013.14327",
+  "evidence_level": "A - Strong",
+  "tags": ["care transitions", "home visits", "readmission prevention", "post-discharge"],
+  "last_updated": "2025-05-29"
+}
