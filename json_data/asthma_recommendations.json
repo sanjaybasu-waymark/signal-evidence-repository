@@ -1,0 +1,43 @@
+{
+  "recommendations": [
+    {
+      "id": "asthma_ncm_1",
+      "title": "Structured Asthma Self-Management Education Protocol",
+      "domain": "Asthma",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Assess current asthma knowledge and self-management skills; develop individualized education plan addressing knowledge gaps; provide instruction on proper inhaler technique; create written asthma action plan; teach symptom monitoring and peak flow use; establish protocol for environmental trigger management; document education provided and skills demonstrated; follow up on implementation of self-management behaviors; adjust approach based on control status.",
+      "expected_outcomes": "Improved asthma control, enhanced self-management behaviors, reduced exacerbations, decreased emergency department visits, better medication adherence, improved quality of life, increased patient confidence in managing asthma.",
+      "target_population": "Medicaid-enrolled adults with asthma, particularly those with uncontrolled symptoms or recent exacerbations.",
+      "citation": "Gibson PG, Powell H, Coughlan J, et al. Self-management education and regular practitioner review for adults with asthma. Cochrane Database Syst Rev. 2003;(1):CD001117. doi:10.1002/14651858.CD001117",
+      "evidence_level": "A - Strong",
+      "tags": ["education", "self-management", "action plan"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "asthma_cp_1",
+      "title": "Pharmacist-Led Asthma Medication Optimization",
+      "domain": "Asthma",
+      "role": "Clinical Pharmacist",
+      "implementation_guidance": "Review current asthma medication regimen; assess appropriateness based on symptom control and exacerbation history; evaluate inhaler technique and adherence; recommend therapy adjustments following stepwise approach; develop monitoring plan for efficacy and adverse effects; document optimization recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+      "expected_outcomes": "Improved asthma control, enhanced medication adherence, reduced adverse effects, better alignment with guideline-directed therapy, decreased exacerbations, improved quality of life, reduced healthcare utilization.",
+      "target_population": "Medicaid-enrolled adults with uncontrolled asthma despite medication therapy.",
+      "citation": "Armour CL, Reddel HK, LeMay KS, et al. Feasibility and effectiveness of an evidence-based asthma service in Australian community pharmacies: a pragmatic cluster randomized trial. J Asthma. 2013;50(3):302-309. doi:10.3109/02770903.2012.754463",
+      "evidence_level": "A - Strong",
+      "tags": ["medication management", "inhaler technique", "treatment optimization"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "asthma_chw_1",
+      "title": "Home Environmental Assessment for Asthma Triggers",
+      "domain": "Asthma",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Conduct comprehensive home environmental assessment; identify asthma triggers; develop action plan for trigger reduction; provide education on environmental control measures; assist with implementing low-cost modifications; supply allergen-proof bedding when indicated; document environmental interventions; coordinate with healthcare team regarding environmental findings; follow up on implementation of recommended modifications.",
+      "expected_outcomes": "Reduced environmental asthma triggers, decreased symptom frequency, improved asthma control, reduced exacerbations, enhanced quality of life, decreased healthcare utilization, improved sleep quality.",
+      "target_population": "Medicaid-enrolled adults with persistent asthma, particularly those with environmental trigger sensitivities or frequent exacerbations.",
+      "citation": "Krieger JW, Takaro TK, Song L, Weaver M. The Seattle-King County Healthy Homes Project: a randomized, controlled trial of a community health worker intervention to decrease exposure to indoor asthma triggers. Am J Public Health. 2005;95(4):652-659. doi:10.2105/AJPH.2004.042994",
+      "evidence_level": "A - Strong",
+      "tags": ["environmental assessment", "trigger reduction", "home modification"],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

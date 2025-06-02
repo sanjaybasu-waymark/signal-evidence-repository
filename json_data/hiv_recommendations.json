@@ -1,0 +1,43 @@
+{
+  "recommendations": [
+    {
+      "id": "hiv_ncm_1",
+      "title": "Structured HIV Medication Adherence Protocol",
+      "domain": "HIV",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Assess barriers to antiretroviral therapy (ART) adherence; provide education on medication purpose and importance; develop individualized adherence plan addressing specific barriers; establish medication routines aligned with daily activities; implement reminder systems; create protocol for managing side effects; document adherence interventions; coordinate with HIV specialist regarding adherence concerns; follow up on implementation of adherence strategies.",
+      "expected_outcomes": "Improved ART adherence, enhanced viral suppression, reduced drug resistance, decreased opportunistic infections, better immune function, improved quality of life, reduced HIV transmission risk.",
+      "target_population": "Medicaid-enrolled adults living with HIV, particularly those newly diagnosed, with detectable viral load, or history of adherence challenges.",
+      "citation": "Thompson MA, Mugavero MJ, Amico KR, et al. Guidelines for improving entry into and retention in care and antiretroviral adherence for persons with HIV: evidence-based recommendations from an International Association of Physicians in AIDS Care panel. Ann Intern Med. 2012;156(11):817-833. doi:10.7326/0003-4819-156-11-201206050-00419",
+      "evidence_level": "A - Strong",
+      "tags": ["medication adherence", "antiretroviral therapy", "viral suppression"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "hiv_cp_1",
+      "title": "Pharmacist-Led HIV Medication Management Protocol",
+      "domain": "HIV",
+      "role": "Clinical Pharmacist",
+      "implementation_guidance": "Review complete medication list; assess for drug-drug interactions with antiretroviral therapy; evaluate for appropriate prophylaxis based on CD4 count; recommend regimen adjustments to minimize side effects; develop monitoring plan for medication efficacy and toxicity; document medication recommendations and rationale; coordinate with HIV provider regarding therapy changes; follow up on implementation of recommendations.",
+      "expected_outcomes": "Reduced medication-related adverse events, decreased drug-drug interactions, improved medication tolerability, enhanced ART adherence, better viral suppression, improved immune function, reduced medication errors.",
+      "target_population": "Medicaid-enrolled adults living with HIV, particularly those on multiple medications or with comorbidities.",
+      "citation": "Saberi P, Dong BJ, Johnson MO, Greenblatt RM, Cocohoba JM. The impact of HIV clinical pharmacists on HIV treatment outcomes: a systematic review. Patient Prefer Adherence. 2012;6:297-322. doi:10.2147/PPA.S30244",
+      "evidence_level": "A - Strong",
+      "tags": ["medication management", "drug interactions", "antiretroviral therapy"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "hiv_chw_1",
+      "title": "HIV Care Engagement and Retention Protocol",
+      "domain": "HIV",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Identify barriers to HIV care engagement; provide education on importance of regular care; assist with scheduling and attending appointments; help navigate insurance and benefit systems; connect to support services and resources; create plan for addressing stigma concerns; document engagement interventions; coordinate with HIV care team regarding identified barriers; follow up on appointment attendance.",
+      "expected_outcomes": "Improved HIV care retention, enhanced appointment attendance, reduced gaps in care, better ART adherence, improved viral suppression, decreased lost-to-follow-up rates, better health outcomes.",
+      "target_population": "Medicaid-enrolled adults living with HIV, particularly those newly diagnosed, with history of missed appointments, or multiple barriers to care.",
+      "citation": "Higa DH, Marks G, Crepaz N, Liau A, Lyles CM. Interventions to improve retention in HIV primary care: a systematic review of U.S. studies. Curr HIV/AIDS Rep. 2012;9(4):313-325. doi:10.1007/s11904-012-0136-6",
+      "evidence_level": "A - Strong",
+      "tags": ["care engagement", "retention in care", "appointment adherence"],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}
