@@ -3,7 +3,6 @@
 ## Overview
 The Signal Evidence Repository is a comprehensive collection of evidence-based recommendations for population health care management teams. This repository contains over 250 tactical, medically-valid recommendations across 22 domains and 8 professional roles, designed to be implemented at the individual provider level.
 
-![Signal Evidence Repository](https://github.com/sanjaybasu-waymark/signal-evidence-repository/raw/main/website/screenshot.png)
 
 ## Purpose
 This repository serves as a centralized hub for healthcare professionals to access bite-sized, actionable recommendations backed by peer-reviewed evidence. Rather than focusing on system-level interventions, these recommendations provide specific guidance that individual providers can implement in their practice.
