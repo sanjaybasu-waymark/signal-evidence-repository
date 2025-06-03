@@ -1,0 +1,17 @@
+{
+  "id": "asthma_home_1",
+  "title": "Home-Based Asthma Management Program for Medicaid Children",
+  "domain": "Asthma",
+  "role": "Community Health Worker",
+  "implementation_guidance": "Implement a structured home-based asthma management program; conduct comprehensive home environmental assessments using standardized tools; identify and address asthma triggers including dust mites, mold, pests, and tobacco smoke; provide allergen-proof mattress and pillow covers; demonstrate proper inhaler technique and medication use; develop personalized asthma action plans in partnership with primary care providers; educate families on early symptom recognition; schedule follow-up home visits at 1, 3, and 6 months; coordinate with school nurses to ensure consistent asthma management; track symptom frequency, emergency department visits, and hospitalizations; connect families with resources for remediation of environmental triggers; provide culturally appropriate education materials in preferred language.",
+  "expected_outcomes": "Reduced asthma-related emergency department visits, decreased hospitalizations, improved medication adherence, reduced school absences, enhanced quality of life, improved asthma control test scores, decreased exposure to environmental triggers, reduced healthcare costs.",
+  "target_population": "Medicaid-enrolled children with poorly controlled asthma, particularly those with recent emergency department visits or hospitalizations, living in urban environments with high asthma prevalence.",
+  "citation": "Center for Health Care Strategies. Improving Asthma Care for Children: Best Practices in Medicaid Managed Care. CHCS Toolkit. 2018.",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "asthma management",
+    "home-based intervention",
+    "environmental assessment"
+  ],
+  "last_updated": "2025-05-29"
+}

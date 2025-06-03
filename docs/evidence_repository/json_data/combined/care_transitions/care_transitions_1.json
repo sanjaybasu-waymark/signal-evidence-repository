@@ -1,0 +1,17 @@
+{
+  "id": "care_transitions_1",
+  "title": "Care Transitions Intervention (CTI) for Hospital-to-Home Transitions",
+  "domain": "Care Transitions",
+  "role": "Care Coordinator",
+  "implementation_guidance": "Implement the evidence-based Care Transitions Intervention (CTI) model for patients transitioning from hospital to home; assign a trained Transitions Coach to work with patients for a 30-day period; conduct one home visit within 24-72 hours of discharge and three follow-up phone calls; focus on four key pillars: medication self-management, use of a dynamic patient-centered health record, primary care/specialist follow-up, and knowledge of red flags; teach patients to use a personal health record to track medications, questions for providers, and follow-up appointments; coach patients to schedule and prepare for follow-up appointments rather than doing it for them; help patients identify and respond to red flags that indicate worsening condition; conduct medication reconciliation during the home visit; use role-playing to practice communication with healthcare providers; emphasize skill transfer and patient empowerment rather than performing tasks for patients; document patient activation scores at baseline and program completion.",
+  "expected_outcomes": "Reduced hospital readmission rates, improved patient activation and self-management skills, successful patient-identified goal achievement, decreased emergency department visits, improved medication management, enhanced communication with healthcare providers, reduced healthcare costs.",
+  "target_population": "Medicaid-enrolled patients with complex care needs transitioning from hospital to home, particularly those with chronic conditions, complex medication regimens, or at high risk for readmission.",
+  "citation": "National Council on Aging. Evidence-Based Program: Care Transitions Intervention. https://www.ncoa.org/article/evidence-based-program-care-transitions-intervention. Published November 1, 2023. Accessed May 29, 2025.",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "care transitions",
+    "hospital discharge",
+    "patient activation"
+  ],
+  "last_updated": "2025-05-29"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "street_medicine_wound_care_1",
+  "title": "Field-Based Wound Care Protocol",
+  "domain": "Housing",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Implement a field-based wound care protocol for unsheltered individuals that includes: 1) Carrying a specialized wound care kit with sterile supplies, antimicrobial solutions, and various dressing materials; 2) Conducting systematic wound assessment using the standardized HEIDI mnemonic (History, Examination, Infection, Depth, Ischemia); 3) Providing appropriate cleaning and dressing based on wound type and available resources; 4) Creating a realistic follow-up schedule based on wound severity and patient mobility; 5) Documenting wound characteristics with photographs when possible (with patient consent); and 6) Developing clear criteria for emergency department referral. The protocol should emphasize practical approaches that account for limited access to running water, clean environments, and regular dressing changes.",
+  "expected_outcomes": "Improved wound healing rates, reduced wound-related complications, decreased emergency department utilization for preventable wound complications, and increased patient knowledge of basic wound self-care.",
+  "target_population": "Unsheltered individuals with acute or chronic wounds, particularly those with limited access to traditional healthcare settings",
+  "citation": "Raven MC, et al. Mobile health and outreach services for persons experiencing homelessness: a systematic review. J Gen Intern Med. 2023;38(3):712-721. doi:10.1007/s11606-022-07707-x",
+  "evidence_level": "B - Moderate",
+  "tags": ["street medicine", "wound care", "homelessness", "field medicine"],
+  "last_updated": "2025-05-29"
+}

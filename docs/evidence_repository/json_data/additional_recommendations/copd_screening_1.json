@@ -1,0 +1,13 @@
+{
+  "id": "copd_screening_1",
+  "title": "Standardized COPD Screening and Management Protocol for Primary Care",
+  "domain": "COPD",
+  "role": "Primary Care Provider",
+  "implementation_guidance": "Implement systematic screening for COPD in all smokers and ex-smokers over 40 years old using office spirometry; integrate spirometry into routine care with clear workflow; document smoking history and occupational exposures; assess severity using both FEV1 and validated tools like the BODE index (Body mass index, airflow Obstruction, Dyspnea, Exercise capacity); evaluate for systemic manifestations including cardiovascular disease, osteoporosis, muscle dysfunction, depression, and anxiety; provide smoking cessation counseling and pharmacotherapy; prescribe appropriate inhaler therapy based on symptom severity and exacerbation history; ensure proper inhaler technique through demonstration and teach-back; refer to pulmonary rehabilitation for moderate to severe disease; screen for and address comorbidities; develop action plans for exacerbations; schedule regular follow-up visits at 3-6 month intervals.",
+  "expected_outcomes": "Improved early detection of COPD, reduced exacerbations, decreased hospitalizations, enhanced quality of life, improved exercise capacity, better medication adherence, reduced emergency department visits, slowed disease progression through smoking cessation.",
+  "target_population": "Medicaid-enrolled patients who are current or former smokers over 40 years old, particularly those with respiratory symptoms, frequent respiratory infections, or occupational exposures.",
+  "citation": "Todd DC, McIvor RA, Pugsley SO, Cox G. Approach to chronic obstructive pulmonary disease in primary care. Can Fam Physician. 2008;54(5):706-711.",
+  "evidence_level": "A - Strong",
+  "tags": ["COPD management", "spirometry", "primary care"],
+  "last_updated": "2025-05-29"
+}

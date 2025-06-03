@@ -1,0 +1,43 @@
+{
+  "recommendations": [
+    {
+      "id": "vaccination_ncm_1",
+      "title": "Structured Adult Vaccination Assessment and Administration Protocol",
+      "domain": "Vaccination",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Implement systematic assessment of vaccination status at all visits; develop standing orders for routine adult vaccinations; create reminder system for due and overdue vaccinations; establish protocol for addressing vaccine hesitancy; provide education on vaccine benefits and safety; document vaccination status and interventions; coordinate with primary care regarding vaccination gaps; follow up on completion of recommended vaccine series.",
+      "expected_outcomes": "Improved adult vaccination rates, reduced vaccine-preventable diseases, enhanced protection for vulnerable populations, decreased preventable hospitalizations, better population health outcomes, improved quality metrics.",
+      "target_population": "All Medicaid-enrolled adults, with vaccination recommendations tailored to age, health conditions, and risk factors.",
+      "citation": "Centers for Disease Control and Prevention. Standards for adult immunization practice. https://www.cdc.gov/vaccines/hcp/adults/for-practice/standards/index.html. Updated May 2, 2022. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": ["immunization", "preventive care", "disease prevention"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "vaccination_chw_1",
+      "title": "Community-Based Vaccination Outreach Program",
+      "domain": "Vaccination",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Identify individuals with vaccination gaps; assess barriers to vaccination; provide culturally appropriate education on vaccine importance; assist with scheduling vaccination appointments; arrange transportation when needed; help address vaccine concerns and hesitancy; document outreach interventions; coordinate with healthcare team regarding vaccination status; follow up on completion of scheduled vaccinations.",
+      "expected_outcomes": "Improved vaccination rates in underserved populations, reduced disparities in vaccine coverage, increased protection against preventable diseases, enhanced community immunity, decreased barriers to vaccination, improved patient understanding of vaccine benefits.",
+      "target_population": "Medicaid-enrolled adults with barriers to completing recommended vaccinations, particularly those from underserved communities or with limited health literacy.",
+      "citation": "Community Preventive Services Task Force. Vaccination programs: community-based interventions implemented in combination. https://www.thecommunityguide.org/findings/vaccination-programs-community-based-interventions-implemented-combination. Published August 2015. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": ["outreach", "barriers to care", "health equity"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "vaccination_pt_1",
+      "title": "Pharmacy-Based Vaccination Program",
+      "domain": "Vaccination",
+      "role": "Pharmacy Technician",
+      "implementation_guidance": "Assist with identifying patients due for vaccinations; help implement vaccination screening protocol; prepare vaccination documentation; support vaccine inventory management; assist with scheduling vaccination appointments; help process insurance claims for vaccines; document vaccination support activities; coordinate with pharmacist regarding vaccination status; follow up on completion of multi-dose vaccine series.",
+      "expected_outcomes": "Improved access to vaccinations, enhanced vaccination rates, increased convenience for patients, reduced missed opportunities for vaccination, better utilization of pharmacy-based immunization services, improved population health outcomes.",
+      "target_population": "Medicaid-enrolled adults eligible for pharmacist-administered vaccinations.",
+      "citation": "Isenor JE, Edwards NT, Alia TA, et al. Impact of pharmacists as immunizers on vaccination rates: a systematic review and meta-analysis. Vaccine. 2016;34(47):5708-5723. doi:10.1016/j.vaccine.2016.08.085",
+      "evidence_level": "A - Strong",
+      "tags": ["pharmacy services", "immunization access", "convenience"],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

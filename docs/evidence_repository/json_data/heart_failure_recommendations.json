@@ -1,0 +1,43 @@
+{
+  "recommendations": [
+    {
+      "id": "heart_failure_ncm_1",
+      "title": "Structured Heart Failure Self-Management Education Protocol",
+      "domain": "Heart Failure",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Assess current heart failure knowledge and self-management skills; develop individualized education plan addressing knowledge gaps; teach daily weight monitoring and symptom tracking; create written action plan for weight changes and worsening symptoms; establish protocol for sodium and fluid management; document education provided and skills demonstrated; follow up on implementation of self-management behaviors; adjust approach based on disease severity and cognitive status.",
+      "expected_outcomes": "Improved symptom recognition and management, enhanced self-management behaviors, reduced exacerbations, decreased emergency department visits and hospitalizations, better medication adherence, improved quality of life, increased patient confidence in managing heart failure.",
+      "target_population": "Medicaid-enrolled adults with heart failure, particularly those with recent diagnosis or hospitalization.",
+      "citation": "Riegel B, Moser DK, Anker SD, et al. State of the science: promoting self-care in persons with heart failure: a scientific statement from the American Heart Association. Circulation. 2009;120(12):1141-1163. doi:10.1161/CIRCULATIONAHA.109.192628",
+      "evidence_level": "A - Strong",
+      "tags": ["education", "self-management", "symptom monitoring"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "heart_failure_cp_1",
+      "title": "Pharmacist-Led Heart Failure Medication Optimization",
+      "domain": "Heart Failure",
+      "role": "Clinical Pharmacist",
+      "implementation_guidance": "Review current heart failure medication regimen; assess appropriateness based on ejection fraction and symptom burden; evaluate medication adherence and barriers; recommend therapy adjustments following guideline-directed medical therapy; develop titration plan for target doses; create monitoring protocol for renal function and electrolytes; document optimization recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+      "expected_outcomes": "Improved guideline-directed medical therapy utilization, enhanced medication adherence, reduced adverse effects, better symptom control, decreased hospitalizations, improved quality of life, reduced mortality risk.",
+      "target_population": "Medicaid-enrolled adults with heart failure, particularly those with reduced ejection fraction or suboptimal medication regimens.",
+      "citation": "Koshman SL, Charrois TL, Simpson SH, McAlister FA, Tsuyuki RT. Pharmacist care of patients with heart failure: a systematic review of randomized trials. Arch Intern Med. 2008;168(7):687-694. doi:10.1001/archinte.168.7.687",
+      "evidence_level": "A - Strong",
+      "tags": ["medication management", "GDMT", "treatment optimization"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "heart_failure_cc_1",
+      "title": "Heart Failure Care Transitions Protocol",
+      "domain": "Heart Failure",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Begin discharge planning early during hospitalization; ensure medication reconciliation and access; schedule follow-up appointment within 7 days of discharge; arrange home health services when indicated; provide education on warning signs requiring medical attention; establish protocol for post-discharge phone calls; document transition plan and interventions; coordinate communication between hospital and outpatient providers; follow up on completion of post-discharge appointments.",
+      "expected_outcomes": "Reduced 30-day readmissions, improved continuity of care, enhanced medication adherence, increased completion of follow-up appointments, better patient satisfaction with transition, decreased gaps in care, improved clinical outcomes.",
+      "target_population": "Medicaid-enrolled adults discharged after heart failure hospitalization.",
+      "citation": "Albert NM, Barnason S, Deswal A, et al. Transitions of care in heart failure: a scientific statement from the American Heart Association. Circ Heart Fail. 2015;8(2):384-409. doi:10.1161/HHF.0000000000000006",
+      "evidence_level": "A - Strong",
+      "tags": ["care transitions", "readmission prevention", "post-discharge care"],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

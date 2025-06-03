@@ -1,0 +1,17 @@
+{
+  "id": "heart_failure_management_1",
+  "title": "Comprehensive Heart Failure Management Protocol for Primary Care",
+  "domain": "Heart Failure",
+  "role": "Primary Care Provider",
+  "implementation_guidance": "Implement a structured approach to heart failure management in primary care; use natriuretic peptide testing (NT-proBNP) with a threshold of 125 pg/ml to screen patients with suspected heart failure; refer patients with positive results or history of myocardial infarction for echocardiography; classify heart failure based on ejection fraction (HFrEF <40%, HFmrEF 40-49%, HFpEF \u226550%); prescribe diuretics for symptom relief in all types; for HFrEF, initiate and titrate ACE inhibitors, beta-blockers, and mineralocorticoid receptor antagonists to target doses; consider ARNI therapy (sacubitril/valsartan) for patients who remain symptomatic despite optimal therapy; assess for comorbidities including renal dysfunction, anemia, and atrial fibrillation; provide patient education on self-care, including daily weight monitoring, salt restriction, and fluid management; develop personalized care plans addressing lifestyle modifications; schedule regular follow-up visits at 1-3 month intervals during medication titration.",
+  "expected_outcomes": "Reduced heart failure hospitalizations, decreased mortality, improved quality of life, enhanced functional capacity, better medication adherence, reduced symptom burden, improved patient self-management, decreased healthcare costs.",
+  "target_population": "Medicaid-enrolled patients with suspected or confirmed heart failure, particularly those with cardiovascular risk factors, history of myocardial infarction, or symptoms of dyspnea, fatigue, and fluid retention.",
+  "citation": "Taylor CJ, Rutten FH, Brouwer JR, Hobbs FDR. Practical guidance on heart failure diagnosis and management in primary care: recent EPCCS recommendations. Br J Gen Pract. 2017;67(660):326-327. doi:10.3399/bjgp17X691553",
+  "evidence_level": "A - Strong",
+  "tags": [
+    "heart failure management",
+    "medication optimization",
+    "primary care"
+  ],
+  "last_updated": "2025-05-29"
+}

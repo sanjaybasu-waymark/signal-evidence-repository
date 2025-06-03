@@ -1,0 +1,43 @@
+{
+  "recommendations": [
+    {
+      "id": "care_transitions_cc_1",
+      "title": "Structured Care Transitions Protocol",
+      "domain": "Care Transitions",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Begin discharge planning early during hospitalization; ensure medication reconciliation and access; schedule follow-up appointment within 7-14 days; provide written discharge instructions with warning signs; establish protocol for post-discharge phone calls within 48-72 hours; document transition plan and interventions; coordinate communication between hospital and outpatient providers; follow up on completion of post-discharge appointments.",
+      "expected_outcomes": "Reduced 30-day readmissions, improved continuity of care, enhanced medication adherence, increased completion of follow-up appointments, better patient satisfaction with transition, decreased gaps in care, improved clinical outcomes.",
+      "target_population": "Medicaid-enrolled adults discharged from hospital, particularly those with complex conditions or high readmission risk.",
+      "citation": "Coleman EA, Parry C, Chalmers S, Min SJ. The care transitions intervention: results of a randomized controlled trial. Arch Intern Med. 2006;166(17):1822-1828. doi:10.1001/archinte.166.17.1822",
+      "evidence_level": "A - Strong",
+      "tags": ["care transitions", "readmission prevention", "post-discharge care"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "care_transitions_ncm_1",
+      "title": "Medication Reconciliation and Management Protocol",
+      "domain": "Care Transitions",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Conduct comprehensive medication reconciliation at care transitions; identify discrepancies between pre-admission and discharge medications; resolve medication discrepancies with prescribers; provide education on medication changes; ensure access to new medications; create updated medication schedule; document reconciliation process and interventions; coordinate with pharmacy regarding new prescriptions; follow up on medication adherence post-transition.",
+      "expected_outcomes": "Reduced medication errors, decreased adverse drug events, improved medication adherence, enhanced patient understanding of medication regimen, reduced emergency department visits, better continuity of pharmacotherapy, improved clinical outcomes.",
+      "target_population": "Medicaid-enrolled adults experiencing care transitions, particularly those on multiple medications or with recent medication changes.",
+      "citation": "Mueller SK, Sponsler KC, Kripalani S, Schnipper JL. Hospital-based medication reconciliation practices: a systematic review. Arch Intern Med. 2012;172(14):1057-1069. doi:10.1001/archinternmed.2012.2246",
+      "evidence_level": "A - Strong",
+      "tags": ["medication reconciliation", "medication safety", "care transitions"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "care_transitions_chw_1",
+      "title": "Post-Discharge Home Visit Protocol",
+      "domain": "Care Transitions",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Conduct home visit within 72 hours of discharge; review discharge instructions and medication regimen; assess home environment for safety and recovery needs; identify barriers to implementing discharge recommendations; assist with scheduling follow-up appointments; help establish medication routines; document home visit findings and interventions; coordinate with healthcare team regarding identified barriers; follow up on implementation of discharge plan.",
+      "expected_outcomes": "Improved adherence to discharge recommendations, enhanced self-management behaviors, better medication adherence, increased follow-up appointment attendance, reduced readmissions, improved quality of life, better transition from hospital to home.",
+      "target_population": "Medicaid-enrolled adults recently discharged from hospital, particularly those with limited support systems or multiple barriers to care.",
+      "citation": "Naylor MD, Aiken LH, Kurtzman ET, Olds DM, Hirschman KB. The care span: The importance of transitional care in achieving health reform. Health Aff (Millwood). 2011;30(4):746-754. doi:10.1377/hlthaff.2011.0041",
+      "evidence_level": "A - Strong",
+      "tags": ["home visits", "post-discharge support", "care transitions"],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

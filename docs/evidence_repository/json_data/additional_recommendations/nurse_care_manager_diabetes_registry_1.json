@@ -1,0 +1,13 @@
+{
+  "id": "nurse_care_manager_diabetes_registry_1",
+  "title": "Patient Registry System for Diabetes Visit Preparation",
+  "domain": "Diabetes",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Implement a computerized patient registry system that allows nurse care managers to print a single summary sheet prior to each patient visit. This sheet should include: self-care goals, clinical parameters over time (BP, HbA1C, LDL), dates of last ophthalmologic exam, aspirin use status, foot exam status, and specific prompts for issues to be addressed at the current visit.",
+  "expected_outcomes": "Improved visit efficiency, reduced missed screening opportunities, better tracking of clinical parameters over time, increased adherence to recommended screening tests, enhanced continuity of care, and improved clinical outcomes through systematic monitoring.",
+  "target_population": "Medicaid-enrolled individuals with type 2 diabetes, particularly those with multiple comorbidities or complex medication regimens.",
+  "citation": "Stuckey HL, Dellasega C, Graber NJ, Mauger DT, Lendel I, Gabbay RA. Diabetes Nurse Case Management and Motivational Interviewing for Change (DYNAMIC): Study Design and Baseline Characteristics in the Chronic Care Model for Type 2 Diabetes. Contemp Clin Trials. 2009;30(4):366-374. doi:10.1016/j.cct.2009.03.002.",
+  "evidence_level": "B - Moderate",
+  "tags": ["diabetes", "nurse-care-manager", "registry", "visit-preparation", "medicaid"],
+  "last_updated": "2025-05-29"
+}

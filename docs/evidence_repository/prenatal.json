@@ -1,0 +1,23 @@
+{
+  "domain": "Prenatal",
+  "count": 1,
+  "recommendations": [
+    {
+      "id": "prenatal_doula_1",
+      "title": "Community-Based Doula Support for Prenatal Care in Underserved Populations",
+      "domain": "Prenatal",
+      "role": "Doula",
+      "implementation_guidance": "Implement a community-based doula program for Medicaid-enrolled pregnant individuals; recruit and train doulas from the local community who reflect the racial and cultural diversity of the population served; establish a referral system with local obstetric providers to identify pregnant individuals who would benefit from doula support; initiate doula services early in pregnancy (ideally first trimester); provide continuous psychosocial, emotional, and educational support throughout pregnancy; conduct regular home visits to build trust and address social determinants of health; assist with birth planning and preparation; advocate for patient preferences during medical appointments; provide coaching on communicating effectively with healthcare providers; educate on pregnancy warning signs and when to seek medical care; connect patients to community resources for food security, housing, and transportation; accompany patients to prenatal appointments when needed; help navigate insurance and healthcare systems; document services provided and outcomes for program evaluation; coordinate with the healthcare team to ensure integrated care; provide culturally appropriate education on nutrition, physical activity, and self-care during pregnancy.",
+      "expected_outcomes": "Reduced birth complications, decreased rates of low birthweight babies, increased attendance at prenatal appointments, improved patient satisfaction with care, reduced racial disparities in birth outcomes, increased breastfeeding initiation, decreased preterm births, enhanced patient self-advocacy, improved maternal mental health, stronger connection to healthcare system.",
+      "target_population": "Medicaid-enrolled pregnant individuals, particularly those from racial and ethnic minority groups, those with low income, and those facing barriers to accessing quality prenatal care.",
+      "citation": "Commonweath Fund. Community-Based Models to Improve Maternal Health Outcomes and Promote Health Equity. https://www.commonwealthfund.org/publications/issue-briefs/2021/mar/community-models-improve-maternal-outcomes-equity. Published March 4, 2021. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "prenatal care",
+        "doula support",
+        "health equity"
+      ],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "domain": "Preventive Screenings",
+  "count": 13,
+  "recommendations": [
+    {
+      "id": "preventive_screening_1",
+      "title": "Comprehensive Preventive Screening Protocol for Primary Care",
+      "domain": "Preventive Screenings",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a systematic approach to preventive screenings based on USPSTF A and B recommendations; screen for anxiety disorders in adults under 65, including pregnant and postpartum persons; screen for anxiety in children and adolescents aged 8-18 years; screen for depression in adults, including pregnant and postpartum persons; screen for major depressive disorder in adolescents aged 12-18; provide low-dose aspirin (81 mg/day) after 12 weeks gestation for pregnant persons at high risk for preeclampsia; screen for asymptomatic bacteriuria using urine culture in pregnant persons; assess women with personal or family history of breast, ovarian, tubal, or peritoneal cancer for BRCA testing; offer risk-reducing medications for breast cancer to high-risk women; conduct biennial mammography screening for women aged 40-74; screen for cervical cancer every 3 years with cytology alone for women 21-29, and every 3-5 years with cytology or HPV testing for women 30-65; screen for chlamydia and gonorrhea in sexually active women 24 or younger and older women at increased risk; screen for colorectal cancer in adults aged 45-75 using appropriate modalities.",
+      "expected_outcomes": "Increased early detection of diseases, reduced morbidity and mortality, improved quality of life, decreased healthcare costs through prevention, enhanced patient engagement in preventive care, reduced disparities in preventive service utilization.",
+      "target_population": "Medicaid-enrolled individuals across the lifespan, with particular attention to those with limited access to preventive services, racial and ethnic minorities, and those with social determinants of health barriers.",
+      "citation": "US Preventive Services Task Force. A and B Recommendations. https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics/uspstf-a-and-b-recommendations. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "preventive screening",
+        "USPSTF recommendations",
+        "primary care"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_primary_care_provider_1",
+      "title": "Evidence-Based Preventive Screenings Management for Primary Care Providers",
+      "domain": "Preventive Screenings",
+      "role": "Primary Care Provider",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "preventive screenings",
+        "primary-care-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_nurse_care_manager_1",
+      "title": "Evidence-Based Preventive Screenings Management for Nurse Care Managers",
+      "domain": "Preventive Screenings",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "preventive screenings",
+        "nurse-care-manager",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_community_health_worker_1",
+      "title": "Evidence-Based Preventive Screenings Management for Community Health Workers",
+      "domain": "Preventive Screenings",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "preventive screenings",
+        "community-health-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_community_health_worker_2",
+      "title": "Evidence-Based Preventive Screenings Management for Community Health Workers",
+      "domain": "Preventive Screenings",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "preventive screenings",
+        "community-health-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_social_worker_1",
+      "title": "Evidence-Based Preventive Screenings Management for Social Workers",
+      "domain": "Preventive Screenings",
+      "role": "Social Worker",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "preventive screenings",
+        "social-worker",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_pharmacist_1",
+      "title": "Evidence-Based Preventive Screenings Management for Pharmacists",
+      "domain": "Preventive Screenings",
+      "role": "Pharmacist",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "preventive screenings",
+        "pharmacist",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_pharmacist_2",
+      "title": "Evidence-Based Preventive Screenings Management for Pharmacists",
+      "domain": "Preventive Screenings",
+      "role": "Pharmacist",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "preventive screenings",
+        "pharmacist",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_behavioral_health_provider_1",
+      "title": "Evidence-Based Preventive Screenings Management for Behavioral Health Providers",
+      "domain": "Preventive Screenings",
+      "role": "Behavioral Health Provider",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "B - Moderate",
+      "tags": [
+        "preventive screenings",
+        "behavioral-health-provider",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_care_coordinator_1",
+      "title": "Evidence-Based Preventive Screenings Management for Care Coordinators",
+      "domain": "Preventive Screenings",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "preventive screenings",
+        "care-coordinator",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_care_coordinator_2",
+      "title": "Evidence-Based Preventive Screenings Management for Care Coordinators",
+      "domain": "Preventive Screenings",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "preventive screenings",
+        "care-coordinator",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_doula_1",
+      "title": "Evidence-Based Preventive Screenings Management for Doulas",
+      "domain": "Preventive Screenings",
+      "role": "Doula",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "A - Strong",
+      "tags": [
+        "preventive screenings",
+        "doula",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "preventive_screenings_doula_2",
+      "title": "Evidence-Based Preventive Screenings Management for Doulas",
+      "domain": "Preventive Screenings",
+      "role": "Doula",
+      "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+      "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+      "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+      "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+      "evidence_level": "C - Limited",
+      "tags": [
+        "preventive screenings",
+        "doula",
+        "medicaid",
+        "evidence-based"
+      ],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

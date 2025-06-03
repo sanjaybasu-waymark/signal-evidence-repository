@@ -1,0 +1,41 @@
+{
+  "domains": [
+    "Diabetes",
+    "Hypertension",
+    "Depression",
+    "Anxiety",
+    "Substance Use",
+    "Housing",
+    "Food Security",
+    "Transportation",
+    "Asthma",
+    "COPD",
+    "Heart Failure",
+    "Preventive Screenings",
+    "Medication Adherence",
+    "Care Transitions",
+    "CKD",
+    "Post MI",
+    "Post Stroke",
+    "HIV",
+    "Vaccination",
+    "EPSDT",
+    "Prenatal",
+    "Postnatal"
+  ],
+  "roles": [
+    "Primary Care Provider",
+    "Nurse Care Manager",
+    "Community Health Worker",
+    "Social Worker",
+    "Pharmacist",
+    "Behavioral Health Provider",
+    "Care Coordinator",
+    "Doula"
+  ],
+  "evidence_levels": [
+    "A - Strong",
+    "B - Moderate",
+    "C - Limited"
+  ]
+}

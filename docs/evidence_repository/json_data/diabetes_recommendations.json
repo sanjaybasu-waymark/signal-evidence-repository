@@ -1,0 +1,69 @@
+{
+  "recommendations": [
+    {
+      "id": "diabetes_ncm_1",
+      "title": "Structured Diabetes Self-Management Education Protocol",
+      "domain": "Diabetes",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Conduct initial assessment of diabetes knowledge and self-management skills; develop individualized education plan addressing knowledge gaps; schedule structured sessions covering monitoring, medication, nutrition, physical activity, and complication prevention; use teach-back method to verify understanding; provide culturally appropriate educational materials; document education provided and patient comprehension; follow up on implementation of self-management behaviors; adjust approach based on patient progress and barriers identified.",
+      "expected_outcomes": "Improved glycemic control, enhanced self-management behaviors, reduced diabetes-related distress, decreased acute complications, better medication adherence, improved quality of life, increased patient activation and engagement in care.",
+      "target_population": "Medicaid-enrolled adults with type 2 diabetes, particularly those with limited prior diabetes education or suboptimal glycemic control.",
+      "citation": "Powers MA, Bardsley J, Cypress M, et al. Diabetes self-management education and support in type 2 diabetes: a joint position statement of the American Diabetes Association, the American Association of Diabetes Educators, and the Academy of Nutrition and Dietetics. Diabetes Care. 2015;38(7):1372-1382. doi:10.2337/dc15-0730",
+      "evidence_level": "A - Strong",
+      "tags": ["education", "self-management", "glycemic control"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "diabetes_ncm_2",
+      "title": "Hypoglycemia Prevention and Management Protocol",
+      "domain": "Diabetes",
+      "role": "Nurse Care Manager",
+      "implementation_guidance": "Screen for hypoglycemia risk factors; provide education on recognition and treatment of hypoglycemia; develop individualized prevention plan; establish protocol for blood glucose monitoring during medication changes; create action plan for treating hypoglycemia; document hypoglycemia episodes and interventions; coordinate with prescribers regarding medication adjustments; follow up on implementation of prevention strategies.",
+      "expected_outcomes": "Reduced hypoglycemia episodes, decreased severe hypoglycemia events, improved recognition and treatment of hypoglycemia, enhanced patient confidence in self-management, reduced emergency department visits, better medication safety, improved quality of life.",
+      "target_population": "Medicaid-enrolled adults with diabetes on insulin or sulfonylureas, particularly older adults, those with renal impairment, or history of hypoglycemia.",
+      "citation": "Seaquist ER, Anderson J, Childs B, et al. Hypoglycemia and diabetes: a report of a workgroup of the American Diabetes Association and the Endocrine Society. Diabetes Care. 2013;36(5):1384-1395. doi:10.2337/dc12-2480",
+      "evidence_level": "A - Strong",
+      "tags": ["hypoglycemia", "safety", "medication management"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "diabetes_cp_1",
+      "title": "Medication Therapy Management for Complex Diabetes",
+      "domain": "Diabetes",
+      "role": "Clinical Pharmacist",
+      "implementation_guidance": "Conduct comprehensive medication review; assess medication appropriateness, effectiveness, safety, and adherence; identify drug therapy problems; develop recommendations for optimizing regimen; create plan for monitoring therapeutic outcomes; document medication-related interventions and recommendations; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+      "expected_outcomes": "Improved glycemic control, reduced medication-related problems, enhanced medication adherence, decreased adverse drug events, better coordination of care, improved clinical outcomes, reduced healthcare utilization.",
+      "target_population": "Medicaid-enrolled adults with diabetes on complex medication regimens, particularly those with polypharmacy, comorbidities, or suboptimal glycemic control.",
+      "citation": "Chung WW, Chua SS, Lai PSM, Chan SP. Effects of a pharmaceutical care model on medication adherence and glycemic control of people with type 2 diabetes. Patient Prefer Adherence. 2014;8:1185-1194. doi:10.2147/PPA.S66619",
+      "evidence_level": "B - Moderate",
+      "tags": ["medication management", "polypharmacy", "glycemic control"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "diabetes_chw_1",
+      "title": "Home-Based Diabetes Self-Management Support",
+      "domain": "Diabetes",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Conduct home visits to assess diabetes management environment; identify barriers to implementing recommendations; help establish medication and monitoring routines; assist with implementing dietary changes; create physical activity plan based on home environment; address literacy barriers with visual aids; document home-based interventions; coordinate with healthcare team regarding identified barriers; follow up on progress with self-management goals.",
+      "expected_outcomes": "Improved adherence to diabetes care plan, enhanced self-management behaviors, better glycemic control, increased physical activity, improved dietary habits, reduced barriers to care, decreased preventable complications.",
+      "target_population": "Medicaid-enrolled adults with diabetes, particularly those with limited support systems, multiple barriers to care, or difficulty attending clinic visits.",
+      "citation": "Spencer MS, Rosland AM, Kieffer EC, et al. Effectiveness of a community health worker intervention among African American and Latino adults with type 2 diabetes: a randomized controlled trial. Am J Public Health. 2011;101(12):2253-2260. doi:10.2105/AJPH.2010.300106",
+      "evidence_level": "A - Strong",
+      "tags": ["home-based care", "self-management", "barriers to care"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "diabetes_cc_1",
+      "title": "Diabetes Care Coordination Pathway",
+      "domain": "Diabetes",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Develop risk-stratified care coordination approach; establish testing schedule based on risk level; coordinate referrals to specialists; ensure completion of recommended screenings; track preventive care measures; coordinate between primary care and specialty providers; document care gaps and interventions; implement registry for population management; follow up on missed appointments.",
+      "expected_outcomes": "Improved adherence to diabetes care guidelines, reduced care fragmentation, earlier intervention for complications, decreased preventable hospitalizations, better management of comorbidities, enhanced preventive care completion, improved clinical outcomes.",
+      "target_population": "All Medicaid-enrolled adults with diabetes, with intensity of intervention stratified by risk level.",
+      "citation": "Egginton JS, Ridgeway JL, Shah ND, et al. Care management for type 2 diabetes in the United States: a systematic review and meta-analysis. BMC Health Serv Res. 2012;12:72. doi:10.1186/1472-6963-12-72",
+      "evidence_level": "A - Strong",
+      "tags": ["care coordination", "population management", "preventive care"],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}

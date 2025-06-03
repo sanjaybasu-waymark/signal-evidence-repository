@@ -1,0 +1,43 @@
+{
+  "recommendations": [
+    {
+      "id": "housing_swn_1",
+      "title": "Housing Assistance Navigation Protocol",
+      "domain": "Housing",
+      "role": "Social Worker (Non-Clinical)",
+      "implementation_guidance": "Assess current housing situation and needs; identify eligibility for housing assistance programs; help complete applications for housing subsidies, supportive housing, or emergency assistance; connect to legal aid for eviction prevention; assist with gathering required documentation; document housing interventions; follow up on pending applications; coordinate with healthcare team regarding housing-related health concerns.",
+      "expected_outcomes": "Improved housing stability, reduced homelessness risk, decreased housing-related stress, better medication storage conditions, enhanced ability to manage health conditions, improved appointment attendance, reduced emergency department utilization.",
+      "target_population": "Medicaid-enrolled adults experiencing housing instability or homelessness, particularly those with chronic health conditions.",
+      "citation": "Krieger J, Higgins DL. Housing and health: time again for public health action. Am J Public Health. 2002;92(5):758-768. doi:10.2105/ajph.92.5.758",
+      "evidence_level": "B - Moderate",
+      "tags": ["housing assistance", "homelessness prevention", "social determinants"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "housing_chw_1",
+      "title": "Home Environmental Assessment and Modification",
+      "domain": "Housing",
+      "role": "Community Health Worker",
+      "implementation_guidance": "Conduct home environmental assessment; identify health and safety hazards; develop action plan for addressing modifiable hazards; connect to resources for home repairs or modifications; assist with implementing low-cost safety improvements; document environmental interventions; coordinate with healthcare team regarding environmental health concerns; follow up on implementation of recommended modifications.",
+      "expected_outcomes": "Reduced environmental health hazards, decreased asthma triggers, improved home safety, reduced fall risk, enhanced ability to manage health conditions at home, decreased preventable hospitalizations, improved quality of life.",
+      "target_population": "Medicaid-enrolled adults with health conditions affected by home environment, particularly those with respiratory conditions, mobility limitations, or fall risk.",
+      "citation": "Krieger JW, Takaro TK, Song L, Weaver M. The Seattle-King County Healthy Homes Project: a randomized, controlled trial of a community health worker intervention to decrease exposure to indoor asthma triggers. Am J Public Health. 2005;95(4):652-659. doi:10.2105/AJPH.2004.042994",
+      "evidence_level": "A - Strong",
+      "tags": ["environmental assessment", "home modification", "safety"],
+      "last_updated": "2025-05-29"
+    },
+    {
+      "id": "housing_cc_1",
+      "title": "Medical Respite Care Coordination",
+      "domain": "Housing",
+      "role": "Care Coordinator",
+      "implementation_guidance": "Identify patients needing post-discharge housing support; assess eligibility for medical respite programs; coordinate referrals to appropriate level of care; ensure communication of medical needs to respite providers; arrange transportation to respite facility; coordinate medication access during transition; document respite care plan; follow up on implementation of discharge recommendations; facilitate transition to permanent housing.",
+      "expected_outcomes": "Reduced hospital readmissions, improved recovery from acute illness, enhanced medication adherence, better follow-up care attendance, decreased complications, improved housing outcomes, reduced healthcare costs.",
+      "target_population": "Medicaid-enrolled adults experiencing homelessness or housing instability who are being discharged from hospital and require recuperative care.",
+      "citation": "Doran KM, Ragins KT, Iacomacci AL, Cunningham A, Jubanyik KJ, Jenq GY. The revolving hospital door: hospital readmissions among patients who are homeless. Med Care. 2013;51(9):767-773. doi:10.1097/MLR.0b013e31829fafbb",
+      "evidence_level": "B - Moderate",
+      "tags": ["medical respite", "care transitions", "homelessness"],
+      "last_updated": "2025-05-29"
+    }
+  ]
+}
