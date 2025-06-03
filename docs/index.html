@@ -469,6 +469,9 @@
     <!-- Include the embedded protocols data -->
     <script src="protocols-data.js"></script>
     
+    <!-- Include compatibility fix script -->
+    <script src="compatibility_fix.js"></script>
+    
     <script>
         // DOM Elements
         const mainContent = document.getElementById('main-content');
@@ -496,11 +499,16 @@
             });
         });
         
-        backButton.addEventListener('click', showHome);
+        backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            showHome();
+        });
+        
         homeLink.addEventListener('click', function(e) {
             e.preventDefault();
             showHome();
         });
+        
         homeNav.addEventListener('click', function(e) {
             e.preventDefault();
             showHome();
