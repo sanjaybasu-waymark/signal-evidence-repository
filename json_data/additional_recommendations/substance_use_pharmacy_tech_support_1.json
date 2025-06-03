@@ -1,0 +1,17 @@
+{
+  "id": "substance_use_pharmacy_tech_support_1",
+  "domain": "Substance Use",
+  "role": "Pharmacy Technician",
+  "recommendation": "Provide frontline support for patients with substance use disorders",
+  "implementation_steps": [
+    "Serve as frontline contacts in community pharmacies for patients with substance use disorders",
+    "Identify patients at risk through prescription patterns and interactions",
+    "Provide nonjudgmental support and reduce stigma during pharmacy interactions",
+    "Facilitate communication between patients and pharmacists about medication concerns",
+    "Support naloxone access programs through patient identification and education"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Pharmacy technician interventions supporting patients with substance use disorders have been shown to improve medication access, reduce stigma, and enhance communication with healthcare providers in pharmacy settings.",
+  "citation": "Substance use disorder research",
+  "url": "https://www.openevidence.com/ask/c853bfdf-9bed-47dc-8d5b-19b1c8e61938"
+}

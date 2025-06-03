@@ -685,5 +685,401 @@ const allRecommendations = [
       "blood pressure management"
     ],
     "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_post_discharge_1",
+    "title": "Implement 7-Day Post-Discharge Follow-Up for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Establish a protocol to contact all heart failure patients within 7 days of hospital discharge. During this follow-up: 1) Review discharge instructions and medication changes, 2) Assess for signs/symptoms of worsening heart failure using a standardized checklist, 3) Confirm scheduling of follow-up appointments, 4) Verify patient understanding of self-monitoring requirements (daily weights, symptom tracking), 5) Communicate findings to the primary care team, and 6) Develop an individualized care plan with clear escalation pathways for worsening symptoms.",
+    "expected_outcomes": "Reduced 30-day hospital readmission rates, improved medication adherence, earlier detection of clinical deterioration, enhanced care continuity across settings, and increased patient activation in self-management behaviors.",
+    "target_population": "Adult patients with heart failure (HFrEF, HFpEF, or HFmrEF) discharged from hospital within the previous 7 days.",
+    "citation": "Feltner C, Jones CD, Cen\u00e9 CW, et al. Transitional care interventions to prevent readmissions for persons with heart failure: a systematic review and meta-analysis. Ann Intern Med. 2014;160(11):774-784. doi:10.7326/M14-0083",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care transitions",
+      "readmission prevention",
+      "post-discharge",
+      "care coordination"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_symptom_monitoring_1",
+    "title": "Implement Structured Symptom Monitoring and GDMT Optimization for Heart Failure",
+    "domain": "Heart Failure",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Establish a systematic approach to heart failure monitoring and medication optimization: 1) Use a standardized assessment tool to evaluate symptoms at each patient contact, 2) Coordinate regular laboratory testing (electrolytes, renal function) according to protocol, 3) Track vital signs and weight trends, 4) Document findings in a structured format accessible to the care team, 5) Facilitate rapid initiation and titration of guideline-directed medical therapy (GDMT) using protocol-driven approaches, 6) Maintain a medication titration log with target doses, current doses, and barriers to optimization, and 7) Alert providers to abnormal findings requiring intervention.",
+    "expected_outcomes": "Earlier detection of heart failure decompensation, improved rates of patients on target doses of GDMT, reduced hospitalizations, improved quality of life scores, and enhanced communication across the care team.",
+    "target_population": "Adult patients with heart failure (HFrEF, HFpEF, or HFmrEF) being managed in outpatient settings.",
+    "citation": "Maddox TM, Januzzi JL Jr, Allen LA, et al. 2021 Update to the 2017 ACC Expert Consensus Decision Pathway for Optimization of Heart Failure Treatment. J Am Coll Cardiol. 2021;77(6):772-810. doi:10.1016/j.jacc.2020.11.022",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication optimization",
+      "symptom monitoring",
+      "GDMT",
+      "heart failure management"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_patient_education_1",
+    "title": "Implement Structured Heart Failure Self-Care Education Program",
+    "domain": "Heart Failure",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Deliver a comprehensive self-care education program for heart failure patients with these specific components: 1) Teach daily weight monitoring with specific action thresholds (call provider if >2 lbs gain in 24 hours or >5 lbs in a week), 2) Train patients to recognize and respond to early warning signs of decompensation using a symptom checklist (increased shortness of breath, edema, fatigue), 3) Provide a written action plan with color-coded zones (green=stable, yellow=warning, red=emergency), 4) Demonstrate proper medication organization techniques, 5) Educate on sodium restriction with practical food examples and label-reading skills, 6) Use teach-back method to verify understanding, and 7) Reinforce education at each contact with focus on skill-building rather than knowledge alone.",
+    "expected_outcomes": "Improved self-care behaviors, earlier reporting of worsening symptoms, reduced emergency department visits, improved quality of life scores, and increased patient confidence in managing heart failure.",
+    "target_population": "Adult patients with heart failure (HFrEF, HFpEF, or HFmrEF) and their caregivers, particularly those recently diagnosed or with recent hospitalizations.",
+    "citation": "Jonkman NH, Westland H, Groenwold RH, et al. Do Self-Management Interventions Work in Patients With Heart Failure? An Individual Patient Data Meta-Analysis. Circulation. 2016;133(12):1189-1198. doi:10.1161/CIRCULATIONAHA.115.018006",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "self-care",
+      "patient education",
+      "symptom monitoring",
+      "action planning"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_psychosocial_1",
+    "title": "Implement Comprehensive Psychosocial Assessment for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Conduct a structured psychosocial assessment for all heart failure patients that includes: 1) Screen for depression using PHQ-9 at initial visit and quarterly thereafter, 2) Assess frailty using a validated tool such as the Clinical Frailty Scale, 3) Evaluate health literacy using the Brief Health Literacy Screening Tool, 4) Identify social isolation risk factors using a standardized questionnaire, 5) Document findings in the patient record with specific barriers to self-care identified, 6) Develop targeted interventions for identified issues (e.g., simplified medication regimens for low health literacy, referral to mental health for depression), and 7) Reassess after interventions to evaluate improvement.",
+    "expected_outcomes": "Improved identification of psychosocial barriers to heart failure management, increased appropriate referrals to supportive services, enhanced treatment adherence, reduced hospitalization rates, and improved quality of life scores.",
+    "target_population": "Adult patients with heart failure (HFrEF, HFpEF, or HFmrEF), particularly those with complex management needs or poor treatment adherence.",
+    "citation": "Havranek EP, Mujahid MS, Barr DA, et al. Social Determinants of Risk and Outcomes for Cardiovascular Disease: A Scientific Statement From the American Heart Association. Circulation. 2015;132(9):873-898. doi:10.1161/CIR.0000000000000228",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "psychosocial assessment",
+      "depression screening",
+      "health literacy",
+      "social determinants"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_sdoh_1",
+    "title": "Address Social Determinants of Health for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to address social determinants of health (SDOH) for heart failure patients: 1) Use a validated SDOH screening tool to assess needs in housing, food security, transportation, health literacy, and financial barriers, 2) Assist with insurance enrollment or reinstatement when needed, 3) Coordinate transportation to medical appointments using community resources or health plan benefits, 4) Connect patients to employment resources and financial assistance programs, 5) Provide navigation to food assistance programs and education on heart-healthy food choices within budget constraints, 6) Document all interventions and outcomes in the patient record, and 7) Follow up within two weeks to ensure successful connection to resources.",
+    "expected_outcomes": "Improved access to healthcare services, reduced missed appointments, better medication adherence, decreased food insecurity, improved housing stability, and reduced heart failure exacerbations related to social factors.",
+    "target_population": "Adult patients with heart failure who face socioeconomic challenges, particularly those in underserved communities or with limited resources.",
+    "citation": "Schroeder K, Fahey T, Ebrahim S. How can we improve adherence to blood pressure-lowering medication in ambulatory care? Systematic review of randomized controlled trials. Arch Intern Med. 2004;164(7):722-732. doi:10.1001/archinte.164.7.722",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "social determinants",
+      "resource navigation",
+      "health equity",
+      "access to care"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_self_management_1",
+    "title": "Implement Self-Management Support Program for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Deliver a structured self-management support program for heart failure patients that includes: 1) Provide coaching on daily weight monitoring with a simple log sheet, 2) Teach medication organization techniques using pill boxes or medication charts, 3) Offer practical guidance on low-sodium food choices with grocery shopping assistance when possible, 4) Conduct appointment reminder calls 48 hours before scheduled visits, 5) Help patients identify personal motivators for adherence to treatment plan, 6) Facilitate access to community resources that support healthy behaviors (e.g., senior centers with exercise programs, community gardens), 7) Use teach-back method to verify understanding, and 8) Document progress and barriers at each contact.",
+    "expected_outcomes": "Improved self-care behaviors, increased medication adherence, better appointment attendance rates, enhanced patient activation and confidence in self-management, and reduced heart failure exacerbations.",
+    "target_population": "Adult patients with heart failure, particularly those with barriers to self-care such as limited health literacy, complex medication regimens, or inadequate social support.",
+    "citation": "Riegel B, Moser DK, Buck HG, et al. Self-Care for the Prevention and Management of Cardiovascular Disease and Stroke: A Scientific Statement for Healthcare Professionals From the American Heart Association. J Am Heart Assoc. 2017;6(9):e006997. doi:10.1161/JAHA.117.006997",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "self-management",
+      "coaching",
+      "adherence",
+      "patient activation"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_medication_reconciliation_1",
+    "title": "Implement Comprehensive Medication Reconciliation for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Conduct thorough medication reconciliation at all transitions of care using this structured approach: 1) Review all current medications including prescriptions, over-the-counter products, and supplements, 2) Compare with pre-transition medication list to identify discrepancies, 3) Assess for potential drug-drug and drug-disease interactions using a standardized screening tool, 4) Evaluate appropriateness of each medication for the patient's current clinical status, 5) Identify and resolve any therapeutic duplications or omissions, 6) Document a complete medication list with indications and any identified issues, 7) Communicate findings to the healthcare team with specific recommendations, and 8) Provide an updated medication list to the patient with clear instructions on changes.",
+    "expected_outcomes": "Reduced medication errors during transitions of care, decreased adverse drug events, improved guideline-directed medical therapy implementation, enhanced patient understanding of medication regimen, and reduced heart failure exacerbations related to medication issues.",
+    "target_population": "Adult patients with heart failure experiencing care transitions, particularly those with polypharmacy (\u22655 medications), recent hospitalizations, or complex medication regimens.",
+    "citation": "Mekonnen AB, McLachlan AJ, Brien JA. Effectiveness of pharmacist-led medication reconciliation programmes on clinical outcomes at hospital transitions: a systematic review and meta-analysis. BMJ Open. 2016;6(2):e010003. doi:10.1136/bmjopen-2015-010003",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication reconciliation",
+      "transitions of care",
+      "medication safety",
+      "polypharmacy"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_gdmt_optimization_1",
+    "title": "Implement Protocol-Driven GDMT Optimization for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Establish a protocol-driven approach to optimize guideline-directed medical therapy (GDMT) for heart failure patients: 1) Create a structured titration protocol for each GDMT medication class (ARNI/ACEi/ARB, beta-blockers, MRAs, SGLT2i), 2) Monitor for drug interactions at each medication change, 3) Implement a systematic follow-up schedule (weekly during active titration, then monthly), 4) Check appropriate labs before and after dose adjustments (electrolytes, renal function, blood pressure), 5) Document target doses, current doses, and specific barriers to optimization, 6) Collaborate with the care team using a shared decision-making approach for complex cases, and 7) Provide patient education on the purpose and importance of each medication.",
+    "expected_outcomes": "Increased proportion of patients on target doses of GDMT, improved left ventricular ejection fraction in HFrEF patients, reduced heart failure hospitalizations, decreased mortality, and enhanced quality of life.",
+    "target_population": "Adult patients with heart failure with reduced ejection fraction (HFrEF), with appropriate components applicable to HFpEF patients based on current guidelines.",
+    "citation": "Fonarow GC, Yancy CW, Hernandez AF, Peterson ED, Spertus JA, Heidenreich PA. Potential impact of optimal implementation of evidence-based heart failure therapies on mortality. Am Heart J. 2011;161(6):1024-1030.e3. doi:10.1016/j.ahj.2011.01.027",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "GDMT",
+      "medication optimization",
+      "protocol-driven care",
+      "heart failure management"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_patient_education_2",
+    "title": "Implement Heart Failure Medication Education Program",
+    "domain": "Heart Failure",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Develop and deliver a structured medication education program for heart failure patients that includes: 1) Provide individualized counseling on the purpose, benefits, and potential side effects of each heart failure medication, 2) Create a visual medication schedule with pictures of pills and specific timing instructions, 3) Demonstrate proper use of any devices (e.g., inhalers for COPD comorbidity), 4) Explain the relationship between medications and symptom management using simple language and visual aids, 5) Address common concerns and misconceptions about heart failure medications, 6) Assess understanding using teach-back method at each session, 7) Provide written materials at appropriate literacy levels in the patient's preferred language, and 8) Schedule follow-up education sessions at 2 weeks and 3 months after initial counseling.",
+    "expected_outcomes": "Improved medication adherence, enhanced patient knowledge about heart failure medications, increased patient confidence in medication self-management, reduced medication errors, and decreased hospitalizations related to medication non-adherence.",
+    "target_population": "Adult patients with heart failure on multiple medications, particularly those newly diagnosed, recently hospitalized, or with complex medication regimens.",
+    "citation": "Ruppar TM, Cooper PS, Mehr DR, Delgado JM, Dunbar-Jacob JM. Medication Adherence Interventions Improve Heart Failure Mortality and Readmission Rates: Systematic Review and Meta-Analysis of Controlled Trials. J Am Heart Assoc. 2016;5(6):e002606. doi:10.1161/JAHA.115.002606",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication education",
+      "adherence",
+      "patient counseling",
+      "self-management"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_medication_access_1",
+    "title": "Implement Medication Access Coordination for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Pharmacy Technician",
+    "implementation_guidance": "Establish a systematic approach to ensure uninterrupted medication access for heart failure patients: 1) Create a medication refill tracking system with alerts for upcoming refills, 2) Synchronize refill dates for all chronic medications to reduce multiple pharmacy visits, 3) Identify patients at risk for medication access issues through screening questions about cost concerns and transportation barriers, 4) Assist eligible patients with enrollment in pharmaceutical assistance programs, 5) Coordinate with insurance companies to resolve prior authorization requirements, 6) Implement an early intervention protocol for patients who miss refills (call within 3 days of missed pickup), 7) Document all interventions and outcomes in the patient record, and 8) Communicate access barriers to the care team.",
+    "expected_outcomes": "Improved medication adherence rates, reduced gaps in therapy, decreased financial burden of medications, increased identification and resolution of access barriers, and reduced heart failure exacerbations related to medication non-adherence.",
+    "target_population": "Adult patients with heart failure on multiple medications, particularly those with limited income, transportation challenges, or complex insurance coverage.",
+    "citation": "Viswanathan M, Golin CE, Jones CD, et al. Interventions to improve adherence to self-administered medications for chronic diseases in the United States: a systematic review. Ann Intern Med. 2012;157(11):785-795. doi:10.7326/0003-4819-157-11-201212040-00538",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication access",
+      "adherence",
+      "refill management",
+      "financial assistance"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_resource_navigation_1",
+    "title": "Implement Resource Navigation for Heart Failure Patients with Social Needs",
+    "domain": "Heart Failure",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Establish a comprehensive resource navigation program for heart failure patients with social needs: 1) Conduct standardized social needs assessment using a validated tool at initial contact and quarterly thereafter, 2) Create an individualized resource plan addressing identified needs in housing, food security, transportation, and financial assistance, 3) Develop and maintain a current database of community resources specific to heart failure patients' needs, 4) Provide warm handoffs to community organizations rather than simple referrals, 5) Follow up within one week to confirm successful connection to resources, 6) Document all interventions and outcomes in the patient record, 7) Address barriers to resource utilization as they arise, and 8) Coordinate with the clinical team to communicate how social needs may impact the treatment plan.",
+    "expected_outcomes": "Improved access to social services, reduced missed medical appointments, decreased food and housing insecurity, enhanced medication adherence, reduced heart failure hospitalizations related to social factors, and improved quality of life.",
+    "target_population": "Adult patients with heart failure who have identified social needs, particularly those with housing instability, food insecurity, transportation barriers, or financial challenges.",
+    "citation": "Berkowitz SA, Hulberg AC, Standish S, Reznor G, Atlas SJ. Addressing Unmet Basic Resource Needs as Part of Chronic Cardiometabolic Disease Management. JAMA Intern Med. 2017;177(2):244-252. doi:10.1001/jamainternmed.2016.7691",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "social determinants",
+      "resource navigation",
+      "care coordination",
+      "social needs"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_psychosocial_support_1",
+    "title": "Implement Psychosocial Support for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Social Worker (Clinical/Therapy)",
+    "implementation_guidance": "Provide structured psychosocial support for heart failure patients through: 1) Conduct initial assessment of adjustment to chronic illness using a validated tool such as the Illness Cognition Questionnaire, 2) Facilitate individual counseling sessions focused on coping strategies and acceptance of lifestyle changes, 3) Assess caregiver burden using the Zarit Burden Interview and provide targeted support, 4) Facilitate advance care planning discussions using a structured approach (e.g., Five Wishes document), 5) Connect patients to heart failure support groups, either in-person or virtual, 6) Provide crisis intervention during periods of decompensation or hospitalization, 7) Document psychosocial interventions and outcomes in the patient record, and 8) Communicate relevant findings to the healthcare team.",
+    "expected_outcomes": "Improved psychological adjustment to heart failure diagnosis, reduced symptoms of anxiety and depression, enhanced quality of life, increased completion of advance directives, reduced caregiver burnout, and improved communication about goals of care.",
+    "target_population": "Adult patients with heart failure and their caregivers, particularly those newly diagnosed, with progressive symptoms, or experiencing psychological distress.",
+    "citation": "Bekelman DB, Plomondon ME, Carey EP, et al. Primary Results of the Patient-Centered Disease Management (PCDM) for Heart Failure Study: A Randomized Clinical Trial. JAMA Intern Med. 2015;175(5):725-732. doi:10.1001/jamainternmed.2015.0315",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "psychosocial support",
+      "coping",
+      "caregiver support",
+      "advance care planning"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_ongoing_care_1",
+    "title": "Implement Structured Ongoing Postnatal Care Program",
+    "domain": "Postnatal",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Establish a comprehensive postnatal care program with these specific components: 1) Schedule initial contact with patients within 3 weeks postpartum, 2) Conduct comprehensive assessment by 12 weeks using a standardized checklist covering physical recovery, mental health, breastfeeding, contraception needs, and social support, 3) Create individualized care plans based on assessment findings, 4) Implement a tracking system to ensure follow-up appointments are scheduled and attended, 5) Coordinate warm handoffs to primary care providers after the comprehensive assessment, with a structured transfer of information, 6) Document all assessments and interventions in the patient record, and 7) Provide patients with written care plans and educational materials in their preferred language.",
+    "expected_outcomes": "Improved maternal satisfaction with care, increased attendance at postpartum visits, earlier detection and management of postpartum complications, successful transition to primary care, and reduced postpartum emergency department utilization.",
+    "target_population": "All postpartum individuals, with particular attention to those with pregnancy complications, mental health concerns, or social support needs.",
+    "citation": "American College of Obstetricians and Gynecologists. ACOG Committee Opinion No. 736: Optimizing Postpartum Care. Obstet Gynecol. 2018;131(5):e140-e150. doi:10.1097/AOG.0000000000002633",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "postpartum care",
+      "care coordination",
+      "maternal health",
+      "fourth trimester"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_home_visits_1",
+    "title": "Implement Structured Home Visit Program for Postpartum Patients",
+    "domain": "Postnatal",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Establish a structured home visit program for postpartum patients with these specific components: 1) Conduct initial home visit within 48-72 hours of hospital discharge, 2) Use a standardized assessment tool covering infant feeding, maternal recovery, emotional wellbeing, and home environment safety, 3) Provide hands-on breastfeeding support and demonstration, 4) Assess for signs of postpartum complications using a checklist of warning signs, 5) Offer culturally appropriate education on infant care and maternal self-care, 6) Document findings and concerns in a structured format, 7) Communicate urgent concerns to clinical providers within 24 hours, and 8) Schedule follow-up visits based on identified needs and risk factors.",
+    "expected_outcomes": "Improved maternal satisfaction with postpartum care, increased rates of exclusive breastfeeding, earlier detection of postpartum complications, reduced infant healthcare utilization for preventable issues, and decreased postpartum depression scores.",
+    "target_population": "All postpartum individuals, with priority for first-time parents, those with limited social support, breastfeeding difficulties, or risk factors for postpartum complications.",
+    "citation": "Yonemoto N, Dowswell T, Nagai S, Mori R. Schedules for home visits in the early postpartum period. Cochrane Database Syst Rev. 2017;8(8):CD009326. doi:10.1002/14651858.CD009326.pub3",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "home visits",
+      "postpartum care",
+      "breastfeeding support",
+      "maternal health"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_early_followup_1",
+    "title": "Implement Early and Frequent Postpartum Follow-up Protocol",
+    "domain": "Postnatal",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Establish a protocol for early and frequent postpartum follow-up that includes: 1) Contact patients by phone within 24-48 hours after hospital discharge, 2) Schedule in-person or telehealth visit within 72 hours for high-risk patients (e.g., cesarean delivery, hypertensive disorders, breastfeeding difficulties), 3) Use a standardized assessment tool to evaluate physical recovery, emotional wellbeing, and infant care concerns, 4) Implement a tiered follow-up schedule based on risk stratification (higher risk patients receive more frequent contacts), 5) Create a clear escalation pathway for concerning findings, 6) Document all contacts and assessments in the patient record, and 7) Provide 24/7 access to clinical support via phone or messaging for urgent concerns.",
+    "expected_outcomes": "Earlier detection and management of postpartum complications, improved maternal-infant bonding, increased breastfeeding success rates, reduced postpartum emergency department visits, and enhanced maternal confidence in self-care and infant care.",
+    "target_population": "All postpartum individuals, with particular emphasis on those with pregnancy complications, first-time parents, or limited social support.",
+    "citation": "Tully KP, Stuebe AM, Verbiest SB. The fourth trimester: a critical transition period with unmet maternal health needs. Am J Obstet Gynecol. 2017;217(1):37-41. doi:10.1016/j.ajog.2017.03.032",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "postpartum care",
+      "early intervention",
+      "maternal health",
+      "fourth trimester"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_biopsychosocial_1",
+    "title": "Implement Comprehensive Biopsychosocial Assessment for Postpartum Patients",
+    "domain": "Postnatal",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Conduct a structured comprehensive biopsychosocial assessment for all postpartum patients that includes: 1) Screen for postpartum depression using a validated tool (e.g., Edinburgh Postnatal Depression Scale) at 2 weeks, 6 weeks, and 3 months postpartum, 2) Assess for intimate partner violence using a standardized screening tool, 3) Evaluate chronic disease management needs, particularly for conditions affected by pregnancy (e.g., hypertension, diabetes), 4) Screen for social determinants of health using a standardized tool covering housing, food security, and transportation, 5) Document all findings in the patient record with specific action plans for identified issues, 6) Implement a referral protocol for positive screens with warm handoffs to appropriate services, and 7) Schedule follow-up assessments based on identified risks.",
+    "expected_outcomes": "Earlier identification and intervention for mental health concerns, improved management of chronic conditions, increased connection to social services, reduced postpartum complications, and enhanced maternal wellbeing and functioning.",
+    "target_population": "All postpartum individuals, with particular attention to those with pre-existing mental health conditions, pregnancy complications, or identified social risk factors.",
+    "citation": "American College of Obstetricians and Gynecologists. Committee Opinion No. 666: Optimizing Postpartum Care. Obstet Gynecol. 2016;127(6):e187-e192. doi:10.1097/AOG.0000000000001487",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "postpartum depression",
+      "psychosocial assessment",
+      "chronic disease management",
+      "social determinants"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_breastfeeding_1",
+    "title": "Implement Structured Breastfeeding Support Program",
+    "domain": "Postnatal",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Establish a comprehensive breastfeeding support program that includes: 1) Provide in-person assessment of latch and positioning within 48-72 hours after birth, 2) Offer peer support through trained lactation peer counselors from the same community, 3) Create a 24/7 breastfeeding support hotline staffed by trained personnel, 4) Conduct follow-up home visits at 1 week and 2 weeks postpartum specifically focused on breastfeeding challenges, 5) Facilitate connections to community breastfeeding support groups, 6) Provide culturally appropriate educational materials in the patient's preferred language, 7) Document all interventions and feeding outcomes in a structured format, and 8) Implement a referral pathway to lactation consultants for complex breastfeeding challenges.",
+    "expected_outcomes": "Increased rates of breastfeeding initiation, longer duration of any and exclusive breastfeeding at 1-6 months, improved maternal confidence in breastfeeding, earlier identification and resolution of breastfeeding challenges, and enhanced maternal satisfaction with infant feeding experience.",
+    "target_population": "All postpartum individuals who choose to breastfeed, with particular attention to first-time parents, those with previous breastfeeding difficulties, or limited social support.",
+    "citation": "McFadden A, Gavine A, Renfrew MJ, et al. Support for healthy breastfeeding mothers with healthy term babies. Cochrane Database Syst Rev. 2017;2(2):CD001141. doi:10.1002/14651858.CD001141.pub5",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "breastfeeding",
+      "lactation support",
+      "peer counseling",
+      "maternal-infant health"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_contraception_1",
+    "title": "Implement Postpartum Contraception Counseling and Provision Program",
+    "domain": "Postnatal",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Establish a comprehensive postpartum contraception program that includes: 1) Provide contraception counseling during prenatal care using shared decision-making tools, 2) Discuss contraceptive options again prior to hospital discharge, 3) Offer immediate postpartum long-acting reversible contraception (LARC) when appropriate and desired, 4) Schedule contraception provision at the comprehensive postpartum visit (or earlier if desired), 5) Use visual aids and models to explain different contraceptive methods, 6) Address common misconceptions about postpartum fertility and contraception, 7) Document contraceptive plan and provision in the patient record, and 8) Implement a follow-up protocol to assess satisfaction and address side effects.",
+    "expected_outcomes": "Increased uptake of effective contraception in the postpartum period, reduced unintended pregnancies, longer interpregnancy intervals, decreased short-interval repeat pregnancies, and improved maternal autonomy in family planning decisions.",
+    "target_population": "All postpartum individuals of reproductive age who do not desire pregnancy in the immediate postpartum period.",
+    "citation": "American College of Obstetricians and Gynecologists. Committee Opinion No. 670: Immediate Postpartum Long-Acting Reversible Contraception. Obstet Gynecol. 2016;128(2):e32-e37. doi:10.1097/AOG.0000000000001587",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "contraception",
+      "family planning",
+      "LARC",
+      "postpartum care"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_cardiovascular_risk_1",
+    "title": "Implement Cardiovascular Risk Reduction Program for Postpartum Patients with Adverse Pregnancy Outcomes",
+    "domain": "Postnatal",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Establish a structured cardiovascular risk reduction program for postpartum patients with adverse pregnancy outcomes (APOs) that includes: 1) Identify patients with APOs (preeclampsia, gestational diabetes, preterm birth, small-for-gestational-age infant) at delivery discharge, 2) Schedule dedicated cardiovascular risk assessment at 4-12 weeks postpartum, 3) Ensure completion of recommended postpartum glucose testing for those with gestational diabetes, 4) Refer eligible patients to structured lifestyle programs (e.g., National Diabetes Prevention Program), 5) Provide guidance on achieving 150 minutes of moderate-intensity exercise per week with specific, safe postpartum exercise recommendations, 6) Implement blood pressure monitoring protocol for those with hypertensive disorders of pregnancy, 7) Create long-term follow-up schedule with annual cardiovascular risk assessment, and 8) Document APO history prominently in the medical record for future providers.",
+    "expected_outcomes": "Improved rates of postpartum glucose testing, increased participation in structured lifestyle programs, earlier identification of persistent hypertension or diabetes, improved postpartum physical activity levels, and long-term reduction in cardiovascular disease risk.",
+    "target_population": "Postpartum individuals with adverse pregnancy outcomes including gestational diabetes, preeclampsia, gestational hypertension, preterm birth, or small-for-gestational-age infant.",
+    "citation": "Parikh NI, Gonzalez JM, Anderson CAM, et al. Adverse Pregnancy Outcomes and Cardiovascular Disease Risk: Unique Opportunities for Cardiovascular Disease Prevention in Women: A Scientific Statement From the American Heart Association. Circulation. 2021;143(18):e902-e916. doi:10.1161/CIR.0000000000000961",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "cardiovascular risk",
+      "adverse pregnancy outcomes",
+      "postpartum care",
+      "preventive health"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_technology_reminders_1",
+    "title": "Implement Automated Reminder System for Postpartum Screenings",
+    "domain": "Postnatal",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Establish an automated reminder system for postpartum screenings that includes: 1) Create a registry of patients requiring specific postpartum screenings based on pregnancy history (e.g., glucose testing for gestational diabetes, blood pressure monitoring for preeclampsia), 2) Implement automated text message reminders sent 1 week and 1 day before scheduled screenings, 3) Design messages using behavioral economics principles with action-oriented language, 4) Include direct scheduling links in digital communications, 5) Follow up with phone calls for patients who miss scheduled screenings, 6) Document all reminders and responses in the patient record, 7) Generate monthly reports on screening adherence rates, and 8) Adjust reminder timing and content based on adherence patterns.",
+    "expected_outcomes": "Improved adherence to recommended postpartum screenings, increased rates of completed glucose tolerance testing after gestational diabetes, enhanced follow-up for hypertensive disorders of pregnancy, earlier detection of persistent postpartum conditions, and reduced loss to follow-up.",
+    "target_population": "Postpartum individuals requiring specific follow-up screenings, particularly those with a history of gestational diabetes, preeclampsia, or other pregnancy complications requiring postpartum surveillance.",
+    "citation": "Henderson V, Stumbras K, Caskey R, Haider S, Rankin K, Handler A. Understanding factors associated with postpartum visit attendance and contraception choices: listening to low-income postpartum women and health care providers. Matern Child Health J. 2016;20(Suppl 1):132-143. doi:10.1007/s10995-016-2044-7",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "automated reminders",
+      "postpartum screenings",
+      "care coordination",
+      "technology"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_care_coordination_1",
+    "title": "Implement Coordinated Care Transition for Postpartum Patients",
+    "domain": "Postnatal",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Establish a structured care coordination program for postpartum patients that includes: 1) Create a comprehensive postpartum care plan before hospital discharge that addresses both short and long-term health needs, 2) Schedule a clear sequence of follow-up appointments with appropriate providers based on risk factors and pregnancy complications, 3) Implement a warm handoff protocol for transition to primary care with direct communication between providers, 4) Ensure all pregnancy complications and outcomes are documented in a standardized format accessible to future providers, 5) Provide patients with a portable health record summarizing pregnancy outcomes and follow-up needs, 6) Conduct follow-up calls at 1 week and 1 month after transition to confirm successful connection to ongoing care, and 7) Address barriers to care continuity as they arise.",
+    "expected_outcomes": "Improved continuity of care between obstetric and primary care providers, reduced loss to follow-up, increased attendance at postpartum visits, better long-term management of pregnancy-related health implications, and enhanced patient satisfaction with care transitions.",
+    "target_population": "All postpartum individuals, with particular attention to those with pregnancy complications requiring ongoing management or surveillance.",
+    "citation": "Stuebe AM, Auguste TC, Gulati M. Optimizing Postpartum Care. ACOG Committee Opinion No. 736. Obstet Gynecol. 2018;131(5):e140-e150. doi:10.1097/AOG.0000000000002633",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care coordination",
+      "care transitions",
+      "postpartum care",
+      "continuity of care"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "postnatal_social_needs_1",
+    "title": "Implement Social Needs Assessment and Resource Connection for Postpartum Patients",
+    "domain": "Postnatal",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Establish a comprehensive social needs program for postpartum patients that includes: 1) Conduct standardized screening for social needs using a validated tool at the first postpartum contact, 2) Assess for intimate partner violence using a trauma-informed approach in a private setting, 3) Create an individualized resource plan addressing identified needs in housing, food security, transportation, and childcare, 4) Develop and maintain a current database of community resources specific to postpartum needs, 5) Provide warm handoffs to community organizations rather than simple referrals, 6) Follow up within one week to confirm successful connection to resources, 7) Document all interventions and outcomes in the patient record, and 8) Implement a protocol for urgent safety concerns including immediate connection to domestic violence resources when needed.",
+    "expected_outcomes": "Improved identification of social needs affecting maternal and infant health, increased connection to appropriate community resources, enhanced maternal safety and wellbeing, reduced barriers to postpartum care attendance, and improved maternal and infant health outcomes.",
+    "target_population": "All postpartum individuals, with particular attention to those with identified social risk factors, limited resources, or safety concerns.",
+    "citation": "Bhat A, Grote NK, Russo J, et al. Collaborative Care for Perinatal Depression Among Socioeconomically Disadvantaged Women: Adverse Neonatal Birth Events and Treatment Response. Psychiatr Serv. 2017;68(1):17-24. doi:10.1176/appi.ps.201600002",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "social determinants",
+      "intimate partner violence",
+      "resource navigation",
+      "maternal safety"
+    ],
+    "last_updated": "2025-06-03"
   }
 ];

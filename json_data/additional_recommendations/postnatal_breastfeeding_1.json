@@ -1,0 +1,13 @@
+{
+  "id": "postnatal_breastfeeding_1",
+  "title": "Implement Structured Breastfeeding Support Program",
+  "domain": "Postnatal",
+  "role": "Community Health Worker",
+  "implementation_guidance": "Establish a comprehensive breastfeeding support program that includes: 1) Provide in-person assessment of latch and positioning within 48-72 hours after birth, 2) Offer peer support through trained lactation peer counselors from the same community, 3) Create a 24/7 breastfeeding support hotline staffed by trained personnel, 4) Conduct follow-up home visits at 1 week and 2 weeks postpartum specifically focused on breastfeeding challenges, 5) Facilitate connections to community breastfeeding support groups, 6) Provide culturally appropriate educational materials in the patient's preferred language, 7) Document all interventions and feeding outcomes in a structured format, and 8) Implement a referral pathway to lactation consultants for complex breastfeeding challenges.",
+  "expected_outcomes": "Increased rates of breastfeeding initiation, longer duration of any and exclusive breastfeeding at 1-6 months, improved maternal confidence in breastfeeding, earlier identification and resolution of breastfeeding challenges, and enhanced maternal satisfaction with infant feeding experience.",
+  "target_population": "All postpartum individuals who choose to breastfeed, with particular attention to first-time parents, those with previous breastfeeding difficulties, or limited social support.",
+  "citation": "McFadden A, Gavine A, Renfrew MJ, et al. Support for healthy breastfeeding mothers with healthy term babies. Cochrane Database Syst Rev. 2017;2(2):CD001141. doi:10.1002/14651858.CD001141.pub5",
+  "evidence_level": "A - Strong",
+  "tags": ["breastfeeding", "lactation support", "peer counseling", "maternal-infant health"],
+  "last_updated": "2025-06-03"
+}

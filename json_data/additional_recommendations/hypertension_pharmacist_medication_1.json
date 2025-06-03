@@ -1,0 +1,17 @@
+{
+  "id": "hypertension_pharmacist_medication_1",
+  "domain": "Hypertension",
+  "role": "Pharmacist",
+  "recommendation": "Implement comprehensive medication management for hypertension patients",
+  "implementation_steps": [
+    "Conduct medication reconciliation to identify discrepancies and interactions",
+    "Titrate antihypertensive therapy according to established protocols",
+    "Counsel patients on medication adherence and proper use",
+    "Identify and manage medication side effects",
+    "Optimize pharmacotherapy to improve blood pressure control"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Pharmacist-led medication management interventions have demonstrated significant improvements in blood pressure control, medication adherence, and reduced cardiovascular events across multiple randomized controlled trials and systematic reviews.",
+  "citation": "2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults",
+  "url": "https://www.openevidence.com/ask/d914c295-05e0-493c-900d-edd1dcd2237b"
+}

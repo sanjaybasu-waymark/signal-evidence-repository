@@ -1,0 +1,13 @@
+{
+  "id": "heart_failure_psychosocial_1",
+  "title": "Implement Comprehensive Psychosocial Assessment for Heart Failure Patients",
+  "domain": "Heart Failure",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Conduct a structured psychosocial assessment for all heart failure patients that includes: 1) Screen for depression using PHQ-9 at initial visit and quarterly thereafter, 2) Assess frailty using a validated tool such as the Clinical Frailty Scale, 3) Evaluate health literacy using the Brief Health Literacy Screening Tool, 4) Identify social isolation risk factors using a standardized questionnaire, 5) Document findings in the patient record with specific barriers to self-care identified, 6) Develop targeted interventions for identified issues (e.g., simplified medication regimens for low health literacy, referral to mental health for depression), and 7) Reassess after interventions to evaluate improvement.",
+  "expected_outcomes": "Improved identification of psychosocial barriers to heart failure management, increased appropriate referrals to supportive services, enhanced treatment adherence, reduced hospitalization rates, and improved quality of life scores.",
+  "target_population": "Adult patients with heart failure (HFrEF, HFpEF, or HFmrEF), particularly those with complex management needs or poor treatment adherence.",
+  "citation": "Havranek EP, Mujahid MS, Barr DA, et al. Social Determinants of Risk and Outcomes for Cardiovascular Disease: A Scientific Statement From the American Heart Association. Circulation. 2015;132(9):873-898. doi:10.1161/CIR.0000000000000228",
+  "evidence_level": "B - Moderate",
+  "tags": ["psychosocial assessment", "depression screening", "health literacy", "social determinants"],
+  "last_updated": "2025-06-03"
+}

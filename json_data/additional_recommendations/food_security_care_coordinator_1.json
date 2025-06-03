@@ -1,0 +1,17 @@
+{
+  "id": "food_security_care_coordinator_1",
+  "domain": "Food Insecurity",
+  "role": "Care Coordinator",
+  "recommendation": "Implement screening and resource connection for food insecurity",
+  "implementation_steps": [
+    "Screen for food insecurity using validated tools like the two-item Hunger Vital Sign",
+    "Document results in electronic health records with clear follow-up pathways",
+    "Connect patients to appropriate food resources including federal nutrition programs",
+    "Follow up to ensure successful linkage to services",
+    "Coordinate with community-based organizations to address ongoing food needs"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Systematic screening and resource connection for food insecurity has demonstrated improvements in food security status, healthcare utilization, and health outcomes across multiple studies.",
+  "citation": "Food insecurity research",
+  "url": "https://www.openevidence.com/ask/13eede4b-114f-43bf-b131-96706e630dc5"
+}

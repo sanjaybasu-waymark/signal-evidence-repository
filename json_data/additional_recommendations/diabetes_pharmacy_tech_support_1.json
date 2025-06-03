@@ -1,0 +1,17 @@
+{
+  "id": "diabetes_pharmacy_tech_support_1",
+  "domain": "Diabetes",
+  "role": "Pharmacy Technician",
+  "recommendation": "Provide medication support services for diabetes patients",
+  "implementation_steps": [
+    "Perform medication reconciliation to identify discrepancies",
+    "Assist with refill coordination to ensure medication continuity",
+    "Identify adherence barriers through patient interviews and refill history analysis",
+    "Facilitate communication between patients and pharmacists",
+    "Help with insurance or medication access issues"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Pharmacy technician interventions supporting medication access and adherence have been shown to improve medication continuity and reduce gaps in therapy for patients with diabetes, particularly when integrated into comprehensive pharmacy-based diabetes management programs.",
+  "citation": "Care Management Processes Important for High-Quality Diabetes Care",
+  "url": "https://www.openevidence.com/ask/9c8cbb68-63a3-4087-855b-cca3ced5f64c"
+}

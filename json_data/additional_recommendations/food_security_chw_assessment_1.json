@@ -1,0 +1,17 @@
+{
+  "id": "food_security_chw_assessment_1",
+  "domain": "Food Insecurity",
+  "role": "Community Health Worker",
+  "recommendation": "Conduct home-based food needs assessment and education",
+  "implementation_steps": [
+    "Conduct home-based assessments of food needs and kitchen resources",
+    "Provide culturally appropriate education on nutrition resources",
+    "Facilitate community connections to food support systems",
+    "Assist with transportation to food resources when needed",
+    "Follow up to ensure ongoing access to adequate nutrition"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "CHW-led home-based assessment and education interventions have demonstrated improvements in food security status and nutritional outcomes, particularly in underserved communities with limited access to traditional healthcare services.",
+  "citation": "Food insecurity research",
+  "url": "https://www.openevidence.com/ask/13eede4b-114f-43bf-b131-96706e630dc5"
+}

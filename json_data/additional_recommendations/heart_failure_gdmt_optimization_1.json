@@ -1,0 +1,13 @@
+{
+  "id": "heart_failure_gdmt_optimization_1",
+  "title": "Implement Protocol-Driven GDMT Optimization for Heart Failure Patients",
+  "domain": "Heart Failure",
+  "role": "Clinical Pharmacist",
+  "implementation_guidance": "Establish a protocol-driven approach to optimize guideline-directed medical therapy (GDMT) for heart failure patients: 1) Create a structured titration protocol for each GDMT medication class (ARNI/ACEi/ARB, beta-blockers, MRAs, SGLT2i), 2) Monitor for drug interactions at each medication change, 3) Implement a systematic follow-up schedule (weekly during active titration, then monthly), 4) Check appropriate labs before and after dose adjustments (electrolytes, renal function, blood pressure), 5) Document target doses, current doses, and specific barriers to optimization, 6) Collaborate with the care team using a shared decision-making approach for complex cases, and 7) Provide patient education on the purpose and importance of each medication.",
+  "expected_outcomes": "Increased proportion of patients on target doses of GDMT, improved left ventricular ejection fraction in HFrEF patients, reduced heart failure hospitalizations, decreased mortality, and enhanced quality of life.",
+  "target_population": "Adult patients with heart failure with reduced ejection fraction (HFrEF), with appropriate components applicable to HFpEF patients based on current guidelines.",
+  "citation": "Fonarow GC, Yancy CW, Hernandez AF, Peterson ED, Spertus JA, Heidenreich PA. Potential impact of optimal implementation of evidence-based heart failure therapies on mortality. Am Heart J. 2011;161(6):1024-1030.e3. doi:10.1016/j.ahj.2011.01.027",
+  "evidence_level": "A - Strong",
+  "tags": ["GDMT", "medication optimization", "protocol-driven care", "heart failure management"],
+  "last_updated": "2025-06-03"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "vaccination_pharmacy_tech_support_1",
+  "domain": "Vaccination",
+  "role": "Pharmacy Technician",
+  "recommendation": "Support vaccination workflow and patient identification",
+  "implementation_steps": [
+    "Identify eligible patients during prescription processing",
+    "Prepare documentation for vaccination",
+    "Assist with patient education about vaccines",
+    "Administer vaccines where permitted after accredited training",
+    "Support workflow to expand vaccination capacity"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Pharmacy technician interventions supporting vaccination workflow have been shown to increase vaccination rates by expanding capacity and improving patient identification in pharmacy settings.",
+  "citation": "Adult Vaccination Coverage in the United States",
+  "url": "https://www.openevidence.com/ask/af24abec-68c4-4566-a6a5-81126a670850"
+}

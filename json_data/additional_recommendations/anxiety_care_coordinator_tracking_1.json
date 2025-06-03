@@ -1,0 +1,17 @@
+{
+  "id": "anxiety_care_coordinator_tracking_1",
+  "domain": "Anxiety",
+  "role": "Care Coordinator",
+  "recommendation": "Implement patient progress tracking and care coordination for anxiety disorders",
+  "implementation_steps": [
+    "Track patient progress using standardized anxiety assessment tools (e.g., GAD-7)",
+    "Facilitate communication between primary care and mental health providers",
+    "Ensure follow-through with referrals to specialists when needed",
+    "Coordinate stepped care adjustments based on symptom response",
+    "Support implementation of collaborative care models for anxiety management"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Care coordinator-led tracking and coordination interventions have demonstrated improvements in anxiety symptom management, treatment adherence, and outcomes when implemented within collaborative care models.",
+  "citation": "Anxiety disorder research",
+  "url": "https://www.openevidence.com/ask/c366ed3b-2b63-4208-ab89-48236397f3d4"
+}

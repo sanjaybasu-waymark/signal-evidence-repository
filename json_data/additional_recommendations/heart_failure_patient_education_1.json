@@ -1,0 +1,13 @@
+{
+  "id": "heart_failure_patient_education_1",
+  "title": "Implement Structured Heart Failure Self-Care Education Program",
+  "domain": "Heart Failure",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Deliver a comprehensive self-care education program for heart failure patients with these specific components: 1) Teach daily weight monitoring with specific action thresholds (call provider if >2 lbs gain in 24 hours or >5 lbs in a week), 2) Train patients to recognize and respond to early warning signs of decompensation using a symptom checklist (increased shortness of breath, edema, fatigue), 3) Provide a written action plan with color-coded zones (green=stable, yellow=warning, red=emergency), 4) Demonstrate proper medication organization techniques, 5) Educate on sodium restriction with practical food examples and label-reading skills, 6) Use teach-back method to verify understanding, and 7) Reinforce education at each contact with focus on skill-building rather than knowledge alone.",
+  "expected_outcomes": "Improved self-care behaviors, earlier reporting of worsening symptoms, reduced emergency department visits, improved quality of life scores, and increased patient confidence in managing heart failure.",
+  "target_population": "Adult patients with heart failure (HFrEF, HFpEF, or HFmrEF) and their caregivers, particularly those recently diagnosed or with recent hospitalizations.",
+  "citation": "Jonkman NH, Westland H, Groenwold RH, et al. Do Self-Management Interventions Work in Patients With Heart Failure? An Individual Patient Data Meta-Analysis. Circulation. 2016;133(12):1189-1198. doi:10.1161/CIRCULATIONAHA.115.018006",
+  "evidence_level": "A - Strong",
+  "tags": ["self-care", "patient education", "symptom monitoring", "action planning"],
+  "last_updated": "2025-06-03"
+}

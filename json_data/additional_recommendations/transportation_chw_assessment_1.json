@@ -1,0 +1,17 @@
+{
+  "id": "transportation_chw_assessment_1",
+  "domain": "Transportation Insecurity",
+  "role": "Community Health Worker",
+  "recommendation": "Conduct home-based transportation needs assessment and resource connection",
+  "implementation_steps": [
+    "Conduct home visits to assess transportation needs and available resources",
+    "Connect patients to community transportation resources and programs",
+    "Provide education on available transportation options and how to access them",
+    "Help patients navigate public transportation systems when appropriate",
+    "Follow up to ensure successful connection to transportation services"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "CHW-led transportation needs assessment and resource connection interventions have demonstrated improvements in healthcare access and appointment attendance for patients with transportation barriers.",
+  "citation": "Transportation insecurity research",
+  "url": "https://www.openevidence.com/ask/c3a72c90-0119-427e-aaf5-0dcb9f06d60a"
+}

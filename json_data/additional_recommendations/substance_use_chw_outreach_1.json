@@ -1,0 +1,17 @@
+{
+  "id": "substance_use_chw_outreach_1",
+  "domain": "Substance Use",
+  "role": "Community Health Worker",
+  "recommendation": "Provide outreach and psychoeducation for substance use disorders",
+  "implementation_steps": [
+    "Deliver psychoeducation about substance use disorders and treatment options",
+    "Provide motivational enhancement through personalized feedback",
+    "Support treatment engagement through outreach and navigation assistance",
+    "Address social determinants of health affecting treatment access and success",
+    "Connect patients to community resources and support systems"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "CHW-led outreach and psychoeducation interventions have demonstrated improvements in treatment engagement and outcomes for substance use disorders, particularly in underserved communities with limited access to traditional healthcare services.",
+  "citation": "Substance use disorder research",
+  "url": "https://www.openevidence.com/ask/c853bfdf-9bed-47dc-8d5b-19b1c8e61938"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "asthma_nurse_monitoring_1",
+  "domain": "Asthma",
+  "role": "Nurse Care Manager",
+  "recommendation": "Implement structured clinical monitoring and education for asthma patients",
+  "implementation_steps": [
+    "Provide regular follow-ups to monitor asthma control using validated tools like the Asthma Control Test (ACT) or Asthma Control Questionnaire (ACQ)",
+    "Educate patients on proper inhaler techniques with demonstration and return demonstration",
+    "Promote adherence to controller medications through education and follow-up",
+    "Teach specific strategies for identifying and avoiding personal asthma triggers",
+    "Assist in implementing multicomponent allergen-specific mitigation measures for patients with allergen-triggered asthma"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Nurse-led monitoring and education interventions have demonstrated significant improvements in asthma control, proper inhaler technique, medication adherence, and reduced emergency department visits across multiple systematic reviews.",
+  "citation": "Self-Management Interventions to Reduce Healthcare Use and Improve Quality of Life Among Patients With Asthma: Systematic Review and Network Meta-Analysis. (2020)",
+  "url": "https://www.openevidence.com/ask/cd27694a-a2a8-408b-8bc2-b077a2ee7a64"
+}

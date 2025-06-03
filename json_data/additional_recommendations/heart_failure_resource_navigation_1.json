@@ -1,0 +1,13 @@
+{
+  "id": "heart_failure_resource_navigation_1",
+  "title": "Implement Resource Navigation for Heart Failure Patients with Social Needs",
+  "domain": "Heart Failure",
+  "role": "Social Worker (Non-Clinical)",
+  "implementation_guidance": "Establish a comprehensive resource navigation program for heart failure patients with social needs: 1) Conduct standardized social needs assessment using a validated tool at initial contact and quarterly thereafter, 2) Create an individualized resource plan addressing identified needs in housing, food security, transportation, and financial assistance, 3) Develop and maintain a current database of community resources specific to heart failure patients' needs, 4) Provide warm handoffs to community organizations rather than simple referrals, 5) Follow up within one week to confirm successful connection to resources, 6) Document all interventions and outcomes in the patient record, 7) Address barriers to resource utilization as they arise, and 8) Coordinate with the clinical team to communicate how social needs may impact the treatment plan.",
+  "expected_outcomes": "Improved access to social services, reduced missed medical appointments, decreased food and housing insecurity, enhanced medication adherence, reduced heart failure hospitalizations related to social factors, and improved quality of life.",
+  "target_population": "Adult patients with heart failure who have identified social needs, particularly those with housing instability, food insecurity, transportation barriers, or financial challenges.",
+  "citation": "Berkowitz SA, Hulberg AC, Standish S, Reznor G, Atlas SJ. Addressing Unmet Basic Resource Needs as Part of Chronic Cardiometabolic Disease Management. JAMA Intern Med. 2017;177(2):244-252. doi:10.1001/jamainternmed.2016.7691",
+  "evidence_level": "B - Moderate",
+  "tags": ["social determinants", "resource navigation", "care coordination", "social needs"],
+  "last_updated": "2025-06-03"
+}

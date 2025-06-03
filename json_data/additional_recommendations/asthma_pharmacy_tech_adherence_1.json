@@ -1,0 +1,17 @@
+{
+  "id": "asthma_pharmacy_tech_adherence_1",
+  "domain": "Asthma",
+  "role": "Pharmacy Technician",
+  "recommendation": "Support medication adherence for asthma patients",
+  "implementation_steps": [
+    "Identify patients with poor medication adherence through refill history analysis",
+    "Help streamline prescription refills to ensure continuity of therapy",
+    "Support pharmacists in delivering educational interventions",
+    "Coordinate medication synchronization to simplify refill schedules",
+    "Follow up with patients who miss refills to identify and address barriers"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Pharmacy technician interventions supporting medication adherence have been shown to improve medication access and continuity of therapy for asthma patients, particularly when integrated into comprehensive pharmacy-based asthma management programs.",
+  "citation": "Ensuring Equitable Access to Guideline-Based Asthma Care Across the Lifespan: Tips and Future Directions to the Successful Implementation of the New NAEPP 2020 Guidelines. (2023)",
+  "url": "https://www.openevidence.com/ask/cd27694a-a2a8-408b-8bc2-b077a2ee7a64"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "heart_failure_pharmacist_medication_1",
+  "domain": "Heart Failure",
+  "role": "Pharmacist",
+  "recommendation": "Conduct comprehensive medication reconciliation and optimization for heart failure patients",
+  "implementation_steps": [
+    "Conduct comprehensive medication reconciliation at transitions of care",
+    "Identify and resolve drug-related problems and interactions",
+    "Optimize guideline-directed medical therapy (GDMT) in collaboration with the care team",
+    "Monitor for drug interactions and adverse effects",
+    "Provide patient counseling on medication use, adherence, and potential adverse effects"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Pharmacist-led medication reconciliation and optimization interventions have demonstrated significant improvements in medication appropriateness, adherence, and clinical outcomes in heart failure patients across multiple studies.",
+  "citation": "Multidisciplinary Strategies for the Management of Heart Failure Patients at High Risk for Admission",
+  "url": "https://www.openevidence.com/ask/2387c84c-8185-4f12-a15f-1168b1b5b17a"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "heart_failure_symptom_monitoring_1",
+  "title": "Implement Structured Symptom Monitoring and GDMT Optimization for Heart Failure",
+  "domain": "Heart Failure",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Establish a systematic approach to heart failure monitoring and medication optimization: 1) Use a standardized assessment tool to evaluate symptoms at each patient contact, 2) Coordinate regular laboratory testing (electrolytes, renal function) according to protocol, 3) Track vital signs and weight trends, 4) Document findings in a structured format accessible to the care team, 5) Facilitate rapid initiation and titration of guideline-directed medical therapy (GDMT) using protocol-driven approaches, 6) Maintain a medication titration log with target doses, current doses, and barriers to optimization, and 7) Alert providers to abnormal findings requiring intervention.",
+  "expected_outcomes": "Earlier detection of heart failure decompensation, improved rates of patients on target doses of GDMT, reduced hospitalizations, improved quality of life scores, and enhanced communication across the care team.",
+  "target_population": "Adult patients with heart failure (HFrEF, HFpEF, or HFmrEF) being managed in outpatient settings.",
+  "citation": "Maddox TM, Januzzi JL Jr, Allen LA, et al. 2021 Update to the 2017 ACC Expert Consensus Decision Pathway for Optimization of Heart Failure Treatment. J Am Coll Cardiol. 2021;77(6):772-810. doi:10.1016/j.jacc.2020.11.022",
+  "evidence_level": "A - Strong",
+  "tags": ["medication optimization", "symptom monitoring", "GDMT", "heart failure management"],
+  "last_updated": "2025-06-03"
+}

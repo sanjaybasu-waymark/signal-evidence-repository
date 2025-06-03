@@ -1,0 +1,17 @@
+{
+  "id": "vaccination_care_coordinator_1",
+  "domain": "Vaccination",
+  "role": "Care Coordinator",
+  "recommendation": "Implement systematic immunization status review and reminder systems",
+  "implementation_steps": [
+    "Systematically review immunization status at every patient encounter",
+    "Use EHR prompts to identify patients due for vaccines",
+    "Coordinate reminder/recall systems using phone, text, and mail",
+    "Facilitate scheduling and address barriers like transportation or cost",
+    "Ensure documentation in immunization registries"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Systematic immunization status review and reminder systems have been shown to improve vaccination rates by 8-9% (risk ratio 1.28, 95% CI 1.23-1.35) across multiple studies and populations.",
+  "citation": "A Review of the Key Factors to Improve Adult Immunization Coverage Rates",
+  "url": "https://www.openevidence.com/ask/af24abec-68c4-4566-a6a5-81126a670850"
+}

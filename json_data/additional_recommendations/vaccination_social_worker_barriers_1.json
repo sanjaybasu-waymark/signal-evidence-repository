@@ -1,0 +1,17 @@
+{
+  "id": "vaccination_social_worker_barriers_1",
+  "domain": "Vaccination",
+  "role": "Social Worker",
+  "recommendation": "Address social determinants affecting vaccination access",
+  "implementation_steps": [
+    "Identify and address social determinants that impede vaccine access",
+    "Connect patients to community resources or financial assistance programs",
+    "Provide tailored education to address vaccine concerns and hesitancy",
+    "Build trust among vulnerable populations through culturally sensitive approaches",
+    "Coordinate with care team to ensure follow-through on vaccination plans"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Social worker interventions addressing social determinants of health have been shown to improve vaccination rates among vulnerable populations by reducing access barriers and addressing vaccine hesitancy.",
+  "citation": "Effective Interventions to Increase Routine Childhood Immunization Coverage",
+  "url": "https://www.openevidence.com/ask/af24abec-68c4-4566-a6a5-81126a670850"
+}

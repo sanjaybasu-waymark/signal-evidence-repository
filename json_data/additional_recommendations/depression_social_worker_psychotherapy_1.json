@@ -1,0 +1,17 @@
+{
+  "id": "depression_social_worker_psychotherapy_1",
+  "domain": "Depression",
+  "role": "Social Worker",
+  "recommendation": "Deliver evidence-based psychotherapies for depression",
+  "implementation_steps": [
+    "Implement cognitive behavioral therapy (CBT) techniques",
+    "Offer behavioral activation interventions",
+    "Provide problem-solving therapy approaches",
+    "Deliver mindfulness-based therapy when appropriate",
+    "Coordinate with care team to track progress and adjust treatment as needed"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Social worker-delivered psychotherapies for depression have demonstrated medium to large effect sizes (SMDs 0.50 to 0.73) across multiple studies, particularly when implemented with fidelity to evidence-based protocols.",
+  "citation": "Depression management research",
+  "url": "https://www.openevidence.com/ask/3c2c0b7f-1d81-46ed-a849-da20c02ff080"
+}

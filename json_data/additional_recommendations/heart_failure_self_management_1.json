@@ -1,0 +1,13 @@
+{
+  "id": "heart_failure_self_management_1",
+  "title": "Implement Self-Management Support Program for Heart Failure Patients",
+  "domain": "Heart Failure",
+  "role": "Community Health Worker",
+  "implementation_guidance": "Deliver a structured self-management support program for heart failure patients that includes: 1) Provide coaching on daily weight monitoring with a simple log sheet, 2) Teach medication organization techniques using pill boxes or medication charts, 3) Offer practical guidance on low-sodium food choices with grocery shopping assistance when possible, 4) Conduct appointment reminder calls 48 hours before scheduled visits, 5) Help patients identify personal motivators for adherence to treatment plan, 6) Facilitate access to community resources that support healthy behaviors (e.g., senior centers with exercise programs, community gardens), 7) Use teach-back method to verify understanding, and 8) Document progress and barriers at each contact.",
+  "expected_outcomes": "Improved self-care behaviors, increased medication adherence, better appointment attendance rates, enhanced patient activation and confidence in self-management, and reduced heart failure exacerbations.",
+  "target_population": "Adult patients with heart failure, particularly those with barriers to self-care such as limited health literacy, complex medication regimens, or inadequate social support.",
+  "citation": "Riegel B, Moser DK, Buck HG, et al. Self-Care for the Prevention and Management of Cardiovascular Disease and Stroke: A Scientific Statement for Healthcare Professionals From the American Heart Association. J Am Heart Assoc. 2017;6(9):e006997. doi:10.1161/JAHA.117.006997",
+  "evidence_level": "B - Moderate",
+  "tags": ["self-management", "coaching", "adherence", "patient activation"],
+  "last_updated": "2025-06-03"
+}

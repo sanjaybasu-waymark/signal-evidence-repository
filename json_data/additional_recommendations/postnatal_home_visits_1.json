@@ -1,0 +1,13 @@
+{
+  "id": "postnatal_home_visits_1",
+  "title": "Implement Structured Home Visit Program for Postpartum Patients",
+  "domain": "Postnatal",
+  "role": "Community Health Worker",
+  "implementation_guidance": "Establish a structured home visit program for postpartum patients with these specific components: 1) Conduct initial home visit within 48-72 hours of hospital discharge, 2) Use a standardized assessment tool covering infant feeding, maternal recovery, emotional wellbeing, and home environment safety, 3) Provide hands-on breastfeeding support and demonstration, 4) Assess for signs of postpartum complications using a checklist of warning signs, 5) Offer culturally appropriate education on infant care and maternal self-care, 6) Document findings and concerns in a structured format, 7) Communicate urgent concerns to clinical providers within 24 hours, and 8) Schedule follow-up visits based on identified needs and risk factors.",
+  "expected_outcomes": "Improved maternal satisfaction with postpartum care, increased rates of exclusive breastfeeding, earlier detection of postpartum complications, reduced infant healthcare utilization for preventable issues, and decreased postpartum depression scores.",
+  "target_population": "All postpartum individuals, with priority for first-time parents, those with limited social support, breastfeeding difficulties, or risk factors for postpartum complications.",
+  "citation": "Yonemoto N, Dowswell T, Nagai S, Mori R. Schedules for home visits in the early postpartum period. Cochrane Database Syst Rev. 2017;8(8):CD009326. doi:10.1002/14651858.CD009326.pub3",
+  "evidence_level": "A - Strong",
+  "tags": ["home visits", "postpartum care", "breastfeeding support", "maternal health"],
+  "last_updated": "2025-06-03"
+}

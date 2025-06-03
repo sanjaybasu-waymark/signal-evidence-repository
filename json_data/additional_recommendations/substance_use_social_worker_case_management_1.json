@@ -1,0 +1,17 @@
+{
+  "id": "substance_use_social_worker_case_management_1",
+  "domain": "Substance Use",
+  "role": "Social Worker",
+  "recommendation": "Provide comprehensive case management for substance use disorders",
+  "implementation_steps": [
+    "Conduct thorough substance use disorder assessments",
+    "Provide case management to coordinate treatment and recovery services",
+    "Connect patients to social and behavioral health resources",
+    "Assist with insurance navigation and benefits applications",
+    "Address psychosocial needs affecting treatment engagement and recovery"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Social worker-led case management interventions have demonstrated improvements in treatment engagement, retention, and outcomes for patients with substance use disorders, particularly when addressing social determinants of health.",
+  "citation": "Substance use disorder research",
+  "url": "https://www.openevidence.com/ask/c853bfdf-9bed-47dc-8d5b-19b1c8e61938"
+}

@@ -128,4 +128,4 @@ If recommendations are not displaying correctly:
 
 © 2025, Waymark, [www.waymarkcare.com](https://www.waymarkcare.com)
 
-Created by Sanjay Basu MD PhD, Waymark 
+Created by Sanjay Basu MD PhD, Waymark and University of California San Francisco

@@ -317,6 +317,18 @@
             animation: spin 1s linear infinite;
         }
         
+        .search-highlight {
+            background-color: #fff3cd;
+            padding: 0 2px;
+        }
+        
+        .no-results {
+            padding: 2rem;
+            text-align: center;
+            background-color: var(--background-alt);
+            border-radius: 8px;
+        }
+        
         @keyframes spin {
             to {
                 transform: rotate(360deg);
@@ -535,11 +547,11 @@
         }
         
         // Function to display recommendations
-        function displayRecommendations(recommendations) {
+        function displayRecommendations(recommendations, highlightTerms = []) {
             recommendationsList.innerHTML = '';
             
             if (recommendations.length === 0) {
-                recommendationsList.innerHTML = '<p>No recommendations found.</p>';
+                recommendationsList.innerHTML = '<div class="no-results"><p>No recommendations found.</p></div>';
                 return;
             }
             
@@ -556,8 +568,26 @@
                 const card = document.createElement('div');
                 card.className = 'recommendation-card';
                 
+                // Apply highlighting if search terms are provided
+                let title = rec.title || 'Untitled Recommendation';
+                let implementation = rec.implementation_guidance || 'No guidance provided';
+                let outcomes = rec.expected_outcomes || 'No outcomes specified';
+                let population = rec.target_population || 'General population';
+                let citation = rec.citation || 'No citation provided';
+                
+                if (highlightTerms.length > 0) {
+                    highlightTerms.forEach(term => {
+                        const regex = new RegExp(term, 'gi');
+                        title = title.replace(regex, match => `<span class="search-highlight">${match}</span>`);
+                        implementation = implementation.replace(regex, match => `<span class="search-highlight">${match}</span>`);
+                        outcomes = outcomes.replace(regex, match => `<span class="search-highlight">${match}</span>`);
+                        population = population.replace(regex, match => `<span class="search-highlight">${match}</span>`);
+                        citation = citation.replace(regex, match => `<span class="search-highlight">${match}</span>`);
+                    });
+                }
+                
                 card.innerHTML = `
-                    <h3 class="recommendation-title">${rec.title || 'Untitled Recommendation'}</h3>
+                    <h3 class="recommendation-title">${title}</h3>
                     <div class="recommendation-meta">
                         <span>Domain: ${rec.domain || 'Unknown'}</span>
                         <span>Role: ${rec.role || 'Unknown'}</span>
@@ -566,12 +596,12 @@
                             ''}
                     </div>
                     <div class="recommendation-content">
-                        <p><strong>Implementation Guidance:</strong> ${rec.implementation_guidance || 'No guidance provided'}</p>
-                        <p><strong>Expected Outcomes:</strong> ${rec.expected_outcomes || 'No outcomes specified'}</p>
-                        <p><strong>Target Population:</strong> ${rec.target_population || 'General population'}</p>
+                        <p><strong>Implementation Guidance:</strong> ${implementation}</p>
+                        <p><strong>Expected Outcomes:</strong> ${outcomes}</p>
+                        <p><strong>Target Population:</strong> ${population}</p>
                     </div>
                     <div class="recommendation-citation">
-                        <p><strong>Citation:</strong> ${rec.citation || 'No citation provided'}</p>
+                        <p><strong>Citation:</strong> ${citation}</p>
                     </div>
                 `;
                 
@@ -588,24 +618,31 @@
             mainContent.style.display = 'none';
             recommendationsContainer.style.display = 'block';
             
+            // Show loading indicator
+            recommendationsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+            
             // Convert query to lowercase for case-insensitive search
             const lowerQuery = query.toLowerCase();
             
+            // Split query into terms for highlighting
+            const searchTerms = query.split(' ').filter(term => term.length > 2);
+            
             // Filter recommendations based on search query
             const searchResults = allRecommendations.filter(rec => {
-                // Search in title, implementation guidance, and expected outcomes
+                // Search in all text fields
                 return (
                     (rec.title && rec.title.toLowerCase().includes(lowerQuery)) ||
                     (rec.implementation_guidance && rec.implementation_guidance.toLowerCase().includes(lowerQuery)) ||
                     (rec.expected_outcomes && rec.expected_outcomes.toLowerCase().includes(lowerQuery)) ||
                     (rec.target_population && rec.target_population.toLowerCase().includes(lowerQuery)) ||
                     (rec.domain && rec.domain.toLowerCase().includes(lowerQuery)) ||
-                    (rec.role && rec.role.toLowerCase().includes(lowerQuery))
+                    (rec.role && rec.role.toLowerCase().includes(lowerQuery)) ||
+                    (rec.citation && rec.citation.toLowerCase().includes(lowerQuery))
                 );
             });
             
-            // Display search results
-            displayRecommendations(searchResults);
+            // Display search results with highlighting
+            displayRecommendations(searchResults, searchTerms);
         }
         
         // Function to show home page
@@ -614,6 +651,13 @@
             mainContent.style.display = 'block';
             // Clear search input
             searchInput.value = '';
+        }
+        
+        // Handle case where recommendations-data.js might not be loaded
+        if (typeof allRecommendations === 'undefined') {
+            console.error('Recommendations data not loaded. Please ensure recommendations-data.js is included.');
+            // Create a fallback empty array to prevent errors
+            window.allRecommendations = [];
         }
     </script>
 </body>

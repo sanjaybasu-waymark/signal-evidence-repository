@@ -1,0 +1,17 @@
+{
+  "id": "asthma_chw_sdoh_1",
+  "domain": "Asthma",
+  "role": "Community Health Worker",
+  "recommendation": "Address social determinants of health for asthma patients",
+  "implementation_steps": [
+    "Help families overcome barriers such as transportation challenges, food insecurity, and limited access to healthcare",
+    "Facilitate communication between families, schools, and healthcare providers",
+    "Ensure continuity of care, including the transfer of asthma medications and administration forms to school nurses for children with asthma",
+    "Provide culturally appropriate education and support tailored to family needs",
+    "Connect patients to community resources and social services"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "CHW interventions addressing social determinants of health have been shown to improve asthma outcomes, particularly in underserved communities where social and economic barriers significantly impact care access and adherence.",
+  "citation": "Ensuring Equitable Access to Guideline-Based Asthma Care Across the Lifespan: Tips and Future Directions to the Successful Implementation of the New NAEPP 2020 Guidelines. (2023)",
+  "url": "https://www.openevidence.com/ask/cd27694a-a2a8-408b-8bc2-b077a2ee7a64"
+}

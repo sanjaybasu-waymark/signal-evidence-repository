@@ -1,0 +1,17 @@
+{
+  "id": "transportation_care_coordinator_screening_1",
+  "domain": "Transportation Insecurity",
+  "role": "Care Coordinator",
+  "recommendation": "Implement screening and transportation service coordination",
+  "implementation_steps": [
+    "Screen for transportation barriers using validated tools like the AHC 10-item tool",
+    "Integrate positive screens into patient care plans with specific transportation solutions",
+    "Arrange appropriate transportation services (NEMT, ride-share vouchers, bus passes)",
+    "Follow up to confirm service utilization and appointment attendance",
+    "Reassess transportation needs at subsequent encounters"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Care coordinator-led screening and transportation service coordination has demonstrated improvements in appointment attendance, medication adherence, and health outcomes for patients with transportation barriers.",
+  "citation": "Transportation insecurity research",
+  "url": "https://www.openevidence.com/ask/c3a72c90-0119-427e-aaf5-0dcb9f06d60a"
+}

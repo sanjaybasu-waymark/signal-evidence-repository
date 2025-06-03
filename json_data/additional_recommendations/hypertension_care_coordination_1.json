@@ -1,0 +1,17 @@
+{
+  "id": "hypertension_care_coordination_1",
+  "domain": "Hypertension",
+  "role": "Care Coordinator",
+  "recommendation": "Implement comprehensive care coordination and follow-up for hypertension patients",
+  "implementation_steps": [
+    "Coordinate follow-up appointments and monitor care plan adherence",
+    "Facilitate communication among all team members",
+    "Track patient progress toward blood pressure goals",
+    "Address barriers to care such as insurance or transportation issues",
+    "Ensure patients are linked to appropriate community and social services"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Care coordination interventions have been shown to improve blood pressure control rates, medication adherence, and reduce cardiovascular events in patients with hypertension across multiple studies.",
+  "citation": "Implementation Strategies to Improve Blood Pressure Control in the United States",
+  "url": "https://www.openevidence.com/ask/d914c295-05e0-493c-900d-edd1dcd2237b"
+}

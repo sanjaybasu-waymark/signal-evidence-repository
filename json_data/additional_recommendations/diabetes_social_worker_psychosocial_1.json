@@ -1,0 +1,17 @@
+{
+  "id": "diabetes_social_worker_psychosocial_1",
+  "domain": "Diabetes",
+  "role": "Social Worker",
+  "recommendation": "Provide psychosocial assessment and support for diabetes patients",
+  "implementation_steps": [
+    "Assess and address psychosocial needs affecting diabetes management",
+    "Address mental health, housing, food insecurity, and financial barriers",
+    "Connect patients to community resources and social services",
+    "Provide counseling for diabetes distress and mental health concerns",
+    "Support care planning for patients with complex social or behavioral health needs"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Social worker interventions addressing psychosocial needs have been shown to improve diabetes self-management, reduce barriers to care, and enhance quality of life, particularly for patients facing multiple social determinants of health challenges.",
+  "citation": "Care Management for Patients With Type 2 Diabetes: The Roles of Nurses, Pharmacists, and Social Workers",
+  "url": "https://www.openevidence.com/ask/9c8cbb68-63a3-4087-855b-cca3ced5f64c"
+}

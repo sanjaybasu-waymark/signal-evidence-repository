@@ -1,0 +1,17 @@
+{
+  "id": "hypertension_social_worker_sdoh_1",
+  "domain": "Hypertension",
+  "role": "Social Worker",
+  "recommendation": "Assess and address social determinants of health for hypertension patients",
+  "implementation_steps": [
+    "Assess and address social determinants of health (housing instability, food insecurity, financial barriers)",
+    "Provide resource navigation to connect patients with community services",
+    "Support behavioral change through motivational interviewing and goal setting",
+    "Facilitate access to insurance, medication assistance programs, and community-based services",
+    "Coordinate with care team to address identified social barriers"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Social worker interventions addressing social determinants of health have been shown to improve hypertension outcomes by reducing barriers to care, enhancing medication access, and supporting lifestyle modifications in vulnerable populations.",
+  "citation": "Implementation Strategies to Improve Blood Pressure Control in the United States",
+  "url": "https://www.openevidence.com/ask/d914c295-05e0-493c-900d-edd1dcd2237b"
+}

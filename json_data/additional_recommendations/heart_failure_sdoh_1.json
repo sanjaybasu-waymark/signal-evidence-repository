@@ -1,0 +1,13 @@
+{
+  "id": "heart_failure_sdoh_1",
+  "title": "Address Social Determinants of Health for Heart Failure Patients",
+  "domain": "Heart Failure",
+  "role": "Community Health Worker",
+  "implementation_guidance": "Implement a comprehensive approach to address social determinants of health (SDOH) for heart failure patients: 1) Use a validated SDOH screening tool to assess needs in housing, food security, transportation, health literacy, and financial barriers, 2) Assist with insurance enrollment or reinstatement when needed, 3) Coordinate transportation to medical appointments using community resources or health plan benefits, 4) Connect patients to employment resources and financial assistance programs, 5) Provide navigation to food assistance programs and education on heart-healthy food choices within budget constraints, 6) Document all interventions and outcomes in the patient record, and 7) Follow up within two weeks to ensure successful connection to resources.",
+  "expected_outcomes": "Improved access to healthcare services, reduced missed appointments, better medication adherence, decreased food insecurity, improved housing stability, and reduced heart failure exacerbations related to social factors.",
+  "target_population": "Adult patients with heart failure who face socioeconomic challenges, particularly those in underserved communities or with limited resources.",
+  "citation": "Schroeder K, Fahey T, Ebrahim S. How can we improve adherence to blood pressure-lowering medication in ambulatory care? Systematic review of randomized controlled trials. Arch Intern Med. 2004;164(7):722-732. doi:10.1001/archinte.164.7.722",
+  "evidence_level": "B - Moderate",
+  "tags": ["social determinants", "resource navigation", "health equity", "access to care"],
+  "last_updated": "2025-06-03"
+}

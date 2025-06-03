@@ -1,0 +1,13 @@
+{
+  "id": "postnatal_biopsychosocial_1",
+  "title": "Implement Comprehensive Biopsychosocial Assessment for Postpartum Patients",
+  "domain": "Postnatal",
+  "role": "Nurse Care Manager",
+  "implementation_guidance": "Conduct a structured comprehensive biopsychosocial assessment for all postpartum patients that includes: 1) Screen for postpartum depression using a validated tool (e.g., Edinburgh Postnatal Depression Scale) at 2 weeks, 6 weeks, and 3 months postpartum, 2) Assess for intimate partner violence using a standardized screening tool, 3) Evaluate chronic disease management needs, particularly for conditions affected by pregnancy (e.g., hypertension, diabetes), 4) Screen for social determinants of health using a standardized tool covering housing, food security, and transportation, 5) Document all findings in the patient record with specific action plans for identified issues, 6) Implement a referral protocol for positive screens with warm handoffs to appropriate services, and 7) Schedule follow-up assessments based on identified risks.",
+  "expected_outcomes": "Earlier identification and intervention for mental health concerns, improved management of chronic conditions, increased connection to social services, reduced postpartum complications, and enhanced maternal wellbeing and functioning.",
+  "target_population": "All postpartum individuals, with particular attention to those with pre-existing mental health conditions, pregnancy complications, or identified social risk factors.",
+  "citation": "American College of Obstetricians and Gynecologists. Committee Opinion No. 666: Optimizing Postpartum Care. Obstet Gynecol. 2016;127(6):e187-e192. doi:10.1097/AOG.0000000000001487",
+  "evidence_level": "A - Strong",
+  "tags": ["postpartum depression", "psychosocial assessment", "chronic disease management", "social determinants"],
+  "last_updated": "2025-06-03"
+}

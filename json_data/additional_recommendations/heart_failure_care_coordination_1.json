@@ -1,0 +1,17 @@
+{
+  "id": "heart_failure_care_coordination_1",
+  "domain": "Heart Failure",
+  "role": "Care Coordinator",
+  "recommendation": "Implement post-discharge follow-up for heart failure patients",
+  "implementation_steps": [
+    "Oversee care transitions and ensure timely post-discharge follow-up within 7 days to reduce readmissions",
+    "Develop and communicate individualized care plans across the care team",
+    "Monitor for heart failure progression and coordinate laboratory and diagnostic testing",
+    "Facilitate rapid initiation and titration of guideline-directed medical therapy (GDMT)",
+    "Screen for depression, frailty, health literacy, and social isolation"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Structured post-discharge follow-up within 7 days has been shown to significantly reduce hospital readmissions and mortality in heart failure patients across multiple randomized controlled trials and meta-analyses.",
+  "citation": "Disease Management Interventions for Heart Failure (Cochrane Review)",
+  "url": "https://www.openevidence.com/ask/2387c84c-8185-4f12-a15f-1168b1b5b17a"
+}

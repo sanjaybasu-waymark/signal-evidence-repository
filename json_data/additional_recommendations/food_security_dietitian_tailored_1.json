@@ -1,0 +1,17 @@
+{
+  "id": "food_security_dietitian_tailored_1",
+  "domain": "Food Insecurity",
+  "role": "Dietitian",
+  "recommendation": "Develop tailored nutrition plans considering food access limitations",
+  "implementation_steps": [
+    "Develop nutrition plans that account for food access limitations",
+    "Provide practical guidance for healthy eating on limited budgets",
+    "Support implementation of medically tailored meal programs",
+    "Adapt dietary recommendations to available food resources",
+    "Educate on maximizing nutritional value of accessible foods"
+  ],
+  "evidence_strength": "Moderate",
+  "evidence_summary": "Dietitian-led tailored nutrition interventions that account for food insecurity have demonstrated improvements in dietary quality, glycemic control, and self-management of chronic conditions among food-insecure populations.",
+  "citation": "Food insecurity research",
+  "url": "https://www.openevidence.com/ask/13eede4b-114f-43bf-b131-96706e630dc5"
+}

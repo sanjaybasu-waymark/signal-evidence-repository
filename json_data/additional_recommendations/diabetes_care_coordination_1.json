@@ -1,0 +1,17 @@
+{
+  "id": "diabetes_care_coordination_1",
+  "domain": "Diabetes",
+  "role": "Care Coordinator",
+  "recommendation": "Implement comprehensive care coordination and navigation for diabetes patients",
+  "implementation_steps": [
+    "Oversee care transitions and facilitate communication among providers",
+    "Ensure follow-up on abnormal results",
+    "Track completion of recommended screenings (e.g., A1C, eye exams)",
+    "Help patients navigate the health system",
+    "Screen for and address barriers to self-management"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Care coordination interventions have been shown to improve diabetes outcomes, including glycemic control, screening completion rates, and reduced hospitalizations, particularly for patients with complex care needs.",
+  "citation": "Improving Care and Promoting Health in Populations: Standards of Care in Diabetes-2025",
+  "url": "https://www.openevidence.com/ask/9c8cbb68-63a3-4087-855b-cca3ced5f64c"
+}

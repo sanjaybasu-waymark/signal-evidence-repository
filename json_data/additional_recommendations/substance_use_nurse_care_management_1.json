@@ -1,0 +1,17 @@
+{
+  "id": "substance_use_nurse_care_management_1",
+  "domain": "Substance Use",
+  "role": "Nurse Care Manager",
+  "recommendation": "Lead care management for medication-assisted treatment in primary care",
+  "implementation_steps": [
+    "Conduct comprehensive patient assessments for substance use disorders",
+    "Coordinate with prescribers on medication-assisted treatment plans",
+    "Monitor treatment adherence and response through regular follow-up",
+    "Provide ongoing support and education to patients and families",
+    "Facilitate connections to additional behavioral health services as needed"
+  ],
+  "evidence_strength": "Strong",
+  "evidence_summary": "Nurse care manager-led interventions for medication-assisted treatment in primary care settings have demonstrated significant improvements in treatment retention, adherence, and outcomes for patients with opioid use disorders.",
+  "citation": "Massachusetts model research",
+  "url": "https://www.openevidence.com/ask/c853bfdf-9bed-47dc-8d5b-19b1c8e61938"
+}
