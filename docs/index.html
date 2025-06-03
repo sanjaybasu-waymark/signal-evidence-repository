@@ -1,664 +1,650 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waymark Population Health Evidence Library</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1E5288;
-            --primary-dark: #0F3A6B;
-            --secondary: #00A3E0;
-            --accent: #FFB81C;
-            --text: #333333;
-            --text-light: #666666;
-            --background: #FFFFFF;
-            --background-alt: #F5F8FA;
-            --border: #E1E4E8;
-            --success: #28A745;
-            --warning: #FFC107;
-            --danger: #DC3545;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--background);
-        }
-        
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .site-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-        
-        .welcome-section {
-            background-color: var(--background-alt);
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        h2 {
-            font-size: 1.5rem;
-            margin: 1.5rem 0 1rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        h5 {
-            font-size: 1.1rem;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        
-        .domain-links, .role-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        
-        .domain-link, .role-link {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: background-color 0.2s ease;
-            cursor: pointer;
-        }
-        
-        /* Domain link colors */
-        .domain-link {
-            background-color: #e6f7ff;
-            color: #0066cc;
-            border: 1px solid #b3e0ff;
-        }
-        
-        .domain-link:hover {
-            background-color: #cceeff;
-        }
-        
-        /* Role link colors */
-        .role-link {
-            background-color: #e6f0ff;
-            color: #0047b3;
-            border: 1px solid #b3d1ff;
-        }
-        
-        .role-link:hover {
-            background-color: #cce0ff;
-        }
-        
-        .search-box {
-            display: flex;
-            margin: 1rem 0;
-        }
-        
-        .search-input {
-            flex: 1;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 4px 0 0 4px;
-            font-size: 1rem;
-        }
-        
-        .search-button {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 0 4px 4px 0;
-            padding: 0 1.5rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        
-        .search-button:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        .stats-list {
-            list-style: none;
-            margin: 1rem 0;
-        }
-        
-        .stats-list li {
-            margin-bottom: 0.5rem;
-        }
-        
-        footer {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
-        
-        .footer-link {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* New styles for recommendations display */
-        #recommendations-container {
-            display: none;
-            margin-top: 2rem;
-        }
-        
-        .recommendation-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--primary);
-        }
-        
-        .recommendation-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .recommendation-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        .recommendation-meta span {
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .recommendation-content {
-            margin-bottom: 1rem;
-        }
-        
-        .recommendation-citation {
-            font-size: 0.9rem;
-            font-style: italic;
-            color: var(--text-light);
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--border);
-        }
-        
-        .evidence-level {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .evidence-a {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        
-        .evidence-b {
-            background-color: #fff3cd;
-            color: #856404;
-        }
-        
-        .evidence-c {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-        
-        .evidence-d {
-            background-color: #e2e3e5;
-            color: #383d41;
-        }
-        
-        .back-button {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--background-alt);
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            cursor: pointer;
-        }
-        
-        .back-button:hover {
-            background-color: var(--border);
-        }
-        
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-        }
-        
-        .loading-spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left-color: var(--primary);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        
-        .search-highlight {
-            background-color: #fff3cd;
-            padding: 0 2px;
-        }
-        
-        .no-results {
-            padding: 2rem;
-            text-align: center;
-            background-color: var(--background-alt);
-            border-radius: 8px;
-        }
-        
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .nav-links {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .domain-links, .role-links {
-                gap: 0.3rem;
-            }
-            
-            .domain-link, .role-link {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-            
-            .recommendation-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waymark Population Health Evidence Library</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1E5288;
+      --primary-dark: #0F3A6B;
+      --secondary: #00A3E0;
+      --accent: #FFB81C;
+      --text: #333333;
+      --text-light: #666666;
+      --background: #FFFFFF;
+      --background-alt: #F5F8FA;
+      --border: #E1E4E8;
+      --success: #28A745;
+      --warning: #FFC107;
+      --danger: #DC3545;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+    }
+    
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    
+    .nav-link:hover {
+      opacity: 0.8;
+    }
+    
+    .main {
+      padding: 2rem 0;
+    }
+    
+    .hero {
+      background-color: var(--background-alt);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+    }
+    
+    .stats-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+    
+    .stats-list li {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    
+    .search-box {
+      margin-bottom: 2rem;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .section {
+      margin-bottom: 2rem;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    
+    .domain-link, .role-link {
+      display: block;
+      padding: 1rem;
+      background-color: var(--background-alt);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .domain-link:hover, .role-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .recommendations-list {
+      list-style: none;
+    }
+    
+    .recommendation-card {
+      background-color: var(--background-alt);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .recommendation-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .recommendation-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .meta-item {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+    
+    .recommendation-content {
+      margin-bottom: 1rem;
+    }
+    
+    .recommendation-content h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+    
+    .recommendation-content p {
+      margin-bottom: 0.5rem;
+    }
+    
+    .recommendation-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .tag {
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    
+    footer {
+      background-color: var(--background-alt);
+      padding: 2rem 0;
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .footer-link {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .links-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-list {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="site-title" id="home-link">Waymark Population Health Evidence Library</a>
-            <div class="nav-links">
-                <a href="#" class="nav-link" id="home-nav">Home</a>
-                <a href="#" class="nav-link" id="browse-nav">Browse</a>
-                <a href="#" class="nav-link" id="search-nav">Search</a>
-            </div>
+  <header>
+    <div class="container">
+      <div class="nav-container">
+        <a href="index.html" class="site-title">Waymark Population Health Evidence Library</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="https://github.com/sanjaybasu-waymark/signal-evidence-repository" class="nav-link">GitHub</a>
         </div>
-    </header>
-    
-    <section class="welcome-section">
-        <div class="container">
-            <h1>Welcome to the Waymark Population Health Evidence Library</h1>
-            <p>A comprehensive collection of evidence-based recommendations for healthcare professionals working with underserved patients in proactive population health management teams.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main class="main">
+    <div class="container">
+      <section class="hero">
+        <h1>Evidence-Based Recommendations for Population Health</h1>
+        <p>A curated repository of evidence-based recommendations for population health care management teams. Each recommendation includes implementation guidance, expected outcomes, target populations, and evidence levels.</p>
+        <ul class="stats-list">
+          <li>Total recommendations: <span id="total-count">135</span></li>
+          <li>Last updated: May 29, 2025</li>
+        </ul>
+      </section>
+      
+      <section class="search-box">
+        <input type="text" id="search-input" class="search-input" placeholder="Search recommendations...">
+        <div id="search-results"></div>
+      </section>
+      
+      <section class="section" id="domains-section">
+        <h2 class="section-title">Browse by Domain</h2>
+        <div class="links-grid" id="domains-grid">
+          <!-- Domains will be populated by JavaScript -->
         </div>
-    </section>
-    
-    <main class="container">
-        <div id="main-content">
-            <div class="card">
-                <h5>Browse by Domain</h5>
-                <p>Explore recommendations organized by clinical condition or social need.</p>
-                <div class="domain-links">
-                    <a class="domain-link" data-domain="Diabetes">Diabetes (9)</a>
-                    <a class="domain-link" data-domain="Hypertension">Hypertension (1)</a>
-                    <a class="domain-link" data-domain="Depression">Depression (2)</a>
-                    <a class="domain-link" data-domain="Anxiety">Anxiety (2)</a>
-                    <a class="domain-link" data-domain="Substance Use">Substance Use (1)</a>
-                    <a class="domain-link" data-domain="Housing">Housing (3)</a>
-                    <a class="domain-link" data-domain="Food Security">Food Security (1)</a>
-                    <a class="domain-link" data-domain="Transportation">Transportation (1)</a>
-                    <a class="domain-link" data-domain="Asthma">Asthma (1)</a>
-                    <a class="domain-link" data-domain="COPD">COPD (1)</a>
-                    <a class="domain-link" data-domain="Heart Failure">Heart Failure (2)</a>
-                    <a class="domain-link" data-domain="Preventive Screenings">Preventive Screenings (1)</a>
-                    <a class="domain-link" data-domain="Medication Adherence">Medication Adherence (2)</a>
-                    <a class="domain-link" data-domain="Care Transitions">Care Transitions (3)</a>
-                    <a class="domain-link" data-domain="CKD">CKD (1)</a>
-                    <a class="domain-link" data-domain="Post-MI">Post-MI (1)</a>
-                    <a class="domain-link" data-domain="Post-Stroke">Post-Stroke (1)</a>
-                    <a class="domain-link" data-domain="HIV">HIV (1)</a>
-                    <a class="domain-link" data-domain="Vaccination">Vaccination (1)</a>
-                    <a class="domain-link" data-domain="Prenatal">Prenatal (2)</a>
-                    <a class="domain-link" data-domain="Postnatal">Postnatal (2)</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h5>Browse by Role</h5>
-                <p>Find recommendations tailored to specific professional roles.</p>
-                <div class="role-links">
-                    <a class="role-link" data-role="Nurse Care Manager">Nurse Care Manager (11)</a>
-                    <a class="role-link" data-role="Clinical Pharmacist">Clinical Pharmacist (2)</a>
-                    <a class="role-link" data-role="Community Health Worker">Community Health Worker (5)</a>
-                    <a class="role-link" data-role="Social Worker (Clinical/Therapy)">Social Worker (Clinical/Therapy) (2)</a>
-                    <a class="role-link" data-role="Care Coordinator">Care Coordinator (2)</a>
-                    <a class="role-link" data-role="Primary Care Provider">Primary Care Provider (10)</a>
-                    <a class="role-link" data-role="Pharmacy Technician">Pharmacy Technician (1)</a>
-                    <a class="role-link" data-role="Doula">Doula (3)</a>
-                    <a class="role-link" data-role="Nurse">Nurse (1)</a>
-                    <a class="role-link" data-role="Care Manager">Care Manager (1)</a>
-                    <a class="role-link" data-role="Behavioral Health Specialist">Behavioral Health Specialist (1)</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h5>Search the Library</h5>
-                <p>Search for specific recommendations across all domains and roles.</p>
-                <div class="search-box">
-                    <input type="text" class="search-input" id="search-input" placeholder="e.g., diabetes management">
-                    <button class="search-button" id="search-button">Search</button>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h5>Library Statistics</h5>
-                <ul class="stats-list">
-                    <li>Total Recommendations: 39</li>
-                    <li>Domains Covered: 21</li>
-                    <li>Professional Roles: 11</li>
-                </ul>
-            </div>
+      </section>
+      
+      <section class="section" id="roles-section">
+        <h2 class="section-title">Browse by Role</h2>
+        <div class="links-grid" id="roles-grid">
+          <!-- Roles will be populated by JavaScript -->
         </div>
+      </section>
+      
+      <section class="section" id="recommendations-section" style="display: none;">
+        <a href="#" class="back-link" id="back-link">← Back to all recommendations</a>
+        <h2 class="section-title" id="recommendations-title">Recommendations</h2>
+        <ul class="recommendations-list" id="recommendations-list">
+          <!-- Recommendations will be populated by JavaScript -->
+        </ul>
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2025 Waymark. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sanjaybasu-waymark/signal-evidence-repository" class="footer-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="recommendations-data.js"></script>
+  <script>
+    // Main JavaScript for the evidence repository
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get DOM elements
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
+      const domainsGrid = document.getElementById('domains-grid');
+      const rolesGrid = document.getElementById('roles-grid');
+      const recommendationsSection = document.getElementById('recommendations-section');
+      const recommendationsTitle = document.getElementById('recommendations-title');
+      const recommendationsList = document.getElementById('recommendations-list');
+      const backLink = document.getElementById('back-link');
+      const domainsSection = document.getElementById('domains-section');
+      const rolesSection = document.getElementById('roles-section');
+      
+      // Get recommendations data
+      const recommendations = allRecommendations || [];
+      
+      // Extract unique domains and roles
+      const domains = [...new Set(recommendations.map(rec => rec.domain))].sort();
+      const roles = [...new Set(recommendations.map(rec => rec.role))].sort();
+      
+      // Count recommendations by domain and role
+      const domainCounts = {};
+      const roleCounts = {};
+      
+      recommendations.forEach(rec => {
+        if (rec.domain) {
+          domainCounts[rec.domain] = (domainCounts[rec.domain] || 0) + 1;
+        }
+        if (rec.role) {
+          roleCounts[rec.role] = (roleCounts[rec.role] || 0) + 1;
+        }
+      });
+      
+      // Populate domains grid
+      domains.forEach(domain => {
+        const count = domainCounts[domain] || 0;
+        const link = document.createElement('a');
+        link.href = '#';
+        link.className = 'domain-link';
+        link.setAttribute('data-domain', domain);
+        link.textContent = `${domain} (${count})`;
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showRecommendationsByDomain(domain);
+        });
+        domainsGrid.appendChild(link);
+      });
+      
+      // Populate roles grid
+      roles.forEach(role => {
+        const count = roleCounts[role] || 0;
+        const link = document.createElement('a');
+        link.href = '#';
+        link.className = 'role-link';
+        link.setAttribute('data-role', role);
+        link.textContent = `${role} (${count})`;
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showRecommendationsByRole(role);
+        });
+        rolesGrid.appendChild(link);
+      });
+      
+      // Show recommendations by domain
+      function showRecommendationsByDomain(domain) {
+        const filteredRecs = recommendations.filter(rec => rec.domain === domain);
+        showRecommendations(filteredRecs, `${domain} Recommendations`);
+      }
+      
+      // Show recommendations by role
+      function showRecommendationsByRole(role) {
+        const filteredRecs = recommendations.filter(rec => rec.role === role);
+        showRecommendations(filteredRecs, `Recommendations for ${role}`);
+      }
+      
+      // Show recommendations
+      function showRecommendations(recs, title) {
+        // Hide domains and roles sections
+        domainsSection.style.display = 'none';
+        rolesSection.style.display = 'none';
         
-        <div id="recommendations-container">
-            <a class="back-button" id="back-button">← Back to Home</a>
-            <h2 id="recommendations-title">Recommendations</h2>
-            <div id="recommendations-list"></div>
-        </div>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>© 2025, Waymark, <a href="https://www.waymarkcare.com" class="footer-link" target="_blank">www.waymarkcare.com</a></p>
-        </div>
-    </footer>
-    
-    <!-- Include the embedded recommendations data -->
-    <script src="recommendations-data.js"></script>
-    
-    <script>
-        // DOM Elements
-        const mainContent = document.getElementById('main-content');
-        const recommendationsContainer = document.getElementById('recommendations-container');
-        const recommendationsTitle = document.getElementById('recommendations-title');
-        const recommendationsList = document.getElementById('recommendations-list');
-        const backButton = document.getElementById('back-button');
-        const homeLink = document.getElementById('home-link');
-        const homeNav = document.getElementById('home-nav');
-        const searchInput = document.getElementById('search-input');
-        const searchButton = document.getElementById('search-button');
+        // Show recommendations section
+        recommendationsSection.style.display = 'block';
+        recommendationsTitle.textContent = title;
         
-        // Add event listeners
-        document.querySelectorAll('.domain-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const domain = this.getAttribute('data-domain');
-                showRecommendations('domain', domain);
+        // Clear previous recommendations
+        recommendationsList.innerHTML = '';
+        
+        // Add recommendations
+        recs.forEach(rec => {
+          const li = document.createElement('li');
+          li.className = 'recommendation-card';
+          
+          const titleEl = document.createElement('h3');
+          titleEl.className = 'recommendation-title';
+          titleEl.textContent = rec.title;
+          
+          const meta = document.createElement('div');
+          meta.className = 'recommendation-meta';
+          
+          const domainItem = document.createElement('span');
+          domainItem.className = 'meta-item';
+          domainItem.textContent = `Domain: ${rec.domain}`;
+          
+          const roleItem = document.createElement('span');
+          roleItem.className = 'meta-item';
+          roleItem.textContent = `Role: ${rec.role}`;
+          
+          const evidenceItem = document.createElement('span');
+          evidenceItem.className = 'meta-item';
+          evidenceItem.textContent = `Evidence: ${rec.evidence_level}`;
+          
+          meta.appendChild(domainItem);
+          meta.appendChild(roleItem);
+          meta.appendChild(evidenceItem);
+          
+          const content = document.createElement('div');
+          content.className = 'recommendation-content';
+          
+          const guidanceTitle = document.createElement('h3');
+          guidanceTitle.textContent = 'Implementation Guidance';
+          
+          const guidanceText = document.createElement('p');
+          guidanceText.textContent = rec.implementation_guidance;
+          
+          const outcomesTitle = document.createElement('h3');
+          outcomesTitle.textContent = 'Expected Outcomes';
+          
+          const outcomesText = document.createElement('p');
+          outcomesText.textContent = rec.expected_outcomes;
+          
+          const populationTitle = document.createElement('h3');
+          populationTitle.textContent = 'Target Population';
+          
+          const populationText = document.createElement('p');
+          populationText.textContent = rec.target_population;
+          
+          const citationTitle = document.createElement('h3');
+          citationTitle.textContent = 'Citation';
+          
+          const citationText = document.createElement('p');
+          citationText.textContent = rec.citation;
+          
+          content.appendChild(guidanceTitle);
+          content.appendChild(guidanceText);
+          content.appendChild(outcomesTitle);
+          content.appendChild(outcomesText);
+          content.appendChild(populationTitle);
+          content.appendChild(populationText);
+          content.appendChild(citationTitle);
+          content.appendChild(citationText);
+          
+          const tags = document.createElement('div');
+          tags.className = 'recommendation-tags';
+          
+          if (rec.tags && rec.tags.length) {
+            rec.tags.forEach(tag => {
+              const tagEl = document.createElement('span');
+              tagEl.className = 'tag';
+              tagEl.textContent = tag;
+              tags.appendChild(tagEl);
             });
+          }
+          
+          li.appendChild(titleEl);
+          li.appendChild(meta);
+          li.appendChild(content);
+          li.appendChild(tags);
+          
+          recommendationsList.appendChild(li);
         });
         
-        document.querySelectorAll('.role-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const role = this.getAttribute('data-role');
-                showRecommendations('role', role);
-            });
-        });
+        // Scroll to top
+        window.scrollTo(0, 0);
+      }
+      
+      // Back link event listener
+      backLink.addEventListener('click', function(e) {
+        e.preventDefault();
         
-        backButton.addEventListener('click', showHome);
-        homeLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            showHome();
-        });
-        homeNav.addEventListener('click', function(e) {
-            e.preventDefault();
-            showHome();
-        });
+        // Hide recommendations section
+        recommendationsSection.style.display = 'none';
         
-        searchButton.addEventListener('click', function() {
-            const query = searchInput.value.trim();
-            if (query) {
-                searchRecommendations(query);
-            }
-        });
+        // Show domains and roles sections
+        domainsSection.style.display = 'block';
+        rolesSection.style.display = 'block';
         
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const query = searchInput.value.trim();
-                if (query) {
-                    searchRecommendations(query);
-                }
-            }
-        });
+        // Scroll to top
+        window.scrollTo(0, 0);
+      });
+      
+      // Search functionality
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
         
-        // Function to show recommendations based on domain or role
-        function showRecommendations(type, value) {
-            // Hide main content and show recommendations container
-            mainContent.style.display = 'none';
-            recommendationsContainer.style.display = 'block';
-            
-            // Set title
-            recommendationsTitle.textContent = type === 'domain' 
-                ? `${value} Recommendations` 
-                : `Recommendations for ${value}`;
-            
-            // Filter recommendations based on type and value
-            let filteredRecommendations = [];
-            
-            if (type === 'domain') {
-                filteredRecommendations = allRecommendations.filter(rec => rec.domain === value);
-            } else if (type === 'role') {
-                filteredRecommendations = allRecommendations.filter(rec => rec.role === value);
-            }
-            
-            // Display the filtered recommendations
-            displayRecommendations(filteredRecommendations);
+        if (query.length < 3) {
+          searchResults.innerHTML = '';
+          return;
         }
         
-        // Function to display recommendations
-        function displayRecommendations(recommendations, highlightTerms = []) {
-            recommendationsList.innerHTML = '';
-            
-            if (recommendations.length === 0) {
-                recommendationsList.innerHTML = '<div class="no-results"><p>No recommendations found.</p></div>';
-                return;
-            }
-            
-            recommendations.forEach((rec, index) => {
-                // Skip if any required field is missing
-                if (!rec || !rec.title) {
-                    console.log(`Skipping recommendation at index ${index} due to missing title`);
-                    return;
-                }
-                
-                const evidenceClass = rec.evidence_level ? 
-                    `evidence-${rec.evidence_level.charAt(0).toLowerCase()}` : 'evidence-d';
-                
-                const card = document.createElement('div');
-                card.className = 'recommendation-card';
-                
-                // Apply highlighting if search terms are provided
-                let title = rec.title || 'Untitled Recommendation';
-                let implementation = rec.implementation_guidance || 'No guidance provided';
-                let outcomes = rec.expected_outcomes || 'No outcomes specified';
-                let population = rec.target_population || 'General population';
-                let citation = rec.citation || 'No citation provided';
-                
-                if (highlightTerms.length > 0) {
-                    highlightTerms.forEach(term => {
-                        const regex = new RegExp(term, 'gi');
-                        title = title.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                        implementation = implementation.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                        outcomes = outcomes.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                        population = population.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                        citation = citation.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                    });
-                }
-                
-                card.innerHTML = `
-                    <h3 class="recommendation-title">${title}</h3>
-                    <div class="recommendation-meta">
-                        <span>Domain: ${rec.domain || 'Unknown'}</span>
-                        <span>Role: ${rec.role || 'Unknown'}</span>
-                        ${rec.evidence_level ? 
-                            `<span>Evidence Level: <span class="evidence-level ${evidenceClass}">${rec.evidence_level}</span></span>` : 
-                            ''}
-                    </div>
-                    <div class="recommendation-content">
-                        <p><strong>Implementation Guidance:</strong> ${implementation}</p>
-                        <p><strong>Expected Outcomes:</strong> ${outcomes}</p>
-                        <p><strong>Target Population:</strong> ${population}</p>
-                    </div>
-                    <div class="recommendation-citation">
-                        <p><strong>Citation:</strong> ${citation}</p>
-                    </div>
-                `;
-                
-                recommendationsList.appendChild(card);
-            });
-        }
+        const results = recommendations.filter(rec => 
+          rec.title.toLowerCase().includes(query) || 
+          rec.implementation_guidance.toLowerCase().includes(query) ||
+          rec.expected_outcomes.toLowerCase().includes(query) ||
+          rec.domain.toLowerCase().includes(query) ||
+          rec.role.toLowerCase().includes(query)
+        );
         
-        // Function to search recommendations
-        function searchRecommendations(query) {
-            // Set title
-            recommendationsTitle.textContent = `Search Results for "${query}"`;
-            
-            // Hide main content and show recommendations container
-            mainContent.style.display = 'none';
-            recommendationsContainer.style.display = 'block';
-            
-            // Show loading indicator
-            recommendationsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
-            
-            // Convert query to lowercase for case-insensitive search
-            const lowerQuery = query.toLowerCase();
-            
-            // Split query into terms for highlighting
-            const searchTerms = query.split(' ').filter(term => term.length > 2);
-            
-            // Filter recommendations based on search query
-            const searchResults = allRecommendations.filter(rec => {
-                // Search in all text fields
-                return (
-                    (rec.title && rec.title.toLowerCase().includes(lowerQuery)) ||
-                    (rec.implementation_guidance && rec.implementation_guidance.toLowerCase().includes(lowerQuery)) ||
-                    (rec.expected_outcomes && rec.expected_outcomes.toLowerCase().includes(lowerQuery)) ||
-                    (rec.target_population && rec.target_population.toLowerCase().includes(lowerQuery)) ||
-                    (rec.domain && rec.domain.toLowerCase().includes(lowerQuery)) ||
-                    (rec.role && rec.role.toLowerCase().includes(lowerQuery)) ||
-                    (rec.citation && rec.citation.toLowerCase().includes(lowerQuery))
-                );
-            });
-            
-            // Display search results with highlighting
-            displayRecommendations(searchResults, searchTerms);
+        if (results.length > 0) {
+          showRecommendations(results, `Search Results for "${query}"`);
+        } else {
+          recommendationsSection.style.display = 'block';
+          domainsSection.style.display = 'none';
+          rolesSection.style.display = 'none';
+          recommendationsTitle.textContent = `No Results for "${query}"`;
+          recommendationsList.innerHTML = '<p>No recommendations found matching your search.</p>';
         }
-        
-        // Function to show home page
-        function showHome() {
-            recommendationsContainer.style.display = 'none';
-            mainContent.style.display = 'block';
-            // Clear search input
-            searchInput.value = '';
+      });
+      
+      // Update total count
+      document.getElementById('total-count').textContent = recommendations.length;
+    });
+  </script>
+  
+  <!-- Fix for count display issue -->
+  <script>
+    // Wait for DOM and recommendations data to be loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Make sure recommendations data is available
+      if (typeof allRecommendations === 'undefined') {
+        console.error('Recommendations data not loaded');
+        return;
+      }
+      
+      // Calculate counts
+      const totalCount = allRecommendations.length;
+      console.log('Total recommendations:', totalCount);
+      
+      // Calculate domain counts
+      const domains = {};
+      allRecommendations.forEach(rec => {
+        if (rec.domain) {
+          domains[rec.domain] = (domains[rec.domain] || 0) + 1;
         }
-        
-        // Handle case where recommendations-data.js might not be loaded
-        if (typeof allRecommendations === 'undefined') {
-            console.error('Recommendations data not loaded. Please ensure recommendations-data.js is included.');
-            // Create a fallback empty array to prevent errors
-            window.allRecommendations = [];
+      });
+      console.log('Domain counts:', domains);
+      
+      // Calculate role counts
+      const roles = {};
+      allRecommendations.forEach(rec => {
+        if (rec.role) {
+          roles[rec.role] = (roles[rec.role] || 0) + 1;
         }
-    </script>
+      });
+      console.log('Role counts:', roles);
+      
+      // Update domain links with counts
+      document.querySelectorAll('.domain-link').forEach(link => {
+        const domain = link.getAttribute('data-domain');
+        if (domain && domains[domain]) {
+          // Extract existing text without the count
+          let text = link.textContent;
+          if (text.includes('(')) {
+            text = text.substring(0, text.indexOf('(')).trim();
+          }
+          // Update with new count
+          link.textContent = text + ' (' + domains[domain] + ')';
+        }
+      });
+      
+      // Update role links with counts
+      document.querySelectorAll('.role-link').forEach(link => {
+        const role = link.getAttribute('data-role');
+        if (role && roles[role]) {
+          // Extract existing text without the count
+          let text = link.textContent;
+          if (text.includes('(')) {
+            text = text.substring(0, text.indexOf('(')).trim();
+          }
+          // Update with new count
+          link.textContent = text + ' (' + roles[role] + ')';
+        }
+      });
+      
+      // Update total count in stats
+      const statsItems = document.querySelectorAll('.stats-list li');
+      statsItems.forEach(item => {
+        if (item.textContent.includes('recommendations')) {
+          item.textContent = 'Total recommendations: ' + totalCount;
+        }
+      });
+      
+      console.log('Count display updated successfully');
+    });
+  </script>
 </body>
 </html>
