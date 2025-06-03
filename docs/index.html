@@ -208,13 +208,13 @@
             text-decoration: underline;
         }
         
-        /* New styles for recommendations display */
-        #recommendations-container {
+        /* New styles for protocols display */
+        #protocols-container {
             display: none;
             margin-top: 2rem;
         }
         
-        .recommendation-card {
+        .protocol-card {
             background-color: white;
             border-radius: 8px;
             padding: 1.5rem;
@@ -223,14 +223,14 @@
             border-left: 4px solid var(--primary);
         }
         
-        .recommendation-title {
+        .protocol-title {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--primary);
         }
         
-        .recommendation-meta {
+        .protocol-meta {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
@@ -239,16 +239,16 @@
             color: var(--text-light);
         }
         
-        .recommendation-meta span {
+        .protocol-meta span {
             display: inline-flex;
             align-items: center;
         }
         
-        .recommendation-content {
+        .protocol-content {
             margin-bottom: 1rem;
         }
         
-        .recommendation-citation {
+        .protocol-citation {
             font-size: 0.9rem;
             font-style: italic;
             color: var(--text-light);
@@ -360,7 +360,7 @@
                 font-size: 0.8rem;
             }
             
-            .recommendation-meta {
+            .protocol-meta {
                 flex-direction: column;
                 gap: 0.5rem;
             }
@@ -382,7 +382,7 @@
     <section class="welcome-section">
         <div class="container">
             <h1>Welcome to the Waymark Population Health Evidence Library</h1>
-            <p>A comprehensive collection of evidence-based recommendations for healthcare professionals working with underserved patients in proactive population health management teams.</p>
+            <p>A comprehensive collection of evidence-based protocols for healthcare professionals working with underserved patients in proactive population health management teams.</p>
         </div>
     </section>
     
@@ -390,7 +390,7 @@
         <div id="main-content">
             <div class="card">
                 <h5>Browse by Domain</h5>
-                <p>Explore recommendations organized by clinical condition or social need.</p>
+                <p>Explore protocols organized by clinical condition or social need.</p>
                 <div class="domain-links">
                     <a class="domain-link" data-domain="Diabetes">Diabetes (9)</a>
                     <a class="domain-link" data-domain="Hypertension">Hypertension (1)</a>
@@ -418,7 +418,7 @@
             
             <div class="card">
                 <h5>Browse by Role</h5>
-                <p>Find recommendations tailored to specific professional roles.</p>
+                <p>Find protocols tailored to specific professional roles.</p>
                 <div class="role-links">
                     <a class="role-link" data-role="Nurse Care Manager">Nurse Care Manager (11)</a>
                     <a class="role-link" data-role="Clinical Pharmacist">Clinical Pharmacist (2)</a>
@@ -436,7 +436,7 @@
             
             <div class="card">
                 <h5>Search the Library</h5>
-                <p>Search for specific recommendations across all domains and roles.</p>
+                <p>Search for specific protocols across all domains and roles.</p>
                 <div class="search-box">
                     <input type="text" class="search-input" id="search-input" placeholder="e.g., diabetes management">
                     <button class="search-button" id="search-button">Search</button>
@@ -446,17 +446,17 @@
             <div class="card">
                 <h5>Library Statistics</h5>
                 <ul class="stats-list">
-                    <li>Total Recommendations: 39</li>
+                    <li>Total Protocols: 39</li>
                     <li>Domains Covered: 21</li>
                     <li>Professional Roles: 11</li>
                 </ul>
             </div>
         </div>
         
-        <div id="recommendations-container">
+        <div id="protocols-container">
             <a class="back-button" id="back-button">← Back to Home</a>
-            <h2 id="recommendations-title">Recommendations</h2>
-            <div id="recommendations-list"></div>
+            <h2 id="protocols-title">Protocols</h2>
+            <div id="protocols-list"></div>
         </div>
     </main>
     
@@ -466,15 +466,15 @@
         </div>
     </footer>
     
-    <!-- Include the embedded recommendations data -->
-    <script src="recommendations-data.js"></script>
+    <!-- Include the embedded protocols data -->
+    <script src="protocols-data.js"></script>
     
     <script>
         // DOM Elements
         const mainContent = document.getElementById('main-content');
-        const recommendationsContainer = document.getElementById('recommendations-container');
-        const recommendationsTitle = document.getElementById('recommendations-title');
-        const recommendationsList = document.getElementById('recommendations-list');
+        const protocolsContainer = document.getElementById('protocols-container');
+        const protocolsTitle = document.getElementById('protocols-title');
+        const protocolsList = document.getElementById('protocols-list');
         const backButton = document.getElementById('back-button');
         const homeLink = document.getElementById('home-link');
         const homeNav = document.getElementById('home-nav');
@@ -485,14 +485,14 @@
         document.querySelectorAll('.domain-link').forEach(link => {
             link.addEventListener('click', function() {
                 const domain = this.getAttribute('data-domain');
-                showRecommendations('domain', domain);
+                showProtocols('domain', domain);
             });
         });
         
         document.querySelectorAll('.role-link').forEach(link => {
             link.addEventListener('click', function() {
                 const role = this.getAttribute('data-role');
-                showRecommendations('role', role);
+                showProtocols('role', role);
             });
         });
         
@@ -509,7 +509,7 @@
         searchButton.addEventListener('click', function() {
             const query = searchInput.value.trim();
             if (query) {
-                searchRecommendations(query);
+                searchProtocols(query);
             }
         });
         
@@ -517,48 +517,48 @@
             if (e.key === 'Enter') {
                 const query = searchInput.value.trim();
                 if (query) {
-                    searchRecommendations(query);
+                    searchProtocols(query);
                 }
             }
         });
         
-        // Function to show recommendations based on domain or role
-        function showRecommendations(type, value) {
-            // Hide main content and show recommendations container
+        // Function to show protocols based on domain or role
+        function showProtocols(type, value) {
+            // Hide main content and show protocols container
             mainContent.style.display = 'none';
-            recommendationsContainer.style.display = 'block';
+            protocolsContainer.style.display = 'block';
             
             // Set title
-            recommendationsTitle.textContent = type === 'domain' 
-                ? `${value} Recommendations` 
-                : `Recommendations for ${value}`;
+            protocolsTitle.textContent = type === 'domain' 
+                ? `${value} Protocols` 
+                : `Protocols for ${value}`;
             
-            // Filter recommendations based on type and value
-            let filteredRecommendations = [];
+            // Filter protocols based on type and value
+            let filteredProtocols = [];
             
             if (type === 'domain') {
-                filteredRecommendations = allRecommendations.filter(rec => rec.domain === value);
+                filteredProtocols = allProtocols.filter(rec => rec.domain === value);
             } else if (type === 'role') {
-                filteredRecommendations = allRecommendations.filter(rec => rec.role === value);
+                filteredProtocols = allProtocols.filter(rec => rec.role === value);
             }
             
-            // Display the filtered recommendations
-            displayRecommendations(filteredRecommendations);
+            // Display the filtered protocols
+            displayProtocols(filteredProtocols);
         }
         
-        // Function to display recommendations
-        function displayRecommendations(recommendations, highlightTerms = []) {
-            recommendationsList.innerHTML = '';
+        // Function to display protocols
+        function displayProtocols(protocols, highlightTerms = []) {
+            protocolsList.innerHTML = '';
             
-            if (recommendations.length === 0) {
-                recommendationsList.innerHTML = '<div class="no-results"><p>No recommendations found.</p></div>';
+            if (protocols.length === 0) {
+                protocolsList.innerHTML = '<div class="no-results"><p>No protocols found.</p></div>';
                 return;
             }
             
-            recommendations.forEach((rec, index) => {
+            protocols.forEach((rec, index) => {
                 // Skip if any required field is missing
                 if (!rec || !rec.title) {
-                    console.log(`Skipping recommendation at index ${index} due to missing title`);
+                    console.log(`Skipping protocol at index ${index} due to missing title`);
                     return;
                 }
                 
@@ -566,10 +566,10 @@
                     `evidence-${rec.evidence_level.charAt(0).toLowerCase()}` : 'evidence-d';
                 
                 const card = document.createElement('div');
-                card.className = 'recommendation-card';
+                card.className = 'protocol-card';
                 
                 // Apply highlighting if search terms are provided
-                let title = rec.title || 'Untitled Recommendation';
+                let title = rec.title || 'Untitled Protocol';
                 let implementation = rec.implementation_guidance || 'No guidance provided';
                 let outcomes = rec.expected_outcomes || 'No outcomes specified';
                 let population = rec.target_population || 'General population';
@@ -587,39 +587,39 @@
                 }
                 
                 card.innerHTML = `
-                    <h3 class="recommendation-title">${title}</h3>
-                    <div class="recommendation-meta">
+                    <h3 class="protocol-title">${title}</h3>
+                    <div class="protocol-meta">
                         <span>Domain: ${rec.domain || 'Unknown'}</span>
                         <span>Role: ${rec.role || 'Unknown'}</span>
                         ${rec.evidence_level ? 
                             `<span>Evidence Level: <span class="evidence-level ${evidenceClass}">${rec.evidence_level}</span></span>` : 
                             ''}
                     </div>
-                    <div class="recommendation-content">
+                    <div class="protocol-content">
                         <p><strong>Implementation Guidance:</strong> ${implementation}</p>
                         <p><strong>Expected Outcomes:</strong> ${outcomes}</p>
                         <p><strong>Target Population:</strong> ${population}</p>
                     </div>
-                    <div class="recommendation-citation">
+                    <div class="protocol-citation">
                         <p><strong>Citation:</strong> ${citation}</p>
                     </div>
                 `;
                 
-                recommendationsList.appendChild(card);
+                protocolsList.appendChild(card);
             });
         }
         
-        // Function to search recommendations
-        function searchRecommendations(query) {
+        // Function to search protocols
+        function searchProtocols(query) {
             // Set title
-            recommendationsTitle.textContent = `Search Results for "${query}"`;
+            protocolsTitle.textContent = `Search Results for "${query}"`;
             
-            // Hide main content and show recommendations container
+            // Hide main content and show protocols container
             mainContent.style.display = 'none';
-            recommendationsContainer.style.display = 'block';
+            protocolsContainer.style.display = 'block';
             
             // Show loading indicator
-            recommendationsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+            protocolsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
             
             // Convert query to lowercase for case-insensitive search
             const lowerQuery = query.toLowerCase();
@@ -627,8 +627,8 @@
             // Split query into terms for highlighting
             const searchTerms = query.split(' ').filter(term => term.length > 2);
             
-            // Filter recommendations based on search query
-            const searchResults = allRecommendations.filter(rec => {
+            // Filter protocols based on search query
+            const searchResults = allProtocols.filter(rec => {
                 // Search in all text fields
                 return (
                     (rec.title && rec.title.toLowerCase().includes(lowerQuery)) ||
@@ -642,104 +642,83 @@
             });
             
             // Display search results with highlighting
-            displayRecommendations(searchResults, searchTerms);
+            displayProtocols(searchResults, searchTerms);
         }
         
         // Function to show home page
         function showHome() {
-            recommendationsContainer.style.display = 'none';
+            protocolsContainer.style.display = 'none';
             mainContent.style.display = 'block';
             // Clear search input
             searchInput.value = '';
         }
         
-        // Handle case where recommendations-data.js might not be loaded
-        if (typeof allRecommendations === 'undefined') {
-            console.error('Recommendations data not loaded. Please ensure recommendations-data.js is included.');
+        // Handle case where protocols-data.js might not be loaded
+        if (typeof allProtocols === 'undefined') {
+            console.error('Protocols data not loaded. Please ensure protocols-data.js is included.');
             // Create a fallback empty array to prevent errors
-            window.allRecommendations = [];
+            window.allProtocols = [];
         }
-    </script>
-    
-    <!-- Dynamic count calculation fix for GitHub Pages -->
-    <script>
-        // Wait for DOM and recommendations data to be loaded
+        
+        // Dynamic count calculation for accurate display
         document.addEventListener('DOMContentLoaded', function() {
-            // Make sure recommendations data is available
-            if (typeof allRecommendations === 'undefined') {
-                console.error('Recommendations data not loaded');
-                return;
-            }
-            
-            // Calculate counts
-            const totalCount = allRecommendations.length;
-            console.log('Total recommendations:', totalCount);
-            
-            // Calculate domain counts
-            const domains = {};
-            allRecommendations.forEach(rec => {
-                if (rec.domain) {
-                    domains[rec.domain] = (domains[rec.domain] || 0) + 1;
-                }
-            });
-            console.log('Domain counts:', domains);
-            
-            // Calculate role counts
-            const roles = {};
-            allRecommendations.forEach(rec => {
-                if (rec.role) {
-                    roles[rec.role] = (roles[rec.role] || 0) + 1;
-                }
-            });
-            console.log('Role counts:', roles);
-            
-            // Calculate unique domains and roles count
-            const uniqueDomains = Object.keys(domains).length;
-            const uniqueRoles = Object.keys(roles).length;
-            
-            // Update domain links with counts
-            document.querySelectorAll('.domain-link').forEach(link => {
-                const domain = link.getAttribute('data-domain');
-                if (domain && domains[domain]) {
-                    // Extract existing text without the count
-                    let text = link.textContent;
-                    if (text.includes('(')) {
-                        text = text.substring(0, text.indexOf('(')).trim();
+            // Wait for protocols data to be loaded
+            setTimeout(function() {
+                if (typeof allProtocols !== 'undefined') {
+                    // Update total count in stats
+                    const totalProtocolsElement = document.querySelector('.stats-list li:first-child');
+                    if (totalProtocolsElement) {
+                        totalProtocolsElement.textContent = `Total Protocols: ${allProtocols.length}`;
                     }
-                    // Update with new count
-                    link.textContent = text + ' (' + domains[domain] + ')';
-                }
-            });
-            
-            // Update role links with counts
-            document.querySelectorAll('.role-link').forEach(link => {
-                const role = link.getAttribute('data-role');
-                if (role && roles[role]) {
-                    // Extract existing text without the count
-                    let text = link.textContent;
-                    if (text.includes('(')) {
-                        text = text.substring(0, text.indexOf('(')).trim();
+                    
+                    // Update domain counts
+                    const domainCounts = {};
+                    allProtocols.forEach(protocol => {
+                        if (protocol.domain) {
+                            domainCounts[protocol.domain] = (domainCounts[protocol.domain] || 0) + 1;
+                        }
+                    });
+                    
+                    document.querySelectorAll('.domain-link').forEach(link => {
+                        const domain = link.getAttribute('data-domain');
+                        const count = domainCounts[domain] || 0;
+                        link.textContent = `${domain} (${count})`;
+                    });
+                    
+                    // Update role counts
+                    const roleCounts = {};
+                    allProtocols.forEach(protocol => {
+                        if (protocol.role) {
+                            roleCounts[protocol.role] = (roleCounts[protocol.role] || 0) + 1;
+                        }
+                    });
+                    
+                    document.querySelectorAll('.role-link').forEach(link => {
+                        const role = link.getAttribute('data-role');
+                        const count = roleCounts[role] || 0;
+                        link.textContent = `${role} (${count})`;
+                    });
+                    
+                    // Update domains covered count
+                    const uniqueDomains = new Set(allProtocols.map(protocol => protocol.domain).filter(Boolean));
+                    const domainsCountElement = document.querySelector('.stats-list li:nth-child(2)');
+                    if (domainsCountElement) {
+                        domainsCountElement.textContent = `Domains Covered: ${uniqueDomains.size}`;
                     }
-                    // Update with new count
-                    link.textContent = text + ' (' + roles[role] + ')';
+                    
+                    // Update roles count
+                    const uniqueRoles = new Set(allProtocols.map(protocol => protocol.role).filter(Boolean));
+                    const rolesCountElement = document.querySelector('.stats-list li:nth-child(3)');
+                    if (rolesCountElement) {
+                        rolesCountElement.textContent = `Professional Roles: ${uniqueRoles.size}`;
+                    }
+                    
+                    console.log('Protocol counts updated successfully');
+                    console.log(`Total protocols: ${allProtocols.length}`);
+                    console.log(`Unique domains: ${uniqueDomains.size}`);
+                    console.log(`Unique roles: ${uniqueRoles.size}`);
                 }
-            });
-            
-            // Update total count in stats
-            const statsItems = document.querySelectorAll('.stats-list li');
-            statsItems.forEach(item => {
-                if (item.textContent.toLowerCase().includes('total recommendations')) {
-                    item.textContent = 'Total Recommendations: ' + totalCount;
-                }
-                if (item.textContent.toLowerCase().includes('domains covered')) {
-                    item.textContent = 'Domains Covered: ' + uniqueDomains;
-                }
-                if (item.textContent.toLowerCase().includes('professional roles')) {
-                    item.textContent = 'Professional Roles: ' + uniqueRoles;
-                }
-            });
-            
-            console.log('Count display updated successfully');
+            }, 500); // Give a small delay to ensure data is loaded
         });
     </script>
 </body>
