@@ -20,91 +20,76 @@
             --warning: #FFC107;
             --danger: #DC3545;
         }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text);
             background-color: var(--background);
         }
-        
         header {
             background-color: var(--primary);
             color: white;
             padding: 1rem 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
-        
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
         .site-title {
             font-size: 1.5rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
         }
-        
         .nav-links {
             display: flex;
             gap: 1.5rem;
         }
-        
         .nav-link {
             color: white;
             text-decoration: none;
             font-weight: 500;
         }
-        
         .nav-link:hover {
             text-decoration: underline;
         }
-        
         .welcome-section {
             background-color: var(--background-alt);
             padding: 2rem 0;
             margin-bottom: 2rem;
         }
-        
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
-        
         h2 {
             font-size: 1.5rem;
             margin: 1.5rem 0 1rem;
             color: var(--primary);
             font-weight: 600;
         }
-        
         h5 {
             font-size: 1.1rem;
             margin: 1.5rem 0 0.5rem;
             color: var(--primary);
             font-weight: 600;
         }
-        
         p {
             margin-bottom: 1rem;
         }
-        
         .card {
             background-color: white;
             border-radius: 8px;
@@ -112,14 +97,12 @@
             margin-bottom: 1.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-        
         .domain-links, .role-links {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin: 1rem 0;
         }
-        
         .domain-link, .role-link {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -130,34 +113,28 @@
             transition: background-color 0.2s ease;
             cursor: pointer;
         }
-        
         /* Domain link colors */
         .domain-link {
             background-color: #e6f7ff;
             color: #0066cc;
             border: 1px solid #b3e0ff;
         }
-        
         .domain-link:hover {
             background-color: #cceeff;
         }
-        
         /* Role link colors */
         .role-link {
             background-color: #e6f0ff;
             color: #0047b3;
             border: 1px solid #b3d1ff;
         }
-        
         .role-link:hover {
             background-color: #cce0ff;
         }
-        
         .search-box {
             display: flex;
             margin: 1rem 0;
         }
-        
         .search-input {
             flex: 1;
             padding: 0.75rem;
@@ -165,7 +142,6 @@
             border-radius: 4px 0 0 4px;
             font-size: 1rem;
         }
-        
         .search-button {
             background-color: var(--primary);
             color: white;
@@ -176,20 +152,16 @@
             cursor: pointer;
             transition: background-color 0.2s ease;
         }
-        
         .search-button:hover {
             background-color: var(--primary-dark);
         }
-        
         .stats-list {
             list-style: none;
             margin: 1rem 0;
         }
-        
         .stats-list li {
             margin-bottom: 0.5rem;
         }
-        
         footer {
             background-color: var(--primary-dark);
             color: white;
@@ -198,22 +170,18 @@
             margin-top: 2rem;
             font-size: 0.9rem;
         }
-        
         .footer-link {
             color: white;
             text-decoration: none;
         }
-        
         .footer-link:hover {
             text-decoration: underline;
         }
-        
         /* New styles for protocols display */
         #protocols-container {
             display: none;
             margin-top: 2rem;
         }
-        
         .protocol-card {
             background-color: white;
             border-radius: 8px;
@@ -222,14 +190,12 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             border-left: 4px solid var(--primary);
         }
-        
         .protocol-title {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--primary);
         }
-        
         .protocol-meta {
             display: flex;
             flex-wrap: wrap;
@@ -238,16 +204,13 @@
             font-size: 0.9rem;
             color: var(--text-light);
         }
-        
         .protocol-meta span {
             display: inline-flex;
             align-items: center;
         }
-        
         .protocol-content {
             margin-bottom: 1rem;
         }
-        
         .protocol-citation {
             font-size: 0.9rem;
             font-style: italic;
@@ -255,7 +218,6 @@
             padding-top: 0.5rem;
             border-top: 1px solid var(--border);
         }
-        
         .evidence-level {
             display: inline-block;
             padding: 0.2rem 0.5rem;
@@ -263,27 +225,22 @@
             font-size: 0.8rem;
             font-weight: 500;
         }
-        
         .evidence-a {
             background-color: #d4edda;
             color: #155724;
         }
-        
         .evidence-b {
             background-color: #fff3cd;
             color: #856404;
         }
-        
         .evidence-c {
             background-color: #f8d7da;
             color: #721c24;
         }
-        
         .evidence-d {
             background-color: #e2e3e5;
             color: #383d41;
         }
-        
         .back-button {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -296,18 +253,15 @@
             margin-bottom: 1rem;
             cursor: pointer;
         }
-        
         .back-button:hover {
             background-color: var(--border);
         }
-        
         .loading {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 200px;
         }
-        
         .loading-spinner {
             border: 4px solid rgba(0, 0, 0, 0.1);
             border-left-color: var(--primary);
@@ -316,50 +270,39 @@
             height: 40px;
             animation: spin 1s linear infinite;
         }
-        
         .search-highlight {
             background-color: #fff3cd;
             padding: 0 2px;
         }
-        
         .no-results {
             padding: 2rem;
             text-align: center;
             background-color: var(--background-alt);
             border-radius: 8px;
         }
-        
         @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
-        
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1rem;
             }
-            
             .nav-links {
                 width: 100%;
                 justify-content: space-between;
             }
-            
             h1 {
                 font-size: 2rem;
             }
-            
             .domain-links, .role-links {
                 gap: 0.3rem;
             }
-            
             .domain-link, .role-link {
                 padding: 0.4rem 0.8rem;
                 font-size: 0.8rem;
             }
-            
             .protocol-meta {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -378,14 +321,14 @@
             </div>
         </div>
     </header>
-    
+
     <section class="welcome-section">
         <div class="container">
             <h1>Welcome to the Waymark Population Health Evidence Library</h1>
-            <p>A comprehensive collection of evidence-based protocols for healthcare professionals working with underserved patients in proactive population health management teams.</p>
+            <p>A comprehensive collection of evidence-based protocols for healthcare professionals working with underserved populations.</p>
         </div>
     </section>
-    
+
     <main class="container">
         <div id="main-content">
             <div class="card">
@@ -405,7 +348,7 @@
                     <a class="domain-link" data-domain="Heart Failure">Heart Failure (2)</a>
                     <a class="domain-link" data-domain="Preventive Screenings">Preventive Screenings (1)</a>
                     <a class="domain-link" data-domain="Medication Adherence">Medication Adherence (2)</a>
-                    <a class="domain-link" data-domain="Care Transitions">Care Transitions (3)</a>
+                    <a class="domain-link" data-domain="Care Transitions">Care Transitions (1)</a>
                     <a class="domain-link" data-domain="CKD">CKD (1)</a>
                     <a class="domain-link" data-domain="Post-MI">Post-MI (1)</a>
                     <a class="domain-link" data-domain="Post-Stroke">Post-Stroke (1)</a>
@@ -415,7 +358,7 @@
                     <a class="domain-link" data-domain="Postnatal">Postnatal (2)</a>
                 </div>
             </div>
-            
+
             <div class="card">
                 <h5>Browse by Role</h5>
                 <p>Find protocols tailored to specific professional roles.</p>
@@ -423,7 +366,7 @@
                     <a class="role-link" data-role="Nurse Care Manager">Nurse Care Manager (11)</a>
                     <a class="role-link" data-role="Clinical Pharmacist">Clinical Pharmacist (2)</a>
                     <a class="role-link" data-role="Community Health Worker">Community Health Worker (5)</a>
-                    <a class="role-link" data-role="Social Worker (Clinical/Therapy)">Social Worker (Clinical/Therapy) (2)</a>
+                    <a class="role-link" data-role="Social Worker (Clinical/Therapy)">Social Worker (Clinical/Therapy)</a>
                     <a class="role-link" data-role="Care Coordinator">Care Coordinator (2)</a>
                     <a class="role-link" data-role="Primary Care Provider">Primary Care Provider (10)</a>
                     <a class="role-link" data-role="Pharmacy Technician">Pharmacy Technician (1)</a>
@@ -433,45 +376,45 @@
                     <a class="role-link" data-role="Behavioral Health Specialist">Behavioral Health Specialist (1)</a>
                 </div>
             </div>
-            
+
             <div class="card">
                 <h5>Search the Library</h5>
                 <p>Search for specific protocols across all domains and roles.</p>
                 <div class="search-box">
-                    <input type="text" class="search-input" id="search-input" placeholder="e.g., diabetes management">
+                    <input type="text" class="search-input" id="search-input" placeholder="e.g., diabetes management, medication adherence">
                     <button class="search-button" id="search-button">Search</button>
                 </div>
             </div>
-            
+
             <div class="card">
                 <h5>Library Statistics</h5>
                 <ul class="stats-list">
-                    <li>Total Protocols: 39</li>
-                    <li>Domains Covered: 21</li>
-                    <li>Professional Roles: 11</li>
+                    <li>Total Protocols: <span id="total-protocols">0</span></li>
+                    <li>Domains Covered: <span id="total-domains">0</span></li>
+                    <li>Professional Roles: <span id="total-roles">0</span></li>
                 </ul>
             </div>
         </div>
-        
+
         <div id="protocols-container">
             <a class="back-button" id="back-button">← Back to Home</a>
             <h2 id="protocols-title">Protocols</h2>
             <div id="protocols-list"></div>
         </div>
     </main>
-    
+
     <footer>
         <div class="container">
             <p>© 2025, Waymark, <a href="https://www.waymarkcare.com" class="footer-link" target="_blank">www.waymarkcare.com</a></p>
         </div>
     </footer>
+
+    <!-- Include the protocols data first -->
+    <script src="all_recommendations.js"></script>
     
-    <!-- Include the embedded protocols data -->
-    <script src="protocols-data.js"></script>
-    
-    <!-- Include compatibility fix script -->
-    <script src="fixed_count_display.js"></script>
-    
+    <!-- Include the improved count display script -->
+    <script src="improved_count_display.js"></script>
+
     <script>
         // DOM Elements
         const mainContent = document.getElementById('main-content');
@@ -481,253 +424,203 @@
         const backButton = document.getElementById('back-button');
         const homeLink = document.getElementById('home-link');
         const homeNav = document.getElementById('home-nav');
+        const browseNav = document.getElementById('browse-nav');
+        const searchNav = document.getElementById('search-nav');
         const searchInput = document.getElementById('search-input');
         const searchButton = document.getElementById('search-button');
-        
+
         // Add event listeners
         document.querySelectorAll('.domain-link').forEach(link => {
             link.addEventListener('click', function() {
                 const domain = this.getAttribute('data-domain');
-                showProtocols('domain', domain);
+                showProtocolsByDomain(domain);
             });
         });
-        
+
         document.querySelectorAll('.role-link').forEach(link => {
             link.addEventListener('click', function() {
                 const role = this.getAttribute('data-role');
-                showProtocols('role', role);
+                showProtocolsByRole(role);
             });
         });
-        
-        backButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            showHome();
+
+        backButton.addEventListener('click', showHome);
+        homeLink.addEventListener('click', showHome);
+        homeNav.addEventListener('click', showHome);
+        browseNav.addEventListener('click', showHome);
+        searchNav.addEventListener('click', function() {
+            searchInput.focus();
         });
-        
-        homeLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            showHome();
-        });
-        
-        homeNav.addEventListener('click', function(e) {
-            e.preventDefault();
-            showHome();
-        });
-        
+
         searchButton.addEventListener('click', function() {
             const query = searchInput.value.trim();
             if (query) {
                 searchProtocols(query);
             }
         });
-        
+
         searchInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                const query = searchInput.value.trim();
+                const query = this.value.trim();
                 if (query) {
                     searchProtocols(query);
                 }
             }
         });
-        
-        // Function to show protocols based on domain or role
-        function showProtocols(type, value) {
-            // Hide main content and show protocols container
+
+        // Function to show protocols by domain
+        function showProtocolsByDomain(domain) {
             mainContent.style.display = 'none';
             protocolsContainer.style.display = 'block';
-            
-            // Set title
-            protocolsTitle.textContent = type === 'domain' 
-                ? `${value} Protocols` 
-                : `Protocols for ${value}`;
-            
-            // Filter protocols based on type and value
-            let filteredProtocols = [];
-            
-            if (type === 'domain') {
-                filteredProtocols = allProtocols.filter(rec => rec.domain === value);
-            } else if (type === 'role') {
-                filteredProtocols = allProtocols.filter(rec => rec.role === value);
-            }
-            
-            // Display the filtered protocols
-            displayProtocols(filteredProtocols);
-        }
-        
-        // Function to display protocols
-        function displayProtocols(protocols, highlightTerms = []) {
-            protocolsList.innerHTML = '';
-            
-            if (protocols.length === 0) {
-                protocolsList.innerHTML = '<div class="no-results"><p>No protocols found.</p></div>';
-                return;
-            }
-            
-            protocols.forEach((rec, index) => {
-                // Skip if any required field is missing
-                if (!rec || !rec.title) {
-                    console.log(`Skipping protocol at index ${index} due to missing title`);
-                    return;
+            protocolsTitle.textContent = domain + ' Protocols';
+            protocolsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+
+            setTimeout(() => {
+                let html = '';
+                let found = false;
+
+                // Use allProtocols if available, otherwise fall back to allRecommendations
+                const dataSource = window.allProtocols || window.allRecommendations || [];
+                
+                dataSource.forEach(category => {
+                    if (category.recommendations) {
+                        const filteredProtocols = category.recommendations.filter(protocol => protocol.domain === domain);
+                        
+                        if (filteredProtocols.length > 0) {
+                            found = true;
+                            filteredProtocols.forEach(protocol => {
+                                html += createProtocolCard(protocol);
+                            });
+                        }
+                    }
+                });
+
+                if (!found) {
+                    html = '<div class="no-results">No protocols found for this domain.</div>';
                 }
-                
-                const evidenceClass = rec.evidence_level ? 
-                    `evidence-${rec.evidence_level.charAt(0).toLowerCase()}` : 'evidence-d';
-                
-                const card = document.createElement('div');
-                card.className = 'protocol-card';
-                
-                // Apply highlighting if search terms are provided
-                let title = rec.title || 'Untitled Protocol';
-                let implementation = rec.implementation_guidance || 'No guidance provided';
-                let outcomes = rec.expected_outcomes || 'No outcomes specified';
-                let population = rec.target_population || 'General population';
-                let citation = rec.citation || 'No citation provided';
-                
-                if (highlightTerms.length > 0) {
-                    highlightTerms.forEach(term => {
-                        const regex = new RegExp(term, 'gi');
-                        title = title.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                        implementation = implementation.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                        outcomes = outcomes.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                        population = population.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                        citation = citation.replace(regex, match => `<span class="search-highlight">${match}</span>`);
-                    });
-                }
-                
-                card.innerHTML = `
-                    <h3 class="protocol-title">${title}</h3>
-                    <div class="protocol-meta">
-                        <span>Domain: ${rec.domain || 'Unknown'}</span>
-                        <span>Role: ${rec.role || 'Unknown'}</span>
-                        ${rec.evidence_level ? 
-                            `<span>Evidence Level: <span class="evidence-level ${evidenceClass}">${rec.evidence_level}</span></span>` : 
-                            ''}
-                    </div>
-                    <div class="protocol-content">
-                        <p><strong>Implementation Guidance:</strong> ${implementation}</p>
-                        <p><strong>Expected Outcomes:</strong> ${outcomes}</p>
-                        <p><strong>Target Population:</strong> ${population}</p>
-                    </div>
-                    <div class="protocol-citation">
-                        <p><strong>Citation:</strong> ${citation}</p>
-                    </div>
-                `;
-                
-                protocolsList.appendChild(card);
-            });
+
+                protocolsList.innerHTML = html;
+            }, 500);
         }
-        
+
+        // Function to show protocols by role
+        function showProtocolsByRole(role) {
+            mainContent.style.display = 'none';
+            protocolsContainer.style.display = 'block';
+            protocolsTitle.textContent = role + ' Protocols';
+            protocolsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+
+            setTimeout(() => {
+                let html = '';
+                let found = false;
+
+                // Use allProtocols if available, otherwise fall back to allRecommendations
+                const dataSource = window.allProtocols || window.allRecommendations || [];
+                
+                dataSource.forEach(category => {
+                    if (category.recommendations) {
+                        const filteredProtocols = category.recommendations.filter(protocol => protocol.role === role);
+                        
+                        if (filteredProtocols.length > 0) {
+                            found = true;
+                            filteredProtocols.forEach(protocol => {
+                                html += createProtocolCard(protocol);
+                            });
+                        }
+                    }
+                });
+
+                if (!found) {
+                    html = '<div class="no-results">No protocols found for this role.</div>';
+                }
+
+                protocolsList.innerHTML = html;
+            }, 500);
+        }
+
         // Function to search protocols
         function searchProtocols(query) {
-            // Set title
-            protocolsTitle.textContent = `Search Results for "${query}"`;
+            query = query.toLowerCase();
             
-            // Hide main content and show protocols container
             mainContent.style.display = 'none';
             protocolsContainer.style.display = 'block';
-            
-            // Show loading indicator
+            protocolsTitle.textContent = 'Search Results: "' + query + '"';
             protocolsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
-            
-            // Convert query to lowercase for case-insensitive search
-            const lowerQuery = query.toLowerCase();
-            
-            // Split query into terms for highlighting
-            const searchTerms = query.split(' ').filter(term => term.length > 2);
-            
-            // Filter protocols based on search query
-            const searchResults = allProtocols.filter(rec => {
-                // Search in all text fields
-                return (
-                    (rec.title && rec.title.toLowerCase().includes(lowerQuery)) ||
-                    (rec.implementation_guidance && rec.implementation_guidance.toLowerCase().includes(lowerQuery)) ||
-                    (rec.expected_outcomes && rec.expected_outcomes.toLowerCase().includes(lowerQuery)) ||
-                    (rec.target_population && rec.target_population.toLowerCase().includes(lowerQuery)) ||
-                    (rec.domain && rec.domain.toLowerCase().includes(lowerQuery)) ||
-                    (rec.role && rec.role.toLowerCase().includes(lowerQuery)) ||
-                    (rec.citation && rec.citation.toLowerCase().includes(lowerQuery))
-                );
-            });
-            
-            // Display search results with highlighting
-            displayProtocols(searchResults, searchTerms);
+
+            setTimeout(() => {
+                let html = '';
+                let found = false;
+
+                // Use allProtocols if available, otherwise fall back to allRecommendations
+                const dataSource = window.allProtocols || window.allRecommendations || [];
+                
+                dataSource.forEach(category => {
+                    if (category.recommendations) {
+                        const filteredProtocols = category.recommendations.filter(protocol => {
+                            return (
+                                protocol.title.toLowerCase().includes(query) ||
+                                protocol.domain.toLowerCase().includes(query) ||
+                                protocol.role.toLowerCase().includes(query) ||
+                                protocol.implementation_guidance.toLowerCase().includes(query) ||
+                                protocol.expected_outcomes.toLowerCase().includes(query) ||
+                                protocol.target_population.toLowerCase().includes(query) ||
+                                (protocol.tags && protocol.tags.some(tag => tag.toLowerCase().includes(query)))
+                            );
+                        });
+                        
+                        if (filteredProtocols.length > 0) {
+                            found = true;
+                            filteredProtocols.forEach(protocol => {
+                                html += createProtocolCard(protocol, query);
+                            });
+                        }
+                    }
+                });
+
+                if (!found) {
+                    html = '<div class="no-results">No protocols found matching your search.</div>';
+                }
+
+                protocolsList.innerHTML = html;
+            }, 500);
         }
-        
-        // Function to show home page
+
+        // Function to create protocol card HTML
+        function createProtocolCard(protocol, highlightQuery = '') {
+            let html = `
+                <div class="protocol-card">
+                    <div class="protocol-title">${highlightText(protocol.title, highlightQuery)}</div>
+                    <div class="protocol-meta">
+                        <span>Domain: ${highlightText(protocol.domain, highlightQuery)}</span>
+                        <span>Role: ${highlightText(protocol.role, highlightQuery)}</span>
+                        <span>Evidence Level: <span class="evidence-level evidence-${protocol.evidence_level.charAt(0).toLowerCase()}">${protocol.evidence_level}</span></span>
+                    </div>
+                    <div class="protocol-content">
+                        <p><strong>Implementation Guidance:</strong> ${highlightText(protocol.implementation_guidance, highlightQuery)}</p>
+                        <p><strong>Expected Outcomes:</strong> ${highlightText(protocol.expected_outcomes, highlightQuery)}</p>
+                        <p><strong>Target Population:</strong> ${highlightText(protocol.target_population, highlightQuery)}</p>
+                    </div>
+                    <div class="protocol-citation">
+                        <p><strong>Citation:</strong> ${protocol.citation}</p>
+                    </div>
+                </div>
+            `;
+            return html;
+        }
+
+        // Function to highlight search terms
+        function highlightText(text, query) {
+            if (!query) return text;
+            
+            const regex = new RegExp('(' + query + ')', 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        // Function to show home screen
         function showHome() {
             protocolsContainer.style.display = 'none';
             mainContent.style.display = 'block';
-            // Clear search input
-            searchInput.value = '';
         }
-        
-        // Handle case where protocols-data.js might not be loaded
-        if (typeof allProtocols === 'undefined') {
-            console.error('Protocols data not loaded. Please ensure protocols-data.js is included.');
-            // Create a fallback empty array to prevent errors
-            window.allProtocols = [];
-        }
-        
-        // Dynamic count calculation for accurate display
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait for protocols data to be loaded
-            setTimeout(function() {
-                if (typeof allProtocols !== 'undefined') {
-                    // Update total count in stats
-                    const totalProtocolsElement = document.querySelector('.stats-list li:first-child');
-                    if (totalProtocolsElement) {
-                        totalProtocolsElement.textContent = `Total Protocols: ${allProtocols.length}`;
-                    }
-                    
-                    // Update domain counts
-                    const domainCounts = {};
-                    allProtocols.forEach(protocol => {
-                        if (protocol.domain) {
-                            domainCounts[protocol.domain] = (domainCounts[protocol.domain] || 0) + 1;
-                        }
-                    });
-                    
-                    document.querySelectorAll('.domain-link').forEach(link => {
-                        const domain = link.getAttribute('data-domain');
-                        const count = domainCounts[domain] || 0;
-                        link.textContent = `${domain} (${count})`;
-                    });
-                    
-                    // Update role counts
-                    const roleCounts = {};
-                    allProtocols.forEach(protocol => {
-                        if (protocol.role) {
-                            roleCounts[protocol.role] = (roleCounts[protocol.role] || 0) + 1;
-                        }
-                    });
-                    
-                    document.querySelectorAll('.role-link').forEach(link => {
-                        const role = link.getAttribute('data-role');
-                        const count = roleCounts[role] || 0;
-                        link.textContent = `${role} (${count})`;
-                    });
-                    
-                    // Update domains covered count
-                    const uniqueDomains = new Set(allProtocols.map(protocol => protocol.domain).filter(Boolean));
-                    const domainsCountElement = document.querySelector('.stats-list li:nth-child(2)');
-                    if (domainsCountElement) {
-                        domainsCountElement.textContent = `Domains Covered: ${uniqueDomains.size}`;
-                    }
-                    
-                    // Update roles count
-                    const uniqueRoles = new Set(allProtocols.map(protocol => protocol.role).filter(Boolean));
-                    const rolesCountElement = document.querySelector('.stats-list li:nth-child(3)');
-                    if (rolesCountElement) {
-                        rolesCountElement.textContent = `Professional Roles: ${uniqueRoles.size}`;
-                    }
-                    
-                    console.log('Protocol counts updated successfully');
-                    console.log(`Total protocols: ${allProtocols.length}`);
-                    console.log(`Unique domains: ${uniqueDomains.size}`);
-                    console.log(`Unique roles: ${uniqueRoles.size}`);
-                }
-            }, 500); // Give a small delay to ensure data is loaded
-        });
     </script>
 </body>
 </html>
