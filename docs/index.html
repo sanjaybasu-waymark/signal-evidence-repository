@@ -3,120 +3,234 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evidence-Based Protocols for Non-Physician Team Members</title>
+  <title>Waymark Population Health Protocol Library</title>
   <style>
+    :root {
+      --primary-blue: #0a6eb4;
+      --primary-purple: #7b2c8d;
+      --primary-orange: #f26522;
+      --primary-green: #00a79d;
+      --light-blue: #e3f2fd;
+      --light-purple: #f3e5f5;
+      --light-orange: #fff3e0;
+      --light-green: #e0f2f1;
+      --dark-text: #333333;
+      --light-text: #ffffff;
+      --light-gray: #f5f5f5;
+      --medium-gray: #e0e0e0;
+      --border-gray: #dddddd;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
       margin: 0;
-      padding: 20px;
-      color: #333;
+      padding: 0;
+      color: var(--dark-text);
+      background-color: #ffffff;
     }
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
+    
     .container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
     }
+    
+    /* Header Styles */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      height: 40px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--light-blue), var(--light-purple));
+      padding: 60px 0;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: var(--dark-text);
+    }
+    
+    /* Filters */
     .filters {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      background-color: var(--light-gray);
+      padding: 20px;
+      border-radius: 8px;
     }
+    
     .filter-group {
       flex: 1;
       min-width: 200px;
     }
-    select {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+    
+    .filter-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--primary-blue);
     }
-    .protocol-list {
-      border: 1px solid #ddd;
+    
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-gray);
       border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    select:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 2px rgba(10, 110, 180, 0.2);
+    }
+    
+    /* Protocol List */
+    .protocol-list {
+      border: 1px solid var(--border-gray);
+      border-radius: 8px;
       padding: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       max-height: 400px;
       overflow-y: auto;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
+    
     .protocol-item {
-      padding: 10px;
-      border-bottom: 1px solid #eee;
+      padding: 15px;
+      border-bottom: 1px solid var(--medium-gray);
       cursor: pointer;
+      transition: background-color 0.2s;
     }
+    
+    .protocol-item:last-child {
+      border-bottom: none;
+    }
+    
     .protocol-item:hover {
-      background-color: #f9f9f9;
+      background-color: var(--light-gray);
     }
+    
     .protocol-item.selected {
-      background-color: #e3f2fd;
+      background-color: var(--light-blue);
+      border-left: 4px solid var(--primary-blue);
     }
+    
+    /* Protocol Detail */
     .protocol-detail {
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 20px;
+      border: 1px solid var(--border-gray);
+      border-radius: 8px;
+      padding: 25px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
     }
+    
     .protocol-detail h3 {
+      color: var(--primary-blue);
       margin-top: 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--light-blue);
     }
+    
     .protocol-detail-section {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
+    
     .protocol-detail-section h4 {
-      margin-bottom: 5px;
-      color: #3498db;
+      color: var(--primary-purple);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
     }
+    
     .count-badge {
-      background-color: #3498db;
+      background-color: var(--primary-blue);
       color: white;
-      border-radius: 50%;
-      padding: 2px 8px;
-      font-size: 0.8em;
-      margin-left: 5px;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.8rem;
+      margin-left: 8px;
+      display: inline-block;
     }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary-blue);
+      color: var(--light-text);
+      padding: 30px 0;
+      margin-top: 60px;
     }
-    .header-right {
-      text-align: right;
+    
+    .footer-content {
+      text-align: center;
     }
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
       .filters {
         flex-direction: column;
       }
+      
       .filter-group {
         width: 100%;
       }
-      .header {
-        flex-direction: column;
-        text-align: center;
+      
+      .hero h1 {
+        font-size: 2rem;
       }
-      .header-right {
-        text-align: center;
-        margin-top: 10px;
+      
+      .hero p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div>
-        <h1>Evidence-Based Protocols for Non-Physician Team Members</h1>
-        <p>A repository of peer-reviewed protocols focused on marginalized and underserved patients</p>
-      </div>
-      <div class="header-right">
-        <p>Author: Sanjay Basu MD PhD<br>
-        Waymark & University of California San Francisco</p>
-      </div>
+  <header>
+    <div class="container header-content">
+      <img src="https://cdn.prod.website-files.com/64a3c873c4968010f637b2dc/64d3782f2fae8721a5b3c3ad_Waymark-wordmark-tri-color-A-on-light.svg" alt="Waymark Logo" class="logo">
     </div>
+  </header>
 
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to the Waymark Population Health Evidence Library</h1>
+      <p>A comprehensive collection of protocols for non-physician population health team members. While physicians receive standard national guidelines from specialty societies, this repository is intended to support non-physician population health roles with evidence-based, peer-reviewed protocols, with a focus on marginalized and underserved patients.</p>
+    </div>
+  </section>
+
+  <div class="container">
     <div class="filters">
       <div class="filter-group">
         <label for="domain-filter">Filter by Domain:</label>
@@ -132,7 +246,7 @@
       </div>
       <div class="filter-group">
         <label for="search-filter">Search:</label>
-        <input type="text" id="search-filter" placeholder="Search protocols..." style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        <input type="text" id="search-filter" placeholder="Search protocols...">
       </div>
     </div>
 
@@ -144,6 +258,12 @@
       <p>Select a protocol to view details</p>
     </div>
   </div>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2025 Waymark. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="recommendations-data.js"></script>
   <script>
