@@ -128,8 +128,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="all_recommendations.js"></script>
-    <script src="direct_role_fix.js"></script>
+    <script src="recommendations-data.js"></script>
+    <script src="fixed_count_display.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Ensure data is available
@@ -363,32 +363,12 @@
                 title.textContent = protocol.title;
                 
                 const meta = document.createElement('div');
-                meta.className = 'card mb-4';
-                
-                const metaBody = document.createElement('div');
-                metaBody.className = 'card-body';
-                
-                const domain = document.createElement('p');
-                domain.className = 'mb-2';
-                domain.innerHTML = `<strong>Domain:</strong> ${protocol.domain}`;
-                
-                const role = document.createElement('p');
-                role.className = 'mb-2';
-                role.innerHTML = `<strong>Role:</strong> ${protocol.role}`;
-                
-                const evidence = document.createElement('p');
-                evidence.className = 'mb-2';
-                evidence.innerHTML = `<strong>Evidence Level:</strong> ${protocol.evidence_level}`;
-                
-                const updated = document.createElement('p');
-                updated.className = 'mb-0';
-                updated.innerHTML = `<strong>Last Updated:</strong> ${protocol.last_updated}`;
-                
-                metaBody.appendChild(domain);
-                metaBody.appendChild(role);
-                metaBody.appendChild(evidence);
-                metaBody.appendChild(updated);
-                meta.appendChild(metaBody);
+                meta.className = 'mb-4';
+                meta.innerHTML = `
+                    <p><strong>Domain:</strong> ${protocol.domain}</p>
+                    <p><strong>Role:</strong> ${protocol.role}</p>
+                    <p><strong>Evidence Level:</strong> ${protocol.evidence_level}</p>
+                `;
                 
                 const guidance = document.createElement('div');
                 guidance.className = 'card mb-4';
