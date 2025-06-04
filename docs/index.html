@@ -4,623 +4,497 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waymark Population Health Evidence Library</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <style>
-        :root {
-            --primary: #1E5288;
-            --primary-dark: #0F3A6B;
-            --secondary: #00A3E0;
-            --accent: #FFB81C;
-            --text: #333333;
-            --text-light: #666666;
-            --background: #FFFFFF;
-            --background-alt: #F5F8FA;
-            --border: #E1E4E8;
-            --success: #28A745;
-            --warning: #FFC107;
-            --danger: #DC3545;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text);
-            background-color: var(--background);
         }
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .navbar {
+            background-color: #0d6efd;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+        .navbar-brand, .nav-link {
+            color: white !important;
         }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .site-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-        .welcome-section {
-            background-color: var(--background-alt);
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin: 1.5rem 0 1rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        h5 {
-            font-size: 1.1rem;
-            margin: 1.5rem 0 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        p {
-            margin-bottom: 1rem;
+        .hero {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
         }
         .card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
         }
-        .domain-links, .role-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
+        .domain-card, .role-card {
+            transition: transform 0.3s;
         }
-        .domain-link, .role-link {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: background-color 0.2s ease;
-            cursor: pointer;
+        .domain-card:hover, .role-card:hover {
+            transform: translateY(-5px);
         }
-        /* Domain link colors */
-        .domain-link {
-            background-color: #e6f7ff;
-            color: #0066cc;
-            border: 1px solid #b3e0ff;
-        }
-        .domain-link:hover {
-            background-color: #cceeff;
-        }
-        /* Role link colors */
-        .role-link {
-            background-color: #e6f0ff;
-            color: #0047b3;
-            border: 1px solid #b3d1ff;
-        }
-        .role-link:hover {
-            background-color: #cce0ff;
-        }
-        .search-box {
-            display: flex;
-            margin: 1rem 0;
-        }
-        .search-input {
-            flex: 1;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 4px 0 0 4px;
-            font-size: 1rem;
-        }
-        .search-button {
-            background-color: var(--primary);
+        .footer {
+            background-color: #343a40;
             color: white;
-            border: none;
-            border-radius: 0 4px 4px 0;
-            padding: 0 1.5rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        .search-button:hover {
-            background-color: var(--primary-dark);
-        }
-        .stats-list {
-            list-style: none;
-            margin: 1rem 0;
-        }
-        .stats-list li {
-            margin-bottom: 0.5rem;
-        }
-        footer {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
-        .footer-link {
-            color: white;
-            text-decoration: none;
-        }
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-        /* New styles for protocols display */
-        #protocols-container {
-            display: none;
-            margin-top: 2rem;
-        }
-        .protocol-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--primary);
-        }
-        .protocol-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        .protocol-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        .protocol-meta span {
-            display: inline-flex;
-            align-items: center;
-        }
-        .protocol-content {
-            margin-bottom: 1rem;
-        }
-        .protocol-citation {
-            font-size: 0.9rem;
-            font-style: italic;
-            color: var(--text-light);
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--border);
-        }
-        .evidence-level {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        .evidence-a {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .evidence-b {
-            background-color: #fff3cd;
-            color: #856404;
-        }
-        .evidence-c {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-        .evidence-d {
-            background-color: #e2e3e5;
-            color: #383d41;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--background-alt);
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            cursor: pointer;
-        }
-        .back-button:hover {
-            background-color: var(--border);
-        }
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-        }
-        .loading-spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left-color: var(--primary);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        .search-highlight {
-            background-color: #fff3cd;
-            padding: 0 2px;
-        }
-        .no-results {
-            padding: 2rem;
-            text-align: center;
-            background-color: var(--background-alt);
-            border-radius: 8px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            .nav-links {
-                width: 100%;
-                justify-content: space-between;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .domain-links, .role-links {
-                gap: 0.3rem;
-            }
-            .domain-link, .role-link {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-            .protocol-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
+            padding: 2rem 0;
+            margin-top: 3rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="site-title" id="home-link">Waymark Population Health Evidence Library</a>
-            <div class="nav-links">
-                <a href="#" class="nav-link" id="home-nav">Home</a>
-                <a href="#" class="nav-link" id="browse-nav">Browse</a>
-                <a href="#" class="nav-link" id="search-nav">Search</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="welcome-section">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <h1>Welcome to the Waymark Population Health Evidence Library</h1>
-            <p>A comprehensive collection of evidence-based protocols for healthcare professionals working with underserved populations.</p>
-        </div>
-    </section>
-
-    <main class="container">
-        <div id="main-content">
-            <div class="card">
-                <h5>Browse by Domain</h5>
-                <p>Explore protocols organized by clinical condition or social need.</p>
-                <div class="domain-links">
-                    <a class="domain-link" data-domain="Diabetes">Diabetes (9)</a>
-                    <a class="domain-link" data-domain="Hypertension">Hypertension (1)</a>
-                    <a class="domain-link" data-domain="Depression">Depression (2)</a>
-                    <a class="domain-link" data-domain="Anxiety">Anxiety (2)</a>
-                    <a class="domain-link" data-domain="Substance Use">Substance Use (1)</a>
-                    <a class="domain-link" data-domain="Housing">Housing (3)</a>
-                    <a class="domain-link" data-domain="Food Security">Food Security (1)</a>
-                    <a class="domain-link" data-domain="Transportation">Transportation (1)</a>
-                    <a class="domain-link" data-domain="Asthma">Asthma (1)</a>
-                    <a class="domain-link" data-domain="COPD">COPD (1)</a>
-                    <a class="domain-link" data-domain="Heart Failure">Heart Failure (2)</a>
-                    <a class="domain-link" data-domain="Preventive Screenings">Preventive Screenings (1)</a>
-                    <a class="domain-link" data-domain="Medication Adherence">Medication Adherence (2)</a>
-                    <a class="domain-link" data-domain="Care Transitions">Care Transitions (1)</a>
-                    <a class="domain-link" data-domain="CKD">CKD (1)</a>
-                    <a class="domain-link" data-domain="Post-MI">Post-MI (1)</a>
-                    <a class="domain-link" data-domain="Post-Stroke">Post-Stroke (1)</a>
-                    <a class="domain-link" data-domain="HIV">HIV (1)</a>
-                    <a class="domain-link" data-domain="Vaccination">Vaccination (1)</a>
-                    <a class="domain-link" data-domain="Prenatal">Prenatal (2)</a>
-                    <a class="domain-link" data-domain="Postnatal">Postnatal (2)</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h5>Browse by Role</h5>
-                <p>Find protocols tailored to specific professional roles.</p>
-                <div class="role-links">
-                    <a class="role-link" data-role="Nurse Care Manager">Nurse Care Manager (11)</a>
-                    <a class="role-link" data-role="Clinical Pharmacist">Clinical Pharmacist (2)</a>
-                    <a class="role-link" data-role="Community Health Worker">Community Health Worker (5)</a>
-                    <a class="role-link" data-role="Social Worker (Clinical/Therapy)">Social Worker (Clinical/Therapy)</a>
-                    <a class="role-link" data-role="Care Coordinator">Care Coordinator (2)</a>
-                    <a class="role-link" data-role="Primary Care Provider">Primary Care Provider (10)</a>
-                    <a class="role-link" data-role="Pharmacy Technician">Pharmacy Technician (1)</a>
-                    <a class="role-link" data-role="Doula">Doula (3)</a>
-                    <a class="role-link" data-role="Nurse">Nurse (1)</a>
-                    <a class="role-link" data-role="Care Manager">Care Manager (1)</a>
-                    <a class="role-link" data-role="Behavioral Health Specialist">Behavioral Health Specialist (1)</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h5>Search the Library</h5>
-                <p>Search for specific protocols across all domains and roles.</p>
-                <div class="search-box">
-                    <input type="text" class="search-input" id="search-input" placeholder="e.g., diabetes management, medication adherence">
-                    <button class="search-button" id="search-button">Search</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <h5>Library Statistics</h5>
-                <ul class="stats-list">
-                    <li>Total Protocols: <span id="total-protocols">0</span></li>
-                    <li>Domains Covered: <span id="total-domains">0</span></li>
-                    <li>Professional Roles: <span id="total-roles">0</span></li>
+            <a class="navbar-brand" href="#">Waymark Population Health Evidence Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#browse">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#search">Search</a>
+                    </li>
                 </ul>
             </div>
         </div>
+    </nav>
 
-        <div id="protocols-container">
-            <a class="back-button" id="back-button">← Back to Home</a>
-            <h2 id="protocols-title">Protocols</h2>
-            <div id="protocols-list"></div>
-        </div>
-    </main>
-
-    <footer>
+    <section class="hero">
         <div class="container">
-            <p>© 2025, Waymark, <a href="https://www.waymarkcare.com" class="footer-link" target="_blank">www.waymarkcare.com</a></p>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 mb-4">Welcome to the Waymark Population Health Evidence Library</h1>
+                    <p class="lead">A comprehensive collection of protocols for non-physician population health team members. While physicians receive standard national guidelines from specialty societies, this repository is intended to support non-physician population health roles with evidence-based, peer-reviewed protocols, with a focus on marginalized and underserved patients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5" id="browse">
+        <h2 class="mb-4">Browse by Domain</h2>
+        <p>Explore protocols organized by clinical condition or social need.</p>
+        <div class="row" id="domain-container">
+            <!-- Domain cards will be dynamically inserted here -->
+        </div>
+
+        <h2 class="mb-4 mt-5">Browse by Role</h2>
+        <p>Find protocols tailored to specific professional roles.</p>
+        <div class="row" id="role-container">
+            <!-- Role cards will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <section class="container my-5" id="search">
+        <h2 class="mb-4">Search Protocols</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="search-input" placeholder="Search by keyword, domain, or role...">
+                    <button class="btn btn-primary" type="button" id="search-button">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4" id="search-results">
+            <!-- Search results will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <section class="container my-5" id="protocol-detail" style="display: none;">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <button class="btn btn-outline-primary mb-4" id="back-button">← Back to Results</button>
+                <div id="protocol-detail-content">
+                    <!-- Protocol detail will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About Waymark Population Health Evidence Library</h5>
+                    <p>A collection of evidence-based protocols for healthcare professionals working with underserved populations.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Developed by Sanjay Basu MD PhD, Waymark and University of California San Francisco</p>
+                    <p>&copy; 2025 Waymark. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Include the protocols data first -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="all_recommendations.js"></script>
-    
-    <!-- Include the improved count display script -->
-    <script src="improved_count_display.js"></script>
-
+    <script src="direct_role_fix.js"></script>
     <script>
-        // DOM Elements
-        const mainContent = document.getElementById('main-content');
-        const protocolsContainer = document.getElementById('protocols-container');
-        const protocolsTitle = document.getElementById('protocols-title');
-        const protocolsList = document.getElementById('protocols-list');
-        const backButton = document.getElementById('back-button');
-        const homeLink = document.getElementById('home-link');
-        const homeNav = document.getElementById('home-nav');
-        const browseNav = document.getElementById('browse-nav');
-        const searchNav = document.getElementById('search-nav');
-        const searchInput = document.getElementById('search-input');
-        const searchButton = document.getElementById('search-button');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure data is available
+            if (typeof allProtocols === 'undefined' && typeof allRecommendations !== 'undefined') {
+                window.allProtocols = allRecommendations;
+            } else if (typeof allProtocols === 'undefined') {
+                console.error('Protocol data not found!');
+                return;
+            }
 
-        // Add event listeners
-        document.querySelectorAll('.domain-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const domain = this.getAttribute('data-domain');
-                showProtocolsByDomain(domain);
+            // Extract all protocols from the nested structure
+            const extractProtocols = () => {
+                let protocols = [];
+                allProtocols.forEach(group => {
+                    if (group.recommendations) {
+                        protocols = protocols.concat(group.recommendations);
+                    }
+                });
+                return protocols;
+            };
+
+            const protocols = extractProtocols();
+            
+            // Get unique domains and count protocols in each
+            const domainCounts = {};
+            protocols.forEach(protocol => {
+                if (!domainCounts[protocol.domain]) {
+                    domainCounts[protocol.domain] = 0;
+                }
+                domainCounts[protocol.domain]++;
             });
-        });
-
-        document.querySelectorAll('.role-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const role = this.getAttribute('data-role');
-                showProtocolsByRole(role);
+            
+            // Get unique roles and count protocols for each
+            const roleCounts = {};
+            protocols.forEach(protocol => {
+                if (!roleCounts[protocol.role]) {
+                    roleCounts[protocol.role] = 0;
+                }
+                roleCounts[protocol.role]++;
             });
-        });
-
-        backButton.addEventListener('click', showHome);
-        homeLink.addEventListener('click', showHome);
-        homeNav.addEventListener('click', showHome);
-        browseNav.addEventListener('click', showHome);
-        searchNav.addEventListener('click', function() {
-            searchInput.focus();
-        });
-
-        searchButton.addEventListener('click', function() {
-            const query = searchInput.value.trim();
-            if (query) {
-                searchProtocols(query);
+            
+            // Populate domain cards
+            const domainContainer = document.getElementById('domain-container');
+            Object.keys(domainCounts).sort().forEach(domain => {
+                const col = document.createElement('div');
+                col.className = 'col-md-3 col-sm-6 mb-4';
+                
+                const card = document.createElement('div');
+                card.className = 'card domain-card h-100';
+                
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body text-center';
+                
+                const link = document.createElement('a');
+                link.href = `#domain=${encodeURIComponent(domain)}`;
+                link.className = 'text-decoration-none';
+                link.onclick = function(e) {
+                    e.preventDefault();
+                    showProtocolsByDomain(domain);
+                };
+                
+                const title = document.createElement('h5');
+                title.className = 'card-title';
+                title.textContent = `${domain} (${domainCounts[domain]})`;
+                
+                link.appendChild(title);
+                cardBody.appendChild(link);
+                card.appendChild(cardBody);
+                col.appendChild(card);
+                domainContainer.appendChild(col);
+            });
+            
+            // Populate role cards
+            const roleContainer = document.getElementById('role-container');
+            Object.keys(roleCounts).sort().forEach(role => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4 col-sm-6 mb-4';
+                
+                const card = document.createElement('div');
+                card.className = 'card role-card h-100';
+                
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body text-center';
+                
+                const link = document.createElement('a');
+                link.href = `#role=${encodeURIComponent(role)}`;
+                link.className = 'text-decoration-none';
+                link.onclick = function(e) {
+                    e.preventDefault();
+                    showProtocolsByRole(role);
+                };
+                
+                const title = document.createElement('h5');
+                title.className = 'card-title';
+                title.textContent = `${role} (${roleCounts[role]})`;
+                
+                link.appendChild(title);
+                cardBody.appendChild(link);
+                card.appendChild(cardBody);
+                col.appendChild(card);
+                roleContainer.appendChild(col);
+            });
+            
+            // Set up search functionality
+            document.getElementById('search-button').addEventListener('click', function() {
+                const searchTerm = document.getElementById('search-input').value.toLowerCase();
+                if (searchTerm) {
+                    searchProtocols(searchTerm);
+                }
+            });
+            
+            document.getElementById('search-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+                    if (searchTerm) {
+                        searchProtocols(searchTerm);
+                    }
+                }
+            });
+            
+            // Set up back button
+            document.getElementById('back-button').addEventListener('click', function() {
+                document.getElementById('protocol-detail').style.display = 'none';
+                document.getElementById('search').style.display = 'block';
+                document.getElementById('browse').style.display = 'block';
+            });
+            
+            // Function to show protocols by domain
+            function showProtocolsByDomain(domain) {
+                const filteredProtocols = protocols.filter(p => p.domain === domain);
+                displaySearchResults(filteredProtocols, `Protocols for ${domain}`);
+            }
+            
+            // Function to show protocols by role
+            function showProtocolsByRole(role) {
+                const filteredProtocols = protocols.filter(p => p.role === role);
+                displaySearchResults(filteredProtocols, `Protocols for ${role}`);
+            }
+            
+            // Function to search protocols
+            function searchProtocols(term) {
+                const filteredProtocols = protocols.filter(p => 
+                    p.title.toLowerCase().includes(term) ||
+                    p.domain.toLowerCase().includes(term) ||
+                    p.role.toLowerCase().includes(term) ||
+                    p.implementation_guidance.toLowerCase().includes(term) ||
+                    p.expected_outcomes.toLowerCase().includes(term) ||
+                    (p.tags && p.tags.some(tag => tag.toLowerCase().includes(term)))
+                );
+                
+                displaySearchResults(filteredProtocols, `Search Results for "${term}"`);
+            }
+            
+            // Function to display search results
+            function displaySearchResults(results, heading) {
+                const searchResults = document.getElementById('search-results');
+                searchResults.innerHTML = '';
+                
+                const headingElement = document.createElement('h3');
+                headingElement.className = 'mb-4';
+                headingElement.textContent = heading;
+                searchResults.appendChild(headingElement);
+                
+                if (results.length === 0) {
+                    const noResults = document.createElement('p');
+                    noResults.textContent = 'No protocols found matching your criteria.';
+                    searchResults.appendChild(noResults);
+                    return;
+                }
+                
+                results.forEach(protocol => {
+                    const col = document.createElement('div');
+                    col.className = 'col-md-6 mb-4';
+                    
+                    const card = document.createElement('div');
+                    card.className = 'card h-100';
+                    
+                    const cardBody = document.createElement('div');
+                    cardBody.className = 'card-body';
+                    
+                    const title = document.createElement('h5');
+                    title.className = 'card-title';
+                    title.textContent = protocol.title;
+                    
+                    const domain = document.createElement('p');
+                    domain.className = 'card-text';
+                    domain.innerHTML = `<strong>Domain:</strong> ${protocol.domain}`;
+                    
+                    const role = document.createElement('p');
+                    role.className = 'card-text';
+                    role.innerHTML = `<strong>Role:</strong> ${protocol.role}`;
+                    
+                    const evidence = document.createElement('p');
+                    evidence.className = 'card-text';
+                    evidence.innerHTML = `<strong>Evidence Level:</strong> ${protocol.evidence_level}`;
+                    
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.className = 'btn btn-primary';
+                    link.textContent = 'View Details';
+                    link.onclick = function(e) {
+                        e.preventDefault();
+                        showProtocolDetail(protocol);
+                    };
+                    
+                    cardBody.appendChild(title);
+                    cardBody.appendChild(domain);
+                    cardBody.appendChild(role);
+                    cardBody.appendChild(evidence);
+                    cardBody.appendChild(link);
+                    
+                    card.appendChild(cardBody);
+                    col.appendChild(card);
+                    searchResults.appendChild(col);
+                });
+                
+                // Scroll to results
+                searchResults.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Function to show protocol detail
+            function showProtocolDetail(protocol) {
+                document.getElementById('browse').style.display = 'none';
+                document.getElementById('search').style.display = 'none';
+                
+                const detailContent = document.getElementById('protocol-detail-content');
+                detailContent.innerHTML = '';
+                
+                const title = document.createElement('h2');
+                title.className = 'mb-4';
+                title.textContent = protocol.title;
+                
+                const meta = document.createElement('div');
+                meta.className = 'card mb-4';
+                
+                const metaBody = document.createElement('div');
+                metaBody.className = 'card-body';
+                
+                const domain = document.createElement('p');
+                domain.className = 'mb-2';
+                domain.innerHTML = `<strong>Domain:</strong> ${protocol.domain}`;
+                
+                const role = document.createElement('p');
+                role.className = 'mb-2';
+                role.innerHTML = `<strong>Role:</strong> ${protocol.role}`;
+                
+                const evidence = document.createElement('p');
+                evidence.className = 'mb-2';
+                evidence.innerHTML = `<strong>Evidence Level:</strong> ${protocol.evidence_level}`;
+                
+                const updated = document.createElement('p');
+                updated.className = 'mb-0';
+                updated.innerHTML = `<strong>Last Updated:</strong> ${protocol.last_updated}`;
+                
+                metaBody.appendChild(domain);
+                metaBody.appendChild(role);
+                metaBody.appendChild(evidence);
+                metaBody.appendChild(updated);
+                meta.appendChild(metaBody);
+                
+                const guidance = document.createElement('div');
+                guidance.className = 'card mb-4';
+                
+                const guidanceHeader = document.createElement('div');
+                guidanceHeader.className = 'card-header';
+                guidanceHeader.textContent = 'Implementation Guidance';
+                
+                const guidanceBody = document.createElement('div');
+                guidanceBody.className = 'card-body';
+                guidanceBody.textContent = protocol.implementation_guidance;
+                
+                guidance.appendChild(guidanceHeader);
+                guidance.appendChild(guidanceBody);
+                
+                const outcomes = document.createElement('div');
+                outcomes.className = 'card mb-4';
+                
+                const outcomesHeader = document.createElement('div');
+                outcomesHeader.className = 'card-header';
+                outcomesHeader.textContent = 'Expected Outcomes';
+                
+                const outcomesBody = document.createElement('div');
+                outcomesBody.className = 'card-body';
+                outcomesBody.textContent = protocol.expected_outcomes;
+                
+                outcomes.appendChild(outcomesHeader);
+                outcomes.appendChild(outcomesBody);
+                
+                const population = document.createElement('div');
+                population.className = 'card mb-4';
+                
+                const populationHeader = document.createElement('div');
+                populationHeader.className = 'card-header';
+                populationHeader.textContent = 'Target Population';
+                
+                const populationBody = document.createElement('div');
+                populationBody.className = 'card-body';
+                populationBody.textContent = protocol.target_population;
+                
+                population.appendChild(populationHeader);
+                population.appendChild(populationBody);
+                
+                const citation = document.createElement('div');
+                citation.className = 'card mb-4';
+                
+                const citationHeader = document.createElement('div');
+                citationHeader.className = 'card-header';
+                citationHeader.textContent = 'Citation';
+                
+                const citationBody = document.createElement('div');
+                citationBody.className = 'card-body';
+                citationBody.textContent = protocol.citation;
+                
+                citation.appendChild(citationHeader);
+                citation.appendChild(citationBody);
+                
+                const tags = document.createElement('div');
+                tags.className = 'mb-4';
+                
+                const tagsTitle = document.createElement('h5');
+                tagsTitle.textContent = 'Tags';
+                
+                const tagsList = document.createElement('div');
+                
+                if (protocol.tags && protocol.tags.length > 0) {
+                    protocol.tags.forEach(tag => {
+                        const badge = document.createElement('span');
+                        badge.className = 'badge bg-secondary me-2';
+                        badge.textContent = tag;
+                        tagsList.appendChild(badge);
+                    });
+                } else {
+                    tagsList.textContent = 'No tags available';
+                }
+                
+                tags.appendChild(tagsTitle);
+                tags.appendChild(tagsList);
+                
+                detailContent.appendChild(title);
+                detailContent.appendChild(meta);
+                detailContent.appendChild(guidance);
+                detailContent.appendChild(outcomes);
+                detailContent.appendChild(population);
+                detailContent.appendChild(citation);
+                detailContent.appendChild(tags);
+                
+                document.getElementById('protocol-detail').style.display = 'block';
+                document.getElementById('protocol-detail').scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Check URL for parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainParam = urlParams.get('domain');
+            const roleParam = urlParams.get('role');
+            const searchParam = urlParams.get('search');
+            
+            if (domainParam) {
+                showProtocolsByDomain(domainParam);
+            } else if (roleParam) {
+                showProtocolsByRole(roleParam);
+            } else if (searchParam) {
+                document.getElementById('search-input').value = searchParam;
+                searchProtocols(searchParam);
             }
         });
-
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const query = this.value.trim();
-                if (query) {
-                    searchProtocols(query);
-                }
-            }
-        });
-
-        // Function to show protocols by domain
-        function showProtocolsByDomain(domain) {
-            mainContent.style.display = 'none';
-            protocolsContainer.style.display = 'block';
-            protocolsTitle.textContent = domain + ' Protocols';
-            protocolsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
-
-            setTimeout(() => {
-                let html = '';
-                let found = false;
-
-                // Use allProtocols if available, otherwise fall back to allRecommendations
-                const dataSource = window.allProtocols || window.allRecommendations || [];
-                
-                dataSource.forEach(category => {
-                    if (category.recommendations) {
-                        const filteredProtocols = category.recommendations.filter(protocol => protocol.domain === domain);
-                        
-                        if (filteredProtocols.length > 0) {
-                            found = true;
-                            filteredProtocols.forEach(protocol => {
-                                html += createProtocolCard(protocol);
-                            });
-                        }
-                    }
-                });
-
-                if (!found) {
-                    html = '<div class="no-results">No protocols found for this domain.</div>';
-                }
-
-                protocolsList.innerHTML = html;
-            }, 500);
-        }
-
-        // Function to show protocols by role
-        function showProtocolsByRole(role) {
-            mainContent.style.display = 'none';
-            protocolsContainer.style.display = 'block';
-            protocolsTitle.textContent = role + ' Protocols';
-            protocolsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
-
-            setTimeout(() => {
-                let html = '';
-                let found = false;
-
-                // Use allProtocols if available, otherwise fall back to allRecommendations
-                const dataSource = window.allProtocols || window.allRecommendations || [];
-                
-                dataSource.forEach(category => {
-                    if (category.recommendations) {
-                        const filteredProtocols = category.recommendations.filter(protocol => protocol.role === role);
-                        
-                        if (filteredProtocols.length > 0) {
-                            found = true;
-                            filteredProtocols.forEach(protocol => {
-                                html += createProtocolCard(protocol);
-                            });
-                        }
-                    }
-                });
-
-                if (!found) {
-                    html = '<div class="no-results">No protocols found for this role.</div>';
-                }
-
-                protocolsList.innerHTML = html;
-            }, 500);
-        }
-
-        // Function to search protocols
-        function searchProtocols(query) {
-            query = query.toLowerCase();
-            
-            mainContent.style.display = 'none';
-            protocolsContainer.style.display = 'block';
-            protocolsTitle.textContent = 'Search Results: "' + query + '"';
-            protocolsList.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
-
-            setTimeout(() => {
-                let html = '';
-                let found = false;
-
-                // Use allProtocols if available, otherwise fall back to allRecommendations
-                const dataSource = window.allProtocols || window.allRecommendations || [];
-                
-                dataSource.forEach(category => {
-                    if (category.recommendations) {
-                        const filteredProtocols = category.recommendations.filter(protocol => {
-                            return (
-                                protocol.title.toLowerCase().includes(query) ||
-                                protocol.domain.toLowerCase().includes(query) ||
-                                protocol.role.toLowerCase().includes(query) ||
-                                protocol.implementation_guidance.toLowerCase().includes(query) ||
-                                protocol.expected_outcomes.toLowerCase().includes(query) ||
-                                protocol.target_population.toLowerCase().includes(query) ||
-                                (protocol.tags && protocol.tags.some(tag => tag.toLowerCase().includes(query)))
-                            );
-                        });
-                        
-                        if (filteredProtocols.length > 0) {
-                            found = true;
-                            filteredProtocols.forEach(protocol => {
-                                html += createProtocolCard(protocol, query);
-                            });
-                        }
-                    }
-                });
-
-                if (!found) {
-                    html = '<div class="no-results">No protocols found matching your search.</div>';
-                }
-
-                protocolsList.innerHTML = html;
-            }, 500);
-        }
-
-        // Function to create protocol card HTML
-        function createProtocolCard(protocol, highlightQuery = '') {
-            let html = `
-                <div class="protocol-card">
-                    <div class="protocol-title">${highlightText(protocol.title, highlightQuery)}</div>
-                    <div class="protocol-meta">
-                        <span>Domain: ${highlightText(protocol.domain, highlightQuery)}</span>
-                        <span>Role: ${highlightText(protocol.role, highlightQuery)}</span>
-                        <span>Evidence Level: <span class="evidence-level evidence-${protocol.evidence_level.charAt(0).toLowerCase()}">${protocol.evidence_level}</span></span>
-                    </div>
-                    <div class="protocol-content">
-                        <p><strong>Implementation Guidance:</strong> ${highlightText(protocol.implementation_guidance, highlightQuery)}</p>
-                        <p><strong>Expected Outcomes:</strong> ${highlightText(protocol.expected_outcomes, highlightQuery)}</p>
-                        <p><strong>Target Population:</strong> ${highlightText(protocol.target_population, highlightQuery)}</p>
-                    </div>
-                    <div class="protocol-citation">
-                        <p><strong>Citation:</strong> ${protocol.citation}</p>
-                    </div>
-                </div>
-            `;
-            return html;
-        }
-
-        // Function to highlight search terms
-        function highlightText(text, query) {
-            if (!query) return text;
-            
-            const regex = new RegExp('(' + query + ')', 'gi');
-            return text.replace(regex, '<span class="search-highlight">$1</span>');
-        }
-
-        // Function to show home screen
-        function showHome() {
-            protocolsContainer.style.display = 'none';
-            mainContent.style.display = 'block';
-        }
     </script>
 </body>
 </html>
