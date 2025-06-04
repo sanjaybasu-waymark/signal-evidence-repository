@@ -132,44 +132,83 @@
     <script src="fixed_count_display.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM fully loaded, initializing protocol display");
+            
             // Ensure data is available
             if (typeof allProtocols === 'undefined' && typeof allRecommendations !== 'undefined') {
                 window.allProtocols = allRecommendations;
-            } else if (typeof allProtocols === 'undefined') {
-                console.error('Protocol data not found!');
-                return;
+                console.log("Created allProtocols from allRecommendations for compatibility");
+            } else if (typeof allRecommendations === 'undefined' && typeof allProtocols !== 'undefined') {
+                window.allRecommendations = allProtocols;
+                console.log("Created allRecommendations from allProtocols for compatibility");
             }
-
-            // Extract all protocols from the nested structure
-            const extractProtocols = () => {
+            
+            // Get the protocols array, handling both flat and nested structures
+            const getProtocols = () => {
+                // Check if we have a flat array (recommendations-data.js format)
+                if (Array.isArray(allRecommendations) && allRecommendations.length > 0 && !allRecommendations[0].recommendations) {
+                    console.log("Using flat array structure from allRecommendations");
+                    return allRecommendations;
+                }
+                
+                // Check if we have a flat array in allProtocols
+                if (Array.isArray(allProtocols) && allProtocols.length > 0 && !allProtocols[0].recommendations) {
+                    console.log("Using flat array structure from allProtocols");
+                    return allProtocols;
+                }
+                
+                // Handle nested structure (all_recommendations.js format)
                 let protocols = [];
-                allProtocols.forEach(group => {
-                    if (group.recommendations) {
-                        protocols = protocols.concat(group.recommendations);
+                try {
+                    if (Array.isArray(allProtocols)) {
+                        allProtocols.forEach(group => {
+                            if (group.recommendations) {
+                                protocols = protocols.concat(group.recommendations);
+                            }
+                        });
+                        console.log("Extracted protocols from nested structure");
                     }
-                });
+                } catch (e) {
+                    console.error("Error extracting protocols:", e);
+                }
+                
                 return protocols;
             };
 
-            const protocols = extractProtocols();
+            const protocols = getProtocols();
+            console.log(`Found ${protocols.length} protocols`);
+            
+            if (protocols.length === 0) {
+                console.error("No protocols found in data!");
+                document.getElementById('domain-container').innerHTML = '<div class="col-12"><div class="alert alert-danger">No protocols found. Please check data files.</div></div>';
+                document.getElementById('role-container').innerHTML = '<div class="col-12"><div class="alert alert-danger">No protocols found. Please check data files.</div></div>';
+                return;
+            }
             
             // Get unique domains and count protocols in each
             const domainCounts = {};
             protocols.forEach(protocol => {
-                if (!domainCounts[protocol.domain]) {
-                    domainCounts[protocol.domain] = 0;
+                if (protocol && protocol.domain) {
+                    if (!domainCounts[protocol.domain]) {
+                        domainCounts[protocol.domain] = 0;
+                    }
+                    domainCounts[protocol.domain]++;
                 }
-                domainCounts[protocol.domain]++;
             });
             
             // Get unique roles and count protocols for each
             const roleCounts = {};
             protocols.forEach(protocol => {
-                if (!roleCounts[protocol.role]) {
-                    roleCounts[protocol.role] = 0;
+                if (protocol && protocol.role) {
+                    if (!roleCounts[protocol.role]) {
+                        roleCounts[protocol.role] = 0;
+                    }
+                    roleCounts[protocol.role]++;
                 }
-                roleCounts[protocol.role]++;
             });
+            
+            console.log("Domains found:", Object.keys(domainCounts).length);
+            console.log("Roles found:", Object.keys(roleCounts).length);
             
             // Populate domain cards
             const domainContainer = document.getElementById('domain-container');
@@ -367,7 +406,7 @@
                 meta.innerHTML = `
                     <p><strong>Domain:</strong> ${protocol.domain}</p>
                     <p><strong>Role:</strong> ${protocol.role}</p>
-                    <p><strong>Evidence Level:</strong> ${protocol.evidence_level}</p>
+                    <p><strong>Evidence Level:</strong> ${protocol.evidence_level || 'Not specified'}</p>
                 `;
                 
                 const guidance = document.createElement('div');
@@ -379,7 +418,7 @@
                 
                 const guidanceBody = document.createElement('div');
                 guidanceBody.className = 'card-body';
-                guidanceBody.textContent = protocol.implementation_guidance;
+                guidanceBody.textContent = protocol.implementation_guidance || protocol.implementation || 'Not provided';
                 
                 guidance.appendChild(guidanceHeader);
                 guidance.appendChild(guidanceBody);
@@ -393,7 +432,7 @@
                 
                 const outcomesBody = document.createElement('div');
                 outcomesBody.className = 'card-body';
-                outcomesBody.textContent = protocol.expected_outcomes;
+                outcomesBody.textContent = protocol.expected_outcomes || protocol.outcomes || 'Not provided';
                 
                 outcomes.appendChild(outcomesHeader);
                 outcomes.appendChild(outcomesBody);
@@ -407,7 +446,7 @@
                 
                 const populationBody = document.createElement('div');
                 populationBody.className = 'card-body';
-                populationBody.textContent = protocol.target_population;
+                populationBody.textContent = protocol.target_population || 'Not specified';
                 
                 population.appendChild(populationHeader);
                 population.appendChild(populationBody);
@@ -421,7 +460,7 @@
                 
                 const citationBody = document.createElement('div');
                 citationBody.className = 'card-body';
-                citationBody.textContent = protocol.citation;
+                citationBody.textContent = protocol.citation || protocol.evidence || 'Not provided';
                 
                 citation.appendChild(citationHeader);
                 citation.appendChild(citationBody);
