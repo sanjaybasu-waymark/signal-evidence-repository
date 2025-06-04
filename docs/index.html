@@ -129,7 +129,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="recommendations-data.js"></script>
-    <script src="fixed_count_display.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             console.log("DOM fully loaded, initializing protocol display");
@@ -143,17 +142,37 @@
                 console.log("Created allRecommendations from allProtocols for compatibility");
             }
             
+            // Domain normalization mapping
+            const domainNormalizationMap = {
+                'ckd': 'Chronic Kidney Disease',
+                'post-mi': 'Post MI',
+                'post-stroke': 'Post Stroke',
+                'food security': 'Food Insecurity',
+                'transportation': 'Transportation Insecurity',
+                'substance use': 'Substance Use Disorders'
+            };
+            
             // Role consolidation mapping
             const roleConsolidationMap = {
-                "Behavioral Health Specialist": "Social Worker (Clinical/Therapy)",
-                "Nurse": "Nurse Care Manager",
-                "Care Manager": "Nurse Care Manager",
-                "Social Worker (Non-Clinical)": "Care Coordinator"
+                'behavioral health specialist': 'Social Worker (Clinical/Therapy)',
+                'behavioral health provider': 'Social Worker (Clinical/Therapy)',
+                'nurse': 'Nurse Care Manager',
+                'care manager': 'Nurse Care Manager',
+                'social worker (non-clinical)': 'Care Coordinator',
+                'social worker': 'Social Worker (Clinical/Therapy)',
+                'dietitian': 'Dietitian/Nutritionist'
             };
             
             // Function to check if a protocol involves labs or medicines
             const involvesLabsOrMedicines = (protocol) => {
-                const keywords = ["lab", "test", "medication", "medicine", "drug", "prescription", "dose", "therapy", "pharmacotherapy", "titration", "regimen"];
+                const keywords = [
+                    "lab", "test", "medication", "medicine", "drug", "prescription", 
+                    "dose", "therapy", "pharmacotherapy", "titration", "regimen",
+                    "pill", "tablet", "capsule", "injection", "infusion", "pharmacy",
+                    "blood test", "urine test", "specimen", "sample", "diagnostic",
+                    "biomarker", "marker", "assay", "panel", "screen", "screening"
+                ];
+                
                 const content = [
                     protocol.title || "",
                     protocol.implementation_guidance || protocol.implementation || "",
@@ -164,8 +183,76 @@
                 return keywords.some(keyword => content.includes(keyword));
             };
             
+            // Function to check if a protocol involves nutritional counseling
+            const involvesNutritionalCounseling = (protocol) => {
+                const keywords = [
+                    "nutrition", "diet", "food", "meal", "eating", "dietary", 
+                    "calorie", "carbohydrate", "protein", "fat", "vitamin", 
+                    "mineral", "nutrient", "nutritional", "nutritionist", "dietitian",
+                    "dietician", "eating pattern", "food plan", "meal plan", "food diary",
+                    "food journal", "food intake", "dietary assessment", "dietary counseling",
+                    "nutritional assessment", "nutritional counseling", "dietary recommendation",
+                    "nutritional recommendation", "food choice", "food selection", "food preparation"
+                ];
+                
+                const content = [
+                    protocol.title || "",
+                    protocol.implementation_guidance || protocol.implementation || "",
+                    protocol.expected_outcomes || protocol.outcomes || "",
+                    protocol.target_population || ""
+                ].join(" ").toLowerCase();
+                
+                return keywords.some(keyword => content.includes(keyword));
+            };
+            
+            // Function to determine best role for Primary Care Provider protocols
+            const determineBestRoleForPrimaryCareProvider = (protocol) => {
+                // Check if it involves labs or medicines
+                if (involvesLabsOrMedicines(protocol)) {
+                    return "Clinical Pharmacist";
+                }
+                
+                // Check if it involves nutritional counseling
+                if (involvesNutritionalCounseling(protocol)) {
+                    return "Dietitian/Nutritionist";
+                }
+                
+                // Check domain-specific assignments
+                const domain = (protocol.domain || "").toLowerCase();
+                
+                // Mental health domains to Social Worker (Clinical/Therapy)
+                if (/depression|anxiety|mental health|behavioral health/.test(domain)) {
+                    return "Social Worker (Clinical/Therapy)";
+                }
+                
+                // Care coordination domains to Care Coordinator
+                if (/care transition|coordination|referral/.test(domain)) {
+                    return "Care Coordinator";
+                }
+                
+                // Chronic disease management to Nurse Care Manager
+                if (/diabetes|hypertension|heart failure|copd|ckd|chronic kidney disease/.test(domain)) {
+                    return "Nurse Care Manager";
+                }
+                
+                // Maternal health to Doula
+                if (/prenatal|postnatal|maternal/.test(domain)) {
+                    return "Doula";
+                }
+                
+                // Default to Nurse Care Manager for remaining protocols
+                return "Nurse Care Manager";
+            };
+            
+            // Normalize domain name
+            const normalizeDomain = (domain) => {
+                if (!domain) return '';
+                const lowerDomain = domain.toLowerCase().trim();
+                return domainNormalizationMap[lowerDomain] || domain;
+            };
+            
             // Get the protocols array, handling both flat and nested structures
-            const getProtocols = () => {
+            const getRawProtocols = () => {
                 // Check if we have a flat array (recommendations-data.js format)
                 if (Array.isArray(allRecommendations) && allRecommendations.length > 0 && !allRecommendations[0].recommendations) {
                     console.log("Using flat array structure from allRecommendations");
@@ -197,23 +284,47 @@
             };
 
             // Get all protocols and apply role consolidation
-            const rawProtocols = getProtocols();
+            const rawProtocols = getRawProtocols();
             console.log(`Found ${rawProtocols.length} raw protocols`);
             
             // Apply role consolidation and reassignment
             const protocols = rawProtocols.map(protocol => {
                 const newProtocol = {...protocol};
                 
-                // Apply role consolidation for specific roles
-                if (protocol.role && roleConsolidationMap[protocol.role]) {
-                    newProtocol.role = roleConsolidationMap[protocol.role];
-                    console.log(`Consolidated role: ${protocol.role} -> ${newProtocol.role}`);
+                // Normalize domain if needed
+                if (newProtocol.domain) {
+                    const normalizedDomain = normalizeDomain(newProtocol.domain);
+                    if (normalizedDomain !== newProtocol.domain) {
+                        console.log(`Normalized domain: ${newProtocol.domain} -> ${normalizedDomain}`);
+                        newProtocol.domain = normalizedDomain;
+                    }
                 }
                 
-                // Special handling for Primary Care Provider
-                if (protocol.role === "Primary Care Provider" && involvesLabsOrMedicines(protocol)) {
-                    newProtocol.role = "Clinical Pharmacist";
-                    console.log(`Reassigned Primary Care Provider protocol to Clinical Pharmacist: ${protocol.title}`);
+                // Apply role consolidation for specific roles
+                if (newProtocol.role) {
+                    const lowerRole = newProtocol.role.toLowerCase();
+                    
+                    // Handle Primary Care Provider - reclassify to most relevant role
+                    if (lowerRole === 'primary care provider') {
+                        const newRole = determineBestRoleForPrimaryCareProvider(newProtocol);
+                        console.log(`Reclassified Primary Care Provider protocol to ${newRole}: ${newProtocol.title}`);
+                        newProtocol.role = newRole;
+                    }
+                    // Handle Dietitian - rename to Dietitian/Nutritionist
+                    else if (lowerRole === 'dietitian') {
+                        newProtocol.role = 'Dietitian/Nutritionist';
+                        console.log(`Renamed Dietitian to Dietitian/Nutritionist: ${newProtocol.title}`);
+                    }
+                    // Handle other nutritional counseling protocols
+                    else if (involvesNutritionalCounseling(newProtocol) && lowerRole !== 'dietitian/nutritionist') {
+                        console.log(`Reassigned nutritional counseling protocol to Dietitian/Nutritionist: ${newProtocol.title} (was ${newProtocol.role})`);
+                        newProtocol.role = 'Dietitian/Nutritionist';
+                    }
+                    // Apply other role consolidations
+                    else if (roleConsolidationMap[lowerRole]) {
+                        console.log(`Consolidated role: ${newProtocol.role} -> ${roleConsolidationMap[lowerRole]}`);
+                        newProtocol.role = roleConsolidationMap[lowerRole];
+                    }
                 }
                 
                 return newProtocol;
@@ -348,9 +459,9 @@
             // Function to search protocols
             function searchProtocols(term) {
                 const filteredProtocols = protocols.filter(p => 
-                    p.title.toLowerCase().includes(term) ||
-                    p.domain.toLowerCase().includes(term) ||
-                    p.role.toLowerCase().includes(term) ||
+                    (p.title && p.title.toLowerCase().includes(term)) ||
+                    (p.domain && p.domain.toLowerCase().includes(term)) ||
+                    (p.role && p.role.toLowerCase().includes(term)) ||
                     (p.implementation_guidance && p.implementation_guidance.toLowerCase().includes(term)) ||
                     (p.implementation && p.implementation.toLowerCase().includes(term)) ||
                     (p.expected_outcomes && p.expected_outcomes.toLowerCase().includes(term)) ||
