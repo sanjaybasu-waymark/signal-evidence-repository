@@ -1,125 +1,116 @@
-// Fixed count calculation for GitHub Pages protocol display
-// This script ensures protocols display correctly regardless of variable naming and accurately counts all protocols
+// Fixed count calculation for GitHub Pages
+// This script ensures accurate protocol counts are displayed
 
-// Check if allRecommendations exists (from all_recommendations.js)
-if (typeof allRecommendations !== 'undefined' && !Array.isArray(window.allProtocols)) {
-  console.log("Compatibility fix: Using allRecommendations as data source");
-  window.allProtocols = allRecommendations;
-}
-
-// Check if allProtocols exists (from protocols-data.js)
-if (typeof allProtocols !== 'undefined' && !Array.isArray(window.allRecommendations)) {
-  console.log("Compatibility fix: Using allProtocols as data source");
-  window.allRecommendations = allProtocols;
-}
-
-// If neither exists, create empty arrays to prevent errors
-if (typeof allRecommendations === 'undefined') {
-  console.warn("Warning: No recommendations data found");
-  window.allRecommendations = [];
-}
-
-if (typeof allProtocols === 'undefined') {
-  console.warn("Warning: No protocols data found");
-  window.allProtocols = [];
-}
-
-// Calculate and log the actual count for debugging
-const totalProtocols = window.allProtocols.reduce((sum, category) => {
-  if (category.recommendations && Array.isArray(category.recommendations)) {
-    return sum + category.recommendations.length;
-  }
-  return sum;
-}, 0);
-
-console.log(`Total protocols/recommendations available: ${totalProtocols}`);
-
-// Function to count protocols by domain
-function countProtocolsByDomain(domain) {
-  let count = 0;
-  window.allProtocols.forEach(category => {
-    if (category.recommendations) {
-      count += category.recommendations.filter(protocol => protocol.domain === domain).length;
-    }
-  });
-  return count;
-}
-
-// Function to count protocols by role
-function countProtocolsByRole(role) {
-  let count = 0;
-  window.allProtocols.forEach(category => {
-    if (category.recommendations) {
-      count += category.recommendations.filter(protocol => protocol.role === role).length;
-    }
-  });
-  return count;
-}
-
-// Function to get unique domains
-function getUniqueDomains() {
-  const domains = new Set();
-  window.allProtocols.forEach(category => {
-    if (category.recommendations) {
-      category.recommendations.forEach(protocol => {
-        if (protocol.domain) {
-          domains.add(protocol.domain);
-        }
-      });
-    }
-  });
-  return Array.from(domains);
-}
-
-// Function to get unique roles
-function getUniqueRoles() {
-  const roles = new Set();
-  window.allProtocols.forEach(category => {
-    if (category.recommendations) {
-      category.recommendations.forEach(protocol => {
-        if (protocol.role) {
-          roles.add(protocol.role);
-        }
-      });
-    }
-  });
-  return Array.from(roles);
-}
-
-// Update domain link counts when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Update domain link counts
-  document.querySelectorAll('.domain-link').forEach(link => {
-    const domain = link.getAttribute('data-domain');
-    if (domain) {
-      const count = countProtocolsByDomain(domain);
-      link.textContent = `${domain} (${count})`;
-    }
-  });
-
-  // Update role link counts
-  document.querySelectorAll('.role-link').forEach(link => {
-    const role = link.getAttribute('data-role');
-    if (role) {
-      const count = countProtocolsByRole(role);
-      link.textContent = `${role} (${count})`;
-    }
-  });
-
-  // Update statistics
-  const totalDomainsElement = document.getElementById('total-domains');
-  const totalRolesElement = document.getElementById('total-roles');
-  const totalProtocolsElement = document.getElementById('total-protocols');
-  
-  if (totalDomainsElement) {
-    totalDomainsElement.textContent = getUniqueDomains().length;
-  }
-  
-  if (totalRolesElement) {
-    totalRolesElement.textContent = getUniqueRoles().length;
-  }
-  
-  if (totalProtocolsElement) {
-    totalProtocolsElement.textContent = totalProtocols;
-  }
+    console.log("DOM fully loaded, running protocol count calculation");
+    updateProtocolCounts();
 });
+
+// Fallback timer in case DOMContentLoaded already fired
+setTimeout(function() {
+    console.log("Running protocol count calculation from timer");
+    updateProtocolCounts();
+}, 1000);
+
+function updateProtocolCounts() {
+    // Ensure compatibility between allProtocols and allRecommendations
+    if (typeof allProtocols === 'undefined' && typeof allRecommendations !== 'undefined') {
+        window.allProtocols = allRecommendations;
+        console.log("Created allProtocols from allRecommendations for compatibility");
+    } else if (typeof allRecommendations === 'undefined' && typeof allProtocols !== 'undefined') {
+        window.allRecommendations = allProtocols;
+        console.log("Created allRecommendations from allProtocols for compatibility");
+    }
+    
+    // Ensure we have protocols data to work with
+    const protocols = window.allProtocols || window.allRecommendations || [];
+    console.log("Total protocols/recommendations available: " + protocols.length);
+    
+    if (protocols.length === 0) {
+        console.error("No protocols/recommendations data found!");
+        return;
+    }
+    
+    // Update repository description
+    const repoDescription = document.querySelector('.repo-description');
+    if (repoDescription) {
+        repoDescription.innerHTML = "A comprehensive collection of protocols for non-physician population health team members. While physicians receive standard national guidelines from specialty societies, this repository is intended to support non-physician population health roles with evidence-based, peer-reviewed protocols, with a focus on marginalized and underserved patients.";
+    }
+    
+    // Count protocols by domain
+    const domainCounts = {};
+    protocols.forEach(protocol => {
+        // Handle domain counts
+        if (protocol.domain) {
+            if (!domainCounts[protocol.domain]) {
+                domainCounts[protocol.domain] = 0;
+            }
+            domainCounts[protocol.domain]++;
+        }
+    });
+    
+    // Update domain counts in the UI
+    Object.keys(domainCounts).forEach(domain => {
+        const count = domainCounts[domain];
+        const domainElement = document.querySelector(`.domain-count[data-domain="${domain}"]`);
+        if (domainElement) {
+            domainElement.textContent = count;
+        }
+    });
+    
+    // Consolidate roles
+    const consolidatedRoles = {
+        "Nurse Care Manager": ["Nurse Care Manager", "Primary Care Provider", "Nurse", "Care Manager"],
+        "Social Worker (Clinical/Therapy)": ["Social Worker (Clinical/Therapy)", "Behavioral Health Specialist"]
+    };
+    
+    // Count protocols by role (with consolidation)
+    const roleCounts = {};
+    protocols.forEach(protocol => {
+        if (protocol.role) {
+            let roleToCount = protocol.role;
+            
+            // Check if this role should be consolidated
+            for (const [mainRole, aliases] of Object.entries(consolidatedRoles)) {
+                if (aliases.includes(protocol.role)) {
+                    roleToCount = mainRole;
+                    break;
+                }
+            }
+            
+            if (!roleCounts[roleToCount]) {
+                roleCounts[roleToCount] = 0;
+            }
+            roleCounts[roleToCount]++;
+        }
+    });
+    
+    // Update role counts in the UI
+    Object.keys(roleCounts).forEach(role => {
+        const count = roleCounts[role];
+        const roleElement = document.querySelector(`.role-count[data-role="${role}"]`);
+        if (roleElement) {
+            roleElement.textContent = count;
+        }
+    });
+    
+    // Hide consolidated roles from the UI
+    for (const [mainRole, aliases] of Object.entries(consolidatedRoles)) {
+        aliases.forEach(alias => {
+            if (alias !== mainRole) {
+                const roleSection = document.querySelector(`.role-section[data-role="${alias}"]`);
+                if (roleSection) {
+                    roleSection.style.display = 'none';
+                }
+            }
+        });
+    }
+    
+    // Update total count
+    const totalElement = document.getElementById('total-count');
+    if (totalElement) {
+        totalElement.textContent = protocols.length;
+    }
+    
+    console.log("Protocol counts updated successfully");
+}
