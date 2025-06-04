@@ -1,5 +1,2043 @@
 const allRecommendations = [
   {
+    "name": "Accessibility",
+    "spec": [
+      {
+        "type": "text",
+        "text": "The Accessibility class provides methods for inspecting Chromium's accessibility tree. The accessibility tree is used by\u21b5assistive technology such as [screen readers](https://en.wikipedia.org/wiki/Screen_reader) or\u21b5[switches](https://en.wikipedia.org/wiki/Switch_access)."
+      },
+      {
+        "type": "text",
+        "text": "Accessibility is a very platform-specific thing. On different platforms, there are different screen readers that might\u21b5have wildly different output."
+      },
+      {
+        "type": "text",
+        "text": "Rendering engines of Chromium, Firefox and WebKit have a concept of \"accessibility tree\", which is then translated into different\u21b5platform-specific APIs. Accessibility namespace gives access to this Accessibility Tree."
+      },
+      {
+        "type": "text",
+        "text": "Most of the accessibility tree gets filtered out when converting from internal browser AX Tree to Platform-specific AX-Tree or by\u21b5assistive technologies themselves. By default, Playwright tries to approximate this filtering, exposing only the\u21b5\"interesting\" nodes of the tree."
+      }
+    ],
+    "langs": {
+      "only": [
+        "csharp",
+        "js",
+        "python"
+      ],
+      "aliases": {},
+      "types": {},
+      "overrides": {}
+    },
+    "comment": "The Accessibility class provides methods for inspecting Chromium's accessibility tree. The accessibility tree is\nused by assistive technology such as [screen readers](https://en.wikipedia.org/wiki/Screen_reader) or\n[switches](https://en.wikipedia.org/wiki/Switch_access).\n\nAccessibility is a very platform-specific thing. On different platforms, there are different screen readers that\nmight have wildly different output.\n\nRendering engines of Chromium, Firefox and WebKit have a concept of \"accessibility tree\", which is then translated\ninto different platform-specific APIs. Accessibility namespace gives access to this Accessibility Tree.\n\nMost of the accessibility tree gets filtered out when converting from internal browser AX Tree to Platform-specific\nAX-Tree or by assistive technologies themselves. By default, Playwright tries to approximate this filtering,\nexposing only the \"interesting\" nodes of the tree.",
+    "since": "v1.8",
+    "members": [
+      {
+        "kind": "method",
+        "langs": {
+          "types": {
+            "java": {
+              "name": "",
+              "union": [
+                {
+                  "name": "null"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "expression": "[null]|[string]"
+            },
+            "csharp": {
+              "name": "",
+              "union": [
+                {
+                  "name": "null"
+                },
+                {
+                  "name": "JsonElement"
+                }
+              ],
+              "expression": "[null]|[JsonElement]"
+            }
+          }
+        },
+        "since": "v1.8",
+        "deprecated": "This method is deprecated. Please use other libraries such as [Axe](https://www.deque.com/axe/) if you need to test page accessibility. See our Node.js [guide](https://playwright.dev/docs/accessibility-testing) for integration with Axe.",
+        "name": "snapshot",
+        "type": {
+          "name": "",
+          "union": [
+            {
+              "name": "null"
+            },
+            {
+              "name": "Object",
+              "properties": [
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "role",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "The [role](https://www.w3.org/TR/wai-aria/#usage_intro)."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "The [role](https://www.w3.org/TR/wai-aria/#usage_intro).",
+                  "async": false,
+                  "alias": "role",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "name",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "A human readable name for the node."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "A human readable name for the node.",
+                  "async": false,
+                  "alias": "name",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "value",
+                  "type": {
+                    "name": "",
+                    "union": [
+                      {
+                        "name": "string"
+                      },
+                      {
+                        "name": "float"
+                      }
+                    ],
+                    "expression": "[string]|[float]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "The current value of the node, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "The current value of the node, if applicable.",
+                  "async": false,
+                  "alias": "value",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "description",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "An additional human readable description of the node, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "An additional human readable description of the node, if applicable.",
+                  "async": false,
+                  "alias": "description",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "keyshortcuts",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Keyboard shortcuts associated with this node, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Keyboard shortcuts associated with this node, if applicable.",
+                  "async": false,
+                  "alias": "keyshortcuts",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "roledescription",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "A human readable alternative to the role, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "A human readable alternative to the role, if applicable.",
+                  "async": false,
+                  "alias": "roledescription",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "valuetext",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "A description of the current value, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "A description of the current value, if applicable.",
+                  "async": false,
+                  "alias": "valuetext",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "disabled",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node is disabled, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node is disabled, if applicable.",
+                  "async": false,
+                  "alias": "disabled",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "expanded",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node is expanded or collapsed, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node is expanded or collapsed, if applicable.",
+                  "async": false,
+                  "alias": "expanded",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "focused",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node is focused, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node is focused, if applicable.",
+                  "async": false,
+                  "alias": "focused",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "modal",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node is [modal](https://en.wikipedia.org/wiki/Modal_window), if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node is [modal](https://en.wikipedia.org/wiki/Modal_window), if applicable.",
+                  "async": false,
+                  "alias": "modal",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "multiline",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node text input supports multiline, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node text input supports multiline, if applicable.",
+                  "async": false,
+                  "alias": "multiline",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "multiselectable",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether more than one child can be selected, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether more than one child can be selected, if applicable.",
+                  "async": false,
+                  "alias": "multiselectable",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "readonly",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node is read only, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node is read only, if applicable.",
+                  "async": false,
+                  "alias": "readonly",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "required",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node is required, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node is required, if applicable.",
+                  "async": false,
+                  "alias": "required",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "selected",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node is selected in its parent node, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node is selected in its parent node, if applicable.",
+                  "async": false,
+                  "alias": "selected",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "checked",
+                  "type": {
+                    "name": "",
+                    "union": [
+                      {
+                        "name": "boolean"
+                      },
+                      {
+                        "name": "\"mixed\""
+                      }
+                    ],
+                    "expression": "[boolean]|\"mixed\""
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the checkbox is checked, or \"mixed\", if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the checkbox is checked, or \"mixed\", if applicable.",
+                  "async": false,
+                  "alias": "checked",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "pressed",
+                  "type": {
+                    "name": "",
+                    "union": [
+                      {
+                        "name": "boolean"
+                      },
+                      {
+                        "name": "\"mixed\""
+                      }
+                    ],
+                    "expression": "[boolean]|\"mixed\""
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the toggle button is checked, or \"mixed\", if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the toggle button is checked, or \"mixed\", if applicable.",
+                  "async": false,
+                  "alias": "pressed",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "level",
+                  "type": {
+                    "name": "int",
+                    "expression": "[int]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "The level of a heading, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "The level of a heading, if applicable.",
+                  "async": false,
+                  "alias": "level",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "valuemin",
+                  "type": {
+                    "name": "float",
+                    "expression": "[float]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "The minimum value in a node, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "The minimum value in a node, if applicable.",
+                  "async": false,
+                  "alias": "valuemin",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "valuemax",
+                  "type": {
+                    "name": "float",
+                    "expression": "[float]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "The maximum value in a node, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "The maximum value in a node, if applicable.",
+                  "async": false,
+                  "alias": "valuemax",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "autocomplete",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "What kind of autocomplete is supported by a control, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "What kind of autocomplete is supported by a control, if applicable.",
+                  "async": false,
+                  "alias": "autocomplete",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "haspopup",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "What kind of popup is currently being shown for a node, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "What kind of popup is currently being shown for a node, if applicable.",
+                  "async": false,
+                  "alias": "haspopup",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "invalid",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether and in what way this node's value is invalid, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether and in what way this node's value is invalid, if applicable.",
+                  "async": false,
+                  "alias": "invalid",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "orientation",
+                  "type": {
+                    "name": "string",
+                    "expression": "[string]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Whether the node is oriented horizontally or vertically, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Whether the node is oriented horizontally or vertically, if applicable.",
+                  "async": false,
+                  "alias": "orientation",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "children",
+                  "type": {
+                    "name": "Array",
+                    "templates": [
+                      {
+                        "name": "Object"
+                      }
+                    ],
+                    "expression": "[Array]<[Object]>"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Child nodes, if any, if applicable."
+                    }
+                  ],
+                  "required": true,
+                  "comment": "Child nodes, if any, if applicable.",
+                  "async": false,
+                  "alias": "children",
+                  "overloadIndex": 0
+                }
+              ]
+            }
+          ],
+          "expression": "[null]|[Object]"
+        },
+        "spec": [
+          {
+            "type": "text",
+            "text": "Captures the current state of the accessibility tree. The returned object represents the root accessible node of the\u21b5page."
+          },
+          {
+            "type": "note",
+            "noteType": "note",
+            "children": [
+              {
+                "type": "text",
+                "text": "The Chromium accessibility tree contains nodes that go unused on most platforms and by most screen readers. Playwright\u21b5will discard them as well for an easier to process tree, unless `interestingOnly` is set to `false`."
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "**Usage**"
+          },
+          {
+            "type": "text",
+            "text": "An example of dumping the entire accessibility tree:"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "const snapshot = await page.accessibility.snapshot();",
+              "console.log(snapshot);"
+            ],
+            "codeLang": "js"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "String snapshot = page.accessibility().snapshot();",
+              "System.out.println(snapshot);"
+            ],
+            "codeLang": "java"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "snapshot = await page.accessibility.snapshot()",
+              "print(snapshot)"
+            ],
+            "codeLang": "python async"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "snapshot = page.accessibility.snapshot()",
+              "print(snapshot)"
+            ],
+            "codeLang": "python sync"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "var accessibilitySnapshot = await page.Accessibility.SnapshotAsync();",
+              "Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(accessibilitySnapshot));"
+            ],
+            "codeLang": "csharp"
+          },
+          {
+            "type": "text",
+            "text": "An example of logging the focused node's name:"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "const snapshot = await page.accessibility.snapshot();",
+              "const node = findFocusedNode(snapshot);",
+              "console.log(node && node.name);",
+              "",
+              "function findFocusedNode(node) {",
+              "  if (node.focused)",
+              "    return node;",
+              "  for (const child of node.children || []) {",
+              "    const foundNode = findFocusedNode(child);",
+              "    if (foundNode)",
+              "      return foundNode;",
+              "  }",
+              "  return null;",
+              "}"
+            ],
+            "codeLang": "js"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "var accessibilitySnapshot = await page.Accessibility.SnapshotAsync();",
+              "Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(accessibilitySnapshot));"
+            ],
+            "codeLang": "csharp"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "// FIXME",
+              "String snapshot = page.accessibility().snapshot();"
+            ],
+            "codeLang": "java"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "def find_focused_node(node):",
+              "    if node.get(\"focused\"):",
+              "        return node",
+              "    for child in (node.get(\"children\") or []):",
+              "        found_node = find_focused_node(child)",
+              "        if found_node:",
+              "            return found_node",
+              "    return None",
+              "",
+              "snapshot = await page.accessibility.snapshot()",
+              "node = find_focused_node(snapshot)",
+              "if node:",
+              "    print(node[\"name\"])"
+            ],
+            "codeLang": "python async"
+          },
+          {
+            "type": "code",
+            "lines": [
+              "def find_focused_node(node):",
+              "    if node.get(\"focused\"):",
+              "        return node",
+              "    for child in (node.get(\"children\") or []):",
+              "        found_node = find_focused_node(child)",
+              "        if found_node:",
+              "            return found_node",
+              "    return None",
+              "",
+              "snapshot = page.accessibility.snapshot()",
+              "node = find_focused_node(snapshot)",
+              "if node:",
+              "    print(node[\"name\"])"
+            ],
+            "codeLang": "python sync"
+          }
+        ],
+        "required": true,
+        "comment": "Captures the current state of the accessibility tree. The returned object represents the root accessible node of\nthe page.\n\n**NOTE** The Chromium accessibility tree contains nodes that go unused on most platforms and by most screen\nreaders. Playwright will discard them as well for an easier to process tree, unless `interestingOnly` is set to\n`false`.\n\n**Usage**\n\nAn example of dumping the entire accessibility tree:\n\n```js\nconst snapshot = await page.accessibility.snapshot();\nconsole.log(snapshot);\n```\n\n```java\nString snapshot = page.accessibility().snapshot();\nSystem.out.println(snapshot);\n```\n\n```py\nsnapshot = await page.accessibility.snapshot()\nprint(snapshot)\n```\n\n```py\nsnapshot = page.accessibility.snapshot()\nprint(snapshot)\n```\n\n```csharp\nvar accessibilitySnapshot = await page.Accessibility.SnapshotAsync();\nConsole.WriteLine(System.Text.Json.JsonSerializer.Serialize(accessibilitySnapshot));\n```\n\nAn example of logging the focused node's name:\n\n```js\nconst snapshot = await page.accessibility.snapshot();\nconst node = findFocusedNode(snapshot);\nconsole.log(node && node.name);\n\nfunction findFocusedNode(node) {\n  if (node.focused)\n    return node;\n  for (const child of node.children || []) {\n    const foundNode = findFocusedNode(child);\n    if (foundNode)\n      return foundNode;\n  }\n  return null;\n}\n```\n\n```csharp\nvar accessibilitySnapshot = await page.Accessibility.SnapshotAsync();\nConsole.WriteLine(System.Text.Json.JsonSerializer.Serialize(accessibilitySnapshot));\n```\n\n```java\n// FIXME\nString snapshot = page.accessibility().snapshot();\n```\n\n```py\ndef find_focused_node(node):\n    if node.get(\"focused\"):\n        return node\n    for child in (node.get(\"children\") or []):\n        found_node = find_focused_node(child)\n        if found_node:\n            return found_node\n    return None\n\nsnapshot = await page.accessibility.snapshot()\nnode = find_focused_node(snapshot)\nif node:\n    print(node[\"name\"])\n```\n\n```py\ndef find_focused_node(node):\n    if node.get(\"focused\"):\n        return node\n    for child in (node.get(\"children\") or []):\n        found_node = find_focused_node(child)\n        if found_node:\n            return found_node\n    return None\n\nsnapshot = page.accessibility.snapshot()\nnode = find_focused_node(snapshot)\nif node:\n    print(node[\"name\"])\n```\n",
+        "async": true,
+        "alias": "snapshot",
+        "overloadIndex": 0,
+        "args": [
+          {
+            "kind": "property",
+            "langs": {},
+            "since": "v1.8",
+            "name": "options",
+            "type": {
+              "name": "Object",
+              "properties": [
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "interestingOnly",
+                  "type": {
+                    "name": "boolean",
+                    "expression": "[boolean]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "Prune uninteresting nodes from the tree. Defaults to `true`."
+                    }
+                  ],
+                  "required": false,
+                  "comment": "Prune uninteresting nodes from the tree. Defaults to `true`.",
+                  "async": false,
+                  "alias": "interestingOnly",
+                  "overloadIndex": 0
+                },
+                {
+                  "kind": "property",
+                  "langs": {},
+                  "since": "v1.8",
+                  "name": "root",
+                  "type": {
+                    "name": "ElementHandle",
+                    "expression": "[ElementHandle]"
+                  },
+                  "spec": [
+                    {
+                      "type": "text",
+                      "text": "The root DOM element for the snapshot. Defaults to the whole page."
+                    }
+                  ],
+                  "required": false,
+                  "comment": "The root DOM element for the snapshot. Defaults to the whole page.",
+                  "async": false,
+                  "alias": "root",
+                  "overloadIndex": 0
+                }
+              ]
+            },
+            "required": false,
+            "comment": "",
+            "async": false,
+            "alias": "options",
+            "overloadIndex": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "diabetes_ncm_1",
+    "title": "Structured Diabetes Self-Management Education Protocol",
+    "domain": "Diabetes",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Conduct initial assessment of diabetes knowledge and self-management skills; develop individualized education plan addressing knowledge gaps; schedule structured sessions covering monitoring, medication, nutrition, physical activity, and complication prevention; use teach-back method to verify understanding; provide culturally appropriate educational materials; document education provided and patient comprehension; follow up on implementation of self-management behaviors; adjust approach based on patient progress and barriers identified.",
+    "expected_outcomes": "Improved glycemic control, enhanced self-management behaviors, reduced diabetes-related distress, decreased acute complications, better medication adherence, improved quality of life, increased patient activation and engagement in care.",
+    "target_population": "Medicaid-enrolled adults with type 2 diabetes, particularly those with limited prior diabetes education or suboptimal glycemic control.",
+    "citation": "Powers MA, Bardsley J, Cypress M, et al. Diabetes self-management education and support in type 2 diabetes: a joint position statement of the American Diabetes Association, the American Association of Diabetes Educators, and the Academy of Nutrition and Dietetics. Diabetes Care. 2015;38(7):1372-1382. doi:10.2337/dc15-0730",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "education",
+      "self-management",
+      "glycemic control"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_ncm_2",
+    "title": "Hypoglycemia Prevention and Management Protocol",
+    "domain": "Diabetes",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Screen for hypoglycemia risk factors; provide education on recognition and treatment of hypoglycemia; develop individualized prevention plan; establish protocol for blood glucose monitoring during medication changes; create action plan for treating hypoglycemia; document hypoglycemia episodes and interventions; coordinate with prescribers regarding medication adjustments; follow up on implementation of prevention strategies.",
+    "expected_outcomes": "Reduced hypoglycemia episodes, decreased severe hypoglycemia events, improved recognition and treatment of hypoglycemia, enhanced patient confidence in self-management, reduced emergency department visits, better medication safety, improved quality of life.",
+    "target_population": "Medicaid-enrolled adults with diabetes on insulin or sulfonylureas, particularly older adults, those with renal impairment, or history of hypoglycemia.",
+    "citation": "Seaquist ER, Anderson J, Childs B, et al. Hypoglycemia and diabetes: a report of a workgroup of the American Diabetes Association and the Endocrine Society. Diabetes Care. 2013;36(5):1384-1395. doi:10.2337/dc12-2480",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "hypoglycemia",
+      "safety",
+      "medication management"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_cp_1",
+    "title": "Medication Therapy Management for Complex Diabetes",
+    "domain": "Diabetes",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Conduct comprehensive medication review; assess medication appropriateness, effectiveness, safety, and adherence; identify drug therapy problems; develop recommendations for optimizing regimen; create plan for monitoring therapeutic outcomes; document medication-related interventions and recommendations; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Improved glycemic control, reduced medication-related problems, enhanced medication adherence, decreased adverse drug events, better coordination of care, improved clinical outcomes, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with diabetes on complex medication regimens, particularly those with polypharmacy, comorbidities, or suboptimal glycemic control.",
+    "citation": "Chung WW, Chua SS, Lai PSM, Chan SP. Effects of a pharmaceutical care model on medication adherence and glycemic control of people with type 2 diabetes. Patient Prefer Adherence. 2014;8:1185-1194. doi:10.2147/PPA.S66619",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication management",
+      "polypharmacy",
+      "glycemic control"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_chw_1",
+    "title": "Home-Based Diabetes Self-Management Support",
+    "domain": "Diabetes",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Conduct home visits to assess diabetes management environment; identify barriers to implementing recommendations; help establish medication and monitoring routines; assist with implementing dietary changes; create physical activity plan based on home environment; address literacy barriers with visual aids; document home-based interventions; coordinate with healthcare team regarding identified barriers; follow up on progress with self-management goals.",
+    "expected_outcomes": "Improved adherence to diabetes care plan, enhanced self-management behaviors, better glycemic control, increased physical activity, improved dietary habits, reduced barriers to care, decreased preventable complications.",
+    "target_population": "Medicaid-enrolled adults with diabetes, particularly those with limited support systems, multiple barriers to care, or difficulty attending clinic visits.",
+    "citation": "Spencer MS, Rosland AM, Kieffer EC, et al. Effectiveness of a community health worker intervention among African American and Latino adults with type 2 diabetes: a randomized controlled trial. Am J Public Health. 2011;101(12):2253-2260. doi:10.2105/AJPH.2010.300106",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "home-based care",
+      "self-management",
+      "barriers to care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_cc_1",
+    "title": "Diabetes Care Coordination Pathway",
+    "domain": "Diabetes",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop risk-stratified care coordination approach; establish testing schedule based on risk level; coordinate referrals to specialists; ensure completion of recommended screenings; track preventive care measures; coordinate between primary care and specialty providers; document care gaps and interventions; implement registry for population management; follow up on missed appointments.",
+    "expected_outcomes": "Improved adherence to diabetes care guidelines, reduced care fragmentation, earlier intervention for complications, decreased preventable hospitalizations, better management of comorbidities, enhanced preventive care completion, improved clinical outcomes.",
+    "target_population": "All Medicaid-enrolled adults with diabetes, with intensity of intervention stratified by risk level.",
+    "citation": "Egginton JS, Ridgeway JL, Shah ND, et al. Care management for type 2 diabetes in the United States: a systematic review and meta-analysis. BMC Health Serv Res. 2012;12:72. doi:10.1186/1472-6963-12-72",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care coordination",
+      "population management",
+      "preventive care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_ncm_1",
+    "title": "Structured Home Blood Pressure Monitoring Protocol",
+    "domain": "Hypertension",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Assess patient's ability to perform home monitoring; provide education on proper measurement technique; establish monitoring schedule (frequency, timing); create documentation system for readings; implement protocol for reporting concerning values; develop plan for regular review of readings; document home monitoring plan and results; coordinate with providers regarding treatment adjustments based on home readings; follow up on adherence to monitoring plan.",
+    "expected_outcomes": "Improved blood pressure control, enhanced patient engagement in hypertension management, better medication adherence, earlier identification of treatment failures, reduced clinical inertia, decreased cardiovascular events, improved clinical decision-making.",
+    "target_population": "Medicaid-enrolled adults with hypertension, particularly those with newly diagnosed hypertension, resistant hypertension, or suspected white-coat hypertension.",
+    "citation": "Shimbo D, Artinian NT, Basile JN, et al. Self-measured blood pressure monitoring at home: a joint policy statement from the American Heart Association and American Medical Association. Circulation. 2020;142(4):e42-e63. doi:10.1161/CIR.0000000000000803",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "blood pressure monitoring",
+      "self-management",
+      "home care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_cp_1",
+    "title": "Pharmacist-Led Medication Optimization for Hypertension",
+    "domain": "Hypertension",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review current antihypertensive regimen; assess medication appropriateness based on comorbidities; evaluate medication adherence and barriers; recommend therapy adjustments following guideline-directed algorithms; develop monitoring plan for efficacy and adverse effects; document optimization recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Improved blood pressure control, enhanced medication adherence, reduced adverse effects, better alignment with guideline-directed therapy, decreased therapeutic inertia, improved cardiovascular outcomes, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with uncontrolled hypertension despite medication therapy.",
+    "citation": "Carter BL, Ardery G, Dawson JD, et al. Physician and pharmacist collaboration to improve blood pressure control. Arch Intern Med. 2009;169(21):1996-2002. doi:10.1001/archinternmed.2009.358",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication management",
+      "pharmacotherapy",
+      "treatment optimization"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_chw_1",
+    "title": "Community-Based Hypertension Self-Management Support",
+    "domain": "Hypertension",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Conduct home visits to assess hypertension management; identify barriers to blood pressure control; help establish medication and monitoring routines; assist with implementing DASH dietary principles; create physical activity plan based on home environment; address literacy barriers with visual aids; document home-based interventions; coordinate with healthcare team regarding identified barriers; follow up on progress with self-management goals.",
+    "expected_outcomes": "Improved blood pressure control, enhanced self-management behaviors, better medication adherence, increased physical activity, improved dietary habits, reduced barriers to care, decreased cardiovascular events.",
+    "target_population": "Medicaid-enrolled adults with hypertension, particularly those with limited support systems, multiple barriers to care, or difficulty attending clinic visits.",
+    "citation": "Brownstein JN, Chowdhury FM, Norris SL, et al. Effectiveness of community health workers in the care of people with hypertension. Am J Prev Med. 2007;32(5):435-447. doi:10.1016/j.amepre.2007.01.011",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "community-based care",
+      "self-management",
+      "barriers to care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_cc_1",
+    "title": "Hypertension Registry and Outreach Program",
+    "domain": "Hypertension",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop registry of patients with hypertension; stratify by risk level and control status; implement proactive outreach to patients with uncontrolled hypertension; coordinate referrals to specialists for resistant hypertension; ensure regular blood pressure monitoring; track medication adherence; document outreach efforts and outcomes; coordinate between primary care and specialty providers; follow up on missed appointments.",
+    "expected_outcomes": "Improved population-level blood pressure control, reduced loss to follow-up, earlier intervention for uncontrolled hypertension, decreased cardiovascular events, enhanced preventive care completion, improved clinical outcomes, reduced healthcare disparities.",
+    "target_population": "All Medicaid-enrolled adults with hypertension, with intensity of intervention stratified by control status and risk level.",
+    "citation": "Jaffe MG, Lee GA, Young JD, Sidney S, Go AS. Improved blood pressure control associated with a large-scale hypertension program. JAMA. 2013;310(7):699-705. doi:10.1001/jama.2013.108769",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "population management",
+      "outreach",
+      "care coordination"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_ncm_1",
+    "title": "Structured Depression Screening and Monitoring Protocol",
+    "domain": "Depression",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement routine screening using validated tool (PHQ-9); establish protocol for positive screens; develop monitoring schedule based on symptom severity; create documentation system for tracking scores over time; implement protocol for suicide risk assessment; establish criteria for psychiatric referral; document screening results and interventions; coordinate with mental health providers; follow up on treatment adherence and response.",
+    "expected_outcomes": "Improved identification of depression, enhanced monitoring of treatment response, earlier intervention for worsening symptoms, reduced suicide risk, better coordination between primary care and mental health, improved clinical outcomes, decreased disability from depression.",
+    "target_population": "Medicaid-enrolled adults, with universal screening and targeted monitoring for those with identified depression or risk factors.",
+    "citation": "Siu AL, US Preventive Services Task Force. Screening for depression in adults: US Preventive Services Task Force recommendation statement. JAMA. 2016;315(4):380-387. doi:10.1001/jama.2015.18392",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "screening",
+      "monitoring",
+      "suicide prevention"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_swct_1",
+    "title": "Brief Behavioral Activation Intervention",
+    "domain": "Depression",
+    "role": "Social Worker (Clinical/Therapy)",
+    "implementation_guidance": "Assess current activity level and patterns; identify valued life domains; develop specific, achievable activity goals; create activity scheduling plan; implement gradual increase in positive activities; problem-solve barriers to activation; document intervention and progress; coordinate with prescribers regarding medication management; follow up on implementation of activation plan.",
+    "expected_outcomes": "Reduced depressive symptoms, increased engagement in positive activities, improved quality of life, enhanced social functioning, better treatment adherence, decreased disability from depression, improved work/school functioning.",
+    "target_population": "Medicaid-enrolled adults with mild to moderate depression, particularly those with limited access to specialty mental health care.",
+    "citation": "Ekers D, Webster L, Van Straten A, Cuijpers P, Richards D, Gilbody S. Behavioural activation for depression; an update of meta-analysis of effectiveness and sub group analysis. PLoS One. 2014;9(6):e100100. doi:10.1371/journal.pone.0100100",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "behavioral activation",
+      "psychotherapy",
+      "activity scheduling"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_chw_1",
+    "title": "Depression Medication Adherence Support",
+    "domain": "Depression",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Assess barriers to antidepressant adherence; provide education on medication purpose and timeline for effects; develop strategies to address specific barriers (reminders, routines); monitor for side effects; create plan for reporting concerning symptoms; document adherence support interventions; coordinate with prescribers regarding side effects or adherence issues; follow up on implementation of adherence strategies.",
+    "expected_outcomes": "Improved antidepressant adherence, reduced premature discontinuation, better management of side effects, enhanced treatment response, decreased depressive symptoms, improved quality of life, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults prescribed antidepressant medication, particularly those newly started on treatment or with history of non-adherence.",
+    "citation": "Un\u00fctzer J, Katon W, Callahan CM, et al. Collaborative care management of late-life depression in the primary care setting: a randomized controlled trial. JAMA. 2002;288(22):2836-2845. doi:10.1001/jama.288.22.2836",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "antidepressants",
+      "side effect management"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_ncm_1",
+    "title": "Structured Anxiety Screening and Monitoring Protocol",
+    "domain": "Anxiety",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement routine screening using validated tool (GAD-7); establish protocol for positive screens; develop monitoring schedule based on symptom severity; create documentation system for tracking scores over time; implement protocol for assessing functional impairment; establish criteria for psychiatric referral; document screening results and interventions; coordinate with mental health providers; follow up on treatment adherence and response.",
+    "expected_outcomes": "Improved identification of anxiety disorders, enhanced monitoring of treatment response, earlier intervention for worsening symptoms, better coordination between primary care and mental health, improved clinical outcomes, decreased disability from anxiety, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults, with targeted screening for those with risk factors or presenting symptoms.",
+    "citation": "Siu AL, Bibbins-Domingo K, Grossman DC, et al. Screening for depression in adults: US Preventive Services Task Force recommendation statement. JAMA. 2016;315(4):380-387. doi:10.1001/jama.2015.18392",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "screening",
+      "monitoring",
+      "early intervention"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_swct_1",
+    "title": "Brief Cognitive-Behavioral Therapy for Anxiety",
+    "domain": "Anxiety",
+    "role": "Social Worker (Clinical/Therapy)",
+    "implementation_guidance": "Assess anxiety symptoms and triggers; provide education on anxiety cycle; teach relaxation techniques (deep breathing, progressive muscle relaxation); implement cognitive restructuring for anxious thoughts; develop gradual exposure plan for avoided situations; create coping cards for managing acute anxiety; document intervention and progress; coordinate with prescribers regarding medication management; follow up on skill practice and implementation.",
+    "expected_outcomes": "Reduced anxiety symptoms, decreased avoidance behaviors, improved coping skills, enhanced quality of life, better treatment adherence, decreased disability from anxiety, improved work/school functioning, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with mild to moderate anxiety disorders, particularly those with limited access to specialty mental health care.",
+    "citation": "Carpenter JK, Andrews LA, Witcraft SM, Powers MB, Smits JAJ, Hofmann SG. Cognitive behavioral therapy for anxiety and related disorders: a meta-analysis of randomized placebo-controlled trials. Depress Anxiety. 2018;35(6):502-514. doi:10.1002/da.22728",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "cognitive-behavioral therapy",
+      "psychotherapy",
+      "relaxation techniques"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_chw_1",
+    "title": "Community-Based Anxiety Management Support",
+    "domain": "Anxiety",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Assess barriers to anxiety management; provide education on anxiety symptoms and treatment; help implement daily relaxation practice; assist with identifying and managing environmental triggers; create plan for using community resources for stress management; document support interventions; coordinate with healthcare team regarding concerning symptoms; follow up on implementation of management strategies.",
+    "expected_outcomes": "Improved anxiety self-management, enhanced treatment adherence, better recognition of anxiety triggers, increased use of coping strategies, decreased anxiety symptoms, improved quality of life, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with anxiety disorders, particularly those with limited support systems or multiple barriers to care.",
+    "citation": "Batelaan NM, Smit F, de Graaf R, van Balkom AJ, Vollebergh WA, Beekman AT. Economic costs of full-blown and subthreshold panic disorder. J Affect Disord. 2007;104(1-3):127-136. doi:10.1016/j.jad.2007.03.013",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "self-management",
+      "community support",
+      "coping strategies"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_ncm_1",
+    "title": "Structured Substance Use Screening and Brief Intervention Protocol",
+    "domain": "Substance Use Disorders",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement routine screening using validated tool (AUDIT, DAST-10); establish protocol for positive screens; conduct brief intervention using motivational interviewing techniques; develop referral pathway to treatment resources; create documentation system for tracking interventions; implement protocol for monitoring progress; document screening results and interventions; coordinate with substance use treatment providers; follow up on referral completion and treatment engagement.",
+    "expected_outcomes": "Improved identification of substance use disorders, enhanced motivation for behavior change, increased treatment engagement, reduced substance use, better coordination between primary care and specialty treatment, improved clinical outcomes, decreased substance-related complications.",
+    "target_population": "Medicaid-enrolled adults, with universal screening and targeted interventions for those with identified substance use or risk factors.",
+    "citation": "Babor TF, Del Boca F, Bray JW. Screening, brief intervention and referral to treatment: implications of SAMHSA's SBIRT initiative for substance abuse policy and practice. Addiction. 2017;112(S2):110-117. doi:10.1111/add.13675",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "screening",
+      "brief intervention",
+      "motivational interviewing"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_cp_1",
+    "title": "Medication-Assisted Treatment Support Protocol",
+    "domain": "Substance Use Disorders",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Assess appropriateness for medication-assisted treatment (MAT); provide education on medication options and mechanisms; develop monitoring plan for efficacy and side effects; implement protocol for medication adherence support; create plan for managing withdrawal symptoms; document medication recommendations and monitoring; coordinate with prescribers regarding therapy adjustments; follow up on medication effectiveness and adherence.",
+    "expected_outcomes": "Improved access to evidence-based treatment, enhanced medication adherence, reduced substance use, decreased withdrawal symptoms, better treatment retention, improved quality of life, reduced healthcare utilization, decreased overdose risk.",
+    "target_population": "Medicaid-enrolled adults with opioid or alcohol use disorders who are candidates for medication-assisted treatment.",
+    "citation": "Substance Abuse and Mental Health Services Administration. Medications for Opioid Use Disorder. Treatment Improvement Protocol (TIP) Series 63. HHS Publication No. (SMA) 18-5063FULLDOC. Rockville, MD: Substance Abuse and Mental Health Services Administration; 2018.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication-assisted treatment",
+      "opioid use disorder",
+      "alcohol use disorder"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_chw_1",
+    "title": "Recovery Support Navigation Program",
+    "domain": "Substance Use Disorders",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Assess barriers to treatment engagement and recovery; connect to appropriate level of care; assist with navigating treatment system; provide support for attending initial appointments; help implement relapse prevention strategies; create plan for using community recovery resources; document support interventions; coordinate with treatment providers; follow up on treatment attendance and engagement.",
+    "expected_outcomes": "Improved treatment initiation and engagement, enhanced connection to recovery supports, reduced barriers to care, decreased substance use, better treatment retention, improved quality of life, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with substance use disorders, particularly those with limited support systems, multiple barriers to care, or history of treatment disengagement.",
+    "citation": "Jack HE, Oller D, Kelly J, Magidson JF, Wakeman SE. Addressing substance use disorder in primary care: the role, integration, and impact of recovery coaches. Subst Abus. 2018;39(3):307-314. doi:10.1080/08897077.2017.1389802",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "recovery support",
+      "treatment navigation",
+      "barriers to care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_swn_1",
+    "title": "Housing Assistance Navigation Protocol",
+    "domain": "Housing",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Assess current housing situation and needs; identify eligibility for housing assistance programs; help complete applications for housing subsidies, supportive housing, or emergency assistance; connect to legal aid for eviction prevention; assist with gathering required documentation; document housing interventions; follow up on pending applications; coordinate with healthcare team regarding housing-related health concerns.",
+    "expected_outcomes": "Improved housing stability, reduced homelessness risk, decreased housing-related stress, better medication storage conditions, enhanced ability to manage health conditions, improved appointment attendance, reduced emergency department utilization.",
+    "target_population": "Medicaid-enrolled adults experiencing housing instability or homelessness, particularly those with chronic health conditions.",
+    "citation": "Krieger J, Higgins DL. Housing and health: time again for public health action. Am J Public Health. 2002;92(5):758-768. doi:10.2105/ajph.92.5.758",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "housing assistance",
+      "homelessness prevention",
+      "social determinants"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_chw_1",
+    "title": "Home Environmental Assessment and Modification",
+    "domain": "Housing",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Conduct home environmental assessment; identify health and safety hazards; develop action plan for addressing modifiable hazards; connect to resources for home repairs or modifications; assist with implementing low-cost safety improvements; document environmental interventions; coordinate with healthcare team regarding environmental health concerns; follow up on implementation of recommended modifications.",
+    "expected_outcomes": "Reduced environmental health hazards, decreased asthma triggers, improved home safety, reduced fall risk, enhanced ability to manage health conditions at home, decreased preventable hospitalizations, improved quality of life.",
+    "target_population": "Medicaid-enrolled adults with health conditions affected by home environment, particularly those with respiratory conditions, mobility limitations, or fall risk.",
+    "citation": "Krieger JW, Takaro TK, Song L, Weaver M. The Seattle-King County Healthy Homes Project: a randomized, controlled trial of a community health worker intervention to decrease exposure to indoor asthma triggers. Am J Public Health. 2005;95(4):652-659. doi:10.2105/AJPH.2004.042994",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "environmental assessment",
+      "home modification",
+      "safety"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_cc_1",
+    "title": "Medical Respite Care Coordination",
+    "domain": "Housing",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Identify patients needing post-discharge housing support; assess eligibility for medical respite programs; coordinate referrals to appropriate level of care; ensure communication of medical needs to respite providers; arrange transportation to respite facility; coordinate medication access during transition; document respite care plan; follow up on implementation of discharge recommendations; facilitate transition to permanent housing.",
+    "expected_outcomes": "Reduced hospital readmissions, improved recovery from acute illness, enhanced medication adherence, better follow-up care attendance, decreased complications, improved housing outcomes, reduced healthcare costs.",
+    "target_population": "Medicaid-enrolled adults experiencing homelessness or housing instability who are being discharged from hospital and require recuperative care.",
+    "citation": "Doran KM, Ragins KT, Iacomacci AL, Cunningham A, Jubanyik KJ, Jenq GY. The revolving hospital door: hospital readmissions among patients who are homeless. Med Care. 2013;51(9):767-773. doi:10.1097/MLR.0b013e31829fafbb",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medical respite",
+      "care transitions",
+      "homelessness"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_chw_1",
+    "title": "Food Resource Navigation Protocol",
+    "domain": "Food Security",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Assess food security status using validated tool (e.g., Hunger Vital Sign); identify eligibility for food assistance programs; help complete applications for SNAP, WIC, or other benefits; connect to local food pantries and meal programs; assist with transportation planning to food resources; document food security interventions; follow up on benefit applications; coordinate with healthcare team regarding nutrition-related health concerns.",
+    "expected_outcomes": "Improved food access, reduced food insecurity, enhanced nutritional intake, better chronic disease management, decreased food-related stress, improved medication adherence, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults experiencing food insecurity, particularly those with diet-sensitive chronic conditions.",
+    "citation": "Berkowitz SA, Seligman HK, Rigdon J, Meigs JB, Basu S. Supplemental Nutrition Assistance Program (SNAP) participation and health care expenditures among low-income adults. JAMA Intern Med. 2017;177(11):1642-1649. doi:10.1001/jamainternmed.2017.4841",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "food assistance",
+      "SNAP",
+      "nutrition resources"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_ncm_1",
+    "title": "Medically-Tailored Meal Referral Program",
+    "domain": "Food Security",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Identify patients with diet-sensitive conditions and food insecurity; assess eligibility for medically-tailored meal programs; coordinate referrals to appropriate programs; ensure communication of dietary restrictions and needs; develop transition plan for long-term food security; document meal program referrals and outcomes; follow up on program enrollment and satisfaction; coordinate with dietitian regarding nutritional needs.",
+    "expected_outcomes": "Improved nutritional status, enhanced disease management, reduced hospital admissions, decreased medication-food interactions, better glycemic control, improved quality of life, reduced healthcare costs.",
+    "target_population": "Medicaid-enrolled adults with diet-sensitive chronic conditions (diabetes, heart failure, renal disease) who are food insecure or have functional limitations affecting food preparation.",
+    "citation": "Berkowitz SA, Terranova J, Hill C, et al. Meal delivery programs reduce the use of costly health care in dually eligible Medicare and Medicaid beneficiaries. Health Aff (Millwood). 2018;37(4):535-542. doi:10.1377/hlthaff.2017.0999",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medically-tailored meals",
+      "nutrition intervention",
+      "chronic disease management"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_swn_1",
+    "title": "Produce Prescription Program",
+    "domain": "Food Security",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Identify patients with diet-sensitive conditions and limited produce access; assess eligibility for produce prescription programs; connect to participating farmers markets or grocery stores; provide education on program utilization; assist with transportation planning to redemption sites; document produce prescription interventions; follow up on prescription utilization; coordinate with healthcare team regarding nutritional impacts on health.",
+    "expected_outcomes": "Increased fruit and vegetable consumption, improved dietary quality, enhanced disease management, better medication effectiveness, decreased food costs, improved health outcomes, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with diet-sensitive chronic conditions who have limited access to fresh produce.",
+    "citation": "Bryce R, Guajardo C, Ilarraza D, et al. Participation in a farmers' market fruit and vegetable prescription program at a federally qualified health center improves hemoglobin A1C in low income uncontrolled diabetics. Prev Med Rep. 2017;7:176-179. doi:10.1016/j.pmedr.2017.06.006",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "produce prescriptions",
+      "farmers markets",
+      "nutrition intervention"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_chw_1",
+    "title": "Transportation Barrier Assessment and Navigation",
+    "domain": "Transportation",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Assess transportation needs and barriers; identify eligibility for transportation assistance programs; help complete applications for Medicaid transportation benefits; connect to community transportation resources; assist with planning public transit routes; document transportation interventions; follow up on benefit applications; coordinate with healthcare team regarding appointment scheduling based on transportation availability.",
+    "expected_outcomes": "Improved appointment attendance, reduced missed appointments, enhanced access to pharmacies, decreased transportation-related stress, better chronic disease management, improved medication adherence, reduced preventable hospitalizations.",
+    "target_population": "Medicaid-enrolled adults with transportation barriers affecting healthcare access, particularly those with multiple chronic conditions requiring frequent appointments.",
+    "citation": "Syed ST, Gerber BS, Sharp LK. Traveling towards disease: transportation barriers to health care access. J Community Health. 2013;38(5):976-993. doi:10.1007/s10900-013-9681-1",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "transportation assistance",
+      "appointment access",
+      "social determinants"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_cc_1",
+    "title": "Telehealth Implementation for Transportation-Limited Patients",
+    "domain": "Transportation",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Identify patients with transportation barriers; assess appropriateness for telehealth services; coordinate technology access and support; schedule telehealth appointments; ensure necessary pre-visit measurements or tests; develop protocol for urgent in-person needs; document telehealth utilization and outcomes; follow up on technology challenges; coordinate hybrid care model when needed.",
+    "expected_outcomes": "Improved appointment attendance, reduced transportation burden, enhanced care continuity, decreased missed appointments, better chronic disease management, improved patient satisfaction, reduced healthcare costs.",
+    "target_population": "Medicaid-enrolled adults with transportation barriers and clinical needs appropriate for telehealth management.",
+    "citation": "Dorsey ER, Topol EJ. State of telehealth. N Engl J Med. 2016;375(2):154-161. doi:10.1056/NEJMra1601705",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "telehealth",
+      "virtual care",
+      "appointment access"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_swn_1",
+    "title": "Medication Delivery Program Implementation",
+    "domain": "Transportation",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Identify patients with transportation barriers affecting medication access; assess eligibility for pharmacy delivery services; coordinate enrollment in mail-order or local delivery programs; ensure communication of delivery preferences and needs; develop backup plan for urgent medication needs; document medication delivery arrangements; follow up on delivery reliability; coordinate with pharmacy regarding refill synchronization.",
+    "expected_outcomes": "Improved medication adherence, reduced medication gaps, decreased transportation burden, enhanced chronic disease management, improved quality of life, reduced preventable hospitalizations, decreased medication-related adverse events.",
+    "target_population": "Medicaid-enrolled adults with transportation barriers affecting medication access, particularly those on multiple chronic medications or with limited mobility.",
+    "citation": "Schmittdiel JA, Karter AJ, Dyer W, et al. The comparative effectiveness of mail order pharmacy use vs. local pharmacy use on LDL-C control in new statin users. J Gen Intern Med. 2011;26(12):1396-1402. doi:10.1007/s11606-011-1805-7",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication delivery",
+      "pharmacy access",
+      "medication adherence"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_ncm_1",
+    "title": "Structured Asthma Self-Management Education Protocol",
+    "domain": "Asthma",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Assess current asthma knowledge and self-management skills; develop individualized education plan addressing knowledge gaps; provide instruction on proper inhaler technique; create written asthma action plan; teach symptom monitoring and peak flow use; establish protocol for environmental trigger management; document education provided and skills demonstrated; follow up on implementation of self-management behaviors; adjust approach based on control status.",
+    "expected_outcomes": "Improved asthma control, enhanced self-management behaviors, reduced exacerbations, decreased emergency department visits, better medication adherence, improved quality of life, increased patient confidence in managing asthma.",
+    "target_population": "Medicaid-enrolled adults with asthma, particularly those with uncontrolled symptoms or recent exacerbations.",
+    "citation": "Gibson PG, Powell H, Coughlan J, et al. Self-management education and regular practitioner review for adults with asthma. Cochrane Database Syst Rev. 2003;(1):CD001117. doi:10.1002/14651858.CD001117",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "education",
+      "self-management",
+      "action plan"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_cp_1",
+    "title": "Pharmacist-Led Asthma Medication Optimization",
+    "domain": "Asthma",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review current asthma medication regimen; assess appropriateness based on symptom control and exacerbation history; evaluate inhaler technique and adherence; recommend therapy adjustments following stepwise approach; develop monitoring plan for efficacy and adverse effects; document optimization recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Improved asthma control, enhanced medication adherence, reduced adverse effects, better alignment with guideline-directed therapy, decreased exacerbations, improved quality of life, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with uncontrolled asthma despite medication therapy.",
+    "citation": "Armour CL, Reddel HK, LeMay KS, et al. Feasibility and effectiveness of an evidence-based asthma service in Australian community pharmacies: a pragmatic cluster randomized trial. J Asthma. 2013;50(3):302-309. doi:10.3109/02770903.2012.754463",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication management",
+      "inhaler technique",
+      "treatment optimization"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_chw_1",
+    "title": "Home Environmental Assessment for Asthma Triggers",
+    "domain": "Asthma",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Conduct comprehensive home environmental assessment; identify asthma triggers; develop action plan for trigger reduction; provide education on environmental control measures; assist with implementing low-cost modifications; supply allergen-proof bedding when indicated; document environmental interventions; coordinate with healthcare team regarding environmental findings; follow up on implementation of recommended modifications.",
+    "expected_outcomes": "Reduced environmental asthma triggers, decreased symptom frequency, improved asthma control, reduced exacerbations, enhanced quality of life, decreased healthcare utilization, improved sleep quality.",
+    "target_population": "Medicaid-enrolled adults with persistent asthma, particularly those with environmental trigger sensitivities or frequent exacerbations.",
+    "citation": "Krieger JW, Takaro TK, Song L, Weaver M. The Seattle-King County Healthy Homes Project: a randomized, controlled trial of a community health worker intervention to decrease exposure to indoor asthma triggers. Am J Public Health. 2005;95(4):652-659. doi:10.2105/AJPH.2004.042994",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "environmental assessment",
+      "trigger reduction",
+      "home modification"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_ncm_1",
+    "title": "Structured COPD Self-Management Education Protocol",
+    "domain": "COPD",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Assess current COPD knowledge and self-management skills; develop individualized education plan addressing knowledge gaps; provide instruction on proper inhaler technique; create written COPD action plan for exacerbations; teach symptom monitoring and early warning signs; establish protocol for energy conservation techniques; document education provided and skills demonstrated; follow up on implementation of self-management behaviors; adjust approach based on disease severity.",
+    "expected_outcomes": "Improved symptom control, enhanced self-management behaviors, reduced exacerbations, decreased emergency department visits and hospitalizations, better medication adherence, improved quality of life, increased patient confidence in managing COPD.",
+    "target_population": "Medicaid-enrolled adults with COPD, particularly those with frequent exacerbations or recent hospitalizations.",
+    "citation": "Zwerink M, Brusse-Keizer M, van der Valk PD, et al. Self management for patients with chronic obstructive pulmonary disease. Cochrane Database Syst Rev. 2014;(3):CD002990. doi:10.1002/14651858.CD002990.pub3",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "education",
+      "self-management",
+      "action plan"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_cp_1",
+    "title": "Pharmacist-Led COPD Medication Optimization",
+    "domain": "COPD",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review current COPD medication regimen; assess appropriateness based on symptom burden and exacerbation history; evaluate inhaler technique and adherence; recommend therapy adjustments following stepwise approach; develop monitoring plan for efficacy and adverse effects; document optimization recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Improved symptom control, enhanced medication adherence, reduced adverse effects, better alignment with guideline-directed therapy, decreased exacerbations, improved quality of life, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with COPD, particularly those with suboptimal symptom control or frequent exacerbations despite medication therapy.",
+    "citation": "van der Molen T, van Boven JF, Maguire T, Goyal P, Altman P. Optimizing identification and management of COPD patients - reviewing the role of the community pharmacist. Br J Clin Pharmacol. 2017;83(1):192-201. doi:10.1111/bcp.13087",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication management",
+      "inhaler technique",
+      "treatment optimization"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_chw_1",
+    "title": "Home-Based Pulmonary Rehabilitation Support",
+    "domain": "COPD",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Assess home environment for exercise safety; help implement home-based exercise program prescribed by rehabilitation team; assist with establishing exercise routine; monitor symptoms during activity; teach energy conservation techniques for daily activities; document home-based interventions; coordinate with healthcare team regarding exercise tolerance and symptoms; follow up on adherence to exercise program.",
+    "expected_outcomes": "Improved exercise capacity, enhanced physical activity levels, reduced dyspnea with activities, better quality of life, decreased social isolation, improved symptom management, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with COPD who have limited access to facility-based pulmonary rehabilitation or have completed formal rehabilitation and need maintenance support.",
+    "citation": "Holland AE, Mahal A, Hill CJ, et al. Home-based rehabilitation for COPD using minimal resources: a randomised, controlled equivalence trial. Thorax. 2017;72(1):57-65. doi:10.1136/thoraxjnl-2016-208514",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "pulmonary rehabilitation",
+      "exercise",
+      "home-based care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_ncm_1",
+    "title": "Structured Heart Failure Self-Management Education Protocol",
+    "domain": "Heart Failure",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Assess current heart failure knowledge and self-management skills; develop individualized education plan addressing knowledge gaps; teach daily weight monitoring and symptom tracking; create written action plan for weight changes and worsening symptoms; establish protocol for sodium and fluid management; document education provided and skills demonstrated; follow up on implementation of self-management behaviors; adjust approach based on disease severity and cognitive status.",
+    "expected_outcomes": "Improved symptom recognition and management, enhanced self-management behaviors, reduced exacerbations, decreased emergency department visits and hospitalizations, better medication adherence, improved quality of life, increased patient confidence in managing heart failure.",
+    "target_population": "Medicaid-enrolled adults with heart failure, particularly those with recent diagnosis or hospitalization.",
+    "citation": "Riegel B, Moser DK, Anker SD, et al. State of the science: promoting self-care in persons with heart failure: a scientific statement from the American Heart Association. Circulation. 2009;120(12):1141-1163. doi:10.1161/CIRCULATIONAHA.109.192628",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "education",
+      "self-management",
+      "symptom monitoring"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_cp_1",
+    "title": "Pharmacist-Led Heart Failure Medication Optimization",
+    "domain": "Heart Failure",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review current heart failure medication regimen; assess appropriateness based on ejection fraction and symptom burden; evaluate medication adherence and barriers; recommend therapy adjustments following guideline-directed medical therapy; develop titration plan for target doses; create monitoring protocol for renal function and electrolytes; document optimization recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Improved guideline-directed medical therapy utilization, enhanced medication adherence, reduced adverse effects, better symptom control, decreased hospitalizations, improved quality of life, reduced mortality risk.",
+    "target_population": "Medicaid-enrolled adults with heart failure, particularly those with reduced ejection fraction or suboptimal medication regimens.",
+    "citation": "Koshman SL, Charrois TL, Simpson SH, McAlister FA, Tsuyuki RT. Pharmacist care of patients with heart failure: a systematic review of randomized trials. Arch Intern Med. 2008;168(7):687-694. doi:10.1001/archinte.168.7.687",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication management",
+      "GDMT",
+      "treatment optimization"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_cc_1",
+    "title": "Heart Failure Care Transitions Protocol",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Begin discharge planning early during hospitalization; ensure medication reconciliation and access; schedule follow-up appointment within 7 days of discharge; arrange home health services when indicated; provide education on warning signs requiring medical attention; establish protocol for post-discharge phone calls; document transition plan and interventions; coordinate communication between hospital and outpatient providers; follow up on completion of post-discharge appointments.",
+    "expected_outcomes": "Reduced 30-day readmissions, improved continuity of care, enhanced medication adherence, increased completion of follow-up appointments, better patient satisfaction with transition, decreased gaps in care, improved clinical outcomes.",
+    "target_population": "Medicaid-enrolled adults discharged after heart failure hospitalization.",
+    "citation": "Albert NM, Barnason S, Deswal A, et al. Transitions of care in heart failure: a scientific statement from the American Heart Association. Circ Heart Fail. 2015;8(2):384-409. doi:10.1161/HHF.0000000000000006",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care transitions",
+      "readmission prevention",
+      "post-discharge care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_ncm_1",
+    "title": "Structured Preventive Screening Protocol",
+    "domain": "Preventive Screenings",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Develop comprehensive preventive screening tracking system; identify due and overdue screenings based on age, gender, and risk factors; implement reminder protocol for patients and providers; create standing orders for routine screenings; establish workflow for screening result follow-up; document screening status and interventions; coordinate with primary care regarding screening gaps; follow up on completion of recommended screenings.",
+    "expected_outcomes": "Improved preventive screening rates, earlier detection of health conditions, enhanced chronic disease management, decreased preventable complications, better population health outcomes, reduced healthcare costs, improved quality metrics.",
+    "target_population": "All Medicaid-enrolled adults, with screening recommendations tailored to age, gender, and risk factors.",
+    "citation": "US Preventive Services Task Force. Recommendation topics. https://www.uspreventiveservicestaskforce.org/uspstf/recommendation-topics/uspstf-a-and-b-recommendations. Published 2021. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "preventive care",
+      "screening",
+      "early detection"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_chw_1",
+    "title": "Community-Based Screening Navigation Program",
+    "domain": "Preventive Screenings",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Identify patients overdue for recommended screenings; assess barriers to screening completion; provide education on screening purpose and process; assist with scheduling appointments; arrange transportation when needed; help address cultural or language barriers; document navigation interventions; coordinate with healthcare team regarding screening status; follow up on completion of scheduled screenings.",
+    "expected_outcomes": "Improved screening rates in underserved populations, reduced disparities in preventive care, increased early detection of health conditions, enhanced patient understanding of screening importance, decreased barriers to care, improved patient satisfaction.",
+    "target_population": "Medicaid-enrolled adults with barriers to completing recommended screenings, particularly those from underserved communities or with limited health literacy.",
+    "citation": "Wells KJ, Battaglia TA, Dudley DJ, et al. Patient navigation: state of the art or is it science? Cancer. 2008;113(8):1999-2010. doi:10.1002/cncr.23815",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "navigation",
+      "barriers to care",
+      "health equity"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_cc_1",
+    "title": "Population Health Screening Management Program",
+    "domain": "Preventive Screenings",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop registry of patients due for preventive screenings; stratify outreach by risk level and screening gaps; implement proactive outreach to patients with multiple overdue screenings; coordinate group screening events for specific populations; track screening completion rates by demographic groups; document outreach efforts and outcomes; coordinate between primary care and specialty screening services; follow up on abnormal results requiring additional care.",
+    "expected_outcomes": "Improved population-level screening rates, reduced disparities in preventive care, earlier intervention for detected conditions, enhanced preventive care completion, improved clinical outcomes, reduced healthcare costs, better quality metrics.",
+    "target_population": "All Medicaid-enrolled adults, with targeted outreach to populations with historically lower screening rates.",
+    "citation": "Taplin SH, Yabroff KR, Zapka J. A multilevel research perspective on cancer care delivery: the example of follow-up to an abnormal mammogram. Cancer Epidemiol Biomarkers Prev. 2012;21(10):1709-1715. doi:10.1158/1055-9965.EPI-12-0265",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "population management",
+      "outreach",
+      "health equity"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_ncm_1",
+    "title": "Structured Medication Adherence Assessment and Intervention Protocol",
+    "domain": "Medication Adherence",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Assess medication adherence using validated tool (e.g., Morisky Medication Adherence Scale); identify specific adherence barriers; implement targeted interventions based on barrier type; provide education on medication purpose and importance; establish medication routines aligned with daily activities; create simplified medication schedules when possible; document adherence interventions; coordinate with pharmacy regarding adherence packaging options; follow up on implementation of adherence strategies.",
+    "expected_outcomes": "Improved medication adherence, enhanced therapeutic outcomes, reduced medication-related adverse events, decreased preventable hospitalizations, better chronic disease control, improved quality of life, reduced healthcare costs.",
+    "target_population": "Medicaid-enrolled adults on chronic medications, particularly those with complex regimens, history of non-adherence, or multiple chronic conditions.",
+    "citation": "Viswanathan M, Golin CE, Jones CD, et al. Interventions to improve adherence to self-administered medications for chronic diseases in the United States: a systematic review. Ann Intern Med. 2012;157(11):785-795. doi:10.7326/0003-4819-157-11-201212040-00538",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "barriers assessment",
+      "adherence intervention"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_cp_1",
+    "title": "Pharmacist-Led Medication Regimen Simplification",
+    "domain": "Medication Adherence",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review complete medication list; identify opportunities for regimen simplification; recommend once-daily formulations when available; suggest combination products when appropriate; develop synchronized medication schedule; create consolidated medication administration schedule; document simplification recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Improved medication adherence, reduced regimen complexity, decreased pill burden, enhanced patient satisfaction with medication regimen, better therapeutic outcomes, reduced medication errors, improved quality of life.",
+    "target_population": "Medicaid-enrolled adults on multiple chronic medications, particularly those with complex regimens, cognitive impairment, or reported adherence challenges.",
+    "citation": "Choudhry NK, Fischer MA, Avorn J, et al. The implications of therapeutic complexity on adherence to cardiovascular medications. Arch Intern Med. 2011;171(9):814-822. doi:10.1001/archinternmed.2010.495",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "regimen simplification",
+      "polypharmacy",
+      "medication synchronization"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_pt_1",
+    "title": "Medication Adherence Technology Support Program",
+    "domain": "Medication Adherence",
+    "role": "Pharmacy Technician",
+    "implementation_guidance": "Assess patient technology access and preferences; identify appropriate adherence technology tools; assist with setting up medication reminder apps; demonstrate use of electronic pill boxes or caps; help establish automated refill systems; create backup plans for technology failures; document technology interventions; coordinate with pharmacy regarding refill synchronization; follow up on technology utilization and effectiveness.",
+    "expected_outcomes": "Improved medication adherence, reduced missed doses, enhanced refill timeliness, decreased medication gaps, better chronic disease control, improved patient engagement in medication management, reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults on chronic medications who have access to and comfort with technology, particularly those with memory issues or complex schedules.",
+    "citation": "Checchi KD, Huybrechts KF, Avorn J, Kesselheim AS. Electronic medication packaging devices and medication adherence: a systematic review. JAMA. 2014;312(12):1237-1247. doi:10.1001/jama.2014.10059",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "adherence technology",
+      "medication reminders",
+      "electronic monitoring"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_cc_1",
+    "title": "Structured Care Transitions Protocol",
+    "domain": "Care Transitions",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Begin discharge planning early during hospitalization; ensure medication reconciliation and access; schedule follow-up appointment within 7-14 days; provide written discharge instructions with warning signs; establish protocol for post-discharge phone calls within 48-72 hours; document transition plan and interventions; coordinate communication between hospital and outpatient providers; follow up on completion of post-discharge appointments.",
+    "expected_outcomes": "Reduced 30-day readmissions, improved continuity of care, enhanced medication adherence, increased completion of follow-up appointments, better patient satisfaction with transition, decreased gaps in care, improved clinical outcomes.",
+    "target_population": "Medicaid-enrolled adults discharged from hospital, particularly those with complex conditions or high readmission risk.",
+    "citation": "Coleman EA, Parry C, Chalmers S, Min SJ. The care transitions intervention: results of a randomized controlled trial. Arch Intern Med. 2006;166(17):1822-1828. doi:10.1001/archinte.166.17.1822",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care transitions",
+      "readmission prevention",
+      "post-discharge care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_ncm_1",
+    "title": "Medication Reconciliation and Management Protocol",
+    "domain": "Care Transitions",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Conduct comprehensive medication reconciliation at care transitions; identify discrepancies between pre-admission and discharge medications; resolve medication discrepancies with prescribers; provide education on medication changes; ensure access to new medications; create updated medication schedule; document reconciliation process and interventions; coordinate with pharmacy regarding new prescriptions; follow up on medication adherence post-transition.",
+    "expected_outcomes": "Reduced medication errors, decreased adverse drug events, improved medication adherence, enhanced patient understanding of medication regimen, reduced emergency department visits, better continuity of pharmacotherapy, improved clinical outcomes.",
+    "target_population": "Medicaid-enrolled adults experiencing care transitions, particularly those on multiple medications or with recent medication changes.",
+    "citation": "Mueller SK, Sponsler KC, Kripalani S, Schnipper JL. Hospital-based medication reconciliation practices: a systematic review. Arch Intern Med. 2012;172(14):1057-1069. doi:10.1001/archinternmed.2012.2246",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication reconciliation",
+      "medication safety",
+      "care transitions"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_chw_1",
+    "title": "Post-Discharge Home Visit Protocol",
+    "domain": "Care Transitions",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Conduct home visit within 72 hours of discharge; review discharge instructions and medication regimen; assess home environment for safety and recovery needs; identify barriers to implementing discharge recommendations; assist with scheduling follow-up appointments; help establish medication routines; document home visit findings and interventions; coordinate with healthcare team regarding identified barriers; follow up on implementation of discharge plan.",
+    "expected_outcomes": "Improved adherence to discharge recommendations, enhanced self-management behaviors, better medication adherence, increased follow-up appointment attendance, reduced readmissions, improved quality of life, better transition from hospital to home.",
+    "target_population": "Medicaid-enrolled adults recently discharged from hospital, particularly those with limited support systems or multiple barriers to care.",
+    "citation": "Naylor MD, Aiken LH, Kurtzman ET, Olds DM, Hirschman KB. The care span: The importance of transitional care in achieving health reform. Health Aff (Millwood). 2011;30(4):746-754. doi:10.1377/hlthaff.2011.0041",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "home visits",
+      "post-discharge support",
+      "care transitions"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_ncm_1",
+    "title": "Structured CKD Self-Management Education Protocol",
+    "domain": "CKD",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Assess current CKD knowledge and self-management skills; develop individualized education plan addressing knowledge gaps; teach blood pressure monitoring and management; create protocol for medication adherence support; establish guidelines for dietary modifications; document education provided and skills demonstrated; follow up on implementation of self-management behaviors; adjust approach based on CKD stage and cognitive status.",
+    "expected_outcomes": "Improved disease understanding, enhanced self-management behaviors, better blood pressure control, improved medication adherence, appropriate dietary modifications, slowed disease progression, reduced hospitalizations, improved quality of life.",
+    "target_population": "Medicaid-enrolled adults with CKD stages 1-5 (non-dialysis), particularly those with recent diagnosis or progression.",
+    "citation": "Chen SH, Tsai YF, Sun CY, Wu IW, Lee CC, Wu MS. The impact of self-management support on the progression of chronic kidney disease--a prospective randomized controlled trial. Nephrol Dial Transplant. 2011;26(11):3560-3566. doi:10.1093/ndt/gfr047",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "education",
+      "self-management",
+      "disease progression"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_cp_1",
+    "title": "Pharmacist-Led CKD Medication Management Protocol",
+    "domain": "CKD",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review complete medication list; identify potentially nephrotoxic medications; recommend appropriate dose adjustments based on eGFR; evaluate for drug interactions; develop protocol for monitoring medication effects on kidney function; create plan for medication adjustments with disease progression; document medication recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Reduced medication-related adverse events, appropriate medication dosing, decreased use of nephrotoxic agents, improved medication safety, slowed disease progression, reduced hospitalizations, enhanced medication adherence.",
+    "target_population": "Medicaid-enrolled adults with CKD stages 3-5 (non-dialysis), particularly those on multiple medications.",
+    "citation": "Pai AB, Boyd A, Depczynski J, Chavez IM, Khan N, Manley H. Reduced drug use and hospitalization rates in patients undergoing hemodialysis who received pharmaceutical care: a 2-year, randomized, controlled study. Pharmacotherapy. 2009;29(12):1433-1440. doi:10.1592/phco.29.12.1433",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication management",
+      "nephrotoxicity",
+      "dose adjustment"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_cc_1",
+    "title": "CKD Care Coordination Protocol",
+    "domain": "CKD",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop registry of patients with CKD; stratify by disease stage and risk factors; implement risk-based follow-up schedule; coordinate referrals to nephrology based on progression criteria; ensure completion of recommended monitoring tests; track preventive care measures; document care coordination activities; coordinate between primary care and specialty providers; follow up on missed appointments and tests.",
+    "expected_outcomes": "Improved adherence to CKD monitoring guidelines, timely specialty referrals, reduced gaps in care, earlier intervention for complications, decreased preventable hospitalizations, better management of comorbidities, improved clinical outcomes.",
+    "target_population": "All Medicaid-enrolled adults with CKD, with intensity of intervention stratified by disease stage and risk factors.",
+    "citation": "Bayliss EA, Bhardwaja B, Ross C, Beck A, Lanese DM. Multidisciplinary team care may slow the rate of decline in renal function. Clin J Am Soc Nephrol. 2011;6(4):704-710. doi:10.2215/CJN.06610810",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care coordination",
+      "disease monitoring",
+      "specialty referral"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_ncm_1",
+    "title": "Structured Post-MI Self-Management Education Protocol",
+    "domain": "Post MI",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Assess current knowledge of post-MI care and self-management; develop individualized education plan addressing knowledge gaps; teach symptom monitoring and recognition of warning signs; create written action plan for concerning symptoms; establish protocol for medication adherence support; document education provided and skills demonstrated; follow up on implementation of self-management behaviors; adjust approach based on risk level and cognitive status.",
+    "expected_outcomes": "Improved disease understanding, enhanced self-management behaviors, better recognition of warning signs, improved medication adherence, reduced readmissions, decreased mortality risk, improved quality of life, increased patient confidence in recovery.",
+    "target_population": "Medicaid-enrolled adults discharged after myocardial infarction, particularly those with first-time MI or multiple risk factors.",
+    "citation": "Barlow J, Wright C, Sheasby J, Turner A, Hainsworth J. Self-management approaches for people with chronic conditions: a review. Patient Educ Couns. 2002;48(2):177-187. doi:10.1016/s0738-3991(02)00032-0",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "education",
+      "self-management",
+      "symptom monitoring"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_cp_1",
+    "title": "Pharmacist-Led Post-MI Medication Optimization",
+    "domain": "Post MI",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review post-MI medication regimen; assess appropriateness of guideline-directed medical therapy; evaluate medication adherence and barriers; recommend therapy adjustments following evidence-based guidelines; develop monitoring plan for efficacy and adverse effects; document optimization recommendations and rationale; coordinate with prescribers regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Improved guideline-directed medical therapy utilization, enhanced medication adherence, reduced adverse effects, decreased recurrent events, improved quality of life, reduced mortality risk, better secondary prevention outcomes.",
+    "target_population": "Medicaid-enrolled adults discharged after myocardial infarction.",
+    "citation": "Ho PM, Lambert-Kerzner A, Carey EP, et al. Multifaceted intervention to improve medication adherence and secondary prevention measures after acute coronary syndrome hospital discharge: a randomized clinical trial. JAMA Intern Med. 2014;174(2):186-193. doi:10.1001/jamainternmed.2013.12944",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication management",
+      "GDMT",
+      "secondary prevention"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_cc_1",
+    "title": "Cardiac Rehabilitation Referral and Engagement Protocol",
+    "domain": "Post MI",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Identify eligible patients for cardiac rehabilitation; initiate referral before hospital discharge; address barriers to participation; coordinate transportation options; help schedule initial appointment; establish protocol for monitoring attendance; document referral and engagement interventions; coordinate between cardiac rehabilitation and primary care; follow up on program participation and completion.",
+    "expected_outcomes": "Increased cardiac rehabilitation referral and participation rates, improved functional capacity, enhanced quality of life, reduced recurrent events, decreased mortality risk, better risk factor management, improved return to activities of daily living.",
+    "target_population": "Medicaid-enrolled adults discharged after myocardial infarction who are eligible for cardiac rehabilitation.",
+    "citation": "Anderson L, Thompson DR, Oldridge N, et al. Exercise-based cardiac rehabilitation for coronary heart disease. Cochrane Database Syst Rev. 2016;(1):CD001800. doi:10.1002/14651858.CD001800.pub3",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "cardiac rehabilitation",
+      "exercise",
+      "secondary prevention"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_ncm_1",
+    "title": "Structured Post-Stroke Medication Adherence Protocol",
+    "domain": "Post Stroke",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Conduct medication reconciliation before discharge; provide written and verbal education on each medication's purpose and importance; establish follow-up phone call within 72 hours of discharge; create medication calendar aligned with daily routines; implement teach-back method to verify understanding; document adherence barriers identified; develop plan for addressing cost concerns; coordinate with pharmacy for refill synchronization; schedule follow-up assessment of adherence at each visit.",
+    "expected_outcomes": "Improved medication adherence, reduced medication errors, decreased hospital readmissions, better clinical outcomes, enhanced patient understanding of medication regimen, improved secondary prevention.",
+    "target_population": "Medicaid-enrolled adults discharged after stroke.",
+    "citation": "Bushnell CD, Olson DM, Zhao X, et al. Secondary preventive medication persistence and adherence 1 year after stroke. Neurology. 2011;77(12):1182-1190. doi:10.1212/WNL.0b013e31822f0423",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "secondary prevention",
+      "stroke recovery"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_cp_1",
+    "title": "Post-Stroke Antithrombotic Therapy Optimization",
+    "domain": "Post Stroke",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review and optimize antithrombotic therapy based on stroke etiology; assess for contraindications and drug interactions; recommend appropriate agent and dosing; develop monitoring plan for efficacy and safety; create protocol for managing bleeding risk; document optimization recommendations and rationale; coordinate with prescribers; follow up on implementation of recommendations; adjust based on patient response.",
+    "expected_outcomes": "Improved adherence to guideline-directed therapy, optimized medication selection and dosing, reduced adverse drug events, decreased recurrent stroke risk, enhanced medication safety, better secondary prevention outcomes.",
+    "target_population": "Medicaid-enrolled adults discharged after ischemic stroke.",
+    "citation": "Ozdemir H, Sagris D, Abdul-Rahim AH, Lip GYH, Shantsila E. Management of ischaemic stroke survivors in primary care setting: the road to holistic care. Intern Emerg Med. 2023;18(3):609-618. doi:10.1007/s11739-023-03445-y",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "antithrombotic therapy",
+      "secondary prevention",
+      "medication management"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_chw_1",
+    "title": "Home-Based Stroke Recovery Support",
+    "domain": "Post Stroke",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Conduct home visits to assess recovery environment; identify barriers to implementing discharge recommendations; help establish medication and self-monitoring routines; assist with implementing dietary changes; create physical activity plan based on home environment; address literacy barriers with visual aids; document home-based interventions; coordinate with healthcare team regarding identified barriers; follow up on progress with recovery goals.",
+    "expected_outcomes": "Improved adherence to discharge recommendations, enhanced self-management behaviors, better medication adherence, increased physical activity, reduced readmissions, improved quality of life, better transition from hospital to home.",
+    "target_population": "Medicaid-enrolled adults recently discharged after stroke, particularly those with limited support systems or multiple barriers to care.",
+    "citation": "Prvu Bettger J, Alexander KP, Dolor RJ, et al. Transitional care after hospitalization for acute stroke or myocardial infarction: a systematic review. Ann Intern Med. 2012;157(6):407-416. doi:10.7326/0003-4819-157-6-201209180-00004",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "home-based care",
+      "stroke recovery",
+      "barriers to care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hiv_ncm_1",
+    "title": "Structured HIV Medication Adherence Protocol",
+    "domain": "HIV",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Assess barriers to antiretroviral therapy (ART) adherence; provide education on medication purpose and importance; develop individualized adherence plan addressing specific barriers; establish medication routines aligned with daily activities; implement reminder systems; create protocol for managing side effects; document adherence interventions; coordinate with HIV specialist regarding adherence concerns; follow up on implementation of adherence strategies.",
+    "expected_outcomes": "Improved ART adherence, enhanced viral suppression, reduced drug resistance, decreased opportunistic infections, better immune function, improved quality of life, reduced HIV transmission risk.",
+    "target_population": "Medicaid-enrolled adults living with HIV, particularly those newly diagnosed, with detectable viral load, or history of adherence challenges.",
+    "citation": "Thompson MA, Mugavero MJ, Amico KR, et al. Guidelines for improving entry into and retention in care and antiretroviral adherence for persons with HIV: evidence-based recommendations from an International Association of Physicians in AIDS Care panel. Ann Intern Med. 2012;156(11):817-833. doi:10.7326/0003-4819-156-11-201206050-00419",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "antiretroviral therapy",
+      "viral suppression"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hiv_cp_1",
+    "title": "Pharmacist-Led HIV Medication Management Protocol",
+    "domain": "HIV",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Review complete medication list; assess for drug-drug interactions with antiretroviral therapy; evaluate for appropriate prophylaxis based on CD4 count; recommend regimen adjustments to minimize side effects; develop monitoring plan for medication efficacy and toxicity; document medication recommendations and rationale; coordinate with HIV provider regarding therapy changes; follow up on implementation of recommendations.",
+    "expected_outcomes": "Reduced medication-related adverse events, decreased drug-drug interactions, improved medication tolerability, enhanced ART adherence, better viral suppression, improved immune function, reduced medication errors.",
+    "target_population": "Medicaid-enrolled adults living with HIV, particularly those on multiple medications or with comorbidities.",
+    "citation": "Saberi P, Dong BJ, Johnson MO, Greenblatt RM, Cocohoba JM. The impact of HIV clinical pharmacists on HIV treatment outcomes: a systematic review. Patient Prefer Adherence. 2012;6:297-322. doi:10.2147/PPA.S30244",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication management",
+      "drug interactions",
+      "antiretroviral therapy"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hiv_chw_1",
+    "title": "HIV Care Engagement and Retention Protocol",
+    "domain": "HIV",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Identify barriers to HIV care engagement; provide education on importance of regular care; assist with scheduling and attending appointments; help navigate insurance and benefit systems; connect to support services and resources; create plan for addressing stigma concerns; document engagement interventions; coordinate with HIV care team regarding identified barriers; follow up on appointment attendance.",
+    "expected_outcomes": "Improved HIV care retention, enhanced appointment attendance, reduced gaps in care, better ART adherence, improved viral suppression, decreased lost-to-follow-up rates, better health outcomes.",
+    "target_population": "Medicaid-enrolled adults living with HIV, particularly those newly diagnosed, with history of missed appointments, or multiple barriers to care.",
+    "citation": "Higa DH, Marks G, Crepaz N, Liau A, Lyles CM. Interventions to improve retention in HIV primary care: a systematic review of U.S. studies. Curr HIV/AIDS Rep. 2012;9(4):313-325. doi:10.1007/s11904-012-0136-6",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care engagement",
+      "retention in care",
+      "appointment adherence"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "vaccination_ncm_1",
+    "title": "Structured Adult Vaccination Assessment and Administration Protocol",
+    "domain": "Vaccination",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement systematic assessment of vaccination status at all visits; develop standing orders for routine adult vaccinations; create reminder system for due and overdue vaccinations; establish protocol for addressing vaccine hesitancy; provide education on vaccine benefits and safety; document vaccination status and interventions; coordinate with primary care regarding vaccination gaps; follow up on completion of recommended vaccine series.",
+    "expected_outcomes": "Improved adult vaccination rates, reduced vaccine-preventable diseases, enhanced protection for vulnerable populations, decreased preventable hospitalizations, better population health outcomes, improved quality metrics.",
+    "target_population": "All Medicaid-enrolled adults, with vaccination recommendations tailored to age, health conditions, and risk factors.",
+    "citation": "Centers for Disease Control and Prevention. Standards for adult immunization practice. https://www.cdc.gov/vaccines/hcp/adults/for-practice/standards/index.html. Updated May 2, 2022. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "immunization",
+      "preventive care",
+      "disease prevention"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "vaccination_chw_1",
+    "title": "Community-Based Vaccination Outreach Program",
+    "domain": "Vaccination",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Identify individuals with vaccination gaps; assess barriers to vaccination; provide culturally appropriate education on vaccine importance; assist with scheduling vaccination appointments; arrange transportation when needed; help address vaccine concerns and hesitancy; document outreach interventions; coordinate with healthcare team regarding vaccination status; follow up on completion of scheduled vaccinations.",
+    "expected_outcomes": "Improved vaccination rates in underserved populations, reduced disparities in vaccine coverage, increased protection against preventable diseases, enhanced community immunity, decreased barriers to vaccination, improved patient understanding of vaccine benefits.",
+    "target_population": "Medicaid-enrolled adults with barriers to completing recommended vaccinations, particularly those from underserved communities or with limited health literacy.",
+    "citation": "Community Preventive Services Task Force. Vaccination programs: community-based interventions implemented in combination. https://www.thecommunityguide.org/findings/vaccination-programs-community-based-interventions-implemented-combination. Published August 2015. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "outreach",
+      "barriers to care",
+      "health equity"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "vaccination_pt_1",
+    "title": "Pharmacy-Based Vaccination Program",
+    "domain": "Vaccination",
+    "role": "Pharmacy Technician",
+    "implementation_guidance": "Assist with identifying patients due for vaccinations; help implement vaccination screening protocol; prepare vaccination documentation; support vaccine inventory management; assist with scheduling vaccination appointments; help process insurance claims for vaccines; document vaccination support activities; coordinate with pharmacist regarding vaccination status; follow up on completion of multi-dose vaccine series.",
+    "expected_outcomes": "Improved access to vaccinations, enhanced vaccination rates, increased convenience for patients, reduced missed opportunities for vaccination, better utilization of pharmacy-based immunization services, improved population health outcomes.",
+    "target_population": "Medicaid-enrolled adults eligible for pharmacist-administered vaccinations.",
+    "citation": "Isenor JE, Edwards NT, Alia TA, et al. Impact of pharmacists as immunizers on vaccination rates: a systematic review and meta-analysis. Vaccine. 2016;34(47):5708-5723. doi:10.1016/j.vaccine.2016.08.085",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "pharmacy services",
+      "immunization access",
+      "convenience"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "epsdt_ncm_1",
+    "title": "Structured EPSDT Screening and Referral Protocol",
+    "domain": "EPSDT",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement systematic tracking of EPSDT screening schedule; develop protocol for comprehensive health, developmental, and behavioral assessments; establish workflow for vision, hearing, and dental screening; create system for prompt referral of identified concerns; provide education on importance of preventive screenings; document screening status and interventions; coordinate with primary care regarding screening gaps; follow up on completion of recommended referrals.",
+    "expected_outcomes": "Improved EPSDT screening rates, earlier identification of developmental concerns, enhanced preventive care completion, timely intervention for detected conditions, reduced preventable complications, better health outcomes, improved quality metrics.",
+    "target_population": "Medicaid-enrolled children and adolescents eligible for EPSDT services.",
+    "citation": "Centers for Medicare & Medicaid Services. EPSDT - A guide for states: coverage in the Medicaid benefit for children and adolescents. https://www.medicaid.gov/sites/default/files/2019-12/epsdt-coverage-guide.pdf. Published June 2014. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "preventive screening",
+      "early detection",
+      "developmental assessment"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "epsdt_chw_1",
+    "title": "Community-Based EPSDT Outreach Program",
+    "domain": "EPSDT",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Identify children overdue for EPSDT screenings; assess barriers to screening completion; provide education on screening importance and process; assist with scheduling appointments; arrange transportation when needed; help address cultural or language barriers; document outreach interventions; coordinate with healthcare team regarding screening status; follow up on completion of scheduled screenings.",
+    "expected_outcomes": "Improved EPSDT screening rates in underserved populations, reduced disparities in preventive care, increased early detection of health and developmental concerns, enhanced family understanding of screening importance, decreased barriers to care, improved family satisfaction.",
+    "target_population": "Medicaid-enrolled children and adolescents with barriers to completing EPSDT screenings, particularly those from underserved communities or with limited health literacy.",
+    "citation": "Raphael JL, Rueda A, Lion KC, Giordano TP. The role of lay health workers in pediatric chronic disease: a systematic review. Acad Pediatr. 2013;13(5):408-420. doi:10.1016/j.acap.2013.04.015",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "outreach",
+      "barriers to care",
+      "health equity"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "epsdt_cc_1",
+    "title": "EPSDT Referral Coordination Protocol",
+    "domain": "EPSDT",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop system for tracking EPSDT referrals; establish workflow for coordinating specialty appointments; create protocol for addressing barriers to completing referrals; implement reminder system for families; provide assistance with understanding referral purpose; document coordination activities; facilitate communication between primary care and specialty providers; follow up on completion of referrals and outcomes.",
+    "expected_outcomes": "Improved referral completion rates, reduced time to specialty care, enhanced follow-through on treatment recommendations, decreased gaps in care, better management of identified conditions, improved clinical outcomes, increased family satisfaction with care coordination.",
+    "target_population": "Medicaid-enrolled children and adolescents with EPSDT-identified concerns requiring specialty evaluation or intervention.",
+    "citation": "Stille C, Turchi RM, Antonelli R, et al. The family-centered medical home: specific considerations for child health research and policy. Acad Pediatr. 2010;10(4):211-217. doi:10.1016/j.acap.2010.05.002",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care coordination",
+      "specialty referral",
+      "follow-up care"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "prenatal_ncm_1",
+    "title": "Structured Prenatal Care Coordination Protocol",
+    "domain": "Prenatal",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement systematic assessment of prenatal care needs; develop individualized care plan addressing medical and social needs; establish schedule for regular monitoring of maternal and fetal wellbeing; create protocol for identifying high-risk pregnancies; provide education on healthy pregnancy behaviors; document care coordination activities; coordinate between obstetric and specialty providers; follow up on completion of recommended screenings and interventions.",
+    "expected_outcomes": "Improved prenatal care attendance, enhanced maternal health, better birth outcomes, reduced pregnancy complications, earlier identification of high-risk conditions, decreased preterm births, improved maternal satisfaction with care.",
+    "target_population": "Medicaid-enrolled pregnant individuals, particularly those with high-risk conditions or social determinants affecting pregnancy outcomes.",
+    "citation": "Hodnett ED, Fredericks S, Weston J. Support during pregnancy for women at increased risk of low birthweight babies. Cochrane Database Syst Rev. 2010;(6):CD000198. doi:10.1002/14651858.CD000198.pub2",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "prenatal care",
+      "high-risk pregnancy",
+      "care coordination"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "prenatal_chw_1",
+    "title": "Community-Based Prenatal Support Program",
+    "domain": "Prenatal",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Identify pregnant individuals with barriers to prenatal care; assess social determinants affecting pregnancy; provide education on importance of regular prenatal visits; assist with scheduling and attending appointments; connect to community resources for pregnancy support; help address transportation and childcare barriers; document outreach interventions; coordinate with healthcare team regarding identified barriers; follow up on prenatal appointment attendance.",
+    "expected_outcomes": "Improved prenatal care utilization, reduced missed appointments, enhanced connection to support resources, decreased barriers to care, better pregnancy outcomes, improved maternal health literacy, increased engagement in prenatal care.",
+    "target_population": "Medicaid-enrolled pregnant individuals with barriers to accessing prenatal care, particularly those from underserved communities or with limited support systems.",
+    "citation": "Roman LA, Raffo JE, Zhu Q, Meghea CI. A statewide Medicaid enhanced prenatal care program: impact on birth outcomes. JAMA Pediatr. 2014;168(3):220-227. doi:10.1001/jamapediatrics.2013.4347",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "prenatal support",
+      "barriers to care",
+      "health equity"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "prenatal_doula_1",
+    "title": "Prenatal Doula Support Protocol",
+    "domain": "Prenatal",
+    "role": "Doula",
+    "implementation_guidance": "Establish early relationship with pregnant individual; conduct comprehensive assessment of birth preferences and concerns; provide education on pregnancy, labor, and birth processes; teach comfort measures and coping techniques for labor; assist with developing birth preferences document; attend prenatal appointments when requested; document support activities; coordinate with healthcare providers regarding client needs; provide continuous emotional and informational support throughout pregnancy.",
+    "expected_outcomes": "Improved birth experience satisfaction, reduced anxiety about labor and birth, enhanced birth preparedness, increased self-advocacy during prenatal care, better communication with healthcare providers, improved maternal confidence, reduced interventions during labor.",
+    "target_population": "Medicaid-enrolled pregnant individuals, particularly first-time parents, those with previous traumatic birth experiences, or limited support systems.",
+    "citation": "Kozhimannil KB, Hardeman RR, Attanasio LB, Blauer-Peterson C, O'Brien M. Doula care, birth outcomes, and costs among Medicaid beneficiaries. Am J Public Health. 2013;103(4):e113-e121. doi:10.2105/AJPH.2012.301201",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "doula support",
+      "birth preparation",
+      "maternal support"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "postnatal_ncm_1",
+    "title": "Structured Postpartum Care Coordination Protocol",
+    "domain": "Postnatal",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement systematic assessment of postpartum needs; develop individualized care plan addressing physical recovery, mental health, and infant care; establish schedule for monitoring maternal wellbeing; create protocol for identifying postpartum complications; provide education on postpartum warning signs; document care coordination activities; coordinate between obstetric, pediatric, and specialty providers; follow up on completion of recommended screenings and interventions.",
+    "expected_outcomes": "Improved postpartum care attendance, enhanced maternal recovery, better maternal-infant bonding, reduced postpartum complications, earlier identification of postpartum depression, decreased emergency department utilization, improved maternal satisfaction with care.",
+    "target_population": "Medicaid-enrolled postpartum individuals, particularly those with pregnancy complications, mental health concerns, or limited support systems.",
+    "citation": "Yonemoto N, Dowswell T, Nagai S, Mori R. Schedules for home visits in the early postpartum period. Cochrane Database Syst Rev. 2017;8(8):CD009326. doi:10.1002/14651858.CD009326.pub3",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "postpartum care",
+      "maternal health",
+      "care coordination"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "postnatal_chw_1",
+    "title": "Community-Based Postpartum Support Program",
+    "domain": "Postnatal",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Conduct home visits during early postpartum period; assess social determinants affecting recovery and infant care; provide education on postpartum self-care and infant care; assist with scheduling and attending postpartum and newborn appointments; connect to community resources for parenting support; help address barriers to care; document support interventions; coordinate with healthcare team regarding identified concerns; follow up on postpartum and infant appointment attendance.",
+    "expected_outcomes": "Improved postpartum care utilization, enhanced breastfeeding rates and duration, better infant preventive care completion, decreased barriers to care, improved maternal mental health, increased parenting confidence, reduced social isolation.",
+    "target_population": "Medicaid-enrolled postpartum individuals with barriers to accessing care, particularly first-time parents, those with limited support systems, or from underserved communities.",
+    "citation": "Dodge KA, Goodman WB, Murphy RA, O'Donnell K, Sato J. Randomized controlled trial of universal postnatal nurse home visiting: impact on emergency care. Pediatrics. 2013;132 Suppl 2(Suppl 2):S140-S146. doi:10.1542/peds.2013-1021M",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "postpartum support",
+      "home visiting",
+      "parenting support"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "postnatal_doula_1",
+    "title": "Postpartum Doula Support Protocol",
+    "domain": "Postnatal",
+    "role": "Doula",
+    "implementation_guidance": "Provide in-home support during early postpartum period; assist with infant feeding and care techniques; offer practical help with household tasks; provide emotional support and active listening; teach infant soothing methods; assist with physical recovery comfort measures; document support activities; coordinate with healthcare providers regarding concerns; provide evidence-based information on postpartum and newborn care; support maternal rest and self-care.",
+    "expected_outcomes": "Improved maternal confidence in infant care, enhanced breastfeeding success, better maternal mental health, reduced postpartum fatigue, increased maternal self-care, improved maternal-infant bonding, decreased social isolation, better identification of postpartum complications.",
+    "target_population": "Medicaid-enrolled postpartum individuals, particularly first-time parents, those with limited support systems, or at risk for postpartum depression.",
+    "citation": "McComish JF, Groh CJ, Moldenhauer JA. Development of a doula intervention for postpartum depressive symptoms: participants' recommendations. J Child Adolesc Psychiatr Nurs. 2013;26(1):3-15. doi:10.1111/jcap.12019",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "doula support",
+      "postpartum recovery",
+      "maternal support"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
     "id": "diabetes_cgm_1",
     "title": "Professional Continuous Glucose Monitoring for Type 2 Diabetes Management",
     "domain": "Diabetes",
@@ -1079,6 +3117,4690 @@ const allRecommendations = [
       "intimate partner violence",
       "resource navigation",
       "maternal safety"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "diabetes_primary_care_provider_1",
+    "title": "Evidence-Based Diabetes Management for Primary Care Providers",
+    "domain": "Diabetes",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to diabetes management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Diabetes Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "diabetes",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_nurse_care_manager_1",
+    "title": "Evidence-Based Diabetes Management for Nurse Care Managers",
+    "domain": "Diabetes",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to diabetes management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Diabetes Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "diabetes",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_community_health_worker_1",
+    "title": "Evidence-Based Diabetes Management for Community Health Workers",
+    "domain": "Diabetes",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to diabetes management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Diabetes Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "diabetes",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_social_worker_1",
+    "title": "Evidence-Based Diabetes Management for Social Workers",
+    "domain": "Diabetes",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to diabetes management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Diabetes Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "diabetes",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_pharmacist_1",
+    "title": "Evidence-Based Diabetes Management for Pharmacists",
+    "domain": "Diabetes",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to diabetes management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Diabetes Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "diabetes",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_behavioral_health_provider_1",
+    "title": "Evidence-Based Diabetes Management for Behavioral Health Providers",
+    "domain": "Diabetes",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to diabetes management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Diabetes Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "diabetes",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_care_coordinator_1",
+    "title": "Evidence-Based Diabetes Management for Care Coordinators",
+    "domain": "Diabetes",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to diabetes management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Diabetes Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "diabetes",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_doula_1",
+    "title": "Evidence-Based Diabetes Management for Doulas",
+    "domain": "Diabetes",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to diabetes management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Diabetes Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "diabetes",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_primary_care_provider_1",
+    "title": "Evidence-Based Hypertension Management for Primary Care Providers",
+    "domain": "Hypertension",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to hypertension management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Hypertension Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "hypertension",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_nurse_care_manager_1",
+    "title": "Evidence-Based Hypertension Management for Nurse Care Managers",
+    "domain": "Hypertension",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to hypertension management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Hypertension Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "hypertension",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_community_health_worker_1",
+    "title": "Evidence-Based Hypertension Management for Community Health Workers",
+    "domain": "Hypertension",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to hypertension management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Hypertension Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "hypertension",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_social_worker_1",
+    "title": "Evidence-Based Hypertension Management for Social Workers",
+    "domain": "Hypertension",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to hypertension management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Hypertension Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "hypertension",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_pharmacist_1",
+    "title": "Evidence-Based Hypertension Management for Pharmacists",
+    "domain": "Hypertension",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to hypertension management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Hypertension Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "hypertension",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_behavioral_health_provider_1",
+    "title": "Evidence-Based Hypertension Management for Behavioral Health Providers",
+    "domain": "Hypertension",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to hypertension management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Hypertension Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "hypertension",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_care_coordinator_1",
+    "title": "Evidence-Based Hypertension Management for Care Coordinators",
+    "domain": "Hypertension",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to hypertension management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Hypertension Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "hypertension",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_doula_1",
+    "title": "Evidence-Based Hypertension Management for Doulas",
+    "domain": "Hypertension",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to hypertension management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Hypertension Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "hypertension",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_primary_care_provider_1",
+    "title": "Evidence-Based Depression Management for Primary Care Providers",
+    "domain": "Depression",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to depression management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Depression Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "depression",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_nurse_care_manager_1",
+    "title": "Evidence-Based Depression Management for Nurse Care Managers",
+    "domain": "Depression",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to depression management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Depression Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_community_health_worker_1",
+    "title": "Evidence-Based Depression Management for Community Health Workers",
+    "domain": "Depression",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to depression management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Depression Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "depression",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_social_worker_1",
+    "title": "Evidence-Based Depression Management for Social Workers",
+    "domain": "Depression",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to depression management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Depression Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_pharmacist_1",
+    "title": "Evidence-Based Depression Management for Pharmacists",
+    "domain": "Depression",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to depression management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Depression Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "depression",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_behavioral_health_provider_1",
+    "title": "Evidence-Based Depression Management for Behavioral Health Providers",
+    "domain": "Depression",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to depression management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Depression Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "depression",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_care_coordinator_1",
+    "title": "Evidence-Based Depression Management for Care Coordinators",
+    "domain": "Depression",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to depression management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Depression Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_doula_1",
+    "title": "Evidence-Based Depression Management for Doulas",
+    "domain": "Depression",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to depression management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Depression Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_primary_care_provider_1",
+    "title": "Evidence-Based Anxiety Management for Primary Care Providers",
+    "domain": "Anxiety",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to anxiety management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Anxiety Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "anxiety",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_nurse_care_manager_1",
+    "title": "Evidence-Based Anxiety Management for Nurse Care Managers",
+    "domain": "Anxiety",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to anxiety management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Anxiety Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "anxiety",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_community_health_worker_1",
+    "title": "Evidence-Based Anxiety Management for Community Health Workers",
+    "domain": "Anxiety",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to anxiety management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Anxiety Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "anxiety",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_social_worker_1",
+    "title": "Evidence-Based Anxiety Management for Social Workers",
+    "domain": "Anxiety",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to anxiety management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Anxiety Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "anxiety",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_pharmacist_1",
+    "title": "Evidence-Based Anxiety Management for Pharmacists",
+    "domain": "Anxiety",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to anxiety management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Anxiety Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "anxiety",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_behavioral_health_provider_1",
+    "title": "Evidence-Based Anxiety Management for Behavioral Health Providers",
+    "domain": "Anxiety",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to anxiety management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Anxiety Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "anxiety",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_care_coordinator_1",
+    "title": "Evidence-Based Anxiety Management for Care Coordinators",
+    "domain": "Anxiety",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to anxiety management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Anxiety Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "anxiety",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_doula_1",
+    "title": "Evidence-Based Anxiety Management for Doulas",
+    "domain": "Anxiety",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to anxiety management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Anxiety Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "anxiety",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_primary_care_provider_1",
+    "title": "Evidence-Based Substance Use Management for Primary Care Providers",
+    "domain": "Substance Use",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to substance use management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved substance use management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Substance Use Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "substance use",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_nurse_care_manager_1",
+    "title": "Evidence-Based Substance Use Management for Nurse Care Managers",
+    "domain": "Substance Use",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to substance use management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved substance use management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Substance Use Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "substance use",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_community_health_worker_1",
+    "title": "Evidence-Based Substance Use Management for Community Health Workers",
+    "domain": "Substance Use",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to substance use management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved substance use management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Substance Use Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "substance use",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_social_worker_1",
+    "title": "Evidence-Based Substance Use Management for Social Workers",
+    "domain": "Substance Use",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to substance use management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved substance use management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Substance Use Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "substance use",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_pharmacist_1",
+    "title": "Evidence-Based Substance Use Management for Pharmacists",
+    "domain": "Substance Use",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to substance use management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved substance use management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Substance Use Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "substance use",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_behavioral_health_provider_1",
+    "title": "Evidence-Based Substance Use Management for Behavioral Health Providers",
+    "domain": "Substance Use",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to substance use management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved substance use management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Substance Use Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "substance use",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_care_coordinator_1",
+    "title": "Evidence-Based Substance Use Management for Care Coordinators",
+    "domain": "Substance Use",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to substance use management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved substance use management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Substance Use Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "substance use",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "substance_use_doula_1",
+    "title": "Evidence-Based Substance Use Management for Doulas",
+    "domain": "Substance Use",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to substance use management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved substance use management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Substance Use Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "substance use",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_primary_care_provider_1",
+    "title": "Evidence-Based Housing Management for Primary Care Providers",
+    "domain": "Housing",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to housing management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved housing management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Housing Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "housing",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_nurse_care_manager_1",
+    "title": "Evidence-Based Housing Management for Nurse Care Managers",
+    "domain": "Housing",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to housing management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved housing management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Housing Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "housing",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_community_health_worker_1",
+    "title": "Evidence-Based Housing Management for Community Health Workers",
+    "domain": "Housing",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to housing management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved housing management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Housing Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "housing",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_social_worker_1",
+    "title": "Evidence-Based Housing Management for Social Workers",
+    "domain": "Housing",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to housing management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved housing management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Housing Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "housing",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_pharmacist_1",
+    "title": "Evidence-Based Housing Management for Pharmacists",
+    "domain": "Housing",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to housing management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved housing management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Housing Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "housing",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_behavioral_health_provider_1",
+    "title": "Evidence-Based Housing Management for Behavioral Health Providers",
+    "domain": "Housing",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to housing management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved housing management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Housing Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "housing",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_care_coordinator_1",
+    "title": "Evidence-Based Housing Management for Care Coordinators",
+    "domain": "Housing",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to housing management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved housing management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Housing Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "housing",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "housing_doula_1",
+    "title": "Evidence-Based Housing Management for Doulas",
+    "domain": "Housing",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to housing management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved housing management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Housing Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "housing",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_primary_care_provider_1",
+    "title": "Evidence-Based Food Security Management for Primary Care Providers",
+    "domain": "Food Security",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "food security",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_nurse_care_manager_1",
+    "title": "Evidence-Based Food Security Management for Nurse Care Managers",
+    "domain": "Food Security",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "food security",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_community_health_worker_1",
+    "title": "Evidence-Based Food Security Management for Community Health Workers",
+    "domain": "Food Security",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "food security",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_social_worker_1",
+    "title": "Evidence-Based Food Security Management for Social Workers",
+    "domain": "Food Security",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "food security",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_pharmacist_1",
+    "title": "Evidence-Based Food Security Management for Pharmacists",
+    "domain": "Food Security",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "food security",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_behavioral_health_provider_1",
+    "title": "Evidence-Based Food Security Management for Behavioral Health Providers",
+    "domain": "Food Security",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "food security",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_care_coordinator_1",
+    "title": "Evidence-Based Food Security Management for Care Coordinators",
+    "domain": "Food Security",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "food security",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "food_security_doula_1",
+    "title": "Evidence-Based Food Security Management for Doulas",
+    "domain": "Food Security",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to food security management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved food security management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Food Security Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "food security",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_primary_care_provider_1",
+    "title": "Evidence-Based Transportation Management for Primary Care Providers",
+    "domain": "Transportation",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "transportation",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_nurse_care_manager_1",
+    "title": "Evidence-Based Transportation Management for Nurse Care Managers",
+    "domain": "Transportation",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "transportation",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_community_health_worker_1",
+    "title": "Evidence-Based Transportation Management for Community Health Workers",
+    "domain": "Transportation",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "transportation",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_social_worker_1",
+    "title": "Evidence-Based Transportation Management for Social Workers",
+    "domain": "Transportation",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "transportation",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_pharmacist_1",
+    "title": "Evidence-Based Transportation Management for Pharmacists",
+    "domain": "Transportation",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "transportation",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_behavioral_health_provider_1",
+    "title": "Evidence-Based Transportation Management for Behavioral Health Providers",
+    "domain": "Transportation",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "transportation",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_doula_1",
+    "title": "Evidence-Based Transportation Management for Doulas",
+    "domain": "Transportation",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "transportation",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "transportation_care_coordinator_1",
+    "title": "Evidence-Based Transportation Management for Care Coordinators",
+    "domain": "Transportation",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to transportation management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved transportation management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Transportation Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "transportation",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_primary_care_provider_1",
+    "title": "Evidence-Based Asthma Management for Primary Care Providers",
+    "domain": "Asthma",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to asthma management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved asthma management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Asthma Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "asthma",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_nurse_care_manager_1",
+    "title": "Evidence-Based Asthma Management for Nurse Care Managers",
+    "domain": "Asthma",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to asthma management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved asthma management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Asthma Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "asthma",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_community_health_worker_1",
+    "title": "Evidence-Based Asthma Management for Community Health Workers",
+    "domain": "Asthma",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to asthma management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved asthma management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Asthma Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "asthma",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_social_worker_1",
+    "title": "Evidence-Based Asthma Management for Social Workers",
+    "domain": "Asthma",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to asthma management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved asthma management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Asthma Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "asthma",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_pharmacist_1",
+    "title": "Evidence-Based Asthma Management for Pharmacists",
+    "domain": "Asthma",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to asthma management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved asthma management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Asthma Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "asthma",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_behavioral_health_provider_1",
+    "title": "Evidence-Based Asthma Management for Behavioral Health Providers",
+    "domain": "Asthma",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to asthma management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved asthma management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Asthma Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "asthma",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_care_coordinator_1",
+    "title": "Evidence-Based Asthma Management for Care Coordinators",
+    "domain": "Asthma",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to asthma management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved asthma management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Asthma Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "asthma",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_doula_1",
+    "title": "Evidence-Based Asthma Management for Doulas",
+    "domain": "Asthma",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to asthma management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved asthma management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Asthma Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "asthma",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_primary_care_provider_1",
+    "title": "Evidence-Based COPD Management for Primary Care Providers",
+    "domain": "COPD",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to copd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved copd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for COPD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "copd",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_nurse_care_manager_1",
+    "title": "Evidence-Based COPD Management for Nurse Care Managers",
+    "domain": "COPD",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to copd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved copd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for COPD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "copd",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_community_health_worker_1",
+    "title": "Evidence-Based COPD Management for Community Health Workers",
+    "domain": "COPD",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to copd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved copd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for COPD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "copd",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_social_worker_1",
+    "title": "Evidence-Based COPD Management for Social Workers",
+    "domain": "COPD",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to copd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved copd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for COPD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "copd",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_pharmacist_1",
+    "title": "Evidence-Based COPD Management for Pharmacists",
+    "domain": "COPD",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to copd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved copd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for COPD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "copd",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_behavioral_health_provider_1",
+    "title": "Evidence-Based COPD Management for Behavioral Health Providers",
+    "domain": "COPD",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to copd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved copd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for COPD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "copd",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_care_coordinator_1",
+    "title": "Evidence-Based COPD Management for Care Coordinators",
+    "domain": "COPD",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to copd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved copd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for COPD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "copd",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "copd_doula_1",
+    "title": "Evidence-Based COPD Management for Doulas",
+    "domain": "COPD",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to copd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved copd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for COPD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "copd",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_primary_care_provider_1",
+    "title": "Evidence-Based Heart Failure Management for Primary Care Providers",
+    "domain": "Heart Failure",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to heart failure management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved heart failure management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Heart Failure Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "heart failure",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_nurse_care_manager_1",
+    "title": "Evidence-Based Heart Failure Management for Nurse Care Managers",
+    "domain": "Heart Failure",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to heart failure management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved heart failure management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Heart Failure Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "heart failure",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_community_health_worker_1",
+    "title": "Evidence-Based Heart Failure Management for Community Health Workers",
+    "domain": "Heart Failure",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to heart failure management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved heart failure management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Heart Failure Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "heart failure",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_social_worker_1",
+    "title": "Evidence-Based Heart Failure Management for Social Workers",
+    "domain": "Heart Failure",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to heart failure management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved heart failure management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Heart Failure Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "heart failure",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_pharmacist_1",
+    "title": "Evidence-Based Heart Failure Management for Pharmacists",
+    "domain": "Heart Failure",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to heart failure management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved heart failure management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Heart Failure Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "heart failure",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_behavioral_health_provider_1",
+    "title": "Evidence-Based Heart Failure Management for Behavioral Health Providers",
+    "domain": "Heart Failure",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to heart failure management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved heart failure management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Heart Failure Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "heart failure",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_care_coordinator_1",
+    "title": "Evidence-Based Heart Failure Management for Care Coordinators",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to heart failure management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved heart failure management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Heart Failure Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "heart failure",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "heart_failure_doula_1",
+    "title": "Evidence-Based Heart Failure Management for Doulas",
+    "domain": "Heart Failure",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to heart failure management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved heart failure management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Heart Failure Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "heart failure",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_primary_care_provider_1",
+    "title": "Evidence-Based Preventive Screenings Management for Primary Care Providers",
+    "domain": "Preventive Screenings",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "preventive screenings",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_nurse_care_manager_1",
+    "title": "Evidence-Based Preventive Screenings Management for Nurse Care Managers",
+    "domain": "Preventive Screenings",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "preventive screenings",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_community_health_worker_1",
+    "title": "Evidence-Based Preventive Screenings Management for Community Health Workers",
+    "domain": "Preventive Screenings",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "preventive screenings",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_social_worker_1",
+    "title": "Evidence-Based Preventive Screenings Management for Social Workers",
+    "domain": "Preventive Screenings",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "preventive screenings",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_pharmacist_1",
+    "title": "Evidence-Based Preventive Screenings Management for Pharmacists",
+    "domain": "Preventive Screenings",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "preventive screenings",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_behavioral_health_provider_1",
+    "title": "Evidence-Based Preventive Screenings Management for Behavioral Health Providers",
+    "domain": "Preventive Screenings",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "preventive screenings",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_care_coordinator_1",
+    "title": "Evidence-Based Preventive Screenings Management for Care Coordinators",
+    "domain": "Preventive Screenings",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "preventive screenings",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "preventive_screenings_doula_1",
+    "title": "Evidence-Based Preventive Screenings Management for Doulas",
+    "domain": "Preventive Screenings",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to preventive screenings management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved preventive screenings management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Preventive Screenings Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "preventive screenings",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_primary_care_provider_1",
+    "title": "Evidence-Based Medication Adherence Management for Primary Care Providers",
+    "domain": "Medication Adherence",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to medication adherence management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved medication adherence management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Medication Adherence Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_nurse_care_manager_1",
+    "title": "Evidence-Based Medication Adherence Management for Nurse Care Managers",
+    "domain": "Medication Adherence",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to medication adherence management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved medication adherence management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Medication Adherence Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_community_health_worker_1",
+    "title": "Evidence-Based Medication Adherence Management for Community Health Workers",
+    "domain": "Medication Adherence",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to medication adherence management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved medication adherence management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Medication Adherence Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication adherence",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_social_worker_1",
+    "title": "Evidence-Based Medication Adherence Management for Social Workers",
+    "domain": "Medication Adherence",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to medication adherence management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved medication adherence management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Medication Adherence Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_pharmacist_1",
+    "title": "Evidence-Based Medication Adherence Management for Pharmacists",
+    "domain": "Medication Adherence",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to medication adherence management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved medication adherence management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Medication Adherence Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_behavioral_health_provider_1",
+    "title": "Evidence-Based Medication Adherence Management for Behavioral Health Providers",
+    "domain": "Medication Adherence",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to medication adherence management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved medication adherence management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Medication Adherence Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "medication adherence",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_care_coordinator_1",
+    "title": "Evidence-Based Medication Adherence Management for Care Coordinators",
+    "domain": "Medication Adherence",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to medication adherence management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved medication adherence management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Medication Adherence Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_doula_1",
+    "title": "Evidence-Based Medication Adherence Management for Doulas",
+    "domain": "Medication Adherence",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to medication adherence management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved medication adherence management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Medication Adherence Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication adherence",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_primary_care_provider_1",
+    "title": "Evidence-Based Care Transitions Management for Primary Care Providers",
+    "domain": "Care Transitions",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to care transitions management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved care transitions management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Care Transitions Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care transitions",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_nurse_care_manager_1",
+    "title": "Evidence-Based Care Transitions Management for Nurse Care Managers",
+    "domain": "Care Transitions",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to care transitions management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved care transitions management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Care Transitions Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care transitions",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_community_health_worker_1",
+    "title": "Evidence-Based Care Transitions Management for Community Health Workers",
+    "domain": "Care Transitions",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to care transitions management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved care transitions management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Care Transitions Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care transitions",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_social_worker_1",
+    "title": "Evidence-Based Care Transitions Management for Social Workers",
+    "domain": "Care Transitions",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to care transitions management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved care transitions management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Care Transitions Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care transitions",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_pharmacist_1",
+    "title": "Evidence-Based Care Transitions Management for Pharmacists",
+    "domain": "Care Transitions",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to care transitions management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved care transitions management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Care Transitions Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care transitions",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_behavioral_health_provider_1",
+    "title": "Evidence-Based Care Transitions Management for Behavioral Health Providers",
+    "domain": "Care Transitions",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to care transitions management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved care transitions management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Care Transitions Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care transitions",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_care_coordinator_1",
+    "title": "Evidence-Based Care Transitions Management for Care Coordinators",
+    "domain": "Care Transitions",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to care transitions management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved care transitions management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Care Transitions Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care transitions",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_doula_1",
+    "title": "Evidence-Based Care Transitions Management for Doulas",
+    "domain": "Care Transitions",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to care transitions management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved care transitions management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Care Transitions Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "care transitions",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_primary_care_provider_1",
+    "title": "Evidence-Based CKD Management for Primary Care Providers",
+    "domain": "CKD",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "ckd",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_nurse_care_manager_1",
+    "title": "Evidence-Based CKD Management for Nurse Care Managers",
+    "domain": "CKD",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "ckd",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_community_health_worker_1",
+    "title": "Evidence-Based CKD Management for Community Health Workers",
+    "domain": "CKD",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "ckd",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_social_worker_1",
+    "title": "Evidence-Based CKD Management for Social Workers",
+    "domain": "CKD",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "ckd",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_pharmacist_1",
+    "title": "Evidence-Based CKD Management for Pharmacists",
+    "domain": "CKD",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "ckd",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_behavioral_health_provider_1",
+    "title": "Evidence-Based CKD Management for Behavioral Health Providers",
+    "domain": "CKD",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "ckd",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_care_coordinator_1",
+    "title": "Evidence-Based CKD Management for Care Coordinators",
+    "domain": "CKD",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "ckd",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "ckd_doula_1",
+    "title": "Evidence-Based CKD Management for Doulas",
+    "domain": "CKD",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to ckd management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved ckd management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for CKD Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "ckd",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_primary_care_provider_1",
+    "title": "Evidence-Based Post MI Management for Primary Care Providers",
+    "domain": "Post MI",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to post mi management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post mi management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post MI Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "post mi",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_nurse_care_manager_1",
+    "title": "Evidence-Based Post MI Management for Nurse Care Managers",
+    "domain": "Post MI",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to post mi management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post mi management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post MI Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "post mi",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_community_health_worker_1",
+    "title": "Evidence-Based Post MI Management for Community Health Workers",
+    "domain": "Post MI",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to post mi management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post mi management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post MI Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "post mi",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_social_worker_1",
+    "title": "Evidence-Based Post MI Management for Social Workers",
+    "domain": "Post MI",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to post mi management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post mi management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post MI Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "post mi",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_pharmacist_1",
+    "title": "Evidence-Based Post MI Management for Pharmacists",
+    "domain": "Post MI",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to post mi management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post mi management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post MI Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "post mi",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_behavioral_health_provider_1",
+    "title": "Evidence-Based Post MI Management for Behavioral Health Providers",
+    "domain": "Post MI",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to post mi management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post mi management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post MI Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "post mi",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_care_coordinator_1",
+    "title": "Evidence-Based Post MI Management for Care Coordinators",
+    "domain": "Post MI",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to post mi management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post mi management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post MI Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "post mi",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_doula_1",
+    "title": "Evidence-Based Post MI Management for Doulas",
+    "domain": "Post MI",
+    "role": "Doula",
+    "implementation_guidance": "Implement a comprehensive approach to post mi management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post mi management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post MI Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "post mi",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_primary_care_provider_1",
+    "title": "Evidence-Based Post Stroke Management for Primary Care Providers",
+    "domain": "Post Stroke",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a comprehensive approach to post stroke management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post stroke management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post Stroke Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "post stroke",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_nurse_care_manager_1",
+    "title": "Evidence-Based Post Stroke Management for Nurse Care Managers",
+    "domain": "Post Stroke",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive approach to post stroke management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post stroke management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post Stroke Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "post stroke",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_community_health_worker_1",
+    "title": "Evidence-Based Post Stroke Management for Community Health Workers",
+    "domain": "Post Stroke",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a comprehensive approach to post stroke management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post stroke management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post Stroke Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "post stroke",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_social_worker_1",
+    "title": "Evidence-Based Post Stroke Management for Social Workers",
+    "domain": "Post Stroke",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a comprehensive approach to post stroke management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post stroke management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post Stroke Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "post stroke",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_pharmacist_1",
+    "title": "Evidence-Based Post Stroke Management for Pharmacists",
+    "domain": "Post Stroke",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a comprehensive approach to post stroke management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post stroke management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post Stroke Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "post stroke",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_behavioral_health_provider_1",
+    "title": "Evidence-Based Post Stroke Management for Behavioral Health Providers",
+    "domain": "Post Stroke",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a comprehensive approach to post stroke management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post stroke management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post Stroke Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "post stroke",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_care_coordinator_1",
+    "title": "Evidence-Based Post Stroke Management for Care Coordinators",
+    "domain": "Post Stroke",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive approach to post stroke management that includes: 1) Conduct regular screenings and assessments; 2) Develop individualized care plans; 3) Provide patient education using teach-back methods; 4) Coordinate care with specialists; 5) Monitor outcomes and adjust interventions as needed; 6) Address social determinants of health; 7) Utilize evidence-based protocols; 8) Engage family and caregivers in the care process; 9) Document interventions and outcomes; 10) Follow up regularly to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved post stroke management, reduced complications, enhanced quality of life, decreased emergency department visits and hospitalizations, improved patient satisfaction, better medication adherence, increased patient self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals, particularly those from underserved communities, racial and ethnic minorities, and those facing barriers to healthcare access.",
+    "citation": "Agency for Healthcare Research and Quality. Evidence-Based Practice Guidelines for Post Stroke Management in Primary Care Settings. https://www.ahrq.gov/research/findings/evidence-based-reports/search.html. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "post stroke",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_primary_care_provider_additional_0",
+    "title": "Additional Diabetes Management Strategy for Primary Care Providers",
+    "domain": "Diabetes",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "diabetes",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_nurse_care_manager_additional_1",
+    "title": "Additional Diabetes Management Strategy for Nurse Care Managers",
+    "domain": "Diabetes",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "diabetes",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_community_health_worker_additional_2",
+    "title": "Additional Diabetes Management Strategy for Community Health Workers",
+    "domain": "Diabetes",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "diabetes",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_social_worker_additional_3",
+    "title": "Additional Diabetes Management Strategy for Social Workers",
+    "domain": "Diabetes",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "diabetes",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_pharmacist_additional_4",
+    "title": "Additional Diabetes Management Strategy for Pharmacists",
+    "domain": "Diabetes",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "diabetes",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_behavioral_health_provider_additional_5",
+    "title": "Additional Diabetes Management Strategy for Behavioral Health Providers",
+    "domain": "Diabetes",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "diabetes",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_care_coordinator_additional_6",
+    "title": "Additional Diabetes Management Strategy for Care Coordinators",
+    "domain": "Diabetes",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "diabetes",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "diabetes_doula_additional_7",
+    "title": "Additional Diabetes Management Strategy for Doulas",
+    "domain": "Diabetes",
+    "role": "Doula",
+    "implementation_guidance": "Implement a targeted approach to diabetes management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved diabetes outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Diabetes Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "diabetes",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_primary_care_provider_additional_8",
+    "title": "Additional Hypertension Management Strategy for Primary Care Providers",
+    "domain": "Hypertension",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a targeted approach to hypertension management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Hypertension Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "hypertension",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_nurse_care_manager_additional_9",
+    "title": "Additional Hypertension Management Strategy for Nurse Care Managers",
+    "domain": "Hypertension",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a targeted approach to hypertension management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Hypertension Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "hypertension",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_community_health_worker_additional_10",
+    "title": "Additional Hypertension Management Strategy for Community Health Workers",
+    "domain": "Hypertension",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a targeted approach to hypertension management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Hypertension Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "hypertension",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_social_worker_additional_11",
+    "title": "Additional Hypertension Management Strategy for Social Workers",
+    "domain": "Hypertension",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a targeted approach to hypertension management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Hypertension Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "hypertension",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_pharmacist_additional_12",
+    "title": "Additional Hypertension Management Strategy for Pharmacists",
+    "domain": "Hypertension",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a targeted approach to hypertension management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Hypertension Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "hypertension",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_behavioral_health_provider_additional_13",
+    "title": "Additional Hypertension Management Strategy for Behavioral Health Providers",
+    "domain": "Hypertension",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a targeted approach to hypertension management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Hypertension Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "hypertension",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_care_coordinator_additional_14",
+    "title": "Additional Hypertension Management Strategy for Care Coordinators",
+    "domain": "Hypertension",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a targeted approach to hypertension management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Hypertension Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "hypertension",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "hypertension_doula_additional_15",
+    "title": "Additional Hypertension Management Strategy for Doulas",
+    "domain": "Hypertension",
+    "role": "Doula",
+    "implementation_guidance": "Implement a targeted approach to hypertension management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved hypertension outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Hypertension Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "hypertension",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_primary_care_provider_additional_16",
+    "title": "Additional Depression Management Strategy for Primary Care Providers",
+    "domain": "Depression",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a targeted approach to depression management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Depression Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "depression",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_nurse_care_manager_additional_17",
+    "title": "Additional Depression Management Strategy for Nurse Care Managers",
+    "domain": "Depression",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a targeted approach to depression management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Depression Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_community_health_worker_additional_18",
+    "title": "Additional Depression Management Strategy for Community Health Workers",
+    "domain": "Depression",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a targeted approach to depression management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Depression Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_social_worker_additional_19",
+    "title": "Additional Depression Management Strategy for Social Workers",
+    "domain": "Depression",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a targeted approach to depression management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Depression Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "depression",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_pharmacist_additional_20",
+    "title": "Additional Depression Management Strategy for Pharmacists",
+    "domain": "Depression",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a targeted approach to depression management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Depression Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "depression",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_behavioral_health_provider_additional_21",
+    "title": "Additional Depression Management Strategy for Behavioral Health Providers",
+    "domain": "Depression",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a targeted approach to depression management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Depression Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression",
+      "behavioral-health-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_care_coordinator_additional_22",
+    "title": "Additional Depression Management Strategy for Care Coordinators",
+    "domain": "Depression",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a targeted approach to depression management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Depression Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression",
+      "care-coordinator",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "depression_doula_additional_23",
+    "title": "Additional Depression Management Strategy for Doulas",
+    "domain": "Depression",
+    "role": "Doula",
+    "implementation_guidance": "Implement a targeted approach to depression management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved depression outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Depression Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "depression",
+      "doula",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_cbt_1",
+    "title": "Stepped-Care Cognitive Behavioral Therapy for Anxiety in Primary Care",
+    "domain": "Anxiety",
+    "role": "Behavioral Health Provider",
+    "implementation_guidance": "Implement a stepped-care approach to CBT for anxiety disorders; begin with low-intensity interventions for mild to moderate anxiety including guided self-help materials and computerized/internet-delivered CBT programs; provide brief psychoeducation about anxiety symptoms and cognitive-behavioral model; teach specific relaxation techniques including diaphragmatic breathing and progressive muscle relaxation; assign homework for skill practice; monitor symptoms using validated measures (GAD-7, PHQ-4); escalate to higher-intensity face-to-face CBT for non-responders or more severe cases; consider group-based CBT when appropriate; maintain regular communication with primary care provider about treatment progress.",
+    "expected_outcomes": "Reduced anxiety symptoms, improved functional status, decreased healthcare utilization, enhanced self-management skills, improved quality of life, reduced need for pharmacotherapy, increased treatment accessibility, cost-effective care delivery.",
+    "target_population": "Medicaid-enrolled adults with diagnosed anxiety disorders or elevated anxiety symptoms in primary care settings, particularly those with mild to moderate severity who may benefit from non-specialist interventions.",
+    "citation": "Parker EL, Banfield M, Fassnacht DB, Hatfield T, Kyrios M. Contemporary treatment of anxiety in primary care: a systematic review and meta-analysis of outcomes in countries with universal healthcare. BMC Fam Pract. 2021;22(1):92. doi:10.1186/s12875-021-01445-5",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "cognitive behavioral therapy",
+      "stepped care",
+      "anxiety management"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_primary_care_provider_additional_24",
+    "title": "Additional Anxiety Management Strategy for Primary Care Providers",
+    "domain": "Anxiety",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a targeted approach to anxiety management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Anxiety Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "anxiety",
+      "primary-care-provider",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_nurse_care_manager_additional_25",
+    "title": "Additional Anxiety Management Strategy for Nurse Care Managers",
+    "domain": "Anxiety",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a targeted approach to anxiety management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Anxiety Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "anxiety",
+      "nurse-care-manager",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_community_health_worker_additional_26",
+    "title": "Additional Anxiety Management Strategy for Community Health Workers",
+    "domain": "Anxiety",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a targeted approach to anxiety management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Anxiety Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "anxiety",
+      "community-health-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_social_worker_additional_27",
+    "title": "Additional Anxiety Management Strategy for Social Workers",
+    "domain": "Anxiety",
+    "role": "Social Worker",
+    "implementation_guidance": "Implement a targeted approach to anxiety management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Anxiety Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "anxiety",
+      "social-worker",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "anxiety_pharmacist_additional_28",
+    "title": "Additional Anxiety Management Strategy for Pharmacists",
+    "domain": "Anxiety",
+    "role": "Pharmacist",
+    "implementation_guidance": "Implement a targeted approach to anxiety management that includes: 1) Conduct comprehensive assessments; 2) Develop personalized care plans; 3) Provide culturally appropriate education; 4) Coordinate with specialists; 5) Monitor outcomes regularly; 6) Address social determinants of health; 7) Follow evidence-based protocols; 8) Engage patients and families; 9) Document interventions and outcomes; 10) Follow up to ensure adherence and address barriers.",
+    "expected_outcomes": "Improved anxiety outcomes, reduced complications, enhanced quality of life, decreased healthcare utilization, improved patient satisfaction, better treatment adherence, increased self-management skills, reduced healthcare disparities.",
+    "target_population": "Medicaid-enrolled individuals from underserved communities, particularly those facing barriers to healthcare access.",
+    "citation": "Centers for Medicare & Medicaid Services. Evidence-Based Anxiety Management Guidelines for Medicaid Populations. https://www.medicaid.gov/medicaid/quality-of-care/quality-improvement-initiatives/. Published 2023. Accessed May 29, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "anxiety",
+      "pharmacist",
+      "medicaid",
+      "evidence-based"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "medication_adherence_1",
+    "title": "Structured Medication Adherence Intervention for Chronic Disease Management",
+    "domain": "Medication Adherence",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive medication adherence program for patients with chronic diseases; conduct standardized medication adherence assessments using validated tools (e.g., Morisky Medication Adherence Scale) at each visit; document adherence status in structured EHR fields; identify specific barriers to adherence through targeted questioning; provide tailored patient education on medication purpose, dosage, timing, and potential side effects; use teach-back method to confirm understanding; simplify medication regimens when possible through collaboration with prescribers; implement pill organizers or blister packs for patients with complex regimens; establish medication reminder systems (e.g., phone apps, text messages); engage family members or caregivers in medication management; schedule regular follow-up calls between visits to address adherence challenges; coordinate with pharmacists for medication reviews; document and address adverse effects promptly; create personalized medication schedules aligned with patient's daily routines.",
+    "expected_outcomes": "Improved medication adherence rates, better chronic disease control, reduced hospital admissions, decreased emergency department visits, enhanced quality of life, improved clinical outcomes, reduced healthcare costs, increased patient knowledge and self-efficacy.",
+    "target_population": "Medicaid-enrolled patients with chronic diseases requiring long-term medication therapy, particularly those with multiple medications, complex regimens, or history of poor adherence.",
+    "citation": "Oliveira CJ, Jos\u00e9 HMG, Costa EIMT. Medication Adherence in Adults with Chronic Diseases in Primary Healthcare: A Quality Improvement Project. Nurs Rep. 2024;14(3):1735-1749. doi:10.3390/nursrep14030129",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication adherence",
+      "chronic disease management",
+      "patient education"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "care_transitions_1",
+    "title": "Care Transitions Intervention (CTI) for Hospital-to-Home Transitions",
+    "domain": "Care Transitions",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement the evidence-based Care Transitions Intervention (CTI) model for patients transitioning from hospital to home; assign a trained Transitions Coach to work with patients for a 30-day period; conduct one home visit within 24-72 hours of discharge and three follow-up phone calls; focus on four key pillars: medication self-management, use of a dynamic patient-centered health record, primary care/specialist follow-up, and knowledge of red flags; teach patients to use a personal health record to track medications, questions for providers, and follow-up appointments; coach patients to schedule and prepare for follow-up appointments rather than doing it for them; help patients identify and respond to red flags that indicate worsening condition; conduct medication reconciliation during the home visit; use role-playing to practice communication with healthcare providers; emphasize skill transfer and patient empowerment rather than performing tasks for patients; document patient activation scores at baseline and program completion.",
+    "expected_outcomes": "Reduced hospital readmission rates, improved patient activation and self-management skills, successful patient-identified goal achievement, decreased emergency department visits, improved medication management, enhanced communication with healthcare providers, reduced healthcare costs.",
+    "target_population": "Medicaid-enrolled patients with complex care needs transitioning from hospital to home, particularly those with chronic conditions, complex medication regimens, or at high risk for readmission.",
+    "citation": "National Council on Aging. Evidence-Based Program: Care Transitions Intervention. https://www.ncoa.org/article/evidence-based-program-care-transitions-intervention. Published November 1, 2023. Accessed May 29, 2025.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care transitions",
+      "hospital discharge",
+      "patient activation"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_mi_management_1",
+    "title": "Comprehensive Post-MI Management Protocol for Primary Care",
+    "domain": "Post MI",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a structured approach to post-MI care during the subacute period (1-3 months post-discharge); review discharge medications and ensure patient is on guideline-directed medical therapy including: daily aspirin 75-162mg, P2Y12 inhibitor (clopidogrel, prasugrel, or ticagrelor) for up to 12 months, beta-blocker therapy (especially for patients with LVEF \u226440%), ACE inhibitor or ARB (particularly for patients with LVEF \u226440%, hypertension, diabetes, or chronic kidney disease), and high-intensity statin therapy; schedule follow-up appointment within 1-2 weeks of discharge; perform medication reconciliation at each visit; assess medication adherence and address barriers; refer to cardiac rehabilitation within 1-2 weeks of discharge; provide clear activity recommendations with gradual return to normal activities; educate patient on lifestyle modifications including smoking cessation, heart-healthy diet, weight management, and regular physical activity; teach recognition of cardiac symptoms requiring medical attention; arrange early non-invasive stress testing for risk stratification in patients who did not undergo revascularization; implement structured communication with cardiologists for coordinated care; monitor for depression and provide appropriate treatment or referral.",
+    "expected_outcomes": "Reduced hospital readmissions, decreased recurrent MI risk, improved medication adherence, increased cardiac rehabilitation participation, enhanced quality of life, reduced all-cause mortality, improved functional capacity, better patient self-management, decreased healthcare costs.",
+    "target_population": "Medicaid-enrolled patients in the subacute period following myocardial infarction.",
+    "citation": "Mercado MG, Smith DK, McConnon ML. Myocardial infarction: management of the subacute period. Am Fam Physician. 2013;88(9):581-588.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "post-MI care",
+      "secondary prevention",
+      "medication management"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "post_stroke_management_1",
+    "title": "Comprehensive Post-Stroke Management Protocol for Primary Care",
+    "domain": "Post Stroke",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a structured approach to post-stroke care; schedule first follow-up visit within 1-3 weeks of hospital discharge; establish a foundation for care by understanding the patient's experience and concerns; review stroke etiology and ensure diagnostic workup is complete (including carotid imaging and prolonged cardiac monitoring when indicated); review discharge medications and ensure patient is on appropriate secondary prevention therapy including antithrombotic therapy, antihypertensives, and statins; screen for post-stroke complications including depression (using PHQ-9), cognitive impairment (using Montreal Cognitive Assessment), and fall risk; assess for unmet rehabilitation needs in mobility, activities of daily living, and communication; manage vascular risk factors with target blood pressure <130/80 mmHg for most patients; ensure appropriate anticoagulation for patients with atrial fibrillation; optimize diabetes management with target HbA1c <7%; refer to appropriate rehabilitation services for ongoing functional impairments; provide education on lifestyle modifications including Mediterranean or DASH diet, regular physical activity, smoking cessation, and limited alcohol consumption; engage caregivers and family members in the care plan; establish a clear follow-up schedule with regular reassessment of needs.",
+    "expected_outcomes": "Reduced risk of recurrent stroke, improved functional status, decreased post-stroke complications, enhanced quality of life, reduced hospital readmissions, improved medication adherence, better risk factor control, increased patient and caregiver engagement, reduced caregiver burden.",
+    "target_population": "Medicaid-enrolled patients following stroke discharge, particularly those with ongoing functional impairments or multiple vascular risk factors.",
+    "citation": "Kernan WN, Viera AJ, Billinger SA, et al. Primary Care of Adult Patients After Stroke: A Scientific Statement From the American Heart Association/American Stroke Association. Stroke. 2021;52(9):e558-e571. doi:10.1161/STR.0000000000000382",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "post-stroke care",
+      "secondary prevention",
+      "rehabilitation"
+    ],
+    "last_updated": "2025-05-29"
+  },
+  {
+    "id": "asthma_care_coordination_1",
+    "title": "Implement Multidisciplinary Care Coordination for Asthma Management",
+    "domain": "Asthma",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop and implement a structured care coordination system for patients with asthma that connects schools, homes, and community resources. Create protocols for coordinating multidisciplinary care teams, establish systems for tracking asthma action plan implementation, implement follow-up procedures after exacerbations, and facilitate communication between healthcare providers, schools, and families. Establish documentation standards and implement metrics to evaluate care coordination effectiveness. Focus on ensuring comprehensive management by addressing environmental triggers, providing education, and facilitating access to care.",
+    "expected_outcomes": "Improved care coordination, reduced care fragmentation, decreased emergency department visits and hospitalizations, enhanced patient and family engagement, improved asthma control, and better quality of life for patients with asthma.",
+    "target_population": "Patients with asthma, particularly children and those with complex care needs or frequent exacerbations.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care coordination",
+      "multidisciplinary care",
+      "asthma action plan",
+      "school health",
+      "communication"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_chw_environmental_1",
+    "title": "Implement Community Health Worker Environmental Assessment for Asthma Management",
+    "domain": "Asthma",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Develop and implement a structured program for community health workers to conduct environmental assessments and interventions in homes of patients with asthma. Train CHWs to provide culturally appropriate home-based education, perform comprehensive environmental assessments to identify asthma triggers, implement trigger identification and mitigation strategies, connect families to community resources, and document findings and interventions. CHWs should be recruited from the communities they serve when possible to enhance cultural competence and trust. Establish clear protocols for communication with the clinical care team and metrics to evaluate program effectiveness.",
+    "expected_outcomes": "Reduced environmental asthma triggers in the home, decreased asthma symptoms and exacerbations, reduced emergency department visits and hospitalizations, improved medication adherence, enhanced patient and family knowledge of asthma management, and better quality of life.",
+    "target_population": "Patients with asthma, particularly those from underserved communities, with poorly controlled symptoms, or with identified environmental trigger concerns.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "environmental assessment",
+      "home visits",
+      "trigger reduction",
+      "cultural competence",
+      "community-based"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_pharmacist_medication_1",
+    "title": "Implement Pharmacist-Led Medication Management for Asthma",
+    "domain": "Asthma",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Develop and implement a structured program for pharmacists to provide comprehensive medication management for patients with asthma. Establish protocols for pharmacists to conduct medication reviews, assess and educate patients on proper inhaler technique, support medication adherence, adjust medications according to established protocols when authorized, monitor for side effects, and document interventions. Create standardized documentation templates and communication pathways with the primary care team. Implement regular follow-up schedules based on asthma control status and metrics to evaluate the effectiveness of pharmacist interventions.",
+    "expected_outcomes": "Improved medication adherence, enhanced inhaler technique, optimized medication regimens, reduced medication-related side effects, decreased emergency department visits and hospitalizations, and improved asthma control and quality of life.",
+    "target_population": "Patients with asthma, particularly those with complex medication regimens, poor adherence, improper inhaler technique, or suboptimal asthma control.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication management",
+      "inhaler technique",
+      "adherence support",
+      "medication review",
+      "pharmacist intervention"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_pharmacy_tech_adherence_1",
+    "title": "Implement Pharmacy Technician Support for Asthma Medication Adherence",
+    "domain": "Asthma",
+    "role": "Pharmacy Technician",
+    "implementation_guidance": "Develop and implement a structured program for pharmacy technicians to support medication adherence for patients with asthma. Establish protocols for technicians to provide refill reminders, synchronize medication refills, identify adherence barriers, communicate with pharmacists about adherence issues, and document interventions. Train technicians to recognize common adherence challenges specific to asthma medications and inhalers. Create standardized workflows for technicians to flag patients who may benefit from pharmacist intervention. Implement metrics to evaluate the effectiveness of pharmacy technician interventions on medication adherence rates.",
+    "expected_outcomes": "Improved medication access and adherence, reduced gaps in therapy, increased refill rates, enhanced identification of adherence barriers, and improved asthma control through consistent medication use.",
+    "target_population": "Patients with asthma who have challenges with medication adherence, including those with complex regimens, refill inconsistencies, or identified barriers to medication access.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "medication adherence",
+      "refill reminders",
+      "medication synchronization",
+      "adherence barriers",
+      "pharmacy support"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_nurse_monitoring_1",
+    "title": "Implement Nurse-Led Monitoring and Education for Asthma Management",
+    "domain": "Asthma",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Develop and implement a structured program for nurses to provide comprehensive monitoring and education for patients with asthma. Establish protocols for nurses to conduct regular symptom monitoring, deliver evidence-based asthma education, develop and review asthma action plans with patients, follow up after exacerbations, and document all interventions. Train nurses to assess inhaler technique, identify early warning signs of worsening asthma control, and provide self-management support. Create standardized documentation templates and communication pathways with the primary care team. Implement metrics to evaluate the effectiveness of nurse interventions on asthma outcomes.",
+    "expected_outcomes": "Improved self-management skills, enhanced symptom control, reduced exacerbations, decreased emergency department visits and hospitalizations, better adherence to treatment plans, and improved quality of life for patients with asthma.",
+    "target_population": "Patients with asthma across the severity spectrum, with particular focus on those with recent exacerbations, newly diagnosed patients, and those with suboptimal asthma control.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "symptom monitoring",
+      "asthma education",
+      "action plan",
+      "self-management",
+      "exacerbation follow-up"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_social_worker_services_1",
+    "title": "Implement Social Worker Interventions for Social Determinants in Asthma",
+    "domain": "Asthma",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Develop and implement a structured program for social workers to address social determinants of health affecting asthma management. Establish protocols for social workers to conduct comprehensive social needs assessments, create resource connection systems for housing, financial, and transportation assistance, implement advocacy strategies for housing improvements to reduce environmental triggers, establish coordination with community services, and document all interventions. Train social workers to identify and address social barriers specific to asthma management. Create standardized referral pathways and follow-up procedures. Implement metrics to evaluate the effectiveness of social worker interventions on addressing social barriers and improving asthma outcomes.",
+    "expected_outcomes": "Improved addressing of social barriers to asthma management, enhanced access to community resources, reduced environmental triggers in the home environment, decreased healthcare disparities, and improved asthma control and quality of life.",
+    "target_population": "Patients with asthma who face social determinants of health challenges, including housing instability, financial constraints, transportation barriers, or other social factors affecting asthma management.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "social determinants of health",
+      "resource connection",
+      "housing advocacy",
+      "community services",
+      "social barriers"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_self_management_1",
+    "title": "Implement Supported Self-Management for Asthma",
+    "domain": "Asthma",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop and implement a comprehensive supported self-management program for patients with asthma. Establish protocols for structured patient education on asthma pathophysiology, triggers, and medications. Create personalized asthma action plans (AAPs) tailored to each patient's specific triggers, symptoms, and medications. Implement a schedule of regular professional reviews totaling at least two hours of structured support. Establish documentation standards for tracking self-management skills and adherence. Create metrics to evaluate program effectiveness including symptom control, exacerbation rates, and quality of life measures. Ensure the program includes both initial education and ongoing support with scheduled follow-up sessions.",
+    "expected_outcomes": "Reduced healthcare utilization including hospitalizations and emergency department visits, improved quality of life, enhanced symptom control, decreased exacerbation frequency and severity, improved medication adherence, and increased patient confidence in self-management.",
+    "target_population": "All patients with asthma across severity levels, with particular focus on those with recent diagnosis, history of exacerbations, or suboptimal asthma control.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "self-management",
+      "asthma action plan",
+      "patient education",
+      "symptom monitoring",
+      "exacerbation prevention"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_telehealth_digital_1",
+    "title": "Implement Telehealth and Digital Tools for Asthma Management",
+    "domain": "Asthma",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop and implement a comprehensive telehealth and digital tools program for asthma management. Establish protocols for remote monitoring of symptoms and lung function using digital tools. Create systems for digital inhaler implementation to track medication use and technique. Implement integration of personalized asthma action plans (AAPs) with digital platforms to enable real-time feedback and adjustments. Establish mechanisms to ensure access for patients with limited in-person care options. Create documentation standards for telehealth encounters and digital monitoring data. Implement metrics to track the effectiveness of digital interventions on asthma outcomes, including adherence, symptom control, and quality of life measures.",
+    "expected_outcomes": "Improved medication adherence, enhanced symptom monitoring and control, increased access to care for patients with geographic or mobility barriers, reduced healthcare utilization, and improved quality of life through consistent management and early intervention.",
+    "target_population": "Patients with asthma, particularly those with limited access to in-person care, those requiring frequent monitoring, or patients demonstrating poor adherence to traditional management approaches.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "telehealth",
+      "digital monitoring",
+      "remote care",
+      "digital inhalers",
+      "technology",
+      "virtual care"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_non_pharmacologic_1",
+    "title": "Implement Non-Pharmacologic Interventions for Asthma Management",
+    "domain": "Asthma",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop and implement a comprehensive program of non-pharmacologic interventions for asthma management. Establish protocols for structured aerobic exercise programs tailored to asthma severity and patient fitness levels. Create systems for implementing evidence-based breathing exercises, including yoga, Buteyko breathing, and diaphragmatic retraining. Implement weight management support for patients when appropriate, particularly for younger patients. Establish documentation standards to track participation and outcomes. Create metrics to evaluate the effectiveness of non-pharmacologic interventions on lung function, medication use, and quality of life. Implement regular reassessment schedules to optimize benefits and adjust interventions as needed.",
+    "expected_outcomes": "Enhanced lung function, reduced short-acting beta-agonist use, improved asthma-related quality of life, increased exercise capacity, decreased symptom frequency and severity, and potential weight management benefits for applicable patients.",
+    "target_population": "Patients with asthma across severity levels, with particular focus on those interested in complementary approaches, those with exercise limitations due to asthma, or patients with weight management needs.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "non-pharmacologic",
+      "exercise",
+      "breathing techniques",
+      "weight management",
+      "complementary approaches"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_standardized_assessment_1",
+    "title": "Implement Standardized Asthma Assessment",
+    "domain": "Asthma",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Develop and implement a standardized assessment protocol for asthma symptoms, exacerbation risk, and medication side effects. Establish specific protocols for comprehensive symptom assessment including cough, wheezing, chest tightness, and shortness of breath. Create systems for evaluating exacerbation risk factors including history of previous exacerbations, environmental triggers, and comorbidities. Implement medication side effect monitoring with particular attention to inhaled corticosteroids and beta-agonists. Establish clear documentation standards to ensure consistent assessment across providers. Create metrics to track symptom control using validated tools such as the Asthma Control Test (ACT) or Asthma Control Questionnaire (ACQ). Implement regular reassessment schedules based on asthma severity and control status.",
+    "expected_outcomes": "Improved identification of poorly controlled asthma, earlier detection of exacerbation risk factors, reduced exacerbation frequency and severity, better monitoring of medication side effects, and enhanced overall asthma control and quality of life.",
+    "target_population": "All patients with asthma, with particular focus on those with recent diagnosis, history of exacerbations, or complex medication regimens.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "assessment",
+      "symptom monitoring",
+      "exacerbation risk",
+      "medication side effects",
+      "standardized tools"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "asthma_community_based_1",
+    "title": "Implement Community-Based Interventions for Asthma Management",
+    "domain": "Asthma",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Develop and implement comprehensive community-based interventions for asthma management. Establish protocols for home-based education on asthma basics, trigger identification, and self-management. Create environmental assessment processes to identify and address household triggers. Implement resource connection systems to link patients with community services and support. Establish mobile care units when possible to reach underserved communities. Create culturally appropriate educational materials and approaches tailored to the specific communities being served. Implement metrics to track the effectiveness of community-based interventions on asthma outcomes, healthcare utilization, and quality of life measures. Ensure CHWs are recruited from the communities they serve when possible to enhance cultural competence and trust.",
+    "expected_outcomes": "Improved access to care, reduced healthcare disparities, decreased emergency department visits and hospitalizations, enhanced patient and family knowledge of asthma management, reduced environmental triggers, and improved asthma control and quality of life.",
+    "target_population": "Patients with asthma in underserved communities, those with limited access to traditional healthcare settings, or populations with cultural or language barriers to standard care approaches.",
+    "citation": "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention, 2023. Available from: www.ginasthma.org",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "community-based",
+      "home visits",
+      "cultural competence",
+      "mobile care",
+      "resource connection"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_multidisciplinary_team_1",
+    "title": "Implement Multidisciplinary Heart Failure Care Team",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Establish a comprehensive multidisciplinary team to manage heart failure patients with clearly defined roles for each member. Form a dedicated team including nurses, pharmacists, social workers, and cardiologists. Implement shared decision-making and care coordination processes with standardized communication protocols. Establish specific protocols for guideline-directed medical therapy (GDMT) optimization. Create systems for early recognition of decompensation with standardized assessment tools. Develop care transition protocols between inpatient and outpatient settings to ensure continuity of care. Adapt the team structure to local resources and needs while maintaining core functions.",
+    "expected_outcomes": "Reduced mortality rates, decreased hospitalizations and readmissions, improved adherence to guideline-directed medical therapy, enhanced quality of life for patients, and significant cost savings through prevention of avoidable healthcare utilization.",
+    "target_population": "Patients with heart failure across the spectrum of disease severity, with particular focus on those at high risk for hospitalization or with recent hospitalizations.",
+    "citation": "McAlister FA, Stewart S, Ferrua S, McMurray JJ. Multidisciplinary Strategies for the Management of Heart Failure Patients at High Risk for Admission: A Systematic Review of Randomized Trials. Journal of the American College of Cardiology. 2004;44(4):810-9.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "multidisciplinary care",
+      "team-based care",
+      "care coordination",
+      "GDMT optimization",
+      "care transitions"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_clinic_implementation_1",
+    "title": "Implement Specialized Heart Failure Clinic",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Establish specialized heart failure clinics with multidisciplinary staffing to provide comprehensive care. Create dedicated clinic space with appropriate monitoring equipment for heart failure assessment. Staff the clinic with cardiologists, heart failure-specialized nurses, pharmacists, and social workers with clearly defined roles and responsibilities. Implement standardized assessment protocols and documentation templates to ensure consistent care delivery. Establish rapid access pathways for decompensating patients to prevent hospitalizations. Develop protocols for medication titration and monitoring according to current guidelines. Create patient education materials and processes focused on self-management and symptom recognition.",
+    "expected_outcomes": "Reduced hospitalizations and readmissions, improved quality of life for patients with heart failure, better medication adherence, improved guideline-directed medical therapy optimization, enhanced patient satisfaction, and cost savings through prevention of avoidable healthcare utilization.",
+    "target_population": "Patients with heart failure across the spectrum of disease severity, with particular focus on those with recent diagnosis, recent hospitalizations, or difficulty achieving optimal medical therapy.",
+    "citation": "Xia J, Brownell NK, Fonarow GC, Zlaeian B. New Models for Heart Failure Care Delivery. Progress in Cardiovascular Diseases. 2024 Jan-Feb;82:70-89.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "heart failure clinic",
+      "multidisciplinary care",
+      "specialized care",
+      "GDMT optimization",
+      "patient education"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_nurse_case_management_1",
+    "title": "Implement Nurse-Led Heart Failure Case Management",
+    "domain": "Heart Failure",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement nurse-led, protocol-driven case management for heart failure patients. Assign specialized nurse case managers with heart failure expertise to patients. Conduct structured follow-up at regular intervals using both in-person and remote modalities based on patient needs and risk stratification. Implement medication titration protocols under physician supervision to optimize guideline-directed medical therapy. Provide comprehensive patient education on self-care including daily weight monitoring, dietary restrictions, medication adherence, and symptom recognition. Monitor symptoms and vital signs with standardized tools to detect early decompensation. Establish clear escalation pathways for concerning findings to prevent hospitalizations.",
+    "expected_outcomes": "Reduced all-cause mortality, decreased heart failure-specific readmissions, improved quality of life, enhanced self-care behaviors, better medication adherence, and cost savings through prevention of avoidable healthcare utilization.",
+    "target_population": "Patients with heart failure across the spectrum of disease severity, with particular focus on those at high risk for hospitalization, with recent hospitalizations, or difficulty achieving optimal medical therapy.",
+    "citation": "Bekelman DB, Plomondon ME, Carey EP, et al. Primary Results of the Patient-Centered Disease Management (PCDM) for Heart Failure Study: A Randomized Clinical Trial. JAMA Internal Medicine. 2015;175(5):725-32.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "nurse case management",
+      "protocol-driven care",
+      "medication titration",
+      "self-care education",
+      "symptom monitoring"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_post_discharge_1",
+    "title": "Implement Post-Discharge Heart Failure Transition Program",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a structured transition program for heart failure patients being discharged from hospital. Begin discharge planning early during hospitalization, identifying potential barriers to successful transition. Schedule follow-up appointment within 7 days of discharge to ensure continuity of care. Conduct comprehensive medication reconciliation before discharge to prevent medication errors. Provide detailed patient education on symptoms to monitor, dietary restrictions, and medications. Perform follow-up phone call within 48-72 hours of discharge to address immediate concerns and reinforce discharge instructions. Ensure smooth information transfer to outpatient providers through standardized handoff protocols and documentation.",
+    "expected_outcomes": "Reduced 30-day readmissions, improved care continuity between inpatient and outpatient settings, better medication adherence, enhanced patient understanding of self-care, and cost savings through prevention of avoidable readmissions.",
+    "target_population": "Patients with heart failure being discharged from hospital, particularly those at high risk for readmission due to comorbidities, previous readmissions, or social determinants of health.",
+    "citation": "Hafkamp FJ, Tio RA, Otterspoor LC, et al. Optimal Effectiveness of Heart Failure Management \u2013 An Umbrella Review of Meta-Analyses Examining the Effectiveness of Interventions to Reduce (Re)hospitalizations in Heart Failure. Heart Failure Reviews. 2022;27(5):1683-1748.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care transitions",
+      "post-discharge",
+      "readmission prevention",
+      "medication reconciliation",
+      "follow-up care"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_self_management_1",
+    "title": "Implement Heart Failure Self-Management Education Program",
+    "domain": "Heart Failure",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement a comprehensive education program to empower patients in heart failure self-management. Develop standardized educational materials on heart failure pathophysiology, symptoms, and management tailored to different health literacy levels. Train patients on daily weight monitoring and symptom recognition with clear action thresholds. Educate on medication purposes, dosing, and side effects to improve adherence. Provide detailed dietary guidance including sodium and fluid restrictions with practical meal planning strategies. Teach action plans for responding to worsening symptoms with specific steps for different scenarios. Include caregivers in all education sessions to enhance support system effectiveness and ensure continuity of care at home.",
+    "expected_outcomes": "Improved heart failure knowledge, enhanced quality of life, reduced heart failure-related hospitalizations, better self-care behaviors, increased medication adherence, and greater patient confidence in managing their condition.",
+    "target_population": "All patients with heart failure, with particular focus on newly diagnosed patients, those with recent hospitalizations, and patients with caregivers who can support self-management activities.",
+    "citation": "Jonkman NH, Westland H, Groenwold RH, et al. Do Self-Management Interventions Work in Patients With Heart Failure? An Individual Patient Data Meta-Analysis. Circulation. 2016;133(12):1189-98.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "self-management",
+      "patient education",
+      "symptom monitoring",
+      "dietary guidance",
+      "caregiver involvement"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_telemonitoring_1",
+    "title": "Implement Heart Failure Telemonitoring System",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement remote monitoring systems for heart failure patients to facilitate early intervention. Provide patients with appropriate monitoring devices including digital scales, blood pressure monitors, and symptom reporting tools. Establish clear data transmission and review protocols with defined staff responsibilities and review schedules. Set specific alert thresholds for weight changes (typically >2 pounds in 24 hours) and vital signs that trigger clinical review. Create clear response protocols for concerning readings with escalation pathways. Train patients and caregivers on proper use of monitoring equipment with return demonstration. Integrate monitoring data with electronic health records to ensure comprehensive care planning and documentation.",
+    "expected_outcomes": "Earlier detection of decompensation, reduced hospitalizations and emergency department visits, improved patient engagement in self-care, enhanced clinical decision-making through continuous data, and cost savings through prevention of avoidable healthcare utilization.",
+    "target_population": "Patients with heart failure at moderate to high risk for hospitalization, those with recent hospitalizations, patients with difficulty accessing in-person care, or those requiring more intensive monitoring.",
+    "citation": "Andrikopoulou E, Abbate K, Whellan DJ. Conceptual Model for Heart Failure Disease Management. The Canadian Journal of Cardiology. 2014;30(3):304-11.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "telemonitoring",
+      "remote monitoring",
+      "digital health",
+      "early intervention",
+      "self-care support"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_care_coordinator_1",
+    "title": "Implement Care Coordinator Role for Heart Failure Management",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Define specific responsibilities and workflows for care coordinators in heart failure care. Oversee care transitions with standardized handoff protocols between inpatient and outpatient settings. Develop and communicate individualized care plans to patients, caregivers, and the care team. Ensure timely post-discharge follow-up within 7 days to prevent readmissions. Monitor for heart failure progression with structured assessments at regular intervals. Coordinate laboratory and diagnostic testing to ensure timely completion and follow-up. Facilitate guideline-directed medical therapy initiation and titration in collaboration with the clinical team. Reinforce self-care education including daily weights, symptom recognition, and dietary adherence. Screen for depression, frailty, health literacy, and social isolation using validated tools.",
+    "expected_outcomes": "Reduced readmissions, optimized guideline-directed medical therapy, improved self-care behaviors, better care coordination across settings, enhanced patient satisfaction, and cost savings through prevention of avoidable healthcare utilization.",
+    "target_population": "Patients with heart failure across the spectrum of disease severity, with particular focus on those at high risk for hospitalization, with recent hospitalizations, or with complex care needs.",
+    "citation": "Maddox TM, Januzzi JL, Allen LA, et al. 2024 ACC Expert Consensus Decision Pathway for Treatment of Patients With Heart Failure With Reduced Ejection Fraction: A Report of the American College of Cardiology Solution Set Oversight Committee. Journal of the American College of Cardiology. 2024;83(15):1444-1488.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "care coordination",
+      "care transitions",
+      "individualized care plans",
+      "GDMT optimization",
+      "self-care education"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_chw_support_1",
+    "title": "Implement Community Health Worker Support for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement a community health worker program to support heart failure patients, particularly focusing on social determinants of health. Recruit CHWs with shared community background when possible to enhance trust and cultural competence. Train CHWs on heart failure basics and social determinant assessment using standardized tools. Conduct home visits to assess living conditions and identify barriers to care and self-management. Provide culturally and linguistically appropriate peer support tailored to the community being served. Help patients navigate community resources for food, housing, transportation, and financial assistance. Assist with insurance applications, transportation arrangements, and employment resources as needed. Support self-management through coaching and reminders for daily weights, medication adherence, and symptom monitoring. Facilitate access to healthy behaviors and local services that support heart failure management.",
+    "expected_outcomes": "Improved trust and engagement with the healthcare system, better addressing of social determinants of health, enhanced medication adherence, reduced healthcare disparities, decreased hospitalizations, and improved quality of life for patients with heart failure.",
+    "target_population": "Patients with heart failure who face social determinants of health challenges, including those from underserved communities, with language barriers, limited health literacy, or multiple social needs affecting heart failure management.",
+    "citation": "White-Williams C, Rossi LP, Bittner VA, et al. Addressing Social Determinants of Health in the Care of Patients With Heart Failure: A Scientific Statement From the American Heart Association. Circulation. 2020;141(22):e841-e863.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "community health worker",
+      "social determinants of health",
+      "cultural competence",
+      "resource navigation",
+      "home visits"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_pharmacist_medication_1",
+    "title": "Implement Pharmacist-Led Heart Failure Medication Management",
+    "domain": "Heart Failure",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Implement pharmacist-led medication management services for heart failure patients. Conduct comprehensive medication reconciliation at care transitions to prevent medication errors. Identify and resolve drug-related problems through systematic medication reviews. Optimize guideline-directed medical therapy through collaborative practice agreements with physicians. Provide detailed patient counseling on medication use and adherence strategies. Monitor for drug interactions and adverse effects with regular follow-up. Titrate medications in collaboration with the care team following established protocols. Educate patients on medication rationale, dosing, and side effects to improve understanding and adherence. Develop standardized documentation templates to track interventions and outcomes.",
+    "expected_outcomes": "Reduced medication errors and adverse drug events, improved guideline-directed medical therapy adherence and optimization, decreased 30-day readmissions, enhanced patient understanding of medications, and improved clinical outcomes through optimal pharmacotherapy.",
+    "target_population": "Patients with heart failure across the spectrum of disease severity, with particular focus on those with complex medication regimens, polypharmacy, recent care transitions, or difficulty achieving optimal medical therapy.",
+    "citation": "Milfred-LaForest SK, Chow SL, DiDomenico RJ, et al. Clinical Pharmacy Services in Heart Failure: An Opinion Paper from the Heart Failure Society of America and American College of Clinical Pharmacy Cardiology Practice and Research Network. Journal of Cardiac Failure. 2013;19(5):354-69.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication management",
+      "GDMT optimization",
+      "medication reconciliation",
+      "drug-related problems",
+      "pharmacist intervention"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_pharmacy_tech_access_1",
+    "title": "Implement Pharmacy Technician Medication Access Support for Heart Failure",
+    "domain": "Heart Failure",
+    "role": "Pharmacy Technician",
+    "implementation_guidance": "Implement a pharmacy technician support program to ensure medication access for heart failure patients. Coordinate medication access and insurance coverage, including prior authorizations and formulary issues. Manage prescription refills and synchronization to minimize gaps in therapy. Monitor adherence through refill tracking and identify patients who may need intervention. Ensure uninterrupted access to prescribed therapies by proactively addressing potential barriers. Assist patients with medication assistance programs and discount cards when affordability is a concern. Coordinate with pharmacists on adherence concerns and medication access issues that require clinical intervention. Develop standardized documentation templates to track interventions and outcomes.",
+    "expected_outcomes": "Improved medication access and affordability, enhanced adherence to heart failure medications, reduced therapy interruptions, decreased administrative burden on clinical staff, and improved clinical outcomes through consistent medication therapy.",
+    "target_population": "Patients with heart failure who face barriers to medication access, including insurance coverage issues, affordability concerns, or challenges with medication refill management.",
+    "citation": "Moose JS, Branham AR. Pharmacists as Influencers of Patient Adherence. Pharmacy Times. August 21, 2019. Accessed June 3, 2025.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "medication access",
+      "refill management",
+      "adherence support",
+      "financial assistance",
+      "medication synchronization"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_social_worker_psychosocial_1",
+    "title": "Implement Social Worker Psychosocial Support for Heart Failure Patients",
+    "domain": "Heart Failure",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement social work services focused on addressing psychosocial needs of heart failure patients. Assess and address psychosocial needs with standardized tools to identify depression, anxiety, social isolation, and caregiver burden. Connect patients to appropriate social services including housing assistance, food programs, transportation resources, and financial support. Provide behavioral health support and counseling for adjustment to chronic illness and disease management challenges. Facilitate access to housing, food, and financial assistance programs through direct referrals and application support. Advocate for system-level changes to address social determinants of health affecting heart failure outcomes. Support patients with complex social or behavioral needs through care coordination and resource navigation. Ensure non-medical barriers to care are identified and addressed as part of the comprehensive care plan.",
+    "expected_outcomes": "Improved access to community resources, better mental health support, reduced care disparities, enhanced quality of life, decreased hospitalizations related to social factors, and improved self-care through addressing psychosocial barriers.",
+    "target_population": "Patients with heart failure who face psychosocial challenges, including those with mental health concerns, limited social support, financial difficulties, or other social determinants of health affecting disease management.",
+    "citation": "White-Williams C, Rossi LP, Bittner VA, et al. Addressing Social Determinants of Health in the Care of Patients With Heart Failure: A Scientific Statement From the American Heart Association. Circulation. 2020;141(22):e841-e863.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "psychosocial support",
+      "social determinants of health",
+      "resource connection",
+      "behavioral health",
+      "advocacy"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_equity_implementation_1",
+    "title": "Implement Heart Failure Care Equity Strategies",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement comprehensive strategies to ensure equitable heart failure care across diverse populations. Use standardized tools to assess social determinants of health including housing, food security, transportation, and financial stability. Incorporate SDOH findings into electronic health records to inform care planning and resource allocation. Collaborate across disciplines to address both medical and social needs through integrated care approaches. Focus interventions on historically marginalized populations with documented disparities in heart failure outcomes. Provide culturally sensitive, patient-centered care with materials in appropriate languages and literacy levels. Conduct ongoing training for staff in bias reduction and cultural competence to improve care delivery. Tailor interventions to sociodemographic factors and health literacy levels of the target population. Address access barriers including transportation, technology, and scheduling to improve engagement with care.",
+    "expected_outcomes": "Improved engagement in care among diverse populations, reduced disparities in heart failure outcomes across demographic groups, better addressing of social determinants affecting heart failure management, enhanced cultural competence of care delivery, and improved quality of life for vulnerable patients with heart failure.",
+    "target_population": "Patients with heart failure from historically marginalized populations, those facing social determinants of health challenges, and communities with documented disparities in heart failure outcomes.",
+    "citation": "Breathett K, Lewsey S, Brownell NK, et al. Implementation Science to Achieve Equity in Heart Failure Care: A Scientific Statement From American Heart Association. Circulation. 2024;149(19):e1143-e1163.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "health equity",
+      "social determinants of health",
+      "cultural competence",
+      "disparities reduction",
+      "implementation science"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "heart_failure_ehr_optimization_1",
+    "title": "Implement EHR-Based Heart Failure Care Optimization",
+    "domain": "Heart Failure",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement electronic health record tools to optimize heart failure care delivery. Develop clinical decision support tools for guideline-directed medical therapy (GDMT) that provide real-time recommendations based on patient data. Implement EHR nudges for guideline adherence at the point of care to improve evidence-based practice. Create dashboards for population health management that identify care gaps and high-risk patients. Build structured documentation templates for heart failure care to ensure comprehensive assessment and planning. Establish automated alerts for concerning laboratory values or vital signs that require clinical attention. Integrate remote monitoring data into the EHR to provide a complete picture of patient status between visits. Develop reports to track quality metrics and outcomes for continuous quality improvement.",
+    "expected_outcomes": "Increased GDMT prescription rates and optimization, improved process measures for heart failure care, enhanced population management capabilities, reduced care gaps, earlier identification of clinical deterioration, and improved documentation quality and consistency.",
+    "target_population": "Healthcare systems and providers caring for patients with heart failure, with particular focus on primary care and cardiology settings managing heart failure patients longitudinally.",
+    "citation": "Ahmad FS, Rasmussen LV, Persell SD, et al. Leveraging Electronic Health Record Data to Improve Heart Failure Care. Current Treatment Options in Cardiovascular Medicine. 2021;23(5):30.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "electronic health record",
+      "clinical decision support",
+      "population health",
+      "quality improvement",
+      "care gaps"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "diabetes_care_coordination_1",
+    "title": "Implement Care Coordinator Role for Diabetes Management",
+    "domain": "Diabetes",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop and implement a structured care coordination system for patients with diabetes. Establish protocols for overseeing care transitions between inpatient and outpatient settings with standardized handoff procedures. Create systems for facilitating communication among providers including primary care, endocrinology, ophthalmology, podiatry, and other specialists involved in diabetes care. Implement follow-up procedures for abnormal laboratory results, particularly for HbA1c, lipids, and kidney function tests. Establish tracking systems for recommended screenings including retinopathy, neuropathy, and nephropathy assessments. Create navigation support for patients to access diabetes education, nutrition counseling, and community resources. Implement metrics to evaluate care coordination effectiveness including process measures and patient outcomes.",
+    "expected_outcomes": "Improved care coordination across the healthcare team, enhanced follow-up on abnormal results, increased completion rates of recommended screenings and preventive services, reduced care gaps, decreased emergency department visits and hospitalizations, and improved patient satisfaction with care.",
+    "target_population": "Patients with diabetes across the spectrum of disease severity, with particular focus on those with complex care needs, multiple comorbidities, recent care transitions, or difficulty achieving glycemic targets.",
+    "citation": "American Diabetes Association Professional Practice Committee. Standards of Medical Care in Diabetes\u20142023. Diabetes Care. 2023;46(Supplement 1):S1-S283.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care coordination",
+      "care transitions",
+      "screening tracking",
+      "abnormal result follow-up",
+      "navigation support"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "diabetes_chw_education_1",
+    "title": "Implement Community Health Worker Diabetes Support",
+    "domain": "Diabetes",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement community health worker interventions for diabetes management with a focus on culturally appropriate care. Develop protocols for culturally tailored diabetes self-management education that addresses diverse beliefs, practices, and literacy levels. Create systems for behavior change support including goal setting, action planning, and problem-solving strategies. Implement outreach activities to engage patients who have missed appointments or screenings. Establish connections to community and social services addressing food insecurity, transportation, and financial barriers. Create documentation standards to track interventions and outcomes. Implement metrics to evaluate CHW effectiveness including engagement rates, self-management behaviors, and clinical outcomes.",
+    "expected_outcomes": "Improved diabetes self-management behaviors, enhanced access to community services, increased engagement with healthcare system, better glycemic control, reduced disparities in diabetes outcomes, and improved quality of life for patients with diabetes.",
+    "target_population": "Patients with diabetes from underserved communities, those with cultural or language barriers to standard care, individuals with limited health literacy, or those facing social determinants of health challenges.",
+    "citation": "American Diabetes Association Professional Practice Committee. Standards of Medical Care in Diabetes\u20142023. Diabetes Care. 2023;46(Supplement 1):S1-S283.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "community health worker",
+      "cultural competence",
+      "self-management education",
+      "behavior change",
+      "resource connection"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "diabetes_pharmacist_medication_1",
+    "title": "Implement Pharmacist-Led Diabetes Medication Management",
+    "domain": "Diabetes",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Implement pharmacist-led interventions for diabetes medication management. Develop protocols for comprehensive medication reviews to identify and address polypharmacy, drug interactions, and inappropriate medications. Create systems for identifying and resolving drug-related problems including adherence barriers, side effects, and therapeutic duplications. Implement medication counseling focused on proper administration, timing, and side effect management. Establish medication adjustment protocols through collaborative practice agreements for timely optimization of diabetes medications. Create monitoring systems for adverse effects and therapeutic outcomes. Implement metrics to evaluate pharmacist effectiveness including medication appropriateness, adherence rates, and glycemic outcomes.",
+    "expected_outcomes": "Improved glycemic outcomes, enhanced medication adherence, reduced medication-related adverse events, optimized medication regimens, decreased polypharmacy, and improved patient understanding of diabetes medications.",
+    "target_population": "Patients with diabetes on multiple medications, those with adherence challenges, individuals experiencing medication side effects, or patients not meeting glycemic targets with current therapy.",
+    "citation": "American Diabetes Association Professional Practice Committee. Standards of Medical Care in Diabetes\u20142023. Diabetes Care. 2023;46(Supplement 1):S1-S283.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication management",
+      "medication review",
+      "drug-related problems",
+      "medication adjustment",
+      "adherence support"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "diabetes_pharmacy_tech_support_1",
+    "title": "Implement Pharmacy Technician Diabetes Support",
+    "domain": "Diabetes",
+    "role": "Pharmacy Technician",
+    "implementation_guidance": "Implement pharmacy technician interventions to support diabetes medication management. Develop protocols for medication reconciliation at care transitions to ensure accurate medication lists. Create systems for refill coordination and synchronization to minimize gaps in therapy. Implement processes for adherence barrier identification including cost concerns, transportation issues, and regimen complexity. Establish communication facilitation between patients and pharmacists regarding medication issues. Create documentation standards to track interventions and outcomes. Implement metrics to evaluate pharmacy technician effectiveness including medication availability, refill timeliness, and patient satisfaction.",
+    "expected_outcomes": "Improved medication access and affordability, enhanced medication adherence, reduced therapy interruptions, decreased administrative burden on clinical staff, and improved continuity of diabetes medication therapy.",
+    "target_population": "Patients with diabetes who face barriers to medication access, including insurance coverage issues, affordability concerns, or challenges with medication refill management.",
+    "citation": "American Diabetes Association Professional Practice Committee. Standards of Medical Care in Diabetes\u20142023. Diabetes Care. 2023;46(Supplement 1):S1-S283.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "medication access",
+      "refill management",
+      "adherence support",
+      "medication reconciliation",
+      "care transitions"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "diabetes_nurse_management_1",
+    "title": "Implement Nurse Care Manager Diabetes Management",
+    "domain": "Diabetes",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement nurse care manager interventions for comprehensive diabetes management. Develop protocols for diabetes self-management education covering glucose monitoring, medication administration, diet, exercise, and complication prevention. Create systems for clinical parameter monitoring including HbA1c, blood pressure, lipids, and kidney function. Implement lifestyle counseling focused on nutrition, physical activity, and weight management. Establish medication adjustment protocols through collaborative practice agreements for timely optimization of diabetes medications. Create follow-up procedures after visits or hospitalizations to ensure care continuity. Implement metrics to evaluate nurse care manager effectiveness including glycemic control, self-management behaviors, and quality of life measures.",
+    "expected_outcomes": "Improved glycemic outcomes, enhanced self-management behaviors, better medication adherence, reduced diabetes-related complications, decreased hospitalizations, and improved quality of life for patients with diabetes.",
+    "target_population": "Patients with diabetes across the spectrum of disease severity, with particular focus on those with suboptimal glycemic control, recent diagnosis, or complex medication regimens.",
+    "citation": "American Diabetes Association Professional Practice Committee. Standards of Medical Care in Diabetes\u20142023. Diabetes Care. 2023;46(Supplement 1):S1-S283.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "nurse care management",
+      "self-management education",
+      "clinical monitoring",
+      "medication adjustment",
+      "lifestyle counseling"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "diabetes_social_worker_psychosocial_1",
+    "title": "Implement Social Worker Psychosocial Support for Diabetes",
+    "domain": "Diabetes",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement social worker interventions to address psychosocial aspects of diabetes management. Develop protocols for comprehensive psychosocial needs assessment including screening for depression, anxiety, diabetes distress, and social determinants of health. Create systems for addressing mental health concerns, housing instability, food insecurity, and financial barriers that impact diabetes self-care. Implement connections to community resources including food assistance programs, housing services, transportation support, and financial aid. Establish counseling services to address adjustment to diagnosis, coping strategies, and family dynamics. Create care planning processes for patients with complex social or behavioral health needs requiring intensive support. Implement metrics to evaluate social worker effectiveness including psychosocial barrier resolution and diabetes self-management improvement.",
+    "expected_outcomes": "Improved addressing of psychosocial barriers to diabetes management, enhanced access to community resources, better mental health support, reduced diabetes distress, improved self-care behaviors, and decreased disparities in diabetes outcomes.",
+    "target_population": "Patients with diabetes who face psychosocial challenges, including those with mental health concerns, limited social support, financial difficulties, or other social determinants of health affecting disease management.",
+    "citation": "American Diabetes Association Professional Practice Committee. Standards of Medical Care in Diabetes\u20142023. Diabetes Care. 2023;46(Supplement 1):S1-S283.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "psychosocial support",
+      "social determinants of health",
+      "resource connection",
+      "mental health",
+      "diabetes distress"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_care_coordination_1",
+    "title": "Implement Care Coordinator Role for Hypertension Management",
+    "domain": "Hypertension",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop and implement a structured care coordination system for patients with hypertension. Establish protocols for coordinating follow-up appointments based on blood pressure control status and risk stratification. Create systems for monitoring care plan adherence including medication regimens, lifestyle modifications, and self-monitoring activities. Implement communication facilitation among team members including primary care providers, specialists, pharmacists, and other healthcare professionals involved in hypertension management. Establish tracking mechanisms for patient progress toward blood pressure goals with alerts for those not meeting targets. Create strategies to address barriers to care including transportation, financial constraints, and health literacy challenges. Implement metrics to evaluate care coordination effectiveness including process measures and blood pressure outcomes.",
+    "expected_outcomes": "Improved coordination across the healthcare team, enhanced patient engagement in hypertension management, increased appointment adherence, better medication adherence, reduced care gaps, and improved blood pressure control rates.",
+    "target_population": "Patients with hypertension across the spectrum of disease severity, with particular focus on those with uncontrolled hypertension, multiple comorbidities, or barriers to accessing care.",
+    "citation": "Carey RM, Muntner P, Bosworth HB, Whelton PK. Prevention and Control of Hypertension: JACC Health Promotion Series. Journal of the American College of Cardiology. 2018;72(11):1278-1293.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care coordination",
+      "appointment management",
+      "care plan adherence",
+      "team communication",
+      "barrier identification"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_chw_education_1",
+    "title": "Implement Community Health Worker Hypertension Support",
+    "domain": "Hypertension",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement community health worker interventions for hypertension management with a focus on culturally appropriate care. Develop protocols for culturally sensitive education about hypertension, its consequences, and management strategies tailored to diverse populations. Create systems for self-measured blood pressure (SMBP) support including device selection, proper technique training, and result interpretation. Implement lifestyle change facilitation focusing on dietary approaches, physical activity, and weight management appropriate to cultural contexts. Establish connections to community resources addressing food access, transportation, and financial barriers affecting hypertension management. Create bi-directional feedback mechanisms to clinical teams to ensure timely communication about patient progress and challenges. Implement metrics to evaluate CHW effectiveness including engagement rates, blood pressure control, and health behaviors.",
+    "expected_outcomes": "Improved engagement with healthcare system, enhanced blood pressure control, better health behaviors related to hypertension management, reduced disparities in hypertension outcomes, and improved quality of life for patients with hypertension.",
+    "target_population": "Patients with hypertension from underserved communities, those with cultural or language barriers to standard care, individuals with limited health literacy, or those facing social determinants of health challenges.",
+    "citation": "Brownstein JN, Chowdhury FM, Norris SL, et al. Effectiveness of Community Health Workers in the Care of People with Hypertension. American Journal of Preventive Medicine. 2007;32(5):435-447.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "community health worker",
+      "cultural competence",
+      "self-measured blood pressure",
+      "lifestyle modification",
+      "resource connection"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_pharmacist_medication_1",
+    "title": "Implement Pharmacist-Led Hypertension Medication Management",
+    "domain": "Hypertension",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Implement pharmacist-led interventions for hypertension medication management. Develop protocols for comprehensive medication reconciliation to identify and resolve discrepancies in antihypertensive therapy. Create systems for antihypertensive therapy titration through collaborative practice agreements with physicians. Implement medication adherence counseling addressing barriers, side effects, and regimen complexity. Establish processes for side effect identification and management to improve medication persistence. Create documentation standards for pharmacist interventions and outcomes. Implement metrics to evaluate pharmacist effectiveness including blood pressure control rates, medication adherence, and appropriate therapy optimization.",
+    "expected_outcomes": "Improved blood pressure control, enhanced medication adherence, optimized antihypertensive therapy regimens, reduced medication-related adverse events, and increased patient understanding of hypertension medications.",
+    "target_population": "Patients with hypertension, particularly those with uncontrolled blood pressure, complex medication regimens, adherence challenges, or experiencing medication side effects.",
+    "citation": "Santschi V, Chiolero A, Colosimo AL, et al. Improving Blood Pressure Control Through Pharmacist Interventions: A Meta-Analysis of Randomized Controlled Trials. Journal of the American Heart Association. 2014;3(2):e000718.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "medication management",
+      "therapy titration",
+      "adherence counseling",
+      "side effect management",
+      "collaborative practice"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_pharmacy_tech_access_1",
+    "title": "Implement Pharmacy Technician Hypertension Support",
+    "domain": "Hypertension",
+    "role": "Pharmacy Technician",
+    "implementation_guidance": "Implement pharmacy technician interventions to support hypertension medication management. Develop protocols for medication refill synchronization to ensure all antihypertensive medications are refilled simultaneously. Create systems for automated refill reminders through text, phone, or email based on patient preferences. Implement adherence monitoring through refill tracking to identify patients who may need intervention. Establish support processes for pharmacists including preparation of medication histories and adherence reports. Create documentation standards to track interventions and outcomes. Implement metrics to evaluate pharmacy technician effectiveness including medication availability, refill timeliness, and patient satisfaction with medication access.",
+    "expected_outcomes": "Improved medication adherence, reduced therapy interruptions, enhanced continuity of antihypertensive therapy, decreased administrative burden on clinical staff, and improved blood pressure control through consistent medication therapy.",
+    "target_population": "Patients with hypertension who face barriers to medication adherence, including those with complex regimens, refill management challenges, or affordability concerns.",
+    "citation": "Hirsch JD, Steers N, Adler DS, et al. Primary Care-based, Pharmacist-physician Collaborative Medication-therapy Management of Hypertension: A Randomized, Pragmatic Trial. Clinical Therapeutics. 2014;36(9):1244-1254.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "medication access",
+      "refill management",
+      "adherence support",
+      "refill synchronization",
+      "reminder systems"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_nurse_monitoring_1",
+    "title": "Implement Nurse Care Manager Hypertension Management",
+    "domain": "Hypertension",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement nurse care manager interventions for comprehensive hypertension management. Develop protocols for standardized blood pressure monitoring using validated techniques and equipment. Create systems for health coaching focused on lifestyle modifications including DASH diet, sodium restriction, physical activity, and weight management. Implement stepped-care protocols for medication adjustment through collaborative practice agreements to optimize antihypertensive therapy. Establish self-measured blood pressure (SMBP) support including device selection, technique training, and result interpretation. Create patient education programs on lifestyle modification tailored to individual needs and preferences. Implement metrics to evaluate nurse care manager effectiveness including blood pressure control rates, lifestyle adherence, and quality of life measures.",
+    "expected_outcomes": "Improved blood pressure control, enhanced adherence to lifestyle modifications, better medication adherence, reduced cardiovascular risk, decreased clinical inertia in treatment intensification, and improved quality of life for patients with hypertension.",
+    "target_population": "Patients with hypertension across the spectrum of disease severity, with particular focus on those with uncontrolled blood pressure, multiple cardiovascular risk factors, or difficulty implementing lifestyle changes.",
+    "citation": "Clark CE, Smith LFP, Taylor RS, Campbell JL. Nurse-led interventions used to improve control of high blood pressure in people with diabetes: a systematic review and meta-analysis. Diabetic Medicine. 2011;28(3):250-261.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "nurse care management",
+      "blood pressure monitoring",
+      "health coaching",
+      "medication adjustment",
+      "self-measured blood pressure"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_social_worker_sdoh_1",
+    "title": "Implement Social Worker Support for Hypertension Social Determinants",
+    "domain": "Hypertension",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement social worker interventions to address social determinants of health affecting hypertension management. Develop protocols for comprehensive assessment of social determinants including housing stability, food security, transportation access, and financial resources. Create systems for addressing identified barriers through direct resource connection and referrals to community programs. Implement resource navigation for health insurance enrollment, medication assistance programs, and transportation services. Establish behavioral change support tailored to patients' social contexts and cultural backgrounds. Create facilitation processes for access to insurance and medication assistance programs to ensure affordability of antihypertensive medications. Implement metrics to evaluate social worker effectiveness including resolution of social barriers and improvements in hypertension management.",
+    "expected_outcomes": "Improved addressing of social barriers to hypertension control, enhanced access to community resources, better medication adherence through addressing affordability concerns, reduced disparities in hypertension outcomes, and improved quality of life for patients with hypertension.",
+    "target_population": "Patients with hypertension who face social determinants of health challenges, including those with housing instability, food insecurity, transportation barriers, or financial difficulties affecting hypertension management.",
+    "citation": "Havranek EP, Mujahid MS, Barr DA, et al. Social Determinants of Risk and Outcomes for Cardiovascular Disease: A Scientific Statement From the American Heart Association. Circulation. 2015;132(9):873-898.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "social determinants of health",
+      "resource connection",
+      "behavioral support",
+      "insurance access",
+      "medication assistance"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_standardized_measurement_1",
+    "title": "Implement Standardized Blood Pressure Measurement Protocol",
+    "domain": "Hypertension",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement standardized, accurate office blood pressure measurement protocols. Develop detailed procedures for proper patient preparation including 5 minutes of quiet rest, empty bladder, and proper positioning with back supported and feet flat on floor. Create systems for proper cuff selection based on arm circumference and consistent placement at heart level. Implement use of validated automated devices with regular calibration checks. Establish requirements for multiple readings (at least 2-3) with appropriate intervals between measurements and averaging of results. Create clear documentation standards for recording all measurements, arm used, position, and relevant circumstances. Implement metrics to track measurement quality and adherence to standardized protocols.",
+    "expected_outcomes": "Reduced measurement error and variability, decreased misclassification of hypertension status, improved therapeutic decision-making, reduced therapeutic inertia, and more accurate assessment of treatment effectiveness.",
+    "target_population": "All patients requiring blood pressure assessment, with particular focus on those with suspected or confirmed hypertension, or those on antihypertensive therapy.",
+    "citation": "Muntner P, Shimbo D, Carey RM, et al. Measurement of Blood Pressure in Humans: A Scientific Statement From the American Heart Association. Hypertension. 2019;73(5):e35-e66.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "blood pressure measurement",
+      "standardized protocol",
+      "measurement accuracy",
+      "office blood pressure",
+      "diagnostic quality"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_self_measured_bp_1",
+    "title": "Implement Self-Measured Blood Pressure Monitoring Program",
+    "domain": "Hypertension",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a comprehensive self-measured blood pressure (SMBP) monitoring program for patients with hypertension. Develop detailed protocols for patient education on SMBP including proper technique, timing, frequency, and documentation. Create structured monitoring protocols with specific schedules (typically morning and evening measurements for 7 days) and reporting mechanisms. Implement telemonitoring capabilities when possible to enable real-time data sharing with the care team. Establish EHR integration of SMBP data to facilitate clinical decision-making and longitudinal tracking. Create timely communication channels between patients and care teams for addressing concerning readings or questions. Implement metrics to track SMBP program effectiveness including participation rates, data quality, and impact on blood pressure control.",
+    "expected_outcomes": "Improved blood pressure control, enhanced patient engagement in hypertension management, better informed clinical decision-making, earlier detection of uncontrolled hypertension, reduced white coat and masked hypertension effects, and decreased healthcare utilization.",
+    "target_population": "Patients with hypertension, particularly those with newly diagnosed hypertension, suspected white coat or masked hypertension, resistant hypertension, or difficulty achieving blood pressure targets.",
+    "citation": "Shimbo D, Artinian NT, Basile JN, et al. Self-Measured Blood Pressure Monitoring at Home: A Joint Policy Statement From the American Heart Association and American Medical Association. Circulation. 2020;142(4):e42-e63.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "self-measured blood pressure",
+      "home monitoring",
+      "telemonitoring",
+      "patient engagement",
+      "hypertension management"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "hypertension_team_based_care_1",
+    "title": "Implement Team-Based Care for Hypertension Management",
+    "domain": "Hypertension",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement multidisciplinary team-based care for hypertension management. Develop protocols for team composition including primary care providers, nurses, pharmacists, dietitians, social workers, and community health workers with clearly defined responsibilities. Create clear delineation of team member roles with specific tasks assigned based on expertise and scope of practice. Implement systems-level support including electronic health records and clinical decision support tools to facilitate team communication and care delivery. Establish organizational changes to support care coordination including regular team meetings and case reviews. Create delegation protocols for appropriate tasks such as medication titration, lifestyle counseling, and follow-up. Implement metrics to track team-based care effectiveness including blood pressure control rates, medication adherence, and appointment keeping.",
+    "expected_outcomes": "Improved blood pressure control rates, enhanced medication adherence, increased appointment keeping, better implementation of lifestyle modifications, reduced clinical inertia, and decreased cardiovascular events and mortality.",
+    "target_population": "Patients with hypertension across the spectrum of disease severity, with particular focus on those with uncontrolled hypertension, multiple cardiovascular risk factors, or complex medication regimens.",
+    "citation": "Whelton PK, Carey RM, Aronow WS, et al. 2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults. Journal of the American College of Cardiology. 2018;71(19):e127-e248.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "team-based care",
+      "multidisciplinary approach",
+      "care coordination",
+      "systems support",
+      "delegation protocols"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_care_coordinator_tracking_1",
+    "title": "Implement Care Coordinator Anxiety Tracking Protocol",
+    "domain": "Anxiety",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop and implement a structured protocol for care coordinators to track patient progress in anxiety management. Create systems for tracking patient progress using standardized assessment tools like GAD-7 at regular intervals. Implement strategies to promote patient engagement including reminder systems, motivational interviewing techniques, and addressing barriers to participation. Establish processes for facilitating stepped adjustments in care based on symptom severity and treatment response. Create protocols for regular check-ins with patients via phone, text, or patient portal based on patient preference and risk level. Develop documentation standards to ensure consistent tracking of interventions and outcomes. Implement metrics to evaluate care coordination effectiveness including symptom improvement, treatment adherence, and patient satisfaction.",
+    "expected_outcomes": "Improved treatment adherence, enhanced symptom monitoring, earlier identification of treatment non-response, better care continuity, increased patient engagement in anxiety management, and improved clinical outcomes.",
+    "target_population": "Patients with diagnosed anxiety disorders across the spectrum of severity, with particular focus on those at risk for treatment non-adherence, those with comorbid conditions, or those transitioning between levels of care.",
+    "citation": "Stein MB, Sareen J. Generalized Anxiety Disorder. The New England Journal of Medicine. 2015;373(21):2059-68.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "care coordination",
+      "symptom tracking",
+      "treatment adherence",
+      "stepped care",
+      "patient engagement"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_nurse_monitoring_1",
+    "title": "Implement Nurse-Led Anxiety Monitoring Protocol",
+    "domain": "Anxiety",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement nurse-led interventions for comprehensive anxiety monitoring and management. Develop protocols for systematic symptom assessment using validated tools such as GAD-7 at regular intervals. Create systems for medication side effect monitoring with specific attention to common adverse effects of anxiolytics and antidepressants. Implement structured patient education about anxiety including symptom recognition, management strategies, and when to seek additional help. Establish coordination processes with primary care and mental health providers to ensure integrated care delivery. Create documentation standards for nursing interventions and patient responses. Implement metrics to evaluate nursing effectiveness including symptom improvement, medication adherence, and patient knowledge of anxiety management.",
+    "expected_outcomes": "Enhanced monitoring of anxiety symptoms, improved identification and management of medication side effects, increased patient understanding of anxiety and its management, better care coordination between providers, and improved clinical outcomes.",
+    "target_population": "Patients with diagnosed anxiety disorders across the spectrum of severity, with particular focus on those newly diagnosed, those starting or changing medications, or those with complex comorbidities.",
+    "citation": "Bandelow B, Michaelis S, Wedekind D. Treatment of Anxiety Disorders. Dialogues in Clinical Neuroscience. 2017;19(2):93-107.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "nurse monitoring",
+      "symptom assessment",
+      "medication management",
+      "patient education",
+      "care coordination"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_standardized_screening_1",
+    "title": "Implement Standardized Anxiety Screening Protocol",
+    "domain": "Anxiety",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement routine screening for anxiety disorders, especially in high-risk populations. Develop protocols for routine anxiety screening in primary care and specialty settings, with defined frequency and target populations. Create systems for using standardized assessment tools such as GAD-7, with clear score interpretation guidelines and action thresholds. Implement comprehensive assessment of symptom severity, comorbidities (particularly depression), and functional impairment to guide treatment planning. Establish suicide risk screening as a mandatory component of anxiety assessment, with clear escalation pathways for positive screens. Create documentation standards for screening results in the electronic health record with structured data elements. Implement metrics to track screening completion rates, positive screen follow-up, and impact on early intervention rates.",
+    "expected_outcomes": "Early identification of anxiety disorders, timely intervention for symptomatic patients, reduced time to appropriate treatment, improved clinical outcomes through earlier care, and systematic identification of suicide risk.",
+    "target_population": "Adult patients in primary care and specialty settings, with particular focus on those with risk factors for anxiety disorders including personal or family history of mental health conditions, chronic medical conditions, recent major life stressors, or substance use disorders.",
+    "citation": "Stein MB, Sareen J. Generalized Anxiety Disorder. The New England Journal of Medicine. 2015;373(21):2059-68.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "anxiety screening",
+      "standardized assessment",
+      "early identification",
+      "suicide risk",
+      "primary care"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_stepped_care_1",
+    "title": "Implement Stepped-Care Model for Anxiety Management",
+    "domain": "Anxiety",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a structured stepped-care approach for anxiety management. Develop protocols for initial assessment and patient education about anxiety disorders, treatment options, and self-management strategies. Create systems for lifestyle modifications as first step, including sleep hygiene, physical activity, stress management, and caffeine/alcohol reduction. Implement clear escalation criteria based on symptom severity, functional impairment, and response to initial interventions. Establish defined pathways for treatment intensification, including progression from self-help to guided self-help, group therapy, individual therapy, and medication management. Create documentation standards for tracking patient progression through stepped-care levels. Implement metrics to evaluate stepped-care effectiveness including patient movement through care levels, symptom improvement at each level, and resource utilization.",
+    "expected_outcomes": "Appropriate allocation of treatment resources based on clinical need, improved access to care, enhanced treatment efficiency, better clinical outcomes, and cost-effective service delivery.",
+    "target_population": "Patients with anxiety disorders across the spectrum of severity, allowing for matching intervention intensity to symptom severity and functional impairment.",
+    "citation": "Stein MB, Sareen J. Generalized Anxiety Disorder. The New England Journal of Medicine. 2015;373(21):2059-68.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "stepped care",
+      "treatment escalation",
+      "resource allocation",
+      "self-management",
+      "treatment pathways"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_collaborative_care_1",
+    "title": "Implement Collaborative Care Model for Anxiety Management",
+    "domain": "Anxiety",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement an integrated collaborative care model for anxiety management. Develop protocols for team-based care including primary care providers, mental health specialists, care managers, and support staff with clearly defined roles and responsibilities. Create systems for case manager integration as the central point of contact for patients and coordination hub for the care team. Implement structured care coordination processes including regular case reviews, treatment plan updates, and communication pathways. Establish close collaboration between mental health specialists and primary care providers through regular consultation and shared decision-making. Create telehealth or internet-based delivery options to expand access and reach underserved populations. Implement metrics to track collaborative care effectiveness including symptom improvement, treatment engagement, and provider satisfaction.",
+    "expected_outcomes": "Improved clinical outcomes compared to usual care, enhanced access to mental health services, better treatment adherence, increased provider satisfaction, reduced stigma through integration with primary care, and cost-effective service delivery.",
+    "target_population": "Patients with anxiety disorders across care settings, with particular value for those in primary care settings, those with comorbid medical conditions, or those with limited access to specialty mental health services.",
+    "citation": "Archer J, Bower P, Gilbody S, et al. Collaborative care for depression and anxiety problems. Cochrane Database of Systematic Reviews. 2012;10:CD006525.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "collaborative care",
+      "integrated care",
+      "team-based approach",
+      "care management",
+      "primary care integration"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_cbt_implementation_1",
+    "title": "Implement Cognitive Behavioral Therapy for Anxiety Management",
+    "domain": "Anxiety",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement cognitive behavioral therapy (CBT) as a first-line psychological intervention for anxiety disorders. Develop protocols for structured CBT delivery including cognitive restructuring, exposure techniques, and behavioral experiments tailored to specific anxiety disorders. Create systems for offering CBT in multiple formats including individual therapy, group sessions, and digital/online platforms to maximize accessibility. Implement age-appropriate adaptations for different life stages from adolescents to older adults. Establish documentation standards for therapy progress, homework completion, and symptom changes. Create clear referral pathways to qualified CBT providers with consideration of patient preferences and insurance coverage. Implement metrics to evaluate CBT effectiveness including standardized symptom measures, functional improvement, and patient satisfaction.",
+    "expected_outcomes": "Reduced anxiety symptoms, improved functional status, enhanced coping skills, decreased avoidance behaviors, better quality of life, and durable treatment effects across various delivery formats.",
+    "target_population": "Patients with diagnosed anxiety disorders including generalized anxiety disorder, panic disorder, social anxiety disorder, and specific phobias, across the spectrum of severity.",
+    "citation": "Bandelow B, Michaelis S, Wedekind D. Treatment of Anxiety Disorders. Dialogues in Clinical Neuroscience. 2017;19(2):93-107.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "cognitive behavioral therapy",
+      "psychological intervention",
+      "evidence-based therapy",
+      "multiple delivery formats",
+      "anxiety treatment"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_complementary_therapies_1",
+    "title": "Implement Complementary Evidence-Based Therapies for Anxiety",
+    "domain": "Anxiety",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement complementary evidence-based psychological interventions for anxiety management. Develop protocols for behavioral activation focusing on increasing engagement in rewarding activities and reducing avoidance behaviors. Create systems for mindfulness-based interventions including Mindfulness-Based Stress Reduction (MBSR), Acceptance and Commitment Therapy (ACT), and Mindfulness-Based Cognitive Therapy (MBCT) with structured session formats. Implement interpersonal therapy addressing relationship patterns and social functioning that may contribute to anxiety. Establish structured psychosocial interventions targeting specific anxiety-related behaviors and thought patterns. Create culturally and linguistically appropriate adaptations of evidence-based therapies to ensure relevance across diverse populations. Implement metrics to evaluate therapy effectiveness including standardized symptom measures, functional improvement, and quality of life assessments.",
+    "expected_outcomes": "Expanded treatment options based on patient preferences and needs, improved anxiety symptoms, enhanced mindfulness skills, better emotional regulation, increased psychological flexibility, and improved social functioning.",
+    "target_population": "Patients with anxiety disorders who may benefit from alternatives or complements to CBT, including those with specific preferences, those who have not responded adequately to first-line treatments, or those from diverse cultural backgrounds.",
+    "citation": "Bandelow B, Michaelis S, Wedekind D. Treatment of Anxiety Disorders. Dialogues in Clinical Neuroscience. 2017;19(2):93-107.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "mindfulness",
+      "behavioral activation",
+      "acceptance and commitment therapy",
+      "interpersonal therapy",
+      "cultural adaptation"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_pharmacologic_management_1",
+    "title": "Implement Evidence-Based Pharmacologic Management for Anxiety",
+    "domain": "Anxiety",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Implement evidence-based medication management for anxiety disorders. Develop protocols for first-line pharmacotherapy using selective serotonin reuptake inhibitors (SSRIs) and serotonin-norepinephrine reuptake inhibitors (SNRIs) with specific guidance on dosing, titration, and duration of treatment. Create systems for medication selection based on comorbidities, considering interactions and overlapping indications. Implement structured monitoring for side effects including initial activation, sexual dysfunction, and discontinuation symptoms. Establish protocols for alternative medications when first-line agents are ineffective or not tolerated, including buspirone, pregabalin, and carefully managed benzodiazepines. Create comprehensive patient education materials about medications including expected benefits, potential side effects, and importance of adherence. Implement metrics to track medication effectiveness including symptom reduction, functional improvement, and side effect burden.",
+    "expected_outcomes": "Reduced anxiety symptoms, improved functional status, minimized medication side effects, appropriate medication selection based on individual factors, and enhanced patient understanding of pharmacotherapy.",
+    "target_population": "Patients with anxiety disorders for whom medication is clinically indicated, including those with moderate to severe symptoms, those who prefer medication, or those who have not responded adequately to psychological interventions alone.",
+    "citation": "Bandelow B, Michaelis S, Wedekind D. Treatment of Anxiety Disorders. Dialogues in Clinical Neuroscience. 2017;19(2):93-107.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "pharmacotherapy",
+      "SSRIs",
+      "SNRIs",
+      "medication management",
+      "side effect monitoring"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "anxiety_symptom_monitoring_1",
+    "title": "Implement Systematic Symptom Monitoring for Anxiety Management",
+    "domain": "Anxiety",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement regular monitoring of anxiety symptoms and treatment response. Develop protocols for using standardized rating scales such as GAD-7 at defined intervals based on treatment phase and symptom severity. Create systems for tracking progress over time with visualization of symptom trajectories to inform clinical decision-making. Implement engagement strategies to ensure consistent monitoring completion including reminders, education about the value of monitoring, and minimizing barriers to completion. Establish clear criteria for stepped adjustments in care based on monitoring results, including thresholds for treatment intensification or modification. Create documentation standards for monitoring results in the electronic health record with structured data elements. Implement metrics to track monitoring completion rates, response to monitoring-based interventions, and impact on clinical outcomes.",
+    "expected_outcomes": "Optimized treatment outcomes through systematic monitoring, earlier identification of treatment non-response, more timely treatment adjustments, enhanced patient engagement in care, and improved clinical decision-making based on objective data.",
+    "target_population": "All patients receiving treatment for anxiety disorders, with monitoring frequency and intensity tailored to symptom severity, treatment phase, and risk factors.",
+    "citation": "Stein MB, Sareen J. Generalized Anxiety Disorder. The New England Journal of Medicine. 2015;373(21):2059-68.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "symptom monitoring",
+      "measurement-based care",
+      "treatment adjustment",
+      "standardized assessment",
+      "clinical decision support"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "depression_care_manager_collaborative_1",
+    "title": "Implement Care Manager Collaborative Care for Depression",
+    "domain": "Depression",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a structured collaborative care model with care managers for depression management. Develop protocols for systematic follow-up with defined frequency based on depression severity and treatment phase. Create systems for measurement-based care using validated tools like PHQ-9 at regular intervals to track progress and inform treatment decisions. Implement comprehensive patient education processes covering depression, treatment options, self-management strategies, and warning signs requiring immediate attention. Establish behavioral activation components to increase engagement in rewarding activities and reduce avoidance behaviors. Create coordination pathways with primary care providers and psychiatric consultants for treatment adjustments and complex cases. Implement metrics to evaluate care management effectiveness including depression remission rates, treatment response, and patient engagement.",
+    "expected_outcomes": "Improved depression symptom remission, enhanced treatment response rates, better adherence to therapy, reduced suicidal ideation, improved functional status, and increased patient satisfaction with care.",
+    "target_population": "Patients with depression in primary care settings, particularly those with moderate to severe symptoms, comorbid conditions, or complex psychosocial needs.",
+    "citation": "Simon GE, Moise N, Mohr DC. Management of Depression in Adults: A Review. JAMA. 2024;332(2):141-152.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "collaborative care",
+      "care management",
+      "measurement-based care",
+      "behavioral activation",
+      "systematic follow-up"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "depression_social_worker_psychotherapy_1",
+    "title": "Implement Social Worker-Led Psychotherapy for Depression",
+    "domain": "Depression",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement social worker-led psychotherapy interventions for depression management. Develop protocols for evidence-based psychotherapy delivery including cognitive behavioral therapy, interpersonal therapy, and problem-solving therapy with structured session formats and treatment durations. Create systems for behavioral activation focusing on increasing engagement in rewarding activities and reducing avoidance behaviors. Implement coordination mechanisms with primary care providers to ensure integrated care and communication about treatment progress. Establish documentation standards for therapy sessions, homework assignments, and symptom changes. Create clear referral pathways for patients who would benefit from psychotherapy, with consideration of patient preferences and insurance coverage. Implement metrics to evaluate psychotherapy effectiveness including depression symptom reduction, functional improvement, and patient satisfaction.",
+    "expected_outcomes": "Improved depression symptoms, enhanced coping skills, better social functioning, increased behavioral activation, reduced negative thinking patterns, and improved quality of life.",
+    "target_population": "Patients with depression across the spectrum of severity, particularly those who prefer non-pharmacological approaches, those with psychosocial stressors contributing to depression, or those with mild to moderate symptoms.",
+    "citation": "Simon GE, Moise N, Mohr DC. Management of Depression in Adults: A Review. JAMA. 2024;332(2):141-152.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "psychotherapy",
+      "behavioral activation",
+      "evidence-based therapy",
+      "social work intervention",
+      "depression treatment"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "depression_standardized_screening_1",
+    "title": "Implement Standardized Depression Screening Protocol",
+    "domain": "Depression",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement routine screening for depression using validated tools. Develop protocols for routine depression screening in primary care and specialty settings, with defined frequency and target populations. Create systems for using standardized assessment tools such as PHQ-9, with clear score interpretation guidelines and action thresholds. Implement comprehensive assessment of symptom severity and functional impairment to guide treatment planning. Establish suicide risk screening as a mandatory component of depression assessment, with clear escalation pathways for positive screens. Create documentation standards for screening results in the electronic health record with structured data elements. Implement metrics to track screening completion rates, positive screen follow-up, and impact on early intervention rates.",
+    "expected_outcomes": "Early identification of depression, timely intervention for symptomatic patients, reduced time to appropriate treatment, improved clinical outcomes through earlier care, and systematic identification of suicide risk.",
+    "target_population": "Adult patients in primary care and specialty settings, with particular focus on those with risk factors for depression including personal or family history of mental health conditions, chronic medical conditions, recent major life stressors, or substance use disorders.",
+    "citation": "Simon GE, Moise N, Mohr DC. Management of Depression in Adults: A Review. JAMA. 2024;332(2):141-152.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "depression screening",
+      "standardized assessment",
+      "early identification",
+      "suicide risk",
+      "primary care"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "food_security_care_coordinator_1",
+    "title": "Implement Care Coordinator Food Security Management Protocol",
+    "domain": "Food Insecurity",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Develop and implement a structured protocol for care coordinators to address food insecurity. Create systems for routine food insecurity screening using the validated two-item Hunger Vital Sign tool, integrated into standard clinical workflows. Implement resource connection processes including referrals to federal nutrition assistance programs (SNAP, WIC, TEFAP), local food pantries, meal delivery services, and produce prescription programs. Establish follow-up procedures to confirm successful connection to resources and reassess food security status at defined intervals. Create documentation standards in the electronic health record with structured data elements for screening results, referrals made, and outcomes. Implement team-based approaches to addressing food needs with clear role delineation among clinical and non-clinical staff. Develop metrics to evaluate care coordination effectiveness including screening rates, successful resource connections, and improvements in food security status.",
+    "expected_outcomes": "Improved identification of food insecurity, enhanced connection to appropriate food resources, reduced food insecurity among patients, better coordination of food-related interventions, and improved health outcomes related to diet-sensitive conditions.",
+    "target_population": "Patients at risk for or experiencing food insecurity, with particular focus on those with diet-sensitive chronic conditions, families with children, older adults on fixed incomes, and those in underserved communities.",
+    "citation": "Barnidge E, Stenmark S, Seligman H. Clinic-to-Community Models to Address Food Insecurity. JAMA Pediatrics. 2017;171(6):507-508.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "food insecurity",
+      "screening",
+      "resource connection",
+      "care coordination",
+      "social determinants of health"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "food_security_chw_assessment_1",
+    "title": "Implement Community Health Worker Food Support Protocol",
+    "domain": "Food Insecurity",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement community health worker interventions for comprehensive food insecurity support. Develop protocols for community-based assessment of food insecurity using culturally appropriate methods and tools. Create resource navigation training for CHWs to effectively connect clients to federal nutrition programs, food pantries, farmers markets, and other local food resources. Implement home-based support including pantry assessments, meal planning assistance, and grocery shopping guidance. Establish cultural and linguistic competence standards to ensure interventions are relevant and accessible to diverse populations. Create community-based solutions by identifying and leveraging neighborhood assets and building partnerships with local food retailers and community organizations. Implement metrics to evaluate CHW effectiveness including successful resource connections, client satisfaction, and improvements in food security status.",
+    "expected_outcomes": "Improved community-based support for food access, enhanced cultural relevance of food interventions, better utilization of local food resources, increased enrollment in food assistance programs, and improved food security status among vulnerable populations.",
+    "target_population": "Individuals and families experiencing food insecurity, particularly those in underserved communities, those with cultural or linguistic barriers to accessing traditional services, or those requiring intensive support for multiple social needs.",
+    "citation": "P\u00e9rez-Escamilla R, Hromi-Fiedler A, Vega-L\u00f3pez S, Berm\u00fadez-Mill\u00e1n A, Segura-P\u00e9rez S. Impact of peer nutrition education on dietary behaviors and health outcomes among Latinos: a systematic literature review. Journal of Nutrition Education and Behavior. 2008;40(4):208-225.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "community health worker",
+      "food insecurity",
+      "community-based assessment",
+      "cultural competence",
+      "resource navigation"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "food_security_social_worker_1",
+    "title": "Implement Social Worker Food Resource Navigation Protocol",
+    "domain": "Food Insecurity",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement social work interventions for comprehensive food resource navigation. Develop protocols for comprehensive needs assessment that addresses food insecurity alongside other social determinants of health including housing, transportation, and financial stability. Create systems for benefit application assistance including SNAP, WIC, and other federal nutrition programs with direct support for paperwork completion and eligibility documentation. Implement advocacy strategies for policy changes to improve food access at institutional and community levels. Establish coordination mechanisms with food assistance programs including food banks, meal delivery services, and community meal programs. Create documentation standards for interventions and outcomes in the electronic health record. Implement metrics to evaluate social work effectiveness including successful benefit enrollments, resource connections, and improvements in food security status.",
+    "expected_outcomes": "Improved access to food resources and benefits, enhanced coordination of multiple social services, increased enrollment in nutrition assistance programs, reduced administrative barriers to accessing food resources, and improved food security status.",
+    "target_population": "Individuals and families experiencing food insecurity, particularly those with complex social needs, those requiring assistance with benefit applications, or those facing systemic barriers to food access.",
+    "citation": "Gundersen C, Ziliak JP. Food Insecurity And Health Outcomes. Health Affairs. 2015;34(11):1830-1839.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "social work",
+      "food insecurity",
+      "benefit enrollment",
+      "resource navigation",
+      "advocacy"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "food_security_dietitian_tailored_1",
+    "title": "Implement Dietitian Tailored Nutrition Support for Food Insecurity",
+    "domain": "Food Insecurity",
+    "role": "Dietitian",
+    "implementation_guidance": "Implement dietitian-led interventions for food insecure patients with specific health conditions. Develop protocols for comprehensive nutritional assessment that considers both health needs and resource constraints. Create tailored dietary recommendations that optimize nutrition within budget limitations, focusing on affordable nutrient-dense foods. Implement education on low-cost, nutritious food selection, preparation, and storage to maximize food resources. Establish coordination with food assistance programs including medically tailored meals, produce prescriptions, and food pantries to align nutritional recommendations with available resources. Create follow-up processes to assess dietary changes and adjust recommendations based on changing food access. Implement metrics to evaluate nutritional outcomes including dietary quality, clinical parameters for diet-sensitive conditions, and patient self-efficacy for healthy eating on a limited budget.",
+    "expected_outcomes": "Improved dietary quality within resource constraints, better management of diet-sensitive health conditions, enhanced patient knowledge and skills for healthy eating on a limited budget, and increased utilization of available food resources.",
+    "target_population": "Food insecure patients with diet-sensitive health conditions such as diabetes, hypertension, cardiovascular disease, or kidney disease who require specialized nutritional guidance within resource constraints.",
+    "citation": "Seligman HK, Lyles C, Marshall MB, et al. A Pilot Food Bank Intervention Featuring Diabetes-Appropriate Food Improved Glycemic Control Among Clients In Three States. Health Affairs. 2015;34(11):1956-1963.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "dietitian",
+      "food insecurity",
+      "nutritional assessment",
+      "tailored recommendations",
+      "diet-sensitive conditions"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "housing_care_coordinator_screening_1",
+    "title": "Implement Care Coordinator Housing Management Protocol",
+    "domain": "Housing Insecurity",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a structured protocol for care coordinators to address housing insecurity. Develop protocols for integrating standardized housing status screening into clinical workflows, using validated tools with clear response pathways for different housing situations. Create systems for referrals to community-based housing organizations with established relationships and warm handoff procedures. Implement regular follow-up processes to track housing status changes and ensure successful connections to resources. Establish appointment adherence monitoring with consideration of housing-related barriers to care. Create documentation standards for housing needs in comprehensive care plans with specific housing goals and interventions. Implement metrics to evaluate care coordination effectiveness including screening rates, successful resource connections, appointment adherence, and improvements in housing stability.",
+    "expected_outcomes": "Improved identification of housing insecurity, enhanced connection to appropriate housing resources, reduced barriers to care related to housing instability, better coordination of housing-related interventions, and improved health outcomes for patients experiencing housing insecurity.",
+    "target_population": "Patients at risk for or experiencing housing insecurity, with particular focus on those with chronic health conditions, behavioral health needs, or other vulnerabilities that may be exacerbated by housing instability.",
+    "citation": "Lanham JS, White P, Gaffney B. Care of People Experiencing Homelessness. American Family Physician. 2022;106(6):684-693.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "housing insecurity",
+      "screening",
+      "resource connection",
+      "care coordination",
+      "social determinants of health"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "housing_chw_navigation_1",
+    "title": "Implement Community Health Worker Housing Support Protocol",
+    "domain": "Housing Insecurity",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement community health worker interventions for comprehensive housing insecurity support. Develop protocols for community-based assessment of housing needs using culturally appropriate methods that consider neighborhood context and available resources. Create education materials and processes on available housing resources including emergency shelters, transitional housing, permanent supportive housing, and rental assistance programs. Implement assistance with housing applications including documentation gathering, form completion, and follow-up with housing authorities. Establish accompaniment to housing-related appointments to provide advocacy and support during interactions with landlords, housing authorities, and social service agencies. Create community-based solutions through local partnerships with housing organizations, legal aid services, and tenant rights groups. Implement metrics to evaluate CHW effectiveness including successful housing placements, housing stability over time, and client satisfaction with housing support.",
+    "expected_outcomes": "Improved navigation of housing resources and services, enhanced access to stable housing, reduced barriers to housing application processes, increased client self-efficacy in addressing housing needs, and stronger connections between healthcare and housing systems.",
+    "target_population": "Individuals and families experiencing housing insecurity or homelessness, particularly those in underserved communities, those with cultural or linguistic barriers to accessing traditional services, or those requiring intensive support for complex housing needs.",
+    "citation": "Hwang SW, Burns T. Health Interventions for People Who Are Homeless. Lancet. 2014;384(9953):1541-7.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "community health worker",
+      "housing insecurity",
+      "resource navigation",
+      "application assistance",
+      "community partnerships"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "housing_social_worker_assessment_1",
+    "title": "Implement Social Worker Housing Advocacy Protocol",
+    "domain": "Housing Insecurity",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement social work interventions for comprehensive housing advocacy and resource connection. Develop protocols for comprehensive housing needs assessment that evaluates current housing status, risk factors for housing loss, barriers to housing stability, and eligibility for various housing programs. Create systems for connecting patients to appropriate housing resources including emergency shelters, transitional housing, permanent supportive housing, and rental assistance programs. Implement advocacy strategies for expanded housing services at institutional and community levels, including engagement with policymakers and housing authorities. Establish structured assistance with housing applications including documentation gathering, form completion, and appeals processes when necessary. Create coordination mechanisms with local housing authorities, landlords, and housing support organizations to facilitate placements and address barriers. Implement metrics to evaluate social work effectiveness including successful housing placements, housing retention rates, and improvements in health outcomes related to housing stability.",
+    "expected_outcomes": "Improved access to housing resources and services, enhanced housing stability, reduced barriers to housing access, successful navigation of complex housing systems, and improved coordination between healthcare and housing sectors.",
+    "target_population": "Individuals and families experiencing housing insecurity or homelessness, particularly those with complex needs, those facing discrimination or systemic barriers to housing, or those requiring assistance with housing applications and advocacy.",
+    "citation": "Bhatnagar S, Lovelace J, Prushnok R, et al. A Novel Framework to Address the Complexities of Housing Insecurity and Its Associated Health Outcomes and Inequities: \"Give, Partner, Invest\". International Journal of Environmental Research and Public Health. 2023;20(14):6349.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "social work",
+      "housing insecurity",
+      "advocacy",
+      "resource connection",
+      "housing applications"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "housing_pharmacist_medication_1",
+    "title": "Implement Pharmacist Medication Management for Housing Insecure Patients",
+    "domain": "Housing Insecurity",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Implement pharmacist-led interventions for medication management in housing insecure populations. Develop protocols for comprehensive medication reconciliation that considers housing constraints, including limited storage, lack of refrigeration, and potential medication loss or theft. Create medication storage solutions for those without stable housing, such as waterproof medication containers, pill organizers with secure closures, and partnerships with community organizations for medication storage. Implement simplified medication regimens when possible, including once-daily dosing, long-acting formulations, and combination products to reduce pill burden. Establish medication access programs for uninsured patients, including pharmacy assistance programs, manufacturer discount cards, and connections to federally qualified health centers. Create patient education materials and processes tailored to housing circumstances, with clear visual instructions and consideration of health literacy. Implement metrics to track medication adherence, including refill rates, clinical outcomes, and patient-reported medication use.",
+    "expected_outcomes": "Improved medication adherence and management, reduced medication-related adverse events, enhanced patient understanding of medication regimens despite housing challenges, better clinical outcomes for chronic conditions, and increased access to essential medications.",
+    "target_population": "Patients experiencing housing insecurity or homelessness who require medication management, particularly those with chronic conditions requiring complex medication regimens, those with limited storage capabilities, or those with barriers to medication access.",
+    "citation": "Lanham JS, White P, Gaffney B. Care of People Experiencing Homelessness. American Family Physician. 2022;106(6):684-693.",
+    "evidence_level": "C - Limited",
+    "tags": [
+      "pharmacist",
+      "medication management",
+      "housing insecurity",
+      "medication adherence",
+      "simplified regimens"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "transportation_care_coordinator_screening_1",
+    "title": "Implement Care Coordinator Transportation Management Protocol",
+    "domain": "Transportation Insecurity",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement a structured protocol for care coordinators to address transportation barriers. Develop protocols for systematic screening using validated tools such as the Accountable Health Communities (AHC) transportation questions or the Transportation Security Index, integrated into routine clinical workflows. Create systems for direct arrangement of transportation services including bus passes, taxi or ride-share vouchers, and non-emergency medical transportation (NEMT) services based on patient needs and eligibility. Implement follow-up processes to confirm service utilization and identify ongoing barriers. Establish reassessment procedures at subsequent encounters to evaluate changing transportation needs. Create documentation standards for transportation needs in comprehensive care plans with specific transportation goals and interventions. Implement metrics to evaluate care coordination effectiveness including screening rates, successful transportation arrangements, appointment attendance, and patient satisfaction.",
+    "expected_outcomes": "Improved transportation access, reduced missed appointments, enhanced follow-up care adherence, decreased emergency department utilization for non-urgent needs, and improved chronic disease management through consistent access to care.",
+    "target_population": "Patients with identified transportation barriers to healthcare access, particularly those with chronic conditions requiring frequent appointments, those in rural or underserved areas with limited public transportation, and those with limited financial resources for transportation.",
+    "citation": "American Heart Association. Medical Care Access Among U.S. Adults with Self-Reported Transportation Barriers: A Health Care Access Issue. Circulation: Cardiovascular Quality and Outcomes. 2020;13(9):e006898.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "transportation barriers",
+      "care coordination",
+      "appointment adherence",
+      "screening",
+      "social determinants of health"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "transportation_chw_assessment_1",
+    "title": "Implement Community Health Worker Transportation Support Protocol",
+    "domain": "Transportation Insecurity",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement community health worker interventions for comprehensive transportation barrier management. Develop protocols for community-based assessment of transportation needs that consider geographic context, available transit options, and individual capabilities. Create education materials and processes on available transportation resources including public transit, specialized services for older adults or people with disabilities, and community-based ride programs. Implement assistance with applications for transportation services such as paratransit, Medicaid transportation, or reduced fare programs, including documentation gathering and form completion. Establish accompaniment to appointments when needed, particularly for patients with complex health needs, limited mobility, or navigation challenges. Create community-based solutions through local partnerships with transportation providers, volunteer driver programs, and community organizations. Implement metrics to evaluate CHW effectiveness including successful transportation arrangements, appointment attendance rates, and patient self-efficacy for navigating transportation systems.",
+    "expected_outcomes": "Improved navigation of transportation resources, enhanced access to healthcare appointments, reduced transportation-related barriers to care, increased patient knowledge of available transportation options, and stronger connections between healthcare and transportation systems.",
+    "target_population": "Individuals with transportation barriers to healthcare access, particularly those in underserved communities, those with limited English proficiency, those unfamiliar with available transportation options, or those requiring assistance with transportation service applications.",
+    "citation": "Syed ST, Gerber BS, Sharp LK. Traveling towards disease: transportation barriers to health care access. Journal of Community Health. 2013;38(5):976-993.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "community health worker",
+      "transportation barriers",
+      "resource navigation",
+      "application assistance",
+      "community partnerships"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "transportation_social_worker_advocacy_1",
+    "title": "Implement Social Worker Transportation Advocacy Protocol",
+    "domain": "Transportation Insecurity",
+    "role": "Social Worker (Non-Clinical)",
+    "implementation_guidance": "Implement social work interventions for comprehensive transportation advocacy and resource connection. Develop protocols for comprehensive transportation needs assessment that evaluates current transportation access, barriers to mobility, eligibility for transportation services, and impact on healthcare utilization. Create systems for connecting patients to appropriate transportation resources including public transit, non-emergency medical transportation, specialized services for older adults or people with disabilities, and community-based ride programs. Implement advocacy strategies for expanded transportation services at institutional and community levels, including engagement with transit authorities and policymakers. Establish structured assistance with eligibility applications for transportation services such as paratransit, Medicaid transportation, or reduced fare programs. Create coordination mechanisms with local transportation authorities and providers to address systemic barriers and improve service delivery. Implement metrics to evaluate social work effectiveness including successful transportation arrangements, reduced missed appointments, and improvements in healthcare access.",
+    "expected_outcomes": "Improved access to transportation resources and services, enhanced healthcare utilization, reduced barriers to transportation access, successful navigation of complex transportation systems, and improved coordination between healthcare and transportation sectors.",
+    "target_population": "Individuals with transportation barriers to healthcare access, particularly those with complex needs, those facing systemic barriers to transportation, or those requiring assistance with transportation service applications and advocacy.",
+    "citation": "Syed ST, Gerber BS, Sharp LK. Traveling towards disease: transportation barriers to health care access. Journal of Community Health. 2013;38(5):976-993.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "social work",
+      "transportation barriers",
+      "advocacy",
+      "resource connection",
+      "service applications"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "ckd_screening_risk_stratification_1",
+    "title": "CKD Screening and Risk Stratification Protocol",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement systematic screening and risk stratification for CKD in high-risk populations. Develop protocols for routine screening in patients with diabetes or hypertension, implement eGFR and albuminuria testing systems, create risk stratification algorithms based on test results, establish monitoring intervals based on CKD stage, develop individualized follow-up protocols, and implement metrics to track screening effectiveness.",
+    "expected_outcomes": "Timely identification and staging of CKD, improved management, and reduced progression to advanced kidney disease.",
+    "target_population": "Patients with diabetes, hypertension, or other risk factors for chronic kidney disease.",
+    "citation": "Vassalotti JA, Centor R, Turner BJ, et al. Practical Approach to Detection and Management of Chronic Kidney Disease for the Primary Care Clinician. The American Journal of Medicine. 2016;129(2):153-162.e7.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "screening",
+      "risk stratification",
+      "early detection",
+      "primary care"
+    ]
+  },
+  {
+    "id": "ckd_timely_nephrology_referral_1",
+    "title": "Timely Nephrology Referral Protocol for CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Establish criteria and systems for timely nephrology referral for patients with advanced or rapidly progressing CKD. Develop clear referral criteria (eGFR <30 mL/min/1.73 m\u00b2, rapidly progressive disease, refractory hypertension), create streamlined referral processes, implement tracking systems for referral completion, establish communication protocols between primary care and nephrology, create follow-up systems for referred patients, and develop metrics to evaluate referral timeliness.",
+    "expected_outcomes": "Improved specialist input for complex cases, better outcomes, reduced progression to end-stage kidney disease, and improved preparation for renal replacement therapy when needed.",
+    "target_population": "Patients with advanced CKD (eGFR <30 mL/min/1.73 m\u00b2), rapidly progressive kidney disease, or complex management issues.",
+    "citation": "Vassalotti JA, Centor R, Turner BJ, et al. Practical Approach to Detection and Management of Chronic Kidney Disease for the Primary Care Clinician. The American Journal of Medicine. 2016;129(2):153-162.e7.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "nephrology referral",
+      "care coordination",
+      "advanced CKD",
+      "specialist care"
+    ]
+  },
+  {
+    "id": "ckd_blood_pressure_management_1",
+    "title": "Blood Pressure Management Protocol for CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement targeted blood pressure control protocols for patients with CKD. Establish target blood pressure goals (<130/80 mmHg), create individualized target protocols based on comorbidities and tolerability, implement regular monitoring systems, develop medication titration protocols, create escalation pathways for uncontrolled hypertension, and implement metrics to track blood pressure control rates.",
+    "expected_outcomes": "Slowed CKD progression, reduced cardiovascular risk, and improved overall outcomes for patients with CKD.",
+    "target_population": "Patients with chronic kidney disease and hypertension.",
+    "citation": "Vassalotti JA, Centor R, Turner BJ, et al. Practical Approach to Detection and Management of Chronic Kidney Disease for the Primary Care Clinician. The American Journal of Medicine. 2016;129(2):153-162.e7.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "hypertension",
+      "blood pressure management",
+      "cardiovascular risk",
+      "disease progression"
+    ]
+  },
+  {
+    "id": "ckd_glycemic_management_1",
+    "title": "Glycemic Management Protocol for Diabetic CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement targeted glycemic control protocols for patients with diabetes and CKD. Establish target HbA1c goals (\u22647%), create individualized target protocols based on comorbidities and risk of hypoglycemia, implement regular monitoring systems, develop medication adjustment protocols for renal impairment, create escalation pathways for uncontrolled diabetes, and implement metrics to track glycemic control rates.",
+    "expected_outcomes": "Reduced risk or slowed progression of CKD, decreased risk of diabetic complications, and improved overall outcomes for patients with diabetic kidney disease.",
+    "target_population": "Patients with diabetes and chronic kidney disease.",
+    "citation": "Vassalotti JA, Centor R, Turner BJ, et al. Practical Approach to Detection and Management of Chronic Kidney Disease for the Primary Care Clinician. The American Journal of Medicine. 2016;129(2):153-162.e7.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "diabetes",
+      "glycemic control",
+      "diabetic kidney disease",
+      "disease progression"
+    ]
+  },
+  {
+    "id": "ckd_statin_therapy_1",
+    "title": "Statin Therapy Protocol for Cardiovascular Risk Reduction in CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement statin therapy protocols for cardiovascular risk reduction in adults with CKD not on dialysis. Develop protocols for statin initiation in CKD patients, create dosing guidelines based on renal function, implement monitoring systems for efficacy and side effects, establish LDL targets where appropriate, create patient education materials on statin benefits, and implement metrics to track statin utilization rates.",
+    "expected_outcomes": "Reduced cardiovascular events in CKD patients, decreased mortality, and improved overall outcomes.",
+    "target_population": "Adults with chronic kidney disease not on dialysis.",
+    "citation": "Chen TK, Knicely DH, Grams ME. Chronic Kidney Disease Diagnosis and Management: A Review. JAMA. 2019;322(13):1294-1304.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "cardiovascular risk",
+      "statin therapy",
+      "lipid management",
+      "preventive care"
+    ]
+  },
+  {
+    "id": "ckd_ras_blockade_1",
+    "title": "Renin-Angiotensin System Blockade Protocol for CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement protocols for ACE inhibitor or ARB use in patients with albuminuria and hypertension. Develop protocols for ACE inhibitor or ARB initiation, create dose titration guidelines to maximally tolerated doses, implement monitoring systems for hyperkalemia and serum creatinine changes, establish safety parameters for continuation or discontinuation, create patient education materials on medication benefits, and implement metrics to track appropriate utilization.",
+    "expected_outcomes": "Reduced albuminuria, slowed CKD progression, and improved renal outcomes in patients with proteinuric CKD.",
+    "target_population": "Patients with chronic kidney disease, particularly those with albuminuria and hypertension.",
+    "citation": "Vassalotti JA, Centor R, Turner BJ, et al. Practical Approach to Detection and Management of Chronic Kidney Disease for the Primary Care Clinician. The American Journal of Medicine. 2016;129(2):153-162.e7.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "ACE inhibitor",
+      "ARB",
+      "albuminuria",
+      "renoprotection"
+    ]
+  },
+  {
+    "id": "ckd_sglt2_inhibitor_1",
+    "title": "SGLT2 Inhibitor Implementation Protocol for CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement SGLT2 inhibitor protocols for patients with diabetes and CKD, and selected non-diabetic CKD patients. Develop protocols for SGLT2 inhibitor initiation, create patient selection criteria for diabetic and non-diabetic CKD, implement monitoring systems for efficacy and side effects, establish safety parameters and contraindications, create patient education materials on medication benefits, and implement metrics to track appropriate utilization.",
+    "expected_outcomes": "Reduced CKD progression, decreased cardiovascular events, and improved renal outcomes in patients with diabetic and selected non-diabetic CKD.",
+    "target_population": "Patients with diabetic kidney disease and selected patients with non-diabetic CKD with albuminuria.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "SGLT2 inhibitor",
+      "diabetes",
+      "renoprotection",
+      "cardiovascular protection"
+    ]
+  },
+  {
+    "id": "ckd_ns_mra_implementation_1",
+    "title": "Non-Steroidal Mineralocorticoid Receptor Antagonist Protocol for CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement finerenone protocols for selected patients with diabetic CKD and albuminuria. Develop protocols for finerenone initiation, create patient selection criteria, implement monitoring systems for hyperkalemia and other side effects, establish safety parameters and contraindications, create patient education materials on medication benefits, and implement metrics to track appropriate utilization.",
+    "expected_outcomes": "Reduced progression of CKD and decreased cardiovascular risk in patients with diabetic kidney disease.",
+    "target_population": "Patients with diabetic kidney disease and persistent albuminuria despite optimal RAS blockade.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "finerenone",
+      "mineralocorticoid receptor antagonist",
+      "diabetic kidney disease",
+      "albuminuria"
+    ]
+  },
+  {
+    "id": "ckd_lifestyle_modification_1",
+    "title": "Lifestyle Modification Program for CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement comprehensive lifestyle modification programs for patients with CKD. Develop protocols for dietary counseling (plant-dominant, low-protein, low-salt diet), create physical activity prescription guidelines, implement smoking cessation programs, establish regular follow-up and reinforcement systems, create patient education materials on lifestyle benefits, and implement metrics to track adherence and outcomes.",
+    "expected_outcomes": "Mitigated CKD progression, improved overall health, reduced cardiovascular risk, and better quality of life for patients with CKD.",
+    "target_population": "All patients with chronic kidney disease.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "chronic kidney disease",
+      "lifestyle modification",
+      "diet",
+      "physical activity",
+      "smoking cessation"
+    ]
+  },
+  {
+    "id": "ckd_medication_safety_1",
+    "title": "Medication Safety Protocol for CKD",
+    "domain": "Chronic Kidney Disease",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement medication safety protocols to prevent iatrogenic harm in CKD patients. Develop protocols for nephrotoxin avoidance (e.g., NSAIDs), create dose adjustment guidelines for renally cleared medications, implement medication review systems at each visit, establish alerts for potentially harmful medications, create patient education materials on medication safety, and implement metrics to track medication safety events.",
+    "expected_outcomes": "Prevented iatrogenic harm, reduced medication errors, and improved medication safety for patients with CKD.",
+    "target_population": "All patients with chronic kidney disease.",
+    "citation": "Vassalotti JA, Centor R, Turner BJ, et al. Practical Approach to Detection and Management of Chronic Kidney Disease for the Primary Care Clinician. The American Journal of Medicine. 2016;129(2):153-162.e7.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "chronic kidney disease",
+      "medication safety",
+      "nephrotoxin avoidance",
+      "dose adjustment",
+      "medication review"
+    ]
+  },
+  {
+    "id": "ckd_multidisciplinary_team_1",
+    "title": "Multidisciplinary CKD Care Team Implementation Protocol",
+    "domain": "Chronic Kidney Disease",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Establish multidisciplinary, patient-centered care teams for CKD management. Form teams including dietitians, pharmacists, educators, and social workers, develop care coordination protocols, implement regular team communication systems, establish roles and responsibilities for each team member, create metrics to evaluate team effectiveness, and implement continuous quality improvement processes.",
+    "expected_outcomes": "Improved care coordination, enhanced medication management, better patient education, and improved clinical outcomes for patients with CKD.",
+    "target_population": "Patients with chronic kidney disease, particularly those with complex care needs or advanced disease.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "chronic kidney disease",
+      "multidisciplinary care",
+      "team-based care",
+      "care coordination",
+      "patient-centered care"
+    ]
+  },
+  {
+    "id": "ckd_structured_education_1",
+    "title": "Structured CKD Education Program Protocol",
+    "domain": "Chronic Kidney Disease",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement structured education programs for patients with CKD and their care partners. Develop standardized education materials on CKD management, create group and individual education session protocols, implement teach-back methods to ensure understanding, establish regular reinforcement and update sessions, create metrics to evaluate program effectiveness, and implement continuous quality improvement processes.",
+    "expected_outcomes": "Improved self-management, enhanced informed decision-making, better adherence to therapy, and improved quality of life for patients with CKD.",
+    "target_population": "Patients with chronic kidney disease and their care partners/family members.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "chronic kidney disease",
+      "patient education",
+      "self-management",
+      "health literacy",
+      "care partner support"
+    ]
+  },
+  {
+    "id": "ckd_population_health_1",
+    "title": "CKD Population Health Management System Protocol",
+    "domain": "Chronic Kidney Disease",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement telehealth, EHR-based population health management, and CKD registries. Develop CKD registries to identify high-risk patients, create EHR-based alerts and decision support tools, implement telehealth services for remote monitoring, establish proactive outreach protocols for care gaps, create metrics to evaluate system effectiveness, and implement continuous quality improvement processes.",
+    "expected_outcomes": "Early identification of high-risk patients, timely nephrology input, coordinated care delivery, and improved outcomes for patients with CKD.",
+    "target_population": "All patients with chronic kidney disease, particularly those at high risk for progression.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "chronic kidney disease",
+      "population health",
+      "telehealth",
+      "registry",
+      "EHR optimization"
+    ]
+  },
+  {
+    "id": "ckd_care_coordinator_management_1",
+    "title": "Care Coordinator CKD Management Protocol",
+    "domain": "Chronic Kidney Disease",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Define specific responsibilities and workflows for care coordinators in CKD management. Develop protocols for early identification of high-risk CKD patients, create systems for individualized care plan development, implement proactive follow-up protocols, establish monitoring systems for key parameters (BP, labs), create timely nephrology referral processes, and implement metrics to evaluate care coordination effectiveness.",
+    "expected_outcomes": "Improved care continuity, proactive management, reduced care gaps, and better outcomes for patients with CKD.",
+    "target_population": "Patients with chronic kidney disease, particularly those with complex care needs or multiple comorbidities.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "chronic kidney disease",
+      "care coordination",
+      "care planning",
+      "proactive management",
+      "care continuity"
+    ]
+  },
+  {
+    "id": "ckd_chw_support_1",
+    "title": "Community Health Worker CKD Support Protocol",
+    "domain": "Chronic Kidney Disease",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement community health worker interventions for CKD patients, particularly in underserved populations. Develop protocols for culturally tailored education, create care navigation systems, implement medication adherence support, establish social determinants of health assessment, create community resource connection processes, and implement metrics to evaluate CHW effectiveness.",
+    "expected_outcomes": "Improved trust, enhanced education, better self-management, and increased SDOH support for patients with CKD in underserved communities.",
+    "target_population": "Patients with chronic kidney disease in underserved or vulnerable populations.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "chronic kidney disease",
+      "community health worker",
+      "underserved populations",
+      "cultural competence",
+      "social determinants of health"
+    ]
+  },
+  {
+    "id": "ckd_pharmacist_medication_1",
+    "title": "Pharmacist-Led CKD Medication Management Protocol",
+    "domain": "Chronic Kidney Disease",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Implement pharmacist-led medication management services for CKD patients. Develop protocols for medication reconciliation, create systems for identifying and mitigating nephrotoxic drugs, implement dose adjustment protocols for renally cleared medications, establish collaborative practice agreements where appropriate, create patient education materials on medication safety, and implement metrics to evaluate pharmacist intervention effectiveness.",
+    "expected_outcomes": "Improved medication safety, enhanced medication adherence, reduced adverse drug events, and better medication appropriateness for patients with CKD.",
+    "target_population": "Patients with chronic kidney disease, particularly those on multiple medications or complex regimens.",
+    "citation": "Lv J, Zhang H, Wong MG, et al. Chronic Kidney Disease. Lancet. 2021;398(10302):786-802.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "chronic kidney disease",
+      "medication management",
+      "pharmacist intervention",
+      "medication safety",
+      "dose adjustment"
+    ]
+  },
+  {
+    "id": "substance_use_sbirt_1",
+    "title": "SBIRT Implementation Protocol",
+    "domain": "Substance Use",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement Screening, Brief Intervention, and Referral to Treatment (SBIRT) model in clinical settings. Develop protocols for routine screening using validated tools (e.g., single-question screens, DAST, AUDIT). Create systems for brief motivational counseling. Implement streamlined referral pathways. Establish documentation in EHR. Create training for providers. Implement metrics to track screening completion and referral rates.",
+    "expected_outcomes": "Early identification and intervention for substance use disorders. Improved treatment linkage and retention. Reduced substance use and related complications.",
+    "target_population": "Medicaid-enrolled adults at risk for or with substance use disorders, particularly in primary care and emergency department settings.",
+    "citation": "Babor TF, Del Boca F, Bray JW. Screening, Brief Intervention and Referral to Treatment: implications of SAMHSA's SBIRT initiative for substance abuse policy and practice. Addiction. 2017;112(S2):110-117. doi:10.1111/add.13675",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "screening",
+      "brief intervention",
+      "referral",
+      "substance use"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "substance_use_cm_1",
+    "title": "Case Management for Substance Use Disorders",
+    "domain": "Substance Use",
+    "role": "Care Manager",
+    "implementation_guidance": "Implement structured case management interventions for patients with substance use disorders. Develop protocols for comprehensive assessment. Create individualized care planning processes. Implement service linkage mechanisms. Establish ongoing monitoring systems. Create documentation standards. Implement metrics to track treatment linkage and retention.",
+    "expected_outcomes": "Improved treatment linkage and retention. Reduced substance use. Better coordination of care. Improved clinical outcomes. Reduced healthcare utilization.",
+    "target_population": "Medicaid-enrolled adults with substance use disorders, particularly those with complex needs or barriers to care.",
+    "citation": "Vanderplasschen W, Rapp RC, De Maeyer J, Van Den Noortgate W. A meta-analysis of the efficacy of case management for substance use disorders: a recovery perspective. Front Psychiatry. 2019;10:186. doi:10.3389/fpsyt.2019.00186",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "case management",
+      "care coordination",
+      "treatment retention",
+      "substance use"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "substance_use_chw_1",
+    "title": "Community Health Worker SUD Support Protocol",
+    "domain": "Substance Use",
+    "role": "Community Health Worker",
+    "implementation_guidance": "Implement community health worker interventions for substance use disorders. Develop protocols for psychoeducation. Create systems for motivational enhancement. Implement personalized feedback approaches. Establish outreach and navigation support. Create strategies to address social determinants of health. Implement metrics to evaluate CHW effectiveness.",
+    "expected_outcomes": "Reduced substance use and improved treatment access. Enhanced engagement in care. Better addressing of social determinants affecting substance use. Improved health outcomes.",
+    "target_population": "Medicaid-enrolled adults with substance use disorders, particularly those from underserved communities or with barriers to accessing traditional care.",
+    "citation": "Jack HE, Oller D, Kelly J, Magidson JF, Wakeman SE. Addressing substance use disorder in primary care: The role, integration, and impact of recovery coaches. Subst Abus. 2018;39(3):307-314. doi:10.1080/08897077.2017.1389802",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "community health worker",
+      "outreach",
+      "navigation",
+      "substance use"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "substance_use_ncm_1",
+    "title": "Nurse Care Manager MOUD Support Protocol",
+    "domain": "Substance Use",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement nurse care manager model for medication for opioid use disorder in primary care. Develop protocols for patient assessment. Create systems for coordination with prescribers. Implement treatment adherence monitoring. Establish ongoing support mechanisms. Create documentation standards. Implement metrics to evaluate nurse care manager effectiveness.",
+    "expected_outcomes": "Increased MOUD initiation and retention. Improved treatment outcomes. Enhanced coordination of care. Reduced barriers to MOUD access. Better patient satisfaction with treatment.",
+    "target_population": "Medicaid-enrolled adults with opioid use disorder receiving or eligible for medication treatment in primary care settings.",
+    "citation": "LaBelle CT, Han SC, Bergeron A, Samet JH. Office-Based Addiction Treatment with Buprenorphine (OBAT): Statewide Implementation of the Massachusetts Collaborative Care Model in Community Health Centers. J Subst Abuse Treat. 2016;60:6-13. doi:10.1016/j.jsat.2015.06.010",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "nurse care manager",
+      "MOUD",
+      "opioid use disorder",
+      "primary care"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "post_stroke_mdt_1",
+    "title": "Multidisciplinary Stroke Care Team Implementation",
+    "domain": "Post-Stroke",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Establish a multidisciplinary team-based approach for post-stroke care management. Form a dedicated team including physicians, nurses, pharmacists, social workers, and rehabilitation specialists. Implement regular hospital and outpatient programs for adherence and risk factor monitoring. Develop standardized assessment and care protocols. Create systems for care coordination across settings. Establish regular team meetings to discuss complex cases.",
+    "expected_outcomes": "Improved risk factor control, secondary prevention, reduced recurrent stroke risk. Better functional outcomes and quality of life. Enhanced care coordination and reduced care fragmentation.",
+    "target_population": "Medicaid-enrolled adults following stroke or transient ischemic attack, particularly those with multiple risk factors or complex care needs.",
+    "citation": "2021 Guideline for the Prevention of Stroke in Patients With Stroke and Transient Ischemic Attack: A Guideline From the American Heart Association/American Stroke Association. Stroke. 2021;52(7):e364-e467.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "multidisciplinary care",
+      "team-based care",
+      "secondary prevention",
+      "stroke"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "post_stroke_cm_1",
+    "title": "Case Management-Based Post-Stroke Care",
+    "domain": "Post-Stroke",
+    "role": "Care Coordinator",
+    "implementation_guidance": "Implement the SOS-Care model providing home and phone consultations, education, and individualized care plans. Assign dedicated case managers to stroke patients. Develop protocols for home visits and phone consultations. Create individualized care plans addressing medical and social needs. Implement patient and caregiver education programs. Establish monitoring systems for treatment goals.",
+    "expected_outcomes": "Significant reductions in stroke recurrence and vascular death, improved achievement of treatment goals for hypertension, dyslipidemia, diabetes, BMI, and medication adherence. Enhanced care coordination and reduced care gaps.",
+    "target_population": "Medicaid-enrolled adults following stroke or transient ischemic attack, particularly those at high risk for recurrence or with multiple comorbidities.",
+    "citation": "Case Management-Based Post-Stroke Care for Patients With Acute Stroke and TIA (SOS-Care): Prospective Cohort Study. Journal of Neurology. 2024;271(8):5333-5342.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "case management",
+      "care coordination",
+      "secondary prevention",
+      "stroke"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "post_stroke_nurse_1",
+    "title": "Nurse-Led Post-Stroke Risk Factor Management",
+    "domain": "Post-Stroke",
+    "role": "Nurse",
+    "implementation_guidance": "Implement nurse-led interventions for post-stroke risk factor management. Develop protocols for nurse-led blood pressure monitoring. Create systems for medication adherence support. Implement lifestyle modification counseling. Establish regular follow-up schedules. Create escalation protocols for uncontrolled risk factors.",
+    "expected_outcomes": "Improved achievement of risk factor targets, particularly for blood pressure. Enhanced medication adherence. Better lifestyle modifications. Reduced risk of recurrent stroke.",
+    "target_population": "Medicaid-enrolled adults following stroke or transient ischemic attack with modifiable risk factors, particularly hypertension.",
+    "citation": "Primary Care of Adult Patients After Stroke: A Scientific Statement From the American Heart Association/American Stroke Association.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "nurse-led care",
+      "risk factor management",
+      "blood pressure",
+      "stroke"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "post_mi_mcami_1",
+    "title": "Managed Care in Acute Myocardial Infarction (MC-AMI) Model",
+    "domain": "Post-MI",
+    "role": "Primary Care Provider",
+    "implementation_guidance": "Implement a structured, multidisciplinary program integrating acute intervention, complex revascularization, cardiac rehabilitation, and sudden cardiac death prevention. Develop integrated care pathways spanning acute to outpatient settings. Implement systematic cardiac rehabilitation referral processes. Ensure complete revascularization protocols. Create appropriate ICD utilization guidelines. Establish scheduled outpatient follow-up systems.",
+    "expected_outcomes": "40% reduction in major adverse cardiovascular and cerebrovascular events (MACCE), higher CR adherence (98% vs. 14%), increased rates of guideline-directed interventions. Improved long-term outcomes and quality of life.",
+    "target_population": "Medicaid-enrolled adults following myocardial infarction, particularly those at high risk for recurrent events or complications.",
+    "citation": "Managed Care After Acute Myocardial Infarction (MC-AMI) - A Poland's Nationwide Program: Comprehensive Post-MI Care - Improves Prognosis in 12-Month Follow-Up. Preliminary Experience From a Single High-Volume Center. International Journal of Cardiology. 2019;296:8-14.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "managed care",
+      "cardiac rehabilitation",
+      "secondary prevention",
+      "myocardial infarction"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "post_mi_cr_1",
+    "title": "Comprehensive Cardiac Rehabilitation Referral",
+    "domain": "Post-MI",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "Implement systematic referral to comprehensive cardiac rehabilitation for all eligible post-MI patients. Develop automatic referral systems for all eligible patients. Create protocols for referral before hospital discharge or at first outpatient visit. Implement supervised exercise training programs. Establish risk factor modification components (lipid, blood pressure, diabetes management). Incorporate psychosocial support and patient education.",
+    "expected_outcomes": "Reductions in all-cause and cardiac mortality (by 20% and 26%, respectively), hospital readmissions, improvements in quality of life. Enhanced physical function and reduced cardiovascular risk factors.",
+    "target_population": "All Medicaid-enrolled adults following myocardial infarction who are eligible for cardiac rehabilitation.",
+    "citation": "Cardiac Rehabilitation \u2014 Challenges, Advances, and the Road Ahead. New England Journal of Medicine. February 29, 2024.",
+    "evidence_level": "A - Strong",
+    "tags": [
+      "cardiac rehabilitation",
+      "exercise training",
+      "risk factor modification",
+      "myocardial infarction"
+    ],
+    "last_updated": "2025-06-03"
+  },
+  {
+    "id": "post_mi_pharm_1",
+    "title": "Pharmacist-Led Post-MI Medication Management",
+    "domain": "Post-MI",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "Implement pharmacist-led medication management services for post-MI patients. Develop protocols for comprehensive medication review. Create systems for medication reconciliation. Implement adherence support interventions. Establish protocols for managing drug interactions. Create patient education materials on medication adherence. Develop metrics to evaluate pharmacist intervention effectiveness.",
+    "expected_outcomes": "Improved medication adherence, reduced medication errors, better risk factor control. Enhanced secondary prevention and reduced recurrent events. Improved patient understanding of medication regimens.",
+    "target_population": "Medicaid-enrolled adults following myocardial infarction on complex medication regimens, particularly those with polypharmacy or adherence challenges.",
+    "citation": "Cardiac Rehabilitation \u2014 Challenges, Advances, and the Road Ahead. New England Journal of Medicine. February 29, 2024.",
+    "evidence_level": "B - Moderate",
+    "tags": [
+      "pharmacist-led care",
+      "medication management",
+      "adherence",
+      "myocardial infarction"
     ],
     "last_updated": "2025-06-03"
   }

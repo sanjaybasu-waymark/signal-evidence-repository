@@ -143,6 +143,27 @@
                 console.log("Created allRecommendations from allProtocols for compatibility");
             }
             
+            // Role consolidation mapping
+            const roleConsolidationMap = {
+                "Behavioral Health Specialist": "Social Worker (Clinical/Therapy)",
+                "Nurse": "Nurse Care Manager",
+                "Care Manager": "Nurse Care Manager",
+                "Social Worker (Non-Clinical)": "Care Coordinator"
+            };
+            
+            // Function to check if a protocol involves labs or medicines
+            const involvesLabsOrMedicines = (protocol) => {
+                const keywords = ["lab", "test", "medication", "medicine", "drug", "prescription", "dose", "therapy", "pharmacotherapy", "titration", "regimen"];
+                const content = [
+                    protocol.title || "",
+                    protocol.implementation_guidance || protocol.implementation || "",
+                    protocol.expected_outcomes || protocol.outcomes || "",
+                    protocol.target_population || ""
+                ].join(" ").toLowerCase();
+                
+                return keywords.some(keyword => content.includes(keyword));
+            };
+            
             // Get the protocols array, handling both flat and nested structures
             const getProtocols = () => {
                 // Check if we have a flat array (recommendations-data.js format)
@@ -175,15 +196,30 @@
                 return protocols;
             };
 
-            const protocols = getProtocols();
-            console.log(`Found ${protocols.length} protocols`);
+            // Get all protocols and apply role consolidation
+            const rawProtocols = getProtocols();
+            console.log(`Found ${rawProtocols.length} raw protocols`);
             
-            if (protocols.length === 0) {
-                console.error("No protocols found in data!");
-                document.getElementById('domain-container').innerHTML = '<div class="col-12"><div class="alert alert-danger">No protocols found. Please check data files.</div></div>';
-                document.getElementById('role-container').innerHTML = '<div class="col-12"><div class="alert alert-danger">No protocols found. Please check data files.</div></div>';
-                return;
-            }
+            // Apply role consolidation and reassignment
+            const protocols = rawProtocols.map(protocol => {
+                const newProtocol = {...protocol};
+                
+                // Apply role consolidation for specific roles
+                if (protocol.role && roleConsolidationMap[protocol.role]) {
+                    newProtocol.role = roleConsolidationMap[protocol.role];
+                    console.log(`Consolidated role: ${protocol.role} -> ${newProtocol.role}`);
+                }
+                
+                // Special handling for Primary Care Provider
+                if (protocol.role === "Primary Care Provider" && involvesLabsOrMedicines(protocol)) {
+                    newProtocol.role = "Clinical Pharmacist";
+                    console.log(`Reassigned Primary Care Provider protocol to Clinical Pharmacist: ${protocol.title}`);
+                }
+                
+                return newProtocol;
+            });
+            
+            console.log(`Processed ${protocols.length} protocols after role consolidation`);
             
             // Get unique domains and count protocols in each
             const domainCounts = {};
@@ -209,6 +245,7 @@
             
             console.log("Domains found:", Object.keys(domainCounts).length);
             console.log("Roles found:", Object.keys(roleCounts).length);
+            console.log("Roles after consolidation:", Object.keys(roleCounts));
             
             // Populate domain cards
             const domainContainer = document.getElementById('domain-container');
@@ -314,8 +351,10 @@
                     p.title.toLowerCase().includes(term) ||
                     p.domain.toLowerCase().includes(term) ||
                     p.role.toLowerCase().includes(term) ||
-                    p.implementation_guidance.toLowerCase().includes(term) ||
-                    p.expected_outcomes.toLowerCase().includes(term) ||
+                    (p.implementation_guidance && p.implementation_guidance.toLowerCase().includes(term)) ||
+                    (p.implementation && p.implementation.toLowerCase().includes(term)) ||
+                    (p.expected_outcomes && p.expected_outcomes.toLowerCase().includes(term)) ||
+                    (p.outcomes && p.outcomes.toLowerCase().includes(term)) ||
                     (p.tags && p.tags.some(tag => tag.toLowerCase().includes(term)))
                 );
                 
@@ -363,7 +402,7 @@
                     
                     const evidence = document.createElement('p');
                     evidence.className = 'card-text';
-                    evidence.innerHTML = `<strong>Evidence Level:</strong> ${protocol.evidence_level}`;
+                    evidence.innerHTML = `<strong>Evidence Level:</strong> ${protocol.evidence_level || 'Not specified'}`;
                     
                     const link = document.createElement('a');
                     link.href = '#';
