@@ -1,131 +1,57 @@
-# Waymark Population Health Evidence Library
-
-A comprehensive collection of evidence-based recommendations for healthcare professionals working with underserved patients in proactive population health management teams.
+# Waymark Population Health Protocol Library
 
 ## Overview
 
-The Waymark Population Health Evidence Library is a repository of evidence-based recommendations for healthcare professionals across various clinical domains and professional roles. This repository contains:
-
-- JSON files with structured recommendations
-- A web interface for browsing and searching recommendations
-- Tools for validating and maintaining the recommendation database
+The Waymark Population Health Protocol Library is an evidence-based repository of clinical protocols designed specifically for non-physician healthcare teams supporting underserved and marginalized patient populations. While physicians have published guidelines provided by specialty societies, this repository provides community health workers, care coordinators, social workers, pharmacists, and other team members with peer-reviewed protocols for effective population health management.
 
 ## Repository Structure
 
-```
-signal-evidence-repository/
-├── index.html                  # Main website file
-├── recommendations-data.js     # Embedded recommendations data
-├── json_data/                  # JSON recommendation files by domain
-│   ├── diabetes_recommendations.json
-│   ├── hypertension_recommendations.json
-│   └── ...
-│   └── additional_recommendations/  # Individual recommendation files
-│       ├── diabetes_cgm_1.json
-│       └── ...
-├── json_structure/             # JSON schema definitions
-└── embed_recommendations.py    # Script to generate embedded data
-```
+This repository contains a GitHub Pages site with the following key files:
 
-## Implementation Instructions
+- **`/docs/index.html`**: The main web interface for browsing and searching protocols
+- **`/docs/recommendations-data.js`**: The data file containing all protocol information
 
-### Setting Up GitHub Pages
+## Features
 
-1. Upload all files to your GitHub repository:
-   ```
-   git clone https://github.com/sanjaybasu-waymark/signal-evidence-repository.git
-   cd signal-evidence-repository
-   # Copy your updated files here
-   git add .
-   git commit -m "Update evidence repository"
-   git push
-   ```
+- **Domain-Based Organization**: Protocols organized by clinical domains (Diabetes, Hypertension, Heart Failure, etc.)
+- **Role-Based Access**: Protocols filtered by healthcare roles (Nurse Care Manager, Clinical Pharmacist, Social Worker, etc.)
+- **Evidence-Based**: All protocols include academic citations from peer-reviewed literature
+- **Searchable Interface**: Full-text search across all protocol content
+- **Responsive Design**: Mobile-friendly interface for all devices
 
-2. Enable GitHub Pages:
-   - Go to your repository on GitHub
-   - Click on "Settings" > "Pages"
-   - Under "Source", select "Deploy from a branch"
-   - Select "main" branch and "/" (root) folder
-   - Click "Save"
-   - Your site will be available at `https://[username].github.io/signal-evidence-repository/`
+## Protocol Content
 
-### Required Files for Website
+Each protocol includes:
 
-The following files must be in the root of your repository for the website to function:
+- **Implementation Guidance**: Detailed, actionable steps for protocol implementation
+- **Expected Outcomes**: Specific metrics and results to expect from protocol implementation
+- **Target Population**: Description of the patient population for whom the protocol is designed
+- **Evidence Base**: Academic citations supporting the protocol's effectiveness
 
-1. `index.html` - The main website file
-2. `recommendations-data.js` - Contains all recommendation data
+## Usage
 
-## Updating Recommendations
+The protocol library is accessible via GitHub Pages at:
+[https://sanjaybasu-waymark.github.io/signal-evidence-repository/](https://sanjaybasu-waymark.github.io/signal-evidence-repository/)
 
-### Adding New Recommendations
+### For Healthcare Teams
 
-1. Create new JSON files in the appropriate directories:
-   - For domain-specific recommendations: `json_data/[domain]_recommendations.json`
-   - For individual recommendations: `json_data/additional_recommendations/[specific]_1.json`
+1. Browse protocols by clinical domain or healthcare role
+2. Use the search function to find specific protocols
+3. Review implementation guidance, expected outcomes, and evidence base
+4. Implement protocols in your clinical practice
 
-2. Follow the JSON schema defined in `json_structure/recommendation_schema.json`
+### For Developers
 
-3. Regenerate the embedded data file:
-   ```bash
-   python3 embed_recommendations.py
-   ```
+To update or modify the protocol library:
 
-4. Upload the updated `recommendations-data.js` file to your repository
+1. Edit the `recommendations-data.js` file to update protocol content
+2. Modify the `index.html` file to change the user interface
+3. Commit changes to the repository to update the GitHub Pages site
 
-### Modifying Existing Recommendations
+## License
 
-1. Edit the appropriate JSON files
-2. Regenerate the embedded data file using the script
-3. Upload the updated `recommendations-data.js` file
+© 2025 Waymark. All rights reserved.
 
-## JSON Schema
+## Contact
 
-Each recommendation should follow this structure:
-
-```json
-{
-  "id": "unique_identifier",
-  "title": "Recommendation Title",
-  "domain": "Clinical Domain",
-  "role": "Professional Role",
-  "implementation_guidance": "Detailed implementation steps...",
-  "expected_outcomes": "Expected results...",
-  "target_population": "Target patient population...",
-  "evidence_level": "A/B/C/D",
-  "citation": "Source citation..."
-}
-```
-
-## Validation
-
-To validate all JSON files against the schema:
-
-```bash
-python3 validate_json.py
-```
-
-## Website Features
-
-The website provides the following features:
-
-- Browse recommendations by domain (clinical condition or social need)
-- Browse recommendations by professional role
-- Search across all recommendations
-- View detailed recommendation cards with implementation guidance
-- Mobile-responsive design
-
-## Troubleshooting
-
-If recommendations are not displaying correctly:
-
-1. Check that `recommendations-data.js` is in the same directory as `index.html`
-2. Verify that the JSON format in your recommendation files is valid
-3. Run the validation script to check for schema errors
-4. Regenerate the embedded data file using the script
-
-## License and Attribution
-
-© 2025, Waymark, [www.waymarkcare.com](https://www.waymarkcare.com)
-
-Created by Sanjay Basu MD PhD, Waymark and University of California San Francisco
+For more information about Waymark's services, visit [www.waymarkcare.com](https://www.waymarkcare.com)
