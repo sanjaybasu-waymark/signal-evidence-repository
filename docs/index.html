@@ -196,6 +196,15 @@
       text-align: center;
     }
     
+    footer a {
+      color: var(--light-text);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
     /* Responsive Design */
     @media (max-width: 768px) {
       .filters {
@@ -219,13 +228,15 @@
 <body>
   <header>
     <div class="container header-content">
-      <img src="https://cdn.prod.website-files.com/64a3c873c4968010f637b2dc/64d3782f2fae8721a5b3c3ad_Waymark-wordmark-tri-color-A-on-light.svg" alt="Waymark Logo" class="logo">
+      <a href="https://www.waymarkcare.com" target="_blank">
+        <img src="https://cdn.prod.website-files.com/64a3c873c4968010f637b2dc/64d3782f2fae8721a5b3c3ad_Waymark-wordmark-tri-color-A-on-light.svg" alt="Waymark Logo" class="logo">
+      </a>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <h1>Welcome to the Waymark Population Health Evidence Library</h1>
+      <h1>Welcome to the Waymark Population Health Protocol Library</h1>
       <p>A comprehensive collection of protocols for non-physician population health team members. While physicians receive standard national guidelines from specialty societies, this repository is intended to support non-physician population health roles with evidence-based, peer-reviewed protocols, with a focus on marginalized and underserved patients.</p>
     </div>
   </section>
@@ -261,251 +272,273 @@
 
   <footer>
     <div class="container footer-content">
-      <p>&copy; 2025 Waymark. All rights reserved.</p>
+      <p><a href="https://www.waymarkcare.com" target="_blank">&copy; 2025 Waymark. All rights reserved.</a></p>
     </div>
   </footer>
 
-  <script src="recommendations-data.js"></script>
   <script>
-    // Compatibility fix for different variable names
-    const allProtocols = window.allRecommendations || window.allProtocols || [];
-    
-    // Initialize variables
-    let selectedProtocol = null;
-    let filteredProtocols = [];
-    
-    // DOM elements
-    const domainFilter = document.getElementById('domain-filter');
-    const roleFilter = document.getElementById('role-filter');
-    const searchFilter = document.getElementById('search-filter');
-    const protocolList = document.getElementById('protocol-list');
-    const protocolDetail = document.getElementById('protocol-detail');
-    
-    // Normalize domain names to prevent duplicates
-    function normalizeDomain(domain) {
-      if (!domain) return '';
-      
-      const domainMap = {
-        'ckd': 'chronic kidney disease',
-        'post-mi': 'post mi',
-        'post mi': 'post mi',
-        'post-stroke': 'post stroke',
-        'post stroke': 'post stroke',
-        'food security': 'food insecurity',
-        'food insecurity': 'food insecurity',
-        'transportation': 'transportation insecurity',
-        'transportation insecurity': 'transportation insecurity',
-        'substance use': 'substance use disorders',
-        'substance use disorders': 'substance use disorders'
-      };
-      
-      const normalizedDomain = domain.toLowerCase();
-      return domainMap[normalizedDomain] || normalizedDomain;
-    }
-    
-    // Normalize role names for consistency
-    function normalizeRole(role) {
-      if (!role) return '';
-      
-      const roleMap = {
-        'behavioral health specialist': 'social worker (clinical/therapy)',
-        'behavioral health provider': 'social worker (clinical/therapy)',
-        'nurse': 'nurse care manager',
-        'care manager': 'nurse care manager',
-        'social worker (non-clinical)': 'care coordinator',
-        'primary care provider': 'clinical pharmacist'
-      };
-      
-      const normalizedRole = role.toLowerCase();
-      return roleMap[normalizedRole] || normalizedRole;
-    }
-    
-    // Extract unique domains and roles
-    function extractFilters() {
-      const domains = new Set();
-      const roles = new Set();
-      
-      allProtocols.forEach(protocol => {
-        if (protocol.domain) {
-          domains.add(normalizeDomain(protocol.domain));
-        }
-        if (protocol.role) {
-          roles.add(normalizeRole(protocol.role));
-        }
-      });
-      
-      // Populate domain filter
-      Array.from(domains).sort().forEach(domain => {
-        const option = document.createElement('option');
-        option.value = domain;
-        option.textContent = domain.charAt(0).toUpperCase() + domain.slice(1);
-        domainFilter.appendChild(option);
-      });
-      
-      // Populate role filter
-      Array.from(roles).sort().forEach(role => {
-        const option = document.createElement('option');
-        option.value = role;
-        option.textContent = role.charAt(0).toUpperCase() + role.slice(1);
-        roleFilter.appendChild(option);
-      });
-    }
-    
-    // Filter protocols based on selected filters
-    function filterProtocols() {
-      const selectedDomain = domainFilter.value;
-      const selectedRole = roleFilter.value;
-      const searchText = searchFilter.value.toLowerCase();
-      
-      filteredProtocols = allProtocols.filter(protocol => {
-        const matchesDomain = selectedDomain === 'all' || 
-                             normalizeDomain(protocol.domain) === selectedDomain;
+    // This script ensures the data is loaded correctly regardless of variable name
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if the data is loaded
+      if (typeof allRecommendations === 'undefined' && typeof allProtocols === 'undefined') {
+        console.error('Protocol data not found. Loading data file...');
         
-        const matchesRole = selectedRole === 'all' || 
-                           normalizeRole(protocol.role) === selectedRole;
-        
-        const matchesSearch = !searchText || 
-                             (protocol.title && protocol.title.toLowerCase().includes(searchText)) ||
-                             (protocol.implementation_guidance && protocol.implementation_guidance.toLowerCase().includes(searchText)) ||
-                             (protocol.implementation && protocol.implementation.toLowerCase().includes(searchText)) ||
-                             (protocol.expected_outcomes && protocol.expected_outcomes.toLowerCase().includes(searchText)) ||
-                             (protocol.outcomes && protocol.outcomes.toLowerCase().includes(searchText)) ||
-                             (protocol.target_population && protocol.target_population.toLowerCase().includes(searchText));
-        
-        return matchesDomain && matchesRole && matchesSearch;
-      });
+        // Create a script element to load the data file
+        const script = document.createElement('script');
+        script.src = 'recommendations-data.js';
+        script.onload = function() {
+          console.log('Data file loaded successfully');
+          // Initialize the application after data is loaded
+          initializeApp();
+        };
+        script.onerror = function() {
+          console.error('Failed to load data file');
+          document.getElementById('protocol-list').innerHTML = '<p>Error: Failed to load protocol data. Please check the console for details.</p>';
+        };
+        document.head.appendChild(script);
+      } else {
+        // Data is already loaded, initialize the application
+        initializeApp();
+      }
+    });
+
+    function initializeApp() {
+      // Compatibility fix for different variable names
+      const allProtocols = window.allRecommendations || window.allProtocols || [];
+      console.log(`Loaded ${allProtocols.length} protocols`);
       
-      renderProtocolList();
-    }
-    
-    // Render the filtered protocol list
-    function renderProtocolList() {
-      protocolList.innerHTML = '';
+      // DOM elements
+      const domainFilter = document.getElementById('domain-filter');
+      const roleFilter = document.getElementById('role-filter');
+      const searchFilter = document.getElementById('search-filter');
+      const protocolList = document.getElementById('protocol-list');
+      const protocolDetail = document.getElementById('protocol-detail');
       
-      if (filteredProtocols.length === 0) {
-        protocolList.innerHTML = '<p>No protocols match the selected filters</p>';
-        return;
+      // Initialize variables
+      let selectedProtocol = null;
+      let filteredProtocols = [];
+      
+      // Normalize domain names to prevent duplicates
+      function normalizeDomain(domain) {
+        if (!domain) return '';
+        
+        const domainMap = {
+          'ckd': 'chronic kidney disease',
+          'post-mi': 'post mi',
+          'post mi': 'post mi',
+          'post-stroke': 'post stroke',
+          'post stroke': 'post stroke',
+          'food security': 'food insecurity',
+          'food insecurity': 'food insecurity',
+          'transportation': 'transportation insecurity',
+          'transportation insecurity': 'transportation insecurity',
+          'substance use': 'substance use disorders',
+          'substance use disorders': 'substance use disorders'
+        };
+        
+        const normalizedDomain = domain.toLowerCase();
+        return domainMap[normalizedDomain] || normalizedDomain;
       }
       
-      filteredProtocols.forEach((protocol, index) => {
-        const protocolItem = document.createElement('div');
-        protocolItem.className = 'protocol-item';
-        protocolItem.textContent = protocol.title || 'Untitled Protocol';
-        protocolItem.dataset.index = index;
+      // Normalize role names for consistency
+      function normalizeRole(role) {
+        if (!role) return '';
         
-        protocolItem.addEventListener('click', () => {
-          document.querySelectorAll('.protocol-item').forEach(item => {
-            item.classList.remove('selected');
-          });
-          protocolItem.classList.add('selected');
-          selectedProtocol = protocol;
-          renderProtocolDetail();
+        const roleMap = {
+          'behavioral health specialist': 'social worker (clinical/therapy)',
+          'behavioral health provider': 'social worker (clinical/therapy)',
+          'nurse': 'nurse care manager',
+          'care manager': 'nurse care manager',
+          'social worker (non-clinical)': 'care coordinator',
+          'primary care provider': 'clinical pharmacist'
+        };
+        
+        const normalizedRole = role.toLowerCase();
+        return roleMap[normalizedRole] || normalizedRole;
+      }
+      
+      // Extract unique domains and roles
+      function extractFilters() {
+        const domains = new Set();
+        const roles = new Set();
+        
+        allProtocols.forEach(protocol => {
+          if (protocol.domain) {
+            domains.add(normalizeDomain(protocol.domain));
+          }
+          if (protocol.role) {
+            roles.add(normalizeRole(protocol.role));
+          }
         });
         
-        protocolList.appendChild(protocolItem);
-      });
-    }
-    
-    // Render the selected protocol detail
-    function renderProtocolDetail() {
-      if (!selectedProtocol) {
-        protocolDetail.innerHTML = '<p>Select a protocol to view details</p>';
-        return;
-      }
-      
-      let html = `
-        <h3>${selectedProtocol.title || 'Untitled Protocol'}</h3>
+        // Populate domain filter
+        Array.from(domains).sort().forEach(domain => {
+          const option = document.createElement('option');
+          option.value = domain;
+          option.textContent = domain.charAt(0).toUpperCase() + domain.slice(1);
+          domainFilter.appendChild(option);
+        });
         
-        <div class="protocol-detail-section">
-          <h4>Domain</h4>
-          <p>${selectedProtocol.domain || 'Not specified'}</p>
-        </div>
+        // Populate role filter
+        Array.from(roles).sort().forEach(role => {
+          const option = document.createElement('option');
+          option.value = role;
+          option.textContent = role.charAt(0).toUpperCase() + role.slice(1);
+          roleFilter.appendChild(option);
+        });
+      }
+      
+      // Filter protocols based on selected filters
+      function filterProtocols() {
+        const selectedDomain = domainFilter.value;
+        const selectedRole = roleFilter.value;
+        const searchText = searchFilter.value.toLowerCase();
         
-        <div class="protocol-detail-section">
-          <h4>Role</h4>
-          <p>${selectedProtocol.role || 'Not specified'}</p>
-        </div>
-      `;
-      
-      if (selectedProtocol.target_population) {
-        html += `
-          <div class="protocol-detail-section">
-            <h4>Target Population</h4>
-            <p>${selectedProtocol.target_population}</p>
-          </div>
-        `;
-      }
-      
-      const implementation = selectedProtocol.implementation_guidance || selectedProtocol.implementation;
-      if (implementation) {
-        html += `
-          <div class="protocol-detail-section">
-            <h4>Implementation Guidance</h4>
-            <p>${implementation.replace(/\n/g, '<br>')}</p>
-          </div>
-        `;
-      }
-      
-      const outcomes = selectedProtocol.expected_outcomes || selectedProtocol.outcomes;
-      if (outcomes) {
-        html += `
-          <div class="protocol-detail-section">
-            <h4>Expected Outcomes</h4>
-            <p>${outcomes}</p>
-          </div>
-        `;
-      }
-      
-      if (selectedProtocol.evidence) {
-        html += `
-          <div class="protocol-detail-section">
-            <h4>Evidence</h4>
-            <p>${selectedProtocol.evidence}</p>
-          </div>
-        `;
-      }
-      
-      protocolDetail.innerHTML = html;
-    }
-    
-    // Count protocols by domain and role
-    function countProtocols() {
-      const domainCounts = {};
-      const roleCounts = {};
-      
-      allProtocols.forEach(protocol => {
-        const domain = normalizeDomain(protocol.domain);
-        const role = normalizeRole(protocol.role);
+        filteredProtocols = allProtocols.filter(protocol => {
+          const matchesDomain = selectedDomain === 'all' || 
+                               normalizeDomain(protocol.domain) === selectedDomain;
+          
+          const matchesRole = selectedRole === 'all' || 
+                             normalizeRole(protocol.role) === selectedRole;
+          
+          const matchesSearch = !searchText || 
+                               (protocol.title && protocol.title.toLowerCase().includes(searchText)) ||
+                               (protocol.implementation_guidance && protocol.implementation_guidance.toLowerCase().includes(searchText)) ||
+                               (protocol.implementation && protocol.implementation.toLowerCase().includes(searchText)) ||
+                               (protocol.expected_outcomes && protocol.expected_outcomes.toLowerCase().includes(searchText)) ||
+                               (protocol.outcomes && protocol.outcomes.toLowerCase().includes(searchText)) ||
+                               (protocol.target_population && protocol.target_population.toLowerCase().includes(searchText));
+          
+          return matchesDomain && matchesRole && matchesSearch;
+        });
         
-        if (domain) {
-          domainCounts[domain] = (domainCounts[domain] || 0) + 1;
+        renderProtocolList();
+      }
+      
+      // Render the filtered protocol list
+      function renderProtocolList() {
+        protocolList.innerHTML = '';
+        
+        if (filteredProtocols.length === 0) {
+          protocolList.innerHTML = '<p>No protocols match the selected filters</p>';
+          return;
         }
         
-        if (role) {
-          roleCounts[role] = (roleCounts[role] || 0) + 1;
-        }
-      });
+        filteredProtocols.forEach((protocol, index) => {
+          const protocolItem = document.createElement('div');
+          protocolItem.className = 'protocol-item';
+          protocolItem.textContent = protocol.title || 'Untitled Protocol';
+          protocolItem.dataset.index = index;
+          
+          protocolItem.addEventListener('click', () => {
+            document.querySelectorAll('.protocol-item').forEach(item => {
+              item.classList.remove('selected');
+            });
+            protocolItem.classList.add('selected');
+            selectedProtocol = protocol;
+            renderProtocolDetail();
+          });
+          
+          protocolList.appendChild(protocolItem);
+        });
+      }
       
-      // Add counts to domain options
-      Array.from(domainFilter.options).forEach(option => {
-        if (option.value !== 'all') {
-          const count = domainCounts[option.value] || 0;
-          option.textContent += ` (${count})`;
+      // Render the selected protocol detail
+      function renderProtocolDetail() {
+        if (!selectedProtocol) {
+          protocolDetail.innerHTML = '<p>Select a protocol to view details</p>';
+          return;
         }
-      });
+        
+        let html = `
+          <h3>${selectedProtocol.title || 'Untitled Protocol'}</h3>
+          
+          <div class="protocol-detail-section">
+            <h4>Domain</h4>
+            <p>${selectedProtocol.domain || 'Not specified'}</p>
+          </div>
+          
+          <div class="protocol-detail-section">
+            <h4>Role</h4>
+            <p>${selectedProtocol.role || 'Not specified'}</p>
+          </div>
+        `;
+        
+        if (selectedProtocol.target_population) {
+          html += `
+            <div class="protocol-detail-section">
+              <h4>Target Population</h4>
+              <p>${selectedProtocol.target_population}</p>
+            </div>
+          `;
+        }
+        
+        const implementation = selectedProtocol.implementation_guidance || selectedProtocol.implementation;
+        if (implementation) {
+          html += `
+            <div class="protocol-detail-section">
+              <h4>Implementation Guidance</h4>
+              <p>${implementation.replace(/\n/g, '<br>')}</p>
+            </div>
+          `;
+        }
+        
+        const outcomes = selectedProtocol.expected_outcomes || selectedProtocol.outcomes;
+        if (outcomes) {
+          html += `
+            <div class="protocol-detail-section">
+              <h4>Expected Outcomes</h4>
+              <p>${outcomes}</p>
+            </div>
+          `;
+        }
+        
+        if (selectedProtocol.evidence) {
+          html += `
+            <div class="protocol-detail-section">
+              <h4>Evidence</h4>
+              <p>${selectedProtocol.evidence}</p>
+            </div>
+          `;
+        }
+        
+        protocolDetail.innerHTML = html;
+      }
       
-      // Add counts to role options
-      Array.from(roleFilter.options).forEach(option => {
-        if (option.value !== 'all') {
-          const count = roleCounts[option.value] || 0;
-          option.textContent += ` (${count})`;
-        }
-      });
-    }
-    
-    // Initialize the application
-    function init() {
-      console.log(`Loaded ${allProtocols.length} protocols`);
+      // Count protocols by domain and role
+      function countProtocols() {
+        const domainCounts = {};
+        const roleCounts = {};
+        
+        allProtocols.forEach(protocol => {
+          const domain = normalizeDomain(protocol.domain);
+          const role = normalizeRole(protocol.role);
+          
+          if (domain) {
+            domainCounts[domain] = (domainCounts[domain] || 0) + 1;
+          }
+          
+          if (role) {
+            roleCounts[role] = (roleCounts[role] || 0) + 1;
+          }
+        });
+        
+        // Add counts to domain options
+        Array.from(domainFilter.options).forEach(option => {
+          if (option.value !== 'all') {
+            const count = domainCounts[option.value] || 0;
+            option.textContent += ` (${count})`;
+          }
+        });
+        
+        // Add counts to role options
+        Array.from(roleFilter.options).forEach(option => {
+          if (option.value !== 'all') {
+            const count = roleCounts[option.value] || 0;
+            option.textContent += ` (${count})`;
+          }
+        });
+      }
       
       // Extract and populate filters
       extractFilters();
@@ -521,9 +554,6 @@
       // Initial filter
       filterProtocols();
     }
-    
-    // Start the application when the page loads
-    window.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>
