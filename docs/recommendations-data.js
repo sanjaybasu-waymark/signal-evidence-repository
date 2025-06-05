@@ -1,4 +1,4 @@
-const allRecommendations = [
+window.allRecommendations = [
   {
     "title": "Implement Structured Diabetes Self-Management Education",
     "domain": "Diabetes",
@@ -44,4 +44,4 @@ const allRecommendations = [
     "target_population": "Patients with nutrition-sensitive chronic conditions (diabetes, heart failure, CKD, NASH) or BMI >30 with comorbidities",
     "evidence": "Evert AB, et al. Nutrition Therapy for Adults With Diabetes or Prediabetes: A Consensus Report. Diabetes Care. 2019;42(5):731-754."
   }
-]
+];
