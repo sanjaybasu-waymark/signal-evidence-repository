@@ -77,111 +77,63 @@
             color: var(--dark-text);
         }
         
-        /* Filters */
-        .filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        .filter-group {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .filter-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-        
-        select, input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-gray);
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        select:focus, input[type="text"]:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 2px rgba(10, 110, 180, 0.2);
-        }
-        
-        /* Protocol List */
-        .protocol-list {
-            border: 1px solid var(--border-gray);
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 30px;
-            max-height: 400px;
-            overflow-y: auto;
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        
-        .protocol-item {
-            padding: 15px;
-            border-bottom: 1px solid var(--medium-gray);
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        
-        .protocol-item:last-child {
-            border-bottom: none;
-        }
-        
-        .protocol-item:hover {
-            background-color: var(--light-gray);
-        }
-        
-        .protocol-item.selected {
-            background-color: var(--light-blue);
-            border-left: 4px solid var(--primary-blue);
-        }
-        
-        /* Protocol Detail */
-        .protocol-detail {
-            border: 1px solid var(--border-gray);
-            border-radius: 8px;
-            padding: 25px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        /* Domain Section */
+        .domain-section {
             margin-bottom: 40px;
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #ffffff;
         }
         
-        .protocol-detail h3 {
+        .domain-section h2 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        /* Role Section */
+        .role-section {
+            margin-bottom: 30px;
+        }
+        
+        .role-section h3 {
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 4px solid var(--primary-purple);
+        }
+        
+        /* Protocol Card */
+        .protocol-card {
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: var(--light-gray);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .protocol-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .protocol-card h4 {
             color: var(--primary-blue);
             margin-top: 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light-blue);
+            margin-bottom: 15px;
         }
         
-        .protocol-detail-section {
-            margin-bottom: 25px;
+        .protocol-card-section {
+            margin-bottom: 15px;
         }
         
-        .protocol-detail-section h4 {
+        .protocol-card-section h5 {
             color: var(--primary-purple);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .count-badge {
-            background-color: var(--primary-blue);
-            color: white;
-            border-radius: 20px;
-            padding: 3px 10px;
-            font-size: 0.8rem;
-            margin-left: 8px;
-            display: inline-block;
+            margin-bottom: 5px;
+            font-size: 1rem;
         }
         
         /* Footer */
@@ -207,14 +159,6 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .filters {
-                flex-direction: column;
-            }
-            
-            .filter-group {
-                width: 100%;
-            }
-            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -241,32 +185,242 @@
         </div>
     </section>
 
-    <div class="container">
-        <div class="filters">
-            <div class="filter-group">
-                <label for="domain-filter">Filter by Domain:</label>
-                <select id="domain-filter">
-                    <option value="all">All Domains</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="role-filter">Filter by Role:</label>
-                <select id="role-filter">
-                    <option value="all">All Roles</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="search-filter">Search:</label>
-                <input type="text" id="search-filter" placeholder="Search protocols...">
+    <div class="container" id="main-content">
+        <!-- Static content will be inserted here -->
+        
+        <!-- Diabetes Domain -->
+        <div class="domain-section">
+            <h2>Diabetes</h2>
+            
+            <!-- Nurse Care Manager Role -->
+            <div class="role-section">
+                <h3>Nurse Care Manager</h3>
+                
+                <div class="protocol-card">
+                    <h4>Implement Structured Diabetes Self-Management Education</h4>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Implementation Guidance</h5>
+                        <p>1. Conduct initial assessment using validated AADE7 Self-Care Behaviors framework<br>
+                        2. Develop personalized education plan with specific glycemic targets (HbA1c reduction of 0.5-1% within 3-6 months)<br>
+                        3. Schedule structured 30-45 minute sessions at 2-week intervals for first 3 months<br>
+                        4. Document baseline knowledge using Diabetes Knowledge Test (DKT) with target improvement of ≥20%<br>
+                        5. Implement teach-back method to verify comprehension of key concepts<br>
+                        6. Provide specific instruction on glucose monitoring technique with return demonstration<br>
+                        7. Document self-management goals using SMART framework in EHR<br>
+                        8. Schedule follow-up within 2 weeks of medication changes<br>
+                        9. Establish hypoglycemia action plan with specific glucose thresholds (<70 mg/dL)<br>
+                        10. Measure outcomes using validated Problem Areas in Diabetes (PAID) scale</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Expected Outcomes</h5>
+                        <p>1. HbA1c reduction of 0.5-1.0% within 6 months<br>
+                        2. 80% of patients demonstrate proper glucose monitoring technique<br>
+                        3. 30% reduction in diabetes distress as measured by PAID scale<br>
+                        4. 25% reduction in hypoglycemic events<br>
+                        5. 40% improvement in medication adherence</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Target Population</h5>
+                        <p>Adults with type 1 or type 2 diabetes with HbA1c >8.0% or newly diagnosed patients</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Evidence</h5>
+                        <p>Powers MA, et al. Diabetes Self-management Education and Support in Type 2 Diabetes: A Joint Position Statement of the American Diabetes Association, the American Association of Diabetes Educators, and the Academy of Nutrition and Dietetics. Diabetes Care. 2015;38(7):1372-1382.</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="protocol-list" id="protocol-list">
-            <!-- Protocol items will be populated here -->
+        
+        <!-- Hypertension Domain -->
+        <div class="domain-section">
+            <h2>Hypertension</h2>
+            
+            <!-- Nurse Care Manager Role -->
+            <div class="role-section">
+                <h3>Nurse Care Manager</h3>
+                
+                <div class="protocol-card">
+                    <h4>Implement Home Blood Pressure Monitoring Protocol</h4>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Implementation Guidance</h5>
+                        <p>1. Select validated home BP device (AAMI/ESH/ISO certified) with appropriate cuff size<br>
+                        2. Train patient on proper technique: seated position, back supported, feet flat, arm at heart level<br>
+                        3. Instruct on specific measurement protocol: measure BP twice daily (morning and evening) for 7 consecutive days<br>
+                        4. Document baseline office BP and compare with home readings (acceptable difference <5 mmHg)<br>
+                        5. Establish clear reporting thresholds: SBP >180 or <90, DBP >110 or <60 requires immediate contact<br>
+                        6. Implement standardized recording system with date, time, and position<br>
+                        7. Schedule technique reassessment at 30 days<br>
+                        8. Configure EHR alerts for readings outside target range (>135/85 for home readings)<br>
+                        9. Establish medication adjustment protocol based on 7-day averages<br>
+                        10. Recalibrate device every 6 months or after 2,000 readings</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Expected Outcomes</h5>
+                        <p>1. BP control rate improvement of 20% compared to usual care<br>
+                        2. 90% adherence to monitoring protocol<br>
+                        3. 30% reduction in white coat hypertension misdiagnosis<br>
+                        4. 25% reduction in BP-related urgent care visits<br>
+                        5. 15% reduction in medication adjustments</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Target Population</h5>
+                        <p>Adults with uncontrolled hypertension (BP >140/90) or suspected white coat hypertension</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Evidence</h5>
+                        <p>Shimbo D, et al. Self-Measured Blood Pressure Monitoring at Home: A Joint Policy Statement From the American Heart Association and American Medical Association. Circulation. 2020;142(4):e42-e63.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="protocol-detail" id="protocol-detail">
-            <p>Select a protocol to view details</p>
+        
+        <!-- Medication Adherence Domain -->
+        <div class="domain-section">
+            <h2>Medication Adherence</h2>
+            
+            <!-- Clinical Pharmacist Role -->
+            <div class="role-section">
+                <h3>Clinical Pharmacist</h3>
+                
+                <div class="protocol-card">
+                    <h4>Implement Medication Adherence Protocol for Complex Regimens</h4>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Implementation Guidance</h5>
+                        <p>1. Conduct comprehensive medication review using validated BMQ (Brief Medication Questionnaire) tool<br>
+                        2. Quantify baseline adherence using proportion of days covered (PDC) calculation from pharmacy claims data<br>
+                        3. Implement medication synchronization with standardized refill date<br>
+                        4. Perform regimen consolidation to reduce dosing frequency to ≤2 times daily when possible<br>
+                        5. Provide dose-specific pill box with compartments for each administration time<br>
+                        6. Configure automated refill reminders 7 days before medication depletion<br>
+                        7. Document specific adherence barriers using COM-B framework (Capability, Opportunity, Motivation, Behavior)<br>
+                        8. Schedule structured follow-up at 14, 30, and 90 days post-intervention<br>
+                        9. Implement teach-back method for high-risk medications (anticoagulants, insulin, etc.)<br>
+                        10. Establish medication cost threshold (>$50/month) for financial assistance program referral</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Expected Outcomes</h5>
+                        <p>1. Improvement in PDC from <80% to >85% within 90 days<br>
+                        2. 30% reduction in missed doses as self-reported<br>
+                        3. 25% reduction in therapeutic duplications<br>
+                        4. 20% reduction in medication-related adverse events<br>
+                        5. 15% improvement in clinical outcomes related to treated conditions</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Target Population</h5>
+                        <p>Patients taking ≥5 chronic medications or with demonstrated poor adherence (PDC <80%)</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Evidence</h5>
+                        <p>Viswanathan M, et al. Interventions to Improve Adherence to Self-administered Medications for Chronic Diseases in the United States: A Systematic Review. Ann Intern Med. 2012;157(11):785-795.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Care Transitions Domain -->
+        <div class="domain-section">
+            <h2>Care Transitions</h2>
+            
+            <!-- Community Health Worker Role -->
+            <div class="role-section">
+                <h3>Community Health Worker</h3>
+                
+                <div class="protocol-card">
+                    <h4>Implement Structured Home Visit Protocol for CHWs</h4>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Implementation Guidance</h5>
+                        <p>1. Complete pre-visit assessment using standardized PRAPARE social determinants screening tool<br>
+                        2. Schedule initial visit within 72 hours of hospital discharge or referral<br>
+                        3. Conduct medication reconciliation using brown bag review technique<br>
+                        4. Perform home safety assessment with CDC STEADI fall risk checklist<br>
+                        5. Document specific social needs with ICD-10 Z-codes in EHR<br>
+                        6. Establish communication protocol with primary care team (response time <24 hours)<br>
+                        7. Develop action plan with maximum of 3 prioritized goals using teach-back method<br>
+                        8. Schedule follow-up visits at 7, 14, and 30 days with specific agenda<br>
+                        9. Implement standardized handoff using SBAR technique for identified clinical concerns<br>
+                        10. Measure visit effectiveness using Patient Activation Measure (PAM) with target improvement of ≥1 level</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Expected Outcomes</h5>
+                        <p>1. 30% reduction in 30-day readmission rates<br>
+                        2. 80% of medication discrepancies resolved within 7 days<br>
+                        3. 40% increase in primary care follow-up attendance<br>
+                        4. 25% reduction in ED visits within 90 days<br>
+                        5. 35% improvement in patient activation as measured by PAM</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Target Population</h5>
+                        <p>High-risk patients recently discharged from hospital or with multiple chronic conditions and identified social needs</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Evidence</h5>
+                        <p>Kangovi S, et al. Effect of Community Health Worker Support on Clinical Outcomes of Low-Income Patients Across Primary Care Facilities: A Randomized Clinical Trial. JAMA Intern Med. 2018;178(12):1635-1643.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Nutrition Domain -->
+        <div class="domain-section">
+            <h2>Nutrition</h2>
+            
+            <!-- Dietitian/Nutritionist Role -->
+            <div class="role-section">
+                <h3>Dietitian/Nutritionist</h3>
+                
+                <div class="protocol-card">
+                    <h4>Implement Nutritional Counseling Protocol for Chronic Disease Management</h4>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Implementation Guidance</h5>
+                        <p>1. Conduct comprehensive nutritional assessment using validated AND-NCP (Academy of Nutrition and Dietetics Nutrition Care Process)<br>
+                        2. Calculate specific caloric and macronutrient targets based on indirect calorimetry or Mifflin-St Jeor equation<br>
+                        3. Develop personalized meal plans with specific food groups and portion sizes<br>
+                        4. Implement 3-day food diary with analysis of macro/micronutrient content<br>
+                        5. Establish SMART nutritional goals with measurable outcomes at 30, 60, and 90 days<br>
+                        6. Provide hands-on education for food label reading with specific focus on sodium, added sugars, and saturated fat<br>
+                        7. Schedule follow-up at 2-week intervals for first 2 months, then monthly<br>
+                        8. Document baseline anthropometric measurements (weight, waist circumference, body composition) with target changes<br>
+                        9. Implement teach-back method for dietary recommendations<br>
+                        10. Coordinate care plan with primary provider and pharmacist for medication timing with meals</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Expected Outcomes</h5>
+                        <p>1. Achievement of individualized weight goals in 70% of patients within 6 months<br>
+                        2. 25% improvement in diet quality as measured by Healthy Eating Index<br>
+                        3. 20% reduction in disease-specific biomarkers (HbA1c, LDL, blood pressure)<br>
+                        4. 30% improvement in medication efficacy through proper meal timing<br>
+                        5. 40% reduction in nutrition-related symptoms (GI distress, fatigue)</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Target Population</h5>
+                        <p>Patients with nutrition-sensitive chronic conditions (diabetes, heart failure, CKD, NASH) or BMI >30 with comorbidities</p>
+                    </div>
+                    
+                    <div class="protocol-card-section">
+                        <h5>Evidence</h5>
+                        <p>Evert AB, et al. Nutrition Therapy for Adults With Diabetes or Prediabetes: A Consensus Report. Diabetes Care. 2019;42(5):731-754.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -275,215 +429,5 @@
             <p><a href="https://www.waymarkcare.com" target="_blank">&copy; 2025 Waymark. All rights reserved.</a></p>
         </div>
     </footer>
-
-    <!-- Load data file first -->
-    <script src="recommendations-data.js"></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("DOM loaded, checking for protocol data");
-            
-            // Wait a moment to ensure data is loaded
-            setTimeout(function() {
-                // Check if the data is loaded
-                if (typeof window.allRecommendations === 'undefined') {
-                    console.error('Protocol data not found in window scope. Attempting to load data file again...');
-                    
-                    // Create a script element to load the data file
-                    const script = document.createElement('script');
-                    script.src = 'recommendations-data.js';
-                    script.onload = function() {
-                        console.log('Data file loaded successfully');
-                        // Initialize the application after data is loaded
-                        initializeApp();
-                    };
-                    script.onerror = function() {
-                        console.error('Failed to load data file');
-                        document.getElementById('protocol-list').innerHTML = '<p>Error: Failed to load protocol data. Please check the console for details.</p>';
-                        
-                        // Fallback to displaying all protocols without filtering
-                        displayAllProtocols();
-                    };
-                    document.head.appendChild(script);
-                } else {
-                    console.log(`Found ${window.allRecommendations.length} protocols in window scope`);
-                    // Data is already loaded, initialize the application
-                    initializeApp();
-                }
-            }, 500);
-        });
-
-        function displayAllProtocols() {
-            console.log("Falling back to displaying all protocols without filtering");
-            
-            // Create a static list of all protocols from the repository
-            const protocolList = document.getElementById('protocol-list');
-            
-            // Clear any existing content
-            protocolList.innerHTML = '';
-            
-            // Check if we have any protocols in window scope
-            if (window.allRecommendations && window.allRecommendations.length > 0) {
-                window.allRecommendations.forEach(function(protocol, index) {
-                    const protocolItem = document.createElement('div');
-                    protocolItem.className = 'protocol-item';
-                    protocolItem.innerHTML = `
-                        <h3>${protocol.title}</h3>
-                        <p><strong>Domain:</strong> ${protocol.domain}</p>
-                        <p><strong>Role:</strong> ${protocol.role}</p>
-                    `;
-                    protocolItem.addEventListener('click', function() {
-                        displayProtocolDetails(protocol);
-                    });
-                    protocolList.appendChild(protocolItem);
-                });
-            } else {
-                // If no protocols are found, display a message
-                protocolList.innerHTML = '<p>No protocols available. Please check the data file.</p>';
-            }
-        }
-
-        function initializeApp() {
-            // DOM elements
-            const domainFilter = document.getElementById('domain-filter');
-            const roleFilter = document.getElementById('role-filter');
-            const searchFilter = document.getElementById('search-filter');
-            const protocolList = document.getElementById('protocol-list');
-            const protocolDetail = document.getElementById('protocol-detail');
-
-            // Initialize variables
-            let selectedProtocol = null;
-            let filteredProtocols = [];
-
-            // Ensure we have protocols data
-            const allProtocols = window.allRecommendations || [];
-            console.log(`Loaded ${allProtocols.length} protocols`);
-
-            if (allProtocols.length === 0) {
-                console.error("No protocols found in data");
-                protocolList.innerHTML = '<p>No protocols available. Please check the data file.</p>';
-                return;
-            }
-
-            // Extract unique domains and roles
-            const domains = [...new Set(allProtocols.map(p => p.domain))].sort();
-            const roles = [...new Set(allProtocols.map(p => p.role))].sort();
-
-            console.log(`Found ${domains.length} unique domains and ${roles.length} unique roles`);
-
-            // Populate domain filter
-            domains.forEach(domain => {
-                const option = document.createElement('option');
-                option.value = domain;
-                option.textContent = domain;
-                domainFilter.appendChild(option);
-            });
-
-            // Populate role filter
-            roles.forEach(role => {
-                const option = document.createElement('option');
-                option.value = role;
-                option.textContent = role;
-                roleFilter.appendChild(option);
-            });
-
-            // Filter protocols based on selected filters
-            function filterProtocols() {
-                const domainValue = domainFilter.value;
-                const roleValue = roleFilter.value;
-                const searchValue = searchFilter.value.toLowerCase();
-
-                filteredProtocols = allProtocols.filter(protocol => {
-                    const matchesDomain = domainValue === 'all' || protocol.domain === domainValue;
-                    const matchesRole = roleValue === 'all' || protocol.role === roleValue;
-                    const matchesSearch = searchValue === '' || 
-                        protocol.title.toLowerCase().includes(searchValue) || 
-                        protocol.implementation_guidance.toLowerCase().includes(searchValue) ||
-                        protocol.expected_outcomes.toLowerCase().includes(searchValue);
-
-                    return matchesDomain && matchesRole && matchesSearch;
-                });
-
-                renderProtocolList();
-            }
-
-            // Render protocol list
-            function renderProtocolList() {
-                protocolList.innerHTML = '';
-
-                if (filteredProtocols.length === 0) {
-                    protocolList.innerHTML = '<p>No protocols match the selected filters</p>';
-                    return;
-                }
-
-                filteredProtocols.forEach((protocol, index) => {
-                    const protocolItem = document.createElement('div');
-                    protocolItem.className = 'protocol-item';
-                    if (selectedProtocol === protocol) {
-                        protocolItem.classList.add('selected');
-                    }
-                    
-                    protocolItem.innerHTML = `
-                        <h3>${protocol.title}</h3>
-                        <p><strong>Domain:</strong> ${protocol.domain}</p>
-                        <p><strong>Role:</strong> ${protocol.role}</p>
-                    `;
-                    
-                    protocolItem.addEventListener('click', () => {
-                        selectedProtocol = protocol;
-                        renderProtocolList();
-                        displayProtocolDetails(protocol);
-                    });
-                    
-                    protocolList.appendChild(protocolItem);
-                });
-            }
-
-            // Display protocol details
-            function displayProtocolDetails(protocol) {
-                protocolDetail.innerHTML = `
-                    <h3>${protocol.title}</h3>
-                    
-                    <div class="protocol-detail-section">
-                        <h4>Domain</h4>
-                        <p>${protocol.domain}</p>
-                    </div>
-                    
-                    <div class="protocol-detail-section">
-                        <h4>Role</h4>
-                        <p>${protocol.role}</p>
-                    </div>
-                    
-                    <div class="protocol-detail-section">
-                        <h4>Implementation Guidance</h4>
-                        <p>${protocol.implementation_guidance.replace(/\n/g, '<br>')}</p>
-                    </div>
-                    
-                    <div class="protocol-detail-section">
-                        <h4>Expected Outcomes</h4>
-                        <p>${protocol.expected_outcomes.replace(/\n/g, '<br>')}</p>
-                    </div>
-                    
-                    <div class="protocol-detail-section">
-                        <h4>Target Population</h4>
-                        <p>${protocol.target_population}</p>
-                    </div>
-                    
-                    <div class="protocol-detail-section">
-                        <h4>Evidence</h4>
-                        <p>${protocol.evidence}</p>
-                    </div>
-                `;
-            }
-
-            // Event listeners
-            domainFilter.addEventListener('change', filterProtocols);
-            roleFilter.addEventListener('change', filterProtocols);
-            searchFilter.addEventListener('input', filterProtocols);
-
-            // Initial render
-            filterProtocols();
-        }
-    </script>
 </body>
 </html>
