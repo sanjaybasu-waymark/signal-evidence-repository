@@ -95,22 +95,12 @@
             z-index: 2;
         }
         
-        .waymark-logo {
-            height: 48px;
-            margin-right: var(--spacing-lg);
-            display: inline-block;
-        }
-        
-        .waymark-logo img {
-            height: 100%;
-            width: auto;
-        }
-        
         .header h1 {
             font-weight: 700;
             margin: 0;
             font-size: var(--font-size-3xl);
             line-height: 1.2;
+            font-family: 'DM Sans', sans-serif;
         }
         
         .header-subtitle {
@@ -129,6 +119,7 @@
             font-size: var(--font-size-2xl);
             position: relative;
             padding-bottom: var(--spacing-md);
+            font-family: 'DM Sans', sans-serif;
         }
         
         /* Waymark Path underline */
@@ -190,6 +181,7 @@
             margin-bottom: var(--spacing-md);
             font-weight: 600;
             line-height: 1.3;
+            font-family: 'DM Sans', sans-serif;
         }
         
         .count-badge {
@@ -223,6 +215,7 @@
             margin-bottom: var(--spacing-lg);
             font-weight: 700;
             line-height: 1.3;
+            font-family: 'DM Sans', sans-serif;
         }
         
         .protocol-item h4 {
@@ -230,6 +223,7 @@
             font-size: var(--font-size-xl);
             margin: var(--spacing-xl) 0 var(--spacing-md);
             font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
         }
         
         .protocol-item p {
@@ -392,9 +386,8 @@
         }
         
         @media (max-width: 480px) {
-            .waymark-logo {
-                height: 40px;
-                margin-right: var(--spacing-md);
+            .header h1 {
+                font-size: var(--font-size-xl);
             }
             
             .header h1 {
@@ -430,10 +423,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="d-flex align-items-center">
-                    <div class="waymark-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA04LG9T978H3HTeuJTyMFlTaRFveyljW_fA&s" alt="Waymark Logo" style="filter: brightness(0) invert(1);" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color: white; font-weight: 700; font-size: 1.5rem; font-family: DM Sans, sans-serif;\'>WAYMARK</div>';">
-                    </div>
-                    <h1>Waymark's Population Health Protocol Library</h1>
+                    <h1>Waymark Population Health Protocol Library</h1>
                 </div>
                 <div class="header-subtitle">
                     An evidence-based repository for population health teams. While physicians have published guidelines provided by specialty societies, this repository provides non-physician teams with peer-reviewed protocols for supporting underserved and marginalized patient populations.
