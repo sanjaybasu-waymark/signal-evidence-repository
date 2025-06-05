@@ -1,47 +1,110 @@
 window.allRecommendations = [
   {
-    "title": "Implement Structured Diabetes Self-Management Education",
+    "title": "Structured Diabetes Self-Management Education Protocol",
     "domain": "Diabetes",
     "role": "Nurse Care Manager",
-    "implementation_guidance": "1. Conduct initial assessment using validated AADE7 Self-Care Behaviors framework\n2. Develop personalized education plan with specific glycemic targets (HbA1c reduction of 0.5-1% within 3-6 months)\n3. Schedule structured 30-45 minute sessions at 2-week intervals for first 3 months\n4. Document baseline knowledge using Diabetes Knowledge Test (DKT) with target improvement of ≥20%\n5. Implement teach-back method to verify comprehension of key concepts\n6. Provide specific instruction on glucose monitoring technique with return demonstration\n7. Document self-management goals using SMART framework in EHR\n8. Schedule follow-up within 2 weeks of medication changes\n9. Establish hypoglycemia action plan with specific glucose thresholds (<70 mg/dL)\n10. Measure outcomes using validated Problem Areas in Diabetes (PAID) scale",
-    "expected_outcomes": "1. HbA1c reduction of 0.5-1.0% within 6 months\n2. 80% of patients demonstrate proper glucose monitoring technique\n3. 30% reduction in diabetes distress as measured by PAID scale\n4. 25% reduction in hypoglycemic events\n5. 40% improvement in medication adherence",
-    "target_population": "Adults with type 1 or type 2 diabetes with HbA1c >8.0% or newly diagnosed patients",
-    "evidence": "Powers MA, et al. Diabetes Self-management Education and Support in Type 2 Diabetes: A Joint Position Statement of the American Diabetes Association, the American Association of Diabetes Educators, and the Academy of Nutrition and Dietetics. Diabetes Care. 2015;38(7):1372-1382."
+    "implementation_guidance": "1. Assess current diabetes knowledge and self-management skills\n2. Develop individualized education plan addressing knowledge gaps\n3. Provide instruction on blood glucose monitoring technique and interpretation\n4. Create hypoglycemia and hyperglycemia action plans\n5. Teach medication administration and timing\n6. Establish protocol for foot care and inspection\n7. Document education provided and skills demonstrated\n8. Follow up on implementation of self-management behaviors\n9. Adjust approach based on glycemic control status",
+    "expected_outcomes": "Improved glycemic control (HbA1c reduction of 0.5-1.5%)\nEnhanced self-management behaviors\nReduced diabetes-related emergency visits\nDecreased hypoglycemic events\nBetter medication adherence\nImproved quality of life\nIncreased patient confidence in managing diabetes",
+    "target_population": "Medicaid-enrolled adults with type 1 or type 2 diabetes, particularly those with uncontrolled glycemia or recent diagnosis",
+    "evidence": "American Diabetes Association Standards of Care\nNational Standards for Diabetes Self-Management Education and Support\nMultiple RCTs demonstrating efficacy of structured DSME"
   },
   {
-    "title": "Implement Home Blood Pressure Monitoring Protocol",
+    "title": "Home-Based Blood Pressure Monitoring Protocol",
     "domain": "Hypertension",
-    "role": "Nurse Care Manager",
-    "implementation_guidance": "1. Select validated home BP device (AAMI/ESH/ISO certified) with appropriate cuff size\n2. Train patient on proper technique: seated position, back supported, feet flat, arm at heart level\n3. Instruct on specific measurement protocol: measure BP twice daily (morning and evening) for 7 consecutive days\n4. Document baseline office BP and compare with home readings (acceptable difference <5 mmHg)\n5. Establish clear reporting thresholds: SBP >180 or <90, DBP >110 or <60 requires immediate contact\n6. Implement standardized recording system with date, time, and position\n7. Schedule technique reassessment at 30 days\n8. Configure EHR alerts for readings outside target range (>135/85 for home readings)\n9. Establish medication adjustment protocol based on 7-day averages\n10. Recalibrate device every 6 months or after 2,000 readings",
-    "expected_outcomes": "1. BP control rate improvement of 20% compared to usual care\n2. 90% adherence to monitoring protocol\n3. 30% reduction in white coat hypertension misdiagnosis\n4. 25% reduction in BP-related urgent care visits\n5. 15% reduction in medication adjustments",
-    "target_population": "Adults with uncontrolled hypertension (BP >140/90) or suspected white coat hypertension",
-    "evidence": "Shimbo D, et al. Self-Measured Blood Pressure Monitoring at Home: A Joint Policy Statement From the American Heart Association and American Medical Association. Circulation. 2020;142(4):e42-e63."
-  },
-  {
-    "title": "Implement Medication Adherence Protocol for Complex Regimens",
-    "domain": "Medication Adherence",
-    "role": "Clinical Pharmacist",
-    "implementation_guidance": "1. Conduct comprehensive medication review using validated BMQ (Brief Medication Questionnaire) tool\n2. Quantify baseline adherence using proportion of days covered (PDC) calculation from pharmacy claims data\n3. Implement medication synchronization with standardized refill date\n4. Perform regimen consolidation to reduce dosing frequency to ≤2 times daily when possible\n5. Provide dose-specific pill box with compartments for each administration time\n6. Configure automated refill reminders 7 days before medication depletion\n7. Document specific adherence barriers using COM-B framework (Capability, Opportunity, Motivation, Behavior)\n8. Schedule structured follow-up at 14, 30, and 90 days post-intervention\n9. Implement teach-back method for high-risk medications (anticoagulants, insulin, etc.)\n10. Establish medication cost threshold (>$50/month) for financial assistance program referral",
-    "expected_outcomes": "1. Improvement in PDC from <80% to >85% within 90 days\n2. 30% reduction in missed doses as self-reported\n3. 25% reduction in therapeutic duplications\n4. 20% reduction in medication-related adverse events\n5. 15% improvement in clinical outcomes related to treated conditions",
-    "target_population": "Patients taking ≥5 chronic medications or with demonstrated poor adherence (PDC <80%)",
-    "evidence": "Viswanathan M, et al. Interventions to Improve Adherence to Self-administered Medications for Chronic Diseases in the United States: A Systematic Review. Ann Intern Med. 2012;157(11):785-795."
-  },
-  {
-    "title": "Implement Structured Home Visit Protocol for CHWs",
-    "domain": "Care Transitions",
     "role": "Community Health Worker",
-    "implementation_guidance": "1. Complete pre-visit assessment using standardized PRAPARE social determinants screening tool\n2. Schedule initial visit within 72 hours of hospital discharge or referral\n3. Conduct medication reconciliation using brown bag review technique\n4. Perform home safety assessment with CDC STEADI fall risk checklist\n5. Document specific social needs with ICD-10 Z-codes in EHR\n6. Establish communication protocol with primary care team (response time <24 hours)\n7. Develop action plan with maximum of 3 prioritized goals using teach-back method\n8. Schedule follow-up visits at 7, 14, and 30 days with specific agenda\n9. Implement standardized handoff using SBAR technique for identified clinical concerns\n10. Measure visit effectiveness using Patient Activation Measure (PAM) with target improvement of ≥1 level",
-    "expected_outcomes": "1. 30% reduction in 30-day readmission rates\n2. 80% of medication discrepancies resolved within 7 days\n3. 40% increase in primary care follow-up attendance\n4. 25% reduction in ED visits within 90 days\n5. 35% improvement in patient activation as measured by PAM",
-    "target_population": "High-risk patients recently discharged from hospital or with multiple chronic conditions and identified social needs",
-    "evidence": "Kangovi S, et al. Effect of Community Health Worker Support on Clinical Outcomes of Low-Income Patients Across Primary Care Facilities: A Randomized Clinical Trial. JAMA Intern Med. 2018;178(12):1635-1643."
+    "implementation_guidance": "1. Assess patient's ability to perform home BP monitoring\n2. Provide education on proper BP measurement technique\n3. Establish protocol for frequency and timing of measurements\n4. Create documentation system for recording readings\n5. Develop action plan for elevated readings\n6. Implement protocol for reporting readings to healthcare team\n7. Document training provided and return demonstration\n8. Follow up on adherence to monitoring schedule\n9. Troubleshoot equipment issues and technique problems",
+    "expected_outcomes": "Improved BP control (target <130/80 mmHg)\nEarlier detection of uncontrolled hypertension\nReduced clinical inertia in medication adjustment\nDecreased cardiovascular events\nEnhanced medication adherence\nImproved patient engagement\nReduced healthcare utilization",
+    "target_population": "Medicaid-enrolled adults with hypertension, particularly those with uncontrolled BP, variable readings, or suspected white-coat hypertension",
+    "evidence": "American Heart Association guidelines\nUS Preventive Services Task Force recommendations\nMultiple studies showing improved outcomes with home BP monitoring"
   },
   {
-    "title": "Implement Nutritional Counseling Protocol for Chronic Disease Management",
+    "title": "Medication Adherence Support Protocol",
+    "domain": "Medication Adherence",
+    "role": "Pharmacy Technician",
+    "implementation_guidance": "1. Assess current medication-taking behaviors and barriers\n2. Implement medication organization system (pillbox, blister packs)\n3. Establish medication reminder system\n4. Create simplified medication schedule when possible\n5. Develop protocol for medication refill coordination\n6. Implement teach-back method for medication instructions\n7. Document interventions and adherence assessment\n8. Coordinate with pharmacist regarding adherence barriers\n9. Follow up on implementation of adherence strategies",
+    "expected_outcomes": "Improved medication adherence (>80% as measured by proportion of days covered)\nReduced gaps in therapy\nDecreased medication-related adverse events\nImproved clinical outcomes for target conditions\nEnhanced patient knowledge of medication purpose and instructions\nReduced healthcare utilization\nDecreased medication waste",
+    "target_population": "Medicaid-enrolled adults with chronic conditions requiring multiple medications, particularly those with history of non-adherence or complex regimens",
+    "evidence": "Pharmacy Quality Alliance adherence measures\nCDC medication adherence guidelines\nMultiple studies demonstrating impact of adherence on outcomes"
+  },
+  {
+    "title": "Post-Discharge Care Transitions Protocol",
+    "domain": "Care Transitions",
+    "role": "Care Coordinator",
+    "implementation_guidance": "1. Conduct post-discharge assessment within 48 hours\n2. Reconcile pre-admission and discharge medications\n3. Ensure follow-up appointments are scheduled\n4. Coordinate needed home services and equipment\n5. Provide education on red flags requiring medical attention\n6. Establish communication protocol with PCP and specialists\n7. Document transition plan and interventions\n8. Follow up on completion of post-discharge appointments\n9. Monitor for post-discharge complications",
+    "expected_outcomes": "Reduced 30-day readmission rates (<15%)\nImproved attendance at follow-up appointments\nDecreased medication discrepancies\nEnhanced patient understanding of discharge instructions\nImproved communication between hospital and outpatient providers\nReduced post-discharge adverse events\nIncreased patient satisfaction with transition process",
+    "target_population": "Medicaid-enrolled adults transitioning from hospital to home, particularly those with complex medical conditions, multiple medications, or limited support systems",
+    "evidence": "Care Transitions Intervention (Coleman)\nTransitional Care Model (Naylor)\nMultiple studies showing reduced readmissions with structured transitions"
+  },
+  {
+    "title": "Nutritional Counseling for Chronic Disease Management",
     "domain": "Nutrition",
     "role": "Dietitian/Nutritionist",
-    "implementation_guidance": "1. Conduct comprehensive nutritional assessment using validated AND-NCP (Academy of Nutrition and Dietetics Nutrition Care Process)\n2. Calculate specific caloric and macronutrient targets based on indirect calorimetry or Mifflin-St Jeor equation\n3. Develop personalized meal plans with specific food groups and portion sizes\n4. Implement 3-day food diary with analysis of macro/micronutrient content\n5. Establish SMART nutritional goals with measurable outcomes at 30, 60, and 90 days\n6. Provide hands-on education for food label reading with specific focus on sodium, added sugars, and saturated fat\n7. Schedule follow-up at 2-week intervals for first 2 months, then monthly\n8. Document baseline anthropometric measurements (weight, waist circumference, body composition) with target changes\n9. Implement teach-back method for dietary recommendations\n10. Coordinate care plan with primary provider and pharmacist for medication timing with meals",
-    "expected_outcomes": "1. Achievement of individualized weight goals in 70% of patients within 6 months\n2. 25% improvement in diet quality as measured by Healthy Eating Index\n3. 20% reduction in disease-specific biomarkers (HbA1c, LDL, blood pressure)\n4. 30% improvement in medication efficacy through proper meal timing\n5. 40% reduction in nutrition-related symptoms (GI distress, fatigue)",
-    "target_population": "Patients with nutrition-sensitive chronic conditions (diabetes, heart failure, CKD, NASH) or BMI >30 with comorbidities",
-    "evidence": "Evert AB, et al. Nutrition Therapy for Adults With Diabetes or Prediabetes: A Consensus Report. Diabetes Care. 2019;42(5):731-754."
+    "implementation_guidance": "1. Conduct comprehensive nutritional assessment\n2. Develop individualized meal planning based on medical conditions\n3. Provide education on portion control and food label reading\n4. Create strategies for healthy eating on limited budget\n5. Establish protocol for monitoring dietary adherence\n6. Implement gradual dietary modifications based on readiness\n7. Document nutritional interventions and goals\n8. Coordinate with healthcare team regarding nutritional status\n9. Follow up on implementation of dietary recommendations",
+    "expected_outcomes": "Improved clinical parameters related to underlying condition\nEnhanced dietary quality and pattern\nReduced sodium intake for hypertension patients\nImproved glycemic control for diabetes patients\nWeight management appropriate to medical conditions\nIncreased consumption of fruits and vegetables\nImproved patient confidence in making dietary choices",
+    "target_population": "Medicaid-enrolled adults with chronic conditions affected by nutrition (diabetes, hypertension, heart failure, CKD), particularly those with limited nutritional knowledge or food insecurity",
+    "evidence": "Academy of Nutrition and Dietetics guidelines\nDASH diet studies for hypertension\nMultiple RCTs showing impact of medical nutrition therapy"
+  },
+  {
+    "title": "Brief Cognitive-Behavioral Therapy for Anxiety",
+    "domain": "Anxiety",
+    "role": "Social Worker (Clinical/Therapy)",
+    "implementation_guidance": "1. Assess anxiety symptoms and triggers\n2. Provide education on anxiety cycle\n3. Teach relaxation techniques (deep breathing, progressive muscle relaxation)\n4. Implement cognitive restructuring for anxious thoughts\n5. Develop gradual exposure plan for avoided situations\n6. Create coping cards for managing acute anxiety\n7. Document intervention and progress\n8. Coordinate with prescribers regarding medication management\n9. Follow up on skill practice and implementation",
+    "expected_outcomes": "Reduced anxiety symptoms (≥50% reduction on validated scales)\nDecreased avoidance behaviors\nImproved coping skills\nEnhanced quality of life\nBetter treatment adherence\nDecreased disability from anxiety\nImproved work/school functioning\nReduced healthcare utilization",
+    "target_population": "Medicaid-enrolled adults with mild to moderate anxiety disorders, particularly those with limited access to specialty mental health care",
+    "evidence": "Cognitive-behavioral therapy evidence base\nAmerican Psychological Association guidelines\nMultiple meta-analyses showing efficacy for anxiety disorders"
+  },
+  {
+    "title": "Structured Anxiety Screening and Monitoring Protocol",
+    "domain": "Anxiety",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "1. Implement routine screening using validated tool (GAD-7)\n2. Establish protocol for positive screens\n3. Develop monitoring schedule based on symptom severity\n4. Create documentation system for tracking scores over time\n5. Implement protocol for assessing functional impairment\n6. Establish criteria for psychiatric referral\n7. Document screening results and interventions\n8. Coordinate with mental health providers\n9. Follow up on treatment adherence and response",
+    "expected_outcomes": "Improved identification of anxiety disorders\nEnhanced monitoring of treatment response\nEarlier intervention for worsening symptoms\nBetter coordination between primary care and mental health\nImproved clinical outcomes\nDecreased disability from anxiety\nReduced healthcare utilization",
+    "target_population": "Medicaid-enrolled adults, with targeted screening for those with risk factors or presenting symptoms",
+    "evidence": "USPSTF screening recommendations\nAmerican Psychiatric Association guidelines\nStudies showing improved outcomes with measurement-based care"
+  },
+  {
+    "title": "Community-Based Anxiety Management Support",
+    "domain": "Anxiety",
+    "role": "Community Health Worker",
+    "implementation_guidance": "1. Assess barriers to anxiety management\n2. Provide education on anxiety symptoms and treatment\n3. Help implement daily relaxation practice\n4. Assist with identifying and managing environmental triggers\n5. Create plan for using community resources for stress management\n6. Document support interventions\n7. Coordinate with healthcare team regarding concerning symptoms\n8. Follow up on implementation of management strategies",
+    "expected_outcomes": "Improved anxiety self-management\nEnhanced treatment adherence\nBetter recognition of anxiety triggers\nIncreased use of coping strategies\nDecreased anxiety symptoms\nImproved quality of life\nReduced healthcare utilization",
+    "target_population": "Medicaid-enrolled adults with anxiety disorders, particularly those with limited support systems or multiple barriers to care",
+    "evidence": "Community health worker intervention studies\nPeer support literature\nImplementation science research on anxiety management"
+  },
+  {
+    "title": "Structured Asthma Self-Management Education Protocol",
+    "domain": "Asthma",
+    "role": "Nurse Care Manager",
+    "implementation_guidance": "1. Assess current asthma knowledge and self-management skills\n2. Develop individualized education plan addressing knowledge gaps\n3. Provide instruction on proper inhaler technique\n4. Create written asthma action plan\n5. Teach symptom monitoring and peak flow use\n6. Establish protocol for environmental trigger management\n7. Document education provided and skills demonstrated\n8. Follow up on implementation of self-management behaviors\n9. Adjust approach based on control status",
+    "expected_outcomes": "Improved asthma control\nEnhanced self-management behaviors\nReduced exacerbations\nDecreased emergency department visits\nBetter medication adherence\nImproved quality of life\nIncreased patient confidence in managing asthma",
+    "target_population": "Medicaid-enrolled adults with asthma, particularly those with uncontrolled symptoms or recent exacerbations",
+    "evidence": "National Asthma Education and Prevention Program guidelines\nGlobal Initiative for Asthma recommendations\nMultiple studies showing efficacy of self-management education"
+  },
+  {
+    "title": "Home Environmental Assessment for Asthma Triggers",
+    "domain": "Asthma",
+    "role": "Community Health Worker",
+    "implementation_guidance": "1. Conduct comprehensive home environmental assessment\n2. Identify asthma triggers\n3. Develop action plan for trigger reduction\n4. Provide education on environmental control measures\n5. Assist with implementing low-cost modifications\n6. Supply allergen-proof bedding when indicated\n7. Document environmental interventions\n8. Coordinate with healthcare team regarding environmental findings\n9. Follow up on implementation of recommended modifications",
+    "expected_outcomes": "Reduced environmental asthma triggers\nDecreased symptom frequency\nImproved asthma control\nReduced exacerbations\nEnhanced quality of life\nDecreased healthcare utilization\nImproved sleep quality",
+    "target_population": "Medicaid-enrolled adults with persistent asthma, particularly those with environmental trigger sensitivities or frequent exacerbations",
+    "evidence": "CDC Task Force on Community Preventive Services recommendations\nNational Institutes of Health guidelines\nMultiple studies showing efficacy of home-based environmental interventions"
+  },
+  {
+    "title": "Pharmacist-Led Asthma Medication Optimization",
+    "domain": "Asthma",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "1. Review current asthma medication regimen\n2. Assess appropriateness based on symptom control and exacerbation history\n3. Evaluate inhaler technique and adherence\n4. Recommend therapy adjustments following stepwise approach\n5. Develop monitoring plan for efficacy and adverse effects\n6. Document optimization recommendations and rationale\n7. Coordinate with prescribers regarding therapy changes\n8. Follow up on implementation of recommendations",
+    "expected_outcomes": "Improved asthma control\nEnhanced medication adherence\nReduced adverse effects\nBetter alignment with guideline-directed therapy\nDecreased exacerbations\nImproved quality of life\nReduced healthcare utilization",
+    "target_population": "Medicaid-enrolled adults with uncontrolled asthma despite medication therapy",
+    "evidence": "Pharmacy-based asthma management studies\nGlobal Initiative for Asthma pharmacotherapy guidelines\nMultiple studies showing pharmacist impact on asthma outcomes"
+  },
+  {
+    "title": "Pharmacist-Led COPD Medication Optimization",
+    "domain": "COPD",
+    "role": "Clinical Pharmacist",
+    "implementation_guidance": "1. Review current COPD medication regimen\n2. Assess appropriateness based on symptom burden and exacerbation history\n3. Evaluate inhaler technique and adherence\n4. Recommend therapy adjustments following stepwise approach\n5. Develop monitoring plan for efficacy and adverse effects\n6. Document optimization recommendations and rationale\n7. Coordinate with prescribers regarding therapy changes\n8. Follow up on implementation of recommendations",
+    "expected_outcomes": "Improved symptom control\nEnhanced medication adherence\nReduced adverse effects\nBetter alignment with guideline-directed therapy\nDecreased exacerbations\nImproved quality of life\nReduced healthcare utilization",
+    "target_population": "Medicaid-enrolled adults with COPD, particularly those with frequent exacerbations or suboptimal symptom control",
+    "evidence": "Global Initiative for Chronic Obstructive Lung Disease guidelines\nPharmacy-based COPD management studies\nMultiple studies showing pharmacist impact on COPD outcomes"
   }
 ];
