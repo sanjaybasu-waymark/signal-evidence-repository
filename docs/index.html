@@ -7,184 +7,292 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --waymark-green: #4BB543;
-            --waymark-purple: #7030A0;
-            --waymark-blue: #00B0F0;
-            --waymark-orange: #FF6D01;
-            --waymark-dark: #333333;
-            --waymark-light: #f8f9fa;
-            --waymark-gray: #6c757d;
+            /* Waymark Brand Colors - Updated to match official brand */
+            --waymark-primary: #8B5CBF; /* Lavender - Primary brand color */
+            --waymark-primary-light: #A678D4;
+            --waymark-primary-dark: #6B4699;
+            --waymark-secondary: #2E8B57; /* Soft green for healthcare context */
+            --waymark-accent: #FF6B6B; /* Warm coral for highlights */
+            --waymark-neutral-50: #F8FAFC;
+            --waymark-neutral-100: #F1F5F9;
+            --waymark-neutral-200: #E2E8F0;
+            --waymark-neutral-300: #CBD5E1;
+            --waymark-neutral-400: #94A3B8;
+            --waymark-neutral-500: #64748B;
+            --waymark-neutral-600: #475569;
+            --waymark-neutral-700: #334155;
+            --waymark-neutral-800: #1E293B;
+            --waymark-neutral-900: #0F172A;
+            
+            /* Typography Scale */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        * {
+            box-sizing: border-box;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             line-height: 1.6;
-            color: var(--waymark-dark);
-            background-color: var(--waymark-light);
+            color: var(--waymark-neutral-800);
+            background-color: var(--waymark-neutral-50);
+            font-size: var(--font-size-base);
+            margin: 0;
+            padding: 0;
         }
         
+        /* Header with Waymark Path curves */
         .header {
-            background: linear-gradient(90deg, var(--waymark-green) 0%, var(--waymark-purple) 100%);
+            background: linear-gradient(135deg, var(--waymark-primary) 0%, var(--waymark-primary-light) 50%, var(--waymark-primary-dark) 100%);
             color: white;
-            padding: 30px 0;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: var(--spacing-2xl) 0;
+            margin-bottom: var(--spacing-2xl);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
         }
         
-        .header img {
-            height: 50px;
-            margin-right: 15px;
+        /* Waymark Path curved element */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--waymark-neutral-50);
+            border-radius: 50px 50px 0 0;
+            transform: scaleX(1.5);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .waymark-logo {
+            height: 48px;
+            margin-right: var(--spacing-lg);
+            display: inline-block;
+        }
+        
+        .waymark-logo img {
+            height: 100%;
+            width: auto;
         }
         
         .header h1 {
             font-weight: 700;
             margin: 0;
-            font-size: 2rem;
+            font-size: var(--font-size-3xl);
+            line-height: 1.2;
         }
         
         .header-subtitle {
-            margin-top: 15px;
-            font-size: 1.1rem;
+            margin-top: var(--spacing-lg);
+            font-size: var(--font-size-lg);
             font-weight: 400;
             max-width: 900px;
-            line-height: 1.5;
+            line-height: 1.6;
+            opacity: 0.95;
         }
         
         .section-title {
-            margin-bottom: 30px;
-            color: var(--waymark-dark);
+            margin-bottom: var(--spacing-xl);
+            color: var(--waymark-neutral-800);
             font-weight: 700;
+            font-size: var(--font-size-2xl);
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: var(--spacing-md);
         }
         
+        /* Waymark Path underline */
         .section-title:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--waymark-green) 0%, var(--waymark-purple) 100%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--waymark-primary) 0%, var(--waymark-primary-light) 100%);
+            border-radius: 2px;
         }
         
         .domain-box, .role-box {
             background-color: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid var(--waymark-neutral-200);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Subtle Waymark Path element in cards */
+        .domain-box::before, .role-box::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--waymark-primary) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.1;
+            transition: opacity 0.3s ease;
         }
         
         .domain-box:hover, .role-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--waymark-primary-light);
+        }
+        
+        .domain-box:hover::before, .role-box:hover::before {
+            opacity: 0.2;
         }
         
         .domain-box h3, .role-box h3 {
-            color: var(--waymark-purple);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            color: var(--waymark-primary);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-md);
             font-weight: 600;
+            line-height: 1.3;
         }
         
         .count-badge {
-            background: linear-gradient(90deg, var(--waymark-green) 0%, var(--waymark-purple) 100%);
+            background: linear-gradient(135deg, var(--waymark-primary) 0%, var(--waymark-primary-light) 100%);
             color: white;
-            border-radius: 30px;
-            padding: 5px 15px;
-            font-size: 0.9rem;
-            font-weight: 500;
+            border-radius: 24px;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
             display: inline-block;
+            box-shadow: var(--shadow-sm);
         }
         
         .protocol-item {
             background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 16px;
+            padding: var(--spacing-2xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--waymark-neutral-200);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .protocol-item:hover {
+            box-shadow: var(--shadow-lg);
         }
         
         .protocol-item h3 {
-            color: var(--waymark-purple);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            color: var(--waymark-primary);
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-lg);
             font-weight: 700;
+            line-height: 1.3;
         }
         
         .protocol-item h4 {
-            color: var(--waymark-blue);
-            font-size: 1.2rem;
-            margin: 25px 0 15px;
+            color: var(--waymark-secondary);
+            font-size: var(--font-size-xl);
+            margin: var(--spacing-xl) 0 var(--spacing-md);
             font-weight: 600;
         }
         
         .protocol-item p {
-            margin-bottom: 15px;
+            margin-bottom: var(--spacing-md);
             white-space: pre-line;
-            color: #444;
+            color: var(--waymark-neutral-700);
             line-height: 1.7;
+            font-size: var(--font-size-base);
         }
         
         .protocol-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
         }
         
         .protocol-meta span {
-            background-color: #f0f4f8;
-            border-radius: 30px;
-            padding: 8px 16px;
-            font-size: 0.9rem;
+            background-color: var(--waymark-neutral-100);
+            border: 1px solid var(--waymark-neutral-200);
+            border-radius: 20px;
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-size: var(--font-size-sm);
             font-weight: 500;
+            color: var(--waymark-neutral-700);
         }
         
         .back-button {
-            margin-bottom: 30px;
+            margin-bottom: var(--spacing-xl);
             background-color: white;
-            color: var(--waymark-purple);
-            border: 2px solid var(--waymark-purple);
-            border-radius: 30px;
-            padding: 8px 20px;
+            color: var(--waymark-primary);
+            border: 2px solid var(--waymark-primary);
+            border-radius: 24px;
+            padding: var(--spacing-md) var(--spacing-xl);
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            font-size: var(--font-size-base);
         }
         
         .back-button:hover {
-            background-color: var(--waymark-purple);
+            background-color: var(--waymark-primary);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
         
         .footer {
-            background-color: #333;
-            padding: 40px 0;
-            margin-top: 70px;
+            background-color: var(--waymark-neutral-800);
+            padding: var(--spacing-2xl) 0;
+            margin-top: var(--spacing-2xl);
             color: white;
             text-align: center;
         }
         
         .footer a {
-            color: var(--waymark-blue);
+            color: var(--waymark-primary-light);
             text-decoration: none;
             font-weight: 500;
         }
         
         .footer a:hover {
             text-decoration: underline;
+            color: white;
         }
         
         #protocolList {
@@ -192,66 +300,144 @@
         }
         
         .section-container {
-            padding: 30px 0;
+            padding: var(--spacing-xl) 0;
         }
         
         .search-container {
-            margin-bottom: 30px;
+            margin-bottom: var(--spacing-xl);
         }
         
         .search-input {
-            border-radius: 30px;
-            padding: 10px 20px;
-            border: 1px solid #ddd;
+            border-radius: 24px;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border: 2px solid var(--waymark-neutral-200);
             width: 100%;
-            font-size: 1rem;
+            font-size: var(--font-size-base);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--waymark-primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 191, 0.1);
         }
         
         .filter-container {
             display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
             flex-wrap: wrap;
         }
         
         .filter-select {
             flex: 1;
             min-width: 200px;
-            border-radius: 30px;
-            padding: 10px 20px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
+            border-radius: 24px;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border: 2px solid var(--waymark-neutral-200);
+            font-size: var(--font-size-base);
             background-color: white;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
         
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--waymark-primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 191, 0.1);
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .header {
+                padding: var(--spacing-xl) 0;
+            }
+            
             .header h1 {
-                font-size: 1.5rem;
+                font-size: var(--font-size-2xl);
             }
+            
+            .header-subtitle {
+                font-size: var(--font-size-base);
+            }
+            
             .domain-box h3, .role-box h3 {
-                font-size: 1.1rem;
+                font-size: var(--font-size-lg);
             }
+            
             .section-title {
-                font-size: 1.5rem;
+                font-size: var(--font-size-xl);
             }
+            
             .filter-container {
                 flex-direction: column;
             }
+            
             .filter-select {
                 width: 100%;
+                min-width: auto;
             }
+            
+            .protocol-item {
+                padding: var(--spacing-xl);
+            }
+            
+            .protocol-item h3 {
+                font-size: var(--font-size-xl);
+            }
+            
+            .protocol-item h4 {
+                font-size: var(--font-size-lg);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .waymark-logo {
+                height: 40px;
+                margin-right: var(--spacing-md);
+            }
+            
+            .header h1 {
+                font-size: var(--font-size-xl);
+            }
+            
+            .domain-box, .role-box {
+                padding: var(--spacing-lg);
+            }
+            
+            .protocol-item {
+                padding: var(--spacing-lg);
+            }
+        }
+        
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+        
+        /* Focus styles for better accessibility */
+        .domain-box:focus-visible, .role-box:focus-visible {
+            outline: 3px solid var(--waymark-primary);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="container">
-            <div class="d-flex align-items-center">
-                <img src="https://www.waymarkcare.com/assets/waymark-tri-color-A-on-light-a9e8d4a9.svg" alt="Waymark Logo">
-                <h1>Waymark Population Health Protocol Library</h1>
-            </div>
-            <div class="header-subtitle">
-                An evidence-based repository for population health teams. While physicians have published guidelines provided by specialty societies, this repository provides non-physician teams with peer-reviewed protocols for supporting underserved and marginalized patient populations.
+            <div class="header-content">
+                <div class="d-flex align-items-center">
+                    <div class="waymark-logo">
+                        <img src="https://assets-global.website-files.com/65f2fcd95cdb74b08fb8ef47/65f2fcd95cdb74b08fb8ef64_waymark-logo.svg" alt="Waymark Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color: white; font-weight: 700; font-size: 1.5rem;\'>WAYMARK</div>';">
+                    </div>
+                    <h1>Population Health Protocol Library</h1>
+                </div>
+                <div class="header-subtitle">
+                    An evidence-based repository for population health teams. While physicians have published guidelines provided by specialty societies, this repository provides non-physician teams with peer-reviewed protocols for supporting underserved and marginalized patient populations.
+                </div>
             </div>
         </div>
     </div>
@@ -299,7 +485,7 @@
 
         <div id="protocolView" style="display: none;">
             <button class="btn back-button" id="backButton">
-                <i class="bi bi-arrow-left"></i> Back to Main View
+                ← Back to Main View
             </button>
             <h2 id="currentFilter" class="section-title">Protocols</h2>
             <div id="protocolList">
@@ -344,7 +530,7 @@
                 const domainBox = document.createElement('div');
                 domainBox.className = 'col-md-4 col-sm-6 mb-4';
                 domainBox.innerHTML = `
-                    <div class="domain-box" data-domain="${domain}">
+                    <div class="domain-box" data-domain="${domain}" tabindex="0" role="button" aria-label="View ${count} protocol${count !== 1 ? 's' : ''} for ${domain}">
                         <h3>${domain}</h3>
                         <span class="count-badge">${count} protocol${count !== 1 ? 's' : ''}</span>
                     </div>
@@ -359,7 +545,7 @@
                 const roleBox = document.createElement('div');
                 roleBox.className = 'col-md-4 col-sm-6 mb-4';
                 roleBox.innerHTML = `
-                    <div class="role-box" data-role="${role}">
+                    <div class="role-box" data-role="${role}" tabindex="0" role="button" aria-label="View ${count} protocol${count !== 1 ? 's' : ''} for ${role}">
                         <h3>${role}</h3>
                         <span class="count-badge">${count} protocol${count !== 1 ? 's' : ''}</span>
                     </div>
@@ -387,17 +573,33 @@
 
             // Add event listeners to domain boxes
             document.querySelectorAll('.domain-box').forEach(box => {
-                box.addEventListener('click', function() {
+                const clickHandler = function() {
                     const domain = this.getAttribute('data-domain');
                     showProtocols('domain', domain);
+                };
+                
+                box.addEventListener('click', clickHandler);
+                box.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        clickHandler.call(this);
+                    }
                 });
             });
 
             // Add event listeners to role boxes
             document.querySelectorAll('.role-box').forEach(box => {
-                box.addEventListener('click', function() {
+                const clickHandler = function() {
                     const role = this.getAttribute('data-role');
                     showProtocols('role', role);
+                };
+                
+                box.addEventListener('click', clickHandler);
+                box.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        clickHandler.call(this);
+                    }
                 });
             });
 
