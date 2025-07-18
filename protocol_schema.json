@@ -1,0 +1,527 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Waymark Population Health Protocol",
+  "description": "Schema for evidence-based population health protocols",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "domain",
+    "role",
+    "implementation_guidance",
+    "expected_outcomes",
+    "target_population",
+    "evidence",
+    "version",
+    "created_date",
+    "last_updated",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$",
+      "description": "Unique identifier for the protocol"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200,
+      "description": "Descriptive title of the protocol"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "Diabetes",
+        "Hypertension",
+        "Heart Failure",
+        "Medication Adherence",
+        "Care Transitions",
+        "Nutrition",
+        "Mental Health",
+        "Maternal Health",
+        "Infectious Disease",
+        "Social Determinants",
+        "Preventive Care",
+        "Chronic Disease Management",
+        "Substance Use",
+        "Geriatrics",
+        "Pediatrics"
+      ],
+      "description": "Clinical domain or specialty area"
+    },
+    "role": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Nurse Care Manager",
+          "Community Health Worker",
+          "Pharmacy Technician",
+          "Clinical Pharmacist",
+          "Care Coordinator",
+          "Social Worker",
+          "Dietitian/Nutritionist",
+          "Case Manager",
+          "Health Educator",
+          "Peer Support Specialist",
+          "Medical Assistant",
+          "Behavioral Health Specialist"
+        ]
+      },
+      "minItems": 1,
+      "description": "Healthcare roles for which this protocol is designed"
+    },
+    "implementation_guidance": {
+      "type": "object",
+      "required": ["steps", "resources", "timeline"],
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["step_number", "description", "duration"],
+            "properties": {
+              "step_number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 20
+              },
+              "duration": {
+                "type": "string",
+                "pattern": "^\\d+\\s+(minutes?|hours?|days?|weeks?)$"
+              },
+              "required_skills": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tools_needed": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "resources": {
+          "type": "object",
+          "properties": {
+            "staff_time": {
+              "type": "string",
+              "pattern": "^\\d+\\s+(minutes?|hours?)\\s+per\\s+(patient|week|month)$"
+            },
+            "materials": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "technology": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "training_required": {
+              "type": "string"
+            }
+          }
+        },
+        "timeline": {
+          "type": "string",
+          "description": "Expected implementation timeline"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contraindications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "expected_outcomes": {
+      "type": "object",
+      "required": ["primary_outcomes"],
+      "properties": {
+        "primary_outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["metric", "expected_change", "timeframe"],
+            "properties": {
+              "metric": {
+                "type": "string",
+                "description": "Specific measurable outcome"
+              },
+              "expected_change": {
+                "type": "string",
+                "description": "Expected magnitude and direction of change"
+              },
+              "timeframe": {
+                "type": "string",
+                "pattern": "^\\d+\\s+(days?|weeks?|months?)$"
+              },
+              "confidence_interval": {
+                "type": "string",
+                "pattern": "^\\d+(\\.\\d+)?%\\s+CI:\\s+\\[.*\\]$"
+              },
+              "nnt": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Number needed to treat"
+              },
+              "nnh": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Number needed to harm"
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "secondary_outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["metric", "expected_change", "timeframe"],
+            "properties": {
+              "metric": {
+                "type": "string"
+              },
+              "expected_change": {
+                "type": "string"
+              },
+              "timeframe": {
+                "type": "string"
+              },
+              "confidence_interval": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "process_measures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["metric", "target"],
+            "properties": {
+              "metric": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "target_population": {
+      "type": "object",
+      "required": ["description"],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 20
+        },
+        "inclusion_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exclusion_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "demographics": {
+          "type": "object",
+          "properties": {
+            "age_range": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            },
+            "insurance_type": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["Medicaid", "Medicare", "Commercial", "Uninsured", "Dual Eligible"]
+              }
+            },
+            "social_determinants": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["grade", "citations"],
+      "properties": {
+        "grade": {
+          "type": "string",
+          "enum": ["High", "Moderate", "Low", "Very Low"],
+          "description": "GRADE evidence quality assessment"
+        },
+        "grade_rationale": {
+          "type": "string",
+          "description": "Explanation of evidence grade assignment"
+        },
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "title", "authors", "publication", "year", "pmid_or_doi"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Systematic Review",
+                  "Meta-Analysis",
+                  "Randomized Controlled Trial",
+                  "Cohort Study",
+                  "Case-Control Study",
+                  "Clinical Guideline",
+                  "Expert Consensus",
+                  "Quality Improvement Study"
+                ]
+              },
+              "title": {
+                "type": "string"
+              },
+              "authors": {
+                "type": "string"
+              },
+              "publication": {
+                "type": "string"
+              },
+              "year": {
+                "type": "integer",
+                "minimum": 1990,
+                "maximum": 2030
+              },
+              "pmid_or_doi": {
+                "type": "string",
+                "pattern": "^(PMID:\\s*\\d+|DOI:\\s*10\\.\\d+\\/.*|https?:\\/\\/.*)$"
+              },
+              "relevance_score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "key_findings": {
+                "type": "string"
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "last_literature_review": {
+          "type": "string",
+          "format": "date"
+        },
+        "search_strategy": {
+          "type": "string",
+          "description": "Keywords and databases used for literature search"
+        }
+      }
+    },
+    "version": {
+      "type": "object",
+      "required": ["number", "changelog"],
+      "properties": {
+        "number": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "changelog": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["version", "date", "changes", "author"],
+            "properties": {
+              "version": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "changes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "author": {
+                "type": "string"
+              },
+              "evidence_updates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Active", "Under Review", "Deprecated", "Draft"],
+      "description": "Current status of the protocol"
+    },
+    "relationships": {
+      "type": "object",
+      "properties": {
+        "related_protocols": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "relationship_type"],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "relationship_type": {
+                "type": "string",
+                "enum": ["Complementary", "Alternative", "Prerequisite", "Follow-up", "Contraindicated"]
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "implementation_tracking": {
+      "type": "object",
+      "properties": {
+        "adoption_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "success_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "user_feedback": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rating": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "comment": {
+                "type": "string"
+              },
+              "implementation_setting": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        "outcome_reports": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "organization": {
+                "type": "string"
+              },
+              "population_size": {
+                "type": "integer"
+              },
+              "outcomes_achieved": {
+                "type": "object"
+              },
+              "implementation_notes": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords for improved searchability"
+    },
+    "complexity_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Implementation complexity rating (1=simple, 10=complex)"
+    },
+    "cost_effectiveness": {
+      "type": "object",
+      "properties": {
+        "cost_per_patient": {
+          "type": "string"
+        },
+        "cost_savings": {
+          "type": "string"
+        },
+        "roi_timeframe": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
+
