@@ -26,7 +26,7 @@ The Waymark Population Health Protocol Library is a state-of-the-art, automatica
 
 ### For Healthcare Teams
 
-1. **Browse Protocols**: Visit [protocols.waymarkcare.com](https://protocols.waymarkcare.com)
+1. **Browse Protocols**: Visit https://sanjaybasu-waymark.github.io/signal-evidence-repository/
 2. **Search by Domain**: Filter by clinical areas (Diabetes, Hypertension, etc.)
 3. **Filter by Role**: Find protocols specific to your healthcare role
 4. **Implement**: Follow detailed implementation guidance
