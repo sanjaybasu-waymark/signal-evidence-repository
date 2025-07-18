@@ -16,10 +16,7 @@ The Waymark Population Health Protocol Library is a state-of-the-art, automatica
 - **🔄 Automated Evidence Updates**: Continuous monitoring of PubMed and clinical guidelines
 - **🎯 Advanced Search**: Semantic search with AI-powered relevance matching
 - **📊 Evidence Grading**: GRADE-compliant quality assessment for all protocols
-- **👥 Community Driven**: Collaborative platform for protocol development and improvement
 - **📱 Mobile Optimized**: Responsive design for field use
-- **🔗 API Access**: RESTful APIs for integration with EHR and care management systems
-- **📈 Outcome Tracking**: Real-world implementation monitoring and feedback
 - **🔒 Quality Assured**: Multi-level validation and peer review processes
 
 ## Quick Start
