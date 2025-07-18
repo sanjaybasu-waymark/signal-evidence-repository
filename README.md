@@ -407,8 +407,8 @@ This repository contains proprietary software and content owned by Waymark. Unau
 ## Contact
 
 **Project Lead**: Sanjay Basu MD PhD  
-**Affiliations**: Waymark, University of California San Francisco  
-**Email**: research@waymarkcare.com  
+**Affiliations**: Waymark  
+**Email**: sanjay.basu@waymarkcare.com  
 **Website**: [www.waymarkcare.com](https://www.waymarkcare.com)
 
 For technical support, please create an issue in this repository or contact our support team at support@waymarkcare.com.
