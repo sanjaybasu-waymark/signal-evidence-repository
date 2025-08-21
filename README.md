@@ -4,7 +4,6 @@
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
-[![GitHub Actions](https://github.com/sanjaybasu-waymark/signal-evidence-repository/workflows/Automated%20Evidence%20Updates/badge.svg)](https://github.com/sanjaybasu-waymark/signal-evidence-repository/actions)
 [![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://protocols.waymarkcare.com)
 
 ## Overview
