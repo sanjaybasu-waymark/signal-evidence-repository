@@ -175,15 +175,21 @@
     <script src="recommendations-data.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Check if data is loaded
+            if (typeof window.allRecommendations === 'undefined') {
+                console.error('Recommendations data not loaded');
+                return;
+            }
+            
             // Get unique domains and roles
-            const domains = [...new Set(allRecommendations.map(item => item.domain))].sort();
-            const roles = [...new Set(allRecommendations.map(item => item.role))].sort();
+            const domains = [...new Set(window.allRecommendations.map(item => item.domain))].sort();
+            const roles = [...new Set(window.allRecommendations.map(item => item.role))].sort();
 
             // Count protocols per domain and role
             const domainCounts = {};
             const roleCounts = {};
 
-            allRecommendations.forEach(protocol => {
+            window.allRecommendations.forEach(protocol => {
                 domainCounts[protocol.domain] = (domainCounts[protocol.domain] || 0) + 1;
                 roleCounts[protocol.role] = (roleCounts[protocol.role] || 0) + 1;
             });
@@ -250,7 +256,7 @@
                     filterType === 'domain' ? `${filterValue} Protocols` : `Protocols for ${filterValue}`;
 
                 // Filter protocols
-                const filteredProtocols = allRecommendations.filter(protocol => 
+                const filteredProtocols = window.allRecommendations.filter(protocol => 
                     filterType === 'domain' ? protocol.domain === filterValue : protocol.role === filterValue
                 );
 
