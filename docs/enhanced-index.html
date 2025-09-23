@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waymark Population Health Protocol Library</title>
+    <style>
+        /* Waymark Brand Colors and Typography */
+        :root {
+            --waymark-lavender: #8B7EC8;
+            --waymark-lavender-light: #A599D3;
+            --waymark-lavender-dark: #6B5B9D;
+            --waymark-blue: #4A90E2;
+            --waymark-orange: #F5A623;
+            --waymark-purple: #7B68EE;
+            --waymark-teal: #50C8A3;
+            --waymark-pink: #E91E63;
+            --waymark-dark: #2C3E50;
+            --waymark-gray: #7F8C8D;
+            --waymark-light-gray: #F8F9FA;
+            --waymark-white: #FFFFFF;
+            --waymark-success: #27AE60;
+            --waymark-warning: #F39C12;
+            --waymark-error: #E74C3C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--waymark-dark);
+            background: linear-gradient(135deg, var(--waymark-light-gray) 0%, var(--waymark-white) 100%);
+            min-height: 100vh;
+        }
+
+        /* Header with Waymark Branding */
+        .header {
+            background: linear-gradient(135deg, var(--waymark-lavender) 0%, var(--waymark-lavender-dark) 100%);
+            color: var(--waymark-white);
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(139, 126, 200, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,5 80,20 Q95,50 80,80 Q50,95 20,80 Q5,50 20,20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .waymark-logo {
+            width: 40px;
+            height: 40px;
+            background: var(--waymark-white);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--waymark-lavender);
+            font-size: 1.5rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+
+        /* Enhanced Statistics Bar */
+        .stats-bar {
+            background: var(--waymark-white);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .stats-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--waymark-light-gray) 0%, var(--waymark-white) 100%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 126, 200, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--waymark-lavender);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--waymark-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Enhanced Search and Filter */
+        .search-section {
+            background: var(--waymark-white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .search-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .search-header h2 {
+            font-size: 1.8rem;
+            color: var(--waymark-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .search-header p {
+            color: var(--waymark-gray);
+            font-size: 1.1rem;
+        }
+
+        .search-controls {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--waymark-light-gray);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--waymark-lavender);
+            box-shadow: 0 0 0 3px rgba(139, 126, 200, 0.1);
+        }
+
+        .filter-toggle {
+            background: var(--waymark-lavender);
+            color: var(--waymark-white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .filter-toggle:hover {
+            background: var(--waymark-lavender-dark);
+            transform: translateY(-1px);
+        }
+
+        .filter-section {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--waymark-light-gray);
+        }
+
+        .filter-section.active {
+            display: grid;
+        }
+
+        .filter-group h3 {
+            font-size: 1.1rem;
+            color: var(--waymark-dark);
+            margin-bottom: 1rem;
+        }
+
+        .filter-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .filter-option:hover {
+            background: var(--waymark-light-gray);
+        }
+
+        .filter-option input[type="checkbox"] {
+            accent-color: var(--waymark-lavender);
+        }
+
+        /* Enhanced Protocol Grid */
+        .protocols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .protocol-card {
+            background: var(--waymark-white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .protocol-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(139, 126, 200, 0.15);
+            border-color: var(--waymark-lavender);
+        }
+
+        .protocol-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .protocol-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--waymark-dark);
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .protocol-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .badge-domain {
+            background: linear-gradient(135deg, var(--waymark-lavender) 0%, var(--waymark-lavender-light) 100%);
+            color: var(--waymark-white);
+        }
+
+        .badge-role {
+            background: var(--waymark-light-gray);
+            color: var(--waymark-dark);
+        }
+
+        .protocol-preview {
+            color: var(--waymark-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .protocol-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--waymark-light-gray);
+        }
+
+        .evidence-level {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--waymark-success);
+        }
+
+        .view-protocol {
+            background: var(--waymark-lavender);
+            color: var(--waymark-white);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-protocol:hover {
+            background: var(--waymark-lavender-dark);
+        }
+
+        /* Protocol Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: var(--waymark-white);
+            border-radius: 20px;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--waymark-lavender) 0%, var(--waymark-lavender-dark) 100%);
+            color: var(--waymark-white);
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: var(--waymark-white);
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .protocol-section {
+            margin-bottom: 2rem;
+        }
+
+        .protocol-section h3 {
+            font-size: 1.3rem;
+            color: var(--waymark-lavender);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--waymark-light-gray);
+        }
+
+        .protocol-section p, .protocol-section ul {
+            color: var(--waymark-dark);
+            line-height: 1.6;
+        }
+
+        .protocol-section ul {
+            padding-left: 1.5rem;
+        }
+
+        .protocol-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .stats-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .search-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-section {
+                grid-template-columns: 1fr;
+            }
+
+            .protocols-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                max-height: 95vh;
+            }
+        }
+
+        /* Loading and Empty States */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--waymark-gray);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--waymark-gray);
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles for accessibility */
+        button:focus, input:focus {
+            outline: 2px solid var(--waymark-lavender);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="waymark-logo">W</div>
+                <div>
+                    <h1>Population Health Protocol Library</h1>
+                    <p>Evidence-based protocols for community health teams serving Medicaid populations</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Statistics Bar -->
+    <section class="stats-bar">
+        <div class="stats-content">
+            <div class="stat-item">
+                <span class="stat-number" id="total-protocols">67</span>
+                <span class="stat-label">Total Protocols</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="total-domains">21</span>
+                <span class="stat-label">Clinical Domains</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="total-roles">8</span>
+                <span class="stat-label">Healthcare Roles</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Evidence-Based</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Search and Filter Section -->
+        <section class="search-section">
+            <div class="search-header">
+                <h2>Find the Right Protocol</h2>
+                <p>Search by condition, role, or implementation approach</p>
+            </div>
+            
+            <div class="search-controls">
+                <input type="text" class="search-input" id="search-input" placeholder="Search protocols..." aria-label="Search protocols">
+                <button class="filter-toggle" id="filter-toggle" aria-expanded="false">Advanced Filters</button>
+            </div>
+
+            <div class="filter-section" id="filter-section">
+                <div class="filter-group">
+                    <h3>Clinical Domains</h3>
+                    <div class="filter-options" id="domain-filters">
+                        <!-- Domain filters will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Healthcare Roles</h3>
+                    <div class="filter-options" id="role-filters">
+                        <!-- Role filters will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Protocols Grid -->
+        <section class="protocols-grid" id="protocols-grid">
+            <!-- Protocol cards will be populated by JavaScript -->
+        </section>
+
+        <!-- Loading State -->
+        <div class="loading" id="loading" style="display: none;">
+            <p>Loading protocols...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+            <h3>No protocols found</h3>
+            <p>Try adjusting your search criteria or filters</p>
+        </div>
+    </main>
+
+    <!-- Protocol Detail Modal -->
+    <div class="modal" id="protocol-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" id="modal-close" aria-label="Close protocol details">&times;</button>
+                <h2 id="modal-title"></h2>
+                <div class="protocol-badges" id="modal-badges"></div>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Protocol details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced JavaScript -->
+    <script src="enhanced-recommendations-data.js"></script>
+    <script>
+        // Enhanced Protocol Library Application
+        class ProtocolLibrary {
+            constructor() {
+                this.protocols = window.allRecommendations || [];
+                this.filteredProtocols = [...this.protocols];
+                this.currentFilters = {
+                    search: '',
+                    domains: new Set(),
+                    roles: new Set()
+                };
+                
+                this.init();
+            }
+
+            init() {
+                this.updateStatistics();
+                this.setupEventListeners();
+                this.populateFilters();
+                this.renderProtocols();
+            }
+
+            updateStatistics() {
+                const totalProtocols = this.protocols.length;
+                const domains = new Set(this.protocols.map(p => p.domain));
+                const roles = new Set(this.protocols.map(p => p.role));
+
+                document.getElementById('total-protocols').textContent = totalProtocols;
+                document.getElementById('total-domains').textContent = domains.size;
+                document.getElementById('total-roles').textContent = roles.size;
+            }
+
+            setupEventListeners() {
+                // Search input
+                const searchInput = document.getElementById('search-input');
+                searchInput.addEventListener('input', (e) => {
+                    this.currentFilters.search = e.target.value.toLowerCase();
+                    this.applyFilters();
+                });
+
+                // Filter toggle
+                const filterToggle = document.getElementById('filter-toggle');
+                const filterSection = document.getElementById('filter-section');
+                filterToggle.addEventListener('click', () => {
+                    const isActive = filterSection.classList.toggle('active');
+                    filterToggle.setAttribute('aria-expanded', isActive);
+                });
+
+                // Modal close
+                const modalClose = document.getElementById('modal-close');
+                const modal = document.getElementById('protocol-modal');
+                modalClose.addEventListener('click', () => this.closeModal());
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) this.closeModal();
+                });
+
+                // Escape key to close modal
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') this.closeModal();
+                });
+            }
+
+            populateFilters() {
+                this.populateDomainFilters();
+                this.populateRoleFilters();
+            }
+
+            populateDomainFilters() {
+                const domains = [...new Set(this.protocols.map(p => p.domain))].sort();
+                const container = document.getElementById('domain-filters');
+                
+                container.innerHTML = domains.map(domain => `
+                    <label class="filter-option">
+                        <input type="checkbox" value="${domain}" data-filter="domain">
+                        <span>${domain}</span>
+                    </label>
+                `).join('');
+
+                container.addEventListener('change', (e) => {
+                    if (e.target.type === 'checkbox' && e.target.dataset.filter === 'domain') {
+                        if (e.target.checked) {
+                            this.currentFilters.domains.add(e.target.value);
+                        } else {
+                            this.currentFilters.domains.delete(e.target.value);
+                        }
+                        this.applyFilters();
+                    }
+                });
+            }
+
+            populateRoleFilters() {
+                const roles = [...new Set(this.protocols.map(p => p.role))].sort();
+                const container = document.getElementById('role-filters');
+                
+                container.innerHTML = roles.map(role => `
+                    <label class="filter-option">
+                        <input type="checkbox" value="${role}" data-filter="role">
+                        <span>${role}</span>
+                    </label>
+                `).join('');
+
+                container.addEventListener('change', (e) => {
+                    if (e.target.type === 'checkbox' && e.target.dataset.filter === 'role') {
+                        if (e.target.checked) {
+                            this.currentFilters.roles.add(e.target.value);
+                        } else {
+                            this.currentFilters.roles.delete(e.target.value);
+                        }
+                        this.applyFilters();
+                    }
+                });
+            }
+
+            applyFilters() {
+                this.filteredProtocols = this.protocols.filter(protocol => {
+                    // Search filter
+                    if (this.currentFilters.search) {
+                        const searchTerm = this.currentFilters.search;
+                        const searchableText = [
+                            protocol.title,
+                            protocol.domain,
+                            protocol.role,
+                            protocol.target_population,
+                            protocol.implementation_guidance
+                        ].join(' ').toLowerCase();
+                        
+                        if (!searchableText.includes(searchTerm)) {
+                            return false;
+                        }
+                    }
+
+                    // Domain filter
+                    if (this.currentFilters.domains.size > 0) {
+                        if (!this.currentFilters.domains.has(protocol.domain)) {
+                            return false;
+                        }
+                    }
+
+                    // Role filter
+                    if (this.currentFilters.roles.size > 0) {
+                        if (!this.currentFilters.roles.has(protocol.role)) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                });
+
+                this.renderProtocols();
+            }
+
+            renderProtocols() {
+                const container = document.getElementById('protocols-grid');
+                const loading = document.getElementById('loading');
+                const emptyState = document.getElementById('empty-state');
+
+                if (this.filteredProtocols.length === 0) {
+                    container.style.display = 'none';
+                    loading.style.display = 'none';
+                    emptyState.style.display = 'block';
+                    return;
+                }
+
+                container.style.display = 'grid';
+                loading.style.display = 'none';
+                emptyState.style.display = 'none';
+
+                container.innerHTML = this.filteredProtocols.map(protocol => this.createProtocolCard(protocol)).join('');
+
+                // Add click listeners to protocol cards
+                container.addEventListener('click', (e) => {
+                    const card = e.target.closest('.protocol-card');
+                    if (card) {
+                        const protocolId = card.dataset.protocolId;
+                        const protocol = this.protocols[protocolId];
+                        this.showProtocolDetail(protocol);
+                    }
+                });
+            }
+
+            createProtocolCard(protocol) {
+                const protocolIndex = this.protocols.indexOf(protocol);
+                const preview = this.extractPreview(protocol.implementation_guidance);
+                
+                return `
+                    <div class="protocol-card" data-protocol-id="${protocolIndex}">
+                        <div class="protocol-header">
+                            <h3 class="protocol-title">${protocol.title}</h3>
+                            <div class="protocol-badges">
+                                <span class="badge badge-domain">${protocol.domain}</span>
+                                <span class="badge badge-role">${protocol.role}</span>
+                            </div>
+                        </div>
+                        <p class="protocol-preview">${preview}</p>
+                        <div class="protocol-meta">
+                            <div class="evidence-level">
+                                <span>✓</span>
+                                <span>Evidence-Based</span>
+                            </div>
+                            <button class="view-protocol">View Details</button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            extractPreview(text) {
+                // Extract first meaningful sentence from implementation guidance
+                const sentences = text.split(/[.!?]+/);
+                for (let sentence of sentences) {
+                    sentence = sentence.trim();
+                    if (sentence.length > 50 && !sentence.includes('**') && !sentence.includes('Framework')) {
+                        return sentence.substring(0, 150) + (sentence.length > 150 ? '...' : '');
+                    }
+                }
+                return text.substring(0, 150) + '...';
+            }
+
+            showProtocolDetail(protocol) {
+                const modal = document.getElementById('protocol-modal');
+                const title = document.getElementById('modal-title');
+                const badges = document.getElementById('modal-badges');
+                const body = document.getElementById('modal-body');
+
+                title.textContent = protocol.title;
+                badges.innerHTML = `
+                    <span class="badge badge-domain">${protocol.domain}</span>
+                    <span class="badge badge-role">${protocol.role}</span>
+                `;
+
+                body.innerHTML = this.formatProtocolDetails(protocol);
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            formatProtocolDetails(protocol) {
+                const sections = [
+                    {
+                        title: 'Implementation Guidance',
+                        content: this.formatText(protocol.implementation_guidance)
+                    },
+                    {
+                        title: 'Expected Outcomes',
+                        content: this.formatText(protocol.expected_outcomes)
+                    },
+                    {
+                        title: 'Target Population',
+                        content: this.formatText(protocol.target_population)
+                    },
+                    {
+                        title: 'Evidence Base',
+                        content: this.formatText(protocol.evidence)
+                    }
+                ];
+
+                // Add new enhanced sections if available
+                if (protocol.health_equity) {
+                    sections.push({
+                        title: 'Health Equity Considerations',
+                        content: this.formatText(protocol.health_equity)
+                    });
+                }
+
+                if (protocol.measurement) {
+                    sections.push({
+                        title: 'Measurement & Evaluation',
+                        content: this.formatText(protocol.measurement)
+                    });
+                }
+
+                return sections.map(section => `
+                    <div class="protocol-section">
+                        <h3>${section.title}</h3>
+                        ${section.content}
+                    </div>
+                `).join('');
+            }
+
+            formatText(text) {
+                if (!text) return '<p>Not specified</p>';
+                
+                // Convert markdown-style formatting to HTML
+                return text
+                    .split('\n\n')
+                    .map(paragraph => {
+                        paragraph = paragraph.trim();
+                        if (!paragraph) return '';
+                        
+                        // Handle bold text
+                        paragraph = paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                        
+                        // Handle lists
+                        if (paragraph.includes('\n-') || paragraph.includes('\n1.')) {
+                            const items = paragraph.split('\n').filter(line => line.trim());
+                            const listItems = items.map(item => {
+                                item = item.trim();
+                                if (item.match(/^[\d]+\./)) {
+                                    return `<li>${item.replace(/^[\d]+\.\s*/, '')}</li>`;
+                                } else if (item.startsWith('-')) {
+                                    return `<li>${item.replace(/^-\s*/, '')}</li>`;
+                                } else {
+                                    return item.includes(':') ? `<h4>${item}</h4>` : `<p>${item}</p>`;
+                                }
+                            });
+                            
+                            const hasNumbers = paragraph.includes('1.');
+                            const listTag = hasNumbers ? 'ol' : 'ul';
+                            return `<${listTag}>${listItems.filter(item => item.startsWith('<li>')).join('')}</${listTag}>`;
+                        }
+                        
+                        return `<p>${paragraph}</p>`;
+                    })
+                    .join('');
+            }
+
+            closeModal() {
+                const modal = document.getElementById('protocol-modal');
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Initialize the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ProtocolLibrary();
+        });
+    </script>
+</body>
+</html>
