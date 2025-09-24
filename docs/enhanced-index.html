@@ -531,15 +531,15 @@
     <section class="stats-bar">
         <div class="stats-content">
             <div class="stat-item">
-                <span class="stat-number" id="total-protocols">36</span>
+                <span class="stat-number" id="total-protocols">106</span>
                 <span class="stat-label">Enhanced Protocols</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" id="total-domains">21</span>
+                <span class="stat-number" id="total-domains">61</span>
                 <span class="stat-label">Clinical Domains</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" id="total-roles">15</span>
+                <span class="stat-number" id="total-roles">44</span>
                 <span class="stat-label">Healthcare Roles</span>
             </div>
             <div class="stat-item">
@@ -935,7 +935,15 @@
 
         // Initialize the application when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            new ProtocolLibrary();
+            // Wait for data to load
+            if (window.allRecommendations && window.allRecommendations.length > 0) {
+                new ProtocolLibrary();
+            } else {
+                // Retry after a short delay if data isn't loaded yet
+                setTimeout(() => {
+                    new ProtocolLibrary();
+                }, 100);
+            }
         });
     </script>
 </body>
