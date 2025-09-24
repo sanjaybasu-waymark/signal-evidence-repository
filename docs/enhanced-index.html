@@ -464,7 +464,7 @@
         }
 
         function getPreview(protocol) {
-            const text = protocol.implementation_guidance || protocol.expected_outcomes || protocol.target_population || 'No preview available.';
+            const text = String(protocol.implementation_guidance || protocol.expected_outcomes || protocol.target_population || 'No preview available.');
             const clean = text.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\*([^*]+)\*/g, '$1').replace(/#{1,6}\s+/g, '').replace(/\n+/g, ' ').trim();
             return clean.length > 200 ? clean.substring(0, 200) + '...' : clean;
         }
