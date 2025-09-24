@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Comprehensive Protocols</title>
+</head>
+<body>
+    <h1>Testing Comprehensive Protocols Data</h1>
+    <div id="status">Loading...</div>
+    <div id="results"></div>
+
+    <script src="comprehensive-protocols-data.js"></script>
+    <script>
+        console.log('Test script starting...');
+        
+        setTimeout(() => {
+            const statusDiv = document.getElementById('status');
+            const resultsDiv = document.getElementById('results');
+            
+            if (typeof allRecommendations !== 'undefined') {
+                console.log('✅ Data loaded successfully');
+                console.log('Number of protocols:', allRecommendations.length);
+                
+                statusDiv.innerHTML = `✅ SUCCESS: ${allRecommendations.length} protocols loaded`;
+                
+                // Count domains and roles
+                const domains = [...new Set(allRecommendations.map(p => p.domain))];
+                const roles = [...new Set(allRecommendations.map(p => p.role))];
+                
+                resultsDiv.innerHTML = `
+                    <h2>Protocol Statistics</h2>
+                    <p><strong>Total Protocols:</strong> ${allRecommendations.length}</p>
+                    <p><strong>Domains:</strong> ${domains.length}</p>
+                    <p><strong>Roles:</strong> ${roles.length}</p>
+                    
+                    <h3>Domains:</h3>
+                    <ul>${domains.map(d => `<li>${d}</li>`).join('')}</ul>
+                    
+                    <h3>Roles:</h3>
+                    <ul>${roles.map(r => `<li>${r}</li>`).join('')}</ul>
+                `;
+            } else {
+                console.log('❌ Data failed to load');
+                statusDiv.innerHTML = '❌ ERROR: Data failed to load';
+                resultsDiv.innerHTML = '<p>The comprehensive-protocols-data.js file did not load properly.</p>';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
