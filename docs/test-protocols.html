@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocol Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .protocol-card { border: 1px solid #ccc; margin: 10px 0; padding: 15px; }
+        .protocol-title { color: #8B7EC8; margin: 0 0 10px 0; }
+        .protocol-domain { background: #8B7EC8; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>Protocol Library Test</h1>
+    <div id="status">Loading...</div>
+    <div id="protocols-container"></div>
+
+    <script src="complete-enhanced-recommendations-data.js"></script>
+    <script>
+        console.log('Test page loaded');
+        
+        function displayStatus() {
+            const statusDiv = document.getElementById('status');
+            const container = document.getElementById('protocols-container');
+            
+            if (typeof window.allRecommendations === 'undefined') {
+                statusDiv.innerHTML = '❌ Data not loaded - window.allRecommendations is undefined';
+                return;
+            }
+            
+            if (!window.allRecommendations || window.allRecommendations.length === 0) {
+                statusDiv.innerHTML = '❌ Data is empty or null';
+                return;
+            }
+            
+            const count = window.allRecommendations.length;
+            statusDiv.innerHTML = `✅ Data loaded successfully: ${count} protocols found`;
+            
+            // Display first 5 protocols as test
+            const testProtocols = window.allRecommendations.slice(0, 5);
+            container.innerHTML = testProtocols.map(protocol => `
+                <div class="protocol-card">
+                    <h3 class="protocol-title">${protocol.title || 'No title'}</h3>
+                    <span class="protocol-domain">${protocol.domain || 'No domain'}</span>
+                    <p><strong>Role:</strong> ${protocol.role || 'No role'}</p>
+                    <p><strong>Preview:</strong> ${(protocol.implementation_guidance || '').substring(0, 200)}...</p>
+                </div>
+            `).join('');
+        }
+        
+        // Try immediately and after delay
+        displayStatus();
+        setTimeout(displayStatus, 500);
+        setTimeout(displayStatus, 1000);
+    </script>
+</body>
+</html>
