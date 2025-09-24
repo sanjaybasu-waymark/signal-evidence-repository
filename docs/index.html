@@ -172,7 +172,7 @@
         </div>
     </div>
 
-    <script src="recommendations-data.js"></script>
+    <script src="complete-enhanced-recommendations-data.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Check if data is loaded
@@ -265,8 +265,10 @@
                     const protocolItem = document.createElement('div');
                     protocolItem.className = 'protocol-item';
                     
-                    // Determine evidence content - use evidence field if available, fall back to citation if available
+                    // Enhanced protocol display with all new fields
                     const evidenceContent = protocol.evidence || protocol.citation || "Evidence base not specified";
+                    const healthEquity = protocol.health_equity || "Health equity considerations not specified";
+                    const measurement = protocol.measurement || "Measurement framework not specified";
                     
                     protocolItem.innerHTML = `
                         <h3>${protocol.title}</h3>
@@ -280,8 +282,12 @@
                         <p>${protocol.expected_outcomes}</p>
                         <h4>Target Population</h4>
                         <p>${protocol.target_population}</p>
-                        <h4>Evidence</h4>
+                        <h4>Evidence Base</h4>
                         <p>${evidenceContent}</p>
+                        <h4>Health Equity Considerations</h4>
+                        <p>${healthEquity}</p>
+                        <h4>Measurement Framework</h4>
+                        <p>${measurement}</p>
                     `;
                     protocolList.appendChild(protocolItem);
                 });
