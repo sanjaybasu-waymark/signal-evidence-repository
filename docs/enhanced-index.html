@@ -215,20 +215,32 @@
         <section class="protocols-grid" id="protocols"></section>
     </main>
 
-    <script src="complete-enhanced-recommendations-data.js?v=4"></script>
     <script>
-        console.log('=== MINIMAL WORKING INTERFACE STARTING ===');
+        // Dynamic script loading with cache busting
+        const timestamp = Date.now();
+        const script = document.createElement('script');
+        script.src = `complete-enhanced-recommendations-data.js?v=5&t=${timestamp}`;
+        script.onload = function() {
+            console.log('Data script loaded successfully');
+            init();
+        };
+        script.onerror = function() {
+            console.error('Failed to load data script');
+        };
+        document.head.appendChild(script);
+        
+        console.log('=== ENHANCED INTERFACE WITH DYNAMIC LOADING ===');
         
         let allProtocols = [];
         let displayedProtocols = [];
 
         function init() {
-            console.log('Initializing...');
+            console.log('Initializing with data...');
             
-            // Wait for data
+            // Check for data
             if (!window.allRecommendations) {
-                console.log('Waiting for data...');
-                setTimeout(init, 100);
+                console.error('Data not available after script load');
+                document.getElementById('status').textContent = '❌ Failed to load protocol data';
                 return;
             }
 
@@ -328,12 +340,7 @@
             });
         }
 
-        // Start when ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', init);
-        } else {
-            init();
-        }
+        // Init is called by script onload event
     </script>
 </body>
 </html>
