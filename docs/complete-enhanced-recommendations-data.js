@@ -1,5 +1,5 @@
 // Complete Enhanced Recommendations Data
-// 49 Evidence-Based Protocols for Non-Physician Population Health Teams
+// 55 Evidence-Based Protocols for Non-Physician Population Health Teams
 // Generated from Better Care Playbook, Camden Coalition, and Implementation Science Research
 
 const allRecommendations = [
@@ -770,6 +770,96 @@ const allRecommendations = [
       "1. Layne, D., Logan, A., & Lindell, K. (2024). Palliative Care Coordination Interventions for Caregivers of Community-Dwelling Individuals with Dementia: An Integrative Review. *Nursing Reports*, 14(3), 1750-1768. [DOI: 10.3390/nursrep14030130](https://doi.org/10.3390/nursrep14030130)",
       "2. Singer, A. E., et al. (2016). Populations and Interventions for Palliative and End-of-Life Care: A Systematic Review. *Journal of Palliative Medicine*, 19(9), 995-1008. [DOI: 10.1089/jpm.2015.0367](https://doi.org/10.1089/jpm.2015.0367)",
       "3. Hughes, M. C., Vernon, E., & Hainstock, A. (2023). The effectiveness of community-based palliative care programme components: a systematic review. *Age and Ageing*, 52(9), afad175. [DOI: 10.1093/ageing/afad175](https://doi.org/10.1093/ageing/afad175)"
+    ]
+  },
+  {
+    "title": "Evidence-Based Population Health Protocol for Chronic Obstructive Pulmonary Disease (COPD) Self-Management",
+    "domain": "Respiratory Health",
+    "role": "Respiratory Therapist",
+    "description": "This protocol provides a comprehensive approach for Respiratory Therapists to deliver COPD self-management education and support to Medicaid populations. It focuses on improving quality of life, reducing exacerbations, and enhancing medication adherence through evidence-based interventions.",
+    "implementation_guidance": "Implementation follows the Chronic Care Model and CFIR framework, emphasizing patient education, inhaler technique training, action plan development, and pulmonary rehabilitation referrals. Key components include COPD assessment using CAT scores, medication reconciliation, smoking cessation counseling, and coordination with primary care providers.",
+    "expected_outcomes": "Expected outcomes include reduced COPD exacerbations (30-40% reduction), improved quality of life scores (CAT score improvement of 2-4 points), enhanced medication adherence (>80% compliance), reduced emergency department visits (25-35% reduction), and improved inhaler technique proficiency (>90% correct technique).",
+    "target_population": "Medicaid beneficiaries with diagnosed COPD, particularly those with frequent exacerbations, poor medication adherence, or limited access to specialized pulmonary care.",
+    "health_equity": "Addresses health disparities by providing culturally appropriate education, addressing social determinants affecting COPD management, and ensuring equitable access to respiratory medications and devices through insurance navigation and patient assistance programs.",
+    "measurement": "Process metrics include number of patients enrolled, education sessions completed, inhaler technique assessments, and care plan adherence. Outcome metrics encompass COPD Assessment Test (CAT) scores, exacerbation rates, medication adherence rates, healthcare utilization, and patient satisfaction scores.",
+    "evidence_base": [
+      "1. Zwerink, M., et al. (2014). Self-management for patients with chronic obstructive pulmonary disease. Cochrane Database of Systematic Reviews, (3). DOI: 10.1002/14651858.CD002990.pub3",
+      "2. Lenferink, A., et al. (2017). Self-management interventions including action plans for exacerbations versus usual care in patients with chronic obstructive pulmonary disease. Cochrane Database of Systematic Reviews, (8). DOI: 10.1002/14651858.CD011682.pub2"
+    ]
+  },
+  {
+    "title": "Evidence-Based Population Health Protocol for Chronic Kidney Disease Prevention and Management",
+    "domain": "Nephrology",
+    "role": "Nephrology Nurse",
+    "description": "This protocol outlines evidence-based interventions for Nephrology Nurses to provide chronic kidney disease (CKD) prevention, early detection, and management services to high-risk Medicaid populations, particularly those with diabetes and hypertension.",
+    "implementation_guidance": "Implementation utilizes the KDIGO guidelines and CFIR framework, focusing on risk stratification, patient education, medication management, and care coordination. Key strategies include eGFR and albuminuria monitoring, blood pressure optimization, diabetes management, and preparation for renal replacement therapy when appropriate.",
+    "expected_outcomes": "Expected outcomes include slowed CKD progression (reduced eGFR decline rate), improved blood pressure control (<130/80 mmHg in 70% of patients), enhanced medication adherence, reduced cardiovascular events, and timely preparation for renal replacement therapy when indicated.",
+    "target_population": "Medicaid beneficiaries at high risk for CKD or with early-stage CKD, including those with diabetes, hypertension, cardiovascular disease, or family history of kidney disease.",
+    "health_equity": "Addresses racial and ethnic disparities in CKD outcomes by providing culturally tailored education, addressing barriers to nephrology care access, and ensuring equitable treatment of underlying conditions that contribute to CKD progression.",
+    "measurement": "Process metrics include screening completion rates, patient education sessions, medication adherence assessments, and specialist referrals. Outcome metrics encompass eGFR trends, albuminuria levels, blood pressure control rates, cardiovascular events, and progression to end-stage renal disease.",
+    "evidence_base": [
+      "1. KDIGO 2012 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney International Supplements, 3(1), 1-150. DOI: 10.1038/kisup.2012.73",
+      "2. Drawz, P., & Rahman, M. (2015). Chronic kidney disease. Annals of Internal Medicine, 162(11), ITC1-ITC16. DOI: 10.7326/AITC201506020"
+    ]
+  },
+  {
+    "title": "Evidence-Based Population Health Protocol for Osteoporosis Prevention and Fracture Risk Reduction",
+    "domain": "Bone Health",
+    "role": "Clinical Pharmacist",
+    "description": "This protocol provides Clinical Pharmacists with evidence-based strategies for osteoporosis prevention, bone health optimization, and fracture risk reduction in older adults and high-risk Medicaid populations.",
+    "implementation_guidance": "Implementation follows the NOF guidelines and CFIR framework, emphasizing FRAX risk assessment, medication therapy management, fall prevention strategies, and lifestyle modifications. Key components include bone density interpretation, calcium and vitamin D optimization, bisphosphonate therapy management, and coordination with primary care and endocrinology.",
+    "expected_outcomes": "Expected outcomes include improved bone mineral density (T-score improvements of 0.5-1.0), reduced fracture risk (20-40% reduction in vertebral fractures), enhanced medication adherence (>80% compliance), improved calcium and vitamin D levels, and reduced fall risk.",
+    "target_population": "Medicaid beneficiaries at high risk for osteoporosis, including postmenopausal women, men over 70, individuals with previous fractures, or those on medications affecting bone health.",
+    "health_equity": "Addresses disparities in bone health by ensuring equitable access to bone density testing, providing culturally appropriate education about bone health, and addressing barriers to medication access and adherence.",
+    "measurement": "Process metrics include FRAX assessments completed, medication therapy reviews, patient education sessions, and fall risk evaluations. Outcome metrics encompass bone density changes, fracture incidence, medication adherence rates, calcium and vitamin D levels, and fall rates.",
+    "evidence_base": [
+      "1. Cosman, F., et al. (2014). Clinician's Guide to Prevention and Treatment of Osteoporosis. Osteoporosis International, 25(10), 2359-2381. DOI: 10.1007/s00198-014-2794-2",
+      "2. Kanis, J. A., et al. (2019). European guidance for the diagnosis and management of osteoporosis in postmenopausal women. Osteoporosis International, 30(1), 3-44. DOI: 10.1007/s00198-018-4704-5"
+    ]
+  },
+  {
+    "title": "Evidence-Based Population Health Protocol for Chronic Fatigue Syndrome and Fibromyalgia Management",
+    "domain": "Chronic Pain and Fatigue",
+    "role": "Pain Management Nurse",
+    "description": "This protocol provides Pain Management Nurses with evidence-based approaches for managing chronic fatigue syndrome (CFS) and fibromyalgia in Medicaid populations, focusing on symptom management, functional improvement, and quality of life enhancement.",
+    "implementation_guidance": "Implementation utilizes a multidisciplinary approach based on CFIR principles, emphasizing patient education, graded exercise therapy, cognitive behavioral therapy referrals, and medication management. Key strategies include symptom tracking, sleep hygiene education, stress management techniques, and coordination with mental health providers.",
+    "expected_outcomes": "Expected outcomes include reduced pain scores (30-50% improvement in pain intensity), improved functional capacity, enhanced sleep quality, reduced fatigue levels, improved mood and mental health outcomes, and decreased healthcare utilization for symptom management.",
+    "target_population": "Medicaid beneficiaries diagnosed with chronic fatigue syndrome, fibromyalgia, or related chronic pain and fatigue conditions, particularly those with limited access to specialized pain management services.",
+    "health_equity": "Addresses disparities in chronic pain management by providing culturally sensitive care, addressing stigma associated with chronic fatigue and pain conditions, and ensuring equitable access to multidisciplinary treatment approaches.",
+    "measurement": "Process metrics include patient assessments completed, education sessions provided, therapy referrals made, and care plan adherence. Outcome metrics encompass pain scores, fatigue severity scales, functional assessment scores, sleep quality measures, and healthcare utilization patterns.",
+    "evidence_base": [
+      "1. Macfarlane, G. J., et al. (2017). EULAR revised recommendations for the management of fibromyalgia. Annals of the Rheumatic Diseases, 76(2), 318-328. DOI: 10.1136/annrheumdis-2016-209724",
+      "2. Larun, L., et al. (2017). Exercise therapy for chronic fatigue syndrome. Cochrane Database of Systematic Reviews, (4). DOI: 10.1002/14651858.CD003200.pub7"
+    ]
+  },
+  {
+    "title": "Evidence-Based Population Health Protocol for Inflammatory Bowel Disease Management",
+    "domain": "Gastroenterology",
+    "role": "Gastroenterology Nurse",
+    "description": "This protocol provides Gastroenterology Nurses with evidence-based strategies for managing inflammatory bowel disease (IBD) including Crohn's disease and ulcerative colitis in Medicaid populations, focusing on disease monitoring, medication adherence, and quality of life improvement.",
+    "implementation_guidance": "Implementation follows IBD treatment guidelines and CFIR framework, emphasizing patient education, medication management, nutritional counseling, and psychosocial support. Key components include disease activity monitoring, biologic therapy coordination, infection screening, and mental health assessment.",
+    "expected_outcomes": "Expected outcomes include sustained clinical remission (60-70% of patients), improved quality of life scores, reduced hospitalizations (30-40% reduction), enhanced medication adherence (>85% compliance), and decreased disease-related complications.",
+    "target_population": "Medicaid beneficiaries with diagnosed IBD, particularly those with active disease, medication adherence challenges, or limited access to specialized gastroenterology care.",
+    "health_equity": "Addresses disparities in IBD care by providing culturally appropriate education, addressing barriers to expensive biologic medications through patient assistance programs, and ensuring equitable access to specialized care and monitoring.",
+    "measurement": "Process metrics include disease activity assessments, medication adherence monitoring, patient education sessions, and specialist consultations. Outcome metrics encompass clinical remission rates, quality of life scores, hospitalization rates, medication adherence rates, and treatment response measures.",
+    "evidence_base": [
+      "1. Rubin, D. T., et al. (2019). ACG Clinical Guideline: Ulcerative Colitis in Adults. American Journal of Gastroenterology, 114(3), 384-413. DOI: 10.14309/ajg.0000000000000152",
+      "2. Lichtenstein, G. R., et al. (2018). ACG Clinical Guideline: Management of Crohn's Disease in Adults. American Journal of Gastroenterology, 113(4), 481-517. DOI: 10.1038/ajg.2018.27"
+    ]
+  },
+  {
+    "title": "Evidence-Based Population Health Protocol for Multiple Sclerosis Care Coordination",
+    "domain": "Neurology",
+    "role": "Neurology Nurse Navigator",
+    "description": "This protocol provides Neurology Nurse Navigators with evidence-based approaches for coordinating care for multiple sclerosis (MS) patients in Medicaid populations, focusing on disease-modifying therapy management, symptom control, and functional preservation.",
+    "implementation_guidance": "Implementation utilizes MS treatment guidelines and CFIR framework, emphasizing care coordination, medication management, symptom monitoring, and multidisciplinary team collaboration. Key strategies include MRI monitoring, relapse management, disability assessment, and coordination with rehabilitation services.",
+    "expected_outcomes": "Expected outcomes include reduced relapse rates (30-50% reduction), slowed disability progression, improved medication adherence (>90% compliance), enhanced quality of life scores, and reduced MS-related hospitalizations.",
+    "target_population": "Medicaid beneficiaries with diagnosed multiple sclerosis, particularly those with relapsing-remitting MS, medication access challenges, or complex care coordination needs.",
+    "health_equity": "Addresses disparities in MS care by ensuring equitable access to disease-modifying therapies, providing culturally appropriate education, and coordinating comprehensive care regardless of socioeconomic status.",
+    "measurement": "Process metrics include care coordination activities, medication adherence assessments, symptom monitoring, and specialist consultations. Outcome metrics encompass relapse rates, disability progression measures (EDSS scores), medication adherence rates, quality of life scores, and healthcare utilization.",
+    "evidence_base": [
+      "1. Rae-Grant, A., et al. (2018). Practice guideline recommendations summary: Disease-modifying therapies for adults with multiple sclerosis. Neurology, 90(17), 777-788. DOI: 10.1212/WNL.0000000000005347",
+      "2. Montalban, X., et al. (2018). ECTRIMS/EAN Guideline on the pharmacological treatment of people with multiple sclerosis. Multiple Sclerosis Journal, 24(2), 96-120. DOI: 10.1177/1352458517751049"
     ]
   }
 ];
