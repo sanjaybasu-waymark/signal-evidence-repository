@@ -158,28 +158,6 @@
             box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
         }
 
-        /* Loading State */
-        .loading {
-            text-align: center;
-            padding: 4rem 0;
-            color: var(--gray-500);
-        }
-
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid var(--gray-200);
-            border-top: 4px solid var(--waymark-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         /* Protocols Section */
         .protocols-section {
             padding: 3rem 0;
@@ -548,11 +526,7 @@
 
         <section class="protocols-section">
             <div class="container">
-                <div id="loading" class="loading">
-                    <div class="loading-spinner"></div>
-                    <p>Loading protocols...</p>
-                </div>
-                <div id="protocols-grid" class="protocols-grid" style="display: none;">
+                <div id="protocols-grid" class="protocols-grid">
                     <!-- Protocols loaded dynamically -->
                 </div>
             </div>
@@ -572,6 +546,19 @@
     </footer>
 
     <script>
+        // Embedded CSV data
+        const csvData = `protocol_id,title,domain,role,target_population,implementation_guidance,expected_outcomes,evidence_base,doi_primary,quality_score,publication_year,study_design,sample_size
+PROT001,"Evidence-Based Population Health Protocol for Diabetes Self-Management Education by Community Health Workers",Diabetes,Community Health Worker,"Adults with Type 2 diabetes in Medicaid populations, particularly Hispanic/Latino and African American communities","Implement 6-session culturally tailored diabetes education program using CFIR framework. Sessions include: 1) Diabetes basics and blood sugar monitoring, 2) Healthy eating and carbohydrate counting, 3) Physical activity planning, 4) Medication adherence strategies, 5) Stress management and social support, 6) Healthcare navigation and self-advocacy. Each session 90 minutes, delivered in community settings.","Significant reduction in HbA1c levels (mean decrease 0.8-1.2%), improved diabetes self-efficacy scores, increased medication adherence rates (>80%), enhanced diabetes knowledge scores, reduced emergency department visits for diabetes-related complications.","Brownson et al. (2018). Community health worker-led diabetes self-management education for Latino adults. American Journal of Preventive Medicine, 54(3), 314-323.","10.1016/j.amepre.2017.12.014",8.5,2018,Randomized Controlled Trial,312
+PROT002,"Evidence-Based Population Health Protocol for Hypertension Medication Adherence by Care Coordinators",Cardiovascular,Care Coordinator,"Adults with hypertension in Medicaid populations with medication adherence challenges","Implement systematic medication adherence intervention using motivational interviewing and behavioral strategies. Protocol includes: 1) Comprehensive medication review and barrier assessment, 2) Personalized adherence plan development, 3) Weekly check-ins for first month, 4) Monthly follow-up calls, 5) Coordination with pharmacy for pill packaging, 6) Blood pressure monitoring training and equipment provision.","Improved medication adherence rates (>85%), significant reduction in systolic blood pressure (mean decrease 12-15 mmHg), reduced cardiovascular events, improved patient satisfaction with care coordination, decreased healthcare utilization for hypertension-related complications.","Williams et al. (2019). Care coordinator-led medication adherence intervention for hypertension management. Journal of Clinical Hypertension, 21(8), 1156-1164.","10.1111/jch.13598",8.2,2019,Quasi-experimental Study,428
+PROT003,"Evidence-Based Protocol for Depression Screening and Referral by Behavioral Health Care Managers",Mental Health,Behavioral Health Care Manager,"Adults in primary care settings, particularly those with chronic conditions and social determinants of health challenges","Implement systematic depression screening using PHQ-9 with warm handoff protocol. Process includes: 1) Universal screening at all primary care visits, 2) Immediate risk assessment for positive screens, 3) Brief intervention for mild-moderate depression, 4) Warm handoff to behavioral health services for moderate-severe cases, 5) Follow-up within 48 hours, 6) Care coordination with primary care provider.","Increased depression screening rates (>90%), improved detection of depression cases, reduced time to treatment initiation, improved depression outcomes (PHQ-9 score reduction >50%), enhanced patient satisfaction with integrated care, reduced no-show rates for behavioral health appointments.","Johnson et al. (2020). Integrated behavioral health screening and referral in primary care. Psychiatric Services, 71(4), 384-391.","10.1176/appi.ps.201900286",8.7,2020,Controlled Trial,567
+PROT004,"Evidence-Based Population Health Protocol for Social Determinants Screening and Intervention by Social Workers",Social Determinants,Social Worker,"Vulnerable populations in healthcare settings with housing, food, transportation, and financial insecurity","Implement comprehensive social determinants screening and resource connection protocol. Components include: 1) Standardized SDOH screening tool administration, 2) Risk stratification and prioritization, 3) Resource mapping and referral coordination, 4) Follow-up on referral completion, 5) Advocacy and system navigation support, 6) Outcome tracking and care plan updates.","Improved access to social services (>75% successful referral completion), reduced food insecurity rates, improved housing stability, enhanced healthcare access and utilization, reduced emergency department visits for non-medical needs, improved patient-reported quality of life measures.","Martinez et al. (2021). Social worker-led social determinants intervention in healthcare settings. Health Affairs, 40(2), 297-305.","10.1377/hlthaff.2020.01043",8.1,2021,Randomized Controlled Trial,445
+PROT005,"Evidence-Based Population Health Protocol for Medication Reconciliation by Pharmacy Technicians",Medication Management,Pharmacy Technician,"Patients with polypharmacy in care transition settings, particularly elderly and chronically ill populations","Implement systematic medication reconciliation protocol during care transitions. Process includes: 1) Comprehensive medication history collection from multiple sources, 2) Medication list verification with patient/caregiver, 3) Identification of discrepancies and potential drug interactions, 4) Communication with prescribers for clarification, 5) Patient education on medication changes, 6) Follow-up call within 72 hours post-discharge.","Reduced medication errors by 60-75%, decreased adverse drug events, improved medication adherence rates, reduced 30-day readmission rates, enhanced patient understanding of medication regimens, improved communication between healthcare providers.","Thompson et al. (2019). Pharmacy technician-led medication reconciliation in care transitions. American Journal of Health-System Pharmacy, 76(12), 892-899.","10.1093/ajhp/zxz089",7.8,2019,Cohort Study,334
+PROT006,"Evidence-Based Population Health Protocol for Asthma Action Plan Education by Respiratory Therapists",Respiratory,Respiratory Therapist,"Children and adults with asthma in underserved communities, particularly those with frequent exacerbations","Implement comprehensive asthma education program with personalized action plans. Protocol includes: 1) Asthma severity assessment and trigger identification, 2) Inhaler technique training and competency verification, 3) Written asthma action plan development, 4) Peak flow monitoring training, 5) Environmental trigger reduction education, 6) Emergency response planning and healthcare navigation.","Improved asthma control scores, reduced asthma exacerbations (50-70% reduction), decreased emergency department visits and hospitalizations, improved inhaler technique proficiency (>90%), enhanced asthma self-management skills, improved quality of life measures.","Davis et al. (2020). Respiratory therapist-led asthma education in community settings. Respiratory Care, 65(8), 1123-1131.","10.4187/respcare.07456",8.3,2020,Randomized Controlled Trial,289
+PROT007,"Evidence-Based Population Health Protocol for Prenatal Care Coordination by Doulas",Maternal Health,Doula,"Pregnant women in Medicaid populations, particularly those with high-risk pregnancies and social vulnerabilities","Implement comprehensive prenatal support and care coordination program. Services include: 1) Early pregnancy risk assessment and care planning, 2) Prenatal appointment scheduling and transportation assistance, 3) Childbirth education and labor support planning, 4) Social services referral and advocacy, 5) Postpartum support and breastfeeding assistance, 6) Care coordination with obstetric providers.","Improved prenatal care utilization (>90% adequate care), reduced preterm birth rates, increased breastfeeding initiation and duration, improved maternal satisfaction with care, reduced postpartum depression rates, decreased maternal and infant healthcare costs.","Garcia et al. (2021). Doula-supported prenatal care for Medicaid populations. Maternal and Child Health Journal, 25(4), 612-620.","10.1007/s10995-020-03089-x",8.0,2021,Quasi-experimental Study,398
+PROT008,"Evidence-Based Population Health Protocol for Substance Use Screening and Brief Intervention by Peer Recovery Specialists",Substance Use,Peer Recovery Specialist,"Adults with substance use disorders in healthcare and community settings, particularly those in early recovery","Implement peer-led screening, brief intervention, and referral to treatment (SBIRT) protocol. Components include: 1) Substance use screening using validated tools, 2) Motivational interviewing for behavior change, 3) Brief intervention for risky use patterns, 4) Referral to treatment services with warm handoff, 5) Ongoing peer support and recovery coaching, 6) Relapse prevention planning and crisis intervention.","Increased engagement in substance use treatment (>70% treatment entry), reduced substance use frequency and quantity, improved treatment retention rates, enhanced recovery self-efficacy, reduced criminal justice involvement, improved employment and housing stability.","Rodriguez et al. (2020). Peer recovery specialist-led SBIRT in healthcare settings. Journal of Substance Abuse Treatment, 118, 108-115.","10.1016/j.jsat.2020.108115",7.9,2020,Controlled Trial,356
+PROT009,"Evidence-Based Population Health Protocol for Care Transitions by Nurse Care Managers",Care Transitions,Nurse Care Manager,"High-risk patients transitioning from hospital to home, particularly elderly with multiple chronic conditions","Implement comprehensive care transitions intervention using Coleman Care Transitions Model. Protocol includes: 1) Pre-discharge planning and medication reconciliation, 2) Patient and caregiver education on self-care, 3) Follow-up phone call within 24-48 hours, 4) Home visit within 7 days, 5) Primary care appointment scheduling and coordination, 6) 30-day follow-up and outcome assessment.","Reduced 30-day readmission rates (25-40% reduction), improved patient satisfaction with care transitions, enhanced medication adherence, reduced emergency department visits, improved patient activation and self-care abilities, decreased healthcare costs.","Anderson et al. (2019). Nurse care manager-led care transitions intervention. Journal of Nursing Care Quality, 34(3), 245-252.","10.1097/NCQ.0000000000000378",8.4,2019,Randomized Controlled Trial,512
+PROT010,"Evidence-Based Population Health Protocol for Chronic Disease Self-Management by Community Health Workers",Chronic Disease Management,Community Health Worker,"Adults with multiple chronic conditions in underserved communities, particularly racial/ethnic minorities","Implement evidence-based chronic disease self-management program adapted for community delivery. Program includes: 1) 6-week group education sessions on self-management skills, 2) Goal setting and action planning, 3) Problem-solving and decision-making training, 4) Peer support and social networking, 5) Healthcare system navigation, 6) Individual follow-up and coaching sessions.","Improved self-efficacy for managing chronic conditions, reduced hospitalizations and emergency department visits, enhanced medication adherence, improved clinical outcomes (blood pressure, blood glucose control), increased physical activity levels, improved quality of life and mental health outcomes.","Wilson et al. (2018). Community health worker-led chronic disease self-management program. Health Education & Behavior, 45(6), 943-950.","10.1177/1090198118769372",8.1,2018,Cluster Randomized Trial,467`;
+
         class ProtocolLibrary {
             constructor() {
                 this.protocols = [];
@@ -579,34 +566,17 @@
                 this.init();
             }
 
-            async init() {
-                try {
-                    await this.loadData();
-                    this.setupEventListeners();
-                    this.renderProtocols();
-                    this.updateStats();
-                    this.hideLoading();
-                } catch (error) {
-                    console.error('Failed to initialize:', error);
-                    this.showError('Failed to load protocol data. Please try refreshing the page.');
-                }
+            init() {
+                this.loadData();
+                this.setupEventListeners();
+                this.renderProtocols();
+                this.updateStats();
             }
 
-            async loadData() {
-                try {
-                    const response = await fetch('../data/protocols.csv');
-                    if (!response.ok) {
-                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                    }
-                    const csvText = await response.text();
-                    this.protocols = this.parseCSV(csvText);
-                    this.filteredProtocols = [...this.protocols];
-                    
-                    console.log(`Loaded ${this.protocols.length} protocols`);
-                } catch (error) {
-                    console.error('Error loading data:', error);
-                    throw error;
-                }
+            loadData() {
+                this.protocols = this.parseCSV(csvData);
+                this.filteredProtocols = [...this.protocols];
+                console.log(`Loaded ${this.protocols.length} protocols`);
             }
 
             parseCSV(csvText) {
@@ -653,24 +623,6 @@
                 
                 result.push(current.trim());
                 return result;
-            }
-
-            hideLoading() {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('protocols-grid').style.display = 'grid';
-            }
-
-            showError(message) {
-                const loading = document.getElementById('loading');
-                loading.innerHTML = `
-                    <div style="color: var(--waymark-red);">
-                        <h3>Error Loading Protocols</h3>
-                        <p>${message}</p>
-                        <button onclick="location.reload()" class="btn-primary" style="margin-top: 1rem; width: auto;">
-                            Retry
-                        </button>
-                    </div>
-                `;
             }
 
             renderProtocols() {
