@@ -567,7 +567,7 @@
 
             async loadData() {
                 try {
-                    const response = await fetch('../data/protocols.csv?v=' + Date.now());
+                    const response = await fetch('protocols.csv?v=' + Date.now());
                     csvData = await response.text();
                     this.protocols = this.parseCSV(csvData);
                     this.filteredProtocols = [...this.protocols];
