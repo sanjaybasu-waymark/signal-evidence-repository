@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waymark Population Health Protocol Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8B5FBF 0%, #6B46C1 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stats-section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #8B5FBF;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #8B5FBF;
+            padding-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 95, 191, 0.15);
+            border-color: #8B5FBF;
+        }
+
+        .card h3 {
+            color: #8B5FBF;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card .count {
+            background: #8B5FBF;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .footer p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: #8B5FBF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .error {
+            text-align: center;
+            padding: 2rem;
+            color: #dc3545;
+            background: #f8d7da;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 95%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .protocol-detail h2 {
+            color: #8B5FBF;
+            margin-bottom: 1rem;
+            padding-right: 2rem;
+        }
+
+        .protocol-detail .section-title {
+            font-weight: bold;
+            color: #333;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .protocol-detail .citation {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #8B5FBF;
+            font-size: 0.9rem;
+            border-radius: 4px;
+        }
+
+        .protocol-detail .citation a {
+            color: #8B5FBF;
+            text-decoration: none;
+        }
+
+        .protocol-detail .citation a:hover {
+            text-decoration: underline;
+        }
+
+        .protocol-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .protocol-card:hover {
+            background: #e9ecef;
+            border-color: #8B5FBF;
+        }
+
+        .protocol-card h4 {
+            color: #8B5FBF;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .protocol-card .role-tag {
+            background: #8B5FBF;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .view-details-btn {
+            background: #8B5FBF;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .view-details-btn:hover {
+            background: #6B46C1;
+        }
+
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .back-btn:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>🏥 Waymark Population Health Protocol Library</h1>
+            <p>Evidence-based protocols for Medicaid population health management</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Protocol Library Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-protocols">49</span>
+                    <div class="stat-label">Total Protocols</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="total-domains">Loading...</span>
+                    <div class="stat-label">Clinical Domains</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="total-roles">Loading...</span>
+                    <div class="stat-label">Healthcare Roles</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Browse by Clinical Domain</h2>
+            <div id="domains-grid" class="grid">
+                <div class="loading">Loading domains...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Browse by Healthcare Role</h2>
+            <div id="roles-grid" class="grid">
+                <div class="loading">Loading roles...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>© 2025 Waymark. All protocols are evidence-based and designed for implementation in Medicaid populations.</p>
+            <p>For more information, visit <a href="https://waymarkcare.com" target="_blank">waymarkcare.com</a></p>
+        </div>
+    </div>
+
+    <!-- Modal for protocol details -->
+    <div id="protocolModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="protocol-details" class="protocol-detail">
+                <!-- Protocol details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="expanded-chronic-conditions-data.js"></script>
+    <script>
+        // Simple, guaranteed working implementation
+        let protocolData = [];
+        
+        // Wait for data to load
+        function initApp() {
+            if (typeof allRecommendations !== 'undefined' && allRecommendations.length > 0) {
+                protocolData = allRecommendations;
+                console.log('✅ Loaded', protocolData.length, 'protocols');
+                setupInterface();
+            } else {
+                console.log('Waiting for data...');
+                setTimeout(initApp, 500);
+            }
+        }
+        
+        function setupInterface() {
+            // Get unique domains and roles
+            const domains = [...new Set(protocolData.map(p => p.domain))].sort();
+            const roles = [...new Set(protocolData.map(p => p.role))].sort();
+            
+            // Update stats
+            document.getElementById('total-domains').textContent = domains.length;
+            document.getElementById('total-roles').textContent = roles.length;
+            
+            // Create domain cards
+            const domainsGrid = document.getElementById('domains-grid');
+            domainsGrid.innerHTML = '';
+            domains.forEach(domain => {
+                const count = protocolData.filter(p => p.domain === domain).length;
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `<h3>${domain}</h3><span class="count">${count} protocol${count !== 1 ? 's' : ''}</span>`;
+                card.onclick = () => showDomainProtocols(domain);
+                domainsGrid.appendChild(card);
+            });
+            
+            // Create role cards
+            const rolesGrid = document.getElementById('roles-grid');
+            rolesGrid.innerHTML = '';
+            roles.forEach(role => {
+                const count = protocolData.filter(p => p.role === role).length;
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `<h3>${role}</h3><span class="count">${count} protocol${count !== 1 ? 's' : ''}</span>`;
+                card.onclick = () => showRoleProtocols(role);
+                rolesGrid.appendChild(card);
+            });
+            
+            // Setup modal
+            const modal = document.getElementById('protocolModal');
+            const closeBtn = document.querySelector('.close');
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (event) => {
+                if (event.target === modal) modal.style.display = 'none';
+            };
+        }
+        
+        function showDomainProtocols(domain) {
+            const protocols = protocolData.filter(p => p.domain === domain);
+            showProtocolList(protocols, `${domain} Protocols`);
+        }
+        
+        function showRoleProtocols(role) {
+            const protocols = protocolData.filter(p => p.role === role);
+            showProtocolList(protocols, `${role} Protocols`);
+        }
+        
+        function showProtocolList(protocols, title) {
+            const modal = document.getElementById('protocolModal');
+            const details = document.getElementById('protocol-details');
+            
+            let html = `<h2>${title}</h2><button class="back-btn" onclick="closeModal()">← Back to Main View</button>`;
+            
+            protocols.forEach((protocol, index) => {
+                html += `
+                    <div class="protocol-card" onclick="showProtocolDetail(${protocolData.indexOf(protocol)})">
+                        <h4>${protocol.title}</h4>
+                        <div class="role-tag">${protocol.role}</div>
+                        <p>${protocol.description.substring(0, 200)}...</p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                `;
+            });
+            
+            details.innerHTML = html;
+            modal.style.display = 'block';
+        }
+        
+        function showProtocolDetail(index) {
+            const protocol = protocolData[index];
+            const modal = document.getElementById('protocolModal');
+            const details = document.getElementById('protocol-details');
+            
+            let evidenceHtml = '';
+            if (protocol.evidenceBase && Array.isArray(protocol.evidenceBase)) {
+                evidenceHtml = protocol.evidenceBase.map(citation => {
+                    // Extract DOI links
+                    const doiMatch = citation.match(/https:\/\/doi\.org\/[^\s)]+/);
+                    if (doiMatch) {
+                        return `<div class="citation"><a href="${doiMatch[0]}" target="_blank">${citation}</a></div>`;
+                    }
+                    return `<div class="citation">${citation}</div>`;
+                }).join('');
+            }
+            
+            const html = `
+                <h2>${protocol.title}</h2>
+                <button class="back-btn" onclick="closeModal()">← Close</button>
+                
+                <p><strong>Domain:</strong> ${protocol.domain}</p>
+                <p><strong>Role:</strong> ${protocol.role}</p>
+                
+                <div class="section-title">Description</div>
+                <p>${protocol.description}</p>
+                
+                <div class="section-title">Implementation Guidance</div>
+                <p>${protocol.implementation}</p>
+                
+                <div class="section-title">Expected Outcomes</div>
+                <p>${protocol.expectedOutcomes}</p>
+                
+                <div class="section-title">Target Population</div>
+                <p>${protocol.targetPopulation}</p>
+                
+                <div class="section-title">Health Equity Considerations</div>
+                <p>${protocol.healthEquity}</p>
+                
+                <div class="section-title">Measurement Framework</div>
+                <p>${protocol.measurement}</p>
+                
+                <div class="section-title">Evidence Base</div>
+                ${evidenceHtml}
+            `;
+            
+            details.innerHTML = html;
+            modal.style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('protocolModal').style.display = 'none';
+        }
+        
+        // Start the app
+        initApp();
+    </script>
+</body>
+</html>
+<- Measurement Force rebuild Thu Sep 25 13:31:27 EDT 2025 -->
+<- Measurement Force rebuild Thu Sep 25 16:26:51 EDT 2025 -->

@@ -469,9 +469,7 @@
         <div class="container">
             <div class="logo">
                 <div class="logo-img">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
-                    </svg>
+                    <img src="waymark-logo.png" alt="Waymark" style="height: 40px; width: auto; border-radius: 8px;">
                 </div>
                 <div>
                     <h1>Population Health Protocol Library</h1>
@@ -501,6 +499,15 @@
                         <div class="stat-number" id="quality-avg">0</div>
                         <div class="stat-label">Average Quality Score</div>
                     </div>
+                </div>
+                <div class="quality-explanation" style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--waymark-primary); margin-bottom: 1rem; font-size: 1.1rem;">Quality Scoring Methodology</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.5;">
+                        Protocol quality scores (0-10) are based on: <strong>Study Design</strong> (RCTs=highest, systematic reviews, cohort studies), 
+                        <strong>Sample Size</strong> (larger samples=higher scores), <strong>Population Relevance</strong> (Medicaid/vulnerable populations), 
+                        <strong>Implementation Detail</strong> (specific, actionable protocols), and <strong>Outcome Measurement</strong> (validated, clinically meaningful metrics). 
+                        Scores ≥8.0 indicate high-quality evidence suitable for immediate implementation.
+                    </p>
                 </div>
             </div>
         </section>
