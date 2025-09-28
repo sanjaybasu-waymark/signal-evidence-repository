@@ -628,15 +628,11 @@
                                     <p>${this.escapeHtml(protocol.expected_outcomes)}</p>
                                 </div>
                                 
-                                <div class="detail-section">
-                                    <h3>Evidence Base</h3>
-                                    <p>${this.escapeHtml(protocol.evidence_base)}</p>
-                                </div>
-                                
-                                ${protocol.doi ? `
+                                ${protocol.evidence_base || protocol.doi ? `
                                     <div class="detail-section">
-                                        <h3>Citation</h3>
-                                        <p><a href="https://doi.org/${protocol.doi}" target="_blank" rel="noopener">DOI: ${protocol.doi}</a></p>
+                                        <h3>Citation & Evidence Base</h3>
+                                        ${protocol.evidence_base ? `<p>${this.escapeHtml(protocol.evidence_base)}</p>` : ''}
+                                        ${protocol.doi ? `<p><a href="https://doi.org/${protocol.doi}" target="_blank" rel="noopener">DOI: ${protocol.doi}</a></p>` : ''}
                                     </div>
                                 ` : ''}
                             </div>
