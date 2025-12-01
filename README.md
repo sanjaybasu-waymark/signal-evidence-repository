@@ -8,11 +8,11 @@
 
 ## Overview
 
-The Waymark Population Health Protocol Library is a comprehensive repository of evidence-based clinical protocols designed specifically for non-physician healthcare teams supporting underserved and marginalized patient populations. This enhanced system provides community health workers, care coordinators, social workers, pharmacists, and other team members with 105 peer-reviewed protocols across 15 clinical domains and multiple healthcare roles for effective population health management.
+The Waymark Population Health Protocol Library is a comprehensive repository of evidence-based clinical protocols designed specifically for non-physician healthcare teams supporting underserved and marginalized patient populations. This enhanced system provides community health workers, care coordinators, social workers, pharmacists, and other team members with 152 peer-reviewed protocols across 15 clinical domains and multiple healthcare roles for effective population health management.
 
 ### Key Features
 
-- **📋 105 Evidence-Based Protocols**: Comprehensive coverage across 15 clinical domains, with expanded social worker, CHW, and care coordinator protocols
+- **📋 152 Evidence-Based Protocols**: Comprehensive coverage across 15 clinical domains and 8 healthcare roles with full scope of practice for each role
 - **👥 Multiple Healthcare Roles**: From community health workers to social workers and specialized nursing positions
 - **🎯 Advanced Search**: Real-time filtering by condition, role, or implementation approach
 - **📊 Implementation Science**: CFIR and RE-AIM frameworks integrated throughout
